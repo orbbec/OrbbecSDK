@@ -1,2 +1,2 @@
 # OrbbecSDK
-orbbecsdk  C/C++ base core lib
+OrbbecSDK C/C++ base core lib
