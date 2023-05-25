@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1.15)
-project(OrbbecSDK)
+project(OrbbecSDK VERSION 1.5.8 LANGUAGES C CXX)
 
 # Set the C++ standard to 14 and C standard to 11
 set(CMAKE_CXX_STANDARD 14)
@@ -52,7 +52,7 @@ configure_package_config_file(
 )
 write_basic_package_version_file(
   "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDKConfigVersion.cmake"
-  VERSION 1.5.7
+  VERSION ${PROJECT_VERSION}
   COMPATIBILITY AnyNewerVersion
 )
 install(FILES

@@ -32,3 +32,5 @@ install(
   FILES "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDKConfig.cmake"
   DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/cmake/${PROJECT_NAME}
 )
+
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/Packing.cmake)
