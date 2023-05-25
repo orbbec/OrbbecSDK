@@ -1,0 +1,3650 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OrbbecSDK: /root/libobsensor/include/libobsensor/h/Device.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OrbbecSDK
+   &#160;<span id="projectnumber">1.5.7</span>
+   </div>
+   <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D-Sensor devices</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_8195f5c0d9a800b311ff87242d342361.html">libobsensor</a></li><li class="navelem"><a class="el" href="dir_9fda3634bd985c8b3aac4c1dd5078468.html">h</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">Device.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>设备相关函数，包括获取创建设备，设置及获取设备属性，获取传感器等操作  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Property_8h_source.html">Property.h</a>&quot;</code><br />
+</div>
+<p><a href="Device_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a1159a741a904d97bb78ee041fb07e670"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a1159a741a904d97bb78ee041fb07e670">ob_device_list_device_count</a> (<a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *list, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a1159a741a904d97bb78ee041fb07e670"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备数量  <a href="#a1159a741a904d97bb78ee041fb07e670">更多...</a><br /></td></tr>
+<tr class="separator:a1159a741a904d97bb78ee041fb07e670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2692ec5f0b699e15f4697c3e94f78529"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a2692ec5f0b699e15f4697c3e94f78529">ob_device_list_get_device_name</a> (<a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *list, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a2692ec5f0b699e15f4697c3e94f78529"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备名称 (废弃接口)  <a href="#a2692ec5f0b699e15f4697c3e94f78529">更多...</a><br /></td></tr>
+<tr class="separator:a2692ec5f0b699e15f4697c3e94f78529"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc10dbc1de0e383813de23f7c8fcaaa2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#acc10dbc1de0e383813de23f7c8fcaaa2">ob_device_list_get_device_pid</a> (<a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *list, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:acc10dbc1de0e383813de23f7c8fcaaa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定设备pid  <a href="#acc10dbc1de0e383813de23f7c8fcaaa2">更多...</a><br /></td></tr>
+<tr class="separator:acc10dbc1de0e383813de23f7c8fcaaa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4e05e57a445e52e40da2e09a1248bf3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#ae4e05e57a445e52e40da2e09a1248bf3">ob_device_list_get_device_vid</a> (<a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *list, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ae4e05e57a445e52e40da2e09a1248bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定设备vid  <a href="#ae4e05e57a445e52e40da2e09a1248bf3">更多...</a><br /></td></tr>
+<tr class="separator:ae4e05e57a445e52e40da2e09a1248bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad94a517bf83ef5b5bae8aafbf4c3ef7d"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#ad94a517bf83ef5b5bae8aafbf4c3ef7d">ob_device_list_get_device_uid</a> (<a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *list, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ad94a517bf83ef5b5bae8aafbf4c3ef7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定设备uid  <a href="#ad94a517bf83ef5b5bae8aafbf4c3ef7d">更多...</a><br /></td></tr>
+<tr class="separator:ad94a517bf83ef5b5bae8aafbf4c3ef7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa779fe3e09b94d09f437bc2ad75e8620"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#aa779fe3e09b94d09f437bc2ad75e8620">ob_device_list_get_device_serial_number</a> (<a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *list, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:aa779fe3e09b94d09f437bc2ad75e8620"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定设备序列号  <a href="#aa779fe3e09b94d09f437bc2ad75e8620">更多...</a><br /></td></tr>
+<tr class="separator:aa779fe3e09b94d09f437bc2ad75e8620"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a987a99be5ab806ae8c322d01171d82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a3a987a99be5ab806ae8c322d01171d82">ob_device_list_get_device</a> (<a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *list, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a3a987a99be5ab806ae8c322d01171d82"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建设备  <a href="#a3a987a99be5ab806ae8c322d01171d82">更多...</a><br /></td></tr>
+<tr class="separator:a3a987a99be5ab806ae8c322d01171d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab50ccf0dcb803305ec54cedcfca90eae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#ab50ccf0dcb803305ec54cedcfca90eae">ob_device_list_get_device_by_serial_number</a> (<a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *list, const char *serial_number, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ab50ccf0dcb803305ec54cedcfca90eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建设备  <a href="#ab50ccf0dcb803305ec54cedcfca90eae">更多...</a><br /></td></tr>
+<tr class="separator:ab50ccf0dcb803305ec54cedcfca90eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c539824a24993f7daf6eb1418bb2f68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a2c539824a24993f7daf6eb1418bb2f68">ob_device_list_get_device_by_uid</a> (<a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *list, const char *uid, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a2c539824a24993f7daf6eb1418bb2f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建设备  <a href="#a2c539824a24993f7daf6eb1418bb2f68">更多...</a><br /></td></tr>
+<tr class="separator:a2c539824a24993f7daf6eb1418bb2f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e59c9e48b96283cf735961d770b473a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a8e59c9e48b96283cf735961d770b473a">ob_delete_device</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a8e59c9e48b96283cf735961d770b473a"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除设备  <a href="#a8e59c9e48b96283cf735961d770b473a">更多...</a><br /></td></tr>
+<tr class="separator:a8e59c9e48b96283cf735961d770b473a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41b82238a66ece307adf62fc01a0cfe5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a41b82238a66ece307adf62fc01a0cfe5">ob_delete_device_info</a> (<a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *info, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a41b82238a66ece307adf62fc01a0cfe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除设备信息  <a href="#a41b82238a66ece307adf62fc01a0cfe5">更多...</a><br /></td></tr>
+<tr class="separator:a41b82238a66ece307adf62fc01a0cfe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2f5e8dd1c400e79804f68ff14f9390d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#ad2f5e8dd1c400e79804f68ff14f9390d">ob_delete_device_list</a> (<a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *list, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ad2f5e8dd1c400e79804f68ff14f9390d"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除设备列表  <a href="#ad2f5e8dd1c400e79804f68ff14f9390d">更多...</a><br /></td></tr>
+<tr class="separator:ad2f5e8dd1c400e79804f68ff14f9390d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8de95ece030509e82a622cd9b5fbcdb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a8de95ece030509e82a622cd9b5fbcdb6">ob_device_get_device_info</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a8de95ece030509e82a622cd9b5fbcdb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备信息  <a href="#a8de95ece030509e82a622cd9b5fbcdb6">更多...</a><br /></td></tr>
+<tr class="separator:a8de95ece030509e82a622cd9b5fbcdb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a5551a0fe5837af75f14547630eef1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a56a65d68fac102481c425341bb70a510">ob_sensor_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a6a5551a0fe5837af75f14547630eef1b">ob_device_get_sensor_list</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a6a5551a0fe5837af75f14547630eef1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备的所有传感器  <a href="#a6a5551a0fe5837af75f14547630eef1b">更多...</a><br /></td></tr>
+<tr class="separator:a6a5551a0fe5837af75f14547630eef1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa40bc2c97db899aedd82b047687aa868"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a818d3a4166de3a59430e6fd2bdf9eb28">ob_sensor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#aa40bc2c97db899aedd82b047687aa868">ob_device_get_sensor</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="ObTypes_8h.html#a01cba50d4d558e4c2035f09b698bb10b">ob_sensor_type</a> type, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:aa40bc2c97db899aedd82b047687aa868"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备的传感器  <a href="#aa40bc2c97db899aedd82b047687aa868">更多...</a><br /></td></tr>
+<tr class="separator:aa40bc2c97db899aedd82b047687aa868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84db7f4a201665982f9f5e84a7e59c14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a84db7f4a201665982f9f5e84a7e59c14">ob_device_set_int_property</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, int32_t property, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a84db7f4a201665982f9f5e84a7e59c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置int类型的设备属性  <a href="#a84db7f4a201665982f9f5e84a7e59c14">更多...</a><br /></td></tr>
+<tr class="separator:a84db7f4a201665982f9f5e84a7e59c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a406e7c9ed5303cbd23737ec261eeddb1"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a406e7c9ed5303cbd23737ec261eeddb1">ob_device_get_int_property</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a406e7c9ed5303cbd23737ec261eeddb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取int类型的设备属性  <a href="#a406e7c9ed5303cbd23737ec261eeddb1">更多...</a><br /></td></tr>
+<tr class="separator:a406e7c9ed5303cbd23737ec261eeddb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afde9aa391cd78ee3dd2bf00d12c0a90c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#afde9aa391cd78ee3dd2bf00d12c0a90c">ob_device_set_float_property</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, float property, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:afde9aa391cd78ee3dd2bf00d12c0a90c"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置float类型的设备属性  <a href="#afde9aa391cd78ee3dd2bf00d12c0a90c">更多...</a><br /></td></tr>
+<tr class="separator:afde9aa391cd78ee3dd2bf00d12c0a90c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a39b348b60f80f479141420f80188f7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a9a39b348b60f80f479141420f80188f7">ob_device_get_float_property</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a9a39b348b60f80f479141420f80188f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取float类型的设备属性  <a href="#a9a39b348b60f80f479141420f80188f7">更多...</a><br /></td></tr>
+<tr class="separator:a9a39b348b60f80f479141420f80188f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79208136710e03c3e9253295830a3af2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a79208136710e03c3e9253295830a3af2">ob_device_set_bool_property</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, bool property, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a79208136710e03c3e9253295830a3af2"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置bool类型的设备属性  <a href="#a79208136710e03c3e9253295830a3af2">更多...</a><br /></td></tr>
+<tr class="separator:a79208136710e03c3e9253295830a3af2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d5b14b3b67efcd64823feca01e1bd60"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a5d5b14b3b67efcd64823feca01e1bd60">ob_device_get_bool_property</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a5d5b14b3b67efcd64823feca01e1bd60"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取bool类型的设备属性  <a href="#a5d5b14b3b67efcd64823feca01e1bd60">更多...</a><br /></td></tr>
+<tr class="separator:a5d5b14b3b67efcd64823feca01e1bd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a818ab1162e4f62292773a49e83f8d201"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a818ab1162e4f62292773a49e83f8d201">ob_device_set_structured_data</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, const void *data, uint32_t data_size, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a818ab1162e4f62292773a49e83f8d201"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置结构体类型的设备属性  <a href="#a818ab1162e4f62292773a49e83f8d201">更多...</a><br /></td></tr>
+<tr class="separator:a818ab1162e4f62292773a49e83f8d201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fb24de946dc2ba979a77897fbe2996e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a6fb24de946dc2ba979a77897fbe2996e">ob_device_get_structured_data</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, void *data, uint32_t *data_size, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a6fb24de946dc2ba979a77897fbe2996e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取结构体类型的设备属性  <a href="#a6fb24de946dc2ba979a77897fbe2996e">更多...</a><br /></td></tr>
+<tr class="separator:a6fb24de946dc2ba979a77897fbe2996e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b185156e6da6e680e62c70d921442bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a0b185156e6da6e680e62c70d921442bd">ob_device_set_structured_data_ext</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, <a class="el" href="ObTypes_8h.html#a9cf8513da42dae2548a6151eb8a7770b">ob_data_bundle</a> *data_bundle, <a class="el" href="ObTypes_8h.html#ad12d0a24ac2adabf4d3f976d3903b2f7">ob_set_data_callback</a> cb, void *user_data, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a0b185156e6da6e680e62c70d921442bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置结构体类型的设备属性  <a href="#a0b185156e6da6e680e62c70d921442bd">更多...</a><br /></td></tr>
+<tr class="separator:a0b185156e6da6e680e62c70d921442bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78d9c3d0559caf456b71911ffd498fd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a9cf8513da42dae2548a6151eb8a7770b">ob_data_bundle</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a78d9c3d0559caf456b71911ffd498fd7">ob_device_get_structured_data_ext</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a78d9c3d0559caf456b71911ffd498fd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取结构体类型的设备属性  <a href="#a78d9c3d0559caf456b71911ffd498fd7">更多...</a><br /></td></tr>
+<tr class="separator:a78d9c3d0559caf456b71911ffd498fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa21281007b84e9250d56aa93f72e50b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#aa21281007b84e9250d56aa93f72e50b5">ob_device_set_raw_data</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, void *data, uint32_t data_size, <a class="el" href="ObTypes_8h.html#ad12d0a24ac2adabf4d3f976d3903b2f7">ob_set_data_callback</a> cb, bool async, void *user_data, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:aa21281007b84e9250d56aa93f72e50b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置raw data类型的设备属性  <a href="#aa21281007b84e9250d56aa93f72e50b5">更多...</a><br /></td></tr>
+<tr class="separator:aa21281007b84e9250d56aa93f72e50b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b5a2149d1788d63d3a29b07775ef819"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a4b5a2149d1788d63d3a29b07775ef819">ob_device_get_raw_data</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, <a class="el" href="ObTypes_8h.html#a091bddb9a1ac58c18a4de986d4e664b8">ob_get_data_callback</a> cb, bool async, void *user_data, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a4b5a2149d1788d63d3a29b07775ef819"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取raw data类型的设备属性  <a href="#a4b5a2149d1788d63d3a29b07775ef819">更多...</a><br /></td></tr>
+<tr class="separator:a4b5a2149d1788d63d3a29b07775ef819"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56d0ad23452a0de3dbc24e7fa08c12f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#ae8b79fe0074d181d1a2508381082031e">ob_protocol_version</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a56d0ad23452a0de3dbc24e7fa08c12f0">ob_device_get_protocol_version</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a56d0ad23452a0de3dbc24e7fa08c12f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备的控制命令协议版本  <a href="#a56d0ad23452a0de3dbc24e7fa08c12f0">更多...</a><br /></td></tr>
+<tr class="separator:a56d0ad23452a0de3dbc24e7fa08c12f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad04ce24d516dff79ecf7a759634ad7fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#ae1b69db06a6242640ff995d424765ed2">ob_cmd_version</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#ad04ce24d516dff79ecf7a759634ad7fb">ob_device_get_cmd_version</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ad04ce24d516dff79ecf7a759634ad7fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取控制命令的版本号  <a href="#ad04ce24d516dff79ecf7a759634ad7fb">更多...</a><br /></td></tr>
+<tr class="separator:ad04ce24d516dff79ecf7a759634ad7fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc9153c1eb2179bd658bfa1c3740192b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#acc9153c1eb2179bd658bfa1c3740192b">ob_device_get_supported_property_count</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:acc9153c1eb2179bd658bfa1c3740192b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备支持的属性的数量  <a href="#acc9153c1eb2179bd658bfa1c3740192b">更多...</a><br /></td></tr>
+<tr class="separator:acc9153c1eb2179bd658bfa1c3740192b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acceacae3a0da41a0520eeca3aacb3991"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Property_8h.html#ae913577a9f74fecaa43e1638f01d8608">ob_property_item</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#acceacae3a0da41a0520eeca3aacb3991">ob_device_get_supported_property</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:acceacae3a0da41a0520eeca3aacb3991"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备支持的属性  <a href="#acceacae3a0da41a0520eeca3aacb3991">更多...</a><br /></td></tr>
+<tr class="separator:acceacae3a0da41a0520eeca3aacb3991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dcaa2cdfe5df58873988d086b486d1d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a0dcaa2cdfe5df58873988d086b486d1d">ob_device_is_property_supported</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, <a class="el" href="ObTypes_8h.html#a4bca54bbc626483a54e780b2fb493fba">ob_permission_type</a> permission, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a0dcaa2cdfe5df58873988d086b486d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断属性权限支持情况  <a href="#a0dcaa2cdfe5df58873988d086b486d1d">更多...</a><br /></td></tr>
+<tr class="separator:a0dcaa2cdfe5df58873988d086b486d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f8e41d5b98134c858489547e91ec58f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#ad56aaee99c8103e24549c4eebfa49390">ob_int_property_range</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a0f8e41d5b98134c858489547e91ec58f">ob_device_get_int_property_range</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a0f8e41d5b98134c858489547e91ec58f"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取int类型的设备属性范围  <a href="#a0f8e41d5b98134c858489547e91ec58f">更多...</a><br /></td></tr>
+<tr class="separator:a0f8e41d5b98134c858489547e91ec58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2793baa51450fbecdb47d97f18b53313"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a1313567c613cef788698509d1944be65">ob_float_property_range</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a2793baa51450fbecdb47d97f18b53313">ob_device_get_float_property_range</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a2793baa51450fbecdb47d97f18b53313"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取float类型的设备属性范围  <a href="#a2793baa51450fbecdb47d97f18b53313">更多...</a><br /></td></tr>
+<tr class="separator:a2793baa51450fbecdb47d97f18b53313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d74c28dac2b0b341c17ddb02354723c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#ae0b05ad4fd3bf608f6b61804eb9b4a2f">ob_bool_property_range</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a0d74c28dac2b0b341c17ddb02354723c">ob_device_get_bool_property_range</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a> property_id, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a0d74c28dac2b0b341c17ddb02354723c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取bool类型的设备属性范围  <a href="#a0d74c28dac2b0b341c17ddb02354723c">更多...</a><br /></td></tr>
+<tr class="separator:a0d74c28dac2b0b341c17ddb02354723c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ee539092b1302dd6f5553566bdf1319"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a3ee539092b1302dd6f5553566bdf1319">ob_device_write_ahb</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, uint32_t reg, uint32_t mask, uint32_t value, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a3ee539092b1302dd6f5553566bdf1319"><td class="mdescLeft">&#160;</td><td class="mdescRight">ahb写寄存器  <a href="#a3ee539092b1302dd6f5553566bdf1319">更多...</a><br /></td></tr>
+<tr class="separator:a3ee539092b1302dd6f5553566bdf1319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29ff095e0bed66c38f425a37223a7b8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a29ff095e0bed66c38f425a37223a7b8b">ob_device_read_ahb</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, uint32_t reg, uint32_t mask, uint32_t *value, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a29ff095e0bed66c38f425a37223a7b8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ahb读寄存器  <a href="#a29ff095e0bed66c38f425a37223a7b8b">更多...</a><br /></td></tr>
+<tr class="separator:a29ff095e0bed66c38f425a37223a7b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd26b89ff80b6677f89b55067a43f4fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#abd26b89ff80b6677f89b55067a43f4fa">ob_device_write_i2c</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, uint32_t module_id, uint32_t reg, uint32_t mask, uint32_t value, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:abd26b89ff80b6677f89b55067a43f4fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">i2c写寄存器  <a href="#abd26b89ff80b6677f89b55067a43f4fa">更多...</a><br /></td></tr>
+<tr class="separator:abd26b89ff80b6677f89b55067a43f4fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd4cc9e284731c7fff99d3385bf2e382"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#acd4cc9e284731c7fff99d3385bf2e382">ob_device_read_i2c</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, uint32_t module_id, uint32_t reg, uint32_t mask, uint32_t *value, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:acd4cc9e284731c7fff99d3385bf2e382"><td class="mdescLeft">&#160;</td><td class="mdescRight">i2c读寄存器  <a href="#acd4cc9e284731c7fff99d3385bf2e382">更多...</a><br /></td></tr>
+<tr class="separator:acd4cc9e284731c7fff99d3385bf2e382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4b67238ed7b9a0951139090e8a787f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#ae4b67238ed7b9a0951139090e8a787f2">ob_device_write_flash</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, uint32_t offset, const void *data, uint32_t data_size, <a class="el" href="ObTypes_8h.html#ad12d0a24ac2adabf4d3f976d3903b2f7">ob_set_data_callback</a> cb, bool async, void *user_data, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ae4b67238ed7b9a0951139090e8a787f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置写入Flash的属性[异步回调]  <a href="#ae4b67238ed7b9a0951139090e8a787f2">更多...</a><br /></td></tr>
+<tr class="separator:ae4b67238ed7b9a0951139090e8a787f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a461c2740631658bcabdde53ef8d9c87e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a461c2740631658bcabdde53ef8d9c87e">ob_device_read_flash</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, uint32_t offset, uint32_t data_size, <a class="el" href="ObTypes_8h.html#a091bddb9a1ac58c18a4de986d4e664b8">ob_get_data_callback</a> cb, bool async, void *user_data, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a461c2740631658bcabdde53ef8d9c87e"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取Flash的属性[异步回调]  <a href="#a461c2740631658bcabdde53ef8d9c87e">更多...</a><br /></td></tr>
+<tr class="separator:a461c2740631658bcabdde53ef8d9c87e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1971ce939ddeda103b01d259784cc867"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a1971ce939ddeda103b01d259784cc867">ob_device_sync_device_time</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a1971ce939ddeda103b01d259784cc867"><td class="mdescLeft">&#160;</td><td class="mdescRight">同步设备时间（向设备授时，同步本地系统时间到设备）  <a href="#a1971ce939ddeda103b01d259784cc867">更多...</a><br /></td></tr>
+<tr class="separator:a1971ce939ddeda103b01d259784cc867"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a857b0fd50d7d425be77b0ed6a40ab9ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a857b0fd50d7d425be77b0ed6a40ab9ef">ob_device_upgrade</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, const char *path, <a class="el" href="ObTypes_8h.html#a722bed61b28cde64209bcf5e228a57e1">ob_device_upgrade_callback</a> callback, bool async, void *user_data, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a857b0fd50d7d425be77b0ed6a40ab9ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">设备固件升级  <a href="#a857b0fd50d7d425be77b0ed6a40ab9ef">更多...</a><br /></td></tr>
+<tr class="separator:a857b0fd50d7d425be77b0ed6a40ab9ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57f2fc41aedeac216230a3bad371825d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#ac9770df9d12620d1c520e51d2ffa934d">ob_device_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a57f2fc41aedeac216230a3bad371825d">ob_device_get_device_state</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a57f2fc41aedeac216230a3bad371825d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前设备状态  <a href="#a57f2fc41aedeac216230a3bad371825d">更多...</a><br /></td></tr>
+<tr class="separator:a57f2fc41aedeac216230a3bad371825d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14812183858ca67b83dfd10692873165"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a14812183858ca67b83dfd10692873165">ob_device_state_changed</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="ObTypes_8h.html#ae8b8395f6083d80608959b6aad27e652">ob_device_state_callback</a> callback, void *user_data, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a14812183858ca67b83dfd10692873165"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置设备状态监听  <a href="#a14812183858ca67b83dfd10692873165">更多...</a><br /></td></tr>
+<tr class="separator:a14812183858ca67b83dfd10692873165"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1b4e5018401ef3a3b8c874223537e16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#ad1b4e5018401ef3a3b8c874223537e16">ob_device_send_file_to_destination</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, const char *file_path, const char *dst_path, <a class="el" href="ObTypes_8h.html#a4cbd864ddbf989ef634d5c6aa3eb7007">ob_file_send_callback</a> callback, bool async, void *user_data, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ad1b4e5018401ef3a3b8c874223537e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送文件到设备指定路径  <a href="#ad1b4e5018401ef3a3b8c874223537e16">更多...</a><br /></td></tr>
+<tr class="separator:ad1b4e5018401ef3a3b8c874223537e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ecb245e2d7236c32c03b1d96be8c778"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a5ecb245e2d7236c32c03b1d96be8c778">ob_device_activate_authorization</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, const char *auth_code, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a5ecb245e2d7236c32c03b1d96be8c778"><td class="mdescLeft">&#160;</td><td class="mdescRight">验证设备授权码  <a href="#a5ecb245e2d7236c32c03b1d96be8c778">更多...</a><br /></td></tr>
+<tr class="separator:a5ecb245e2d7236c32c03b1d96be8c778"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a036d21c3bf3c734ceda4d89254bbc84f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a036d21c3bf3c734ceda4d89254bbc84f">ob_device_write_authorization_code</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, const char *auth_code, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a036d21c3bf3c734ceda4d89254bbc84f"><td class="mdescLeft">&#160;</td><td class="mdescRight">写入设备授权码  <a href="#a036d21c3bf3c734ceda4d89254bbc84f">更多...</a><br /></td></tr>
+<tr class="separator:a036d21c3bf3c734ceda4d89254bbc84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac592fd5394b15b0799e8de5d57146741"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#ad0c91e2d8e139b9b0ae8f4176b881225">ob_camera_param_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#ac592fd5394b15b0799e8de5d57146741">ob_device_get_calibration_camera_param_list</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ac592fd5394b15b0799e8de5d57146741"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备内保存的相机标定的原始参数列表，列表内参数不与当前开流配置相对应， 需要自行根据实际情况选用参数并可能需要做缩放、镜像等处理。非专业用户建议使用ob_pipeline_get_camera_param()接口。  <a href="#ac592fd5394b15b0799e8de5d57146741">更多...</a><br /></td></tr>
+<tr class="separator:ac592fd5394b15b0799e8de5d57146741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acec4c4a48b3599c9861f896442c2e307"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a75b33e8451fea08178fbceaa5a71b9ad">ob_depth_work_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#acec4c4a48b3599c9861f896442c2e307">ob_device_get_current_depth_work_mode</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:acec4c4a48b3599c9861f896442c2e307"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询当前相机深度模式  <a href="#acec4c4a48b3599c9861f896442c2e307">更多...</a><br /></td></tr>
+<tr class="separator:acec4c4a48b3599c9861f896442c2e307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa64c32c4e74c1582597c0aea8ed2c5b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d4caae302682fc3cb8f8034bb99e229">ob_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#aa64c32c4e74c1582597c0aea8ed2c5b5">ob_device_switch_depth_work_mode</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, const <a class="el" href="ObTypes_8h.html#a75b33e8451fea08178fbceaa5a71b9ad">ob_depth_work_mode</a> *work_mode, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:aa64c32c4e74c1582597c0aea8ed2c5b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换相机深度模式（根据深度工作模式对象），如果知道设备支持的深度工作模式名称，那么推荐用ob_device_switch_depth_work_mode_by_name  <a href="#aa64c32c4e74c1582597c0aea8ed2c5b5">更多...</a><br /></td></tr>
+<tr class="separator:aa64c32c4e74c1582597c0aea8ed2c5b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f444b5724ae1e8c0022beabb2a09808"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d4caae302682fc3cb8f8034bb99e229">ob_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a2f444b5724ae1e8c0022beabb2a09808">ob_device_switch_depth_work_mode_by_name</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, const char *mode_name, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a2f444b5724ae1e8c0022beabb2a09808"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换相机深度模式（根据深度工作模式名称）  <a href="#a2f444b5724ae1e8c0022beabb2a09808">更多...</a><br /></td></tr>
+<tr class="separator:a2f444b5724ae1e8c0022beabb2a09808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bda44d743e531c2fca02bd54bb9a118"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#ae56f30b3220e1c02444e52c8faf9c007">ob_depth_work_mode_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a6bda44d743e531c2fca02bd54bb9a118">ob_device_get_depth_work_mode_list</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a6bda44d743e531c2fca02bd54bb9a118"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询当前相机深度模式的列表  <a href="#a6bda44d743e531c2fca02bd54bb9a118">更多...</a><br /></td></tr>
+<tr class="separator:a6bda44d743e531c2fca02bd54bb9a118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa93166f1ca96f0be6d484596dd4ef775"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#aa93166f1ca96f0be6d484596dd4ef775">ob_device_reboot</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:aa93166f1ca96f0be6d484596dd4ef775"><td class="mdescLeft">&#160;</td><td class="mdescRight">设备重启  <a href="#aa93166f1ca96f0be6d484596dd4ef775">更多...</a><br /></td></tr>
+<tr class="separator:aa93166f1ca96f0be6d484596dd4ef775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add0e4d8fb19bb17b65dfc45d99f2b071"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2463acfa8a599a0e8b75021888a35738">ob_device_sync_config</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#add0e4d8fb19bb17b65dfc45d99f2b071">ob_device_get_sync_config</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:add0e4d8fb19bb17b65dfc45d99f2b071"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前设备同步配置  <a href="#add0e4d8fb19bb17b65dfc45d99f2b071">更多...</a><br /></td></tr>
+<tr class="separator:add0e4d8fb19bb17b65dfc45d99f2b071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b4398ce6fd011251b1cd9361b2c661"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a26b4398ce6fd011251b1cd9361b2c661">ob_device_set_sync_config</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="ObTypes_8h.html#a2463acfa8a599a0e8b75021888a35738">ob_device_sync_config</a> device_sync_config, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a26b4398ce6fd011251b1cd9361b2c661"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置设备同步配置  <a href="#a26b4398ce6fd011251b1cd9361b2c661">更多...</a><br /></td></tr>
+<tr class="separator:a26b4398ce6fd011251b1cd9361b2c661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3100ad5a8aeb847d6b1276b456e89693"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a3100ad5a8aeb847d6b1276b456e89693">ob_device_info_name</a> (<a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *info, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a3100ad5a8aeb847d6b1276b456e89693"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备名  <a href="#a3100ad5a8aeb847d6b1276b456e89693">更多...</a><br /></td></tr>
+<tr class="separator:a3100ad5a8aeb847d6b1276b456e89693"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bcc378d0ba886735f43cd1868462d84"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a7bcc378d0ba886735f43cd1868462d84">ob_device_info_pid</a> (<a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *info, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a7bcc378d0ba886735f43cd1868462d84"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备pid  <a href="#a7bcc378d0ba886735f43cd1868462d84">更多...</a><br /></td></tr>
+<tr class="separator:a7bcc378d0ba886735f43cd1868462d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64dfe77a997b53abb69582210ff1f43b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a64dfe77a997b53abb69582210ff1f43b">ob_device_info_vid</a> (<a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *info, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a64dfe77a997b53abb69582210ff1f43b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备vid  <a href="#a64dfe77a997b53abb69582210ff1f43b">更多...</a><br /></td></tr>
+<tr class="separator:a64dfe77a997b53abb69582210ff1f43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46fef1827e5ca96e3c8700cbf454b98c"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a46fef1827e5ca96e3c8700cbf454b98c">ob_device_info_uid</a> (<a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *info, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a46fef1827e5ca96e3c8700cbf454b98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备uid  <a href="#a46fef1827e5ca96e3c8700cbf454b98c">更多...</a><br /></td></tr>
+<tr class="separator:a46fef1827e5ca96e3c8700cbf454b98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f676d9e54a577e02bb90f947b50c655"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a4f676d9e54a577e02bb90f947b50c655">ob_device_info_serial_number</a> (<a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *info, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a4f676d9e54a577e02bb90f947b50c655"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备序列号  <a href="#a4f676d9e54a577e02bb90f947b50c655">更多...</a><br /></td></tr>
+<tr class="separator:a4f676d9e54a577e02bb90f947b50c655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21be3dfd27accf87aa1459cdcb52735e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a21be3dfd27accf87aa1459cdcb52735e">ob_device_info_firmware_version</a> (<a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *info, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a21be3dfd27accf87aa1459cdcb52735e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取固件版本号  <a href="#a21be3dfd27accf87aa1459cdcb52735e">更多...</a><br /></td></tr>
+<tr class="separator:a21be3dfd27accf87aa1459cdcb52735e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99179455992df15799fe5fc251228624"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a99179455992df15799fe5fc251228624">ob_device_info_usb_type</a> (<a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *info, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a99179455992df15799fe5fc251228624"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取usb连接类型 (废弃接口)  <a href="#a99179455992df15799fe5fc251228624">更多...</a><br /></td></tr>
+<tr class="separator:a99179455992df15799fe5fc251228624"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f53a50c340d3e28ea39b18ab0e4c743"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a5f53a50c340d3e28ea39b18ab0e4c743">ob_device_info_connection_type</a> (<a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *info, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a5f53a50c340d3e28ea39b18ab0e4c743"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备连接类型  <a href="#a5f53a50c340d3e28ea39b18ab0e4c743">更多...</a><br /></td></tr>
+<tr class="separator:a5f53a50c340d3e28ea39b18ab0e4c743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa01a4201092ff680d4d539ff07a59449"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#aa01a4201092ff680d4d539ff07a59449">ob_device_info_hardware_version</a> (<a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *info, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:aa01a4201092ff680d4d539ff07a59449"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取硬件的版本号  <a href="#aa01a4201092ff680d4d539ff07a59449">更多...</a><br /></td></tr>
+<tr class="separator:aa01a4201092ff680d4d539ff07a59449"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a333334624d216cdb0cce79d4817877f6"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a333334624d216cdb0cce79d4817877f6">ob_device_info_supported_min_sdk_version</a> (<a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *info, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a333334624d216cdb0cce79d4817877f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备支持的SDK最小版本号  <a href="#a333334624d216cdb0cce79d4817877f6">更多...</a><br /></td></tr>
+<tr class="separator:a333334624d216cdb0cce79d4817877f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4daec79a71fde49ff4374b599c6bee2c"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a4daec79a71fde49ff4374b599c6bee2c">ob_device_info_asicName</a> (<a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *info, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a4daec79a71fde49ff4374b599c6bee2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取芯片类型名称  <a href="#a4daec79a71fde49ff4374b599c6bee2c">更多...</a><br /></td></tr>
+<tr class="separator:a4daec79a71fde49ff4374b599c6bee2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acddeeb9699b03f4b44dfddd35ad89e05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a17646caddbc9d5beebc5721b8c473b42">ob_device_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#acddeeb9699b03f4b44dfddd35ad89e05">ob_device_info_device_type</a> (<a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *info, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:acddeeb9699b03f4b44dfddd35ad89e05"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备类型  <a href="#acddeeb9699b03f4b44dfddd35ad89e05">更多...</a><br /></td></tr>
+<tr class="separator:acddeeb9699b03f4b44dfddd35ad89e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0496e545b110778bfc66ee913ebe9494"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a0496e545b110778bfc66ee913ebe9494">ob_camera_param_list_count</a> (<a class="el" href="ObTypes_8h.html#ad0c91e2d8e139b9b0ae8f4176b881225">ob_camera_param_list</a> *param_list, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a0496e545b110778bfc66ee913ebe9494"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取相机参数列表内参数组数  <a href="#a0496e545b110778bfc66ee913ebe9494">更多...</a><br /></td></tr>
+<tr class="separator:a0496e545b110778bfc66ee913ebe9494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a291ea25d01b626e06e2e742349935c3e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#ae5db514adf9ef2352c995122df7be0a6">ob_camera_param</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a291ea25d01b626e06e2e742349935c3e">ob_camera_param_list_get_param</a> (<a class="el" href="ObTypes_8h.html#ad0c91e2d8e139b9b0ae8f4176b881225">ob_camera_param_list</a> *param_list, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a291ea25d01b626e06e2e742349935c3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">从相机参数列表内获取相机参数  <a href="#a291ea25d01b626e06e2e742349935c3e">更多...</a><br /></td></tr>
+<tr class="separator:a291ea25d01b626e06e2e742349935c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b59f401d6f3cf6f88f123fe49b606e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a4b59f401d6f3cf6f88f123fe49b606e7">ob_delete_camera_param_list</a> (<a class="el" href="ObTypes_8h.html#ad0c91e2d8e139b9b0ae8f4176b881225">ob_camera_param_list</a> *param_list, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a4b59f401d6f3cf6f88f123fe49b606e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除相机参数列表  <a href="#a4b59f401d6f3cf6f88f123fe49b606e7">更多...</a><br /></td></tr>
+<tr class="separator:a4b59f401d6f3cf6f88f123fe49b606e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26839a59770c23ac7c9f29ba9f0f75f9"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a26839a59770c23ac7c9f29ba9f0f75f9">ob_depth_work_mode_list_count</a> (<a class="el" href="ObTypes_8h.html#ae56f30b3220e1c02444e52c8faf9c007">ob_depth_work_mode_list</a> *work_mode_list, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a26839a59770c23ac7c9f29ba9f0f75f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取深度工作模式列表的元素数量  <a href="#a26839a59770c23ac7c9f29ba9f0f75f9">更多...</a><br /></td></tr>
+<tr class="separator:a26839a59770c23ac7c9f29ba9f0f75f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc9a35d06c361f156587e591b44428d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a75b33e8451fea08178fbceaa5a71b9ad">ob_depth_work_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#afc9a35d06c361f156587e591b44428d0">ob_depth_work_mode_list_get_item</a> (<a class="el" href="ObTypes_8h.html#ae56f30b3220e1c02444e52c8faf9c007">ob_depth_work_mode_list</a> *work_mode_list, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:afc9a35d06c361f156587e591b44428d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">从深度工作模式列表获取第N个对象  <a href="#afc9a35d06c361f156587e591b44428d0">更多...</a><br /></td></tr>
+<tr class="separator:afc9a35d06c361f156587e591b44428d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1b1badf72239193248b39bd6b57e719"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#af1b1badf72239193248b39bd6b57e719">ob_delete_depth_work_mode_list</a> (<a class="el" href="ObTypes_8h.html#ae56f30b3220e1c02444e52c8faf9c007">ob_depth_work_mode_list</a> *work_mode_list, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:af1b1badf72239193248b39bd6b57e719"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除深度工作模式列表对象，释放资源  <a href="#af1b1badf72239193248b39bd6b57e719">更多...</a><br /></td></tr>
+<tr class="separator:af1b1badf72239193248b39bd6b57e719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cb9e4ae03167f89651aaf597c230958"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a7cb9e4ae03167f89651aaf597c230958">ob_delete_data_bundle</a> (<a class="el" href="ObTypes_8h.html#a9cf8513da42dae2548a6151eb8a7770b">ob_data_bundle</a> *data_bundle, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a7cb9e4ae03167f89651aaf597c230958"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除ob_data_bundle对象，释放资源； 注意：只能释放OrbbecSDK库返回的ob_data_bundle对象，非OrbbecSDK构建的对象不能调用该接口，否则会造成意想不到的错误  <a href="#a7cb9e4ae03167f89651aaf597c230958">更多...</a><br /></td></tr>
+<tr class="separator:a7cb9e4ae03167f89651aaf597c230958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>设备相关函数，包括获取创建设备，设置及获取设备属性，获取传感器等操作 </p>
+
+<p>在文件 <a class="el" href="Device_8h_source.html">Device.h</a> 中定义.</p>
+</div><h2 class="groupheader">函数说明</h2>
+<a class="anchor" id="a1159a741a904d97bb78ee041fb07e670"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ob_device_list_device_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备数量 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>设备列表对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>uint32_t 返回设备数量 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2692ec5f0b699e15f4697c3e94f78529"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ob_device_list_get_device_name </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备名称 (废弃接口) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>设备列表对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>设备索引 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>const char* 返回设备名称 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acc10dbc1de0e383813de23f7c8fcaaa2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ob_device_list_get_device_pid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取指定设备pid </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>设备列表对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>设备索引 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 返回设备pid </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae4e05e57a445e52e40da2e09a1248bf3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ob_device_list_get_device_vid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取指定设备vid </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>设备列表对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>设备索引 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 返回设备vid </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad94a517bf83ef5b5bae8aafbf4c3ef7d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ob_device_list_get_device_uid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取指定设备uid </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>设备列表对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>设备索引 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>const char* 返回设备uid </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa779fe3e09b94d09f437bc2ad75e8620"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ob_device_list_get_device_serial_number </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取指定设备序列号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>设备列表对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>设备索引 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>const char* 返回设备序列号 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3a987a99be5ab806ae8c322d01171d82"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a>* ob_device_list_get_device </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建设备 </p>
+<dl class="section attention"><dt>注意</dt><dd>如果设备有在其他地方被获取创建，重复获取将会返回错误</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>设备列表对象 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">index</td><td>要创建设备的索引 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_device* 返回创建的设备 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab50ccf0dcb803305ec54cedcfca90eae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a>* ob_device_list_get_device_by_serial_number </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>serial_number</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建设备 </p>
+<dl class="section attention"><dt>注意</dt><dd>如果设备有在其他地方被获取创建，重复获取将会返回错误</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>设备列表对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">serial_number</td><td>要创建设备的序列号 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_device* 返回创建的设备 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2c539824a24993f7daf6eb1418bb2f68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a>* ob_device_list_get_device_by_uid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>uid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建设备 </p>
+<dl class="section attention"><dt>注意</dt><dd>如果设备有在其他地方被获取创建，重复获取将会返回错误</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>设备列表对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uid</td><td>要创建设备的uid </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_device* 返回创建的设备 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8e59c9e48b96283cf735961d770b473a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_delete_device </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除设备 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>要删除的设备 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a41b82238a66ece307adf62fc01a0cfe5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_delete_device_info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除设备信息 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>要删除的设备信息 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad2f5e8dd1c400e79804f68ff14f9390d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_delete_device_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除设备列表 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>要删除的设备列表对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8de95ece030509e82a622cd9b5fbcdb6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a>* ob_device_get_device_info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备信息 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>要获取信息的设备 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_device_info* 返回设备信息 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6a5551a0fe5837af75f14547630eef1b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a56a65d68fac102481c425341bb70a510">ob_sensor_list</a>* ob_device_get_sensor_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备的所有传感器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_sensor_list* 返回所有传感器列表 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa40bc2c97db899aedd82b047687aa868"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a818d3a4166de3a59430e6fd2bdf9eb28">ob_sensor</a>* ob_device_get_sensor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a01cba50d4d558e4c2035f09b698bb10b">ob_sensor_type</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备的传感器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>要获取的传感器类型 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_sensor* 返回获取的传感器 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a84db7f4a201665982f9f5e84a7e59c14"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_set_int_property </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>property</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置int类型的设备属性 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>要设置的属性id </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property</td><td>要设置的属性值 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a406e7c9ed5303cbd23737ec261eeddb1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t ob_device_get_int_property </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取int类型的设备属性 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>属性id </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int32_t 返回属性值 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afde9aa391cd78ee3dd2bf00d12c0a90c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_set_float_property </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>property</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置float类型的设备属性 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>要设置的属性id </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property</td><td>要设置的属性值 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9a39b348b60f80f479141420f80188f7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ob_device_get_float_property </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取float类型的设备属性 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>属性id </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int32_t 返回属性值 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a79208136710e03c3e9253295830a3af2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_set_bool_property </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>property</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置bool类型的设备属性 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>要设置的属性id </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property</td><td>要设置的属性值 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5d5b14b3b67efcd64823feca01e1bd60"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ob_device_get_bool_property </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取bool类型的设备属性 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>属性id </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool 返回属性值 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a818ab1162e4f62292773a49e83f8d201"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_set_structured_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>data_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置结构体类型的设备属性 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>要设置的属性id </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>要设置的属性数据 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_size</td><td>要设置的属性大小 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6fb24de946dc2ba979a77897fbe2996e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_get_structured_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>data_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取结构体类型的设备属性 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>要获取的属性id </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>获取的属性数据 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data_size</td><td>获取的属性大小 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0b185156e6da6e680e62c70d921442bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_set_structured_data_ext </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a9cf8513da42dae2548a6151eb8a7770b">ob_data_bundle</a> *&#160;</td>
+          <td class="paramname"><em>data_bundle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ad12d0a24ac2adabf4d3f976d3903b2f7">ob_set_data_callback</a>&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置结构体类型的设备属性 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>要设置的属性id </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_bundle</td><td>要设置的数据内容，注意data_bundle指针为OrbbecSDK外部构建，所以自行释放指针资源，禁止调用ob_delete_data_bundle释放资源，会造成不可预知的错误； </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cb</td><td>设置进度回调 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>用户自定义数据，会在回调中返回 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void 无返回值 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a78d9c3d0559caf456b71911ffd498fd7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a9cf8513da42dae2548a6151eb8a7770b">ob_data_bundle</a>* ob_device_get_structured_data_ext </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取结构体类型的设备属性 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>要获取的属性id </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回ob_data_dundle 结构体对象指针，返回的必须调用ob_delete_data_bundle()函数释放资源，否则会造成内存泄漏 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa21281007b84e9250d56aa93f72e50b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_set_raw_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>data_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ad12d0a24ac2adabf4d3f976d3903b2f7">ob_set_data_callback</a>&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>async</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置raw data类型的设备属性 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>要设置的属性id </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>要设置的属性数据 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_size</td><td>要设置的属性大小 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cb</td><td>设置进度回调 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">async</td><td>是否异步执行 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>用户自定义数据，会在回调中返回 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4b5a2149d1788d63d3a29b07775ef819"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_get_raw_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a091bddb9a1ac58c18a4de986d4e664b8">ob_get_data_callback</a>&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>async</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取raw data类型的设备属性 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>要获取的属性id </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cb</td><td>获取数据给返回和进度回调 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">async</td><td>是否异步执行 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>用户自定义数据，会在回调中返回 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a56d0ad23452a0de3dbc24e7fa08c12f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#ae8b79fe0074d181d1a2508381082031e">ob_protocol_version</a> ob_device_get_protocol_version </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备的控制命令协议版本 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_protocol_version </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad04ce24d516dff79ecf7a759634ad7fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#ae1b69db06a6242640ff995d424765ed2">ob_cmd_version</a> ob_device_get_cmd_version </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取控制命令的版本号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_cmd_version </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acc9153c1eb2179bd658bfa1c3740192b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ob_device_get_supported_property_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备支持的属性的数量 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>uint32_t 返回设备支持的属性的数量 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acceacae3a0da41a0520eeca3aacb3991"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Property_8h.html#ae913577a9f74fecaa43e1638f01d8608">ob_property_item</a> ob_device_get_supported_property </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备支持的属性 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>属性的index </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_global_unified_property_item 返回设备支持的属性的类型 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0dcaa2cdfe5df58873988d086b486d1d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ob_device_is_property_supported </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a4bca54bbc626483a54e780b2fb493fba">ob_permission_type</a>&#160;</td>
+          <td class="paramname"><em>permission</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>判断属性权限支持情况 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>属性id </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">permission</td><td>需要判读的权限类型 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool 返回是否支持 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0f8e41d5b98134c858489547e91ec58f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#ad56aaee99c8103e24549c4eebfa49390">ob_int_property_range</a> ob_device_get_int_property_range </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取int类型的设备属性范围 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>属性id </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_int_property_range 返回属性范围 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2793baa51450fbecdb47d97f18b53313"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a1313567c613cef788698509d1944be65">ob_float_property_range</a> ob_device_get_float_property_range </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取float类型的设备属性范围 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>属性id </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_float_property_range 返回属性范围 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0d74c28dac2b0b341c17ddb02354723c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#ae0b05ad4fd3bf608f6b61804eb9b4a2f">ob_bool_property_range</a> ob_device_get_bool_property_range </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Property_8h.html#a733000e0b4f7f7fa9a4288d60118333b">ob_property_id</a>&#160;</td>
+          <td class="paramname"><em>property_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取bool类型的设备属性范围 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>属性id </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_bool_property_range 返回属性范围 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3ee539092b1302dd6f5553566bdf1319"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_write_ahb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ahb写寄存器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">reg</td><td>要写入的寄存器 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">mask</td><td>掩码 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">value</td><td>要写入的值 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a29ff095e0bed66c38f425a37223a7b8b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_read_ahb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ahb读寄存器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">reg</td><td>要读取的寄存器 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">mask</td><td>掩码 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">value</td><td>要读取的值 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abd26b89ff80b6677f89b55067a43f4fa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_write_i2c </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>module_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>i2c写寄存器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">module_id</td><td>要写入的i2c模块id </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">reg</td><td>要写入的寄存器 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">mask</td><td>掩码 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">value</td><td>要写入的值 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acd4cc9e284731c7fff99d3385bf2e382"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_read_i2c </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>module_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>i2c读寄存器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">module_id</td><td>要读取的的i2c模块id </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">reg</td><td>要读取的寄存器 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">mask</td><td>掩码 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">value</td><td>要读取的值 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae4b67238ed7b9a0951139090e8a787f2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_write_flash </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>data_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ad12d0a24ac2adabf4d3f976d3903b2f7">ob_set_data_callback</a>&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>async</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置写入Flash的属性[异步回调] </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">offset</td><td>flash偏移地址 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">data</td><td>要写入的属性数据 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">data_size</td><td>要写入的属性大小 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">cb</td><td>写进度回调 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">async</td><td>是否异步执行 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>用户自定义数据，会在回调中返回 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a461c2740631658bcabdde53ef8d9c87e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_read_flash </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>data_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a091bddb9a1ac58c18a4de986d4e664b8">ob_get_data_callback</a>&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>async</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>读取Flash的属性[异步回调] </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">offset</td><td>flash偏移地址 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">data_size</td><td>要读取的数据大小 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">cb</td><td>读flash数据及进度回调 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">async</td><td>是否异步执行 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>用户自定义数据，会在回调中返回 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1971ce939ddeda103b01d259784cc867"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t ob_device_sync_device_time </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>同步设备时间（向设备授时，同步本地系统时间到设备） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">uint64_t</td><td>命令往返时间延时（round trip time， rtt） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a857b0fd50d7d425be77b0ed6a40ab9ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_upgrade </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a722bed61b28cde64209bcf5e228a57e1">ob_device_upgrade_callback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>async</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设备固件升级 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>固件路径 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>固件升级进度回调 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">async</td><td>是否异步执行 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>用户自定义数据，会在回调中返回 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a57f2fc41aedeac216230a3bad371825d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#ac9770df9d12620d1c520e51d2ffa934d">ob_device_state</a> ob_device_get_device_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前设备状态 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_device_state 设备状态信息 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a14812183858ca67b83dfd10692873165"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_state_changed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ae8b8395f6083d80608959b6aad27e652">ob_device_state_callback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置设备状态监听 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>设备状态发生改变时的回调 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>用户自定义数据，会在回调中返回 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad1b4e5018401ef3a3b8c874223537e16"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_send_file_to_destination </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>dst_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a4cbd864ddbf989ef634d5c6aa3eb7007">ob_file_send_callback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>async</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>发送文件到设备指定路径 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file_path</td><td>源文件路径 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dst_path</td><td>指定设备端文件接受路径 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>文件发送进度回调 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">async</td><td>是否异步执行 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>用户自定义数据，会在回调中返回 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5ecb245e2d7236c32c03b1d96be8c778"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ob_device_activate_authorization </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>auth_code</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>验证设备授权码 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">auth_code</td><td>授权码 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool 激活是否成功 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a036d21c3bf3c734ceda4d89254bbc84f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_write_authorization_code </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>auth_code</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>写入设备授权码 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">auth_code</td><td>授权码 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac592fd5394b15b0799e8de5d57146741"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#ad0c91e2d8e139b9b0ae8f4176b881225">ob_camera_param_list</a>* ob_device_get_calibration_camera_param_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备内保存的相机标定的原始参数列表，列表内参数不与当前开流配置相对应， 需要自行根据实际情况选用参数并可能需要做缩放、镜像等处理。非专业用户建议使用ob_pipeline_get_camera_param()接口。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_camera_param_list 相机参数列表 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acec4c4a48b3599c9861f896442c2e307"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a75b33e8451fea08178fbceaa5a71b9ad">ob_depth_work_mode</a> ob_device_get_current_depth_work_mode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>查询当前相机深度模式 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_depth_work_mode 当前深度工作模式 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa64c32c4e74c1582597c0aea8ed2c5b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d4caae302682fc3cb8f8034bb99e229">ob_status</a> ob_device_switch_depth_work_mode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ObTypes_8h.html#a75b33e8451fea08178fbceaa5a71b9ad">ob_depth_work_mode</a> *&#160;</td>
+          <td class="paramname"><em>work_mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>切换相机深度模式（根据深度工作模式对象），如果知道设备支持的深度工作模式名称，那么推荐用ob_device_switch_depth_work_mode_by_name </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">work_mode</td><td>深度工作模式，从深度工作模式列表ob_depth_work_mode_list获取的模式对象(ob_device_get_depth_work_mode_list返回的对象) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_status 设置设置结果，OB_STATUS_OK成功，其他：设置失败 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2f444b5724ae1e8c0022beabb2a09808"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d4caae302682fc3cb8f8034bb99e229">ob_status</a> ob_device_switch_depth_work_mode_by_name </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>mode_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>切换相机深度模式（根据深度工作模式名称） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode_name</td><td>深度工作模式名称，模式名称必须与ob_depth_work_mode.name一致 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_status 设置设置结果，OB_STATUS_OK成功，其他：设置失败 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6bda44d743e531c2fca02bd54bb9a118"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#ae56f30b3220e1c02444e52c8faf9c007">ob_depth_work_mode_list</a>* ob_device_get_depth_work_mode_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>查询当前相机深度模式的列表 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_depth_work_mode_list 深度模式列表。注意：返回对象要用ob_delete_depth_work_mode_list()释放资源，否者会内存泄漏 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa93166f1ca96f0be6d484596dd4ef775"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_reboot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设备重启 </p>
+<dl class="section attention"><dt>注意</dt><dd>设备会掉线重连，设备掉线后对device句柄的接口访问可能会发生异常，请直接使用ob_delete_device接口删除句柄， 待设备重连后可重新获取。</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="add0e4d8fb19bb17b65dfc45d99f2b071"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a2463acfa8a599a0e8b75021888a35738">ob_device_sync_config</a> ob_device_get_sync_config </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前设备同步配置 </p>
+<p>设备同步：包括单机内的不同 Sensor 的曝光同步功能 和 多机同步功能</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_device_sync_config 返回设备同步配置 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a26b4398ce6fd011251b1cd9361b2c661"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_set_sync_config </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2463acfa8a599a0e8b75021888a35738">ob_device_sync_config</a>&#160;</td>
+          <td class="paramname"><em>device_sync_config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置设备同步配置 </p>
+<p>用于配置 单机内的不同 Sensor 的曝光同步功能 和 多机同步功能</p>
+<dl class="section attention"><dt>注意</dt><dd>调用本函数会直接将配置写入设备Flash，设备重启后依然会生效。为了避免影响Flash寿命，不要频繁更新配置。</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">device_sync_config</td><td>设备同步配置 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3100ad5a8aeb847d6b1276b456e89693"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ob_device_info_name </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备名 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>设备信息 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>const char* 返回设备名 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7bcc378d0ba886735f43cd1868462d84"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ob_device_info_pid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备pid </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>设备信息 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 返回设备pid </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a64dfe77a997b53abb69582210ff1f43b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ob_device_info_vid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备vid </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>设备信息 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 返回设备vid </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a46fef1827e5ca96e3c8700cbf454b98c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ob_device_info_uid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备uid </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>设备信息 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>const char* 返回设备uid </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4f676d9e54a577e02bb90f947b50c655"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ob_device_info_serial_number </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备序列号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>设备信息 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>const char* 返回设备序列号 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a21be3dfd27accf87aa1459cdcb52735e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ob_device_info_firmware_version </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取固件版本号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>设备信息 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 返回固件版本号 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a99179455992df15799fe5fc251228624"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ob_device_info_usb_type </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取usb连接类型 (废弃接口) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>设备信息 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>char* 返回usb连接类型 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5f53a50c340d3e28ea39b18ab0e4c743"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ob_device_info_connection_type </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备连接类型 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>设备信息 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>char* 返回连接类型 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa01a4201092ff680d4d539ff07a59449"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ob_device_info_hardware_version </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取硬件的版本号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>设备信息 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>const char* 返回硬件的版本号 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a333334624d216cdb0cce79d4817877f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ob_device_info_supported_min_sdk_version </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备支持的SDK最小版本号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>设备信息 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>const char* 返回设备支持的SDK最小版本号 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4daec79a71fde49ff4374b599c6bee2c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ob_device_info_asicName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取芯片类型名称 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>设备信息 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>const char* 返回芯片类型名称 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acddeeb9699b03f4b44dfddd35ad89e05"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a17646caddbc9d5beebc5721b8c473b42">ob_device_type</a> ob_device_info_device_type </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备类型 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>设备信息 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_device_type 返回设备类型 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0496e545b110778bfc66ee913ebe9494"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ob_camera_param_list_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ad0c91e2d8e139b9b0ae8f4176b881225">ob_camera_param_list</a> *&#160;</td>
+          <td class="paramname"><em>param_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取相机参数列表内参数组数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param_list</td><td>相机参数列表 </td></tr>
+    <tr><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>uint32_t 返回组数 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a291ea25d01b626e06e2e742349935c3e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#ae5db514adf9ef2352c995122df7be0a6">ob_camera_param</a> ob_camera_param_list_get_param </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ad0c91e2d8e139b9b0ae8f4176b881225">ob_camera_param_list</a> *&#160;</td>
+          <td class="paramname"><em>param_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从相机参数列表内获取相机参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param_list</td><td>相机参数列表 </td></tr>
+    <tr><td class="paramname">index</td><td>参数索引 </td></tr>
+    <tr><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_camera_param 返回相机参数, 由于是直接返回结构体对象，所以不需要提供删除接口 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4b59f401d6f3cf6f88f123fe49b606e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_delete_camera_param_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ad0c91e2d8e139b9b0ae8f4176b881225">ob_camera_param_list</a> *&#160;</td>
+          <td class="paramname"><em>param_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除相机参数列表 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param_list</td><td>相机参数列表 </td></tr>
+    <tr><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a26839a59770c23ac7c9f29ba9f0f75f9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ob_depth_work_mode_list_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ae56f30b3220e1c02444e52c8faf9c007">ob_depth_work_mode_list</a> *&#160;</td>
+          <td class="paramname"><em>work_mode_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取深度工作模式列表的元素数量 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">work_mode_list</td><td>工作模式列表对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>下标，从0开始 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>work_mode_list包含的深度模式总数 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afc9a35d06c361f156587e591b44428d0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a75b33e8451fea08178fbceaa5a71b9ad">ob_depth_work_mode</a> ob_depth_work_mode_list_get_item </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ae56f30b3220e1c02444e52c8faf9c007">ob_depth_work_mode_list</a> *&#160;</td>
+          <td class="paramname"><em>work_mode_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从深度工作模式列表获取第N个对象 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">work_mode_list</td><td>工作模式列表对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>下标，从0开始 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>深度工作模式对象 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af1b1badf72239193248b39bd6b57e719"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_delete_depth_work_mode_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ae56f30b3220e1c02444e52c8faf9c007">ob_depth_work_mode_list</a> *&#160;</td>
+          <td class="paramname"><em>work_mode_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除深度工作模式列表对象，释放资源 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">work_mode_list</td><td>工作模式列表对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7cb9e4ae03167f89651aaf597c230958"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_delete_data_bundle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a9cf8513da42dae2548a6151eb8a7770b">ob_data_bundle</a> *&#160;</td>
+          <td class="paramname"><em>data_bundle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除ob_data_bundle对象，释放资源； 注意：只能释放OrbbecSDK库返回的ob_data_bundle对象，非OrbbecSDK构建的对象不能调用该接口，否则会造成意想不到的错误 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_bundle</td><td>数据集 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

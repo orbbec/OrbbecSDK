@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="3">
+    <name>OrbbecSDK</name>
+    <version>1.5.7</version>
+    <description>
+        OrbbecSDK is a comprehensive library that provides developers with intuitive interfaces to control and
+        manipulate Orbbec cameras seamlessly.
+    </description>
+    <maintainer email="developer@orbbec.com">Orbbec Developer</maintainer>
+    <license>MIT</license>
+    <build_depend>ros_environment</build_depend>
+    <buildtool_depend condition="$ROS_VERSION == 1">catkin</buildtool_depend>
+    <buildtool_depend condition="$ROS_VERSION == 2">ament_cmake</buildtool_depend>
+    <build_depend>pkg-config</build_depend>
+    <build_depend>libusb-1.0-dev</build_depend>
+    <build_depend>libudev-dev</build_depend>
+    <build_depend>udev</build_depend>
+
+    <export>
+        <build_type condition="$ROS_VERSION == 1">catkin</build_type>
+        <build_type condition="$ROS_VERSION == 2">ament_cmake</build_type>
+    </export>
+
+</package>
