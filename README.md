@@ -6,18 +6,23 @@ The Orbbec 3D camera product software development kit supports UVC, realizes plu
 ## What include in this repository
 
 * doc
+
 API reference documentation and sample documentation.
 
 * lib
+
  Windows driver (Dabai, Dabai DCW, Dabai DW, Astra mini Pro, Astra Pro Plus, A1 Pro, Gemini E, Gemini E Lite, Gemini This device uses OpenNI's  protocol, and need to install driver on Windows, while devices using standard UVC protocols do not need to install driver)
 
 * scripts
+
 Linux udev rules post-install scripts
 
 * udev
+
 Linux udev rules for resolving permission issues
 
 * examples
+
 C/C++ samples, including sample project source code and compiled executables.
 
 ## Supported hardware products
