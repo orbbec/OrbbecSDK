@@ -1,0 +1,10 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: OrbbecSDK
+Description:  OrbbecSDK is a comprehensive library that provides developers with intuitive interfaces to control and manipulate Orbbec cameras seamlessly.
+Version: 1.5.7
+Libs: -L${libdir} -lOrbbecSDK
+Cflags: -I${includedir}

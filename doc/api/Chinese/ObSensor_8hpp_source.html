@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OrbbecSDK: /root/libobsensor/include/libobsensor/ObSensor.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OrbbecSDK
+   &#160;<span id="projectnumber">1.5.7</span>
+   </div>
+   <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D-Sensor devices</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_8195f5c0d9a800b311ff87242d342361.html">libobsensor</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ObSensor.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ObSensor_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* License: Apache 2.0. See LICENSE file in root directory.</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright(c) 2020  Orbbec Corporation. All Rights Reserved. */</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Context_8hpp.html">libobsensor/hpp/Context.hpp</a>&gt;</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Device_8hpp.html">libobsensor/hpp/Device.hpp</a>&gt;</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Error_8hpp.html">libobsensor/hpp/Error.hpp</a>&gt;</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Filter_8hpp.html">libobsensor/hpp/Filter.hpp</a>&gt;</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Frame_8hpp.html">libobsensor/hpp/Frame.hpp</a>&gt;</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Pipeline_8hpp.html">libobsensor/hpp/Pipeline.hpp</a>&gt;</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="RecordPlayback_8hpp.html">libobsensor/hpp/RecordPlayback.hpp</a>&gt;</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Sensor_8hpp.html">libobsensor/hpp/Sensor.hpp</a>&gt;</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="StreamProfile_8hpp.html">libobsensor/hpp/StreamProfile.hpp</a>&gt;</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Types_8hpp.html">libobsensor/hpp/Types.hpp</a>&gt;</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Version_8hpp.html">libobsensor/hpp/Version.hpp</a>&gt;</span></div><div class="ttc" id="StreamProfile_8hpp_html"><div class="ttname"><a href="StreamProfile_8hpp.html">StreamProfile.hpp</a></div><div class="ttdoc">流配置相关类型，用于获取流的宽、高、帧率及格式等信息 </div></div>
+<div class="ttc" id="Device_8hpp_html"><div class="ttname"><a href="Device_8hpp.html">Device.hpp</a></div><div class="ttdoc">设备相关类型，包括获取创建设备，设置及获取设备属性，获取传感器等操作 </div></div>
+<div class="ttc" id="Frame_8hpp_html"><div class="ttname"><a href="Frame_8hpp.html">Frame.hpp</a></div><div class="ttdoc">帧相关类型，主要用于获取帧数据及帧的信息 </div></div>
+<div class="ttc" id="Sensor_8hpp_html"><div class="ttname"><a href="Sensor_8hpp.html">Sensor.hpp</a></div><div class="ttdoc">传感器相关类型，用于获取流配置，开关流，设置及获取传感器属性等操作 </div></div>
+<div class="ttc" id="Types_8hpp_html"><div class="ttname"><a href="Types_8hpp.html">Types.hpp</a></div><div class="ttdoc">提供SDK的结构体、枚举常量定义（依赖libobsensor/h/ObTypes.h） </div></div>
+<div class="ttc" id="Pipeline_8hpp_html"><div class="ttname"><a href="Pipeline_8hpp.html">Pipeline.hpp</a></div><div class="ttdoc">SDK的高级API类型，可以快速实现开关流，帧同步，软件滤波，生成点云等操作 </div></div>
+<div class="ttc" id="Version_8hpp_html"><div class="ttname"><a href="Version_8hpp.html">Version.hpp</a></div><div class="ttdoc">获取SDK版本号相关信息的类 </div></div>
+<div class="ttc" id="Filter_8hpp_html"><div class="ttname"><a href="Filter_8hpp.html">Filter.hpp</a></div><div class="ttdoc">SDK的处理单元，可以进行点云的生成，格式转换等功能 </div></div>
+<div class="ttc" id="RecordPlayback_8hpp_html"><div class="ttname"><a href="RecordPlayback_8hpp.html">RecordPlayback.hpp</a></div><div class="ttdoc">用于录制和回放功能 </div></div>
+<div class="ttc" id="Error_8hpp_html"><div class="ttname"><a href="Error_8hpp.html">Error.hpp</a></div><div class="ttdoc">Error描述SDK内部的异常错误，通过该类可以实现异常的详细信息。 </div></div>
+<div class="ttc" id="Context_8hpp_html"><div class="ttname"><a href="Context_8hpp.html">Context.hpp</a></div><div class="ttdoc">SDK上下文环境类，底层SDK的入口，用于获取设备列表，处理设备的回调，日志等级的设置操作 ...</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

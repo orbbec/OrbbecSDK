@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OrbbecSDK: /root/libobsensor/include/libobsensor/hpp/Pipeline.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OrbbecSDK
+   &#160;<span id="projectnumber">1.5.7</span>
+   </div>
+   <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D-Sensor devices</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_8195f5c0d9a800b311ff87242d342361.html">libobsensor</a></li><li class="navelem"><a class="el" href="dir_551f50d4f6202563ca607f3aa0b67db1.html">hpp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Pipeline.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Pipeline_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Types_8hpp.html">Types.hpp</a>&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">struct </span>PipelineImpl;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">struct </span>ConfigImpl;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceob.html">ob</a> {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class </span>FrameSet;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">class </span>Frame;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">class </span>Device;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">class </span>Playback;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">class </span>DeviceInfo;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">class </span>Config;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">class </span>StreamProfile;</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespaceob.html#a079312e9113ca7d35fd7ccb68fb7c7fa">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classob_1_1StreamProfileList.html">StreamProfileList</a>;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">typedef</span> std::function&lt;void(std::shared_ptr&lt;FrameSet&gt; frame)&gt; <a class="code" href="namespaceob.html#a079312e9113ca7d35fd7ccb68fb7c7fa">FrameSetCallback</a>;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classob_1_1Pipeline.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="ObTypes_8h.html#aa0add2ff45ff52cc75dc92d44f883fbf">OB_EXTENSION_API</a> <a class="code" href="classob_1_1Pipeline.html">Pipeline</a> {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::unique_ptr&lt;PipelineImpl&gt; impl_;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classob_1_1Pipeline.html">Pipeline</a>();</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classob_1_1Pipeline.html">Pipeline</a>(std::shared_ptr&lt;Device&gt; device);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="classob_1_1Pipeline.html">Pipeline</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename);</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    ~<a class="code" href="classob_1_1Pipeline.html">Pipeline</a>() noexcept;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> start(std::shared_ptr&lt;Config&gt; config);</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> start(std::shared_ptr&lt;Config&gt; config, <a class="code" href="namespaceob.html#a079312e9113ca7d35fd7ccb68fb7c7fa">FrameSetCallback</a> callback);</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> stop();</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    std::shared_ptr&lt;Config&gt; getConfig();</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    std::shared_ptr&lt;FrameSet&gt; waitForFrames(uint32_t timeout_ms);</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    std::shared_ptr&lt;Device&gt; getDevice();</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    std::shared_ptr&lt;Playback&gt; getPlayback();</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    std::shared_ptr&lt;StreamProfileList&gt; getStreamProfileList(<a class="code" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a> sensorType);</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">void</span> enableFrameSync();</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordtype">void</span> disableFrameSync();</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <a class="code" href="structOBCameraParam.html">OBCameraParam</a> getCameraParam();</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    std::shared_ptr&lt;StreamProfileList&gt; getD2CDepthProfileList(std::shared_ptr&lt;StreamProfile&gt; colorProfile, <a class="code" href="ObTypes_8h.html#ade914070120de80d4338ee74e73dc9d5">OBAlignMode</a> alignMode);</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <a class="code" href="structOBRect.html">OBRect</a> getD2CValidArea(uint32_t minimumDistance, uint32_t maximumDistance = 0);</div><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordtype">void</span> switchConfig(std::shared_ptr&lt;Config&gt; config);</div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordtype">void</span> startRecord(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename);</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordtype">void</span> stopRecord();</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;};</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div><div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="classob_1_1Config.html">  286</a></span>&#160;<span class="keyword">class </span><a class="code" href="ObTypes_8h.html#aa0add2ff45ff52cc75dc92d44f883fbf">OB_EXTENSION_API</a> <a class="code" href="classob_1_1Config.html">Config</a> {</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    std::unique_ptr&lt;ConfigImpl&gt; impl_;</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <a class="code" href="classob_1_1Config.html">Config</a>();</div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    ~<a class="code" href="classob_1_1Config.html">Config</a>() noexcept;</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;</div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordtype">void</span> enableStream(std::shared_ptr&lt;StreamProfile&gt; streamProfile);</div><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="keywordtype">void</span> enableAllStream();</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordtype">void</span> disableStream(<a class="code" href="ObTypes_8h.html#a4372502297ded5d6e6ee8db1d71d69d2">OBStreamType</a> streamType);</div><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordtype">void</span> disableAllStream();</div><div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;</div><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordtype">void</span> setAlignMode(<a class="code" href="ObTypes_8h.html#ade914070120de80d4338ee74e73dc9d5">OBAlignMode</a> mode);</div><div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;</div><div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordtype">void</span> setDepthScaleRequire(<span class="keywordtype">bool</span> enable);</div><div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;</div><div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="keywordtype">void</span> setD2CTargetResolution(uint32_t d2cTargetWidth, uint32_t d2cTargetHeight);</div><div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;</div><div class="line"><a name="l00378"></a><span class="lineno"><a class="line" href="classob_1_1Config.html#af9f0f1adbd5baee7830839447205af8d">  378</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classob_1_1Pipeline.html">Pipeline</a>;</div><div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;};</div><div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;</div><div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;}  <span class="comment">// namespace ob</span></div><div class="ttc" id="classob_1_1Config_html"><div class="ttname"><a href="classob_1_1Config.html">ob::Config</a></div><div class="ttdef"><b>Definition:</b> <a href="Pipeline_8hpp_source.html#l00286">Pipeline.hpp:286</a></div></div>
+<div class="ttc" id="namespaceob_html"><div class="ttname"><a href="namespaceob.html">ob</a></div><div class="ttdef"><b>Definition:</b> <a href="Context_8hpp_source.html#l00020">Context.hpp:20</a></div></div>
+<div class="ttc" id="namespaceob_html_a079312e9113ca7d35fd7ccb68fb7c7fa"><div class="ttname"><a href="namespaceob.html#a079312e9113ca7d35fd7ccb68fb7c7fa">ob::FrameSetCallback</a></div><div class="ttdeci">std::function&lt; void(std::shared_ptr&lt; FrameSet &gt; frame)&gt; FrameSetCallback</div><div class="ttdef"><b>Definition:</b> <a href="Pipeline_8hpp_source.html#l00028">Pipeline.hpp:28</a></div></div>
+<div class="ttc" id="ObTypes_8h_html_a0bf6f74f3eaabbf4a71720b9363b2aa8"><div class="ttname"><a href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a></div><div class="ttdeci">OBSensorType</div><div class="ttdoc">描述传感器类型的枚举值 </div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00159">ObTypes.h:159</a></div></div>
+<div class="ttc" id="structOBCameraParam_html"><div class="ttname"><a href="structOBCameraParam.html">OBCameraParam</a></div><div class="ttdoc">相机参数 </div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00434">ObTypes.h:434</a></div></div>
+<div class="ttc" id="Types_8hpp_html"><div class="ttname"><a href="Types_8hpp.html">Types.hpp</a></div><div class="ttdoc">提供SDK的结构体、枚举常量定义（依赖libobsensor/h/ObTypes.h） </div></div>
+<div class="ttc" id="structOBRect_html"><div class="ttname"><a href="structOBRect.html">OBRect</a></div><div class="ttdoc">矩形 </div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00507">ObTypes.h:507</a></div></div>
+<div class="ttc" id="ObTypes_8h_html_a4372502297ded5d6e6ee8db1d71d69d2"><div class="ttname"><a href="ObTypes_8h.html#a4372502297ded5d6e6ee8db1d71d69d2">OBStreamType</a></div><div class="ttdeci">OBStreamType</div><div class="ttdoc">描述数据流类型的枚举值 </div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00178">ObTypes.h:178</a></div></div>
+<div class="ttc" id="classob_1_1Pipeline_html"><div class="ttname"><a href="classob_1_1Pipeline.html">ob::Pipeline</a></div><div class="ttdef"><b>Definition:</b> <a href="Pipeline_8hpp_source.html#l00032">Pipeline.hpp:32</a></div></div>
+<div class="ttc" id="classob_1_1StreamProfileList_html"><div class="ttname"><a href="classob_1_1StreamProfileList.html">ob::StreamProfileList</a></div><div class="ttdef"><b>Definition:</b> <a href="StreamProfile_8hpp_source.html#l00227">StreamProfile.hpp:227</a></div></div>
+<div class="ttc" id="ObTypes_8h_html_ade914070120de80d4338ee74e73dc9d5"><div class="ttname"><a href="ObTypes_8h.html#ade914070120de80d4338ee74e73dc9d5">OBAlignMode</a></div><div class="ttdeci">OBAlignMode</div><div class="ttdoc">对齐模式 </div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00493">ObTypes.h:493</a></div></div>
+<div class="ttc" id="ObTypes_8h_html_aa0add2ff45ff52cc75dc92d44f883fbf"><div class="ttname"><a href="ObTypes_8h.html#aa0add2ff45ff52cc75dc92d44f883fbf">OB_EXTENSION_API</a></div><div class="ttdeci">#define OB_EXTENSION_API</div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00025">ObTypes.h:25</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

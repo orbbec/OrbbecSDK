@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "configTime": "2023/01/01",
+  "devices": [
+    {
+      "sn": "AY3A131007M",
+      "enable": true,
+      "syncConfig": {
+        "syncMode": "OB_SYNC_MODE_PRIMARY_MCU_TRIGGER",
+        "irTriggerSignalInDelay": 160,
+        "rgbTriggerSignalInDelay": 0,
+        "deviceTriggerSignalOutDelay": 0,
+        "deviceId": 0
+      }
+    },
+    {
+      "sn": "AY3JB20003C",
+      "enable": true,
+      "syncConfig": {
+        "syncMode": "OB_SYNC_MODE_SECONDARY",
+        "irTriggerSignalInDelay": 0,
+        "rgbTriggerSignalInDelay": 0,
+        "deviceTriggerSignalOutDelay": 0,
+        "deviceId": 1
+      }
+    }
+  ]
+}

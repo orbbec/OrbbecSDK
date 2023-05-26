@@ -1,0 +1,773 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OrbbecSDK: /root/libobsensor/include/libobsensor/h/Filter.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OrbbecSDK
+   &#160;<span id="projectnumber">1.5.7</span>
+   </div>
+   <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D-Sensor devices</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_8195f5c0d9a800b311ff87242d342361.html">libobsensor</a></li><li class="navelem"><a class="el" href="dir_9fda3634bd985c8b3aac4c1dd5078468.html">h</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">Filter.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>SDK的处理单元，可以进行点云的生成，格式转换等功能  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>&quot;</code><br />
+</div>
+<p><a href="Filter_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ab3a27dd97b86a8aa2f57038ad0d3dea9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Filter_8h.html#ab3a27dd97b86a8aa2f57038ad0d3dea9">ob_create_pointcloud_filter</a> (<a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ab3a27dd97b86a8aa2f57038ad0d3dea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建PointCloud Filter  <a href="#ab3a27dd97b86a8aa2f57038ad0d3dea9">更多...</a><br /></td></tr>
+<tr class="separator:ab3a27dd97b86a8aa2f57038ad0d3dea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d15730626989891136e7ee89e2cc411"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Filter_8h.html#a9d15730626989891136e7ee89e2cc411">ob_pointcloud_filter_set_camera_param</a> (<a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="el" href="ObTypes_8h.html#ae5db514adf9ef2352c995122df7be0a6">ob_camera_param</a> param, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a9d15730626989891136e7ee89e2cc411"><td class="mdescLeft">&#160;</td><td class="mdescRight">PointCloud Filter设备相机参数  <a href="#a9d15730626989891136e7ee89e2cc411">更多...</a><br /></td></tr>
+<tr class="separator:a9d15730626989891136e7ee89e2cc411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad36cacee113394f43bc3cec213ea0a42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Filter_8h.html#ad36cacee113394f43bc3cec213ea0a42">ob_pointcloud_filter_set_point_format</a> (<a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="el" href="ObTypes_8h.html#a2dd00351b3c3e24fba7b2e9d1bb033a8">ob_format</a> type, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ad36cacee113394f43bc3cec213ea0a42"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置点云类型参数  <a href="#ad36cacee113394f43bc3cec213ea0a42">更多...</a><br /></td></tr>
+<tr class="separator:ad36cacee113394f43bc3cec213ea0a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f921518de12fde5a1c194d7c09dea3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Filter_8h.html#a41f921518de12fde5a1c194d7c09dea3">ob_pointcloud_filter_set_frame_align_state</a> (<a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, bool state, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a41f921518de12fde5a1c194d7c09dea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置将要输入用于生产点云的帧的对齐状态  <a href="#a41f921518de12fde5a1c194d7c09dea3">更多...</a><br /></td></tr>
+<tr class="separator:a41f921518de12fde5a1c194d7c09dea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25d2073ecb0d7e4a25a6e0cdf6da110b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Filter_8h.html#a25d2073ecb0d7e4a25a6e0cdf6da110b">ob_pointcloud_filter_set_position_data_scale</a> (<a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, float scale, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a25d2073ecb0d7e4a25a6e0cdf6da110b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置点云数据缩放比例  <a href="#a25d2073ecb0d7e4a25a6e0cdf6da110b">更多...</a><br /></td></tr>
+<tr class="separator:a25d2073ecb0d7e4a25a6e0cdf6da110b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64145ca451f2543b33cb5635c582f1ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Filter_8h.html#a64145ca451f2543b33cb5635c582f1ee">ob_pointcloud_filter_set_color_data_normalization</a> (<a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, bool state, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a64145ca451f2543b33cb5635c582f1ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置点云颜色数据归一化  <a href="#a64145ca451f2543b33cb5635c582f1ee">更多...</a><br /></td></tr>
+<tr class="separator:a64145ca451f2543b33cb5635c582f1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18aa340a13c52abad9b609a44390d0bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Filter_8h.html#a18aa340a13c52abad9b609a44390d0bd">ob_create_format_convert_filter</a> (<a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a18aa340a13c52abad9b609a44390d0bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建FormatConvet Filter  <a href="#a18aa340a13c52abad9b609a44390d0bd">更多...</a><br /></td></tr>
+<tr class="separator:a18aa340a13c52abad9b609a44390d0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecc354120b7fe24472eb52bbba770d4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Filter_8h.html#aecc354120b7fe24472eb52bbba770d4b">ob_format_convert_filter_set_format</a> (<a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="el" href="ObTypes_8h.html#a8ead334c9bd834a516cfd7a5532836b2">ob_convert_format</a> type, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:aecc354120b7fe24472eb52bbba770d4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置格式转化的类型  <a href="#aecc354120b7fe24472eb52bbba770d4b">更多...</a><br /></td></tr>
+<tr class="separator:aecc354120b7fe24472eb52bbba770d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aa7094e4747e7faec9a1e2bec3681b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Filter_8h.html#a5aa7094e4747e7faec9a1e2bec3681b0">ob_create_compression_filter</a> (<a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a5aa7094e4747e7faec9a1e2bec3681b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建compression Filter  <a href="#a5aa7094e4747e7faec9a1e2bec3681b0">更多...</a><br /></td></tr>
+<tr class="separator:a5aa7094e4747e7faec9a1e2bec3681b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae850d65f4334a0de5bc80d08111aae70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Filter_8h.html#ae850d65f4334a0de5bc80d08111aae70">ob_compression_filter_set_compression_params</a> (<a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="el" href="ObTypes_8h.html#ad6da803dd947379980b5326054a103ce">ob_compression_mode</a> mode, void *params, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ae850d65f4334a0de5bc80d08111aae70"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置压缩类型  <a href="#ae850d65f4334a0de5bc80d08111aae70">更多...</a><br /></td></tr>
+<tr class="separator:ae850d65f4334a0de5bc80d08111aae70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86ce0cfa2c1ff95a75bd017c7fdd678f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Filter_8h.html#a86ce0cfa2c1ff95a75bd017c7fdd678f">ob_create_decompression_filter</a> (<a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a86ce0cfa2c1ff95a75bd017c7fdd678f"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建decompressionr Filter  <a href="#a86ce0cfa2c1ff95a75bd017c7fdd678f">更多...</a><br /></td></tr>
+<tr class="separator:a86ce0cfa2c1ff95a75bd017c7fdd678f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84c21cee66655eeab849ccfbc6bf5aef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Filter_8h.html#a84c21cee66655eeab849ccfbc6bf5aef">ob_filter_reset</a> (<a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a84c21cee66655eeab849ccfbc6bf5aef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter重置, 缓存清空，状态复位。如果是使用异步方式接口，还会停止处理线程，清空待处理的缓存帧  <a href="#a84c21cee66655eeab849ccfbc6bf5aef">更多...</a><br /></td></tr>
+<tr class="separator:a84c21cee66655eeab849ccfbc6bf5aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afddf8d97e45db38c60fa7ebc8aea5c78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Filter_8h.html#afddf8d97e45db38c60fa7ebc8aea5c78">ob_filter_process</a> (<a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:afddf8d97e45db38c60fa7ebc8aea5c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter 处理(同步接口)  <a href="#afddf8d97e45db38c60fa7ebc8aea5c78">更多...</a><br /></td></tr>
+<tr class="separator:afddf8d97e45db38c60fa7ebc8aea5c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0592855be34027579a2b1099f015f9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Filter_8h.html#ad0592855be34027579a2b1099f015f9d">ob_filter_set_callback</a> (<a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="el" href="ObTypes_8h.html#a82628fc9f7fe087c4ac31b0a8197ea34">ob_filter_callback</a> callback, void *user_data, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ad0592855be34027579a2b1099f015f9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter 设置处理结果回调函数(异步回调接口)  <a href="#ad0592855be34027579a2b1099f015f9d">更多...</a><br /></td></tr>
+<tr class="separator:ad0592855be34027579a2b1099f015f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac115614db4f0d3c25f8db91ee549169"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Filter_8h.html#aac115614db4f0d3c25f8db91ee549169">ob_filter_push_frame</a> (<a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:aac115614db4f0d3c25f8db91ee549169"><td class="mdescLeft">&#160;</td><td class="mdescRight">filter 压入frame到待处理缓存(异步回调接口)  <a href="#aac115614db4f0d3c25f8db91ee549169">更多...</a><br /></td></tr>
+<tr class="separator:aac115614db4f0d3c25f8db91ee549169"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77a1ac123ecb1e3b8a0e280fbb2d2d06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Filter_8h.html#a77a1ac123ecb1e3b8a0e280fbb2d2d06">ob_delete_filter</a> (<a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a77a1ac123ecb1e3b8a0e280fbb2d2d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除Filter  <a href="#a77a1ac123ecb1e3b8a0e280fbb2d2d06">更多...</a><br /></td></tr>
+<tr class="separator:a77a1ac123ecb1e3b8a0e280fbb2d2d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>SDK的处理单元，可以进行点云的生成，格式转换等功能 </p>
+
+<p>在文件 <a class="el" href="Filter_8h_source.html">Filter.h</a> 中定义.</p>
+</div><h2 class="groupheader">函数说明</h2>
+<a class="anchor" id="ab3a27dd97b86a8aa2f57038ad0d3dea9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a>* ob_create_pointcloud_filter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建PointCloud Filter </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>filter pointcloud_filter对象 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9d15730626989891136e7ee89e2cc411"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_pointcloud_filter_set_camera_param </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ae5db514adf9ef2352c995122df7be0a6">ob_camera_param</a>&#160;</td>
+          <td class="paramname"><em>param</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PointCloud Filter设备相机参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>pointcloud_filter对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">param</td><td>相机参数 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad36cacee113394f43bc3cec213ea0a42"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_pointcloud_filter_set_point_format </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2dd00351b3c3e24fba7b2e9d1bb033a8">ob_format</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置点云类型参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>pointcloud_filter对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>点云类型 深度点云或RGBD点云 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a41f921518de12fde5a1c194d7c09dea3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_pointcloud_filter_set_frame_align_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置将要输入用于生产点云的帧的对齐状态 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>pointcloud_filter对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">state</td><td>对齐状态，True：已对齐； False：未对齐 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a25d2073ecb0d7e4a25a6e0cdf6da110b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_pointcloud_filter_set_position_data_scale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置点云数据缩放比例 </p>
+<dl class="section attention"><dt>注意</dt><dd>调用该函数设置缩放比例会改变输出点云帧的点坐标缩放系数：posScale = posScale / scale; 输出点云帧的点坐标缩放系数可通过 <a class="el" href="Frame_8h.html#a42e33dafc2a310292a84bc4e59b624b3">ob_points_frame_get_position_value_scale</a> 函数获取</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>pointcloud_filter对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">scale</td><td>设置点云坐标数据缩放比例 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a64145ca451f2543b33cb5635c582f1ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_pointcloud_filter_set_color_data_normalization </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置点云颜色数据归一化 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>pointcloud_filter对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">state</td><td>设置点云颜色数据是否归一化 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a18aa340a13c52abad9b609a44390d0bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a>* ob_create_format_convert_filter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建FormatConvet Filter </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>filter format_convert 对象 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aecc354120b7fe24472eb52bbba770d4b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_format_convert_filter_set_format </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a8ead334c9bd834a516cfd7a5532836b2">ob_convert_format</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置格式转化的类型 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>formatconvet_filter对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>格式转化类型 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5aa7094e4747e7faec9a1e2bec3681b0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a>* ob_create_compression_filter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建compression Filter </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>filter depth_filter 对象 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae850d65f4334a0de5bc80d08111aae70"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_compression_filter_set_compression_params </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ad6da803dd947379980b5326054a103ce">ob_compression_mode</a>&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>params</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置压缩类型 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>compression_filter对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>压缩模式 OB_COMPRESSION_LOSSLESS or OB_COMPRESSION_LOSSY </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">params</td><td>压缩参数，结构体 ob_compression_params，当mode为OB_COMPRESSION_LOSSLESS时，params为NULL </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a86ce0cfa2c1ff95a75bd017c7fdd678f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a>* ob_create_decompression_filter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建decompressionr Filter </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>filter decompression Filter 对象 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a84c21cee66655eeab849ccfbc6bf5aef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_filter_reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Filter重置, 缓存清空，状态复位。如果是使用异步方式接口，还会停止处理线程，清空待处理的缓存帧 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>filter对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afddf8d97e45db38c60fa7ebc8aea5c78"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a>* ob_filter_process </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Filter 处理(同步接口) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>filter对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>需要被处理的frame对象指针 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_frame filter处理后的frame对象 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad0592855be34027579a2b1099f015f9d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_filter_set_callback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a82628fc9f7fe087c4ac31b0a8197ea34">ob_filter_callback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Filter 设置处理结果回调函数(异步回调接口) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>filter对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>回调函数 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>可以传入任意用户数据指针，并从回调返回该数据指针 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aac115614db4f0d3c25f8db91ee549169"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_filter_push_frame </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>filter 压入frame到待处理缓存(异步回调接口) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>filter对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a77a1ac123ecb1e3b8a0e280fbb2d2d06"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_delete_filter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除Filter </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>filter 对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

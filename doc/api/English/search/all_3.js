@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['cameraparamlist',['CameraParamList',['../classob_1_1CameraParamList.html',1,'ob']]],
+  ['cameraparamlist',['CameraParamList',['../classob_1_1CameraParamList.html#a2e18c852a2cc74cd65e64c2e26d84c51',1,'ob::CameraParamList']]],
+  ['checksum',['checksum',['../structOBDepthWorkMode.html#a3d7dbf9351ce403fcae1e502fcfc1d33',1,'OBDepthWorkMode']]],
+  ['chipbottomtemp',['chipBottomTemp',['../structOBDeviceTemperature.html#a3054e79cde62f8c8083614daf62d6b47',1,'OBDeviceTemperature']]],
+  ['chiptoptemp',['chipTopTemp',['../structOBDeviceTemperature.html#af75f06b38dcd78edc5fec267b8c02ac2',1,'OBDeviceTemperature']]],
+  ['cmdversion',['cmdVersion',['../structOBDataBundle.html#a680a947cb52f7a64ec0aa17b4bfe2d9c',1,'OBDataBundle']]],
+  ['colorframe',['ColorFrame',['../classob_1_1ColorFrame.html',1,'ob']]],
+  ['colorframe',['ColorFrame',['../classob_1_1ColorFrame.html#acbe67f925cfe9a66d74b9c44eb70dbe1',1,'ob::ColorFrame::ColorFrame()'],['../classob_1_1FrameSet.html#ac8bf02c82360d193704d17c1dc266e1b',1,'ob::FrameSet::colorFrame()']]],
+  ['compressionfilter',['CompressionFilter',['../classob_1_1CompressionFilter.html',1,'ob']]],
+  ['compressionfilter',['CompressionFilter',['../classob_1_1CompressionFilter.html#ad988a94250466c33b3443f07bf8b0fd9',1,'ob::CompressionFilter']]],
+  ['config',['Config',['../classob_1_1Config.html',1,'ob']]],
+  ['config',['Config',['../classob_1_1StreamProfile.html#ac3da7e21a05bf8852638db7e4dd1b81a',1,'ob::StreamProfile::Config()'],['../classob_1_1Config.html#acf833ba3b0f52198fed44a7fad39b566',1,'ob::Config::Config()']]],
+  ['connectiontype',['connectionType',['../classob_1_1DeviceInfo.html#a932f2bd4b0e67000a445e9866de833e9',1,'ob::DeviceInfo']]],
+  ['context',['Context',['../classob_1_1DeviceInfo.html#ac26c806e60ca4a0547680edb68f6e39b',1,'ob::DeviceInfo::Context()'],['../classob_1_1Context.html#add1d4b543d4765207462b1af057244a9',1,'ob::Context::Context()']]],
+  ['context',['Context',['../classob_1_1Context.html',1,'ob']]],
+  ['context_2eh',['Context.h',['../Context_8h.html',1,'']]],
+  ['context_2ehpp',['Context.hpp',['../Context_8hpp.html',1,'']]],
+  ['count',['count',['../classob_1_1CameraParamList.html#a40ffd69abd44db394d34f90e8c4d57b0',1,'ob::CameraParamList::count()'],['../classob_1_1OBDepthWorkModeList.html#a65b61c32e0aeae91ac552cee7ee225e3',1,'ob::OBDepthWorkModeList::count()'],['../classob_1_1SensorList.html#afb7bf3896c4482e31bbd8ec3524f2353',1,'ob::SensorList::count()'],['../classob_1_1StreamProfileList.html#ae9c9f94b996c7b91d0a08435d06ff128',1,'ob::StreamProfileList::count()']]],
+  ['cputemp',['cpuTemp',['../structOBDeviceTemperature.html#afa6b196156fd9b4b85a33e332440bc6a',1,'OBDeviceTemperature']]],
+  ['createframefrombuffer',['createFrameFromBuffer',['../classob_1_1FrameHelper.html#a22e9be5f457ffb62c850a25dcf42b586',1,'ob::FrameHelper']]],
+  ['createframeset',['createFrameSet',['../classob_1_1FrameHelper.html#a61a63bc88997857fa6ba6f21d312435f',1,'ob::FrameHelper']]],
+  ['createnetdevice',['createNetDevice',['../classob_1_1Context.html#a00a8a9036b00cba9d1f4f6712c3ebb3d',1,'ob::Context']]],
+  ['cur',['cur',['../structOBIntPropertyRange.html#acae2aaab07f2cc2a2842f1e602765a7b',1,'OBIntPropertyRange::cur()'],['../structOBFloatPropertyRange.html#a0196dc2692726aeafc9718f5988b1ec8',1,'OBFloatPropertyRange::cur()'],['../structOBBoolPropertyRange.html#a6aec56bfe29835e89fa5607e3bf04ce8',1,'OBBoolPropertyRange::cur()']]],
+  ['cx',['cx',['../structOBCameraIntrinsic.html#a50b429aad5b3819aec089b154cea6297',1,'OBCameraIntrinsic']]],
+  ['cy',['cy',['../structOBCameraIntrinsic.html#a6f6b987279f103e7843dc1fd9caa369f',1,'OBCameraIntrinsic']]]
+];
