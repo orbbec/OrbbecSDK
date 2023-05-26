@@ -1,14 +1,8 @@
 /* License: Apache 2.0. See LICENSE file in root directory.
-   Copyright(c) 2020  Orbbec Corporation. All Rights Reserved. */
-
-/**
- * \if English
+   Copyright(c) 2020  Orbbec Corporation. All Rights Reserved.*/
+ /**
  * \file ObSensor.h
  * \brief libobsensor C entrance
- * \else
- * \file ObSensor.h
- * \brief  libobsensor的C的入口
- * \endif
  *
  */
 #pragma once
