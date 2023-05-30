@@ -20,6 +20,7 @@ cd OrbbecSDK && mkdir build && cd build &&
 cmake .. && make -j4
 sudo make install # install to /usr/local
 # you can run `sudo make uninstall` to uninstall
+sudo ldconfig # refresh ld cache
 ```
 * Run examples
 ```bash
