@@ -1,7 +1,7 @@
 #  minimum required cmake version: 3.1.15 support vs2019
 
 cmake_minimum_required(VERSION 3.1.15)
-project(color_viewer)
+project(ob_color_viewer)
 
 add_executable(${PROJECT_NAME}
   color_viewer.cpp

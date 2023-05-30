@@ -1,18 +1,17 @@
 # install
-set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/install)
 install(DIRECTORY ${ORBBEC_INCLUDE_DIR}/ DESTINATION include)
 install(DIRECTORY ${ORBBEC_CONFIG_DIR}/ DESTINATION config)
 install(DIRECTORY ${ORBBEC_EXAMPLES_DIR}/ DESTINATION examples)
 install(DIRECTORY ${ORBBEC_DOCS_DIR}/ DESTINATION docs)
-install(DIRECTORY ${ORBBEC_UDEV_DIR}/ DESTINATION udev)
 if (UNIX)
+  install(FILES ${ORBBEC_UDEV_DIR}/99-obsensor-libusb.rules DESTINATION /etc/udev/rules.d/)
   install(DIRECTORY
     ${ORBBEC_LIBS}/
     DESTINATION lib/
     FILES_MATCHING PATTERN "libOrbbecSDK.so"
     PATTERN "libOrbbecSDK.so.*"
     )
-  if (INSTALL_UDEV)
+  if (INSTALL_LIBUDEV)
     install(DIRECTORY
       ${ORBBEC_LIBS}/
       DESTINATION lib/

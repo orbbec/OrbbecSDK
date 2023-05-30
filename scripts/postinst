@@ -1,2 +1,1 @@
 #!/bin/bash
-. /opt/OrbbecSDK/udev/install_udev_rules.sh

@@ -17,7 +17,7 @@ endif ()
 
 # Options
 option(BUILD_EXAMPLES "Build examples" ON)
-option(INSTALL_UDEV "Install libudev" OFF)
+option(INSTALL_LIBUDEV "Install libudev" OFF)
 
 if(WIN32)
     set(ORBBEC_LIB_PREFIX "")
