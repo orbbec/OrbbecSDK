@@ -1,6 +1,6 @@
-# OrbbecSDK 1.5.x
+# OrbbecSDK
 ![stability](https://img.shields.io/badge/stability-unstable-orange)
-![stability](https://img.shields.io/badge/branch-1.5.x-green)
+![stability](https://img.shields.io/badge/branch-1.5.x.beta-orange)
 ---
 The Orbbec 3D camera product software development kit embodies seamless utility with 
 its Universal Video Class (UVC) support, enabling plug-and-play functionality without 
