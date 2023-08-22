@@ -8,14 +8,14 @@ add_executable(${PROJECT_NAME}
   )
 
 target_link_libraries(${PROJECT_NAME}
-  ${ORBBEC_LIBS}/${ORBBEC_LIB_PREFIX}OrbbecSDK${ORBBEC_LIB_SUFFIX}
+  ${OrbbecSDK_LIBS}
   )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
-  ${ORBBEC_INCLUDE_DIR}
+  ${OrbbecSDK_INCLUDE_DIRS}
   )
 
 install(TARGETS ${PROJECT_NAME}

@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OrbbecSDK: ob::Filter类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   </div>
+   <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceob.html">ob</a></li><li class="navelem"><a class="el" href="classob_1_1_filter.html">Filter</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="classob_1_1_filter-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">ob::Filter类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Filter类, 为点云Filter、格式转换Filter、压缩解压Filter的基类  
+ <a href="classob_1_1_filter.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_filter_8hpp_source.html">Filter.hpp</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> 类 ob::Filter 继承关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="classob_1_1_filter.png" usemap="#ob::Filter_map" alt=""/>
+  <map id="ob::Filter_map" name="ob::Filter_map">
+<area href="classob_1_1_compression_filter.html" title="CompressionFilter类,用于帧数据压缩,如压缩Depth、Ir帧" alt="ob::CompressionFilter" shape="rect" coords="0,56,148,80"/>
+<area href="classob_1_1_decompression_filter.html" title="DecompressionFilter类,用于解压压缩帧,如Depth、Ir帧" alt="ob::DecompressionFilter" shape="rect" coords="158,56,306,80"/>
+<area href="classob_1_1_format_convert_filter.html" title="FormatConvertFilter类,用于帧数据格式转换" alt="ob::FormatConvertFilter" shape="rect" coords="316,56,464,80"/>
+<area href="classob_1_1_point_cloud_filter.html" title="PointCloudFilter类，用于生成点云" alt="ob::PointCloudFilter" shape="rect" coords="474,56,622,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a3d6076a5214105bffeaa57f1eab3a7ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_filter.html#a3d6076a5214105bffeaa57f1eab3a7ff">Filter</a> ()</td></tr>
+<tr class="separator:a3d6076a5214105bffeaa57f1eab3a7ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9d76c02b21cf8eaeaac9fee0c90199a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_filter.html#ab9d76c02b21cf8eaeaac9fee0c90199a">~Filter</a> ()=default</td></tr>
+<tr class="separator:ab9d76c02b21cf8eaeaac9fee0c90199a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedb9c713b865dba8d0ae96a85737390d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_filter.html#aedb9c713b865dba8d0ae96a85737390d">reset</a> ()</td></tr>
+<tr class="memdesc:aedb9c713b865dba8d0ae96a85737390d"><td class="mdescLeft">&#160;</td><td class="mdescRight">filter重置，释放内部缓存，异步处理时停止处理线程并清空待处理的缓存帧  <br /></td></tr>
+<tr class="separator:aedb9c713b865dba8d0ae96a85737390d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a220c46e6f376c8891b0b566d3495e047"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classob_1_1_frame.html">Frame</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_filter.html#a220c46e6f376c8891b0b566d3495e047">process</a> (std::shared_ptr&lt; <a class="el" href="classob_1_1_frame.html">Frame</a> &gt; frame)</td></tr>
+<tr class="memdesc:a220c46e6f376c8891b0b566d3495e047"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理帧（同步接口）  <br /></td></tr>
+<tr class="separator:a220c46e6f376c8891b0b566d3495e047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5d756ea42afacff5aaa1f466792de03"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_filter.html#ad5d756ea42afacff5aaa1f466792de03">pushFrame</a> (std::shared_ptr&lt; <a class="el" href="classob_1_1_frame.html">Frame</a> &gt; frame)</td></tr>
+<tr class="memdesc:ad5d756ea42afacff5aaa1f466792de03"><td class="mdescLeft">&#160;</td><td class="mdescRight">压入待处理frame到缓存（异步回调接口）  <br /></td></tr>
+<tr class="separator:ad5d756ea42afacff5aaa1f466792de03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfdba0a39689f05247e28d6ed3e1c966"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_filter.html#adfdba0a39689f05247e28d6ed3e1c966">setCallBack</a> (<a class="el" href="namespaceob.html#a5c6cd771034a8052085dee9bdbbf80b0">FilterCallback</a> callback)</td></tr>
+<tr class="memdesc:adfdba0a39689f05247e28d6ed3e1c966"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置回调函数（异步回调接口）  <br /></td></tr>
+<tr class="separator:adfdba0a39689f05247e28d6ed3e1c966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:ac80715de348ec5eedcaa8eaf019b7587"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; FilterImpl &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_filter.html#ac80715de348ec5eedcaa8eaf019b7587">impl_</a></td></tr>
+<tr class="separator:ac80715de348ec5eedcaa8eaf019b7587"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Filter类, 为点云Filter、格式转换Filter、压缩解压Filter的基类 </p>
+
+<p class="definition">在文件 <a class="el" href="_filter_8hpp_source.html">Filter.hpp</a> 第 <a class="el" href="_filter_8hpp_source.html#l00019">19</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a3d6076a5214105bffeaa57f1eab3a7ff" name="a3d6076a5214105bffeaa57f1eab3a7ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d6076a5214105bffeaa57f1eab3a7ff">&#9670;&#160;</a></span>Filter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ob::Filter::Filter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab9d76c02b21cf8eaeaac9fee0c90199a" name="ab9d76c02b21cf8eaeaac9fee0c90199a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9d76c02b21cf8eaeaac9fee0c90199a">&#9670;&#160;</a></span>~Filter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ob::Filter::~Filter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aedb9c713b865dba8d0ae96a85737390d" name="aedb9c713b865dba8d0ae96a85737390d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedb9c713b865dba8d0ae96a85737390d">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ob::Filter::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>filter重置，释放内部缓存，异步处理时停止处理线程并清空待处理的缓存帧 </p>
+
+</div>
+</div>
+<a id="a220c46e6f376c8891b0b566d3495e047" name="a220c46e6f376c8891b0b566d3495e047"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a220c46e6f376c8891b0b566d3495e047">&#9670;&#160;</a></span>process()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classob_1_1_frame.html">Frame</a> &gt; ob::Filter::process </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classob_1_1_frame.html">Frame</a> &gt;&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理帧（同步接口） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>需要处理的frame </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt; Frame &gt; 处理后的frame </dd></dl>
+
+</div>
+</div>
+<a id="ad5d756ea42afacff5aaa1f466792de03" name="ad5d756ea42afacff5aaa1f466792de03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5d756ea42afacff5aaa1f466792de03">&#9670;&#160;</a></span>pushFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ob::Filter::pushFrame </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classob_1_1_frame.html">Frame</a> &gt;&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>压入待处理frame到缓存（异步回调接口） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>待处理的frame处理结果通过回调函数返回 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adfdba0a39689f05247e28d6ed3e1c966" name="adfdba0a39689f05247e28d6ed3e1c966"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfdba0a39689f05247e28d6ed3e1c966">&#9670;&#160;</a></span>setCallBack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ob::Filter::setCallBack </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceob.html#a5c6cd771034a8052085dee9bdbbf80b0">FilterCallback</a>&#160;</td>
+          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置回调函数（异步回调接口） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callback</td><td>处理结果回调 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ac80715de348ec5eedcaa8eaf019b7587" name="ac80715de348ec5eedcaa8eaf019b7587"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac80715de348ec5eedcaa8eaf019b7587">&#9670;&#160;</a></span>impl_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;FilterImpl&gt; ob::Filter::impl_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_filter_8hpp_source.html">Filter.hpp</a> 第 <a class="el" href="_filter_8hpp_source.html#l00054">54</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>header_cn/libobsensor/hpp/<a class="el" href="_filter_8hpp_source.html">Filter.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2023年 八月 1日 星期二 19:05:53 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

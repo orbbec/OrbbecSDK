@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OrbbecSDK: header_cn/libobsensor/h/Frame.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   </div>
+   <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9a5345e98321307492e41331ab8e5636.html">header_cn</a></li><li class="navelem"><a class="el" href="dir_a57403e30bad3723557b0550251f8216.html">libobsensor</a></li><li class="navelem"><a class="el" href="dir_afa7ddcbc480a7aa37c5239e71e2d522.html">h</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Frame.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_frame_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_ob_types_8h.html">ObTypes.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="_frame_8h.html#a5009d0e21fffddc2bb891357ccd611f7">   21</a></span>uint64_t <a class="code hl_function" href="_frame_8h.html#a5009d0e21fffddc2bb891357ccd611f7">ob_frame_index</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="_frame_8h.html#ac46511e8d0e4d5b962d2b9710d313bdc">   30</a></span><a class="code hl_typedef" href="_ob_types_8h.html#a083601614fe96b1ba4106227a4bd72f2">ob_format</a> <a class="code hl_function" href="_frame_8h.html#ac46511e8d0e4d5b962d2b9710d313bdc">ob_frame_format</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="_frame_8h.html#adfa38aa0cc594622f1d00540cf108b5a">   39</a></span><a class="code hl_typedef" href="_ob_types_8h.html#ac4da8d71ec61d4487d7eab4fff45f753">ob_frame_type</a> <a class="code hl_function" href="_frame_8h.html#adfa38aa0cc594622f1d00540cf108b5a">ob_frame_get_type</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="_frame_8h.html#a95b2242495cad6f1d1d7db82cc516a2e">   49</a></span>uint64_t <a class="code hl_function" href="_frame_8h.html#a95b2242495cad6f1d1d7db82cc516a2e">ob_frame_time_stamp</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="_frame_8h.html#aacf461e938d508f05b7b1ba8324cfcf5">   59</a></span>uint64_t <a class="code hl_function" href="_frame_8h.html#aacf461e938d508f05b7b1ba8324cfcf5">ob_frame_time_stamp_us</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="_frame_8h.html#adce8d3f7031629a3e3d7b25911b33886">   69</a></span>uint64_t <a class="code hl_function" href="_frame_8h.html#adce8d3f7031629a3e3d7b25911b33886">ob_frame_system_time_stamp</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="_frame_8h.html#a4d0de931cd1744fb141676c93c9dd8bc">   78</a></span><span class="keywordtype">void</span> *<a class="code hl_function" href="_frame_8h.html#a4d0de931cd1744fb141676c93c9dd8bc">ob_frame_data</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="_frame_8h.html#ab9350186e6d286d74466d07287871ce9">   88</a></span>uint32_t <a class="code hl_function" href="_frame_8h.html#ab9350186e6d286d74466d07287871ce9">ob_frame_data_size</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="_frame_8h.html#a0105450d37ecd43b0e27c90e396231eb">   97</a></span>uint32_t <a class="code hl_function" href="_frame_8h.html#a0105450d37ecd43b0e27c90e396231eb">ob_video_frame_width</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="_frame_8h.html#a4c31d615158ad377dab30a5886788a11">  106</a></span>uint32_t <a class="code hl_function" href="_frame_8h.html#a4c31d615158ad377dab30a5886788a11">ob_video_frame_height</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="_frame_8h.html#acb038c68f498a145ce7774c606c3d9ff">  115</a></span><span class="keywordtype">void</span> *<a class="code hl_function" href="_frame_8h.html#acb038c68f498a145ce7774c606c3d9ff">ob_video_frame_metadata</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="_frame_8h.html#ac9096648e25cfa045fb0ab6b3b3c93c0">  124</a></span>uint32_t <a class="code hl_function" href="_frame_8h.html#ac9096648e25cfa045fb0ab6b3b3c93c0">ob_video_frame_metadata_size</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="_frame_8h.html#a4a7f7edea6d5963c2bbd2360edc3a489">  134</a></span>uint8_t <a class="code hl_function" href="_frame_8h.html#a4a7f7edea6d5963c2bbd2360edc3a489">ob_video_frame_pixel_available_bit_size</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="_frame_8h.html#ac69985299cbe7ca46cdddab955d26a33">  143</a></span><a class="code hl_typedef" href="_ob_types_8h.html#aca9dc7e0b11a78f00fa8a2ffd8b9ca1b">ob_sensor_type</a> <a class="code hl_function" href="_frame_8h.html#ac69985299cbe7ca46cdddab955d26a33">ob_ir_frame_get_source_sensor_type</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **<a class="code hl_struct" href="structob__error.html">ob_error</a>);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="_frame_8h.html#a84d908c9407ef8f96086c6d0911122e0">  153</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="_frame_8h.html#a84d908c9407ef8f96086c6d0911122e0">ob_depth_frame_get_value_scale</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="_frame_8h.html#a42e33dafc2a310292a84bc4e59b624b3">  163</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="_frame_8h.html#a42e33dafc2a310292a84bc4e59b624b3">ob_points_frame_get_position_value_scale</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="_frame_8h.html#a572bd900dfe085bd8618e53b2670f069">  171</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_frame_8h.html#a572bd900dfe085bd8618e53b2670f069">ob_delete_frame</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="_frame_8h.html#a48ab6c2f559f3af05f4147a5f2abb324">  179</a></span>uint32_t <a class="code hl_function" href="_frame_8h.html#a48ab6c2f559f3af05f4147a5f2abb324">ob_frameset_frame_count</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="_frame_8h.html#a0dae884c0d1187261548faeff4720003">  187</a></span><a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *<a class="code hl_function" href="_frame_8h.html#a0dae884c0d1187261548faeff4720003">ob_frameset_depth_frame</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="_frame_8h.html#a7d902e6efab126596147c7437c98e8f6">  196</a></span><a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *<a class="code hl_function" href="_frame_8h.html#a7d902e6efab126596147c7437c98e8f6">ob_frameset_color_frame</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno"><a class="line" href="_frame_8h.html#a3d5f563302930ef23fc21fe344d2c91c">  205</a></span><a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *<a class="code hl_function" href="_frame_8h.html#a3d5f563302930ef23fc21fe344d2c91c">ob_frameset_ir_frame</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno"><a class="line" href="_frame_8h.html#aad7240dea3d3338837d7cdf9459eb8ab">  214</a></span><a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *<a class="code hl_function" href="_frame_8h.html#aad7240dea3d3338837d7cdf9459eb8ab">ob_frameset_points_frame</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="_frame_8h.html#af05a787de121f4c63ea41f7077609604">  224</a></span><a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *<a class="code hl_function" href="_frame_8h.html#af05a787de121f4c63ea41f7077609604">ob_frameset_get_frame</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="code hl_typedef" href="_ob_types_8h.html#ac4da8d71ec61d4487d7eab4fff45f753">ob_frame_type</a> frame_type, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno"><a class="line" href="_frame_8h.html#abebc05a57d9906ff7b05e5e3edbe0537">  233</a></span><a class="code hl_struct" href="struct_o_b_accel_value.html">ob_accel_value</a> <a class="code hl_function" href="_frame_8h.html#abebc05a57d9906ff7b05e5e3edbe0537">ob_accel_frame_value</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="_frame_8h.html#aaed95a72b4e138b7f25f1abc90f762c4">  242</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="_frame_8h.html#aaed95a72b4e138b7f25f1abc90f762c4">ob_accel_frame_temperature</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="_frame_8h.html#a491583ded6975af8cb3948a6ec372529">  251</a></span><a class="code hl_struct" href="struct_o_b_accel_value.html">ob_gyro_value</a> <a class="code hl_function" href="_frame_8h.html#a491583ded6975af8cb3948a6ec372529">ob_gyro_frame_value</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="_frame_8h.html#a46144bd2d6c7d57b85f8b1f95d1be336">  260</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="_frame_8h.html#a46144bd2d6c7d57b85f8b1f95d1be336">ob_gyro_frame_temperature</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno"><a class="line" href="_frame_8h.html#af136546f3099cfde42407c2ab91b5f2a">  268</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_frame_8h.html#af136546f3099cfde42407c2ab91b5f2a">ob_frame_add_ref</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno"><a class="line" href="_frame_8h.html#a2fb71c8a1afbaacb3948c27612bccac3">  281</a></span><a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *<a class="code hl_function" href="_frame_8h.html#a2fb71c8a1afbaacb3948c27612bccac3">ob_create_frame</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a083601614fe96b1ba4106227a4bd72f2">ob_format</a> frame_format, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">int</span> stride_bytes, <a class="code hl_typedef" href="_ob_types_8h.html#ac4da8d71ec61d4487d7eab4fff45f753">ob_frame_type</a> frame_type, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno"><a class="line" href="_frame_8h.html#ae93d32ab066009f6c44f9035b5d254a9">  296</a></span><a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *<a class="code hl_function" href="_frame_8h.html#ae93d32ab066009f6c44f9035b5d254a9">ob_create_frame_from_buffer</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a083601614fe96b1ba4106227a4bd72f2">ob_format</a> frame_format, uint32_t frame_width, uint32_t frame_height, uint8_t *buffer, uint32_t buffer_size,</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>                                      <a class="code hl_typedef" href="_ob_types_8h.html#a7830076d26e79bfe795c37149f693e02">ob_frame_destroy_callback</a> *buffer_destroy_cb, <span class="keywordtype">void</span> *buffer_destroy_context, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno"><a class="line" href="_frame_8h.html#aa605ced9dd928aa2c214b7f2a221a6a6">  305</a></span><a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *<a class="code hl_function" href="_frame_8h.html#aa605ced9dd928aa2c214b7f2a221a6a6">ob_create_frameset</a>(<a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno"><a class="line" href="_frame_8h.html#a379ea3f58725a133c0d98efa99cfece2">  315</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_frame_8h.html#a379ea3f58725a133c0d98efa99cfece2">ob_frameset_push_frame</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="code hl_typedef" href="_ob_types_8h.html#ac4da8d71ec61d4487d7eab4fff45f753">ob_frame_type</a> type, <a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno"><a class="line" href="_frame_8h.html#a35186cca3c0a561acb281b03c8ea6013">  324</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_frame_8h.html#a35186cca3c0a561acb281b03c8ea6013">ob_frame_set_system_time_stamp</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, uint64_t system_timestamp, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno"><a class="line" href="_frame_8h.html#a9f4b11364d2a74f80e9c6252b94e97bd">  333</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_frame_8h.html#a9f4b11364d2a74f80e9c6252b94e97bd">ob_frame_set_device_time_stamp</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, uint64_t device_timestamp, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> </div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno"><a class="line" href="_frame_8h.html#a5ce57b8b10a7dddf118ccd9663f7dd06">  342</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_frame_8h.html#a5ce57b8b10a7dddf118ccd9663f7dd06">ob_frame_set_device_time_stamp_us</a>(<a class="code hl_typedef" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, uint64_t device_timestamp_us, <a class="code hl_struct" href="structob__error.html">ob_error</a> **error);</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span> </div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>}</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_frame_8h_html_a0105450d37ecd43b0e27c90e396231eb"><div class="ttname"><a href="_frame_8h.html#a0105450d37ecd43b0e27c90e396231eb">ob_video_frame_width</a></div><div class="ttdeci">uint32_t ob_video_frame_width(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取视频帧宽</div></div>
+<div class="ttc" id="a_frame_8h_html_a0dae884c0d1187261548faeff4720003"><div class="ttname"><a href="_frame_8h.html#a0dae884c0d1187261548faeff4720003">ob_frameset_depth_frame</a></div><div class="ttdeci">ob_frame * ob_frameset_depth_frame(ob_frame *frameset, ob_error **error)</div><div class="ttdoc">从数据帧集中获取深度数据帧。</div></div>
+<div class="ttc" id="a_frame_8h_html_a2fb71c8a1afbaacb3948c27612bccac3"><div class="ttname"><a href="_frame_8h.html#a2fb71c8a1afbaacb3948c27612bccac3">ob_create_frame</a></div><div class="ttdeci">ob_frame * ob_create_frame(ob_format frame_format, int width, int height, int stride_bytes, ob_frame_type frame_type, ob_error **error)</div><div class="ttdoc">根据指定的参数创建一个空数据帧对象。</div></div>
+<div class="ttc" id="a_frame_8h_html_a35186cca3c0a561acb281b03c8ea6013"><div class="ttname"><a href="_frame_8h.html#a35186cca3c0a561acb281b03c8ea6013">ob_frame_set_system_time_stamp</a></div><div class="ttdeci">void ob_frame_set_system_time_stamp(ob_frame *frame, uint64_t system_timestamp, ob_error **error)</div><div class="ttdoc">设置帧的系统时间戳</div></div>
+<div class="ttc" id="a_frame_8h_html_a379ea3f58725a133c0d98efa99cfece2"><div class="ttname"><a href="_frame_8h.html#a379ea3f58725a133c0d98efa99cfece2">ob_frameset_push_frame</a></div><div class="ttdeci">void ob_frameset_push_frame(ob_frame *frameset, ob_frame_type type, ob_frame *frame, ob_error **error)</div><div class="ttdoc">将指定类型的数据帧添加到数据帧集。</div></div>
+<div class="ttc" id="a_frame_8h_html_a3d5f563302930ef23fc21fe344d2c91c"><div class="ttname"><a href="_frame_8h.html#a3d5f563302930ef23fc21fe344d2c91c">ob_frameset_ir_frame</a></div><div class="ttdeci">ob_frame * ob_frameset_ir_frame(ob_frame *frameset, ob_error **error)</div><div class="ttdoc">从数据帧中获取红外帧。</div></div>
+<div class="ttc" id="a_frame_8h_html_a42e33dafc2a310292a84bc4e59b624b3"><div class="ttname"><a href="_frame_8h.html#a42e33dafc2a310292a84bc4e59b624b3">ob_points_frame_get_position_value_scale</a></div><div class="ttdeci">float ob_points_frame_get_position_value_scale(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取点云帧的点坐标值缩放系数，点坐标值乘以缩放系数后，可以得到单位为毫米的坐标值； 如scale=0.1, 某个点的x坐标值为x=10000， 则表示实际x坐标value = x*scale = 100...</div></div>
+<div class="ttc" id="a_frame_8h_html_a46144bd2d6c7d57b85f8b1f95d1be336"><div class="ttname"><a href="_frame_8h.html#a46144bd2d6c7d57b85f8b1f95d1be336">ob_gyro_frame_temperature</a></div><div class="ttdeci">float ob_gyro_frame_temperature(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取陀螺仪帧采样时温度</div></div>
+<div class="ttc" id="a_frame_8h_html_a48ab6c2f559f3af05f4147a5f2abb324"><div class="ttname"><a href="_frame_8h.html#a48ab6c2f559f3af05f4147a5f2abb324">ob_frameset_frame_count</a></div><div class="ttdeci">uint32_t ob_frameset_frame_count(ob_frame *frameset, ob_error **error)</div><div class="ttdoc">获取数据帧集中包含的帧数</div></div>
+<div class="ttc" id="a_frame_8h_html_a491583ded6975af8cb3948a6ec372529"><div class="ttname"><a href="_frame_8h.html#a491583ded6975af8cb3948a6ec372529">ob_gyro_frame_value</a></div><div class="ttdeci">ob_gyro_value ob_gyro_frame_value(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取陀螺仪帧数据。</div></div>
+<div class="ttc" id="a_frame_8h_html_a4a7f7edea6d5963c2bbd2360edc3a489"><div class="ttname"><a href="_frame_8h.html#a4a7f7edea6d5963c2bbd2360edc3a489">ob_video_frame_pixel_available_bit_size</a></div><div class="ttdeci">uint8_t ob_video_frame_pixel_available_bit_size(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取像素有效位数（如Y16格式帧，每个像素占16bit，但实际只有低10位是有效位，高6位填充0）</div></div>
+<div class="ttc" id="a_frame_8h_html_a4c31d615158ad377dab30a5886788a11"><div class="ttname"><a href="_frame_8h.html#a4c31d615158ad377dab30a5886788a11">ob_video_frame_height</a></div><div class="ttdeci">uint32_t ob_video_frame_height(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取视频帧高</div></div>
+<div class="ttc" id="a_frame_8h_html_a4d0de931cd1744fb141676c93c9dd8bc"><div class="ttname"><a href="_frame_8h.html#a4d0de931cd1744fb141676c93c9dd8bc">ob_frame_data</a></div><div class="ttdeci">void * ob_frame_data(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取帧数据</div></div>
+<div class="ttc" id="a_frame_8h_html_a5009d0e21fffddc2bb891357ccd611f7"><div class="ttname"><a href="_frame_8h.html#a5009d0e21fffddc2bb891357ccd611f7">ob_frame_index</a></div><div class="ttdeci">uint64_t ob_frame_index(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取帧索引</div></div>
+<div class="ttc" id="a_frame_8h_html_a572bd900dfe085bd8618e53b2670f069"><div class="ttname"><a href="_frame_8h.html#a572bd900dfe085bd8618e53b2670f069">ob_delete_frame</a></div><div class="ttdeci">void ob_delete_frame(ob_frame *frame, ob_error **error)</div><div class="ttdoc">删除数据帧对象</div></div>
+<div class="ttc" id="a_frame_8h_html_a5ce57b8b10a7dddf118ccd9663f7dd06"><div class="ttname"><a href="_frame_8h.html#a5ce57b8b10a7dddf118ccd9663f7dd06">ob_frame_set_device_time_stamp_us</a></div><div class="ttdeci">void ob_frame_set_device_time_stamp_us(ob_frame *frame, uint64_t device_timestamp_us, ob_error **error)</div><div class="ttdoc">设置帧的设备时间戳</div></div>
+<div class="ttc" id="a_frame_8h_html_a7d902e6efab126596147c7437c98e8f6"><div class="ttname"><a href="_frame_8h.html#a7d902e6efab126596147c7437c98e8f6">ob_frameset_color_frame</a></div><div class="ttdeci">ob_frame * ob_frameset_color_frame(ob_frame *frameset, ob_error **error)</div><div class="ttdoc">从帧集合中获取彩色帧</div></div>
+<div class="ttc" id="a_frame_8h_html_a84d908c9407ef8f96086c6d0911122e0"><div class="ttname"><a href="_frame_8h.html#a84d908c9407ef8f96086c6d0911122e0">ob_depth_frame_get_value_scale</a></div><div class="ttdeci">float ob_depth_frame_get_value_scale(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取深度帧的值的深度单位，深度像素值乘以深度单位后，可以得到单位为毫米的深度值； 如valueScale=0.1, 某坐标像素值为pixelValue=10000， 则表示深度值value = pixe...</div></div>
+<div class="ttc" id="a_frame_8h_html_a95b2242495cad6f1d1d7db82cc516a2e"><div class="ttname"><a href="_frame_8h.html#a95b2242495cad6f1d1d7db82cc516a2e">ob_frame_time_stamp</a></div><div class="ttdeci">uint64_t ob_frame_time_stamp(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取帧的硬件时间戳（以毫秒为单位）。</div></div>
+<div class="ttc" id="a_frame_8h_html_a9f4b11364d2a74f80e9c6252b94e97bd"><div class="ttname"><a href="_frame_8h.html#a9f4b11364d2a74f80e9c6252b94e97bd">ob_frame_set_device_time_stamp</a></div><div class="ttdeci">void ob_frame_set_device_time_stamp(ob_frame *frame, uint64_t device_timestamp, ob_error **error)</div><div class="ttdoc">设置帧的设备时间戳</div></div>
+<div class="ttc" id="a_frame_8h_html_aa605ced9dd928aa2c214b7f2a221a6a6"><div class="ttname"><a href="_frame_8h.html#aa605ced9dd928aa2c214b7f2a221a6a6">ob_create_frameset</a></div><div class="ttdeci">ob_frame * ob_create_frameset(ob_error **error)</div><div class="ttdoc">创建一个空的数据帧集对象。</div></div>
+<div class="ttc" id="a_frame_8h_html_aacf461e938d508f05b7b1ba8324cfcf5"><div class="ttname"><a href="_frame_8h.html#aacf461e938d508f05b7b1ba8324cfcf5">ob_frame_time_stamp_us</a></div><div class="ttdeci">uint64_t ob_frame_time_stamp_us(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取帧的硬件时间戳（以微秒为单位）。</div></div>
+<div class="ttc" id="a_frame_8h_html_aad7240dea3d3338837d7cdf9459eb8ab"><div class="ttname"><a href="_frame_8h.html#aad7240dea3d3338837d7cdf9459eb8ab">ob_frameset_points_frame</a></div><div class="ttdeci">ob_frame * ob_frameset_points_frame(ob_frame *frameset, ob_error **error)</div><div class="ttdoc">从数据帧集中获取点云数据。</div></div>
+<div class="ttc" id="a_frame_8h_html_aaed95a72b4e138b7f25f1abc90f762c4"><div class="ttname"><a href="_frame_8h.html#aaed95a72b4e138b7f25f1abc90f762c4">ob_accel_frame_temperature</a></div><div class="ttdeci">float ob_accel_frame_temperature(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取加速度帧采样时温度</div></div>
+<div class="ttc" id="a_frame_8h_html_ab9350186e6d286d74466d07287871ce9"><div class="ttname"><a href="_frame_8h.html#ab9350186e6d286d74466d07287871ce9">ob_frame_data_size</a></div><div class="ttdeci">uint32_t ob_frame_data_size(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取帧数据大小</div></div>
+<div class="ttc" id="a_frame_8h_html_abebc05a57d9906ff7b05e5e3edbe0537"><div class="ttname"><a href="_frame_8h.html#abebc05a57d9906ff7b05e5e3edbe0537">ob_accel_frame_value</a></div><div class="ttdeci">ob_accel_value ob_accel_frame_value(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取加速度计帧数据。</div></div>
+<div class="ttc" id="a_frame_8h_html_ac46511e8d0e4d5b962d2b9710d313bdc"><div class="ttname"><a href="_frame_8h.html#ac46511e8d0e4d5b962d2b9710d313bdc">ob_frame_format</a></div><div class="ttdeci">ob_format ob_frame_format(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取帧格式</div></div>
+<div class="ttc" id="a_frame_8h_html_ac69985299cbe7ca46cdddab955d26a33"><div class="ttname"><a href="_frame_8h.html#ac69985299cbe7ca46cdddab955d26a33">ob_ir_frame_get_source_sensor_type</a></div><div class="ttdeci">ob_sensor_type ob_ir_frame_get_source_sensor_type(ob_frame *frame, ob_error **ob_error)</div><div class="ttdoc">获取红外数据帧的源传感器类型（双摄像头为左或右）</div></div>
+<div class="ttc" id="a_frame_8h_html_ac9096648e25cfa045fb0ab6b3b3c93c0"><div class="ttname"><a href="_frame_8h.html#ac9096648e25cfa045fb0ab6b3b3c93c0">ob_video_frame_metadata_size</a></div><div class="ttdeci">uint32_t ob_video_frame_metadata_size(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取帧的元数据大小</div></div>
+<div class="ttc" id="a_frame_8h_html_acb038c68f498a145ce7774c606c3d9ff"><div class="ttname"><a href="_frame_8h.html#acb038c68f498a145ce7774c606c3d9ff">ob_video_frame_metadata</a></div><div class="ttdeci">void * ob_video_frame_metadata(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取帧的元数据</div></div>
+<div class="ttc" id="a_frame_8h_html_adce8d3f7031629a3e3d7b25911b33886"><div class="ttname"><a href="_frame_8h.html#adce8d3f7031629a3e3d7b25911b33886">ob_frame_system_time_stamp</a></div><div class="ttdeci">uint64_t ob_frame_system_time_stamp(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取帧的系统时间戳（以毫秒为单位）。</div></div>
+<div class="ttc" id="a_frame_8h_html_adfa38aa0cc594622f1d00540cf108b5a"><div class="ttname"><a href="_frame_8h.html#adfa38aa0cc594622f1d00540cf108b5a">ob_frame_get_type</a></div><div class="ttdeci">ob_frame_type ob_frame_get_type(ob_frame *frame, ob_error **error)</div><div class="ttdoc">获取帧类型</div></div>
+<div class="ttc" id="a_frame_8h_html_ae93d32ab066009f6c44f9035b5d254a9"><div class="ttname"><a href="_frame_8h.html#ae93d32ab066009f6c44f9035b5d254a9">ob_create_frame_from_buffer</a></div><div class="ttdeci">ob_frame * ob_create_frame_from_buffer(ob_format frame_format, uint32_t frame_width, uint32_t frame_height, uint8_t *buffer, uint32_t buffer_size, ob_frame_destroy_callback *buffer_destroy_cb, void *buffer_destroy_context, ob_error **error)</div><div class="ttdoc">基于外部创建的缓冲区创建帧对象。</div></div>
+<div class="ttc" id="a_frame_8h_html_af05a787de121f4c63ea41f7077609604"><div class="ttname"><a href="_frame_8h.html#af05a787de121f4c63ea41f7077609604">ob_frameset_get_frame</a></div><div class="ttdeci">ob_frame * ob_frameset_get_frame(ob_frame *frameset, ob_frame_type frame_type, ob_error **error)</div><div class="ttdoc">从数据帧集中获取特定类型的数据帧。</div></div>
+<div class="ttc" id="a_frame_8h_html_af136546f3099cfde42407c2ab91b5f2a"><div class="ttname"><a href="_frame_8h.html#af136546f3099cfde42407c2ab91b5f2a">ob_frame_add_ref</a></div><div class="ttdeci">void ob_frame_add_ref(ob_frame *frame, ob_error **error)</div><div class="ttdoc">增加帧对象的引用计数。</div></div>
+<div class="ttc" id="a_ob_types_8h_html"><div class="ttname"><a href="_ob_types_8h.html">ObTypes.h</a></div><div class="ttdoc">提供SDK中常用的结构体，枚举常量定义。</div></div>
+<div class="ttc" id="a_ob_types_8h_html_a083601614fe96b1ba4106227a4bd72f2"><div class="ttname"><a href="_ob_types_8h.html#a083601614fe96b1ba4106227a4bd72f2">ob_format</a></div><div class="ttdeci">enum OBFormat ob_format</div></div>
+<div class="ttc" id="a_ob_types_8h_html_a2d32dd7fcbb88ebb408e9f9081e6f896"><div class="ttname"><a href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a></div><div class="ttdeci">struct CFrameImpl ob_frame</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00062">ObTypes.h:62</a></div></div>
+<div class="ttc" id="a_ob_types_8h_html_a7830076d26e79bfe795c37149f693e02"><div class="ttname"><a href="_ob_types_8h.html#a7830076d26e79bfe795c37149f693e02">ob_frame_destroy_callback</a></div><div class="ttdeci">void() ob_frame_destroy_callback(void *buffer, void *user_data)</div><div class="ttdoc">自定义删除回调，当引用计数为 0 时主动调用</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l01102">ObTypes.h:1102</a></div></div>
+<div class="ttc" id="a_ob_types_8h_html_ac4da8d71ec61d4487d7eab4fff45f753"><div class="ttname"><a href="_ob_types_8h.html#ac4da8d71ec61d4487d7eab4fff45f753">ob_frame_type</a></div><div class="ttdeci">enum OBFrameType ob_frame_type</div></div>
+<div class="ttc" id="a_ob_types_8h_html_aca9dc7e0b11a78f00fa8a2ffd8b9ca1b"><div class="ttname"><a href="_ob_types_8h.html#aca9dc7e0b11a78f00fa8a2ffd8b9ca1b">ob_sensor_type</a></div><div class="ttdeci">enum OBSensorType ob_sensor_type</div></div>
+<div class="ttc" id="astruct_o_b_accel_value_html"><div class="ttname"><a href="struct_o_b_accel_value.html">OBAccelValue</a></div><div class="ttdoc">加速度计和陀螺仪的数据结构体</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00481">ObTypes.h:481</a></div></div>
+<div class="ttc" id="astructob__error_html"><div class="ttname"><a href="structob__error.html">ob_error</a></div><div class="ttdoc">SDK暴露的错误类，用户可以根据该错误类，获取详细的错误信息</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00124">ObTypes.h:124</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2023年 八月 1日 星期二 19:05:49 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

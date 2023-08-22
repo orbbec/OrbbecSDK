@@ -3,6 +3,7 @@
 | **名称** | **语言** | **描述** |
 | --- | --- | --- |
 | HelloOrbbec | C | 演示连接到设备获取SDK版本和设备信息 |
+| 固件升级示例 | C | 演示选择固件bin或者img文件给设备升级固件版本 |
 | 传感器控制示例 | C | 演示对设备、传感器控制命令的操作 |
 | 深度示例 | C | 演示使用SDK获取深度数据并绘制显示、获取分辨率并进行设置、显示深度图像 |
 | 彩色示例       | C        | 演示使用SDK获取彩色数据并绘制显示、获取分辨率并进行设置、显示彩色图像 |
@@ -15,9 +16,11 @@
 | 彩色示例 | C++ | 演示使用SDK获取彩色数据并绘制显示、获取分辨率并进行设置、显示彩色图像 |
 | 红外示例 | C++ | 演示使用SDK获取红外数据并绘制显示、获取分辨率并进行设置、显示红外图像 |
 | 流对齐示例 | C++ | 演示对传感器数据流对齐的操作 |
+| 固件升级示例 | C++ | 演示选择固件bin或者img文件给设备升级固件版本 |
 | 传感器控制示例 | C++ | 演示对设备和传感器控制命令的操作 |
+| 多路流同时开流示例 | C++ | 演示一个设备同时打开多路流的操作 |
 | 多设备示例 | C++ | 演示对多设备进行操作 |
-| 深度模式 | C | 演示如何获取相机深度工作模式，查询支持的深度模式列表，切换模式 |
+| 深度模式 | C++ | 演示如何获取相机深度工作模式，查询支持的深度模式列表，切换模式 |
 | 热拔插示例 | C++ | 演示设备拔插回调的设置，并获取到插拔后处理的流 |
 | IMU示例 | C++ | 获取IMU数据并输出显示 |
 | 多机同步示例 | C++ | 演示多机同步功能 |
@@ -58,18 +61,18 @@ ob_device_info* dev_info = ob_device_get_device_info(dev, &error);
 
 //获取设备名称
 const char* name = ob_device_info_name(dev_info, &error);
-    
+
 //获取设备的pid, vid, uid
 int pid = ob_device_info_pid(dev_info, &error);
 int vid = ob_device_info_vid(dev_info, &error);
 int uid = ob_device_info_uid(dev_info, &error);
-    
+
 //通过获取设备的固件版本号
 const char* fw_ver = ob_device_info_firmware_version(dev_info, &error);
-      
+
 //通过获取设备的序列号
 const char* sn = ob_device_info_serial_number(dev_info, &error);
-    
+
 //获取支持的传感器列表
 ob_sensor_list* sensor_list = ob_device_get_sensor_list(dev, &error);
 
@@ -94,14 +97,211 @@ for(int i = 0; i < count; i++)
 //销毁sensor list
 ob_delete_sensor_list(sensor_list, &error);
 //销毁device info
-ob_delete_device_info(dev_info, &error); 
+ob_delete_device_info(dev_info, &error);
 //销毁device
-ob_delete_device(dev, &error); 
+ob_delete_device(dev, &error);
 //销毁device list
-ob_delete_device_list(dev_list, &error); 
+ob_delete_device_list(dev_list, &error);
 //销毁context
-ob_delete_context(ctx, &error); 
+ob_delete_context(ctx, &error);
 ```
+
+## 固件升级示例-FirmwareUpgrade
+功能描述：本示例演示如何用固件文件给设备升级。
+> 本示例基于C Low Level API进行演示，示例编译语言为C++，OrbbecSDK使用C语言API
+
+在main函数接口通过命令参数获取固件文件
+```cpp
+// check_firmware_file_path()函数用于检查文件是否存在，实际代码中最好检查后缀是否为bin或者img, 以及固件文件是否与目标设备相匹配
+const char *check_firmware_file_path(int argc, char **argv) {
+    if(argc < 2) {
+        printf("Please input firmware path.\n");
+        return "";
+    }
+
+    const char *filePath = *(argv + 1);
+    FILE       *file     = fopen(filePath, "r");
+    if(!file) {
+        printf("Open Firmware file failed. filePath: %s\n", filePath);
+        return "";
+    }
+
+    fclose(file);
+
+    return filePath;
+}
+
+int main(int argc, char **argv) {
+    const char *firmware_file_path = check_firmware_file_path(argc, argv);
+    if(!firmware_file_path || 0 == strlen(firmware_file_path)) {
+        printf("command: \n$ ./frameware_upgrade[.exe] firmwareFile.bin\n");
+        return 0;
+    }
+    
+    // 接下来的业务代码
+
+    return 0;
+}
+```
+
+创建ob_context并通过ob_context获取设备，本示例假设运行firmware_upgrade[.exe]之前上位机（Windows、Ubuntu、Android平台）已经插入设备。device_changed_callback用于固件升级后监听device重启后获取被升级设备的业务处理
+```cpp
+// 构建ob_context对象
+ob_error   *error = NULL;
+ob_context *ctx   = ob_create_context(&error);
+check_error(error);
+
+// 设置设备变化监听器，device_changed_callback是管理device声明周期的关键函数，开发者必须关注该回调
+ob_set_device_changed_callback(ctx, device_changed_callback, &callback_user_data_, &error);
+check_error(error);
+
+// 查询当前已经接入的设备
+ob_device_list *dev_list = ob_query_device_list(ctx, &error);
+check_error(error);
+
+// 从ob_device_list中获取当前接入设备的数量
+int dev_count = ob_device_list_device_count(dev_list, &error);
+check_error(error);
+if(dev_count == 0) {
+    // 固件升级示例假设设备已经接入到上位机（Windows、Ubuntu、Android平台）
+    printf("Device not found!\n");
+    return -1;
+}
+
+// 获取第一个设备，index=0
+ob_device *dev = ob_device_list_get_device(dev_list, 0, &error);
+check_error(error);
+
+// 打印设备信息
+dump_device_info(dev);
+```
+
+获取设备当前的固件版本信息
+```cpp
+// 打印设备名称，SN，VID，PID以及固件版本
+void dump_device_info(ob_device *device) {
+    ob_error *error = NULL;
+
+    // 获取ob_device_info对象，通过ob_device_info可以获取目标设备的基本信息
+    ob_device_info *dev_info = ob_device_get_device_info(device, &error);
+    check_error(error);
+
+    // 设备名称
+    const char *name = ob_device_info_name(dev_info, &error);
+    check_error(error);
+    printf("Device name: %s\n", name);
+
+    // 设备VID，PID，UID
+    int pid = ob_device_info_pid(dev_info, &error);
+    check_error(error);
+    int vid = ob_device_info_vid(dev_info, &error);
+    check_error(error);
+    const char *uid = ob_device_info_uid(dev_info, &error);
+    check_error(error);
+    printf("Device pid: %d vid: %d uid: %s\n", pid, vid, uid);
+
+    // 设备当前的固件版本号
+    const char *fw_ver = ob_device_info_firmware_version(dev_info, &error);
+    check_error(error);
+    printf("Firmware version: %s\n", fw_ver);
+
+    // 设备SN
+    const char *sn = ob_device_info_serial_number(dev_info, &error);
+    check_error(error);
+    printf("Serial number: %s\n", sn);
+
+    // 释放资源，否则会造成内存泄漏
+    ob_delete_device_info(dev_info, &error);
+    check_error(error);
+}
+```
+
+给目标设备升级固件
+a. 实现C API的固件升级回调接口；
+b. 调用固件升级接口进行升级；
+```cpp
+// 实现C API的固件升级回调接口；
+void device_upgrade_callback(ob_upgrade_state state, const char *message, uint8_t percent, void *user_data) {
+    if(state == STAT_START) {
+        printf("Upgrade Firmware start\n");
+    }
+    else if(state == STAT_FILE_TRANSFER) {
+        printf("Upgrade Firmware file transfer, percent: %u\n", (uint32_t)percent);
+    }
+    else if(state == STAT_IN_PROGRESS) {
+        printf("Upgrade Firmware in progress, percent: %u\n", (uint32_t)percent);
+    }
+    else if(state == STAT_DONE) {
+        // 固件升级成功
+        printf("Upgrade Firmware done, percent: %u\n", (uint32_t)percent);
+        is_upgrade_success_ = true;
+    }
+    else if(state == STAT_VERIFY_IMAGE) {
+        printf("Upgrade Firmware verify image\n");
+    }
+    else {
+        // 固件升级失败
+        printf("Upgrade Firmware failed. state: %d, errMsg: %s, percent: %u \n", (int)state, message ? message : "", (uint32_t)percent);
+    }
+}
+
+// 对目标设备进行固件升级
+bool upgrade_firmware(ob_device *device, const char *firmwarePath) {
+    const char *index     = strstr(firmwarePath, ".img");
+    bool        isImgFile = (bool)index;
+    index                 = strstr(firmwarePath, ".bin");
+    bool isBinFile        = (bool)index;
+    if(!(isImgFile || isBinFile)) {
+        // 固件升级文件一般为bin或者img，实际业务中最好通过文件名称、文件MD5等信息做防呆
+        printf("Upgrade Fimware failed. invalid firmware file: %s\n", firmwarePath);
+        return false;
+    }
+
+    // 调用固件升级接口进行升级；
+    is_upgrade_success_ = false;
+    ob_error *error     = NULL;
+    ob_device_upgrade(device, firmwarePath, device_upgrade_callback, false, &callback_user_data_, &error);
+    check_error(error);
+    return is_upgrade_success_;
+}
+```
+
+固件升级成功后，需要重启设备。重启设备有两种方式，一种是拔插设备（或者操作系统重启），另一种是调用OrbbecSDK的reboot接口。等设备上线后，通过本示例的dump_device_info()函数可以查询当前设备固件版本信息
+
+以下示例演示通过固件reboot接口重启设备
+```cpp
+// 重启设备
+printf("Reboot device\n");
+is_device_removed_       = false;
+is_wait_reboot_complete_ = true;
+ob_device_reboot(dev, &error);
+check_error(error);
+
+// 释放资源，防止内存泄漏
+ob_delete_device(dev, &error);
+check_error(error);
+```
+
+在ob_device_changed_callback可以监听设备重启时下线、上线的事件，详情可以看热拔插示例
+```cpp
+// 监听设备变化
+void device_changed_callback(ob_device_list *removed, ob_device_list *added, void *user_data) {
+    ob_error *error = NULL;
+
+    // 通过added处理上线的设备
+
+    // 通过removed处理下线的设备
+
+    // 释放资源，避免内存泄漏
+    ob_delete_device_list(removed, &error);
+    check_error(error);
+
+    // 释放资源，避免内存泄漏
+    ob_delete_device_list(added, &error);
+    check_error(error);
+}
+```
+
 ## 传感器控制示例-SensorControl
 
 功能描述：本示例主要演示了对device控制命令的操作、对Sensor控制命令的操作、对Sensor进行流操作。
@@ -125,7 +325,7 @@ printf("%d. name: %s, pid: %d, vid: %d, uid: %s, sn: %s\n", i, name, pid, vid, u
 创建一个设备
 ```c
 if(devCount <= 1) {
-    // 如果插入单个设备，默认选择第一个 
+    // 如果插入单个设备，默认选择第一个
      device = ob_device_list_get_device(dev_list, 0, &g_error);
 }
 else {
@@ -174,7 +374,7 @@ ob_device_set_float_property(device, property_item.id, float_value, &g_error); /
 //销毁context
 ob_delete_context(ctx, &g_error);
 //销毁device list
-ob_delete_device_list(dev_list, &g_error);        
+ob_delete_device_list(dev_list, &g_error);
 //销毁device
 ob_delete_device(device, &g_error);
 ```
@@ -221,10 +421,10 @@ ob_delete_stream_profile(depth_profile, &error);
 ob_delete_stream_profile_list(profiles, &error);
 
 //销毁device
-ob_delete_device(device, &error);  
+ob_delete_device(device, &error);
 
 //销毁pipeline
-ob_delete_pipeline(pipe, &error);  
+ob_delete_pipeline(pipe, &error);
 ```
 ## 彩色示例-ColorViewer
 
@@ -251,7 +451,7 @@ ob_config* config = ob_create_config( &error );
 ob_stream_profile *     color_profile = NULL;
 ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_Color, &error);
 //根据指定的格式查找对应的Profile,优先选择RGB888格式
-color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_RGB888, 30, &error);
+color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_RGB, 30, &error);
 //没找到RGB888格式后不匹配格式查找对应的Profile进行开流
 if(error){
 	color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_UNKNOWN, 30, &error);
@@ -279,10 +479,10 @@ ob_delete_stream_profile(color_profile, &error);
 ob_delete_stream_profile_list(profiles, &error);
 
 //销毁device
-ob_delete_device(device, &error);  
+ob_delete_device(device, &error);
 
 //销毁pipeline
-ob_delete_pipeline(pipe, &error);  
+ob_delete_pipeline(pipe, &error);
 ```
 
 ## 红外示例-InfraredViewer
@@ -312,7 +512,7 @@ ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipe
 //根据指定的格式查找对应的Profile,优先查找Y16格式
 ir_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_Y16, 30, &error);
 //没找到Y16格式后不匹配格式查找对应的Profile进行开流
-if(error) {  
+if(error) {
     ir_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_UNKNOWN, 30, &error);
     error = nullptr;
 }
@@ -349,10 +549,10 @@ ob_delete_stream_profile(ir_profile, &error);
 ob_delete_stream_profile_list(profiles, &error);
 
 //销毁device
-ob_delete_device(device, &error);  
+ob_delete_device(device, &error);
 
 //销毁pipeline
-ob_delete_pipeline(pipe, &error);  
+ob_delete_pipeline(pipe, &error);
 ```
 
 ## 切换相机深度工作模式-DepthWorkMode
@@ -425,9 +625,9 @@ check_error(error);
 ```
 
 到此切换相机深度模式结束，可以用pipeline进行打开相机取流
-注意： 
+注意：
 1. 如果需要切换相机深度模式，那么打开数据流必须在切换深度工作模式之后；每个相机深度模式下支持的有效分辨率不同
-2. 如果已经用pipeline打开数据流，那么切换相机深度工作模式前必须把原来申请的pipeline释放； 
+2. 如果已经用pipeline打开数据流，那么切换相机深度工作模式前必须把原来申请的pipeline释放；
    切换相机深度工作模式后重新创建pipeline，否则会造成野指针或者内存泄露；
 
 
@@ -495,12 +695,12 @@ void on_device_changed_callback( ob_device_list* removed, ob_device_list* added,
 主函数main内，首先需要创建一个Context并注册设备上下线回调
 ```c
  //创建上下文
-ob_context* ctx = ob_create_context( &error );  
+ob_context* ctx = ob_create_context( &error );
 
 //注册设备回调
 ob_set_device_changed_callback( ctx, on_device_changed_callback, NULL, &error );
 ```
-主循环主要任务是，当pipeline在设备上线后已创建启动，从pipeline获取数据帧集合，并将数据帧集合内的Color和Depth相关信息打印输出。 
+主循环主要任务是，当pipeline在设备上线后已创建启动，从pipeline获取数据帧集合，并将数据帧集合内的Color和Depth相关信息打印输出。
 ```c
 //等待一帧数据，超时时间为100ms
 ob_frame* frameset = ob_pipeline_wait_for_frameset( pipeline, 100, &error );
@@ -510,7 +710,7 @@ if ( frameset ) {
     if ( depth_frame ) {
         printf( "=====Depth Frame Info======Index: %lld TimeStamp: %lld\n", ob_frame_index( depth_frame, &error ), ob_frame_time_stamp( depth_frame, &error ) );
         //释放深度数据帧
-        ob_delete_frame( depth_frame, &error ); 
+        ob_delete_frame( depth_frame, &error );
     }
     //获取Color数据帧
     ob_frame* color_frame = ob_frameset_color_frame( frameset, &error );
@@ -631,7 +831,7 @@ void save_rgb_points_to_ply( ob_frame* frame, const char* fileName ) {
     }
     //根据指定的格式查找对应的Profile,优先选择RGB888格式
     if(profiles){
-        color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_RGB888, 30, &error);
+        color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_RGB, 30, &error);
     }
     //没找到RGB888格式后不匹配格式查找对应的Profile进行开流
     if(profiles && error){
@@ -660,7 +860,7 @@ void save_rgb_points_to_ply( ob_frame* frame, const char* fileName ) {
 ```c
 //等待一帧数据，超时时间为100ms
 ob_frame* frameset = ob_pipeline_wait_for_frames( pipeline, 100, &error );
-if ( frameset != NULL ) 
+if ( frameset != NULL )
 {
     //按R键保存ply数据
     if ( ( key == 'R' || key == 'r' ) && frameset != NULL ) {
@@ -779,7 +979,7 @@ ob::Pipeline pipe;
 ```cpp
 //获取深度相机的所有流配置，包括流的分辨率，帧率，以及帧的格式
 auto profiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
-    
+
 std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
 try{
 	//根据指定的格式查找对应的Profile,优先查找Y16格式
@@ -835,14 +1035,14 @@ try{
 	std::shared_ptr<ob::VideoStreamProfile> colorProfile = nullptr;
 	try{
 		//根据指定的格式查找对应的Profile,优先选择RGB888格式
-		colorProfile = profiles->getVideoStreamProfile(640,0,OB_FORMAT_RGB888,30);
+		colorProfile = profiles->getVideoStreamProfile(640,0,OB_FORMAT_RGB,30);
 	}catch(ob::Error &e){
 		//没找到RGB888格式后不匹配格式查找对应的Profile进行开流
 		colorProfile = profiles->getVideoStreamProfile(640,0,OB_FORMAT_UNKNOWN,30);
 	}
 	config->enableStream(colorProfile);
 }catch(ob::Error &e){
-	std::cerr<<"Current device is not support color sensor!"<<std::endl;   
+	std::cerr<<"Current device is not support color sensor!"<<std::endl;
 	exit(EXIT_FAILURE);
 }
 ```
@@ -949,7 +1149,7 @@ try{
     std::shared_ptr<ob::VideoStreamProfile> colorProfile = nullptr;
     try{
         //根据指定的格式查找对应的Profile,优先选择RGB888格式
-        colorProfile = colorProfiles->getVideoStreamProfile(640,0,OB_FORMAT_RGB888,30);
+        colorProfile = colorProfiles->getVideoStreamProfile(640,0,OB_FORMAT_RGB,30);
     }catch(ob::Error &e){
         //没找到RGB888格式后不匹配格式查找对应的Profile进行开流
         colorProfile = colorProfiles->getVideoStreamProfile(640,0,OB_FORMAT_UNKNOWN,30);
@@ -991,6 +1191,193 @@ pipe.start(config);
 pipe.stop();
 ```
 程序正常退出之后资源将会自动释放
+
+## 固件升级示例-FirmwareUpgrade
+功能描述：本示例演示如何用固件文件给设备升级。
+> 本示例基于C++ Low Level API进行演示
+
+在main函数接口通过命令参数获取固件文件
+```cpp
+// checkFirmwareFilePath()函数用于检查文件是否存在，实际代码中最好检查后缀是否为bin或者img, 以及固件文件是否与目标设备相匹配
+std::string checkFirmwareFilePath(int argc, char **argv) {
+    if(argc < 2) {
+        std::cout << "Please input firmware path." << std::endl;
+        return "";
+    }
+
+    std::string   filePath = std::string(*(argv + 1));
+    std::ifstream fs(filePath);
+    if(!fs.is_open()) {
+        std::cout << "Open Firmware file failed. filePath: " << filePath << std::endl;
+        return "";
+    }
+
+    fs.close();
+    return filePath;
+}
+
+int main(int argc, char **argv) try {
+    std::string firmwareFilePath = checkFirmwareFilePath(argc, argv);
+    if(firmwareFilePath.empty()) {
+        std::cout << "command: " << std::endl << "$ ./FirmwareUpgrade[.exe] firmwareFile.bin" << std::endl;
+        return 0;
+    }
+
+    // 接下来的业务代码
+
+    return 0;
+}
+catch(ob::Error &e) {
+    // 处理OrbbecSDK接口调用异常，示例为了简洁连续几个接口一起try-catch，实际业务中推荐单独一个接口一个try-catch
+    std::cerr << "function:" << e.getName() << "\nargs:" << e.getArgs() << "\nmessage:" << e.getMessage() << "\ntype:" << e.getExceptionType() << std::endl;
+    exit(EXIT_FAILURE);
+}
+```
+
+创建ob::Context并通过ob::Context获取设备，本示例假设运行FirmwareUpgrade[.exe]之前上位机（Windows、Ubuntu、Android平台）已经插入设备。ob::DeviceChangedCallback用于固件升级后监听device重启后获取被升级设备的业务处理
+```cpp
+// 构建ob::Context对象
+ob::Context ctx;
+// 设置设备变化监听器，device_changed_callback是管理device声明周期的关键函数，开发者必须关注该回调
+ctx.setDeviceChangedCallback([](std::shared_ptr<ob::DeviceList> removedList, std::shared_ptr<ob::DeviceList> addedList) {
+    if(isWaitRebootComplete_) {
+        if(addedList && addedList->deviceCount() > 0) {
+            auto device = addedList->getDevice(0);
+            if(isDeviceRemoved_ && deviceSN_ == std::string(device->getDeviceInfo()->serialNumber())) {
+                rebootedDevice_       = device;
+                isWaitRebootComplete_ = false;
+
+                std::unique_lock<std::mutex> lk(waitRebootMutex_);
+                waitRebootCondition_.notify_all();
+            }
+        }
+
+        if(removedList && removedList->deviceCount() > 0) {
+            if(deviceUid_ == std::string(removedList->uid(0))) {
+                isDeviceRemoved_ = true;
+            }
+        }
+    }  // if isWaitRebootComplete_
+});
+
+// 查询当前已经接入的设备
+auto devList = ctx.queryDeviceList();
+
+// 从ob::DeviceList中获取当前接入设备的数量
+if(devList->deviceCount() == 0) {
+     // 固件升级示例默认设备已经接入到上位机（Windows、Ubuntu、Android平台）
+    std::cerr << "Device not found!" << std::endl;
+    return -1;
+}
+
+// 获取第一个设备，index=0
+auto dev = devList->getDevice(0);
+// 打印设备信息
+dumpDeviceInfo(dev);
+```
+
+获取设备当前的固件版本信息
+```cpp
+// 打印设备名称，SN，VID，PID以及固件版本
+void dumpDeviceInfo(std::shared_ptr<ob::Device> device) {
+    // 获取ob::DeviceInfo对象，通过ob::DeviceInfo可以获取目标设备的基本信息
+    auto devInfo = device->getDeviceInfo();
+
+    // 设备名称
+    std::cout << "Device name: " << devInfo->name() << std::endl;
+
+    // 设备VID，PID，UID
+    std::cout << "Device pid: " << devInfo->pid() << " vid: " << devInfo->vid() << " uid: " << devInfo->uid() << std::endl;
+
+    // 设备当前的固件版本号
+    auto fwVer = devInfo->firmwareVersion();
+    std::cout << "Firmware version: " << fwVer << std::endl;
+
+    // 设备SN
+    auto sn = devInfo->serialNumber();
+    std::cout << "Serial number: " << sn << std::endl;
+
+    // devInfo资源会自动释放
+}
+```
+
+给目标设备升级固件
+a. 实现C API的固件升级回调接口；
+b. 调用固件升级接口进行升级；
+```cpp
+// 对目标设备进行固件升级
+bool upgradeFirmware(std::shared_ptr<ob::Device> device, std::string firmwarePath) {
+    auto index     = firmwarePath.find_last_of(".img");
+    bool isImgFile = index != std::string::npos;
+    index          = firmwarePath.find_last_of(".bin");
+    bool isBinFile = index != std::string::npos;
+    if(!(isImgFile || isBinFile)) {
+        // 固件升级文件一般为bin或者img，实际业务中最好通过文件名称、文件MD5等信息做防呆
+        std::cout << "Upgrade Fimware failed. invalid firmware file: " << firmwarePath << std::endl;
+        return false;
+    }
+
+    bool isUpgradeSuccess = false;
+    try {
+        // 调用固件升级接口进行升级；
+        device->deviceUpgrade(
+            firmwarePath.c_str(),
+            [=, &isUpgradeSuccess](OBUpgradeState state, const char *message, uint8_t percent) {
+                if(state == STAT_START) {
+                    std::cout << "Upgrade Firmware start" << std::endl;
+                }
+                else if(state == STAT_FILE_TRANSFER) {
+                    std::cout << "Upgrade Firmware file transfer, percent: " << (uint32_t)percent << std::endl;
+                }
+                else if(state == STAT_IN_PROGRESS) {
+                    std::cout << "Upgrade Firmware in progress, percent: " << (uint32_t)percent << std::endl;
+                }
+                else if(state == STAT_DONE) {
+                    // 固件升级成功
+                    std::cout << "Upgrade Firmware done, percent: " << (uint32_t)percent << std::endl;
+                    isUpgradeSuccess = true;
+                }
+                else if(state == STAT_VERIFY_IMAGE) {
+                    std::cout << "Upgrade Firmware verify image" << std::endl;
+                }
+                else {
+                    // 固件升级失败
+                    std::string errMsg = (nullptr != message ? std::string(message) : "");
+                    std::cout << "Upgrade Firmware failed. state: " << std::to_string(state) << ", errMsg: " << errMsg << ", percent: " << (uint32_t)percent
+                              << std::endl;
+                }
+            },
+            false);
+    }
+    catch(ob::Error &e) {
+        std::cerr << "Upgrade Firmware ob error. function:" << e.getName() << "\nargs:" << e.getArgs() << "\nmessage:" << e.getMessage()
+                  << "\ntype:" << e.getExceptionType() << std::endl;
+    }
+    catch(std::exception &e) {
+        if(e.what()) {
+            std::cout << "Upgrade Firmware Exception. what: " << std::string(e.what()) << std::endl;
+        }
+    }
+
+    return isUpgradeSuccess;
+}
+```
+
+固件升级成功后，需要重启设备。重启设备有两种方式，一种是拔插设备（或者操作系统重启），另一种是调用OrbbecSDK的reboot接口。等设备上线后，通过本示例的dump_device_info()函数可以查询当前设备固件版本信息
+
+以下示例演示通过固件reboot接口重启设备
+```cpp
+// 重启设备
+std::cout << "Reboot device" << std::endl;
+isDeviceRemoved_      = false;
+isWaitRebootComplete_ = true;
+dev->reboot();
+// 释放资源，设备重启后ob::Device对象就不能用了
+dev     = nullptr;
+```
+
+程序正常退出之后资源将会自动释放
+
 ## 传感器控制示例-SensorControl
 
 功能描述：本示例主要演示了对device控制命令的操作、对Sensor控制命令的操作、对Sensor进行流操作。
@@ -1036,6 +1423,138 @@ int int_ret = device->getIntProperty(propertyItem.id);
 float float_ret = device->getFloatProperty(propertyItem.id);
 ```
 程序正常退出之后资源将会自动释放
+
+## 多路流同时开流示例-MultiStream
+功能描述：本示例主要演示用device同时打开多个sensor流的操作
+> 本示例基于C++ Low Level API进行演示
+
+首先需要创建一个Context，用于获取设备信息列表和创建设备
+```cpp
+ob::Context ctx;
+```
+查询设备信息列表
+```cpp
+auto devList = ctx.queryDeviceList();
+```
+选择一个设备进行操作，如果插入单个设备默认选择并打开，如果存在多个设备提供选择
+```cpp
+//选择一个设备进行操作
+std::shared_ptr<ob::Device> device = nullptr;
+if(deviceList->deviceCount() < 1) {
+    // 示例默认设备已经插入到上位机
+    return 0;
+}
+//默认选择第一个
+device = deviceList->getDevice(0);
+```
+
+使用device创建ob::Pipeline对象
+```cpp
+ob::Pipeline pipe(device);
+```
+
+创建ob::Config用于配置pipeline要打开的stream流，目前pipeline仅支持Color,IR,Depth等UVC类型的视频流，不支持IMU类型的Gyro, Accel的流。
+```cpp
+    // 构建ob::Config配置对象，后续pipeline开流需要该对象
+    std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
+
+    // 尝试配置Color流
+    try {
+        auto colorProfiles = pipe.getStreamProfileList(OB_SENSOR_COLOR);
+        auto colorProfile  = colorProfiles->getProfile(0);
+        config->enableStream(colorProfile->as<ob::VideoStreamProfile>());
+    }
+    catch(...) {
+        std::cout << "color stream not found!" << std::endl;
+    }
+
+    // 尝试配置Depth流
+    try {
+        auto depthProfiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
+        auto depthProfile  = depthProfiles->getProfile(0);
+        config->enableStream(depthProfile->as<ob::VideoStreamProfile>());
+    }
+    catch(...) {
+        std::cout << "depth stream not found!" << std::endl;
+    }
+
+    // 尝试配置IR流
+    try {
+        auto irProfiles = pipe.getStreamProfileList(OB_SENSOR_IR);
+        auto irProfile  = irProfiles->getProfile(0);
+        config->enableStream(irProfile->as<ob::VideoStreamProfile>());
+    }
+    catch(...) {
+        std::cout << "ir stream not found!" << std::endl;
+    }
+
+    // 可选，非必须。打开硬件D2C对齐
+    config->setAlignMode(ALIGN_D2C_HW_MODE);
+```
+
+将配置好的ob::Config传入到ob::Pipeline#start开流并监听回调
+```cpp
+// Pipeline#start需要传入config配置和FrameSetCallback帧回调对象
+pipe.start(config, [&](std::shared_ptr<ob::FrameSet> frameset) {
+    std::unique_lock<std::mutex> lk(videoFrameMutex);
+    // 获取对应的帧数据，注意，colorFrame, depthFrame, irFrame可能为null
+    colorFrame = frameset->colorFrame();
+    depthFrame = frameset->depthFrame();
+    irFrame    = frameset->irFrame();
+});
+```
+
+关闭pipeline
+```cpp
+pipe.stop();
+```
+
+开启IMU流，陀螺仪和加速度计目前仅支持用sensor开流，不支持ob::Pipeline开流
+开流步骤如下：
+a. 从device中获取GyroSensor(陀螺仪)和AccelSensor(加速度计)，对象为ob::Sensor
+b. 分别从GyroSensor和AccelSensor获取对应的配置GyroStreamProfile和AccelStreamProfile
+c. 用ob::Sensor#start进行开流，参数为StreamProfile;
+```cpp
+std::shared_ptr<ob::Sensor> accelSensor;
+std::shared_ptr<ob::Sensor> gyroSensor;
+try {
+    // 通过device构建IMU sensor对象
+    accelSensor = device->getSensor(OB_SENSOR_ACCEL);
+    gyroSensor  = device->getSensor(OB_SENSOR_GYRO);
+}
+catch(...) {
+    std::cout << "IMU sensor not found!" << std::endl;
+}
+
+if(accelSensor && gyroSensor) {
+    // 获取AccelStreamProfile
+    auto accelProfiles = accelSensor->getStreamProfileList();
+    auto accelProfile  = accelProfiles->getProfile(0);
+    // 用ob::Sensor#start函数开流，需要传入StreamProfile和FrameCallback
+    // 在FrameCallback帧回调函数中处理device返回的数据帧
+    accelSensor->start(accelProfile, [&](std::shared_ptr<ob::Frame> frame) {
+        std::unique_lock<std::mutex> lk(accelFrameMutex);
+        accelFrame = frame;
+    });
+
+    // 获取GyroStreamProfile
+    auto gyroProfiles = gyroSensor->getStreamProfileList();
+    auto gyroProfile  = gyroProfiles->getProfile(0);
+    // 用ob::Sensor#start函数开流，需要传入StreamProfile和FrameCallback
+    // 在FrameCallback帧回调函数中处理device返回的数据帧
+    gyroSensor->start(gyroProfile, [&](std::shared_ptr<ob::Frame> frame) {
+        std::unique_lock<std::mutex> lk(gyroFrameMutex);
+        gyroFrame = frame;
+    });
+}
+```
+
+关闭IMU sensor数据流
+```cpp
+accelSensor->stop();
+gyroSensor->stop();
+```
+
 ## 多设备示例-MultiDevice
 
 功能描述：本示例主要演示了对多设备进行操作。
@@ -1084,14 +1603,14 @@ for(auto &&pipe: pipes) {
 
         try{
             //根据指定的格式查找对应的Profile,优先选择RGB888格式
-            colorProfile = colorProfileList->getVideoStreamProfile(640,0,OB_FORMAT_RGB888,30);
+            colorProfile = colorProfileList->getVideoStreamProfile(640,0,OB_FORMAT_RGB,30);
         }catch(ob::Error &e){
             //没找到RGB888格式后不匹配格式查找对应的Profile进行开流
             colorProfile = colorProfileList->getVideoStreamProfile(640,0,OB_FORMAT_UNKNOWN,30);
         }
         config->enableStream(colorProfile);
     }catch(ob::Error &e){
-        std::cerr<<"Current device is not support color sensor!"<<std::endl;   
+        std::cerr<<"Current device is not support color sensor!"<<std::endl;
     }
 
     //启动pipeline，并传入配置
@@ -1189,9 +1708,9 @@ check_error(error);
 ```
 
 到此切换相机深度模式结束，可以用pipeline进行打开相机取流
-注意： 
+注意：
 1. 如果需要切换相机深度模式，那么打开数据流必须在切换深度工作模式之后；每个相机深度模式下支持的有效分辨率不同
-2. 如果已经用pipeline打开数据流，那么切换相机深度工作模式前必须把原来申请的pipeline释放； 
+2. 如果已经用pipeline打开数据流，那么切换相机深度工作模式前必须把原来申请的pipeline释放；
    切换相机深度工作模式后重新创建pipeline，否则会造成野指针或者内存泄露；
 
 ## 热拔插示例-HotPlugin
@@ -1367,6 +1886,9 @@ configDevList.clear();
 
 获取设备列表
 ```C
+// 公共对象，用于存储已经开流的pipe对象
+std::vector<std::shared_ptr<ob::Pipeline>> pipeList;
+
 // 查询已经接入设备的列表
 auto devList = context.queryDeviceList();
 
@@ -1412,53 +1934,75 @@ context.enableMultiDeviceSync(60000);  // 每一分钟更新同步一次
 打开设备数据流
 ```C
 // 先打开主模式设备的流，后打开其他模式设备的流（非所有型号设备都有此顺序要求，具体可查看相关型号设备说明文档）
-startStream(primary_devices, OB_SENSOR_COLOR);
+startStream(primary_devices, 0);
 std::this_thread::sleep_for(std::chrono::milliseconds(500));
-startStream(primary_devices, OB_SENSOR_DEPTH);
-std::this_thread::sleep_for(std::chrono::milliseconds(500));
-startStream(common_devices, OB_SENSOR_DEPTH, primary_devices.size());
-startStream(common_devices, OB_SENSOR_COLOR, primary_devices.size());
+startStream(common_devices, primary_devices.size());
 ```
 
 开关流函数实现
 ```C
-void startStream(std::vector<std::shared_ptr<ob::Device>> devices, OBSensorType sensorType, int deviceIndexBase) {
+void startStream(std::vector<std::shared_ptr<ob::Device>> devices, int deviceIndexBase) {
     for(auto &&dev: devices) {
         // 获取相机列表
-        auto sensorList = dev->getSensorList();
-        for(uint32_t i = 0; i < sensorList->count(); i++) {
-            auto sensor = sensorList->getSensor(i);
-            if(sensorType == sensor->type()) {
-                auto profiles = sensor->getStreamProfileList();
-                auto profile  = profiles->getProfile(0);
-                switch(sensorType) {
-                case OB_SENSOR_DEPTH:
-                    if(profile) {
-                        sensor->start(profile, [deviceIndexBase](std::shared_ptr<ob::Frame> frame) { handleDepthStream(deviceIndexBase, frame); });
-                    }
-                    break;
-                case OB_SENSOR_COLOR:
-                    if(profile) {
-                        sensor->start(profile, [deviceIndexBase](std::shared_ptr<ob::Frame> frame) { handleColorStream(deviceIndexBase, frame); });
-                    }
-                    break;
-                default:
-                    break;
-                }
-            }
+        auto pipe = std::shared_ptr<ob::Pipeline>(new ob::Pipeline(dev));
+        auto config = std::shared_ptr<ob::Config>(new ob::Config());
+        try {
+            // 获取Color sensor的配置列表，并开启播放配置
+            auto profileList = pipe->getStreamProfileList(OB_SENSOR_COLOR);
+            auto videoProfile = profileList->getProfile(0)->as<ob::VideoStreamProfile>();
+            config->enableStream(videoProfile);
+        } catch (ob::Error &e) {
+            std::error << "Config Color sensor StreamProfile failed" << std::endl;
         }
+        try {
+            // 获取Depth sensor的配置列表，并开启播放配置
+            auto profileList = pipe->getStreamProfileList(OB_SENSOR_DEPTH);
+            auto videoProfile = profileList->getProfile(0)->as<ob::VideoStreamProfile>();
+            config->enableStream(videoProfile);
+        } catch (ob::Error &e) {
+            std::error << "Config Depth sensor StreamProfile failed" << std::endl;
+        }
+        try {
+            // 使用配置进行开流, 并处理帧集合回调FrameSetCallback
+            pipe->start(config, [deviceIndexBase](std::shared_ptr<ob::FrameSet> frameSet) {
+                // 处理color帧
+                auto colorProfile = frameSet->colorFrame();
+                if (colorProfile) {
+                    handleColorStream(deviceIndexBase, colorProfile);
+                }
+
+                // 处理depth帧
+                auto depthProfile = frameSet->colorFrame();
+                if (depthProfile) {
+                    handleDepthStream(deviceIndexBase, depthProfile);
+                }
+            });
+
+            // 关流时需要
+            pipeList.push_back(pipe);
+        } catch (ob::Error &e) {
+            std::error << "Start pipeline failed" << std::endl;
+        }
+
+
+        // 下一个设备
         deviceIndexBase++;
     }
 }
 
-void stopStream(std::vector<std::shared_ptr<ob::Device>> devices, OBSensorType sensorType) {
+void stopStream(std::vector<std::shared_ptr<ob::Device>> devices) {
     for(auto &&dev: devices) {
-        // 获取相机列表
-        auto sensorList = dev->getSensorList();
-        for(uint32_t i = 0; i < sensorList->count(); i++) {
-            if(sensorList->type(i) == sensorType) {
-                sensorList->getSensor(i)->stop();
-                break;
+        for (aut it = pipeList.begin(); it != pipeList.end();) {
+            // 根据ob::Device匹配目标pipeline并关流
+            if (dev == (*it)->getDevice()) {
+                // 使用ob::Pipeline#stop停流
+                (*it)->stop();
+
+                // remove inactive pipeline
+                it = pipeList.erase(it);
+            } else {
+                // next loop
+                it++;
             }
         }
     }
@@ -1488,11 +2032,8 @@ void handleDepthStream(int devIndex, std::shared_ptr<ob::Frame> frame) {
 关闭设备数据流
 ```C
 // 关闭数据流
-stopStream(primary_devices, OB_SENSOR_COLOR);
-stopStream(primary_devices, OB_SENSOR_DEPTH);
-stopStream(common_devices, OB_SENSOR_COLOR);
-stopStream(common_devices, OB_SENSOR_DEPTH);
-
+stopStream(primary_devices);
+stopStream(common_devices);
 ```
 
 
@@ -1582,7 +2123,7 @@ try{
     std::shared_ptr<ob::VideoStreamProfile> colorProfile = nullptr;
     try{
         //根据指定的格式查找对应的Profile,优先选择RGB888格式
-        colorProfile = colorProfiles->getVideoStreamProfile(640,0,OB_FORMAT_RGB888,30);
+        colorProfile = colorProfiles->getVideoStreamProfile(640,0,OB_FORMAT_RGB,30);
     }catch(ob::Error &e){
         //没找到RGB888格式后不匹配格式查找对应的Profile进行开流
         colorProfile = colorProfiles->getVideoStreamProfile(640,0,OB_FORMAT_UNKNOWN,30);
@@ -1592,7 +2133,7 @@ try{
     //如果不存在Color Sensor 点云转换分辨率配置为深度分辨率
     config->setDepthScaleRequire(false);
     config->setD2CTargetResolution(depthProfile->width(),depthProfile->height());
-    std::cerr<<"Current device is not support color sensor!"<<std::endl;   
+    std::cerr<<"Current device is not support color sensor!"<<std::endl;
 }
 ```
 开启D2C对齐, 生成RGBD点云时需要开启
@@ -1665,7 +2206,7 @@ else if(key == 'D' || key == 'd') {
     }
   }
 }
-    
+
 ```
 最后通过Pipeline来停止流
 ```cpp
@@ -1677,7 +2218,7 @@ else if(key == 'D' || key == 'd') {
 功能描述：连接设备开流 , 获取彩色和深度图并存储为png格式。
 > 本示例基于C++ High Level API进行演示
 
-创建两个函数来用于将获取的图片保存到文件中 
+创建两个函数来用于将获取的图片保存到文件中
 ```cpp
 //保存深度图为png格式
 void saveDepth( std::shared_ptr< ob::DepthFrame > depthFrame ) {

@@ -1,6 +1,7 @@
 /**
  * @file Context.hpp
- * @brief The SDK context class, the entry to the underlying SDK, is used to query device lists，handle device callbacks，set the level of the log
+ * @brief The SDK context class, which serves as the entry point to the underlying SDK. It is used to query device lists, handle device callbacks, and set the
+ * log level.
  *
  */
 #pragma once
@@ -23,96 +24,112 @@ private:
 
 public:
     /**
-     * @brief Context is a management class that describes the runtime of the SDK. It is responsible for the applying and releasing of resources for the SDK.
-     * The context has the ability to manage multiple devices, is responsible for enumerating devices, monitoring device callbacks, and enabling functions such
-     * as multi-device synchronization.
+     * @brief The Context class is a management class that describes the runtime of the SDK. It is responsible for applying and releasing resources for the SDK.
+     * The context has the ability to manage multiple devices, enumerate devices, monitor device callbacks, and enable functions such as multi-device
+     * synchronization.
      */
     Context(const char *configPath = "");
     virtual ~Context() noexcept;
 
     /**
-     * @brief Query enumerated device list
+     * @brief Queries the enumerated device list.
      *
-     * @return std::shared_ptr<DeviceList> returns a pointer to the device list class
-     *
+     * @return std::shared_ptr<DeviceList> A pointer to the device list class.
      */
     std::shared_ptr<DeviceList> queryDeviceList();
 
     /**
-     * @brief Create a network device object
+     * @brief Creates a network device object.
      *
-     * @param address  ip address
-     * @param port port
-     * @return std::shared_ptr<Device> Returns the created device object
-     *
+     * @param address The IP address.
+     * @param port The port.
+     * @return std::shared_ptr<Device> The created device object.
      */
     std::shared_ptr<Device> createNetDevice(const char *address, uint16_t port);
 
-    using DeviceChangedCallback = std::function<void(std::shared_ptr<DeviceList> removedList, std::shared_ptr<DeviceList> addedList)>;
     /**
-     * @brief Set device plug-in callback function
+     * @brief Changes the IP configuration of a network device.
      *
-     * @param callback function triggered when the device is plugged and unplugged
+     * @param deviceUid The device unique ID, which is the network device MAC address. It can be obtained through the @ref DeviceList::uid() function.
+     * @param config The new IP configuration.
+     */
+    void changeNetDeviceIpConfig(const char *deviceUid, const OBNetIpConfig &config);
+
+    using DeviceChangedCallback = std::function<void(std::shared_ptr<DeviceList> removedList, std::shared_ptr<DeviceList> addedList)>;
+
+    /**
+     * @brief Set the device plug-in callback function.
      *
+     * @param callback The function triggered when the device is plugged and unplugged.
      */
     void setDeviceChangedCallback(DeviceChangedCallback callback);
 
     /**
-     * @brief Activate the multi-device synchronization function to synchronize the clock of the created device(the device needs support this function)
+     * @brief Activates the multi-device synchronization function to synchronize the clock of the created device (the device needs to support this function).
      *
-     * @param repeatInterval  synchronization time interval (unit: ms; if repeatInterval=0, it means that it will only be synchronized once and will not be
-     * executed regularly)
-     *
+     * @param repeatInterval The synchronization time interval (unit: ms; if repeatInterval=0, it means that it will only be synchronized once and will not be
+     * executed regularly).
      */
     void enableMultiDeviceSync(uint64_t repeatInterval);
 
     /**
-     * @brief free idle memory from internal frame memory pool
-     *
+     * @brief Frees idle memory from the internal frame memory pool.
      */
     void freeIdleMemory();
 
     /**
-     * @brief Set the level of the global log will affect both the log level output to the terminal and output to the file
+     * @brief Set the level of the global log, which affects both the log level output to the terminal and output to the file.
      *
-     * @param severity log output level
-     *
+     * @param severity The log output level.
      */
     static void setLoggerSeverity(OBLogSeverity severity);
 
     /**
-     * @brief Set log output to file
+     * @brief Set log output to a file.
      *
-     * @param severity log level output to file
+     * @param severity The log level output to the file.
      * @param directory The log file output path. If the path is empty, the existing settings will continue to be used (if the existing configuration is also
-     * empty, the log will not be output to the file)
+     * empty, the log will not be output to the file).
      */
     static void setLoggerToFile(OBLogSeverity severity, const char *directory);
 
     /**
-     * @brief Set log output to terminal
+     * @brief Set log output to the terminal.
      *
-     * @param severity 	log level output to the terminal
-     *
+     * @param severity The log level output to the terminal.
      */
     static void setLoggerToConsole(OBLogSeverity severity);
 
     /**
-     * @brief Load license file
+     * @brief Log output callback function.
      *
-     * @param filePath license file path
-     * @param key decrypt key
+     * @param severity The current callback log level.
+     * @param logMsg The log message.
+     */
+    using LogCallback = std::function<void(OBLogSeverity severity, const char *logMsg)>;
+
+    /**
+     * @brief Set the logger to callback.
      *
+     * @param severity The callback log level.
+     * @param callback The callback function.
+     */
+    static void setLoggerToCallback(OBLogSeverity severity, LogCallback callback);
+
+    /**
+     * @brief Loads a license file.
+     *
+     * @param filePath The license file path.
+     * @param key The decryption key.
      */
     static void loadLicense(const char *filePath, const char *key = OB_DEFAULT_DECRYPT_KEY);
 
     /**
-     * @brief load license from data
+     * @brief Loads a license from data.
      *
-     * @param data license data
-     * @param dataLen license data len
-     * @param key decrypt key
-     *
+     * @param data The license data.
+     * @param dataLen The license data length.
+     * @param key The decryption key.
      */
     static void loadLicenseFromData(const char *data, uint32_t dataLen, const char *key = OB_DEFAULT_DECRYPT_KEY);
 };

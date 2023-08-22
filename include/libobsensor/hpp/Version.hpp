@@ -1,7 +1,6 @@
 /**
  * @file Version.hpp
- * @brief Get the SDK version information
- *
+ * @brief Provides functions to retrieve version information of the SDK.
  */
 #pragma once
 
@@ -9,39 +8,38 @@ namespace ob {
 class OB_EXTENSION_API Version {
 public:
     /**
-     * @brief Get the SDK major version number
+     * @brief Get the major version number of the SDK.
      *
-     * @return int returns the SDK major version number
-     *
+     * @return int The major version number of the SDK.
      */
     static int getMajor();
+
     /**
-     * @brief Get the SDK minor version number
+     * @brief Get the minor version number of the SDK.
      *
-     * @return int returns the SDK minor version number
-     *
+     * @return int The minor version number of the SDK.
      */
     static int getMinor();
+
     /**
-     * @brief Get the SDK revision number
+     * @brief Get the patch version number of the SDK.
      *
-     * @return int returns the SDK revision number
-     *
+     * @return int The patch version number of the SDK.
      */
     static int getPatch();
 
     /**
-     * @brief Get the SDK version number
+     * @brief Get the full version number of the SDK.
      *
-     * @return int returns the SDK version number
-     *
+     * @return int The full version number of the SDK.
      */
     static int getVersion();
 
     /**
-     * @brief Get sdk stage version.
+     * @brief Get the stage version of the SDK.
      *
+     * @return char* The stage version string of the SDK.
      */
-    static std::string getStageVersion();
+    static char *getStageVersion();
 };
 }  // namespace ob

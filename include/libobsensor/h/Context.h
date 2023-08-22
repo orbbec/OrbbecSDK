@@ -1,7 +1,7 @@
- /**
+/**
  * @file Context.h
- * @brief Context is a management class that describes the runtime of the SDK and is responsible for resource application and release of the SDK.
- * Context has the ability to manage multiple devices. It is responsible for enumerating devices, monitoring device callbacks, and enabling multi device
+ * @brief Context is a management class that describes the runtime of the SDK and is responsible for resource allocation and release of the SDK.
+ * Context has the ability to manage multiple devices. It is responsible for enumerating devices, monitoring device callbacks, and enabling multi-device
  * synchronization.
  */
 #pragma once
@@ -13,136 +13,133 @@ extern "C" {
 #include "ObTypes.h"
 
 /**
- * @brief create context api
+ * @brief Create a context object
  *
- * @param[out] error record the error information
- * @return ob_context* return the context that created
- *
+ * @param[out] error Pointer to an error object that will be populated if an error occurs during context creation
+ * @return Pointer to the created context object
  */
 ob_context *ob_create_context(ob_error **error);
 
 /**
- * @brief create context with config
+ * @brief Create a context object with a specified configuration file
  *
- * @param[in] config_path Configure the path of the file, and return null if the default path is used.
- * @param[out] error Log error messages
- * @return ob_context* returns the context
- *
+ * @param[in] config_path Path to the configuration file. If NULL, the default configuration file will be used.
+ * @param[out] error Pointer to an error object that will be populated if an error occurs during context creation
+ * @return Pointer to the created context object
  */
 ob_context *ob_create_context_with_config(const char *config_path, ob_error **error);
 
 /**
- * @brief Delete context
+ * @brief Delete a context object
  *
- * @param[in] context The context to delete
- * @param[out] error Log error messages
- *
+ * @param[in] context Pointer to the context object to be deleted
+ * @param[out] error Pointer to an error object that will be populated if an error occurs during context deletion
  */
 void ob_delete_context(ob_context *context, ob_error **error);
 
 /**
- * @brief Get the list of enumerated devices
+ * @brief Get a list of enumerated devices
  *
- * @param[in] context Context
- * @param[out] error Log error messages
- * @return ob_device_list* return device list object
- *
+ * @param[in] context Pointer to the context object
+ * @param[out] error Pointer to an error object that will be populated if an error occurs during device enumeration
+ * @return Pointer to the device list object
  */
-
 ob_device_list *ob_query_device_list(ob_context *context, ob_error **error);
 
 /**
- * @brief Create a network device
+ * @brief Create a network device object
  *
- * @param[in] context Context
- * @param[in] address Device IP address
- * @param[in] port Device port
- * @param[out] error Log error messages
- * @return[out] ob_device* Returns the device object
- *
+ * @param[in] context Pointer to the context object
+ * @param[in] address IP address of the device
+ * @param[in] port Port number of the device
+ * @param[out] error Pointer to an error object that will be populated if an error occurs during device creation
+ * @return Pointer to the created device object
  */
 ob_device *ob_create_net_device(ob_context *context, const char *address, uint16_t port, ob_error **error);
 
 /**
- * @brief Set device plug-in callback function
- * @attention The added and removed device list returned through the callback interface need to be released manually
+ * @brief Set a device plug-in callback function
+ * @attention The added and removed device lists returned through the callback interface need to be released manually
  *
- * @param[in] context Context
- * @param[in] callback Callback triggered when the device is plugged and unplugged
- * @param[in] user_data You can pass in any user data and get it from the callback
- * @param[out] error Log error messages
- *
+ * @param[in] context Pointer to the context object
+ * @param[in] callback Pointer to the callback function triggered when a device is plugged or unplugged
+ * @param[in] user_data Pointer to user data that can be passed to and retrieved from the callback function
+ * @param[out] error Pointer to an error object that will be populated if an error occurs during callback function setting
  */
 void ob_set_device_changed_callback(ob_context *context, ob_device_changed_callback callback, void *user_data, ob_error **error);
 
 /**
- * @brief Activate the multi-device synchronization function to synchronize the clock of the created device(the device needs to support this function)
+ * @brief Activate the multi-device synchronization function to synchronize the clock of the created device (the device needs to support this function)
  *
- * @param[in]  context Context
- * @param[in]  repeatInterval synchronization time interval (unit: ms; if repeatInterval=0, it means that it will only be synchronized once and will not be
- * executed regularly)
- * @param[out] error Log error messages
- *
+ * @param[in] context Pointer to the context object
+ * @param[in] repeatInterval Synchronization time interval in milliseconds. If repeatInterval=0, synchronization will only occur once and will not be
+ * executed regularly.
+ * @param[out] error Pointer to an error object that will be populated if an error occurs during multi-device synchronization activation
  */
 void ob_enable_multi_device_sync(ob_context *context, uint64_t repeatInterval, ob_error **error);
 
 /**
- * @brief free idle memory from internal frame memory pool
+ * @brief Free idle memory from the internal frame memory pool
  *
- * @param[in]  context Context
-
- * @param[out] error Log error messages
- *
+ * @param[in] context Pointer to the context object
+ * @param[out] error Pointer to an error object that will be populated if an error occurs during memory freeing
  */
 void ob_free_idle_memory(ob_context *context, ob_error **error);
 
- /**
- * @brief Set the global log level and this will affect both the log level output to the console and the log output to the file
+/**
+ * @brief Set the global log level
  *
- * @param[in] severity Output log level
- * @param[out] error Log error messages
+ * @attention This interface setting will affect the output level of all logs (terminal, file, callback)
  *
+ * @param[in] severity Log level to set
+ * @param[out] error Pointer to an error object that will be populated if an error occurs during log level setting
  */
 void ob_set_logger_severity(ob_log_severity severity, ob_error **error);
 
- /**
- * @brief Set output log to file
+/**
+ * @brief Set the log output to a file
  *
- * @param[in] severity log level output to file
- * @param[in] directory The log file output path. If the path is empty, the existing settings will continue to be used (if the existing configuration is also
- * empty, the log will not be output to the file)
- * @param[out] error Log error messages
- *
+ * @param[in] severity Log level to output to file
+ * @param[in] directory Path to the log file output directory. If the path is empty, the existing settings will continue to be used (if the existing
+ * configuration is also empty, the log will not be output to the file)
+ * @param[out] error Pointer to an error object that will be populated if an error occurs during log output setting
  */
 void ob_set_logger_to_file(ob_log_severity severity, const char *directory, ob_error **error);
 
- /**
- * @brief Set the output log to the console
+/**
+ * @brief Set the log callback function
  *
- * @param[in] log Log level
- * @param[out] error Log error messages
+ * @param[in] severity Log level to set for the callback function
+ * @param[in] callback Pointer to the callback function
+ * @param[in] user_data Pointer to user data that can be passed to and retrieved from the callback function
+ * @param[out] error Pointer to an error object that will be populated if an error occurs during log callback function setting
+ */
+void ob_set_logger_callback(ob_log_severity severity, ob_log_callback callback, void *user_data, ob_error **error);
+
+/**
+ * @brief Set the log output to the console
  *
+ * @param[in] severity Log level to output to the console
+ * @param[out] error Pointer to an error object that will be populated if an error occurs during log output setting
  */
 void ob_set_logger_to_console(ob_log_severity severity, ob_error **error);
 
- /**
- * @brief Load License
+/**
+ * @brief Load a license file
  *
- * @param[in] filePath license file path
- * @param[in] key decrypt key,"OB_DEFAULT_DECRYPT_KEY" can be used to represent the default key
- * @param[out] error Log error messages
- *
+ * @param[in] filePath Path to the license file
+ * @param[in] key Decryption key. "OB_DEFAULT_DECRYPT_KEY" can be used to represent the default key.
+ * @param[out] error Pointer to an error object that will be populated if an error occurs during license loading
  */
 void ob_load_license(const char *filePath, const char *key, ob_error **error);
 
- /**
- * @brief Load license from data
+/**
+ * @brief Load a license from data
  *
- * @param[in] data license data
- * @param[in] dataLen license data len
- * @param[in] key decrypt key,"OB_DEFAULT_DECRYPT_KEY" can be used to represent the default key
- * @param[out] error Log error messages
- *
+ * @param[in] data Pointer to the license data
+ * @param[in] dataLen Length of the license data
+ * @param[in] key Decryption key. "OB_DEFAULT_DECRYPT_KEY" can be used to represent the default key.
+ * @param[out] error Pointer to an error object that will be populated if an error occurs during license loading
  */
 void ob_load_license_from_data(const char *data, uint32_t dataLen, const char *key, ob_error **error);
 

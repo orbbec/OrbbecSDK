@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OrbbecSDK: ob::Sensor类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   </div>
+   <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceob.html">ob</a></li><li class="navelem"><a class="el" href="classob_1_1_sensor.html">Sensor</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="classob_1_1_sensor-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">ob::Sensor类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>定义Sensor类,用于获取流配置，开关流等  
+ <a href="classob_1_1_sensor.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_sensor_8hpp_source.html">Sensor.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae61409be636894608ae694494ccd0377"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_sensor.html#ae61409be636894608ae694494ccd0377">Sensor</a> (std::unique_ptr&lt; SensorImpl &gt; impl)</td></tr>
+<tr class="separator:ae61409be636894608ae694494ccd0377"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a2b323c694c7c40221e84572071b39e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_sensor.html#a9a2b323c694c7c40221e84572071b39e">~Sensor</a> () noexcept</td></tr>
+<tr class="separator:a9a2b323c694c7c40221e84572071b39e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa62d80b41dd6674b3a85ad6c458c5a57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_sensor.html#aa62d80b41dd6674b3a85ad6c458c5a57">type</a> ()</td></tr>
+<tr class="memdesc:aa62d80b41dd6674b3a85ad6c458c5a57"><td class="mdescLeft">&#160;</td><td class="mdescRight">传感器类型  <br /></td></tr>
+<tr class="separator:aa62d80b41dd6674b3a85ad6c458c5a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1258c1766a08737545c23e05146cd4f2"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="classob_1_1_stream_profile_list.html">StreamProfileList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_sensor.html#a1258c1766a08737545c23e05146cd4f2">getStreamProfileList</a> ()</td></tr>
+<tr class="memdesc:a1258c1766a08737545c23e05146cd4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取传感器的流配置列表  <br /></td></tr>
+<tr class="separator:a1258c1766a08737545c23e05146cd4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a688e518379e9cacf3d9b6b107666b716"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_sensor.html#a688e518379e9cacf3d9b6b107666b716">start</a> (std::shared_ptr&lt; <a class="el" href="classob_1_1_stream_profile.html">StreamProfile</a> &gt; streamProfile, <a class="el" href="namespaceob.html#a46d3e40b30648ef9c30cc8be177cedda">FrameCallback</a> callback)</td></tr>
+<tr class="memdesc:a688e518379e9cacf3d9b6b107666b716"><td class="mdescLeft">&#160;</td><td class="mdescRight">开启流并设置帧数据回调  <br /></td></tr>
+<tr class="separator:a688e518379e9cacf3d9b6b107666b716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae13ee851da868f2cc156213cd3dfe981"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_sensor.html#ae13ee851da868f2cc156213cd3dfe981">stop</a> ()</td></tr>
+<tr class="memdesc:ae13ee851da868f2cc156213cd3dfe981"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止流  <br /></td></tr>
+<tr class="separator:ae13ee851da868f2cc156213cd3dfe981"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2c1cc86f39ccc128fd842023f1688c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_sensor.html#af2c1cc86f39ccc128fd842023f1688c2">switchProfile</a> (std::shared_ptr&lt; <a class="el" href="classob_1_1_stream_profile.html">StreamProfile</a> &gt; streamProfile)</td></tr>
+<tr class="memdesc:af2c1cc86f39ccc128fd842023f1688c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">动态切换分辨率  <br /></td></tr>
+<tr class="separator:af2c1cc86f39ccc128fd842023f1688c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a5b82258d1cacac7162763da9298a4bb4"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; SensorImpl &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_sensor.html#a5b82258d1cacac7162763da9298a4bb4">impl_</a></td></tr>
+<tr class="separator:a5b82258d1cacac7162763da9298a4bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>定义Sensor类,用于获取流配置，开关流等 </p>
+
+<p class="definition">在文件 <a class="el" href="_sensor_8hpp_source.html">Sensor.hpp</a> 第 <a class="el" href="_sensor_8hpp_source.html#l00033">33</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ae61409be636894608ae694494ccd0377" name="ae61409be636894608ae694494ccd0377"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae61409be636894608ae694494ccd0377">&#9670;&#160;</a></span>Sensor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ob::Sensor::Sensor </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; SensorImpl &gt;&#160;</td>
+          <td class="paramname"><em>impl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9a2b323c694c7c40221e84572071b39e" name="a9a2b323c694c7c40221e84572071b39e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a2b323c694c7c40221e84572071b39e">&#9670;&#160;</a></span>~Sensor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ob::Sensor::~Sensor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aa62d80b41dd6674b3a85ad6c458c5a57" name="aa62d80b41dd6674b3a85ad6c458c5a57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa62d80b41dd6674b3a85ad6c458c5a57">&#9670;&#160;</a></span>type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a> ob::Sensor::type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>传感器类型 </p>
+<dl class="section return"><dt>返回</dt><dd>OBSensorType 返回传感器类型 </dd></dl>
+
+</div>
+</div>
+<a id="a1258c1766a08737545c23e05146cd4f2" name="a1258c1766a08737545c23e05146cd4f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1258c1766a08737545c23e05146cd4f2">&#9670;&#160;</a></span>getStreamProfileList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::shared_ptr&lt; <a class="el" href="classob_1_1_stream_profile_list.html">StreamProfileList</a> &gt; ob::Sensor::getStreamProfileList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取传感器的流配置列表 </p>
+<dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;StreamProfileList&gt; 返回流配置列表 </dd></dl>
+
+</div>
+</div>
+<a id="a688e518379e9cacf3d9b6b107666b716" name="a688e518379e9cacf3d9b6b107666b716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a688e518379e9cacf3d9b6b107666b716">&#9670;&#160;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Sensor::start </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classob_1_1_stream_profile.html">StreamProfile</a> &gt;&#160;</td>
+          <td class="paramname"><em>streamProfile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceob.html#a46d3e40b30648ef9c30cc8be177cedda">FrameCallback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>开启流并设置帧数据回调 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">streamProfile</td><td>流的配置 </td></tr>
+    <tr><td class="paramname">callback</td><td>设置帧数据到达时的回调 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae13ee851da868f2cc156213cd3dfe981" name="ae13ee851da868f2cc156213cd3dfe981"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae13ee851da868f2cc156213cd3dfe981">&#9670;&#160;</a></span>stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Sensor::stop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>停止流 </p>
+
+</div>
+</div>
+<a id="af2c1cc86f39ccc128fd842023f1688c2" name="af2c1cc86f39ccc128fd842023f1688c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2c1cc86f39ccc128fd842023f1688c2">&#9670;&#160;</a></span>switchProfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Sensor::switchProfile </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classob_1_1_stream_profile.html">StreamProfile</a> &gt;&#160;</td>
+          <td class="paramname"><em>streamProfile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>动态切换分辨率 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">streamProfile</td><td>需要切换的分辨率 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a5b82258d1cacac7162763da9298a4bb4" name="a5b82258d1cacac7162763da9298a4bb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b82258d1cacac7162763da9298a4bb4">&#9670;&#160;</a></span>impl_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;SensorImpl&gt; ob::Sensor::impl_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_sensor_8hpp_source.html">Sensor.hpp</a> 第 <a class="el" href="_sensor_8hpp_source.html#l00035">35</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>header_cn/libobsensor/hpp/<a class="el" href="_sensor_8hpp_source.html">Sensor.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2023年 八月 1日 星期二 19:05:54 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

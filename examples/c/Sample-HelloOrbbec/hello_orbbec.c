@@ -1,14 +1,12 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "utils.hpp"
+
 #include <libobsensor/ObSensor.h>
 
-#if defined(_WIN32)
-#include <conio.h>
-#else
-#include "../conio.h"
-#endif
-#define ESC 27
+#define ESC_KEY 27
 
 void check_error(ob_error *error) {
     if(error) {
@@ -24,10 +22,11 @@ int main(int argc, char **argv) {
 
     // print sdk version number
     printf("SDK version: %d.%d.%d\n", ob_get_major_version(), ob_get_minor_version(), ob_get_patch_version());
+    // print sdk stage version
     printf("SDK stage version: %s\n", ob_get_stage_version());
 
     // Create a Context.
-    ob_error *  error = NULL;
+    ob_error   *error = NULL;
     ob_context *ctx   = ob_create_context(&error);
     check_error(error);
 
@@ -113,12 +112,12 @@ int main(int argc, char **argv) {
         }
     }
 
-    printf("Press ESC to exit! \n");
+    printf("Press ESC_KEY to exit! \n");
 
     while(true) {
         // Get the value of the pressed key, if it is the esc key, exit the program
         int key = getch();
-        if(key == ESC)
+        if(key == ESC_KEY)
             break;
     }
 

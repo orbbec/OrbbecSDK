@@ -1,9 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>OrbbecSDK: 类列表</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -11,9 +12,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,55 +19,35 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
+ <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">OrbbecSDK
-   &#160;<span id="projectnumber">1.5.7</span>
+  <td id="projectalign">
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
    </div>
-   <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D-Sensor devices</div>
+   <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
  </tr>
  </tbody>
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.8.11 -->
+<!-- 制作者 Doxygen 1.9.7 -->
 <script type="text/javascript">
-var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>首页</span></a></li>
-      <li><a href="namespaces.html"><span>命名空间</span></a></li>
-      <li class="current"><a href="annotated.html"><span>类</span></a></li>
-      <li><a href="files.html"><span>文件</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="搜索" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li class="current"><a href="annotated.html"><span>类列表</span></a></li>
-      <li><a href="classes.html"><span>类索引</span></a></li>
-      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
-      <li><a href="functions.html"><span>类成员</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -80,86 +58,89 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="headertitle">
-<div class="title">类列表</div>  </div>
+  <div class="headertitle"><div class="title">类列表</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock">这里列出了所有类、结构、联合以及接口定义等，并附带简要说明:</div><div class="directory">
 <div class="levels">[详情级别 <span onclick="javascript:toggleLevel(1);">1</span><span onclick="javascript:toggleLevel(2);">2</span>]</div><table class="directory">
 <tr id="row_0_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_0_" class="arrow" onclick="toggleFolder('0_')">&#9660;</span><span class="icona"><span class="icon">N</span></span><a class="el" href="namespaceob.html" target="_self">ob</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1AccelFrame.html" target="_self">AccelFrame</a></td><td class="desc"></td></tr>
-<tr id="row_0_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1AccelStreamProfile.html" target="_self">AccelStreamProfile</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1CameraParamList.html" target="_self">CameraParamList</a></td><td class="desc"></td></tr>
-<tr id="row_0_3_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1ColorFrame.html" target="_self">ColorFrame</a></td><td class="desc"></td></tr>
-<tr id="row_0_4_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1CompressionFilter.html" target="_self">CompressionFilter</a></td><td class="desc"></td></tr>
-<tr id="row_0_5_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1Config.html" target="_self">Config</a></td><td class="desc"></td></tr>
-<tr id="row_0_6_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1Context.html" target="_self">Context</a></td><td class="desc"></td></tr>
-<tr id="row_0_7_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1DecompressionFilter.html" target="_self">DecompressionFilter</a></td><td class="desc"></td></tr>
-<tr id="row_0_8_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1DepthFrame.html" target="_self">DepthFrame</a></td><td class="desc"></td></tr>
-<tr id="row_0_9_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1Device.html" target="_self">Device</a></td><td class="desc"></td></tr>
-<tr id="row_0_10_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1DeviceInfo.html" target="_self">DeviceInfo</a></td><td class="desc">描述设备信息的类，代表一个RGBD相机的名称，id，序列号等其他设备自身基本信息。 </td></tr>
-<tr id="row_0_11_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1DeviceList.html" target="_self">DeviceList</a></td><td class="desc"></td></tr>
-<tr id="row_0_12_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1Error.html" target="_self">Error</a></td><td class="desc"></td></tr>
-<tr id="row_0_13_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1Filter.html" target="_self">Filter</a></td><td class="desc"></td></tr>
-<tr id="row_0_14_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1FormatConvertFilter.html" target="_self">FormatConvertFilter</a></td><td class="desc"></td></tr>
-<tr id="row_0_15_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1Frame.html" target="_self">Frame</a></td><td class="desc"></td></tr>
-<tr id="row_0_16_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1FrameHelper.html" target="_self">FrameHelper</a></td><td class="desc"></td></tr>
-<tr id="row_0_17_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1FrameSet.html" target="_self">FrameSet</a></td><td class="desc"></td></tr>
-<tr id="row_0_18_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1GyroFrame.html" target="_self">GyroFrame</a></td><td class="desc"></td></tr>
-<tr id="row_0_19_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1GyroStreamProfile.html" target="_self">GyroStreamProfile</a></td><td class="desc"></td></tr>
-<tr id="row_0_20_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1IRFrame.html" target="_self">IRFrame</a></td><td class="desc"></td></tr>
-<tr id="row_0_21_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1OBDepthWorkModeList.html" target="_self">OBDepthWorkModeList</a></td><td class="desc">相机深度模式列表 </td></tr>
-<tr id="row_0_22_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1Pipeline.html" target="_self">Pipeline</a></td><td class="desc"></td></tr>
-<tr id="row_0_23_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1Playback.html" target="_self">Playback</a></td><td class="desc"></td></tr>
-<tr id="row_0_24_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1PointCloudFilter.html" target="_self">PointCloudFilter</a></td><td class="desc"></td></tr>
-<tr id="row_0_25_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1PointsFrame.html" target="_self">PointsFrame</a></td><td class="desc"></td></tr>
-<tr id="row_0_26_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1Recorder.html" target="_self">Recorder</a></td><td class="desc"></td></tr>
-<tr id="row_0_27_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1Sensor.html" target="_self">Sensor</a></td><td class="desc"></td></tr>
-<tr id="row_0_28_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1SensorList.html" target="_self">SensorList</a></td><td class="desc"></td></tr>
-<tr id="row_0_29_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1StreamProfile.html" target="_self">StreamProfile</a></td><td class="desc"></td></tr>
-<tr id="row_0_30_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1StreamProfileList.html" target="_self">StreamProfileList</a></td><td class="desc"></td></tr>
-<tr id="row_0_31_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1Version.html" target="_self">Version</a></td><td class="desc"></td></tr>
-<tr id="row_0_32_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1VideoFrame.html" target="_self">VideoFrame</a></td><td class="desc"></td></tr>
-<tr id="row_0_33_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1VideoStreamProfile.html" target="_self">VideoStreamProfile</a></td><td class="desc"></td></tr>
-<tr id="row_1_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structMaskFilterConfig__S.html" target="_self">MaskFilterConfig_S</a></td><td class="desc"></td></tr>
-<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structob__error.html" target="_self">ob_error</a></td><td class="desc">SDK 的对外暴露的错误类，用户可以根据该错误类，获取详细的错误信息 </td></tr>
-<tr id="row_3_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBAccelValue.html" target="_self">OBAccelValue</a></td><td class="desc">加速度计及陀螺仪的数据结构体 </td></tr>
-<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBBoolPropertyRange.html" target="_self">OBBoolPropertyRange</a></td><td class="desc">布尔型范围的结构体 </td></tr>
-<tr id="row_5_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBCameraDistortion.html" target="_self">OBCameraDistortion</a></td><td class="desc">畸变参数 </td></tr>
-<tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBCameraIntrinsic.html" target="_self">OBCameraIntrinsic</a></td><td class="desc">相机内参 </td></tr>
-<tr id="row_7_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBCameraParam.html" target="_self">OBCameraParam</a></td><td class="desc">相机参数 </td></tr>
-<tr id="row_8_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBCameraParam__V0.html" target="_self">OBCameraParam_V0</a></td><td class="desc">相机参数 Gemini2 OBCmdVersion &ndash;&gt; V0, 2022 年 10 月 13 日 09:09:30 </td></tr>
-<tr id="row_9_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBColorPoint.html" target="_self">OBColorPoint</a></td><td class="desc">带有颜色信息的 3D 点结构体 </td></tr>
-<tr id="row_10_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBCompressionParams.html" target="_self">OBCompressionParams</a></td><td class="desc"></td></tr>
-<tr id="row_11_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBD2CTransform.html" target="_self">OBD2CTransform</a></td><td class="desc">旋转 / 变换矩阵 </td></tr>
-<tr id="row_12_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBDataBundle.html" target="_self">OBDataBundle</a></td><td class="desc">OrbbecSDK私有接口, 未来对外开放 功能：保存多版本数据结构的数据内容； </td></tr>
-<tr id="row_13_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBDataChunk.html" target="_self">OBDataChunk</a></td><td class="desc">数据块结构体，用于数据分块传输 </td></tr>
-<tr id="row_14_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBDepthWorkMode.html" target="_self">OBDepthWorkMode</a></td><td class="desc">相机深度工作模式 </td></tr>
-<tr id="row_15_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBDERectifyMaskParams.html" target="_self">OBDERectifyMaskParams</a></td><td class="desc">深度对齐校验参数 </td></tr>
-<tr id="row_16_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBDeviceIpAddrConfig.html" target="_self">OBDeviceIpAddrConfig</a></td><td class="desc">网络设备的 IP 地址配置（ipv4） </td></tr>
-<tr id="row_17_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBDeviceSyncConfig.html" target="_self">OBDeviceSyncConfig</a></td><td class="desc">设备同步配置 </td></tr>
-<tr id="row_18_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBDeviceTemperature.html" target="_self">OBDeviceTemperature</a></td><td class="desc">获取设备的温度参数（单位：摄氏度） </td></tr>
-<tr id="row_19_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBFloatPropertyRange.html" target="_self">OBFloatPropertyRange</a></td><td class="desc">浮点型范围的结构体 </td></tr>
-<tr id="row_20_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBIntPropertyRange.html" target="_self">OBIntPropertyRange</a></td><td class="desc">整形范围的结构体 </td></tr>
-<tr id="row_21_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBPoint.html" target="_self">OBPoint</a></td><td class="desc">SDK 中 3D 点结构体 </td></tr>
-<tr id="row_22_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBPropertyItem.html" target="_self">OBPropertyItem</a></td><td class="desc">用于描述每一个属性的特性 </td></tr>
-<tr id="row_23_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBProtocolVersion.html" target="_self">OBProtocolVersion</a></td><td class="desc">控制命令协议版本号 </td></tr>
-<tr id="row_24_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBRect.html" target="_self">OBRect</a></td><td class="desc">矩形 </td></tr>
-<tr id="row_25_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structOBTofExposureThresholdControl.html" target="_self">OBTofExposureThresholdControl</a></td><td class="desc">TOF 曝光阈值 </td></tr>
+<tr id="row_0_0_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_accel_frame.html" target="_self">AccelFrame</a></td><td class="desc">定义 AccelFrame类, 继承Frame类 </td></tr>
+<tr id="row_0_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_accel_stream_profile.html" target="_self">AccelStreamProfile</a></td><td class="desc">AccelStreamProfile类, 用于加速度计的量程、采样频率 </td></tr>
+<tr id="row_0_2_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_camera_param_list.html" target="_self">CameraParamList</a></td><td class="desc">相机参数列表类 </td></tr>
+<tr id="row_0_3_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_color_frame.html" target="_self">ColorFrame</a></td><td class="desc">定义 ColorFrame类, 继承VideoFrame类 </td></tr>
+<tr id="row_0_4_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_compression_filter.html" target="_self">CompressionFilter</a></td><td class="desc">CompressionFilter类,用于帧数据压缩,如压缩Depth、Ir帧 </td></tr>
+<tr id="row_0_5_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_config.html" target="_self">Config</a></td><td class="desc">Config类,用于配置pipeline类参数 </td></tr>
+<tr id="row_0_6_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_context.html" target="_self">Context</a></td><td class="desc">定义 Context类,用于获取设备列表，处理设备的回调，日志等级的设置操作 </td></tr>
+<tr id="row_0_7_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_decompression_filter.html" target="_self">DecompressionFilter</a></td><td class="desc">DecompressionFilter类,用于解压压缩帧,如Depth、Ir帧 </td></tr>
+<tr id="row_0_8_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_depth_frame.html" target="_self">DepthFrame</a></td><td class="desc">定义 DepthFrame类, 继承VideoFrame类 </td></tr>
+<tr id="row_0_9_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_device.html" target="_self">Device</a></td><td class="desc">定义 Device类 </td></tr>
+<tr id="row_0_10_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_device_info.html" target="_self">DeviceInfo</a></td><td class="desc">描述设备信息的类，如设备名称，id，序列号等信息。 </td></tr>
+<tr id="row_0_11_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_device_list.html" target="_self">DeviceList</a></td><td class="desc">表示设备列表的类 </td></tr>
+<tr id="row_0_12_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_error.html" target="_self">Error</a></td><td class="desc">描述SDK内部的异常错误 </td></tr>
+<tr id="row_0_13_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_filter.html" target="_self">Filter</a></td><td class="desc">Filter类, 为点云Filter、格式转换Filter、压缩解压Filter的基类 </td></tr>
+<tr id="row_0_14_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_format_convert_filter.html" target="_self">FormatConvertFilter</a></td><td class="desc">FormatConvertFilter类,用于帧数据格式转换 </td></tr>
+<tr id="row_0_15_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_frame.html" target="_self">Frame</a></td><td class="desc">定义 Frame类 </td></tr>
+<tr id="row_0_16_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_frame_helper.html" target="_self">FrameHelper</a></td><td class="desc">定义FrameHelper类 </td></tr>
+<tr id="row_0_17_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_frame_set.html" target="_self">FrameSet</a></td><td class="desc">定义FrameSet类, 继承Frame类 </td></tr>
+<tr id="row_0_18_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_gyro_frame.html" target="_self">GyroFrame</a></td><td class="desc">定义GyroFrame类, 继承Frame类 </td></tr>
+<tr id="row_0_19_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_gyro_stream_profile.html" target="_self">GyroStreamProfile</a></td><td class="desc">GyroStreamProfile类, 用于陀螺仪的量程、采样频率 </td></tr>
+<tr id="row_0_20_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_i_r_frame.html" target="_self">IRFrame</a></td><td class="desc">定义 IRFrame类, 继承VideoFrame类 </td></tr>
+<tr id="row_0_21_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_o_b_depth_work_mode_list.html" target="_self">OBDepthWorkModeList</a></td><td class="desc">相机深度模式列表 </td></tr>
+<tr id="row_0_22_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_pipeline.html" target="_self">Pipeline</a></td><td class="desc">Pipeline类,实现开关流、帧同步等 </td></tr>
+<tr id="row_0_23_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_playback.html" target="_self">Playback</a></td><td class="desc">Playback类,实现帧回放功能 </td></tr>
+<tr id="row_0_24_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_point_cloud_filter.html" target="_self">PointCloudFilter</a></td><td class="desc">PointCloudFilter类，用于生成点云 </td></tr>
+<tr id="row_0_25_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_points_frame.html" target="_self">PointsFrame</a></td><td class="desc">定义 PointsFrame类, 继承VideoFrame类 </td></tr>
+<tr id="row_0_26_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_recorder.html" target="_self">Recorder</a></td><td class="desc">Recorder类,实现帧录制功能 </td></tr>
+<tr id="row_0_27_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_sensor.html" target="_self">Sensor</a></td><td class="desc">定义Sensor类,用于获取流配置，开关流等 </td></tr>
+<tr id="row_0_28_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_sensor_list.html" target="_self">SensorList</a></td><td class="desc">定义SensorList类,用于获取Sensor等操作 </td></tr>
+<tr id="row_0_29_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_stream_profile.html" target="_self">StreamProfile</a></td><td class="desc">定义 StreamProfile类,用于获取流格式和类型等 </td></tr>
+<tr id="row_0_30_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_stream_profile_list.html" target="_self">StreamProfileList</a></td><td class="desc">StreamProfileList类, 通过宽、高、帧率、格式等 获取匹配的StreamProfile </td></tr>
+<tr id="row_0_31_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_version.html" target="_self">Version</a></td><td class="desc">SDK版本号相关信息的类 </td></tr>
+<tr id="row_0_32_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_video_frame.html" target="_self">VideoFrame</a></td><td class="desc">定义 VideoFrame类, 继承Frame类 </td></tr>
+<tr id="row_0_33_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classob_1_1_video_stream_profile.html" target="_self">VideoStreamProfile</a></td><td class="desc">VideoStreamProfile类, 用于获取流的宽、高、帧率及格式等信息 </td></tr>
+<tr id="row_1_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structob__error.html" target="_self">ob_error</a></td><td class="desc">SDK暴露的错误类，用户可以根据该错误类，获取详细的错误信息 </td></tr>
+<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structob__margin__filter__config.html" target="_self">ob_margin_filter_config</a></td><td class="desc">深度margin filter的参数 </td></tr>
+<tr id="row_3_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_accel_value.html" target="_self">OBAccelValue</a></td><td class="desc">加速度计和陀螺仪的数据结构体 </td></tr>
+<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_bool_property_range.html" target="_self">OBBoolPropertyRange</a></td><td class="desc">布尔型范围的结构体 </td></tr>
+<tr id="row_5_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_camera_distortion.html" target="_self">OBCameraDistortion</a></td><td class="desc">畸变参数 </td></tr>
+<tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_camera_intrinsic.html" target="_self">OBCameraIntrinsic</a></td><td class="desc">相机参数 </td></tr>
+<tr id="row_7_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_camera_param.html" target="_self">OBCameraParam</a></td><td class="desc">相机参数 </td></tr>
+<tr id="row_8_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_camera_param___v0.html" target="_self">OBCameraParam_V0</a></td><td class="desc">相机参数 </td></tr>
+<tr id="row_9_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_color_point.html" target="_self">OBColorPoint</a></td><td class="desc">带有彩色信息的 3D 点结构体 </td></tr>
+<tr id="row_10_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_compression_params.html" target="_self">OBCompressionParams</a></td><td class="desc">压缩参数 </td></tr>
+<tr id="row_11_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_d2_c_transform.html" target="_self">OBD2CTransform</a></td><td class="desc">旋转/平移矩阵 </td></tr>
+<tr id="row_12_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_data_bundle.html" target="_self">OBDataBundle</a></td><td class="desc">OrbbecSDK私有接口, 未来对外开放 </td></tr>
+<tr id="row_13_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_data_chunk.html" target="_self">OBDataChunk</a></td><td class="desc">数据块结构体，用于数据分块传输 </td></tr>
+<tr id="row_14_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_depth_work_mode.html" target="_self">OBDepthWorkMode</a></td><td class="desc">深度工作模式 </td></tr>
+<tr id="row_15_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_device_sync_config.html" target="_self">OBDeviceSyncConfig</a></td><td class="desc">设备同步配置 </td></tr>
+<tr id="row_16_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_device_temperature.html" target="_self">OBDeviceTemperature</a></td><td class="desc">设备温度参数（单位：摄氏度） </td></tr>
+<tr id="row_17_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_float_property_range.html" target="_self">OBFloatPropertyRange</a></td><td class="desc">浮点型范围的结构体 </td></tr>
+<tr id="row_18_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_int_property_range.html" target="_self">OBIntPropertyRange</a></td><td class="desc">整型范围的结构体 </td></tr>
+<tr id="row_19_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_net_ip_config.html" target="_self">OBNetIpConfig</a></td><td class="desc">网络设备的IP地址配置（IPv4） </td></tr>
+<tr id="row_20_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_point.html" target="_self">OBPoint</a></td><td class="desc">SDK中的3D点结构体 </td></tr>
+<tr id="row_21_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_property_item.html" target="_self">OBPropertyItem</a></td><td class="desc">用于描述各个属性的特征 </td></tr>
+<tr id="row_22_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_protocol_version.html" target="_self">OBProtocolVersion</a></td><td class="desc">控制命令协议版本号 </td></tr>
+<tr id="row_23_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_rect.html" target="_self">OBRect</a></td><td class="desc">矩形 </td></tr>
+<tr id="row_24_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_o_b_tof_exposure_threshold_control.html" target="_self">OBTofExposureThresholdControl</a></td><td class="desc">TOF 曝光阈值 </td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-制作者 &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.11
+生成于 2023年 八月 1日 星期二 19:05:55 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

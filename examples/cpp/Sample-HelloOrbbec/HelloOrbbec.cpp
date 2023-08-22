@@ -1,9 +1,5 @@
 #include <iostream>
-#if defined(_WIN32)
-#include <conio.h>
-#else
-#include "../conio.h"
-#endif
+#include "utils.hpp"
 #include "libobsensor/ObSensor.hpp"
 #include "libobsensor/hpp/Error.hpp"
 
@@ -12,7 +8,7 @@
 int main(int argc, char **argv) try {
     // Print the sdk version number, the sdk version number is divided into major version number, minor version number and revision number
     std::cout << "SDK version: " << ob::Version::getMajor() << "." << ob::Version::getMinor() << "." << ob::Version::getPatch() << std::endl;
-    // Print the hardware version number of the sdk
+    // Print sdk stage version
     std::cout << "SDK stage version: " << ob::Version::getStageVersion() << std::endl;
 
     // Create a Context.
@@ -29,9 +25,6 @@ int main(int argc, char **argv) try {
 
     // Create a device, 0 means the index of the first device
     auto dev = devList->getDevice(0);
-
-    auto colorSensor = dev->getSensor(OB_SENSOR_COLOR);
-    auto profileList = colorSensor->getStreamProfileList();
 
     // Get device information
     auto devInfo = dev->getDeviceInfo();
@@ -89,6 +82,8 @@ int main(int argc, char **argv) try {
         if(key == ESC)
             break;
     }
+
+    return 0;
 }
 catch(ob::Error &e) {
     std::cerr << "function:" << e.getName() << "\nargs:" << e.getArgs() << "\nmessage:" << e.getMessage() << "\ntype:" << e.getExceptionType() << std::endl;
