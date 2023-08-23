@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mediastatecallback',['MediaStateCallback',['../namespaceob.html#ae29255b85156f0e0b1fea84b4f1e1536',1,'ob']]]
+  ['logcallback_0',['LogCallback',['../classob_1_1_context.html#aad80df0d99a8a939d58a476e00f7432f',1,'ob::Context']]]
 ];

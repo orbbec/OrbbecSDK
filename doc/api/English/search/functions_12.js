@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['waitforframes',['waitForFrames',['../classob_1_1Pipeline.html#aceff061274744dd3b3942fe9371a76a8',1,'ob::Pipeline']]],
-  ['width',['width',['../classob_1_1VideoFrame.html#abaab9c7448f2949bbe2011df4ab474c0',1,'ob::VideoFrame::width()'],['../classob_1_1VideoStreamProfile.html#a6bedcae464a53ce94023fb75fcc73896',1,'ob::VideoStreamProfile::width()']]],
-  ['write',['write',['../classob_1_1Recorder.html#ae703692af04cec5c36155d87cd68ea06',1,'ob::Recorder']]],
-  ['writeahb',['writeAHB',['../classob_1_1Device.html#aba075ac90895eb023a100490ccc6d6f3',1,'ob::Device']]],
-  ['writeauthorizationcode',['writeAuthorizationCode',['../classob_1_1Device.html#a31d17dfb1127c3991a077ebd0d64ae4f',1,'ob::Device']]],
-  ['writeflash',['writeFlash',['../classob_1_1Device.html#a05f4f760a391cbae0571623e1525fd54',1,'ob::Device']]],
-  ['writei2c',['writeI2C',['../classob_1_1Device.html#a0afce85aa8d085e210925db912492d3b',1,'ob::Device']]]
+  ['value_0',['value',['../classob_1_1_accel_frame.html#a0908897067c5aabb38bbd801457704d1',1,'ob::AccelFrame::value()'],['../classob_1_1_gyro_frame.html#a7e5148cc718c854e1f2f241a21e9a5c4',1,'ob::GyroFrame::value()']]],
+  ['vid_1',['vid',['../classob_1_1_device_info.html#acebee531439d2da2434ef3d550f93d43',1,'ob::DeviceInfo::vid()'],['../classob_1_1_device_list.html#a74f6a148c7b47321f4fae8d1f558fa45',1,'ob::DeviceList::vid()']]],
+  ['videoframe_2',['VideoFrame',['../classob_1_1_video_frame.html#ac2c91e13715a3a2fca61c1c4cb46cd20',1,'ob::VideoFrame::VideoFrame(Frame &amp;frame)'],['../classob_1_1_video_frame.html#a2f34519bb165d320c9cf2ce1863670d5',1,'ob::VideoFrame::VideoFrame(std::unique_ptr&lt; FrameImpl &gt; impl)']]],
+  ['videostreamprofile_3',['VideoStreamProfile',['../classob_1_1_video_stream_profile.html#af90398015aee0e5b2ca4e2c417f91e6f',1,'ob::VideoStreamProfile::VideoStreamProfile(StreamProfile &amp;profile)'],['../classob_1_1_video_stream_profile.html#a47c0c5c6795c51484c29545186f82f3a',1,'ob::VideoStreamProfile::VideoStreamProfile(std::unique_ptr&lt; StreamProfileImpl &gt; impl)']]]
 ];

@@ -1,7 +1,7 @@
 /**
  * @file  Error.hpp
- * @brief Error describes the abnormal error within the SDK, and the detailed information of the exception can be realized through this class.
- *
+ * @brief This file defines the Error class, which describes abnormal errors within the SDK.
+ *        Detailed information about the exception can be obtained through this class.
  */
 #pragma once
 
@@ -21,28 +21,28 @@ public:
     Error(const Error &error) noexcept;
 
     ~Error() noexcept;
+
     /**
-     * @brief Obtain detailed error logs of SDK internal exceptions.
-     *
+     * @brief Get the detailed error logs of SDK internal exceptions.
+     * @return A C-style string containing the error message.
      */
     const char *getMessage() const noexcept;
 
     /**
-     * @brief Get the exception type of the error, and determine which module is abnormal.
-     * @return OBExceptionType
-     *
+     * @brief Get the exception type of the error, which can be used to determine which module is abnormal.
+     * @return The OBExceptionType enum value.
      */
     OBExceptionType getExceptionType() const noexcept;
 
-     /**
+    /**
      * @brief Get the name of the error function.
-     *
+     * @return A C-style string containing the name of the error function.
      */
     const char *getName() const noexcept;
 
     /**
-     * @brief Get the parameter passed in to the error interface.
-     *
+     * @brief Get the parameter passed to the error interface.
+     * @return A C-style string containing the error interface parameter.
      */
     const char *getArgs() const noexcept;
 };

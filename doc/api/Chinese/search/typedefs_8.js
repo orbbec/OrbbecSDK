@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tof_5fexposure_5fthreshold_5fcontrol',['TOF_EXPOSURE_THRESHOLD_CONTROL',['../ObTypes_8h.html#a2cf81ef9ca40dea0dd16f7d769d1455f',1,'ObTypes.h']]],
-  ['tof_5ffilter_5frange',['TOF_FILTER_RANGE',['../ObTypes_8h.html#ac9f1e0e8a32365b86333ba692b56e9fa',1,'ObTypes.h']]]
+  ['sendfilecallback_0',['SendFileCallback',['../_types_8hpp.html#af4ed1a1867e655fa5e4b77e646f080a4',1,'Types.hpp']]],
+  ['setdatacallback_1',['SetDataCallback',['../_types_8hpp.html#a55032b39d9a625cc1b43684765ad46b1',1,'Types.hpp']]]
 ];

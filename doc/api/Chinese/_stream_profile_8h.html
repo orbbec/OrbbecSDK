@@ -1,0 +1,821 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OrbbecSDK: header_cn/libobsensor/h/StreamProfile.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   </div>
+   <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9a5345e98321307492e41331ab8e5636.html">header_cn</a></li><li class="navelem"><a class="el" href="dir_a57403e30bad3723557b0550251f8216.html">libobsensor</a></li><li class="navelem"><a class="el" href="dir_afa7ddcbc480a7aa37c5239e71e2d522.html">h</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">StreamProfile.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>流配置相关函数，用于获取流的宽、高、帧率及格式等信息  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>&quot;</code><br />
+</div>
+<p><a href="_stream_profile_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ae8159fd10f2d3472825293e5523268f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a083601614fe96b1ba4106227a4bd72f2">ob_format</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_stream_profile_8h.html#ae8159fd10f2d3472825293e5523268f5">ob_stream_profile_format</a> (<a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ae8159fd10f2d3472825293e5523268f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取流配置的格式  <br /></td></tr>
+<tr class="separator:ae8159fd10f2d3472825293e5523268f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35b867041d3758ba158d9fc4af8546cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a849f89cf0aae370ceb08ed7bc77bf0f6">ob_stream_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_stream_profile_8h.html#a35b867041d3758ba158d9fc4af8546cd">ob_stream_profile_type</a> (<a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a35b867041d3758ba158d9fc4af8546cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取流的类型  <br /></td></tr>
+<tr class="separator:a35b867041d3758ba158d9fc4af8546cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4c0669d1629d462182d19e6199ac69c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_stream_profile_8h.html#ae4c0669d1629d462182d19e6199ac69c">ob_video_stream_profile_fps</a> (<a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ae4c0669d1629d462182d19e6199ac69c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取视频流配置的帧率  <br /></td></tr>
+<tr class="separator:ae4c0669d1629d462182d19e6199ac69c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2ab197d64a33161689d3fbde443fbc9"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_stream_profile_8h.html#ab2ab197d64a33161689d3fbde443fbc9">ob_video_stream_profile_width</a> (<a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ab2ab197d64a33161689d3fbde443fbc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取视频流配置的宽  <br /></td></tr>
+<tr class="separator:ab2ab197d64a33161689d3fbde443fbc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c76dc19ab6f6f34391a16518041b459"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_stream_profile_8h.html#a6c76dc19ab6f6f34391a16518041b459">ob_video_stream_profile_height</a> (<a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a6c76dc19ab6f6f34391a16518041b459"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取视频流配置的高  <br /></td></tr>
+<tr class="separator:a6c76dc19ab6f6f34391a16518041b459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7618c934918abea2d9966a7406cef159"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#ab5988a7b0bb32ce20415cbe661f1097e">ob_accel_full_scale_range</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_stream_profile_8h.html#a7618c934918abea2d9966a7406cef159">ob_accel_stream_profile_full_scale_range</a> (<a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a7618c934918abea2d9966a7406cef159"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取加速度计流配置的量程范围  <br /></td></tr>
+<tr class="separator:a7618c934918abea2d9966a7406cef159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73ddbe7d616a73dc2fb59feaa8697960"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a90a6e8a0e2b633eea17bfe03638d5eb4">ob_accel_sample_rate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_stream_profile_8h.html#a73ddbe7d616a73dc2fb59feaa8697960">ob_accel_stream_profile_sample_rate</a> (<a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a73ddbe7d616a73dc2fb59feaa8697960"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取加速度计流配置的采样频率  <br /></td></tr>
+<tr class="separator:a73ddbe7d616a73dc2fb59feaa8697960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c820b7e521534b400f831f9648ab248"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a33ea49496b799b49268f4577d09e73bc">ob_gyro_full_scale_range</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_stream_profile_8h.html#a4c820b7e521534b400f831f9648ab248">ob_gyro_stream_profile_full_scale_range</a> (<a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a4c820b7e521534b400f831f9648ab248"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取陀螺仪流配置的量程范围  <br /></td></tr>
+<tr class="separator:a4c820b7e521534b400f831f9648ab248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa740ac4cda4a92eb8a2ac61b411b93f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a27a7ada851c9fe1e0f423239bc90ff41">ob_gyro_sample_rate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_stream_profile_8h.html#aa740ac4cda4a92eb8a2ac61b411b93f1">ob_gyro_stream_profile_sample_rate</a> (<a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:aa740ac4cda4a92eb8a2ac61b411b93f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取陀螺仪流配置的采样频率  <br /></td></tr>
+<tr class="separator:aa740ac4cda4a92eb8a2ac61b411b93f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a222892ac972361b80119497c6d5cffa6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_stream_profile_8h.html#a222892ac972361b80119497c6d5cffa6">ob_stream_profile_list_get_video_stream_profile</a> (<a class="el" href="_ob_types_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *profile_list, int width, int height, <a class="el" href="_ob_types_8h.html#a083601614fe96b1ba4106227a4bd72f2">ob_format</a> format, int fps, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a222892ac972361b80119497c6d5cffa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过传入的参数进行匹配对应的ob_stream_profile。若有多个匹配项默认返回列表中的第一个, 若未找打匹配的项，则返回错误。  <br /></td></tr>
+<tr class="separator:a222892ac972361b80119497c6d5cffa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03275af4c34f5d907a494eb9535f3b4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_stream_profile_8h.html#a03275af4c34f5d907a494eb9535f3b4a">ob_stream_profile_list_get_accel_stream_profile</a> (<a class="el" href="_ob_types_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *profile_list, <a class="el" href="_ob_types_8h.html#ab5988a7b0bb32ce20415cbe661f1097e">ob_accel_full_scale_range</a> fullScaleRange, <a class="el" href="_ob_types_8h.html#a90a6e8a0e2b633eea17bfe03638d5eb4">ob_accel_sample_rate</a> sampleRate, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a03275af4c34f5d907a494eb9535f3b4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过传入的参数进行匹配对应的ob_stream_profile。若有多个匹配项默认返回列表中的第一个, 若未找打匹配的项，则返回错误。  <br /></td></tr>
+<tr class="separator:a03275af4c34f5d907a494eb9535f3b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05e8e2a1f788052e69a49142a9087567"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_stream_profile_8h.html#a05e8e2a1f788052e69a49142a9087567">ob_stream_profile_list_get_gyro_stream_profile</a> (<a class="el" href="_ob_types_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *profile_list, <a class="el" href="_ob_types_8h.html#a33ea49496b799b49268f4577d09e73bc">ob_gyro_full_scale_range</a> fullScaleRange, <a class="el" href="_ob_types_8h.html#a27a7ada851c9fe1e0f423239bc90ff41">ob_gyro_sample_rate</a> sampleRate, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a05e8e2a1f788052e69a49142a9087567"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过传入的参数进行匹配对应的ob_stream_profile。若有多个匹配项默认返回列表中的第一个, 若未找打匹配的项，则返回错误。  <br /></td></tr>
+<tr class="separator:a05e8e2a1f788052e69a49142a9087567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad98ba6acded2481e7b68f88a657e8a6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_stream_profile_8h.html#ad98ba6acded2481e7b68f88a657e8a6b">ob_stream_profile_list_get_profile</a> (<a class="el" href="_ob_types_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *profile_list, int index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ad98ba6acded2481e7b68f88a657e8a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过下标获取对应的StreamProfile  <br /></td></tr>
+<tr class="separator:ad98ba6acded2481e7b68f88a657e8a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a8b94176ddbdb03df8af9006a028189"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_stream_profile_8h.html#a3a8b94176ddbdb03df8af9006a028189">ob_stream_profile_list_count</a> (<a class="el" href="_ob_types_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *profile_list, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a3a8b94176ddbdb03df8af9006a028189"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取StreamProfile列表的数量  <br /></td></tr>
+<tr class="separator:a3a8b94176ddbdb03df8af9006a028189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad55c8b82f1eff26cfc7b59f5a8dca24f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_stream_profile_8h.html#ad55c8b82f1eff26cfc7b59f5a8dca24f">ob_delete_stream_profile_list</a> (<a class="el" href="_ob_types_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *profile_list, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ad55c8b82f1eff26cfc7b59f5a8dca24f"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除流配置列表  <br /></td></tr>
+<tr class="separator:ad55c8b82f1eff26cfc7b59f5a8dca24f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af079a3b0493c43fa5782b5d1c67f30c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_stream_profile_8h.html#af079a3b0493c43fa5782b5d1c67f30c9">ob_delete_stream_profile</a> (<a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:af079a3b0493c43fa5782b5d1c67f30c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除流配置  <br /></td></tr>
+<tr class="separator:af079a3b0493c43fa5782b5d1c67f30c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>流配置相关函数，用于获取流的宽、高、帧率及格式等信息 </p>
+
+<p class="definition">在文件 <a class="el" href="_stream_profile_8h_source.html">StreamProfile.h</a> 中定义.</p>
+</div><h2 class="groupheader">函数说明</h2>
+<a id="ae8159fd10f2d3472825293e5523268f5" name="ae8159fd10f2d3472825293e5523268f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8159fd10f2d3472825293e5523268f5">&#9670;&#160;</a></span>ob_stream_profile_format()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#a083601614fe96b1ba4106227a4bd72f2">ob_format</a> ob_stream_profile_format </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *&#160;</td>
+          <td class="paramname"><em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取流配置的格式 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">profile</td><td>流配置对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_format 返回流的格式 </dd></dl>
+
+</div>
+</div>
+<a id="a35b867041d3758ba158d9fc4af8546cd" name="a35b867041d3758ba158d9fc4af8546cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35b867041d3758ba158d9fc4af8546cd">&#9670;&#160;</a></span>ob_stream_profile_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#a849f89cf0aae370ceb08ed7bc77bf0f6">ob_stream_type</a> ob_stream_profile_type </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *&#160;</td>
+          <td class="paramname"><em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取流的类型 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">profile</td><td>流配置对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_stream_type 流的类型 </dd></dl>
+
+</div>
+</div>
+<a id="ae4c0669d1629d462182d19e6199ac69c" name="ae4c0669d1629d462182d19e6199ac69c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4c0669d1629d462182d19e6199ac69c">&#9670;&#160;</a></span>ob_video_stream_profile_fps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ob_video_stream_profile_fps </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *&#160;</td>
+          <td class="paramname"><em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取视频流配置的帧率 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">profile</td><td>流配置对象, 如果该配置不是视频流配置，将会返错误 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>uint32_t 返回流的帧率 </dd></dl>
+
+</div>
+</div>
+<a id="ab2ab197d64a33161689d3fbde443fbc9" name="ab2ab197d64a33161689d3fbde443fbc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2ab197d64a33161689d3fbde443fbc9">&#9670;&#160;</a></span>ob_video_stream_profile_width()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ob_video_stream_profile_width </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *&#160;</td>
+          <td class="paramname"><em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取视频流配置的宽 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">profile</td><td>流配置对象, 如果该配置不是视频流配置，将会返错误 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>uint32_t 返回流的宽 </dd></dl>
+
+</div>
+</div>
+<a id="a6c76dc19ab6f6f34391a16518041b459" name="a6c76dc19ab6f6f34391a16518041b459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c76dc19ab6f6f34391a16518041b459">&#9670;&#160;</a></span>ob_video_stream_profile_height()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ob_video_stream_profile_height </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *&#160;</td>
+          <td class="paramname"><em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取视频流配置的高 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">profile</td><td>流配置对象, 如果该配置不是视频流配置，将会返错误 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>uint32_t 返回流的高 </dd></dl>
+
+</div>
+</div>
+<a id="a7618c934918abea2d9966a7406cef159" name="a7618c934918abea2d9966a7406cef159"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7618c934918abea2d9966a7406cef159">&#9670;&#160;</a></span>ob_accel_stream_profile_full_scale_range()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#ab5988a7b0bb32ce20415cbe661f1097e">ob_accel_full_scale_range</a> ob_accel_stream_profile_full_scale_range </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *&#160;</td>
+          <td class="paramname"><em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取加速度计流配置的量程范围 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">profile</td><td>流配置对象, 如果该配置不是加速度计流配置，将会返错误 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_accel_full_scale_range 量程范围 </dd></dl>
+
+</div>
+</div>
+<a id="a73ddbe7d616a73dc2fb59feaa8697960" name="a73ddbe7d616a73dc2fb59feaa8697960"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73ddbe7d616a73dc2fb59feaa8697960">&#9670;&#160;</a></span>ob_accel_stream_profile_sample_rate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#a90a6e8a0e2b633eea17bfe03638d5eb4">ob_accel_sample_rate</a> ob_accel_stream_profile_sample_rate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *&#160;</td>
+          <td class="paramname"><em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取加速度计流配置的采样频率 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">profile</td><td>流配置对象, 如果该配置不是加速度计流配置，将会返错误 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_accel_sample_rate 采样频率 </dd></dl>
+
+</div>
+</div>
+<a id="a4c820b7e521534b400f831f9648ab248" name="a4c820b7e521534b400f831f9648ab248"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c820b7e521534b400f831f9648ab248">&#9670;&#160;</a></span>ob_gyro_stream_profile_full_scale_range()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#a33ea49496b799b49268f4577d09e73bc">ob_gyro_full_scale_range</a> ob_gyro_stream_profile_full_scale_range </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *&#160;</td>
+          <td class="paramname"><em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取陀螺仪流配置的量程范围 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">profile</td><td>流配置对象, 如果该配置不是陀螺仪流配置，将会返错误 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_gyro_full_scale_range 量程范围 </dd></dl>
+
+</div>
+</div>
+<a id="aa740ac4cda4a92eb8a2ac61b411b93f1" name="aa740ac4cda4a92eb8a2ac61b411b93f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa740ac4cda4a92eb8a2ac61b411b93f1">&#9670;&#160;</a></span>ob_gyro_stream_profile_sample_rate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#a27a7ada851c9fe1e0f423239bc90ff41">ob_gyro_sample_rate</a> ob_gyro_stream_profile_sample_rate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *&#160;</td>
+          <td class="paramname"><em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取陀螺仪流配置的采样频率 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">profile</td><td>流配置对象, 如果该配置不是陀螺仪流配置，将会返错误 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_gyro_sample_rate 采样频率 </dd></dl>
+
+</div>
+</div>
+<a id="a222892ac972361b80119497c6d5cffa6" name="a222892ac972361b80119497c6d5cffa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a222892ac972361b80119497c6d5cffa6">&#9670;&#160;</a></span>ob_stream_profile_list_get_video_stream_profile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> * ob_stream_profile_list_get_video_stream_profile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *&#160;</td>
+          <td class="paramname"><em>profile_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a083601614fe96b1ba4106227a4bd72f2">ob_format</a>&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>通过传入的参数进行匹配对应的ob_stream_profile。若有多个匹配项默认返回列表中的第一个, 若未找打匹配的项，则返回错误。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">profile_list</td><td>分辨率列表 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">width</td><td>宽度, 如不要求加入匹配条件，可传0 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">height</td><td>高度, 如不要求加入匹配条件，可传0 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">format</td><td>格式, 如不要求加入匹配条件，可传OB_FORMAT_UNKNOWN </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">fps</td><td>帧率, 如不要求加入匹配条件，可传0 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_stream_profile* 返回匹配的profile </dd></dl>
+
+</div>
+</div>
+<a id="a03275af4c34f5d907a494eb9535f3b4a" name="a03275af4c34f5d907a494eb9535f3b4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03275af4c34f5d907a494eb9535f3b4a">&#9670;&#160;</a></span>ob_stream_profile_list_get_accel_stream_profile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> * ob_stream_profile_list_get_accel_stream_profile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *&#160;</td>
+          <td class="paramname"><em>profile_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#ab5988a7b0bb32ce20415cbe661f1097e">ob_accel_full_scale_range</a>&#160;</td>
+          <td class="paramname"><em>fullScaleRange</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a90a6e8a0e2b633eea17bfe03638d5eb4">ob_accel_sample_rate</a>&#160;</td>
+          <td class="paramname"><em>sampleRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>通过传入的参数进行匹配对应的ob_stream_profile。若有多个匹配项默认返回列表中的第一个, 若未找打匹配的项，则返回错误。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">profile_list</td><td>分辨率列表 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fullScaleRange</td><td>量程, 如不要求加入匹配条件，可传0 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sampleRate</td><td>帧率, 如不要求加入匹配条件，可传0 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_stream_profile* 返回匹配的profile </dd></dl>
+
+</div>
+</div>
+<a id="a05e8e2a1f788052e69a49142a9087567" name="a05e8e2a1f788052e69a49142a9087567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05e8e2a1f788052e69a49142a9087567">&#9670;&#160;</a></span>ob_stream_profile_list_get_gyro_stream_profile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> * ob_stream_profile_list_get_gyro_stream_profile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *&#160;</td>
+          <td class="paramname"><em>profile_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a33ea49496b799b49268f4577d09e73bc">ob_gyro_full_scale_range</a>&#160;</td>
+          <td class="paramname"><em>fullScaleRange</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a27a7ada851c9fe1e0f423239bc90ff41">ob_gyro_sample_rate</a>&#160;</td>
+          <td class="paramname"><em>sampleRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>通过传入的参数进行匹配对应的ob_stream_profile。若有多个匹配项默认返回列表中的第一个, 若未找打匹配的项，则返回错误。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">profile_list</td><td>分辨率列表 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fullScaleRange</td><td>量程, 如不要求加入匹配条件，可传0 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sampleRate</td><td>帧率, 如不要求加入匹配条件，可传0 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_stream_profile* 返回匹配的profile </dd></dl>
+
+</div>
+</div>
+<a id="ad98ba6acded2481e7b68f88a657e8a6b" name="ad98ba6acded2481e7b68f88a657e8a6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad98ba6acded2481e7b68f88a657e8a6b">&#9670;&#160;</a></span>ob_stream_profile_list_get_profile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> * ob_stream_profile_list_get_profile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *&#160;</td>
+          <td class="paramname"><em>profile_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>通过下标获取对应的StreamProfile </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">profile_list</td><td>StreamProfile列表 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>索引 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_stream_profile* 返回匹配的profile </dd></dl>
+
+</div>
+</div>
+<a id="a3a8b94176ddbdb03df8af9006a028189" name="a3a8b94176ddbdb03df8af9006a028189"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a8b94176ddbdb03df8af9006a028189">&#9670;&#160;</a></span>ob_stream_profile_list_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ob_stream_profile_list_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *&#160;</td>
+          <td class="paramname"><em>profile_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取StreamProfile列表的数量 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">profile_list</td><td>StreamProfile列表 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>uint32_t 返回StreamProfile列表的数量 </dd></dl>
+
+</div>
+</div>
+<a id="ad55c8b82f1eff26cfc7b59f5a8dca24f" name="ad55c8b82f1eff26cfc7b59f5a8dca24f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad55c8b82f1eff26cfc7b59f5a8dca24f">&#9670;&#160;</a></span>ob_delete_stream_profile_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_delete_stream_profile_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *&#160;</td>
+          <td class="paramname"><em>profile_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除流配置列表 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">profile_list</td><td>流配置列表 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af079a3b0493c43fa5782b5d1c67f30c9" name="af079a3b0493c43fa5782b5d1c67f30c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af079a3b0493c43fa5782b5d1c67f30c9">&#9670;&#160;</a></span>ob_delete_stream_profile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_delete_stream_profile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *&#160;</td>
+          <td class="paramname"><em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除流配置 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">profile</td><td>流配置对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2023年 八月 1日 星期二 19:05:51 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

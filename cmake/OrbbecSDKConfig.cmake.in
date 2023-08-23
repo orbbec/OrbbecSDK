@@ -1,20 +1,10 @@
 @PACKAGE_INIT@
 
 # Note: targets are specified in the namespaces they were exported from.
-add_library(OrbbecSDK::OrbbecSDK SHARED IMPORTED)
 
-set_target_properties(OrbbecSDK::OrbbecSDK PROPERTIES
-    INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_CURRENT_LIST_DIR}/../../../include"
-)
-
-if (UNIX)
-    set_target_properties(OrbbecSDK::OrbbecSDK PROPERTIES
-        IMPORTED_LOCATION "${CMAKE_CURRENT_LIST_DIR}/../../../lib/libOrbbecSDK.so"
-    )
-elseif (WIN32)
-    set_target_properties(OrbbecSDK::OrbbecSDK PROPERTIES
-        IMPORTED_LOCATION "${CMAKE_CURRENT_LIST_DIR}/../../../lib/OrbbecSDK.dll"
-    )
-endif ()
+set(OrbbecSDK_LIBS_DIR ${CMAKE_CURRENT_LIST_DIR})
+find_library(OrbbecSDK_LIBRARY NAMES OrbbecSDK PATHS ${OrbbecSDK_LIBS_DIR})
+set(OrbbecSDK_INCLUDE_DIRS ${CMAKE_CURRENT_LIST_DIR}/../include/)
+set(OrbbecSDK_LIBS ${OrbbecSDK_LIBRARY})
 
 check_required_components(OrbbecSDK)

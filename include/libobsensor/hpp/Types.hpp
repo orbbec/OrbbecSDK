@@ -1,8 +1,8 @@
 /**
- * \@file Types.hpp
- * \@brief  Provide SDK structure and enumeration constant definition (depending on libobsensor/h/ObTypes.h)
- *
+ * @file Types.hpp
+ * @brief Provides SDK structure and enumeration constant definitions (depending on libobsensor/h/ObTypes.h).
  */
+
 #pragma once
 
 #include "libobsensor/h/ObTypes.h"
@@ -14,42 +14,44 @@ extern "C" {
 #endif
 
 /**
- * @brief file transfer callbacks
+ * @brief Callback function for file transfer status updates.
  *
- * @param state file transfer status
- * @param message status information
+ * @param state The file transfer status.
+ * @param message Status information.
+ * @param percent The percentage of the file that has been transferred.
  */
 using SendFileCallback = std::function<void(OBFileTranState state, const char *message, uint8_t percent)>;
 
 /**
- * @brief device upgrade callback
+ * @brief Callback function for device upgrade status updates.
  *
- * @param state upgrade status
- * @param message status information
+ * @param state The device upgrade status.
+ * @param message Status information.
+ * @param percent The percentage of the upgrade that has been completed.
  */
 using DeviceUpgradeCallback = std::function<void(OBUpgradeState state, const char *message, uint8_t percent)>;
 
 /**
- * @brief device status callback
+ * @brief Callback function for device status updates.
  *
- * @param state device status
- * @param message status information
+ * @param state The device status.
+ * @param message Status information.
  */
 using DeviceStateChangedCallback = std::function<void(OBDeviceState state, const char *message)>;
 
 /**
- * @brief get raw data property data when data and progress callbacks
+ * @brief Callback function for getting raw data property data when data and progress callbacks are made.
  *
- * @param dataChunk data chunk
- * @param state get the data status
+ * @param dataChunk The data chunk.
+ * @param state The status of getting the data.
  */
 using GetDataCallback = std::function<void(OBDataTranState state, OBDataChunk *dataChunk)>;
 
 /**
- * @brief set the raw data property when the progress callback is made
+ * @brief Callback function for setting the raw data property when progress callbacks are made.
  *
- * @param percent  progress percentage
- * @param state  set the data status
+ * @param percent The progress percentage.
+ * @param state The status of setting the data.
  */
 using SetDataCallback = std::function<void(OBDataTranState state, uint8_t percent)>;
 

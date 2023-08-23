@@ -5,18 +5,18 @@ project(OBSyncAlignViewer)
 add_executable(${PROJECT_NAME}
   SyncAlignViewer.cpp
   )
+
 target_link_libraries(${PROJECT_NAME}
   ${OpenCV_LIBS}
-  ${ORBBEC_LIBS}/${ORBBEC_LIB_PREFIX}OrbbecSDK${CMAKE_SHARED_LIBRARY_SUFFIX}
+  ${OrbbecSDK_LIBS}
   )
-
 
 target_include_directories(${PROJECT_NAME} PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
-  ${OpenCV_INCLUDED_DIRS}
-  ${ORBBEC_INCLUDE_DIR}
+  ${OpenCV_INCLUDE_DIRS}
+  ${OrbbecSDK_INCLUDE_DIRS}
   )
 
 install(TARGETS ${PROJECT_NAME}

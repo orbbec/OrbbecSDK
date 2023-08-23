@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['address',['address',['../structOBDeviceIpAddrConfig.html#a81c3545524cfa2cd50c6ee760c9fca10',1,'OBDeviceIpAddrConfig']]],
-  ['args',['args',['../structob__error.html#a26d098478716ef96c7ed479dfb3eff58',1,'ob_error']]]
+  ['address_0',['address',['../struct_o_b_net_ip_config.html#a89cfcf57f564cb6f7a20b2a26284e11b',1,'OBNetIpConfig']]],
+  ['args_1',['args',['../structob__error.html#a26d098478716ef96c7ed479dfb3eff58',1,'ob_error']]]
 ];

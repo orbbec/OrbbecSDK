@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['name',['name',['../classob_1_1DeviceInfo.html#a2f54ab5afea08b1ed24e0df363a22f9f',1,'ob::DeviceInfo::name()'],['../classob_1_1DeviceList.html#ad8e995e429946eccd954315b354107dd',1,'ob::DeviceList::name()']]]
+  ['metadata_0',['metadata',['../classob_1_1_video_frame.html#a33821425981b027a28feb87d69126d9f',1,'ob::VideoFrame']]],
+  ['metadatasize_1',['metadataSize',['../classob_1_1_video_frame.html#a8e0e66c61a5de2160bbec24fd5b98e8e',1,'ob::VideoFrame']]]
 ];

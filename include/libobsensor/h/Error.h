@@ -1,7 +1,6 @@
 /**
  * @file Error.h
- * @brief Error handling related functions, mainly used to obtain error messages
- *
+ * @brief Functions for handling errors, mainly used for obtaining error messages.
  */
 #pragma once
 
@@ -12,50 +11,49 @@ extern "C" {
 #include "ObTypes.h"
 
 /**
- * @brief Get error status
+ * @brief Get the error status.
  *
- * @param[in] error  Error object
- * @return ob_status returns error status
- *
+ * @param[in] error The error object.
+ * @return The error status.
  */
 ob_status ob_error_status(ob_error *error);
+
 /**
- * @brief Get error information
+ * @brief Get the error message.
  *
- * @param[in] error  Error object
- * @return const char* returns an error message
- *
+ * @param[in] error The error object.
+ * @return The error message.
  */
 const char *ob_error_message(ob_error *error);
+
 /**
- * @brief Get error API function name
+ * @brief Get the name of the API function that caused the error.
  *
- * @param[in] error Error object
- * @return const char* returns error function
- *
+ * @param[in] error The error object.
+ * @return The name of the API function.
  */
 const char *ob_error_function(ob_error *error);
+
 /**
- * @brief Get error parameters
+ * @brief Get the error parameters.
  *
- * @param[in] error  Error object
- * @return const char* returns the error parameter
- *
+ * @param[in] error The error object.
+ * @return The error parameters.
  */
 const char *ob_error_args(ob_error *error);
+
 /**
- * @brief Get error exception type
+ * @brief Get the type of exception that caused the error.
  *
- * @param[in] error Error object
- * @return ob_exception_type returns the error exception type
- *
+ * @param[in] error The error object.
+ * @return The type of exception.
  */
 ob_exception_type ob_error_exception_type(ob_error *error);
+
 /**
- * @brief Delete the error object
+ * @brief Delete the error object.
  *
- * @param[in] error The error object to delete
- *
+ * @param[in] error The error object to delete.
  */
 void ob_delete_error(ob_error *error);
 
