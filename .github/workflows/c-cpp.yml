@@ -1,0 +1,19 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "1.6.x" ]
+  pull_request:
+    branches: [ "1.6.x" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: cmake
+      run: mkdir build && cd build && cmake ..
+    - name: make
+      run: make
