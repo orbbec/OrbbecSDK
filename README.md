@@ -85,4 +85,4 @@ Please refer to the examples in the [examples directory](examples) for usage.
 ## Related links
 
 * [Orbbec 3D Club](https://3dclub.orbbec3d.com)
-* [Download OrbbecSDK](https://orbbec3d.com/index/download.html)
+* [Download OrbbecSDK](https://www.orbbec.com/developers/orbbec-sdk/)
