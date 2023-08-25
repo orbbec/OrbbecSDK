@@ -11,7 +11,7 @@ if (UNIX)
     install(FILES ${ORBBEC_SCRIPT_DIR}/install_udev_rules.sh DESTINATION scripts/)
     install(DIRECTORY
         ${OrbbecSDK_LIBS_DIR}/
-        DESTINATION lib/
+        DESTINATION lib
         FILES_MATCHING PATTERN "libOrbbecSDK.so"
         PATTERN "libOrbbecSDK.so.*"
     )
@@ -19,7 +19,7 @@ if (UNIX)
     if (INSTALL_LIBUDEV)
         install(DIRECTORY
             ${OrbbecSDK_LIBS_DIR}/
-            DESTINATION lib/
+            DESTINATION lib
             FILES_MATCHING PATTERN "libudev.so"
             PATTERN "libudev.so.*"
         )
@@ -27,17 +27,17 @@ if (UNIX)
 elseif (WIN32)
     install(DIRECTORY
         ${ORBBEC_SCRIPT_DIR}/
-        DESTINATION scripts/
+        DESTINATION scripts
         FILES_MATCHING PATTERN "obsensor_metadata_win10*"
     )
     install(DIRECTORY
         ${OrbbecSDK_LIBS_DIR}/
-        DESTINATION bin/
+        DESTINATION bin
         FILES_MATCHING PATTERN "OrbbecSDK.dll"
     )
     install(DIRECTORY
         ${OrbbecSDK_LIBS_DIR}/
-        DESTINATION lib/
+        DESTINATION lib
         FILES_MATCHING PATTERN "OrbbecSDK*"
     )
 endif ()

@@ -35,6 +35,10 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})  # project is used 
     set(CMAKE_CXX_STANDARD 11)
     set(CMAKE_C_STANDARD 11)
 
+    # Options
+    option(BUILD_EXAMPLES "Build examples" ON)
+    option(INSTALL_LIBUDEV "Install libudev" OFF)
+
     # Compiler and Linker options
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC -O3")
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fPIC -g")
@@ -45,10 +49,12 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})  # project is used 
         add_compile_options(-Wall -Wextra -Wpedantic)
     endif ()
 
-    # Options
-    option(BUILD_EXAMPLES "Build examples" ON)
-    option(INSTALL_LIBUDEV "Install libudev" OFF)
-
+    # paths
+    set(ORBBEC_EXAMPLES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/examples/)
+    set(ORBBEC_DOCS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/doc/)
+    set(ORBBEC_MISC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/misc/)
+    set(ORBBEC_CONFIG_DIR ${ORBBEC_MISC_DIR}/config/)
+    set(ORBBEC_SCRIPT_DIR ${ORBBEC_MISC_DIR}/scripts/)
 
     # Subdirectories
     if (BUILD_EXAMPLES)
