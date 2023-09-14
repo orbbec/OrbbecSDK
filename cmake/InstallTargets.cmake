@@ -6,7 +6,6 @@ install(DIRECTORY ${ORBBEC_EXAMPLES_DIR}/ DESTINATION examples)
 install(DIRECTORY ${ORBBEC_DOCS_DIR}/ DESTINATION doc)
 
 if (UNIX)
-    install(FILES ${ORBBEC_SCRIPT_DIR}/99-obsensor-libusb.rules DESTINATION /etc/udev/rules.d/)
     install(FILES ${ORBBEC_SCRIPT_DIR}/99-obsensor-libusb.rules DESTINATION scripts/)
     install(FILES ${ORBBEC_SCRIPT_DIR}/install_udev_rules.sh DESTINATION scripts/)
     install(DIRECTORY

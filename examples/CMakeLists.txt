@@ -15,5 +15,12 @@ endif()
 set(OpenCV_DIR "your/path/to/opencv/lib")
 find_package(OpenCV QUIET)
 
+if(UNIX)
+    set(CMAKE_SKIP_BUILD_RPATH FALSE)
+    set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
+    set(CMAKE_INSTALL_RPATH "$ORIGIN:$ORIGIN/../lib")
+    set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+endif()
+
 add_subdirectory(c)
 add_subdirectory(cpp)
