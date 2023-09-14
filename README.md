@@ -1,4 +1,5 @@
 # OrbbecSDK
+
 ![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.6.3-green)
 
 The Orbbec 3D camera product software development kit，fully supports UVC, realizes driver-free plug-and-play, provides low-level and high-level simple and easy-to-use APIs, and helps developers use it flexibly in different scenarios.
@@ -42,45 +43,66 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 
 ## Getting started
 
-* Get source code
+### Get source code
 
 ```bash
 git clone https://github.com/OrbbecDeveloper/OrbbecSDK.git
 ```
 
-* Build && install
+### Environment setup
 
-```bash
-cd OrbbecSDK && mkdir build && cd build &&
-cmake .. && make -j4
-sudo make install # install to /usr/local
-# you can run `sudo make uninstall` to uninstall
-sudo ldconfig # refresh ld cache
-```
+* Linux:
 
-* Run examples
+    Install udev rules file
 
-```bash
-# if you use linux, first install udev rules
-sudo cp -r ./udev/* /etc/udev/rules.d/
-sudo udevadm control --reload-rules && sudo udevadm trigger
-cd build/examples/cpp && ./Sample-DepthViewer/OBDepthViewer
-# or you can run /usr/local/bin/OBDepthViewer if you install to /usr/local
-```
+    ``` bash
+    cd OrbbecSDK/misc/scripts
+    sudo chmod +x ./install_udev_rules.sh
+    ./install_udev_rules.sh
+    ```
 
-* Use OrbbecSDK in your CMake project
+* Windows:
+
+    Timestamp registration: [follow this: obsensor_metadata_win10](misc\scripts\obsensor_metadata_win10.md)
+
+### 4.3 Use OrbbecSDK in your CMake project
+
+Put the OrbbecSDK directory in the subdirectory of your project, and load the OrbbecSDK in your CMakeLists.txt file like this:
 
 ```cmake
 cmake_minimum_required(VERSION 3.1.15)
 project(OrbbecSDKTest)
-find_package(OrbbecSDK REQUIRED)
+
 add_executable(${PROJECT_NAME} main.cpp)
+
+add_subdirectory("your/path/to/OrbbecSDK")
 target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 ```
 
-* Write your code
+## Examples
 
-Please refer to the examples in the [examples directory](examples) for usage.
+The sample code is placed in the `./examples` directory, user can be build by CMake.
+
+### Build
+
+```bash
+cd OrbbecSDK && mkdir build && cd build &&
+cmake .. && cmake --build . --config Release
+```
+
+### Run example
+
+Connect Orbbec camera to you machine, and then run this:
+
+``` bash
+cd OrbbecSDK/build/bin # build output dir
+./OBHelloOrbbec  # OBHelloOrbbec.exe on Windows
+```
+
+## Documents
+
+* API Reference: Use browse to open [doc/api/English/index.html](doc/api/English/index.html)
+* Tutorial:  placed in the `doc/tutorial` directory.
 
 ## Related links
 

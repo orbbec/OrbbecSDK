@@ -1,27 +1,27 @@
 # OrbbecSDK
 ![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.6.3-green)
 
-Orbbec 3D相机产品软件开发套件，全面支持UVC，实现免驱动即插即用，提供低层和高层简单易用的API，帮助开发者在不同场景下灵活使用。
+Orbbec 3D 相机产品软件开发套件，全面支持 UVC，实现免驱动即插即用，提供低层和高层简单易用的 API，帮助开发者在不同场景下灵活使用。
 
-此外，该SDK通过内置代码兼容Orbbec原有的OpenNI协议设备，开发者可以完全迁移到OrbbecSDK，一套代码即可支持Orbbec的新一代产品和老产品。
+此外，该 SDK 通过内置代码兼容 Orbbec 原有的 OpenNI 协议设备，开发者可以完全迁移到 OrbbecSDK，一套代码即可支持 Orbbec 的新一代产品和老产品。
 
 ## 本仓库包含内容
 
-* **library** : OrbbecSDK核心库文件和C/C++头文件。
-* **examples** : C/C++示例工程源码
-* **doc** : API参考文档和示例文档。
-* **driver** :  Windows设备驱动，用于OpenNI协议设备（Dabai、Dabai DCW、Dabai DW、Astra mini Pro、Astra Pro Plus、A1 Pro、Gemini E、Gemini E Lite、Gemini），使用标准UVC协议的模块则无需安装驱动。
-* **scripts** : Linux udev规则，用于解决权限问题；Windows时间戳注册脚本，用于解决时间戳和元数据问题。
+* **library** : OrbbecSDK 核心库文件和 C/C++ 头文件。
+* **examples** : C/C++ 示例工程源码
+* **doc** : API 参考文档和示例文档。
+* **driver** :  Windows 设备驱动，用于 OpenNI 协议设备（Dabai、Dabai DCW、Dabai DW、Astra mini Pro、Astra Pro Plus、A1 Pro、Gemini E、Gemini E Lite、Gemini），使用标准 UVC 协议的模块则无需安装驱动。
+* **scripts** : Linux udev 规则，用于解决权限问题；Windows 时间戳注册脚本，用于解决时间戳和元数据问题。
 
 ## 支持平台
 
 Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jetson Nano, A311D 等.)
 
-*Windows 11, Ubuntu 22.04 和其他一些Linux平台理论上也支持，但是未经过完整测试”
+*Windows 11, Ubuntu 22.04 和其他一些 Linux 平台理论上也支持，但是未经过完整测试”
 
 ## 支持产品
 
-| **产品列表** | **固件版本** |
+| ** 产品列表 ** | ** 固件版本 ** |
 | --- | --- |
 | Astra2         | 2.8.20                     |
 | Gemini2 L      | 1.4.32                     |
@@ -44,47 +44,55 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 
 * 获取源码
 
-```bash
-git clone https://github.com/OrbbecDeveloper/OrbbecSDK.git
-```
+    ```bash
+    git clone https://github.com/OrbbecDeveloper/OrbbecSDK.git
+    ```
 
-* 编译和安装
+* 环境配置
+    Linux: 安装 udev rules 文件
 
-```bash
-cd OrbbecSDK && mkdir build && cd build &&
-cmake .. && make -j4
-sudo make install # install to /usr/local
-# you can run `sudo make uninstall` to uninstall
-sudo ldconfig # refresh ld cache
-```
+    ``` bash
+    cd OrbbecSDK/misc/scripts
+    sudo chmod +x ./install_udev_rules.sh
+    ./install_udev_rules.sh
+    ```
+    Windows: 时间戳注册: [follow this: obsensor_metadata_win10](misc\scripts\obsensor_metadata_win10.md)
+
+
+* 编译
+
+    ```bash
+    cd OrbbecSDK && mkdir build && cd build &&
+    cmake .. && cmake --build . --config Release
+    ```
 
 * 运行示例
 
-```bash
-# if you use linux, first install udev rules
-sudo cp -r ./udev/* /etc/udev/rules.d/
-sudo udevadm control --reload-rules && sudo udevadm trigger
-cd build/examples/cpp && ./Sample-DepthViewer/OBDepthViewer
-# or you can run /usr/local/bin/OBDepthViewer if you install to /usr/local
-```
+    ```bash
+    cd OrbbecSDK/build/bin # build output dir
+    ./OBHelloOrbbec  # OBHelloOrbbec.exe on Windows
+    ```
 
-* 在你的工程中使用OrbbecSDK
+* 在你的工程中使用 OrbbecSDK
 
-```cmake
-cmake_minimum_required(VERSION 3.1.15)
-project(OrbbecSDKTest)
-find_package(OrbbecSDK REQUIRED)
-add_executable(${PROJECT_NAME} main.cpp)
-target_link_libraries(${PROJECT_NAME} ${OrbbecSDK_LIBS})
-target_include_directories(${PROJECT_NAME} ${OrbbecSDK_INCLUDE_DIRS})
-```
+    将 OrbbecSDK 拷贝到你的 CMake 工程子目录下，再 CMake 配置中增加如下配置：
+
+    ```cmake
+    cmake_minimum_required(VERSION 3.1.15)
+    project(OrbbecSDKTest)
+
+    add_executable(${PROJECT_NAME} main.cpp)
+
+    add_subdirectory("your/path/to/OrbbecSDK")
+    target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
+    ```
 
 * 编写代码
 
-请参考示例代码[examples directory](examples) 完成您的应用代码编写。
+    请参考示例代码 [examples directory](examples) 完成您的应用代码编写。
 
 ## 相关链接
 
-* [3D视觉开发者社区](https://developer.orbbec.com.cn/)
-* [OrbbecSDK主页](https://developer.orbbec.com.cn/develop_details.html?id=1)
+* [3D 视觉开发者社区](https://developer.orbbec.com.cn/)
+* [OrbbecSDK 主页](https://developer.orbbec.com.cn/develop_details.html?id=1)
 
