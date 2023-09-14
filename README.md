@@ -98,6 +98,11 @@ Connect Orbbec camera to you machine, and then run this:
 cd OrbbecSDK/build/bin # build output dir
 ./OBHelloOrbbec  # OBHelloOrbbec.exe on Windows
 ```
+## Download OrbbecViewer
+[OrbbecViewer_v1.6.3_202308011123_win_x64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.6.3/OrbbecViewer_v1.6.3_202308011930_win_x64_release.zip)
+[OrbbecViewer_v1.6.3_202308011123_linux_x64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.6.3/OrbbecViewer_v1.6.3_202308011123_linux_x64_release.zip)
+[OrbbecViewer_v1.6.3_202308011123_linux_arm64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.6.3/OrbbecViewer_v1.6.3_202308011143_arm64_release.zip)
+
 
 ## Documents
 
