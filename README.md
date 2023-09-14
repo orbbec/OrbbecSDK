@@ -63,7 +63,7 @@ git clone https://github.com/OrbbecDeveloper/OrbbecSDK.git
 
 * Windows:
 
-    Timestamp registration: [follow this: obsensor_metadata_win10](misc\scripts\obsensor_metadata_win10.md)
+    Timestamp registration: [follow this: obsensor_metadata_win10](misc/scripts/obsensor_metadata_win10.md)
 
 ### 4.3 Use OrbbecSDK in your CMake project
 
@@ -99,9 +99,10 @@ cd OrbbecSDK/build/bin # build output dir
 ./OBHelloOrbbec  # OBHelloOrbbec.exe on Windows
 ```
 ## Download OrbbecViewer
-[OrbbecViewer_v1.6.3_202308011123_win_x64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.6.3/OrbbecViewer_v1.6.3_202308011930_win_x64_release.zip)
-[OrbbecViewer_v1.6.3_202308011123_linux_x64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.6.3/OrbbecViewer_v1.6.3_202308011123_linux_x64_release.zip)
-[OrbbecViewer_v1.6.3_202308011123_linux_arm64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.6.3/OrbbecViewer_v1.6.3_202308011143_arm64_release.zip)
+
+* [OrbbecViewer_v1.6.3_202308011123_win_x64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.6.3/OrbbecViewer_v1.6.3_202308011930_win_x64_release.zip)
+* [OrbbecViewer_v1.6.3_202308011123_linux_x64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.6.3/OrbbecViewer_v1.6.3_202308011123_linux_x64_release.zip)
+* [OrbbecViewer_v1.6.3_202308011123_linux_arm64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.6.3/OrbbecViewer_v1.6.3_202308011143_arm64_release.zip)
 
 
 ## Documents
