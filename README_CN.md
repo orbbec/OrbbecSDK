@@ -89,7 +89,7 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 
 * 编写代码
 
-    请参考[示例代码](examples) 完成您的应用代码编写。
+    请参考[示例代码](examples/README_CN.md) 完成您的应用代码编写。
 
 ## 相关链接
 
