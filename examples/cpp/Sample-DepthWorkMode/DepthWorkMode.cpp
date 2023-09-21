@@ -32,7 +32,6 @@ int main(int argc, char *argv[]) try {
 
     // Get the device inside the pipeline
     auto device = pipe.getDevice();
-
     // Check whether the camera depth working mode is supported, currently (December 5, 2022) only the Gemini2 binocular camera supports the depth working mode
     if(!device->isPropertySupported(OB_STRUCT_CURRENT_DEPTH_ALG_MODE, OB_PERMISSION_READ_WRITE)) {
         pressKeyExit("Current device not support depth work mode!");
@@ -41,7 +40,6 @@ int main(int argc, char *argv[]) try {
 
     // Query the current camera depth mode
     auto curDepthMode = device->getCurrentDepthWorkMode();
-
     // Get the list of camera depth modes
     auto depthModeList = device->getDepthWorkModeList();
     std::cout << "depthModeList size: " << depthModeList->count() << std::endl;

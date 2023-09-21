@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -134,49 +134,51 @@ $(function() {
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classob_1_1_pipeline.html#ad4f59acb5ed8ed7db43535513fb9bcf2">  130</a></span>    <a class="code hl_struct" href="struct_o_b_camera_param.html">OBCameraParam</a> getCameraParam();</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="classob_1_1_pipeline.html#ac25d95d510c864b9d1ee7a93e9f31c74">  139</a></span>    std::shared_ptr&lt;<a class="code hl_class" href="classob_1_1_stream_profile_list.html">StreamProfileList</a>&gt; getD2CDepthProfileList(std::shared_ptr&lt;<a class="code hl_class" href="classob_1_1_stream_profile.html">StreamProfile</a>&gt; colorProfile, <a class="code hl_enumeration" href="_ob_types_8h.html#ade914070120de80d4338ee74e73dc9d5">OBAlignMode</a> alignMode);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="classob_1_1_pipeline.html#a8049e3e75826e4873af2010058ad363a">  139</a></span>    <a class="code hl_struct" href="struct_o_b_camera_param.html">OBCameraParam</a> getCameraParamWithProfile(uint32_t colorWidth, uint32_t colorHeight, uint32_t depthWidth, uint32_t depthHeight);</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classob_1_1_pipeline.html#a5f7a9208d6a1035302993c9683cba4f2">  149</a></span>    <a class="code hl_struct" href="struct_o_b_rect.html">OBRect</a> getD2CValidArea(uint32_t minimumDistance, uint32_t maximumDistance = 0);</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="classob_1_1_pipeline.html#aa21ee5ac861bec48247de5958c3cd704">  156</a></span>    <span class="keywordtype">void</span> switchConfig(std::shared_ptr&lt;<a class="code hl_class" href="classob_1_1_config.html">Config</a>&gt; config);</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="classob_1_1_pipeline.html#aa0d1d11a72e5f803fc747017f074b18d">  163</a></span>    <span class="keywordtype">void</span> startRecord(const <span class="keywordtype">char</span> *filename);</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="classob_1_1_pipeline.html#a550084f2d2c0ae538c3a3e6b4e55abe7">  168</a></span>    <span class="keywordtype">void</span> stopRecord();</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>};</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classob_1_1_config.html">  175</a></span>class <a class="code hl_define" href="_ob_types_8h.html#aa0add2ff45ff52cc75dc92d44f883fbf">OB_EXTENSION_API</a> <a class="code hl_class" href="classob_1_1_config.html">Config</a> {</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    std::unique_ptr&lt;ConfigImpl&gt; impl_;</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#acf833ba3b0f52198fed44a7fad39b566">  180</a></span>    <a class="code hl_function" href="classob_1_1_config.html#acf833ba3b0f52198fed44a7fad39b566">Config</a>();</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#a454e17debb33d61a8847c28e5e36ae98">  181</a></span>    <a class="code hl_function" href="classob_1_1_config.html#a454e17debb33d61a8847c28e5e36ae98">~Config</a>() noexcept;</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#aad2606c8e340bf88bb836fc94927147b">  188</a></span>    <span class="keywordtype">void</span> enableStream(std::shared_ptr&lt;<a class="code hl_class" href="classob_1_1_stream_profile.html">StreamProfile</a>&gt; streamProfile);</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#afd567dae35d849607594adb8ce143638">  193</a></span>    <span class="keywordtype">void</span> enableAllStream();</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#a5e3fcf7f5a0efc7b928409c19dd03dc9">  200</a></span>    <span class="keywordtype">void</span> disableStream(<a class="code hl_enumeration" href="_ob_types_8h.html#a4372502297ded5d6e6ee8db1d71d69d2">OBStreamType</a> streamType);</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#ad03b2517ffaca641ce78978a5f7e8b0d">  205</a></span>    <span class="keywordtype">void</span> disableAllStream();</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#a618200abd674c33551eb6c3311d33b73">  212</a></span>    <span class="keywordtype">void</span> setAlignMode(<a class="code hl_enumeration" href="_ob_types_8h.html#ade914070120de80d4338ee74e73dc9d5">OBAlignMode</a> mode);</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#a3755c840dc4e9b1be9195d9b68936c78">  219</a></span>    <span class="keywordtype">void</span> setDepthScaleRequire(<span class="keywordtype">bool</span> enable);</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#a671ffb5fa3e62388f3e62b31bed22d56">  228</a></span>    <span class="keywordtype">void</span> setD2CTargetResolution(uint32_t d2cTargetWidth, uint32_t d2cTargetHeight);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="classob_1_1_pipeline.html#ac25d95d510c864b9d1ee7a93e9f31c74">  148</a></span>    std::shared_ptr&lt;<a class="code hl_class" href="classob_1_1_stream_profile_list.html">StreamProfileList</a>&gt; getD2CDepthProfileList(std::shared_ptr&lt;<a class="code hl_class" href="classob_1_1_stream_profile.html">StreamProfile</a>&gt; colorProfile, <a class="code hl_enumeration" href="_ob_types_8h.html#ade914070120de80d4338ee74e73dc9d5">OBAlignMode</a> alignMode);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classob_1_1_pipeline.html#a5f7a9208d6a1035302993c9683cba4f2">  158</a></span>    <a class="code hl_struct" href="struct_o_b_rect.html">OBRect</a> getD2CValidArea(uint32_t minimumDistance, uint32_t maximumDistance = 0);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="classob_1_1_pipeline.html#aa21ee5ac861bec48247de5958c3cd704">  165</a></span>    <span class="keywordtype">void</span> switchConfig(std::shared_ptr&lt;<a class="code hl_class" href="classob_1_1_config.html">Config</a>&gt; config);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="classob_1_1_pipeline.html#aa0d1d11a72e5f803fc747017f074b18d">  172</a></span>    <span class="keywordtype">void</span> startRecord(const <span class="keywordtype">char</span> *filename);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="classob_1_1_pipeline.html#a550084f2d2c0ae538c3a3e6b4e55abe7">  177</a></span>    <span class="keywordtype">void</span> stopRecord();</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>};</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classob_1_1_config.html">  184</a></span>class <a class="code hl_define" href="_ob_types_8h.html#aa0add2ff45ff52cc75dc92d44f883fbf">OB_EXTENSION_API</a> <a class="code hl_class" href="classob_1_1_config.html">Config</a> {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    std::unique_ptr&lt;ConfigImpl&gt; impl_;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#acf833ba3b0f52198fed44a7fad39b566">  189</a></span>    <a class="code hl_function" href="classob_1_1_config.html#acf833ba3b0f52198fed44a7fad39b566">Config</a>();</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#a454e17debb33d61a8847c28e5e36ae98">  190</a></span>    <a class="code hl_function" href="classob_1_1_config.html#a454e17debb33d61a8847c28e5e36ae98">~Config</a>() noexcept;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#aad2606c8e340bf88bb836fc94927147b">  197</a></span>    <span class="keywordtype">void</span> enableStream(std::shared_ptr&lt;<a class="code hl_class" href="classob_1_1_stream_profile.html">StreamProfile</a>&gt; streamProfile);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#afd567dae35d849607594adb8ce143638">  202</a></span>    <span class="keywordtype">void</span> enableAllStream();</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#a5e3fcf7f5a0efc7b928409c19dd03dc9">  209</a></span>    <span class="keywordtype">void</span> disableStream(<a class="code hl_enumeration" href="_ob_types_8h.html#a4372502297ded5d6e6ee8db1d71d69d2">OBStreamType</a> streamType);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#ad03b2517ffaca641ce78978a5f7e8b0d">  214</a></span>    <span class="keywordtype">void</span> disableAllStream();</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#a618200abd674c33551eb6c3311d33b73">  221</a></span>    <span class="keywordtype">void</span> setAlignMode(<a class="code hl_enumeration" href="_ob_types_8h.html#ade914070120de80d4338ee74e73dc9d5">OBAlignMode</a> mode);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#a3755c840dc4e9b1be9195d9b68936c78">  228</a></span>    <span class="keywordtype">void</span> setDepthScaleRequire(<span class="keywordtype">bool</span> enable);</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#af9f0f1adbd5baee7830839447205af8d">  230</a></span>    friend class <a class="code hl_class" href="classob_1_1_pipeline.html">Pipeline</a>;</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>};</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>}  <span class="comment">// namespace ob</span></div>
-<div class="ttc" id="a_ob_types_8h_html_a0bf6f74f3eaabbf4a71720b9363b2aa8"><div class="ttname"><a href="_ob_types_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a></div><div class="ttdeci">OBSensorType</div><div class="ttdoc">描述传感器类型的枚举值</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00135">ObTypes.h:135</a></div></div>
-<div class="ttc" id="a_ob_types_8h_html_a4372502297ded5d6e6ee8db1d71d69d2"><div class="ttname"><a href="_ob_types_8h.html#a4372502297ded5d6e6ee8db1d71d69d2">OBStreamType</a></div><div class="ttdeci">OBStreamType</div><div class="ttdoc">描述数据流类型的枚举值</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00150">ObTypes.h:150</a></div></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#a671ffb5fa3e62388f3e62b31bed22d56">  237</a></span>    <span class="keywordtype">void</span> setD2CTargetResolution(uint32_t d2cTargetWidth, uint32_t d2cTargetHeight);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno"><a class="line" href="classob_1_1_config.html#af9f0f1adbd5baee7830839447205af8d">  239</a></span>    friend class <a class="code hl_class" href="classob_1_1_pipeline.html">Pipeline</a>;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>};</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>}  <span class="comment">// namespace ob</span></div>
+<div class="ttc" id="a_ob_types_8h_html_a0bf6f74f3eaabbf4a71720b9363b2aa8"><div class="ttname"><a href="_ob_types_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a></div><div class="ttdeci">OBSensorType</div><div class="ttdoc">描述传感器类型的枚举值</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00146">ObTypes.h:146</a></div></div>
+<div class="ttc" id="a_ob_types_8h_html_a4372502297ded5d6e6ee8db1d71d69d2"><div class="ttname"><a href="_ob_types_8h.html#a4372502297ded5d6e6ee8db1d71d69d2">OBStreamType</a></div><div class="ttdeci">OBStreamType</div><div class="ttdoc">描述数据流类型的枚举值</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00161">ObTypes.h:161</a></div></div>
 <div class="ttc" id="a_ob_types_8h_html_aa0add2ff45ff52cc75dc92d44f883fbf"><div class="ttname"><a href="_ob_types_8h.html#aa0add2ff45ff52cc75dc92d44f883fbf">OB_EXTENSION_API</a></div><div class="ttdeci">#define OB_EXTENSION_API</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00027">ObTypes.h:27</a></div></div>
-<div class="ttc" id="a_ob_types_8h_html_ade914070120de80d4338ee74e73dc9d5"><div class="ttname"><a href="_ob_types_8h.html#ade914070120de80d4338ee74e73dc9d5">OBAlignMode</a></div><div class="ttdeci">OBAlignMode</div><div class="ttdoc">对齐模式</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00387">ObTypes.h:387</a></div></div>
+<div class="ttc" id="a_ob_types_8h_html_ade914070120de80d4338ee74e73dc9d5"><div class="ttname"><a href="_ob_types_8h.html#ade914070120de80d4338ee74e73dc9d5">OBAlignMode</a></div><div class="ttdeci">OBAlignMode</div><div class="ttdoc">对齐模式</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00399">ObTypes.h:399</a></div></div>
 <div class="ttc" id="a_types_8hpp_html"><div class="ttname"><a href="_types_8hpp.html">Types.hpp</a></div><div class="ttdoc">提供SDK的结构体、枚举常量定义（依赖libobsensor/h/ObTypes.h）</div></div>
-<div class="ttc" id="aclassob_1_1_config_html"><div class="ttname"><a href="classob_1_1_config.html">ob::Config</a></div><div class="ttdoc">Config类,用于配置pipeline类参数</div><div class="ttdef"><b>Definition</b> <a href="_pipeline_8hpp_source.html#l00175">Pipeline.hpp:175</a></div></div>
+<div class="ttc" id="aclassob_1_1_config_html"><div class="ttname"><a href="classob_1_1_config.html">ob::Config</a></div><div class="ttdoc">Config类,用于配置pipeline类参数</div><div class="ttdef"><b>Definition</b> <a href="_pipeline_8hpp_source.html#l00184">Pipeline.hpp:184</a></div></div>
 <div class="ttc" id="aclassob_1_1_config_html_a454e17debb33d61a8847c28e5e36ae98"><div class="ttname"><a href="classob_1_1_config.html#a454e17debb33d61a8847c28e5e36ae98">ob::Config::~Config</a></div><div class="ttdeci">~Config() noexcept</div></div>
 <div class="ttc" id="aclassob_1_1_config_html_acf833ba3b0f52198fed44a7fad39b566"><div class="ttname"><a href="classob_1_1_config.html#acf833ba3b0f52198fed44a7fad39b566">ob::Config::Config</a></div><div class="ttdeci">Config()</div></div>
 <div class="ttc" id="aclassob_1_1_device_html"><div class="ttname"><a href="classob_1_1_device.html">ob::Device</a></div><div class="ttdoc">定义 Device类</div><div class="ttdef"><b>Definition</b> <a href="_device_8hpp_source.html#l00030">Device.hpp:30</a></div></div>
@@ -191,12 +193,12 @@ $(function() {
 <div class="ttc" id="aclassob_1_1_stream_profile_list_html"><div class="ttname"><a href="classob_1_1_stream_profile_list.html">ob::StreamProfileList</a></div><div class="ttdoc">StreamProfileList类, 通过宽、高、帧率、格式等 获取匹配的StreamProfile</div><div class="ttdef"><b>Definition</b> <a href="_stream_profile_8hpp_source.html#l00182">StreamProfile.hpp:182</a></div></div>
 <div class="ttc" id="anamespaceob_html"><div class="ttname"><a href="namespaceob.html">ob</a></div><div class="ttdef"><b>Definition</b> <a href="_context_8hpp_source.html#l00014">Context.hpp:14</a></div></div>
 <div class="ttc" id="anamespaceob_html_a079312e9113ca7d35fd7ccb68fb7c7fa"><div class="ttname"><a href="namespaceob.html#a079312e9113ca7d35fd7ccb68fb7c7fa">ob::FrameSetCallback</a></div><div class="ttdeci">std::function&lt; void(std::shared_ptr&lt; FrameSet &gt; frame)&gt; FrameSetCallback</div><div class="ttdef"><b>Definition</b> <a href="_pipeline_8hpp_source.html#l00025">Pipeline.hpp:25</a></div></div>
-<div class="ttc" id="astruct_o_b_camera_param_html"><div class="ttname"><a href="struct_o_b_camera_param.html">OBCameraParam</a></div><div class="ttdoc">相机参数</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00352">ObTypes.h:352</a></div></div>
-<div class="ttc" id="astruct_o_b_rect_html"><div class="ttname"><a href="struct_o_b_rect.html">OBRect</a></div><div class="ttdoc">矩形</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00397">ObTypes.h:397</a></div></div>
+<div class="ttc" id="astruct_o_b_camera_param_html"><div class="ttname"><a href="struct_o_b_camera_param.html">OBCameraParam</a></div><div class="ttdoc">相机参数</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00364">ObTypes.h:364</a></div></div>
+<div class="ttc" id="astruct_o_b_rect_html"><div class="ttname"><a href="struct_o_b_rect.html">OBRect</a></div><div class="ttdoc">矩形</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00409">ObTypes.h:409</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 八月 1日 星期二 19:05:50 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 九月 13日 星期三 18:10:29 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

@@ -1,23 +1,9 @@
 var searchData=
 [
-  ['ob_5fdefault_5fdecrypt_5fkey_0',['OB_DEFAULT_DECRYPT_KEY',['../_ob_types_8h.html#a5eeadb4cea31961aab689e5d7a225e9c',1,'ObTypes.h']]],
-  ['ob_5fdevice_5fip_5faddr_5fconfig_1',['ob_device_ip_addr_config',['../_ob_types_8h.html#a664e88ba24ee7ad71ae1e8e921b9567e',1,'ObTypes.h']]],
-  ['ob_5fextension_5fapi_2',['OB_EXTENSION_API',['../_ob_types_8h.html#aa0add2ff45ff52cc75dc92d44f883fbf',1,'ObTypes.h']]],
-  ['ob_5fextension_5finternal_5fapi_3',['OB_EXTENSION_INTERNAL_API',['../_ob_types_8h.html#aac8d6d94efdf19302b2572cafb3b614b',1,'ObTypes.h']]],
-  ['ob_5ffilter_5fcallback_4',['ob_filter_callback',['../_ob_types_8h.html#a82628fc9f7fe087c4ac31b0a8197ea34',1,'ObTypes.h']]],
-  ['ob_5fformat_5fmjpeg_5',['OB_FORMAT_MJPEG',['../_ob_types_8h.html#ab5f6923555d25c57807d4b8f8f7706fd',1,'ObTypes.h']]],
-  ['ob_5fformat_5frgb888_6',['OB_FORMAT_RGB888',['../_ob_types_8h.html#a4df10dee943fa7c407cc01004d6ad88c',1,'ObTypes.h']]],
-  ['ob_5flog_5fseverity_5fnone_7',['OB_LOG_SEVERITY_NONE',['../_ob_types_8h.html#ae605ac5abec97a0cc2e216fb155e84f9',1,'ObTypes.h']]],
-  ['ob_5fmulti_5fdevice_5fsync_5fconfig_8',['OB_MULTI_DEVICE_SYNC_CONFIG',['../_ob_types_8h.html#acb003d3e9b34e9186ba2977de8d6c456',1,'ObTypes.h']]],
-  ['ob_5fmulti_5fdevice_5fsync_5fconfig_9',['ob_multi_device_sync_config',['../_ob_types_8h.html#ab6d02dc00101e70e7beb1dc0659f5e53',1,'ObTypes.h']]],
-  ['ob_5fplayback_5fcallback_10',['ob_playback_callback',['../_ob_types_8h.html#a1470dbad9f19b34bd74a55d1e7ecdacc',1,'ObTypes.h']]],
-  ['ob_5fprop_5ftimer_5freset_5ftriggle_5fout_5fenable_5fbool_11',['OB_PROP_TIMER_RESET_TRIGGLE_OUT_ENABLE_BOOL',['../_property_8h.html#a091a01a818343975cc00e148a724eab1',1,'Property.h']]],
-  ['ob_5fsync_5fonline_5fhost_5fmode_12',['OB_SYNC_ONLINE_HOST_MODE',['../_ob_types_8h.html#ae1333782d1f425a31a5f2bfa460261f6',1,'ObTypes.h']]],
-  ['ob_5fsync_5fonline_5fslave_5fmode_13',['OB_SYNC_ONLINE_SLAVE_MODE',['../_ob_types_8h.html#aefab3236ce93cee0709f73c1c303eff9',1,'ObTypes.h']]],
-  ['ob_5fsync_5fonly_5fir_5fmode_14',['OB_SYNC_ONLY_IR_MODE',['../_ob_types_8h.html#a71bf0e63c354ad8c792e2d8dc700efaf',1,'ObTypes.h']]],
-  ['ob_5fsync_5fonly_5fmcu_5fmode_15',['OB_SYNC_ONLY_MCU_MODE',['../_ob_types_8h.html#a35d7aa311fa2c897f7199fba9db05abb',1,'ObTypes.h']]],
-  ['ob_5fsync_5fsingle_5fmode_16',['OB_SYNC_SINGLE_MODE',['../_ob_types_8h.html#ab3c79c6615eaa3cea36fb01fa8a156cc',1,'ObTypes.h']]],
-  ['ob_5fsync_5fstop_17',['OB_SYNC_STOP',['../_ob_types_8h.html#a3a93ecba389aa1709d2d88cf4271be46',1,'ObTypes.h']]],
-  ['obdeviceipaddrconfig_18',['OBDeviceIpAddrConfig',['../_ob_types_8h.html#a098613a4e606ad5988fe3d81a9e4799e',1,'ObTypes.h']]],
-  ['obmultidevicesyncconfig_19',['OBMultiDeviceSyncConfig',['../_ob_types_8h.html#a478a9475be0de542eb11902fa139fc6f',1,'ObTypes.h']]]
+  ['is_5fir_5fframe_0',['is_ir_frame',['../_ob_types_8h.html#a52307266a1ca005dea6d7bfdb3ccfbb1',1,'ObTypes.h']]],
+  ['is_5fir_5fsensor_1',['is_ir_sensor',['../_ob_types_8h.html#ac1b4daef79e8a8397f52a942f498cd83',1,'ObTypes.h']]],
+  ['is_5fir_5fstream_2',['is_ir_stream',['../_ob_types_8h.html#a5435c1aa7d509966d116971db508f303',1,'ObTypes.h']]],
+  ['isirframe_3',['isIRFrame',['../_ob_types_8h.html#aabb66472b1e9671d71c8485b939fabb1',1,'ObTypes.h']]],
+  ['isirsensor_4',['isIRSensor',['../_ob_types_8h.html#a042d71df32e7c35791f4ea02c2b39b74',1,'ObTypes.h']]],
+  ['isirstream_5',['isIRStream',['../_ob_types_8h.html#aef6685c44da8eac31e856f397de1afd3',1,'ObTypes.h']]]
 ];

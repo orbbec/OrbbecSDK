@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -168,7 +168,7 @@ Public 成员函数</h2></td></tr>
 <tr class="memdesc:a49cb98480e2528dd1149d158945852e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取structured data类型的设备属性  <br /></td></tr>
 <tr class="separator:a49cb98480e2528dd1149d158945852e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4eed1a9902604fdeb34f53f2c75e12be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a4eed1a9902604fdeb34f53f2c75e12be">setStructuredDataExt</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId, std::shared_ptr&lt; <a class="el" href="struct_o_b_data_bundle.html">OBDataBundle</a> &gt; dataBundle, <a class="el" href="_types_8hpp.html#a55032b39d9a625cc1b43684765ad46b1">SetDataCallback</a> callback)</td></tr>
-<tr class="memdesc:a4eed1a9902604fdeb34f53f2c75e12be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Structured Data Ext object  <br /></td></tr>
+<tr class="memdesc:a4eed1a9902604fdeb34f53f2c75e12be"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置Structured Data Ext对象  <br /></td></tr>
 <tr class="separator:a4eed1a9902604fdeb34f53f2c75e12be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89313fdff4b57d6605d6f4067b0e6930"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_o_b_data_bundle.html">OBDataBundle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a89313fdff4b57d6605d6f4067b0e6930">getStructuredDataExt</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId)</td></tr>
 <tr class="memdesc:a89313fdff4b57d6605d6f4067b0e6930"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取structured data类型的数据  <br /></td></tr>
@@ -188,12 +188,12 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a6401bf12c3eccd82891da15ebf2dd81c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a6401bf12c3eccd82891da15ebf2dd81c">isPropertySupported</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId, <a class="el" href="_ob_types_8h.html#aabf1ee574b8ce0e574add2cea5fdbe27">OBPermissionType</a> permission)</td></tr>
 <tr class="memdesc:a6401bf12c3eccd82891da15ebf2dd81c"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断属性权限支持情况  <br /></td></tr>
 <tr class="separator:a6401bf12c3eccd82891da15ebf2dd81c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a738a620759d57b1b14fbcff2de48e35d"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a738a620759d57b1b14fbcff2de48e35d">syncDeviceTime</a> ()</td></tr>
-<tr class="memdesc:a738a620759d57b1b14fbcff2de48e35d"><td class="mdescLeft">&#160;</td><td class="mdescRight">同步设备时间（向设备授时，同步本地系统时间到设备）  <br /></td></tr>
-<tr class="separator:a738a620759d57b1b14fbcff2de48e35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2bd8a9f47d3fe9bb7be0b173b2cab7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#ab2bd8a9f47d3fe9bb7be0b173b2cab7d">deviceUpgrade</a> (const char *filePath, <a class="el" href="_types_8hpp.html#a7ba2b2a9b8b236cd9d7bbbf666c49989">DeviceUpgradeCallback</a> callback, bool async=true)</td></tr>
 <tr class="memdesc:ab2bd8a9f47d3fe9bb7be0b173b2cab7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">升级设备固件  <br /></td></tr>
 <tr class="separator:ab2bd8a9f47d3fe9bb7be0b173b2cab7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f0f110f2ef0edeba0bf776241878580"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a6f0f110f2ef0edeba0bf776241878580">deviceUpgradeFromData</a> (const char *fileData, uint32_t fileSize, <a class="el" href="_types_8hpp.html#a7ba2b2a9b8b236cd9d7bbbf666c49989">DeviceUpgradeCallback</a> callback, bool async=true)</td></tr>
+<tr class="memdesc:a6f0f110f2ef0edeba0bf776241878580"><td class="mdescLeft">&#160;</td><td class="mdescRight">升级设备固件  <br /></td></tr>
+<tr class="separator:a6f0f110f2ef0edeba0bf776241878580"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0a525cebe10c3369d3060516a1ab3ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#ad0a525cebe10c3369d3060516a1ab3ef">sendFile</a> (const char *filePath, const char *dstPath, <a class="el" href="_types_8hpp.html#af4ed1a1867e655fa5e4b77e646f080a4">SendFileCallback</a> callback, bool async=true)</td></tr>
 <tr class="memdesc:ad0a525cebe10c3369d3060516a1ab3ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送文件到设备端指定路径[异步回调]  <br /></td></tr>
 <tr class="separator:ad0a525cebe10c3369d3060516a1ab3ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,7 +210,7 @@ Public 成员函数</h2></td></tr>
 <tr class="memdesc:a31d17dfb1127c3991a077ebd0d64ae4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">写入设备授权码  <br /></td></tr>
 <tr class="separator:a31d17dfb1127c3991a077ebd0d64ae4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2155b56e987f94fde9ae818114b2c8f2"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1_camera_param_list.html">CameraParamList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a2155b56e987f94fde9ae818114b2c8f2">getCalibrationCameraParamList</a> ()</td></tr>
-<tr class="memdesc:a2155b56e987f94fde9ae818114b2c8f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备内保存的相机标定的原始参数列表，列表内参数不与当前开流配置相对应， 需要自行根据实际情况选用参数并可能需要做缩放、镜像等处理。非专业用户建议使用Pipeline::getCameraParam()接口。  <br /></td></tr>
+<tr class="memdesc:a2155b56e987f94fde9ae818114b2c8f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备内保存的相机标定的原始参数列表，  <br /></td></tr>
 <tr class="separator:a2155b56e987f94fde9ae818114b2c8f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1377e9b551a7b35fc59c984896cc5df0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_b_depth_work_mode.html">OBDepthWorkMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a1377e9b551a7b35fc59c984896cc5df0">getCurrentDepthWorkMode</a> ()</td></tr>
 <tr class="memdesc:a1377e9b551a7b35fc59c984896cc5df0"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询当前的相机深度模式  <br /></td></tr>
@@ -230,12 +230,39 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a6370104afd5044074c8a0069816ac156"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a6370104afd5044074c8a0069816ac156">reboot</a> (uint32_t delayMs)</td></tr>
 <tr class="memdesc:a6370104afd5044074c8a0069816ac156"><td class="mdescLeft">&#160;</td><td class="mdescRight">设备重启延迟模式  <br /></td></tr>
 <tr class="separator:a6370104afd5044074c8a0069816ac156"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a819e1721c912f2ad00c38c49894a601b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_b_device_sync_config.html">OBDeviceSyncConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a819e1721c912f2ad00c38c49894a601b">getSyncConfig</a> ()</td></tr>
-<tr class="memdesc:a819e1721c912f2ad00c38c49894a601b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前设备同步配置  <br /></td></tr>
-<tr class="separator:a819e1721c912f2ad00c38c49894a601b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41495b339a6e9581b6c2c157697acc5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a41495b339a6e9581b6c2c157697acc5b">setSyncConfig</a> (const <a class="el" href="struct_o_b_device_sync_config.html">OBDeviceSyncConfig</a> &amp;deviceSyncConfig)</td></tr>
-<tr class="memdesc:a41495b339a6e9581b6c2c157697acc5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置设备同步配置  <br /></td></tr>
-<tr class="separator:a41495b339a6e9581b6c2c157697acc5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39fb107e1de53d5b5a122f3178b5dde0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#ac1e8a42306d8e67cb94ca31c3956ee78">DEPRECATED</a> uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a39fb107e1de53d5b5a122f3178b5dde0">syncDeviceTime</a> ()</td></tr>
+<tr class="memdesc:a39fb107e1de53d5b5a122f3178b5dde0"><td class="mdescLeft">&#160;</td><td class="mdescRight">同步设备时间（将本地系统时间同步到设备）  <br /></td></tr>
+<tr class="separator:a39fb107e1de53d5b5a122f3178b5dde0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae522b554820d4fb62f38c78e9a15dc0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#ac1e8a42306d8e67cb94ca31c3956ee78">DEPRECATED</a> <a class="el" href="struct_o_b_device_sync_config.html">OBDeviceSyncConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#ae522b554820d4fb62f38c78e9a15dc0f">getSyncConfig</a> ()</td></tr>
+<tr class="memdesc:ae522b554820d4fb62f38c78e9a15dc0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前设备同步配置  <br /></td></tr>
+<tr class="separator:ae522b554820d4fb62f38c78e9a15dc0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24e8e3e4c80d1b8f73fbdd3215cec501"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#ac1e8a42306d8e67cb94ca31c3956ee78">DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a24e8e3e4c80d1b8f73fbdd3215cec501">setSyncConfig</a> (const <a class="el" href="struct_o_b_device_sync_config.html">OBDeviceSyncConfig</a> &amp;deviceSyncConfig)</td></tr>
+<tr class="memdesc:a24e8e3e4c80d1b8f73fbdd3215cec501"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置设备同步配置  <br /></td></tr>
+<tr class="separator:a24e8e3e4c80d1b8f73fbdd3215cec501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecf09140ececba0e42283d3aa236b8f2"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#aecf09140ececba0e42283d3aa236b8f2">getSupportedMultiDeviceSyncModeBitmap</a> ()</td></tr>
+<tr class="memdesc:aecf09140ececba0e42283d3aa236b8f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备支持的多设备同步模式位图  <br /></td></tr>
+<tr class="separator:aecf09140ececba0e42283d3aa236b8f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c85a231a9d0fa0adfc23038adb185b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a0c85a231a9d0fa0adfc23038adb185b3">setMultiDeviceSyncConfig</a> (const <a class="el" href="_ob_types_8h.html#aa60bbe3ef0941d0470eb1f2ae42614bd">OBMultiDeviceSyncConfig</a> &amp;config)</td></tr>
+<tr class="memdesc:a0c85a231a9d0fa0adfc23038adb185b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置设备的多设备同步配置  <br /></td></tr>
+<tr class="separator:a0c85a231a9d0fa0adfc23038adb185b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a140c19bc71384cf4aaa751879a27a1ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#aa60bbe3ef0941d0470eb1f2ae42614bd">OBMultiDeviceSyncConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a140c19bc71384cf4aaa751879a27a1ba">getMultiDeviceSyncConfig</a> ()</td></tr>
+<tr class="memdesc:a140c19bc71384cf4aaa751879a27a1ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备的多设备同步配置  <br /></td></tr>
+<tr class="separator:a140c19bc71384cf4aaa751879a27a1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d3807dae6d8a1fab5ffde4c51b30bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#aa9d3807dae6d8a1fab5ffde4c51b30bf">triggerCapture</a> ()</td></tr>
+<tr class="memdesc:aa9d3807dae6d8a1fab5ffde4c51b30bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">将捕获命令发送到设备  <br /></td></tr>
+<tr class="separator:aa9d3807dae6d8a1fab5ffde4c51b30bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb82d723ca4449bb42beb58b1519c43f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#acb82d723ca4449bb42beb58b1519c43f">setTimestampResetConfig</a> (const <a class="el" href="_ob_types_8h.html#a975b4bd93bcb72be5187c51f82a75bc0">OBDeviceTimestampResetConfig</a> &amp;config)</td></tr>
+<tr class="memdesc:acb82d723ca4449bb42beb58b1519c43f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置设备的时间戳重置配置  <br /></td></tr>
+<tr class="separator:acb82d723ca4449bb42beb58b1519c43f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fba7fe67888ae13691b731a6952396f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a975b4bd93bcb72be5187c51f82a75bc0">OBDeviceTimestampResetConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a6fba7fe67888ae13691b731a6952396f">getTimestampResetConfig</a> ()</td></tr>
+<tr class="memdesc:a6fba7fe67888ae13691b731a6952396f"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备的时间戳重置配置  <br /></td></tr>
+<tr class="separator:a6fba7fe67888ae13691b731a6952396f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf6de9620c1fd69e62efa22d9b22b040"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#aaf6de9620c1fd69e62efa22d9b22b040">timestampReset</a> ()</td></tr>
+<tr class="memdesc:aaf6de9620c1fd69e62efa22d9b22b040"><td class="mdescLeft">&#160;</td><td class="mdescRight">向设备发送时间戳重置命令  <br /></td></tr>
+<tr class="separator:aaf6de9620c1fd69e62efa22d9b22b040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22d32711d5d2c88f78da10b4af8af844"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a22d32711d5d2c88f78da10b4af8af844">timerSyncWithHost</a> ()</td></tr>
+<tr class="memdesc:a22d32711d5d2c88f78da10b4af8af844"><td class="mdescLeft">&#160;</td><td class="mdescRight">将设备的计时器与主机同步  <br /></td></tr>
+<tr class="separator:a22d32711d5d2c88f78da10b4af8af844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 友元</h2></td></tr>
@@ -1224,7 +1251,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the Structured Data Ext object </p>
+<p>设置Structured Data Ext对象 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
@@ -1395,26 +1422,6 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a id="a738a620759d57b1b14fbcff2de48e35d" name="a738a620759d57b1b14fbcff2de48e35d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a738a620759d57b1b14fbcff2de48e35d">&#9670;&#160;</a></span>syncDeviceTime()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint64_t ob::Device::syncDeviceTime </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>同步设备时间（向设备授时，同步本地系统时间到设备） </p>
-<dl class="section return"><dt>返回</dt><dd>uint64_t 命令往返时间延时（round trip time, rtt） </dd></dl>
-
-</div>
-</div>
 <a id="ab2bd8a9f47d3fe9bb7be0b173b2cab7d" name="ab2bd8a9f47d3fe9bb7be0b173b2cab7d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab2bd8a9f47d3fe9bb7be0b173b2cab7d">&#9670;&#160;</a></span>deviceUpgrade()</h2>
 
@@ -1451,6 +1458,57 @@ Public 成员函数</h2></td></tr>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">filePath</td><td>固件的路径 </td></tr>
+    <tr><td class="paramname">callback</td><td>固件升级进度及状态回调 </td></tr>
+    <tr><td class="paramname">async</td><td>是否异步执行 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6f0f110f2ef0edeba0bf776241878580" name="a6f0f110f2ef0edeba0bf776241878580"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f0f110f2ef0edeba0bf776241878580">&#9670;&#160;</a></span>deviceUpgradeFromData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Device::deviceUpgradeFromData </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fileData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>fileSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_types_8hpp.html#a7ba2b2a9b8b236cd9d7bbbf666c49989">DeviceUpgradeCallback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>async</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>升级设备固件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileData</td><td>固件文件数据 </td></tr>
+    <tr><td class="paramname">fileSize</td><td>固件文件大小 </td></tr>
     <tr><td class="paramname">callback</td><td>固件升级进度及状态回调 </td></tr>
     <tr><td class="paramname">async</td><td>是否异步执行 </td></tr>
   </table>
@@ -1624,7 +1682,8 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>获取设备内保存的相机标定的原始参数列表，列表内参数不与当前开流配置相对应， 需要自行根据实际情况选用参数并可能需要做缩放、镜像等处理。非专业用户建议使用Pipeline::getCameraParam()接口。 </p>
+<p>获取设备内保存的相机标定的原始参数列表， </p>
+<dl class="section attention"><dt>注意</dt><dd>列表内参数不与当前开流配置相对应，需要自行根据实际情况选用参数并可能需要做缩放、镜像等处理。非专业用户建议使用Pipeline::getCameraParam()接口。</dd></dl>
 <dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;CameraParamList&gt; 相机参数列表 </dd></dl>
 
 </div>
@@ -1770,14 +1829,35 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a id="a819e1721c912f2ad00c38c49894a601b" name="a819e1721c912f2ad00c38c49894a601b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a819e1721c912f2ad00c38c49894a601b">&#9670;&#160;</a></span>getSyncConfig()</h2>
+<a id="a39fb107e1de53d5b5a122f3178b5dde0" name="a39fb107e1de53d5b5a122f3178b5dde0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39fb107e1de53d5b5a122f3178b5dde0">&#9670;&#160;</a></span>syncDeviceTime()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_o_b_device_sync_config.html">OBDeviceSyncConfig</a> ob::Device::getSyncConfig </td>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#ac1e8a42306d8e67cb94ca31c3956ee78">DEPRECATED</a> uint64_t ob::Device::syncDeviceTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>同步设备时间（将本地系统时间同步到设备） </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">弃用:</a></b></dt><dd>此接口已弃用，请改用 <a class="el" href="classob_1_1_device.html#a22d32711d5d2c88f78da10b4af8af844">timerSyncWithHost</a> </dd></dl>
+<dl class="section return"><dt>返回</dt><dd>命令（往返时间，rtt） </dd></dl>
+
+</div>
+</div>
+<a id="ae522b554820d4fb62f38c78e9a15dc0f" name="ae522b554820d4fb62f38c78e9a15dc0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae522b554820d4fb62f38c78e9a15dc0f">&#9670;&#160;</a></span>getSyncConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#ac1e8a42306d8e67cb94ca31c3956ee78">DEPRECATED</a> <a class="el" href="struct_o_b_device_sync_config.html">OBDeviceSyncConfig</a> ob::Device::getSyncConfig </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1786,19 +1866,20 @@ Public 成员函数</h2></td></tr>
 </div><div class="memdoc">
 
 <p>获取当前设备同步配置 </p>
-<p>设备同步：包括单机内的不同 <a class="el" href="classob_1_1_sensor.html" title="定义Sensor类,用于获取流配置，开关流等">Sensor</a> 的曝光同步功能 和 多机同步功能</p>
-<dl class="section return"><dt>返回</dt><dd><a class="el" href="struct_o_b_device_sync_config.html" title="设备同步配置">OBDeviceSyncConfig</a> 返回设备同步配置 </dd></dl>
+<p>设备同步：包括单个传感器内不同传感器的曝光同步功能和多摄像头同步功能机器</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">弃用:</a></b></dt><dd>此接口已弃用，请改用 <a class="el" href="classob_1_1_device.html#a140c19bc71384cf4aaa751879a27a1ba">getMultiDeviceSyncConfig</a></dd></dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="struct_o_b_device_sync_config.html" title="设备同步配置">OBDeviceSyncConfig</a> 设备同步配置 </dd></dl>
 
 </div>
 </div>
-<a id="a41495b339a6e9581b6c2c157697acc5b" name="a41495b339a6e9581b6c2c157697acc5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41495b339a6e9581b6c2c157697acc5b">&#9670;&#160;</a></span>setSyncConfig()</h2>
+<a id="a24e8e3e4c80d1b8f73fbdd3215cec501" name="a24e8e3e4c80d1b8f73fbdd3215cec501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24e8e3e4c80d1b8f73fbdd3215cec501">&#9670;&#160;</a></span>setSyncConfig()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ob::Device::setSyncConfig </td>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#ac1e8a42306d8e67cb94ca31c3956ee78">DEPRECATED</a> void ob::Device::setSyncConfig </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="struct_o_b_device_sync_config.html">OBDeviceSyncConfig</a> &amp;&#160;</td>
           <td class="paramname"><em>deviceSyncConfig</em></td><td>)</td>
@@ -1808,14 +1889,202 @@ Public 成员函数</h2></td></tr>
 </div><div class="memdoc">
 
 <p>设置设备同步配置 </p>
-<p>用于配置 单机内的不同 <a class="el" href="classob_1_1_sensor.html" title="定义Sensor类,用于获取流配置，开关流等">Sensor</a> 的曝光同步功能 和 多机同步功能</p>
-<dl class="section attention"><dt>注意</dt><dd>调用本函数会直接将配置写入设备Flash，设备重启后依然会生效。为了避免影响Flash寿命，不要频繁更新配置。</dd></dl>
+<p>用于在单机中配置不同传感器的曝光同步功能和多摄像头同步功能</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">弃用:</a></b></dt><dd>此接口已弃用，请改用 <a class="el" href="classob_1_1_device.html#a0c85a231a9d0fa0adfc23038adb185b3">setMultiDeviceSyncConfig</a></dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>调用此函数将直接将配置写入设备Flash，并且在设备重新启动后仍然有效。为避免影响Flash的使用寿命，请不要频繁更新配置</dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">deviceSyncConfig</td><td>设备同步配置 </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aecf09140ececba0e42283d3aa236b8f2" name="aecf09140ececba0e42283d3aa236b8f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecf09140ececba0e42283d3aa236b8f2">&#9670;&#160;</a></span>getSupportedMultiDeviceSyncModeBitmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t ob::Device::getSupportedMultiDeviceSyncModeBitmap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备支持的多设备同步模式位图 </p>
+<p>例如，如果返回值为0b00001100 ，则表示设备支持 OB_MULTI_device_SYNC_MODE_PRIMARY 和 OB_MULTI_vice_SYNC_MODE_SECONDARY 。用户可以通过以下代码检查支持的模式： </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(supported_mode_bitmap &amp; <a class="code hl_enumvalue" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a>){</div>
+<div class="line">   <span class="comment">//support OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</span></div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">if</span>(supported_mode_bitmap &amp; <a class="code hl_enumvalue" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225">OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</a>){</div>
+<div class="line">  <span class="comment">//support OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</span></div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// and so on</span></div>
+<div class="ttc" id="a_ob_types_8h_html_aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225"><div class="ttname"><a href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225">OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</a></div><div class="ttdeci">@ OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</div><div class="ttdoc">standalone 模式</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l01021">ObTypes.h:1021</a></div></div>
+<div class="ttc" id="a_ob_types_8h_html_aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89"><div class="ttname"><a href="_ob_types_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a></div><div class="ttdeci">@ OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</div><div class="ttdoc">free run 模式</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l01014">ObTypes.h:1014</a></div></div>
+</div><!-- fragment --> <dl class="section return"><dt>返回</dt><dd>uint16_t 返回设备支持的多设备同步模式位图 </dd></dl>
+
+</div>
+</div>
+<a id="a0c85a231a9d0fa0adfc23038adb185b3" name="a0c85a231a9d0fa0adfc23038adb185b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c85a231a9d0fa0adfc23038adb185b3">&#9670;&#160;</a></span>setMultiDeviceSyncConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Device::setMultiDeviceSyncConfig </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="_ob_types_8h.html#aa60bbe3ef0941d0470eb1f2ae42614bd">OBMultiDeviceSyncConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置设备的多设备同步配置 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>多设备同步配置 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a140c19bc71384cf4aaa751879a27a1ba" name="a140c19bc71384cf4aaa751879a27a1ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a140c19bc71384cf4aaa751879a27a1ba">&#9670;&#160;</a></span>getMultiDeviceSyncConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#aa60bbe3ef0941d0470eb1f2ae42614bd">OBMultiDeviceSyncConfig</a> ob::Device::getMultiDeviceSyncConfig </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备的多设备同步配置 </p>
+<dl class="section return"><dt>返回</dt><dd>OBMultiDeviceSyncConfig 设备的多设备同步配置 </dd></dl>
+
+</div>
+</div>
+<a id="aa9d3807dae6d8a1fab5ffde4c51b30bf" name="aa9d3807dae6d8a1fab5ffde4c51b30bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9d3807dae6d8a1fab5ffde4c51b30bf">&#9670;&#160;</a></span>triggerCapture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Device::triggerCapture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将捕获命令发送到设备 </p>
+<p>当设备处于 <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba2fe8400ffd77e63929e69bb0f0ab1da6">OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING</a> 模式时，设备会进行一次图像抓拍</p>
+<dl class="section attention"><dt>注意</dt><dd>用户调用此函数的频率乘以每个触发器的帧数应该小于流的帧速率。每个触发器的帧数可以由 framesPerTriggerForTriggeringMode 设置 </dd>
+<dd>
+对于某些型号，接收和执行捕获命令会有一定的延迟和性能消耗，因此调用的频率此功能不宜过高，具体支持频率请参阅产品说明书 </dd>
+<dd>
+如果设备未处于 OB_MULTI_device_SYNC_MODE_HARDWARE_TRIGGERING模式，则设备将忽略捕获命令 </dd></dl>
+
+</div>
+</div>
+<a id="acb82d723ca4449bb42beb58b1519c43f" name="acb82d723ca4449bb42beb58b1519c43f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb82d723ca4449bb42beb58b1519c43f">&#9670;&#160;</a></span>setTimestampResetConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Device::setTimestampResetConfig </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="_ob_types_8h.html#a975b4bd93bcb72be5187c51f82a75bc0">OBDeviceTimestampResetConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置设备的时间戳重置配置 </p>
+
+</div>
+</div>
+<a id="a6fba7fe67888ae13691b731a6952396f" name="a6fba7fe67888ae13691b731a6952396f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fba7fe67888ae13691b731a6952396f">&#9670;&#160;</a></span>getTimestampResetConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#a975b4bd93bcb72be5187c51f82a75bc0">OBDeviceTimestampResetConfig</a> ob::Device::getTimestampResetConfig </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备的时间戳重置配置 </p>
+<dl class="section return"><dt>返回</dt><dd>OBDeviceTimestampResetConfig 设备的时间戳重置配置. </dd></dl>
+
+</div>
+</div>
+<a id="aaf6de9620c1fd69e62efa22d9b22b040" name="aaf6de9620c1fd69e62efa22d9b22b040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf6de9620c1fd69e62efa22d9b22b040">&#9670;&#160;</a></span>timestampReset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Device::timestampReset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>向设备发送时间戳重置命令 </p>
+<p>当时间戳重置功能已启用。时间戳重置功能可以通过调用 ob_device_set_timestamp_reset_config来启用</p>
+<p>在调用此函数之前，用户应该调用 <a class="el" href="_multiple_devices_8h.html#a293ead22918e776ce10334e26e20d313">ob_device_set_timestamp_reset_config</a> 来禁用时间戳重置函数（它不是某些型号需要，但为了代码兼容性，仍然建议这样做）</p>
+<dl class="section attention"><dt>注意</dt><dd>如果设备的流被启动，则流输出的连续帧的时间戳将在时间戳重置后跳一次 </dd>
+<dd>
+由于设备的定时器精度不高，流输出的连续帧的时间戳在长时间后会漂移，用户可以定期调用此功能来重置计时器，以避免时间戳漂移，建议间隔时间为60分钟 </dd></dl>
+
+</div>
+</div>
+<a id="a22d32711d5d2c88f78da10b4af8af844" name="a22d32711d5d2c88f78da10b4af8af844"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22d32711d5d2c88f78da10b4af8af844">&#9670;&#160;</a></span>timerSyncWithHost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Device::timerSyncWithHost </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将设备的计时器与主机同步 </p>
+<p>调用此功能后，设备的计时器将与主机同步。用户可以将此函数调用到多个设备同步设备的所有定时器</p>
+<dl class="section attention"><dt>注意</dt><dd>如果设备的流被启动，则该流输出的连续帧的时间戳可能在定时器同步之后跳一次 </dd>
+<dd>
+由于设备的定时器精度不高，流输出的连续帧的时间戳在长时间后会漂移。用户可以定期调用此功能来同步定时器，以避免时间戳漂移，建议间隔时间为60分钟 </dd></dl>
 
 </div>
 </div>
@@ -1840,7 +2109,7 @@ Public 成员函数</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_device_8hpp_source.html">Device.hpp</a> 第 <a class="el" href="_device_8hpp_source.html#l00429">429</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_device_8hpp_source.html">Device.hpp</a> 第 <a class="el" href="_device_8hpp_source.html#l00524">524</a> 行定义.</p>
 
 </div>
 </div>
@@ -1864,7 +2133,7 @@ Public 成员函数</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_device_8hpp_source.html">Device.hpp</a> 第 <a class="el" href="_device_8hpp_source.html#l00430">430</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_device_8hpp_source.html">Device.hpp</a> 第 <a class="el" href="_device_8hpp_source.html#l00525">525</a> 行定义.</p>
 
 </div>
 </div>
@@ -1874,7 +2143,7 @@ Public 成员函数</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 八月 1日 星期二 19:05:53 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 九月 13日 星期三 18:10:30 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

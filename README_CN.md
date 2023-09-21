@@ -1,5 +1,5 @@
 # OrbbecSDK
-![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.6.3-green)
+![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.7.4-green)
 
 Orbbec 3D 相机产品软件开发套件，全面支持 UVC，实现免驱动即插即用，提供低层和高层简单易用的 API，帮助开发者在不同场景下灵活使用。
 
@@ -23,22 +23,22 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 
 | ** 产品列表 ** | ** 固件版本 ** |
 | --- | --- |
-| Astra2         | 2.8.20                     |
-| Gemini2 L      | 1.4.32                     |
-| Gemini2        | 1.4.60                     |
-| FemtoMega      | 1.1.7  (window10、ubuntu20.04 及以上)|
-| Astra+         | 1.0.22/1.0.21/1.0.20/1.0.19 |
-| Femto          | 1.6.7                       |
-| Femto W        | 1.1.8                       |
-| Dabai          | 2436                        |
-| Dabai DCW      | 2460                        |
-| Dabai DW       | 2606                        |
-| Astra Mini Pro | 1007                        |
-| Astra Pro Plus | 2513                        |
-| A1 Pro         | 3057                        |
-| Gemini E       | 3460                        |
-| Gemini E Lite  | 3606                        |
-| Gemini         | 3.0.18                      |
+| Gemini 2 XL      | Obox: V1.2.5  VL:1.4.54    |
+| Astra 2          | 2.8.20                     |
+| Gemini 2 L       | 1.4.32                     |
+| Gemini 2         | 1.4.60 /1.4.76             |
+| Femto Mega       | 1.1.7  (window10、ubuntu20.04、ubuntu22.04)  |
+| Astra+           | 1.0.22/1.0.21/1.0.20/1.0.19 |
+| Femto            | 1.6.7                       |
+| Femto W          | 1.1.8                       |
+| DaBai            | 2436                        |
+| DaBai DCW        | 2460                        |
+| DaBai DW         | 2606                        |
+| Astra Mini Pro   | 1007                        |
+| Gemini E         | 3460                        |
+| Gemini E Lite    | 3606                        |
+| Gemini           | 3.0.18                      |
+| Astra Mini S Pro | 1.0.05                      |
 
 ## 快速开始
 
@@ -56,8 +56,8 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
     sudo chmod +x ./install_udev_rules.sh
     ./install_udev_rules.sh
     ```
-    Windows: 时间戳注册: [follow this: obsensor_metadata_win10](misc\scripts\obsensor_metadata_win10.md)
 
+    Windows: 时间戳注册: [follow this: obsensor_metadata_win10](misc\scripts\obsensor_metadata_win10.md)
 
 * 编译
 
@@ -70,7 +70,7 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 
     ```bash
     cd OrbbecSDK/build/bin # build output dir
-    ./OBHelloOrbbec  # OBHelloOrbbec.exe on Windows
+    ./OBMultiStream  # OBMultiStream.exe on Windows
     ```
 
 * 在你的工程中使用 OrbbecSDK

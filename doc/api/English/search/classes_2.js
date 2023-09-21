@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['decompressionfilter_0',['DecompressionFilter',['../classob_1_1_decompression_filter.html',1,'ob']]],
-  ['depthframe_1',['DepthFrame',['../classob_1_1_depth_frame.html',1,'ob']]],
-  ['device_2',['Device',['../classob_1_1_device.html',1,'ob']]],
-  ['deviceinfo_3',['DeviceInfo',['../classob_1_1_device_info.html',1,'ob']]],
-  ['devicelist_4',['DeviceList',['../classob_1_1_device_list.html',1,'ob']]]
+  ['cameraparamlist_0',['CameraParamList',['../classob_1_1_camera_param_list.html',1,'ob']]],
+  ['colorframe_1',['ColorFrame',['../classob_1_1_color_frame.html',1,'ob']]],
+  ['compressionfilter_2',['CompressionFilter',['../classob_1_1_compression_filter.html',1,'ob']]],
+  ['config_3',['Config',['../classob_1_1_config.html',1,'ob']]],
+  ['context_4',['Context',['../classob_1_1_context.html',1,'ob']]]
 ];

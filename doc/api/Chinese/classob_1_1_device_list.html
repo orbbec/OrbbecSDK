@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -111,6 +111,12 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:afc0b773a0beaa5aa671c511497c86371"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device_list.html#afc0b773a0beaa5aa671c511497c86371">serialNumber</a> (uint32_t index)</td></tr>
 <tr class="memdesc:afc0b773a0beaa5aa671c511497c86371"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定设备的序列号  <br /></td></tr>
 <tr class="separator:afc0b773a0beaa5aa671c511497c86371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ec53640c44e7ccd84050319442e707e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device_list.html#a9ec53640c44e7ccd84050319442e707e">connectionType</a> (uint32_t index)</td></tr>
+<tr class="memdesc:a9ec53640c44e7ccd84050319442e707e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备连接类型  <br /></td></tr>
+<tr class="separator:a9ec53640c44e7ccd84050319442e707e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc5ac8bf21281df1d92df2470c8b18d4"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device_list.html#acc5ac8bf21281df1d92df2470c8b18d4">ipAddress</a> (uint32_t index)</td></tr>
+<tr class="memdesc:acc5ac8bf21281df1d92df2470c8b18d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定索引处设备的 IP 地址  <br /></td></tr>
+<tr class="separator:acc5ac8bf21281df1d92df2470c8b18d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99a005ed94df1df342bcb40d6265a4a3"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1_device.html">Device</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device_list.html#a99a005ed94df1df342bcb40d6265a4a3">getDevice</a> (uint32_t index)</td></tr>
 <tr class="memdesc:a99a005ed94df1df342bcb40d6265a4a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">从设备列表中获取指定设备对象,  <br /></td></tr>
 <tr class="separator:a99a005ed94df1df342bcb40d6265a4a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,7 +130,7 @@ Public 成员函数</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>表示设备列表的类 </p>
 
-<p class="definition">在文件 <a class="el" href="_device_8hpp_source.html">Device.hpp</a> 第 <a class="el" href="_device_8hpp_source.html#l00535">535</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_device_8hpp_source.html">Device.hpp</a> 第 <a class="el" href="_device_8hpp_source.html#l00646">646</a> 行定义.</p>
 </div><h2 class="groupheader">构造及析构函数说明</h2>
 <a id="a78325a6d57af6744915cb4dd75e295ab" name="a78325a6d57af6744915cb4dd75e295ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a78325a6d57af6744915cb4dd75e295ab">&#9670;&#160;</a></span>DeviceList()</h2>
@@ -325,6 +331,61 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
+<a id="a9ec53640c44e7ccd84050319442e707e" name="a9ec53640c44e7ccd84050319442e707e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ec53640c44e7ccd84050319442e707e">&#9670;&#160;</a></span>connectionType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * ob::DeviceList::connectionType </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备连接类型 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>设备索引 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>const char* 返回连接类型，当前支持的类型有："USB", "USB1.0", "USB1.1", "USB2.0", "USB2.1", "USB3.0", "USB3.1", "USB3.2", "Ethernet" </dd></dl>
+
+</div>
+</div>
+<a id="acc5ac8bf21281df1d92df2470c8b18d4" name="acc5ac8bf21281df1d92df2470c8b18d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc5ac8bf21281df1d92df2470c8b18d4">&#9670;&#160;</a></span>ipAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * ob::DeviceList::ipAddress </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取指定索引处设备的 IP 地址 </p>
+<dl class="section attention"><dt>注意</dt><dd>仅适用于网络设备，否则将返回 "0.0.0.0"</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>设备索引 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>const char* 设备的 IP 地址，例如：“192.168.1.10” </dd></dl>
+
+</div>
+</div>
 <a id="a99a005ed94df1df342bcb40d6265a4a3" name="a99a005ed94df1df342bcb40d6265a4a3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a99a005ed94df1df342bcb40d6265a4a3">&#9670;&#160;</a></span>getDevice()</h2>
 
@@ -415,7 +476,7 @@ Public 成员函数</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 八月 1日 星期二 19:05:53 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 九月 13日 星期三 18:10:30 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -203,7 +203,12 @@ $(function() {
 , <br />
 &#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabac780c55d997d1d5dd739d654a310cd1c">OB_PROP_CAPTURE_IMAGE_TIME_INTERVAL_INT</a> = 135
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba8637d78aa650d669e1af3138a81b1f89">OB_PROP_CAPTURE_IMAGE_NUMBER_INTERVAL_INT</a> = 136
-, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba5274f0b4c7df6a2dac11cb640982f86c">OB_PROP_DEVICE_REBOOT_DELAY_INT</a> = 142
+, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba880d369f517aa0f951c6a4df1ecd787c">OB_PROP_TIMER_RESET_ENABLE_BOOL</a> = 140
+, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabaff36ebe6d8e40f832309f4dedc9611bd">OB_PROP_DEVICE_USB3_REPEAT_IDENTIFY_BOOL</a> = 141
+, <br />
+&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba5274f0b4c7df6a2dac11cb640982f86c">OB_PROP_DEVICE_REBOOT_DELAY_INT</a> = 142
+, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba59bf2777b31863442d1483f8c09f6b94">OB_PROP_LASER_OVERCURRENT_PROTECTION_STATUS_BOOL</a> = 148
+, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabafd8586103f4230a644e08f3660f3315b">OB_PROP_LASER_PULSE_WIDTH_PROTECTION_STATUS_BOOL</a> = 149
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabad5d4191f8738853ba279aad12d13aaa1">OB_STRUCT_BASELINE_CALIBRATION_PARAM</a> = 1002
 , <br />
 &#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabac6f97352c9f3d2ef9838227d168ff05d">OB_STRUCT_DEVICE_TEMPERATURE</a> = 1003
@@ -217,48 +222,51 @@ $(function() {
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba2f5db0c43ac6a0a80615b00805f6b525">OB_STRUCT_CURRENT_DEPTH_ALG_MODE</a> = 1043
 , <br />
 &#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabafb39f9bdd797c39300db6ff01ab2838c">OB_STRUCT_DEPTH_PRECISION_SUPPORT_LIST</a> = 1045
+, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba1531aab222e5e7f091abc0cb7417659a">OB_STRUCT_DEVICE_STATIC_IP_CONFIG_RECORD</a> = 1053
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabad079a2535d5c99bedc93f368cfa47d38">OB_PROP_COLOR_AUTO_EXPOSURE_BOOL</a> = 2000
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba85f29e393214ce11b46e32f3363289b5">OB_PROP_COLOR_EXPOSURE_INT</a> = 2001
-, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba926125aea97f1601a2213f9dab37eaa5">OB_PROP_COLOR_GAIN_INT</a> = 2002
 , <br />
-&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbababda9cd3eec29877c35eb8484201cf76b">OB_PROP_COLOR_AUTO_WHITE_BALANCE_BOOL</a> = 2003
+&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba926125aea97f1601a2213f9dab37eaa5">OB_PROP_COLOR_GAIN_INT</a> = 2002
+, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbababda9cd3eec29877c35eb8484201cf76b">OB_PROP_COLOR_AUTO_WHITE_BALANCE_BOOL</a> = 2003
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba5ca8f197256333201044efdfb8596c2e">OB_PROP_COLOR_WHITE_BALANCE_INT</a> = 2004
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabaaeab84ace968acdb565ff117247e2ba2">OB_PROP_COLOR_BRIGHTNESS_INT</a> = 2005
-, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbababd2021ed7e3df757382eb5455dc18259">OB_PROP_COLOR_SHARPNESS_INT</a> = 2006
 , <br />
-&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba092569c30725be70a1654bc34ca67048">OB_PROP_COLOR_SHUTTER_INT</a> = 2007
+&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbababd2021ed7e3df757382eb5455dc18259">OB_PROP_COLOR_SHARPNESS_INT</a> = 2006
+, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba092569c30725be70a1654bc34ca67048">OB_PROP_COLOR_SHUTTER_INT</a> = 2007
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabafd1d14da3c54e51fb7be1be5f43c4943">OB_PROP_COLOR_SATURATION_INT</a> = 2008
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba48c936f148ef52313d18b1846cf91abc">OB_PROP_COLOR_CONTRAST_INT</a> = 2009
-, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba3718ede42b015f81cf429d0e1579b4e6">OB_PROP_COLOR_GAMMA_INT</a> = 2010
 , <br />
-&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba415c12a50603d1a402c3f2410c025e87">OB_PROP_COLOR_ROLL_INT</a> = 2011
+&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba3718ede42b015f81cf429d0e1579b4e6">OB_PROP_COLOR_GAMMA_INT</a> = 2010
+, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba415c12a50603d1a402c3f2410c025e87">OB_PROP_COLOR_ROLL_INT</a> = 2011
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabac1faca8ca531e3aeb10f8e9af3da966c">OB_PROP_COLOR_AUTO_EXPOSURE_PRIORITY_INT</a> = 2012
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba33d29649465ee7b5f341447094cd27f4">OB_PROP_COLOR_BACKLIGHT_COMPENSATION_INT</a> = 2013
-, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba19ea7f7c905c3afcf8d5c2e43abd33c3">OB_PROP_COLOR_HUE_INT</a> = 2014
 , <br />
-&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba8c742234f530e76daa23da65fab1621e">OB_PROP_COLOR_POWER_LINE_FREQUENCY_INT</a> = 2015
+&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba19ea7f7c905c3afcf8d5c2e43abd33c3">OB_PROP_COLOR_HUE_INT</a> = 2014
+, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba8c742234f530e76daa23da65fab1621e">OB_PROP_COLOR_POWER_LINE_FREQUENCY_INT</a> = 2015
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbababba227494de0b246f3faba208b4878e3">OB_PROP_DEPTH_AUTO_EXPOSURE_BOOL</a> = 2016
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba770da9cd29f4e71444f2d335c36893f4">OB_PROP_DEPTH_EXPOSURE_INT</a> = 2017
-, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba4c8e11c63e1bfa4c6ffbcb2ac996d85f">OB_PROP_DEPTH_GAIN_INT</a> = 2018
 , <br />
-&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba61f5084fdd2444bb1227090ec0fe7ce5">OB_PROP_IR_AUTO_EXPOSURE_BOOL</a> = 2025
+&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba4c8e11c63e1bfa4c6ffbcb2ac996d85f">OB_PROP_DEPTH_GAIN_INT</a> = 2018
+, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba61f5084fdd2444bb1227090ec0fe7ce5">OB_PROP_IR_AUTO_EXPOSURE_BOOL</a> = 2025
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba63ada6d6d7d8d35b0eb364e661fcfbf2">OB_PROP_IR_EXPOSURE_INT</a> = 2026
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba3c2a6a781a5582cdb7d40be1339fe193">OB_PROP_IR_GAIN_INT</a> = 2027
-, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabab041e2a493240734c6fc490608cf1c6c">OB_PROP_IR_CHANNEL_DATA_SOURCE_INT</a> = 2028
 , <br />
-&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabafde74455cca9d681622204c4d9bf1ca1">OB_PROP_DEPTH_RM_FILTER_BOOL</a> = 2029
+&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabab041e2a493240734c6fc490608cf1c6c">OB_PROP_IR_CHANNEL_DATA_SOURCE_INT</a> = 2028
+, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabafde74455cca9d681622204c4d9bf1ca1">OB_PROP_DEPTH_RM_FILTER_BOOL</a> = 2029
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba101cee369c0630d8d07a9adcd7c5ac22">OB_PROP_COLOR_MAXIMAL_GAIN_INT</a> = 2030
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba24450874f07f1a5dfb69124b6402945b">OB_PROP_COLOR_MAXIMAL_SHUTTER_INT</a> = 2031
+, <br />
+&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba1fb102a92334fc347e117c220b69655f">OB_PROP_IR_SHORT_EXPOSURE_BOOL</a> = 2032
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba8d1e1aa5988ccd64ca3609894725f547">OB_PROP_SDK_DISPARITY_TO_DEPTH_BOOL</a> = 3004
-, <br />
-&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba34ce08223b8b6703d8be3ba2628aa33e">OB_PROP_SDK_DEPTH_FRAME_UNPACK_BOOL</a> = 3007
+, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba34ce08223b8b6703d8be3ba2628aa33e">OB_PROP_SDK_DEPTH_FRAME_UNPACK_BOOL</a> = 3007
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba552c6c020ef86f487abffb08c4e97eb8">OB_PROP_SDK_IR_FRAME_UNPACK_BOOL</a> = 3008
-, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba7b3d82e2970079c83f92dc05bbbf8250">OB_PROP_SDK_ACCEL_FRAME_TRANSFORMED_BOOL</a> = 3009
-, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabada43ade44a5e9930e186e42be4da6525">OB_PROP_SDK_GYRO_FRAME_TRANSFORMED_BOOL</a> = 3010
 , <br />
-&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba6047e09286d84cc540a4386a9804e44f">OB_PROP_SDK_IR_LEFT_FRAME_UNPACK_BOOL</a> = 3011
+&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba7b3d82e2970079c83f92dc05bbbf8250">OB_PROP_SDK_ACCEL_FRAME_TRANSFORMED_BOOL</a> = 3009
+, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabada43ade44a5e9930e186e42be4da6525">OB_PROP_SDK_GYRO_FRAME_TRANSFORMED_BOOL</a> = 3010
+, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba6047e09286d84cc540a4386a9804e44f">OB_PROP_SDK_IR_LEFT_FRAME_UNPACK_BOOL</a> = 3011
 , <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba3a93fe185b0296e90cf8961985158c42">OB_PROP_SDK_IR_RIGHT_FRAME_UNPACK_BOOL</a> = 3012
-, <a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbababe21a5d5336201ea9131c4c7d2b705b7">OB_RAW_DATA_CAMERA_CALIB_JSON_FILE</a> = 4029
+, <br />
+&#160;&#160;<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbababe21a5d5336201ea9131c4c7d2b705b7">OB_RAW_DATA_CAMERA_CALIB_JSON_FILE</a> = 4029
 <br />
  }</td></tr>
 <tr class="memdesc:a9e7aac1ea041c8958ea8c6e3aa53bbab"><td class="mdescLeft">&#160;</td><td class="mdescRight">描述设备所有的属性控制命令的枚举值  <a href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">更多...</a><br /></td></tr>
@@ -304,7 +312,7 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_property_8h_source.html">Property.h</a> 第 <a class="el" href="_property_8h_source.html#l00583">583</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_property_8h_source.html">Property.h</a> 第 <a class="el" href="_property_8h_source.html#l00618">618</a> 行定义.</p>
 
 </div>
 </div>
@@ -533,7 +541,15 @@ $(function() {
 </td></tr>
 <tr><td class="fieldname"><a id="a9e7aac1ea041c8958ea8c6e3aa53bbaba8637d78aa650d669e1af3138a81b1f89" name="a9e7aac1ea041c8958ea8c6e3aa53bbaba8637d78aa650d669e1af3138a81b1f89"></a>OB_PROP_CAPTURE_IMAGE_NUMBER_INTERVAL_INT&#160;</td><td class="fielddoc"><p>抓拍数量间隔 </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a9e7aac1ea041c8958ea8c6e3aa53bbaba880d369f517aa0f951c6a4df1ecd787c" name="a9e7aac1ea041c8958ea8c6e3aa53bbaba880d369f517aa0f951c6a4df1ecd787c"></a>OB_PROP_TIMER_RESET_ENABLE_BOOL&#160;</td><td class="fielddoc"><p>时钟重置（时间戳清零）功能使能 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9e7aac1ea041c8958ea8c6e3aa53bbabaff36ebe6d8e40f832309f4dedc9611bd" name="a9e7aac1ea041c8958ea8c6e3aa53bbabaff36ebe6d8e40f832309f4dedc9611bd"></a>OB_PROP_DEVICE_USB3_REPEAT_IDENTIFY_BOOL&#160;</td><td class="fielddoc"><p>在设备上启用USB3.0重复识别开关 </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a9e7aac1ea041c8958ea8c6e3aa53bbaba5274f0b4c7df6a2dac11cb640982f86c" name="a9e7aac1ea041c8958ea8c6e3aa53bbaba5274f0b4c7df6a2dac11cb640982f86c"></a>OB_PROP_DEVICE_REBOOT_DELAY_INT&#160;</td><td class="fielddoc"><p>延迟重启,延迟时间单位: ms, 范围: [0, 8000) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9e7aac1ea041c8958ea8c6e3aa53bbaba59bf2777b31863442d1483f8c09f6b94" name="a9e7aac1ea041c8958ea8c6e3aa53bbaba59bf2777b31863442d1483f8c09f6b94"></a>OB_PROP_LASER_OVERCURRENT_PROTECTION_STATUS_BOOL&#160;</td><td class="fielddoc"><p>查询激光过电流保护状态（只读） </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9e7aac1ea041c8958ea8c6e3aa53bbabafd8586103f4230a644e08f3660f3315b" name="a9e7aac1ea041c8958ea8c6e3aa53bbabafd8586103f4230a644e08f3660f3315b"></a>OB_PROP_LASER_PULSE_WIDTH_PROTECTION_STATUS_BOOL&#160;</td><td class="fielddoc"><p>查询激光脉宽保护状态（只读） </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a9e7aac1ea041c8958ea8c6e3aa53bbabad5d4191f8738853ba279aad12d13aaa1" name="a9e7aac1ea041c8958ea8c6e3aa53bbabad5d4191f8738853ba279aad12d13aaa1"></a>OB_STRUCT_BASELINE_CALIBRATION_PARAM&#160;</td><td class="fielddoc"><p>基线标定参数 </p>
 </td></tr>
@@ -554,6 +570,10 @@ $(function() {
 <tr><td class="fieldname"><a id="a9e7aac1ea041c8958ea8c6e3aa53bbaba2f5db0c43ac6a0a80615b00805f6b525" name="a9e7aac1ea041c8958ea8c6e3aa53bbaba2f5db0c43ac6a0a80615b00805f6b525"></a>OB_STRUCT_CURRENT_DEPTH_ALG_MODE&#160;</td><td class="fielddoc"><p>当前相机深度模式 </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a9e7aac1ea041c8958ea8c6e3aa53bbabafb39f9bdd797c39300db6ff01ab2838c" name="a9e7aac1ea041c8958ea8c6e3aa53bbabafb39f9bdd797c39300db6ff01ab2838c"></a>OB_STRUCT_DEPTH_PRECISION_SUPPORT_LIST&#160;</td><td class="fielddoc"><p>深度精度等级列表，返回uin16_t数组，对应精度等级的枚举定义 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9e7aac1ea041c8958ea8c6e3aa53bbaba1531aab222e5e7f091abc0cb7417659a" name="a9e7aac1ea041c8958ea8c6e3aa53bbaba1531aab222e5e7f091abc0cb7417659a"></a>OB_STRUCT_DEVICE_STATIC_IP_CONFIG_RECORD&#160;</td><td class="fielddoc"><p>设备网络静态IP配置记录 </p>
+<p>用于获取最后一次静态IP配置，该配置在用户设置静态IP时记录在设备闪存中</p>
+<dl class="section attention"><dt>注意</dt><dd>只读 </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="a9e7aac1ea041c8958ea8c6e3aa53bbabad079a2535d5c99bedc93f368cfa47d38" name="a9e7aac1ea041c8958ea8c6e3aa53bbabad079a2535d5c99bedc93f368cfa47d38"></a>OB_PROP_COLOR_AUTO_EXPOSURE_BOOL&#160;</td><td class="fielddoc"><p>彩色相机自动曝光 </p>
 </td></tr>
@@ -607,6 +627,8 @@ $(function() {
 </td></tr>
 <tr><td class="fieldname"><a id="a9e7aac1ea041c8958ea8c6e3aa53bbaba24450874f07f1a5dfb69124b6402945b" name="a9e7aac1ea041c8958ea8c6e3aa53bbaba24450874f07f1a5dfb69124b6402945b"></a>OB_PROP_COLOR_MAXIMAL_SHUTTER_INT&#160;</td><td class="fielddoc"><p>彩色相机最大快门 </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a9e7aac1ea041c8958ea8c6e3aa53bbaba1fb102a92334fc347e117c220b69655f" name="a9e7aac1ea041c8958ea8c6e3aa53bbaba1fb102a92334fc347e117c220b69655f"></a>OB_PROP_IR_SHORT_EXPOSURE_BOOL&#160;</td><td class="fielddoc"><p>IR短曝光功能的启用/禁用开关，仅少数设备支持 </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a9e7aac1ea041c8958ea8c6e3aa53bbaba8d1e1aa5988ccd64ca3609894725f547" name="a9e7aac1ea041c8958ea8c6e3aa53bbaba8d1e1aa5988ccd64ca3609894725f547"></a>OB_PROP_SDK_DISPARITY_TO_DEPTH_BOOL&#160;</td><td class="fielddoc"><p>视差转深度 </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a9e7aac1ea041c8958ea8c6e3aa53bbaba34ce08223b8b6703d8be3ba2628aa33e" name="a9e7aac1ea041c8958ea8c6e3aa53bbaba34ce08223b8b6703d8be3ba2628aa33e"></a>OB_PROP_SDK_DEPTH_FRAME_UNPACK_BOOL&#160;</td><td class="fielddoc"><p>Depth数据解包功能开关(每次开流都会默认打开，支持RLE/Y10/Y11/Y12/Y14格式) </p>
@@ -653,14 +675,14 @@ $(function() {
 </td></tr>
 </table>
 
-<p class="definition">在文件 <a class="el" href="_property_8h_source.html">Property.h</a> 第 <a class="el" href="_property_8h_source.html#l00588">588</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_property_8h_source.html">Property.h</a> 第 <a class="el" href="_property_8h_source.html#l00623">623</a> 行定义.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 八月 1日 星期二 19:05:51 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 九月 13日 星期三 18:10:29 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

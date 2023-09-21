@@ -7,7 +7,13 @@
 #include <thread>
 #include <mutex>
 
-#define LOW_API 0
+/**
+ * Low API vs Pipeline:
+ *   Low API: It is a basic playback api, user can use it to playback a file.
+ *   Pipeline: It is a high level api with more features (such as frames synchronization, depth align to color, etc. It is same to use pipeline to capture
+ * frames form device and enable those features).
+ */
+#define LOW_API 0  // 1: use low api (basic playback api), 0: use pipeline
 
 uint64_t lastFrameTimestamp = 0;
 
@@ -55,6 +61,7 @@ int main(int argc, char **argv) try {
     // stop playback
     playback.stop();
 #else
+    // Using pipeline to playback, you can get more features (such as frames synchronization, depth align to color, etc.)
     // Create a pipeline object for playback
     ob::Pipeline pipe("./OrbbecPipeline.bag");
 
@@ -74,22 +81,73 @@ int main(int argc, char **argv) try {
     std::cout << "======================DeviceInfo: name : " << deviceInfo->name() << " sn: " << deviceInfo->serialNumber()
               << " firmware: " << deviceInfo->firmwareVersion() << " vid: " << deviceInfo->vid() << " pid: " << deviceInfo->pid() << std::endl;
 
-    // Read the internal reference information from the playback file
+    // Read the camera parameters from the playback file
     auto cameraParam = pipe.getCameraParam();
     std::cout << "======================Camera params : rgb width:" << cameraParam.rgbIntrinsic.width << " rgb height: " << cameraParam.rgbIntrinsic.height
               << " depth width: " << cameraParam.depthIntrinsic.width << " depth height: " << cameraParam.rgbIntrinsic.height << std::endl;
 
-    // Start playback with default config(`NULL passed`)
+    // Get the depth stream profile, if the count of stream profile list is 0, it means that the playback file does not contain this type of stream.
+    auto depthStreamProfileList = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
+    if(depthStreamProfileList->count() > 0) {
+        auto depthStreamProfile = depthStreamProfileList->getProfile(0)->as<ob::VideoStreamProfile>();
+        std::cout << "======================Depth stream : width:" << depthStreamProfile->width() << " height: " << depthStreamProfile->height()
+                  << " fps: " << depthStreamProfile->fps() << " format: " << depthStreamProfile->format() << std::endl;
+    }
+
+    // Get the color stream profile
+    auto colorStreamProfileList = pipe.getStreamProfileList(OB_SENSOR_COLOR);
+    if(colorStreamProfileList->count() > 0) {
+        auto colorStreamProfile = colorStreamProfileList->getProfile(0)->as<ob::VideoStreamProfile>();
+        std::cout << "======================Color stream : width:" << colorStreamProfile->width() << " height: " << colorStreamProfile->height()
+                  << " fps: " << colorStreamProfile->fps() << " format: " << colorStreamProfile->format() << std::endl;
+    }
+
+    // Get the ir stream profile
+    auto irStreamProfileList = pipe.getStreamProfileList(OB_SENSOR_IR);
+    if(irStreamProfileList->count() > 0) {
+        auto irStreamProfile = irStreamProfileList->getProfile(0)->as<ob::VideoStreamProfile>();
+        std::cout << "======================IR stream : width:" << irStreamProfile->width() << " height: " << irStreamProfile->height()
+                  << " fps: " << irStreamProfile->fps() << " format: " << irStreamProfile->format() << std::endl;
+    }
+
+    // Start playback by pass NULL to playback all contained streams
     pipe.start(NULL);
-    Window app("Playback", 640, 480);
+    Window app("Playback", 640, 480, RENDER_ONE_ROW);
+
+    std::vector<std::shared_ptr<ob::Frame>> framesForRender;
 
     while(app) {
+        framesForRender.clear();
         // Wait for up to 100ms for a frameset in blocking mode.
-        auto frameSet = pipe.waitForFrames(100);
-        if(frameSet == nullptr) {
+        auto frameset = pipe.waitForFrames(100);
+        if(frameset == nullptr) {
             continue;
         }
-        app.addToRender(frameSet->depthFrame());
+
+        // try to get depth frame from frameset. If this type of frame is alway null, it means that the playback file does not contain this type of stream.
+        std::shared_ptr<ob::Frame> frame = frameset->depthFrame();
+        if(frame != nullptr) {
+            // if frame is not null, add it to render
+            framesForRender.push_back(frame);
+        }
+
+        // same as depthFrame
+        frame = frameset->colorFrame();
+        if(frame != nullptr) {
+            framesForRender.push_back(frame);
+        }
+
+        // same as depthFrame
+        frame = frameset->irFrame();
+        if(frame != nullptr) {
+            framesForRender.push_back(frame);
+        }
+
+        // add frames to render
+        if(!framesForRender.empty()) {
+            app.resize(640 * framesForRender.size(), 480);  // resize window to fit frames
+            app.addToRender(framesForRender);
+        }
     }
 
     // stop playback

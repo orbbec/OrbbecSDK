@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -81,11 +81,13 @@ $(function() {
 
 <p>成员的完整列表，这些成员属于 <a class="el" href="classob_1_1_device_list.html">ob::DeviceList</a>,包括所有继承而来的类成员</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classob_1_1_device_list.html#ada4e95ac534b1d072cba42f5a492c97b">deviceCount</a>()</td><td class="entry"><a class="el" href="classob_1_1_device_list.html">ob::DeviceList</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classob_1_1_device_list.html#a78325a6d57af6744915cb4dd75e295ab">DeviceList</a>(std::unique_ptr&lt; DeviceListImpl &gt; impl)</td><td class="entry"><a class="el" href="classob_1_1_device_list.html">ob::DeviceList</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classob_1_1_device_list.html#a99a005ed94df1df342bcb40d6265a4a3">getDevice</a>(uint32_t index)</td><td class="entry"><a class="el" href="classob_1_1_device_list.html">ob::DeviceList</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classob_1_1_device_list.html#adc1e3926bc667359d5a8e72f102539fd">getDeviceBySN</a>(const char *serialNumber)</td><td class="entry"><a class="el" href="classob_1_1_device_list.html">ob::DeviceList</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classob_1_1_device_list.html#a6f78fb6ba0a9f68b51cc9f92215abccf">getDeviceByUid</a>(const char *uid)</td><td class="entry"><a class="el" href="classob_1_1_device_list.html">ob::DeviceList</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classob_1_1_device_list.html#a9ec53640c44e7ccd84050319442e707e">connectionType</a>(uint32_t index)</td><td class="entry"><a class="el" href="classob_1_1_device_list.html">ob::DeviceList</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classob_1_1_device_list.html#ada4e95ac534b1d072cba42f5a492c97b">deviceCount</a>()</td><td class="entry"><a class="el" href="classob_1_1_device_list.html">ob::DeviceList</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classob_1_1_device_list.html#a78325a6d57af6744915cb4dd75e295ab">DeviceList</a>(std::unique_ptr&lt; DeviceListImpl &gt; impl)</td><td class="entry"><a class="el" href="classob_1_1_device_list.html">ob::DeviceList</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classob_1_1_device_list.html#a99a005ed94df1df342bcb40d6265a4a3">getDevice</a>(uint32_t index)</td><td class="entry"><a class="el" href="classob_1_1_device_list.html">ob::DeviceList</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classob_1_1_device_list.html#adc1e3926bc667359d5a8e72f102539fd">getDeviceBySN</a>(const char *serialNumber)</td><td class="entry"><a class="el" href="classob_1_1_device_list.html">ob::DeviceList</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classob_1_1_device_list.html#a6f78fb6ba0a9f68b51cc9f92215abccf">getDeviceByUid</a>(const char *uid)</td><td class="entry"><a class="el" href="classob_1_1_device_list.html">ob::DeviceList</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classob_1_1_device_list.html#acc5ac8bf21281df1d92df2470c8b18d4">ipAddress</a>(uint32_t index)</td><td class="entry"><a class="el" href="classob_1_1_device_list.html">ob::DeviceList</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classob_1_1_device_list.html#a110f4f9e911c093e4342c8b4e713ff27">name</a>(uint32_t index)</td><td class="entry"><a class="el" href="classob_1_1_device_list.html">ob::DeviceList</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classob_1_1_device_list.html#a5a5c22a6107d48d498f3a64bdc8391c5">pid</a>(uint32_t index)</td><td class="entry"><a class="el" href="classob_1_1_device_list.html">ob::DeviceList</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classob_1_1_device_list.html#afc0b773a0beaa5aa671c511497c86371">serialNumber</a>(uint32_t index)</td><td class="entry"><a class="el" href="classob_1_1_device_list.html">ob::DeviceList</a></td><td class="entry"></td></tr>
@@ -95,7 +97,7 @@ $(function() {
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 八月 1日 星期二 19:05:53 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 九月 13日 星期三 18:10:30 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

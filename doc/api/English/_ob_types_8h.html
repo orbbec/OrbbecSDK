@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -161,6 +161,15 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_o_b_net_ip_config.html">OBNetIpConfig</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">IP address configuration for network devices (IPv4)  <a href="struct_o_b_net_ip_config.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__multi__device__sync__config.html">ob_multi_device_sync_config</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The synchronization configuration of the device.  <a href="structob__multi__device__sync__config.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__device__timestamp__reset__config.html">ob_device_timestamp_reset_config</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The timestamp reset configuration of the device.  <a href="structob__device__timestamp__reset__config.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_b_a_s_e_l_i_n_e___c_a_l_i_b_r_a_t_i_o_n___p_a_r_a_m.html">BASELINE_CALIBRATION_PARAM</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Baseline calibration parameters.  <a href="struct_b_a_s_e_l_i_n_e___c_a_l_i_b_r_a_t_i_o_n___p_a_r_a_m.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
@@ -186,24 +195,6 @@ Macros</h2></td></tr>
 <tr class="separator:a2617348050a9db8349e76e8ea37b8413"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6ab3b9840c597639fd6106251733a93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#aa6ab3b9840c597639fd6106251733a93">FORMAT_MJPEG_TO_BGRA</a>&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#ae57f11b2621f5e3b74a3983ad647133aaa3767aad721a99c34489e15e7887a937">FORMAT_MJPG_TO_BGRA</a></td></tr>
 <tr class="separator:aa6ab3b9840c597639fd6106251733a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a93ecba389aa1709d2d88cf4271be46"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#a3a93ecba389aa1709d2d88cf4271be46">OB_SYNC_STOP</a>&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#a874b82e596881f5099d5358008640da2a4a9976b302f77b5723dc037cf100fbc4">OB_SYNC_MODE_CLOSE</a></td></tr>
-<tr class="separator:a3a93ecba389aa1709d2d88cf4271be46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3c79c6615eaa3cea36fb01fa8a156cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#ab3c79c6615eaa3cea36fb01fa8a156cc">OB_SYNC_SINGLE_MODE</a>&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#a874b82e596881f5099d5358008640da2a0fa3ef1fabc5dc3d9efd8b5993942523">OB_SYNC_MODE_STANDALONE</a></td></tr>
-<tr class="separator:ab3c79c6615eaa3cea36fb01fa8a156cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1333782d1f425a31a5f2bfa460261f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#ae1333782d1f425a31a5f2bfa460261f6">OB_SYNC_ONLINE_HOST_MODE</a>&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#a874b82e596881f5099d5358008640da2a4d9dfad471a761ceac888b80c54669b3">OB_SYNC_MODE_PRIMARY</a></td></tr>
-<tr class="separator:ae1333782d1f425a31a5f2bfa460261f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefab3236ce93cee0709f73c1c303eff9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#aefab3236ce93cee0709f73c1c303eff9">OB_SYNC_ONLINE_SLAVE_MODE</a>&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#a874b82e596881f5099d5358008640da2a94787bcf1ed9f4a430f309cf3008ae28">OB_SYNC_MODE_SECONDARY</a></td></tr>
-<tr class="separator:aefab3236ce93cee0709f73c1c303eff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35d7aa311fa2c897f7199fba9db05abb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#a35d7aa311fa2c897f7199fba9db05abb">OB_SYNC_ONLY_MCU_MODE</a>&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#a874b82e596881f5099d5358008640da2a89a24a2f6c91613452b6baaab8ad205a">OB_SYNC_MODE_PRIMARY_MCU_TRIGGER</a></td></tr>
-<tr class="separator:a35d7aa311fa2c897f7199fba9db05abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71bf0e63c354ad8c792e2d8dc700efaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#a71bf0e63c354ad8c792e2d8dc700efaf">OB_SYNC_ONLY_IR_MODE</a>&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#a874b82e596881f5099d5358008640da2acefcf4377ecc55046851be850ae3e4df">OB_SYNC_MODE_PRIMARY_IR_TRIGGER</a></td></tr>
-<tr class="separator:a71bf0e63c354ad8c792e2d8dc700efaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a478a9475be0de542eb11902fa139fc6f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#a478a9475be0de542eb11902fa139fc6f">OBMultiDeviceSyncConfig</a>&#160;&#160;&#160;<a class="el" href="struct_o_b_device_sync_config.html">OBDeviceSyncConfig</a></td></tr>
-<tr class="separator:a478a9475be0de542eb11902fa139fc6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6d02dc00101e70e7beb1dc0659f5e53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#ab6d02dc00101e70e7beb1dc0659f5e53">ob_multi_device_sync_config</a>&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#aa506774586d9462356302daa89f514f8">ob_device_sync_config</a></td></tr>
-<tr class="separator:ab6d02dc00101e70e7beb1dc0659f5e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb003d3e9b34e9186ba2977de8d6c456"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#acb003d3e9b34e9186ba2977de8d6c456">OB_MULTI_DEVICE_SYNC_CONFIG</a>&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#a14bac5ebfac7088dfdf645d360f4b096">OB_DEVICE_SYNC_CONFIG</a></td></tr>
-<tr class="separator:acb003d3e9b34e9186ba2977de8d6c456"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a098613a4e606ad5988fe3d81a9e4799e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#a098613a4e606ad5988fe3d81a9e4799e">OBDeviceIpAddrConfig</a>&#160;&#160;&#160;<a class="el" href="struct_o_b_net_ip_config.html">OBNetIpConfig</a></td></tr>
 <tr class="separator:a098613a4e606ad5988fe3d81a9e4799e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a664e88ba24ee7ad71ae1e8e921b9567e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#a664e88ba24ee7ad71ae1e8e921b9567e">ob_device_ip_addr_config</a>&#160;&#160;&#160;<a class="el" href="struct_o_b_net_ip_config.html">OBNetIpConfig</a></td></tr>
@@ -265,6 +256,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:a246245d747c851b57373f7b5d97eb396"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae56f30b3220e1c02444e52c8faf9c007"><td class="memItemLeft" align="right" valign="top">typedef struct OBDepthWorkModeListImpl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#ae56f30b3220e1c02444e52c8faf9c007">ob_depth_work_mode_list</a></td></tr>
 <tr class="separator:ae56f30b3220e1c02444e52c8faf9c007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a969f38099f96aed38a3330749720f885"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="_ob_types_8h.html#a30a00b26730789f292d4bca95ae5f84b">OBHPStatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#a969f38099f96aed38a3330749720f885">ob_hp_status_code</a></td></tr>
+<tr class="separator:a969f38099f96aed38a3330749720f885"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb34f36b6b6845965ec7fe77dac40031"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="_ob_types_8h.html#aabf1ee574b8ce0e574add2cea5fdbe27">OBPermissionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#aeb34f36b6b6845965ec7fe77dac40031">ob_permission_type</a></td></tr>
 <tr class="separator:aeb34f36b6b6845965ec7fe77dac40031"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3112683a2851e0ffa24eafeec872e21"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="_ob_types_8h.html#a16946a0e76e54d58fe6a945fccc3190b">OBStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#ae3112683a2851e0ffa24eafeec872e21">ob_status</a></td></tr>
@@ -442,6 +435,16 @@ Typedefs</h2></td></tr>
 <tr class="separator:a889daf0c26bafa089c8c9de864b1c697"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e7e3403d912adb53b27d547c8dbb164"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="_ob_types_8h.html#aa4e1c7899e4f4b08d3019c2fe87af9ea">OB_DEVICE_DEVELOPMENT_MODE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#a4e7e3403d912adb53b27d547c8dbb164">ob_device_development_mode</a></td></tr>
 <tr class="separator:a4e7e3403d912adb53b27d547c8dbb164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a411875794001a4f2e74b3af72d03b9ff"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63b">ob_multi_device_sync_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#a411875794001a4f2e74b3af72d03b9ff">OBMultiDeviceSyncMode</a></td></tr>
+<tr class="separator:a411875794001a4f2e74b3af72d03b9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa60bbe3ef0941d0470eb1f2ae42614bd"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structob__multi__device__sync__config.html">ob_multi_device_sync_config</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#aa60bbe3ef0941d0470eb1f2ae42614bd">OBMultiDeviceSyncConfig</a></td></tr>
+<tr class="separator:aa60bbe3ef0941d0470eb1f2ae42614bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a975b4bd93bcb72be5187c51f82a75bc0"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structob__device__timestamp__reset__config.html">ob_device_timestamp_reset_config</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#a975b4bd93bcb72be5187c51f82a75bc0">OBDeviceTimestampResetConfig</a></td></tr>
+<tr class="separator:a975b4bd93bcb72be5187c51f82a75bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ed054bcf69ce27e9fad382dcafb85c7"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_b_a_s_e_l_i_n_e___c_a_l_i_b_r_a_t_i_o_n___p_a_r_a_m.html">BASELINE_CALIBRATION_PARAM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#a1ed054bcf69ce27e9fad382dcafb85c7">ob_baseline_calibration_param</a></td></tr>
+<tr class="separator:a1ed054bcf69ce27e9fad382dcafb85c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5172c15d206afaa8f56c3a24758309a2"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_b_a_s_e_l_i_n_e___c_a_l_i_b_r_a_t_i_o_n___p_a_r_a_m.html">BASELINE_CALIBRATION_PARAM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#a5172c15d206afaa8f56c3a24758309a2">OBBaselineCalibrationParam</a></td></tr>
+<tr class="separator:a5172c15d206afaa8f56c3a24758309a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cbd864ddbf989ef634d5c6aa3eb7007"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#a4cbd864ddbf989ef634d5c6aa3eb7007">ob_file_send_callback</a>) (<a class="el" href="_ob_types_8h.html#a76b0a6c7727f95b3fb3139ba3952d2e3">ob_file_tran_state</a> state, const char *message, uint8_t percent, void *user_data)</td></tr>
 <tr class="memdesc:a4cbd864ddbf989ef634d5c6aa3eb7007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback for file transfer.  <br /></td></tr>
 <tr class="separator:a4cbd864ddbf989ef634d5c6aa3eb7007"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -475,9 +478,18 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a722fa2a569dc5d7ead1beb8c024113a4"><td class="memItemLeft" align="right" valign="top">typedef void()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#a722fa2a569dc5d7ead1beb8c024113a4">ob_log_callback</a>(<a class="el" href="_ob_types_8h.html#a634280495d30c01bd120bbbf38a9b614">ob_log_severity</a> severity, const char *message, void *user_data)</td></tr>
 <tr class="memdesc:a722fa2a569dc5d7ead1beb8c024113a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback for receiving log.  <br /></td></tr>
 <tr class="separator:a722fa2a569dc5d7ead1beb8c024113a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2214f2bc7f6d22ac37cf305c0716b534"><td class="memItemLeft" align="right" valign="top">typedef void()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#a2214f2bc7f6d22ac37cf305c0716b534">ob_get_imu_data_callback</a>(const uint8_t *data, uint32_t dataLen)</td></tr>
+<tr class="separator:a2214f2bc7f6d22ac37cf305c0716b534"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:a30a00b26730789f292d4bca95ae5f84b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#a30a00b26730789f292d4bca95ae5f84b">OBHPStatusCode</a> { <a class="el" href="_ob_types_8h.html#a30a00b26730789f292d4bca95ae5f84ba29b47da6dd264cf88f0b7f92f86c0d95">HP_STATUS_OK</a> = 0
+, <a class="el" href="_ob_types_8h.html#a30a00b26730789f292d4bca95ae5f84bac77af199642c2a39d581dbce083a2b8a">HP_STATUS_NO_DEVICE_FOUND</a> = 1
+, <a class="el" href="_ob_types_8h.html#a30a00b26730789f292d4bca95ae5f84baa307827455872ed79ed301ae3d3ceddb">HP_STATUS_CONTROL_TRANSFER_FAILED</a> = 2
+, <a class="el" href="_ob_types_8h.html#a30a00b26730789f292d4bca95ae5f84bad00ef08661137c972c7683460a7e5ab9">HP_STATUS_UNKNOWN_ERROR</a> = 0xffff
+ }</td></tr>
+<tr class="memdesc:a30a00b26730789f292d4bca95ae5f84b"><td class="mdescLeft">&#160;</td><td class="mdescRight">senddata or recdata return status type  <a href="_ob_types_8h.html#a30a00b26730789f292d4bca95ae5f84b">More...</a><br /></td></tr>
+<tr class="separator:a30a00b26730789f292d4bca95ae5f84b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabf1ee574b8ce0e574add2cea5fdbe27"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#aabf1ee574b8ce0e574add2cea5fdbe27">OBPermissionType</a> { <br />
 &#160;&#160;<a class="el" href="_ob_types_8h.html#aabf1ee574b8ce0e574add2cea5fdbe27a4f0a618fd6ad621bc062c71086b395fe">OB_PERMISSION_DENY</a> = 0
 , <a class="el" href="_ob_types_8h.html#aabf1ee574b8ce0e574add2cea5fdbe27ac197eefa30036efac9779a4a5d398ad6">OB_PERMISSION_READ</a> = 1
@@ -603,6 +615,7 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="_ob_types_8h.html#a30904eab1a667b797e7ce1099ba7c36aa4fdeae9a5bbe92e10dade09f94aedada">OB_FORMAT_BGRA</a> = 25
 , <a class="el" href="_ob_types_8h.html#a30904eab1a667b797e7ce1099ba7c36aa9b33f577194b055c9d359e6dfb68a1f5">OB_FORMAT_COMPRESSED</a> = 26
+, <a class="el" href="_ob_types_8h.html#a30904eab1a667b797e7ce1099ba7c36aaaca7ff3a34e844a4d4543314be60e4da">OB_FORMAT_RVL</a> = 27
 , <a class="el" href="_ob_types_8h.html#a30904eab1a667b797e7ce1099ba7c36aa62bbf740c7702c0232734a8209fcbf5f">OB_FORMAT_UNKNOWN</a> = 0xff
 <br />
  }</td></tr>
@@ -871,6 +884,19 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:aa4e1c7899e4f4b08d3019c2fe87af9ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of device development modes.  <a href="_ob_types_8h.html#aa4e1c7899e4f4b08d3019c2fe87af9ea">More...</a><br /></td></tr>
 <tr class="separator:aa4e1c7899e4f4b08d3019c2fe87af9ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabad929b67059752029c3374594ac63b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63b">ob_multi_device_sync_mode</a> { <br />
+&#160;&#160;<a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a> = 1 &lt;&lt; 0
+, <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225">OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</a> = 1 &lt;&lt; 1
+, <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba8e2f43bf0dd49abc986b551b75e0a923">OB_MULTI_DEVICE_SYNC_MODE_PRIMARY</a> = 1 &lt;&lt; 2
+, <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba23edc51a18fc3047d5390a065f83e06c">OB_MULTI_DEVICE_SYNC_MODE_SECONDARY</a> = 1 &lt;&lt; 3
+, <br />
+&#160;&#160;<a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba8970f14d61afcf735ae0a6d98f5f08ea">OB_MULTI_DEVICE_SYNC_MODE_SECONDARY_SYNCED</a> = 1 &lt;&lt; 4
+, <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba2fe8400ffd77e63929e69bb0f0ab1da6">OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING</a> = 1 &lt;&lt; 5
+, <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba39ca63ef583695c083588ae28ea22ad9">OB_MULTI_DEVICE_SYNC_MODE_HARDWARE_TRIGGERING</a> = 1 &lt;&lt; 6
+<br />
+ }</td></tr>
+<tr class="memdesc:aabad929b67059752029c3374594ac63b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The synchronization mode of the device.  <a href="_ob_types_8h.html#aabad929b67059752029c3374594ac63b">More...</a><br /></td></tr>
+<tr class="separator:aabad929b67059752029c3374594ac63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provide structs commonly used in the SDK, enumerating constant definitions. </p>
@@ -937,7 +963,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00104">104</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00115">115</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -953,7 +979,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00217">217</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00229">229</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -969,7 +995,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00218">218</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00230">230</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -985,7 +1011,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00427">427</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00439">439</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1001,7 +1027,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00428">428</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00440">440</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1017,7 +1043,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00429">429</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00441">441</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1033,7 +1059,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00430">430</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00442">442</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1049,151 +1075,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00431">431</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
-
-</div>
-</div>
-<a id="a3a93ecba389aa1709d2d88cf4271be46" name="a3a93ecba389aa1709d2d88cf4271be46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a93ecba389aa1709d2d88cf4271be46">&#9670;&#160;</a></span>OB_SYNC_STOP</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OB_SYNC_STOP&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#a874b82e596881f5099d5358008640da2a4a9976b302f77b5723dc037cf100fbc4">OB_SYNC_MODE_CLOSE</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00715">715</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
-
-</div>
-</div>
-<a id="ab3c79c6615eaa3cea36fb01fa8a156cc" name="ab3c79c6615eaa3cea36fb01fa8a156cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3c79c6615eaa3cea36fb01fa8a156cc">&#9670;&#160;</a></span>OB_SYNC_SINGLE_MODE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OB_SYNC_SINGLE_MODE&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#a874b82e596881f5099d5358008640da2a0fa3ef1fabc5dc3d9efd8b5993942523">OB_SYNC_MODE_STANDALONE</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00716">716</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
-
-</div>
-</div>
-<a id="ae1333782d1f425a31a5f2bfa460261f6" name="ae1333782d1f425a31a5f2bfa460261f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1333782d1f425a31a5f2bfa460261f6">&#9670;&#160;</a></span>OB_SYNC_ONLINE_HOST_MODE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OB_SYNC_ONLINE_HOST_MODE&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#a874b82e596881f5099d5358008640da2a4d9dfad471a761ceac888b80c54669b3">OB_SYNC_MODE_PRIMARY</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00717">717</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
-
-</div>
-</div>
-<a id="aefab3236ce93cee0709f73c1c303eff9" name="aefab3236ce93cee0709f73c1c303eff9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefab3236ce93cee0709f73c1c303eff9">&#9670;&#160;</a></span>OB_SYNC_ONLINE_SLAVE_MODE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OB_SYNC_ONLINE_SLAVE_MODE&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#a874b82e596881f5099d5358008640da2a94787bcf1ed9f4a430f309cf3008ae28">OB_SYNC_MODE_SECONDARY</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00718">718</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
-
-</div>
-</div>
-<a id="a35d7aa311fa2c897f7199fba9db05abb" name="a35d7aa311fa2c897f7199fba9db05abb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35d7aa311fa2c897f7199fba9db05abb">&#9670;&#160;</a></span>OB_SYNC_ONLY_MCU_MODE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OB_SYNC_ONLY_MCU_MODE&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#a874b82e596881f5099d5358008640da2a89a24a2f6c91613452b6baaab8ad205a">OB_SYNC_MODE_PRIMARY_MCU_TRIGGER</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00719">719</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
-
-</div>
-</div>
-<a id="a71bf0e63c354ad8c792e2d8dc700efaf" name="a71bf0e63c354ad8c792e2d8dc700efaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71bf0e63c354ad8c792e2d8dc700efaf">&#9670;&#160;</a></span>OB_SYNC_ONLY_IR_MODE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OB_SYNC_ONLY_IR_MODE&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#a874b82e596881f5099d5358008640da2acefcf4377ecc55046851be850ae3e4df">OB_SYNC_MODE_PRIMARY_IR_TRIGGER</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00720">720</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
-
-</div>
-</div>
-<a id="a478a9475be0de542eb11902fa139fc6f" name="a478a9475be0de542eb11902fa139fc6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a478a9475be0de542eb11902fa139fc6f">&#9670;&#160;</a></span>OBMultiDeviceSyncConfig</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OBMultiDeviceSyncConfig&#160;&#160;&#160;<a class="el" href="struct_o_b_device_sync_config.html">OBDeviceSyncConfig</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00779">779</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
-
-</div>
-</div>
-<a id="ab6d02dc00101e70e7beb1dc0659f5e53" name="ab6d02dc00101e70e7beb1dc0659f5e53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6d02dc00101e70e7beb1dc0659f5e53">&#9670;&#160;</a></span>ob_multi_device_sync_config</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ob_multi_device_sync_config&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#aa506774586d9462356302daa89f514f8">ob_device_sync_config</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00780">780</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
-
-</div>
-</div>
-<a id="acb003d3e9b34e9186ba2977de8d6c456" name="acb003d3e9b34e9186ba2977de8d6c456"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb003d3e9b34e9186ba2977de8d6c456">&#9670;&#160;</a></span>OB_MULTI_DEVICE_SYNC_CONFIG</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OB_MULTI_DEVICE_SYNC_CONFIG&#160;&#160;&#160;<a class="el" href="_ob_types_8h.html#a14bac5ebfac7088dfdf645d360f4b096">OB_DEVICE_SYNC_CONFIG</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00781">781</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00443">443</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1209,7 +1091,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00915">915</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00910">910</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1225,7 +1107,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00916">916</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00911">911</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1241,7 +1123,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01093">1093</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01279">1279</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1257,7 +1139,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01094">1094</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01280">1280</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1286,7 +1168,7 @@ Enumerations</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if sensor_type is an IR sensor, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01127">1127</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01315">1315</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1302,7 +1184,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01128">1128</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01316">1316</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1331,7 +1213,7 @@ Enumerations</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if stream_type is an IR stream, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01136">1136</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01324">1324</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1347,7 +1229,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01137">1137</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01325">1325</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1376,7 +1258,7 @@ Enumerations</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if frame_type is an IR frame, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01145">1145</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01333">1333</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1392,7 +1274,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01146">1146</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01334">1334</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1410,7 +1292,7 @@ Enumerations</h2></td></tr>
 
 <p>The default Decrypt Key. </p>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01151">1151</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01339">1339</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1668,6 +1550,20 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00069">69</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+
+</div>
+</div>
+<a id="a969f38099f96aed38a3330749720f885" name="a969f38099f96aed38a3330749720f885"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a969f38099f96aed38a3330749720f885">&#9670;&#160;</a></span>ob_hp_status_code</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  enum <a class="el" href="_ob_types_8h.html#a30a00b26730789f292d4bca95ae5f84b">OBHPStatusCode</a> <a class="el" href="_ob_types_8h.html#a969f38099f96aed38a3330749720f885">ob_hp_status_code</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -2233,7 +2129,7 @@ Enumerations</h2></td></tr>
 
 <p>Device state. </p>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00493">493</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00505">505</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -2249,7 +2145,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00493">493</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00505">505</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -2902,6 +2798,76 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
+<a id="a411875794001a4f2e74b3af72d03b9ff" name="a411875794001a4f2e74b3af72d03b9ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a411875794001a4f2e74b3af72d03b9ff">&#9670;&#160;</a></span>OBMultiDeviceSyncMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  enum <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63b">ob_multi_device_sync_mode</a> <a class="el" href="_ob_types_8h.html#a411875794001a4f2e74b3af72d03b9ff">OBMultiDeviceSyncMode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa60bbe3ef0941d0470eb1f2ae42614bd" name="aa60bbe3ef0941d0470eb1f2ae42614bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa60bbe3ef0941d0470eb1f2ae42614bd">&#9670;&#160;</a></span>OBMultiDeviceSyncConfig</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  struct <a class="el" href="structob__multi__device__sync__config.html">ob_multi_device_sync_config</a> <a class="el" href="_ob_types_8h.html#aa60bbe3ef0941d0470eb1f2ae42614bd">OBMultiDeviceSyncConfig</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a975b4bd93bcb72be5187c51f82a75bc0" name="a975b4bd93bcb72be5187c51f82a75bc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a975b4bd93bcb72be5187c51f82a75bc0">&#9670;&#160;</a></span>OBDeviceTimestampResetConfig</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  struct <a class="el" href="structob__device__timestamp__reset__config.html">ob_device_timestamp_reset_config</a> <a class="el" href="_ob_types_8h.html#a975b4bd93bcb72be5187c51f82a75bc0">OBDeviceTimestampResetConfig</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ed054bcf69ce27e9fad382dcafb85c7" name="a1ed054bcf69ce27e9fad382dcafb85c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ed054bcf69ce27e9fad382dcafb85c7">&#9670;&#160;</a></span>ob_baseline_calibration_param</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  struct <a class="el" href="struct_b_a_s_e_l_i_n_e___c_a_l_i_b_r_a_t_i_o_n___p_a_r_a_m.html">BASELINE_CALIBRATION_PARAM</a> <a class="el" href="_ob_types_8h.html#a1ed054bcf69ce27e9fad382dcafb85c7">ob_baseline_calibration_param</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5172c15d206afaa8f56c3a24758309a2" name="a5172c15d206afaa8f56c3a24758309a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5172c15d206afaa8f56c3a24758309a2">&#9670;&#160;</a></span>OBBaselineCalibrationParam</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  struct <a class="el" href="struct_b_a_s_e_l_i_n_e___c_a_l_i_b_r_a_t_i_o_n___p_a_r_a_m.html">BASELINE_CALIBRATION_PARAM</a> <a class="el" href="_ob_types_8h.html#a5172c15d206afaa8f56c3a24758309a2">OBBaselineCalibrationParam</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a4cbd864ddbf989ef634d5c6aa3eb7007" name="a4cbd864ddbf989ef634d5c6aa3eb7007"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4cbd864ddbf989ef634d5c6aa3eb7007">&#9670;&#160;</a></span>ob_file_send_callback</h2>
 
@@ -2925,7 +2891,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01027">1027</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01213">1213</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -2952,7 +2918,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01037">1037</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01223">1223</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -2978,7 +2944,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01046">1046</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01232">1232</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3004,7 +2970,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01055">1055</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01241">1241</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3030,7 +2996,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01064">1064</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01250">1250</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3055,7 +3021,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01072">1072</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01258">1258</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3081,7 +3047,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01081">1081</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01267">1267</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3106,7 +3072,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01092">1092</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01278">1278</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3131,7 +3097,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01102">1102</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01288">1288</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3156,7 +3122,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01110">1110</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01296">1296</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3182,11 +3148,55 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01119">1119</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01305">1305</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+
+</div>
+</div>
+<a id="a2214f2bc7f6d22ac37cf305c0716b534" name="a2214f2bc7f6d22ac37cf305c0716b534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2214f2bc7f6d22ac37cf305c0716b534">&#9670;&#160;</a></span>ob_get_imu_data_callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void() ob_get_imu_data_callback(const uint8_t *data, uint32_t dataLen)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01307">1307</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a30a00b26730789f292d4bca95ae5f84b" name="a30a00b26730789f292d4bca95ae5f84b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30a00b26730789f292d4bca95ae5f84b">&#9670;&#160;</a></span>OBHPStatusCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_ob_types_8h.html#a30a00b26730789f292d4bca95ae5f84b">OBHPStatusCode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>senddata or recdata return status type </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a30a00b26730789f292d4bca95ae5f84ba29b47da6dd264cf88f0b7f92f86c0d95" name="a30a00b26730789f292d4bca95ae5f84ba29b47da6dd264cf88f0b7f92f86c0d95"></a>HP_STATUS_OK&#160;</td><td class="fielddoc"><p>success </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a30a00b26730789f292d4bca95ae5f84bac77af199642c2a39d581dbce083a2b8a" name="a30a00b26730789f292d4bca95ae5f84bac77af199642c2a39d581dbce083a2b8a"></a>HP_STATUS_NO_DEVICE_FOUND&#160;</td><td class="fielddoc"><p>No device found </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a30a00b26730789f292d4bca95ae5f84baa307827455872ed79ed301ae3d3ceddb" name="a30a00b26730789f292d4bca95ae5f84baa307827455872ed79ed301ae3d3ceddb"></a>HP_STATUS_CONTROL_TRANSFER_FAILED&#160;</td><td class="fielddoc"><p>Transfer failed </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a30a00b26730789f292d4bca95ae5f84bad00ef08661137c972c7683460a7e5ab9" name="a30a00b26730789f292d4bca95ae5f84bad00ef08661137c972c7683460a7e5ab9"></a>HP_STATUS_UNKNOWN_ERROR&#160;</td><td class="fielddoc"><p>Unknown error </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00074">74</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+
+</div>
+</div>
 <a id="aabf1ee574b8ce0e574add2cea5fdbe27" name="aabf1ee574b8ce0e574add2cea5fdbe27"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aabf1ee574b8ce0e574add2cea5fdbe27">&#9670;&#160;</a></span>OBPermissionType</h2>
 
@@ -3213,7 +3223,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00074">74</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00085">85</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3237,7 +3247,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00086">86</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00097">97</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3269,7 +3279,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00095">95</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00106">106</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3307,7 +3317,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00109">109</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00120">120</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3343,7 +3353,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00137">137</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00148">148</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3381,7 +3391,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00152">152</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00163">163</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3423,7 +3433,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00168">168</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00179">179</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3494,11 +3504,13 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a30904eab1a667b797e7ce1099ba7c36aa9b33f577194b055c9d359e6dfb68a1f5" name="a30904eab1a667b797e7ce1099ba7c36aa9b33f577194b055c9d359e6dfb68a1f5"></a>OB_FORMAT_COMPRESSED&#160;</td><td class="fielddoc"><p>Compression format </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a30904eab1a667b797e7ce1099ba7c36aa62bbf740c7702c0232734a8209fcbf5f" name="a30904eab1a667b797e7ce1099ba7c36aa62bbf740c7702c0232734a8209fcbf5f"></a>OB_FORMAT_UNKNOWN&#160;</td><td class="fielddoc"><p>Unknown format </p>
+<tr><td class="fieldname"><a id="a30904eab1a667b797e7ce1099ba7c36aaaca7ff3a34e844a4d4543314be60e4da" name="a30904eab1a667b797e7ce1099ba7c36aaaca7ff3a34e844a4d4543314be60e4da"></a>OB_FORMAT_RVL&#160;</td><td class="fielddoc"><p>RVL pressure test format (SDK will be unpacked into Y16 by default) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a30904eab1a667b797e7ce1099ba7c36aa62bbf740c7702c0232734a8209fcbf5f" name="a30904eab1a667b797e7ce1099ba7c36aa62bbf740c7702c0232734a8209fcbf5f"></a>OB_FORMAT_UNKNOWN&#160;</td><td class="fielddoc"><p>unknown format </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00186">186</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00197">197</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3546,7 +3558,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00223">223</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00235">235</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3584,7 +3596,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00244">244</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00256">256</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3624,7 +3636,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00260">260</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00272">272</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3650,7 +3662,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00390">390</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00402">402</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3694,7 +3706,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00410">410</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00422">422</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3744,7 +3756,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00436">436</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00448">448</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3780,7 +3792,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00458">458</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00470">470</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3808,7 +3820,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00473">473</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00485">485</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3834,7 +3846,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00515">515</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00527">527</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3860,7 +3872,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00525">525</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00537">537</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3902,7 +3914,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00535">535</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00547">547</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3930,7 +3942,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00555">555</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00567">567</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3967,7 +3979,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="ae08e57428df0ebafd9949b1a6e6c4e0dab5153da86dcf7159a662e00b35a1a881" name="ae08e57428df0ebafd9949b1a6e6c4e0dab5153da86dcf7159a662e00b35a1a881"></a>OB_PRECISION_COUNT&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00568">568</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00580">580</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3995,7 +4007,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00584">584</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00596">596</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4019,7 +4031,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00616">616</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00628">628</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4036,6 +4048,7 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sync mode. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>This define is deprecated, please use <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63b">ob_multi_device_sync_mode</a> instead </dd></dl>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a874b82e596881f5099d5358008640da2a4a9976b302f77b5723dc037cf100fbc4" name="a874b82e596881f5099d5358008640da2a4a9976b302f77b5723dc037cf100fbc4"></a>OB_SYNC_MODE_CLOSE&#160;</td><td class="fielddoc"><p>Close synchronize mode. </p>
 <p>Single device, neither process input trigger signal nor output trigger signal</p>
@@ -4075,7 +4088,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00643">643</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00656">656</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4106,7 +4119,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00827">827</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00822">822</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4130,7 +4143,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00921">921</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00916">916</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4158,7 +4171,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00930">930</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00925">925</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4182,7 +4195,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00941">941</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00936">936</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4210,7 +4223,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00950">950</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00945">945</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4236,7 +4249,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00961">961</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00956">956</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4265,7 +4278,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00971">971</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00966">966</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4287,7 +4300,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="afbb016a9143a1d2978e849338d98b7d3a6e4c689ff6ece7bf7f2cfc0d4e76dc2f" name="afbb016a9143a1d2978e849338d98b7d3a6e4c689ff6ece7bf7f2cfc0d4e76dc2f"></a>OB_RIGHT_HAND_COORDINATE_SYSTEM&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00997">997</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l00992">992</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4311,14 +4324,72 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01006">1006</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01001">1001</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
+
+</div>
+</div>
+<a id="aabad929b67059752029c3374594ac63b" name="aabad929b67059752029c3374594ac63b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabad929b67059752029c3374594ac63b">&#9670;&#160;</a></span>ob_multi_device_sync_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63b">ob_multi_device_sync_mode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The synchronization mode of the device. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89" name="aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89"></a>OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN&#160;</td><td class="fielddoc"><p>free run mode </p>
+<p>The device does not synchronize with other devices,</p>
+<p>The Color and Depth can be set to different frame rates. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225" name="aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225"></a>OB_MULTI_DEVICE_SYNC_MODE_STANDALONE&#160;</td><td class="fielddoc"><p>standalone mode </p>
+<p>The device does not synchronize with other devices.</p>
+<p>The Color and Depth should be set to same frame rates, the Color and Depth will be synchronized. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aabad929b67059752029c3374594ac63ba8e2f43bf0dd49abc986b551b75e0a923" name="aabad929b67059752029c3374594ac63ba8e2f43bf0dd49abc986b551b75e0a923"></a>OB_MULTI_DEVICE_SYNC_MODE_PRIMARY&#160;</td><td class="fielddoc"><p>primary mode </p>
+<p>The device is the primary device in the multi-device system, it will output the trigger signal via VSYNC_OUT pin on synchronization port by default.</p>
+<p>The Color and Depth should be set to same frame rates, the Color and Depth will be synchronized and can be adjusted by colorDelayUs, depthDelayUs or trigger2ImageDelayUs. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aabad929b67059752029c3374594ac63ba23edc51a18fc3047d5390a065f83e06c" name="aabad929b67059752029c3374594ac63ba23edc51a18fc3047d5390a065f83e06c"></a>OB_MULTI_DEVICE_SYNC_MODE_SECONDARY&#160;</td><td class="fielddoc"><p>secondary mode </p>
+<p>The device is the secondary device in the multi-device system, it will receive the trigger signal via VSYNC_IN pin on synchronization port. It will out the trigger signal via VSYNC_OUT pin on synchronization port by default.</p>
+<p>The Color and Depth should be set to same frame rates, the Color and Depth will be synchronized and can be adjusted by colorDelayUs, depthDelayUs or trigger2ImageDelayUs.</p>
+<p>After starting the stream, the device will wait for the trigger signal to start capturing images, and will stop capturing images when the trigger signal is stopped.</p>
+<dl class="section attention"><dt>Attention</dt><dd>The frequency of the trigger signal should be same as the frame rate of the stream profile which is set when starting the stream. </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="aabad929b67059752029c3374594ac63ba8970f14d61afcf735ae0a6d98f5f08ea" name="aabad929b67059752029c3374594ac63ba8970f14d61afcf735ae0a6d98f5f08ea"></a>OB_MULTI_DEVICE_SYNC_MODE_SECONDARY_SYNCED&#160;</td><td class="fielddoc"><p>secondary synced mode </p>
+<p>The device is the secondary device in the multi-device system, it will receive the trigger signal via VSYNC_IN pin on synchronization port. It will out the trigger signal via VSYNC_OUT pin on synchronization port by default.</p>
+<p>The Color and Depth should be set to same frame rates, the Color and Depth will be synchronized and can be adjusted by colorDelayUs, depthDelayUs or trigger2ImageDelayUs.</p>
+<p>After starting the stream, the device will be immediately start capturing images, and will adjust the capture time when the trigger signal is received to synchronize with the primary device. If the trigger signal is stopped, the device will still capture images.</p>
+<dl class="section attention"><dt>Attention</dt><dd>The frequency of the trigger signal should be same as the frame rate of the stream profile which is set when starting the stream. </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="aabad929b67059752029c3374594ac63ba2fe8400ffd77e63929e69bb0f0ab1da6" name="aabad929b67059752029c3374594ac63ba2fe8400ffd77e63929e69bb0f0ab1da6"></a>OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING&#160;</td><td class="fielddoc"><p>software triggering mode </p>
+<p>The device will start one time image capture after receiving the capture command and will output the trigger signal via VSYNC_OUT pin by default. The capture command can be sent form host by call <a class="el" href="_multiple_devices_8h.html#a686e2dcdc402e88b116ac55e2bb2e354">ob_device_trigger_capture</a>. The number of images captured each time can be set by framesPerTriggerForTriggeringMode.</p>
+<p>The Color and Depth should be set to same frame rates, the Color and Depth will be synchronized and can be adjusted by colorDelayUs, depthDelayUs or trigger2ImageDelayUs.</p>
+<p>The frequency of the user call <a class="el" href="_multiple_devices_8h.html#a686e2dcdc402e88b116ac55e2bb2e354">ob_device_trigger_capture</a> to send the capture command multiplied by the number of frames per trigger should be less than the frame rate of the stream profile which is set when starting the stream. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aabad929b67059752029c3374594ac63ba39ca63ef583695c083588ae28ea22ad9" name="aabad929b67059752029c3374594ac63ba39ca63ef583695c083588ae28ea22ad9"></a>OB_MULTI_DEVICE_SYNC_MODE_HARDWARE_TRIGGERING&#160;</td><td class="fielddoc"><p>hardware triggering mode </p>
+<p>The device will start one time image capture after receiving the trigger signal via VSYNC_IN pin on synchronization port and will output the trigger signal via VSYNC_OUT pin by default. The number of images captured each time can be set by framesPerTriggerForTriggeringMode.</p>
+<p>The Color and Depth should be set to same frame rates, the Color and Depth will be synchronized and can be adjusted by colorDelayUs, depthDelayUs or trigger2ImageDelayUs.</p>
+<dl class="section attention"><dt>Attention</dt><dd>The frequency of the trigger signal multiplied by the number of frames per trigger should be less than the frame rate of the stream profile which is set when starting the stream. </dd>
+<dd>
+The trigger signal input via VSYNC_IN pin on synchronization port should be ouput by other device via VSYNC_OUT pin in hardware triggering mode or software triggering mode. </dd>
+<dd>
+Due to different models may have different signal input requirements, please do not use different models to output trigger signal as input-trigger signal. </dd></dl>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_ob_types_8h_source.html#l01017">1017</a> of file <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 1 2023 19:06:00 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Wed Sep 13 2023 18:10:30 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

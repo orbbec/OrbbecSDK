@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -107,6 +107,9 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a4ce3502d4b87dccc0304790507b04615"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1_device_list.html">DeviceList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_context.html#a4ce3502d4b87dccc0304790507b04615">queryDeviceList</a> ()</td></tr>
 <tr class="memdesc:a4ce3502d4b87dccc0304790507b04615"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取枚举到的设备列表  <br /></td></tr>
 <tr class="separator:a4ce3502d4b87dccc0304790507b04615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4164180385e809c8fd5b2c3defc5711"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_context.html#ac4164180385e809c8fd5b2c3defc5711">enableNetDeviceEnumeration</a> (bool enable)</td></tr>
+<tr class="memdesc:ac4164180385e809c8fd5b2c3defc5711"><td class="mdescLeft">&#160;</td><td class="mdescRight">使能或禁用网络设备枚举。  <br /></td></tr>
+<tr class="separator:ac4164180385e809c8fd5b2c3defc5711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b44f5e42b729acd98fe0485f16f9f5e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1_device.html">Device</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_context.html#a2b44f5e42b729acd98fe0485f16f9f5e">createNetDevice</a> (const char *address, uint16_t port)</td></tr>
 <tr class="memdesc:a2b44f5e42b729acd98fe0485f16f9f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过IP地址创建网络设备  <br /></td></tr>
 <tr class="separator:a2b44f5e42b729acd98fe0485f16f9f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,9 +119,9 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a1dcc95b63547ba0ec763206a81ef8f40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_context.html#a1dcc95b63547ba0ec763206a81ef8f40">setDeviceChangedCallback</a> (<a class="el" href="classob_1_1_context.html#a86116757cdd1d415d2687a7c9e505372">DeviceChangedCallback</a> callback)</td></tr>
 <tr class="memdesc:a1dcc95b63547ba0ec763206a81ef8f40"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置设备插拔回调函数  <br /></td></tr>
 <tr class="separator:a1dcc95b63547ba0ec763206a81ef8f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14d2950e1a9f3b94e8f3518f7e08bc70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_context.html#a14d2950e1a9f3b94e8f3518f7e08bc70">enableMultiDeviceSync</a> (uint64_t repeatInterval)</td></tr>
-<tr class="memdesc:a14d2950e1a9f3b94e8f3518f7e08bc70"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动多设备同步功能，同步已创建设备的时钟(需要使用的设备支持该功能)  <br /></td></tr>
-<tr class="separator:a14d2950e1a9f3b94e8f3518f7e08bc70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c428a487db0b5e34ddd5e4b9a35b48b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_context.html#a9c428a487db0b5e34ddd5e4b9a35b48b">enableDeviceClockSync</a> (uint64_t repeatInterval)</td></tr>
+<tr class="memdesc:a9c428a487db0b5e34ddd5e4b9a35b48b"><td class="mdescLeft">&#160;</td><td class="mdescRight">使能设备时钟同步以同步主机和所有已创建设备的时钟（如果支持）。  <br /></td></tr>
+<tr class="separator:a9c428a487db0b5e34ddd5e4b9a35b48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafe9d3abd6873ae6ab7c82cf3a0c597b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_context.html#aafe9d3abd6873ae6ab7c82cf3a0c597b">freeIdleMemory</a> ()</td></tr>
 <tr class="memdesc:aafe9d3abd6873ae6ab7c82cf3a0c597b"><td class="mdescLeft">&#160;</td><td class="mdescRight">从内部数据帧内存池中释放空闲内存  <br /></td></tr>
 <tr class="separator:aafe9d3abd6873ae6ab7c82cf3a0c597b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,7 +164,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_context_8hpp_source.html">Context.hpp</a> 第 <a class="el" href="_context_8hpp_source.html#l00058">58</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_context_8hpp_source.html">Context.hpp</a> 第 <a class="el" href="_context_8hpp_source.html#l00068">68</a> 行定义.</p>
 
 </div>
 </div>
@@ -186,7 +189,7 @@ Public 成员函数</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">在文件 <a class="el" href="_context_8hpp_source.html">Context.hpp</a> 第 <a class="el" href="_context_8hpp_source.html#l00106">106</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_context_8hpp_source.html">Context.hpp</a> 第 <a class="el" href="_context_8hpp_source.html#l00117">117</a> 行定义.</p>
 
 </div>
 </div>
@@ -254,6 +257,34 @@ Public 成员函数</h2></td></tr>
 
 <p>获取枚举到的设备列表 </p>
 <dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;DeviceList&gt;返回设备列表类的指针 </dd></dl>
+
+</div>
+</div>
+<a id="ac4164180385e809c8fd5b2c3defc5711" name="ac4164180385e809c8fd5b2c3defc5711"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4164180385e809c8fd5b2c3defc5711">&#9670;&#160;</a></span>enableNetDeviceEnumeration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Context::enableNetDeviceEnumeration </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使能或禁用网络设备枚举。 </p>
+<p>使能后，网络设备会自动被发现，并且可以通过queryDeviceList获取。默认状态可以在配置文件中设置。</p>
+<dl class="section attention"><dt>注意</dt><dd>网络设备枚举通过gvcp协议，如果设备和主机不在同一个子网，会被发现但是无法连接。</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>true 使能，false 禁用 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -358,14 +389,14 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a id="a14d2950e1a9f3b94e8f3518f7e08bc70" name="a14d2950e1a9f3b94e8f3518f7e08bc70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14d2950e1a9f3b94e8f3518f7e08bc70">&#9670;&#160;</a></span>enableMultiDeviceSync()</h2>
+<a id="a9c428a487db0b5e34ddd5e4b9a35b48b" name="a9c428a487db0b5e34ddd5e4b9a35b48b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c428a487db0b5e34ddd5e4b9a35b48b">&#9670;&#160;</a></span>enableDeviceClockSync()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ob::Context::enableMultiDeviceSync </td>
+          <td class="memname">void ob::Context::enableDeviceClockSync </td>
           <td>(</td>
           <td class="paramtype">uint64_t&#160;</td>
           <td class="paramname"><em>repeatInterval</em></td><td>)</td>
@@ -374,10 +405,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>启动多设备同步功能，同步已创建设备的时钟(需要使用的设备支持该功能) </p>
+<p>使能设备时钟同步以同步主机和所有已创建设备的时钟（如果支持）。 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">repeatInterval</td><td>定时同步时间间隔（单位ms；如果repeatInterval=0，表示只同步一次，不再定时执行） </td></tr>
+    <tr><td class="paramname">repeatInterval</td><td>自动重复同步的时间间隔，以毫秒为单位。如果值为0，则仅执行一次同步。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -664,7 +695,7 @@ Public 成员函数</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 八月 1日 星期二 19:05:53 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 九月 13日 星期三 18:10:29 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

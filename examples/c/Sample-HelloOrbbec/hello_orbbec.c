@@ -101,6 +101,12 @@ int main(int argc, char **argv) {
         case OB_SENSOR_IR:
             printf("\tIR sensor\n");
             break;
+        case OB_SENSOR_IR_LEFT:
+            printf("\tIR Left sensor\n");
+            break;
+        case OB_SENSOR_IR_RIGHT:
+            printf("\tIR Right sensor\n");
+            break;
         case OB_SENSOR_ACCEL:
             printf("\tAccel sensor\n");
             break;

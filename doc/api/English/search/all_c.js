@@ -12,5 +12,6 @@ var searchData=
   ['metadata_9',['metadata',['../classob_1_1_video_frame.html#a33821425981b027a28feb87d69126d9f',1,'ob::VideoFrame']]],
   ['metadatasize_10',['metadataSize',['../classob_1_1_video_frame.html#a8e0e66c61a5de2160bbec24fd5b98e8e',1,'ob::VideoFrame']]],
   ['min_11',['min',['../struct_o_b_int_property_range.html#ac0c147eec2de949121373cc4f5b84bbd',1,'OBIntPropertyRange::min'],['../struct_o_b_float_property_range.html#a73c45274baa52298f211ca42fa4ef685',1,'OBFloatPropertyRange::min'],['../struct_o_b_bool_property_range.html#a3a4369a40e962b0fdb51a1f53b647a52',1,'OBBoolPropertyRange::min']]],
-  ['minor_12',['minor',['../struct_o_b_protocol_version.html#a5fc843e1e3540175110fc52531d58cff',1,'OBProtocolVersion']]]
+  ['minor_12',['minor',['../struct_o_b_protocol_version.html#a5fc843e1e3540175110fc52531d58cff',1,'OBProtocolVersion']]],
+  ['multipledevices_2eh_13',['MultipleDevices.h',['../_multiple_devices_8h.html',1,'']]]
 ];

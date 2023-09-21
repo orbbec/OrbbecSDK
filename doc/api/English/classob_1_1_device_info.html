@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -118,14 +118,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1d482c08dff8d850ba1be70bd1be08ae"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device_info.html#a1d482c08dff8d850ba1be70bd1be08ae">connectionType</a> ()</td></tr>
 <tr class="memdesc:a1d482c08dff8d850ba1be70bd1be08ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the connection type of the device.  <br /></td></tr>
 <tr class="separator:a1d482c08dff8d850ba1be70bd1be08ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2309d299b9a4133f87f56dac9be2da29"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device_info.html#a2309d299b9a4133f87f56dac9be2da29">ipAddress</a> ()</td></tr>
+<tr class="memdesc:a2309d299b9a4133f87f56dac9be2da29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the IP address of the device.  <br /></td></tr>
+<tr class="separator:a2309d299b9a4133f87f56dac9be2da29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ad36eedafe5390562c38cb56261a8bd"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device_info.html#a6ad36eedafe5390562c38cb56261a8bd">hardwareVersion</a> ()</td></tr>
 <tr class="memdesc:a6ad36eedafe5390562c38cb56261a8bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the version number of the hardware.  <br /></td></tr>
 <tr class="separator:a6ad36eedafe5390562c38cb56261a8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31a3bb25ffba8f2f5200955cf1fcf138"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device_info.html#a31a3bb25ffba8f2f5200955cf1fcf138">supportedMinSdkVersion</a> ()</td></tr>
 <tr class="memdesc:a31a3bb25ffba8f2f5200955cf1fcf138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the minimum version number of the SDK supported by the device.  <br /></td></tr>
 <tr class="separator:a31a3bb25ffba8f2f5200955cf1fcf138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac95aeea0ec2b129f82a30b230c834885"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device_info.html#ac95aeea0ec2b129f82a30b230c834885">extensionInfo</a> ()</td></tr>
+<tr class="memdesc:ac95aeea0ec2b129f82a30b230c834885"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about extensions obtained from SDK supported by the device.  <br /></td></tr>
+<tr class="separator:ac95aeea0ec2b129f82a30b230c834885"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ff3ee803502b471d3ff3a9f27fea522"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device_info.html#a5ff3ee803502b471d3ff3a9f27fea522">asicName</a> ()</td></tr>
-<tr class="memdesc:a5ff3ee803502b471d3ff3a9f27fea522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the chip type name.  <br /></td></tr>
+<tr class="memdesc:a5ff3ee803502b471d3ff3a9f27fea522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get chip type name.  <br /></td></tr>
 <tr class="separator:a5ff3ee803502b471d3ff3a9f27fea522"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab35f5fc3e8050fa49ad8d72b1474b0b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a4800aed5036eec930da88a589bb56ca1">OBDeviceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device_info.html#ab35f5fc3e8050fa49ad8d72b1474b0b3">deviceType</a> ()</td></tr>
 <tr class="memdesc:ab35f5fc3e8050fa49ad8d72b1474b0b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the device type.  <br /></td></tr>
@@ -143,7 +149,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class describing device information, representing the name, id, serial number and other basic information of an RGBD camera. </p>
 
-<p class="definition">Definition at line <a class="el" href="_device_8hpp_source.html#l00436">436</a> of file <a class="el" href="_device_8hpp_source.html">Device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_device_8hpp_source.html#l00540">540</a> of file <a class="el" href="_device_8hpp_source.html">Device.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a378453e2eaa8d140ef51125f9856b63e" name="a378453e2eaa8d140ef51125f9856b63e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a378453e2eaa8d140ef51125f9856b63e">&#9670;&#160;</a></span>DeviceInfo()</h2>
@@ -345,7 +351,28 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the connection type of the device. </p>
-<dl class="section return"><dt>Returns</dt><dd>const char* the connection type of the device </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const char* the connection type of the device，currently supports："USB", "USB1.0", "USB1.1", "USB2.0", "USB2.1", "USB3.0", "USB3.1", "USB3.2", "Ethernet" </dd></dl>
+
+</div>
+</div>
+<a id="a2309d299b9a4133f87f56dac9be2da29" name="a2309d299b9a4133f87f56dac9be2da29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2309d299b9a4133f87f56dac9be2da29">&#9670;&#160;</a></span>ipAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * ob::DeviceInfo::ipAddress </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the IP address of the device. </p>
+<dl class="section attention"><dt>Attention</dt><dd>Only valid for network devices, otherwise it will return "0.0.0.0".</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const char* the IP address of the device, such as "192.168.1.10" </dd></dl>
 
 </div>
 </div>
@@ -389,6 +416,26 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="ac95aeea0ec2b129f82a30b230c834885" name="ac95aeea0ec2b129f82a30b230c834885"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac95aeea0ec2b129f82a30b230c834885">&#9670;&#160;</a></span>extensionInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * ob::DeviceInfo::extensionInfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get information about extensions obtained from SDK supported by the device. </p>
+<dl class="section return"><dt>Returns</dt><dd>const char* Returns extended information about the device </dd></dl>
+
+</div>
+</div>
 <a id="a5ff3ee803502b471d3ff3a9f27fea522" name="a5ff3ee803502b471d3ff3a9f27fea522"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5ff3ee803502b471d3ff3a9f27fea522">&#9670;&#160;</a></span>asicName()</h2>
 
@@ -404,7 +451,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the chip type name. </p>
+<p>Get chip type name. </p>
 <dl class="section return"><dt>Returns</dt><dd>const char* the chip type name </dd></dl>
 
 </div>
@@ -450,7 +497,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_device_8hpp_source.html#l00528">528</a> of file <a class="el" href="_device_8hpp_source.html">Device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_device_8hpp_source.html#l00649">649</a> of file <a class="el" href="_device_8hpp_source.html">Device.hpp</a>.</p>
 
 </div>
 </div>
@@ -474,7 +521,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_device_8hpp_source.html#l00529">529</a> of file <a class="el" href="_device_8hpp_source.html">Device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_device_8hpp_source.html#l00650">650</a> of file <a class="el" href="_device_8hpp_source.html">Device.hpp</a>.</p>
 
 </div>
 </div>
@@ -498,7 +545,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_device_8hpp_source.html#l00530">530</a> of file <a class="el" href="_device_8hpp_source.html">Device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_device_8hpp_source.html#l00651">651</a> of file <a class="el" href="_device_8hpp_source.html">Device.hpp</a>.</p>
 
 </div>
 </div>
@@ -508,7 +555,7 @@ Friends</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 1 2023 19:06:02 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Wed Sep 13 2023 18:10:31 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

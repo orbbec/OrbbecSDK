@@ -11,6 +11,7 @@
 
 std::shared_ptr<ob::Device> selectDevice(std::shared_ptr<ob::DeviceList> deviceList);
 std::vector<OBPropertyItem> getPropertyList(std::shared_ptr<ob::Device> device);
+bool                        isPrimaryTypeProperty(OBPropertyItem propertyItem);
 void                        printfPropertyList(std::shared_ptr<ob::Device> device, const std::vector<OBPropertyItem> &propertyList);
 void                        setPropertyValue(std::shared_ptr<ob::Device> device, OBPropertyItem item, std::string strValue);
 void                        getPropertyValue(std::shared_ptr<ob::Device> device, OBPropertyItem item);
@@ -185,6 +186,10 @@ void printfPropertyList(std::shared_ptr<ob::Device> device, const std::vector<OB
     std::cout << "------------------------------------------------------------------------\n";
 }
 
+bool isPrimaryTypeProperty(OBPropertyItem propertyItem) {
+    return propertyItem.type == OB_INT_PROPERTY || propertyItem.type == OB_FLOAT_PROPERTY || propertyItem.type == OB_BOOL_PROPERTY;
+}
+
 // Get property list
 std::vector<OBPropertyItem> getPropertyList(std::shared_ptr<ob::Device> device) {
     std::vector<OBPropertyItem> propertyVec;
@@ -192,7 +197,7 @@ std::vector<OBPropertyItem> getPropertyList(std::shared_ptr<ob::Device> device) 
     uint32_t size = device->getSupportedPropertyCount();
     for(uint32_t i = 0; i < size; i++) {
         OBPropertyItem property_item = device->getSupportedProperty(i);
-        if(property_item.type != OB_STRUCT_PROPERTY && property_item.permission != OB_PERMISSION_DENY) {
+        if(isPrimaryTypeProperty(property_item) && property_item.permission != OB_PERMISSION_DENY) {
             propertyVec.push_back(property_item);
         }
     }

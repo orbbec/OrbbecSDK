@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -76,6 +76,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
 <a href="#func-members">函数</a>  </div>
   <div class="headertitle"><div class="title">Context.h 文件参考</div></div>
 </div><!--header-->
@@ -87,6 +88,11 @@ $(function() {
 </div>
 <p><a href="_context_8h_source.html">浏览源代码.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a10d632e4c78c959a38ab9d924340bb7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_context_8h.html#a10d632e4c78c959a38ab9d924340bb7c">ob_enable_multi_device_sync</a>&#160;&#160;&#160;<a class="el" href="_context_8h.html#ae014e8e9574ae539e59e1318e656020a">ob_enable_device_clock_sync</a></td></tr>
+<tr class="separator:a10d632e4c78c959a38ab9d924340bb7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 函数</h2></td></tr>
 <tr class="memitem:aa97c96f4d58c7e1e7d435a95c7bd796c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#ab96d384dfaeb83b9086aa8c9caf58d05">ob_context</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_context_8h.html#aa97c96f4d58c7e1e7d435a95c7bd796c">ob_create_context</a> (<a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
@@ -101,15 +107,18 @@ $(function() {
 <tr class="memitem:a826dd28946acd5108a720784a1a03e7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_context_8h.html#a826dd28946acd5108a720784a1a03e7b">ob_query_device_list</a> (<a class="el" href="_ob_types_8h.html#ab96d384dfaeb83b9086aa8c9caf58d05">ob_context</a> *context, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a826dd28946acd5108a720784a1a03e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取枚举设备列表  <br /></td></tr>
 <tr class="separator:a826dd28946acd5108a720784a1a03e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae762ccb84e9cd16617cb97e335f33972"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_context_8h.html#ae762ccb84e9cd16617cb97e335f33972">ob_enable_net_device_enumeration</a> (<a class="el" href="_ob_types_8h.html#ab96d384dfaeb83b9086aa8c9caf58d05">ob_context</a> *context, bool enable, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ae762ccb84e9cd16617cb97e335f33972"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用或禁用网络设备枚举  <br /></td></tr>
+<tr class="separator:ae762ccb84e9cd16617cb97e335f33972"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38d5903eb11b099cf035bcaaced831bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_context_8h.html#a38d5903eb11b099cf035bcaaced831bb">ob_create_net_device</a> (<a class="el" href="_ob_types_8h.html#ab96d384dfaeb83b9086aa8c9caf58d05">ob_context</a> *context, const char *address, uint16_t port, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a38d5903eb11b099cf035bcaaced831bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建网络设备对象  <br /></td></tr>
 <tr class="separator:a38d5903eb11b099cf035bcaaced831bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acebdeed40dc2dc6abd78ec007fde9d4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_context_8h.html#acebdeed40dc2dc6abd78ec007fde9d4d">ob_set_device_changed_callback</a> (<a class="el" href="_ob_types_8h.html#ab96d384dfaeb83b9086aa8c9caf58d05">ob_context</a> *context, <a class="el" href="_ob_types_8h.html#a0e6f8b80b87aec989df49ff0e5465e86">ob_device_changed_callback</a> callback, void *user_data, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:acebdeed40dc2dc6abd78ec007fde9d4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置设备插拔回调函数  <br /></td></tr>
 <tr class="separator:acebdeed40dc2dc6abd78ec007fde9d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8c9dd2341b89ec4019a9f97866f8c3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_context_8h.html#af8c9dd2341b89ec4019a9f97866f8c3b">ob_enable_multi_device_sync</a> (<a class="el" href="_ob_types_8h.html#ab96d384dfaeb83b9086aa8c9caf58d05">ob_context</a> *context, uint64_t repeatInterval, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:af8c9dd2341b89ec4019a9f97866f8c3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动多设备同步功能，同步已创建设备的时钟（设备需要支持此功能）  <br /></td></tr>
-<tr class="separator:af8c9dd2341b89ec4019a9f97866f8c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae014e8e9574ae539e59e1318e656020a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_context_8h.html#ae014e8e9574ae539e59e1318e656020a">ob_enable_device_clock_sync</a> (<a class="el" href="_ob_types_8h.html#ab96d384dfaeb83b9086aa8c9caf58d05">ob_context</a> *context, uint64_t repeatInterval, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ae014e8e9574ae539e59e1318e656020a"><td class="mdescLeft">&#160;</td><td class="mdescRight">使能设备时钟同步以同步主机和所有已创建设备的时钟（如果支持）。  <br /></td></tr>
+<tr class="separator:ae014e8e9574ae539e59e1318e656020a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fe4e159dfb8afaab3eabccd82e1bb9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_context_8h.html#a2fe4e159dfb8afaab3eabccd82e1bb9c">ob_free_idle_memory</a> (<a class="el" href="_ob_types_8h.html#ab96d384dfaeb83b9086aa8c9caf58d05">ob_context</a> *context, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a2fe4e159dfb8afaab3eabccd82e1bb9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">从内部帧内存池中释放空闲内存  <br /></td></tr>
 <tr class="separator:a2fe4e159dfb8afaab3eabccd82e1bb9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,7 +145,24 @@ $(function() {
 <div class="textblock"><p>context是描述SDK的runtime一个管理类，负责SDK的资源申请与释放。 context具备多设备的管理能力，负责枚举设备，监听设备回调，启用多设备同步等功能。 </p>
 
 <p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 中定义.</p>
-</div><h2 class="groupheader">函数说明</h2>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a10d632e4c78c959a38ab9d924340bb7c" name="a10d632e4c78c959a38ab9d924340bb7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10d632e4c78c959a38ab9d924340bb7c">&#9670;&#160;</a></span>ob_enable_multi_device_sync</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ob_enable_multi_device_sync&#160;&#160;&#160;<a class="el" href="_context_8h.html#ae014e8e9574ae539e59e1318e656020a">ob_enable_device_clock_sync</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 第 <a class="el" href="_context_8h_source.html#l00090">90</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
 <a id="aa97c96f4d58c7e1e7d435a95c7bd796c" name="aa97c96f4d58c7e1e7d435a95c7bd796c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa97c96f4d58c7e1e7d435a95c7bd796c">&#9670;&#160;</a></span>ob_create_context()</h2>
 
@@ -277,6 +303,52 @@ $(function() {
 
 </div>
 </div>
+<a id="ae762ccb84e9cd16617cb97e335f33972" name="ae762ccb84e9cd16617cb97e335f33972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae762ccb84e9cd16617cb97e335f33972">&#9670;&#160;</a></span>ob_enable_net_device_enumeration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_enable_net_device_enumeration </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#ab96d384dfaeb83b9086aa8c9caf58d05">ob_context</a> *&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>启用或禁用网络设备枚举 </p>
+<p>启用后，网络设备将自动被发现，并且可以通过 query_device_list 获取。默认状态可以在配置文件中设置。</p>
+<dl class="section attention"><dt>注意</dt><dd>网络设备枚举通过 gvcp 协议，如果设备和主机不在同一子网，将被发现但无法连接。</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>指向上下文对象的指针 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>true 启用，false 禁用 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>指向错误对象的指针，如果发生错误，将填充该对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a38d5903eb11b099cf035bcaaced831bb" name="a38d5903eb11b099cf035bcaaced831bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a38d5903eb11b099cf035bcaaced831bb">&#9670;&#160;</a></span>ob_create_net_device()</h2>
 
@@ -381,14 +453,14 @@ $(function() {
 
 </div>
 </div>
-<a id="af8c9dd2341b89ec4019a9f97866f8c3b" name="af8c9dd2341b89ec4019a9f97866f8c3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8c9dd2341b89ec4019a9f97866f8c3b">&#9670;&#160;</a></span>ob_enable_multi_device_sync()</h2>
+<a id="ae014e8e9574ae539e59e1318e656020a" name="ae014e8e9574ae539e59e1318e656020a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae014e8e9574ae539e59e1318e656020a">&#9670;&#160;</a></span>ob_enable_device_clock_sync()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ob_enable_multi_device_sync </td>
+          <td class="memname">void ob_enable_device_clock_sync </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="_ob_types_8h.html#ab96d384dfaeb83b9086aa8c9caf58d05">ob_context</a> *&#160;</td>
           <td class="paramname"><em>context</em>, </td>
@@ -413,12 +485,12 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p>启动多设备同步功能，同步已创建设备的时钟（设备需要支持此功能） </p>
+<p>使能设备时钟同步以同步主机和所有已创建设备的时钟（如果支持）。 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>指向上下文对象的指针 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">repeatInterval</td><td>同步时间间隔（以毫秒为单位）。如果 repeatInterval=0，则只同步一次，不会 定期执行。 </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>指向错误对象的指针,如果在多设备同步开启期间出现错误时,将填充该对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">repeatInterval</td><td>自动重复同步的时间间隔，以毫秒为单位。如果值为0，则仅执行一次同步。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>指向错误对象的指针，如果执行期间发生错误，则将填充该对象 </td></tr>
   </table>
   </dd>
 </dl>
@@ -730,7 +802,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 八月 1日 星期二 19:05:50 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 九月 13日 星期三 18:10:29 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

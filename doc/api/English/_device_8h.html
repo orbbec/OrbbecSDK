@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -85,6 +85,7 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_property_8h_source.html">Property.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_multiple_devices_8h_source.html">MultipleDevices.h</a>&quot;</code><br />
 </div>
 <p><a href="_device_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -108,6 +109,12 @@ Functions</h2></td></tr>
 <tr class="memitem:aad7063d45d2085dc4a0579f23735292f"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_device_8h.html#aad7063d45d2085dc4a0579f23735292f">ob_device_list_get_device_serial_number</a> (<a class="el" href="_ob_types_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *list, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:aad7063d45d2085dc4a0579f23735292f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the serial number of the specified device.  <br /></td></tr>
 <tr class="separator:aad7063d45d2085dc4a0579f23735292f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4432a18183cb0c312f2c50bf8877b445"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_device_8h.html#a4432a18183cb0c312f2c50bf8877b445">ob_device_list_get_device_connection_type</a> (<a class="el" href="_ob_types_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *list, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a4432a18183cb0c312f2c50bf8877b445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device connection type.  <br /></td></tr>
+<tr class="separator:a4432a18183cb0c312f2c50bf8877b445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36c34c98fc8cbb10b7f698b33744439e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_device_8h.html#a36c34c98fc8cbb10b7f698b33744439e">ob_device_list_get_device_ip_address</a> (<a class="el" href="_ob_types_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *list, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a36c34c98fc8cbb10b7f698b33744439e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device ip address.  <br /></td></tr>
+<tr class="separator:a36c34c98fc8cbb10b7f698b33744439e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab40b2df49110d664ee7e772f3b267647"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_device_8h.html#ab40b2df49110d664ee7e772f3b267647">ob_device_list_get_device</a> (<a class="el" href="_ob_types_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *list, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:ab40b2df49110d664ee7e772f3b267647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a device.  <br /></td></tr>
 <tr class="separator:ab40b2df49110d664ee7e772f3b267647"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -219,12 +226,12 @@ Functions</h2></td></tr>
 <tr class="memitem:aa2c75e15e49f11d6f876b6d8604b07cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_device_8h.html#aa2c75e15e49f11d6f876b6d8604b07cf">ob_device_read_customer_data</a> (<a class="el" href="_ob_types_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, void *data, uint32_t *data_size, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:aa2c75e15e49f11d6f876b6d8604b07cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get customer data of a device property.  <br /></td></tr>
 <tr class="separator:aa2c75e15e49f11d6f876b6d8604b07cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1971ce939ddeda103b01d259784cc867"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_device_8h.html#a1971ce939ddeda103b01d259784cc867">ob_device_sync_device_time</a> (<a class="el" href="_ob_types_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a1971ce939ddeda103b01d259784cc867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synchronize the device time (sets the device time to the local system time).  <br /></td></tr>
-<tr class="separator:a1971ce939ddeda103b01d259784cc867"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a857b0fd50d7d425be77b0ed6a40ab9ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_device_8h.html#a857b0fd50d7d425be77b0ed6a40ab9ef">ob_device_upgrade</a> (<a class="el" href="_ob_types_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, const char *path, <a class="el" href="_ob_types_8h.html#a722bed61b28cde64209bcf5e228a57e1">ob_device_upgrade_callback</a> callback, bool async, void *user_data, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a857b0fd50d7d425be77b0ed6a40ab9ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upgrade the device firmware.  <br /></td></tr>
 <tr class="separator:a857b0fd50d7d425be77b0ed6a40ab9ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a954144f2f75f5c1aab7f48c502e2e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_device_8h.html#a4a954144f2f75f5c1aab7f48c502e2e8">ob_device_upgrade_from_data</a> (<a class="el" href="_ob_types_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, const char *file_data, uint32_t file_size, <a class="el" href="_ob_types_8h.html#a722bed61b28cde64209bcf5e228a57e1">ob_device_upgrade_callback</a> callback, bool async, void *user_data, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a4a954144f2f75f5c1aab7f48c502e2e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upgrade the device firmware.  <br /></td></tr>
+<tr class="separator:a4a954144f2f75f5c1aab7f48c502e2e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57f2fc41aedeac216230a3bad371825d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#ac9770df9d12620d1c520e51d2ffa934d">ob_device_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_device_8h.html#a57f2fc41aedeac216230a3bad371825d">ob_device_get_device_state</a> (<a class="el" href="_ob_types_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a57f2fc41aedeac216230a3bad371825d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current device status.  <br /></td></tr>
 <tr class="separator:a57f2fc41aedeac216230a3bad371825d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -241,7 +248,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a036d21c3bf3c734ceda4d89254bbc84f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the device authorization code.  <br /></td></tr>
 <tr class="separator:a036d21c3bf3c734ceda4d89254bbc84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb9ee900832e411b66a98e5e7041b3b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#ad0c91e2d8e139b9b0ae8f4176b881225">ob_camera_param_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_device_8h.html#abb9ee900832e411b66a98e5e7041b3b5">ob_device_get_calibration_camera_param_list</a> (<a class="el" href="_ob_types_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:abb9ee900832e411b66a98e5e7041b3b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the original parameter list of camera calibration saved on the device. The parameters in the list do not correspond to the current open-stream configuration. You need to select the parameters according to the actual situation, and may need to do scaling, mirroring and other processing. Non-professional users are recommended to use the <a class="el" href="_pipeline_8h.html#a0d90685efdd4b7fb7c6f6259c48769b2" title="Get the current camera parameters.">ob_pipeline_get_camera_param()</a> interface.  <br /></td></tr>
+<tr class="memdesc:abb9ee900832e411b66a98e5e7041b3b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the original parameter list of camera calibration saved on the device.  <br /></td></tr>
 <tr class="separator:abb9ee900832e411b66a98e5e7041b3b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acec4c4a48b3599c9861f896442c2e307"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a952d0e52ccbc3ab207580451b1574177">ob_depth_work_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_device_8h.html#acec4c4a48b3599c9861f896442c2e307">ob_device_get_current_depth_work_mode</a> (<a class="el" href="_ob_types_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:acec4c4a48b3599c9861f896442c2e307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current depth work mode.  <br /></td></tr>
@@ -288,6 +295,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a86b8253d54fde37bc42fd62351968ce6"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_device_8h.html#a86b8253d54fde37bc42fd62351968ce6">ob_device_info_connection_type</a> (<a class="el" href="_ob_types_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *info, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a86b8253d54fde37bc42fd62351968ce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the device connection type.  <br /></td></tr>
 <tr class="separator:a86b8253d54fde37bc42fd62351968ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae30301cd84a326349848f6cdad1c58a4"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_device_8h.html#ae30301cd84a326349848f6cdad1c58a4">ob_device_info_ip_address</a> (<a class="el" href="_ob_types_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *info, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ae30301cd84a326349848f6cdad1c58a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the device IP address.  <br /></td></tr>
+<tr class="separator:ae30301cd84a326349848f6cdad1c58a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd128b23998538d1eaa537cf26b6615c"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_device_8h.html#abd128b23998538d1eaa537cf26b6615c">ob_device_info_hardware_version</a> (<a class="el" href="_ob_types_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *info, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:abd128b23998538d1eaa537cf26b6615c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the hardware version number.  <br /></td></tr>
 <tr class="separator:abd128b23998538d1eaa537cf26b6615c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -310,7 +320,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:a4b59f401d6f3cf6f88f123fe49b606e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the camera parameter list.  <br /></td></tr>
 <tr class="separator:a4b59f401d6f3cf6f88f123fe49b606e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26839a59770c23ac7c9f29ba9f0f75f9"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_device_8h.html#a26839a59770c23ac7c9f29ba9f0f75f9">ob_depth_work_mode_list_count</a> (<a class="el" href="_ob_types_8h.html#ae56f30b3220e1c02444e52c8faf9c007">ob_depth_work_mode_list</a> *work_mode_list, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a26839a59770c23ac7c9f29ba9f0f75f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of depth work modes that ob_depth_work_mode_list holds.  <br /></td></tr>
 <tr class="separator:a26839a59770c23ac7c9f29ba9f0f75f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc9a35d06c361f156587e591b44428d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a952d0e52ccbc3ab207580451b1574177">ob_depth_work_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_device_8h.html#afc9a35d06c361f156587e591b44428d0">ob_depth_work_mode_list_get_item</a> (<a class="el" href="_ob_types_8h.html#ae56f30b3220e1c02444e52c8faf9c007">ob_depth_work_mode_list</a> *work_mode_list, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:afc9a35d06c361f156587e591b44428d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index target of ob_depth_work_mode from work_mode_list.  <br /></td></tr>
@@ -587,6 +596,97 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>const char* The device UID. </dd></dl>
+
+</div>
+</div>
+<a id="a4432a18183cb0c312f2c50bf8877b445" name="a4432a18183cb0c312f2c50bf8877b445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4432a18183cb0c312f2c50bf8877b445">&#9670;&#160;</a></span>ob_device_list_get_device_connection_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * ob_device_list_get_device_connection_type </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get device connection type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>Device list object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Device index </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>const char* returns the device connection type，currently supports："USB", "USB1.0", "USB1.1", "USB2.0", "USB2.1", "USB3.0", "USB3.1", "USB3.2", "Ethernet" </dd></dl>
+
+</div>
+</div>
+<a id="a36c34c98fc8cbb10b7f698b33744439e" name="a36c34c98fc8cbb10b7f698b33744439e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36c34c98fc8cbb10b7f698b33744439e">&#9670;&#160;</a></span>ob_device_list_get_device_ip_address()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * ob_device_list_get_device_ip_address </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a808e5e274a0a28eef27f22e0e91508e0">ob_device_list</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get device ip address. </p>
+<dl class="section attention"><dt>Attention</dt><dd>Only valid for network devices, otherwise it will return "0.0.0.0".</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>Device list object </td></tr>
+    <tr><td class="paramname">index</td><td>Device index </td></tr>
+    <tr><td class="paramname">error</td><td>Log error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>const char* returns the device ip address，such as "192.168.1.10" </dd></dl>
 
 </div>
 </div>
@@ -2471,44 +2571,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1971ce939ddeda103b01d259784cc867" name="a1971ce939ddeda103b01d259784cc867"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1971ce939ddeda103b01d259784cc867">&#9670;&#160;</a></span>ob_device_sync_device_time()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint64_t ob_device_sync_device_time </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
-          <td class="paramname"><em>device</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
-          <td class="paramname"><em>error</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Synchronize the device time (sets the device time to the local system time). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>The device object. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>uint64_t The command round trip time (rtt). </dd></dl>
-
-</div>
-</div>
 <a id="a857b0fd50d7d425be77b0ed6a40ab9ef" name="a857b0fd50d7d425be77b0ed6a40ab9ef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a857b0fd50d7d425be77b0ed6a40ab9ef">&#9670;&#160;</a></span>ob_device_upgrade()</h2>
 
@@ -2564,6 +2626,78 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>The device object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>The firmware path. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The firmware upgrade progress callback. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">async</td><td>Whether to execute asynchronously. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>User-defined data that will be returned in the callback. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4a954144f2f75f5c1aab7f48c502e2e8" name="a4a954144f2f75f5c1aab7f48c502e2e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a954144f2f75f5c1aab7f48c502e2e8">&#9670;&#160;</a></span>ob_device_upgrade_from_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_upgrade_from_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>file_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a722bed61b28cde64209bcf5e228a57e1">ob_device_upgrade_callback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>async</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Upgrade the device firmware. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>The device object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file_data</td><td>The firmware file data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file_size</td><td>The firmware file size. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The firmware upgrade progress callback. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">async</td><td>Whether to execute asynchronously. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>User-defined data that will be returned in the callback. </td></tr>
@@ -2850,7 +2984,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the original parameter list of camera calibration saved on the device. The parameters in the list do not correspond to the current open-stream configuration. You need to select the parameters according to the actual situation, and may need to do scaling, mirroring and other processing. Non-professional users are recommended to use the <a class="el" href="_pipeline_8h.html#a0d90685efdd4b7fb7c6f6259c48769b2" title="Get the current camera parameters.">ob_pipeline_get_camera_param()</a> interface. </p>
+<p>Get the original parameter list of camera calibration saved on the device. </p>
+<dl class="section attention"><dt>Attention</dt><dd>The parameters in the list do not correspond to the current open-stream configuration.You need to select the parameters according to the actual situation, and may need to do scaling, mirroring and other processing. Non-professional users are recommended to use the <a class="el" href="_pipeline_8h.html#a0d90685efdd4b7fb7c6f6259c48769b2">ob_pipeline_get_camera_param()</a> interface.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>The device object. </td></tr>
@@ -3451,7 +3586,46 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>const char* The connection type </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const char* The connection type，currently supports："USB", "USB1.0", "USB1.1", "USB2.0", "USB2.1", "USB3.0", "USB3.1", "USB3.2", "Ethernet" </dd></dl>
+
+</div>
+</div>
+<a id="ae30301cd84a326349848f6cdad1c58a4" name="ae30301cd84a326349848f6cdad1c58a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae30301cd84a326349848f6cdad1c58a4">&#9670;&#160;</a></span>ob_device_info_ip_address()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * ob_device_info_ip_address </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a42a8c24d730235cd52687cda4372f0d9">ob_device_info</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the device IP address. </p>
+<dl class="section attention"><dt>Attention</dt><dd>Only valid for network devices, otherwise it will return "0.0.0.0"</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td>Device Information </td></tr>
+    <tr><td class="paramname">error</td><td>Log error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>const char* The IP address，such as "192.168.1.10" </dd></dl>
 
 </div>
 </div>
@@ -3753,16 +3927,6 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the number of depth work modes that ob_depth_work_mode_list holds. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">work_mode_list</td><td>Data structure containing a list of ob_depth_work_mode </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The total number contained in ob_depth_work_mode_list </dd></dl>
-
 </div>
 </div>
 <a id="afc9a35d06c361f156587e591b44428d0" name="afc9a35d06c361f156587e591b44428d0"></a>
@@ -3887,7 +4051,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 1 2023 19:06:00 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Wed Sep 13 2023 18:10:30 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

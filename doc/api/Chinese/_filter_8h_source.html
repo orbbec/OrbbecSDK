@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -125,7 +125,7 @@ $(function() {
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>}</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a_filter_8h_html_a25d2073ecb0d7e4a25a6e0cdf6da110b"><div class="ttname"><a href="_filter_8h.html#a25d2073ecb0d7e4a25a6e0cdf6da110b">ob_pointcloud_filter_set_position_data_scale</a></div><div class="ttdeci">void ob_pointcloud_filter_set_position_data_scale(ob_filter *filter, float scale, ob_error **error)</div><div class="ttdoc">设置点云数据缩放比例</div></div>
-<div class="ttc" id="a_filter_8h_html_a41f921518de12fde5a1c194d7c09dea3"><div class="ttname"><a href="_filter_8h.html#a41f921518de12fde5a1c194d7c09dea3">ob_pointcloud_filter_set_frame_align_state</a></div><div class="ttdeci">void ob_pointcloud_filter_set_frame_align_state(ob_filter *filter, bool state, ob_error **error)</div><div class="ttdoc">设置输入用于生成点云的帧的对齐状态。</div></div>
+<div class="ttc" id="a_filter_8h_html_a41f921518de12fde5a1c194d7c09dea3"><div class="ttname"><a href="_filter_8h.html#a41f921518de12fde5a1c194d7c09dea3">ob_pointcloud_filter_set_frame_align_state</a></div><div class="ttdeci">void ob_pointcloud_filter_set_frame_align_state(ob_filter *filter, bool state, ob_error **error)</div><div class="ttdoc">设置输入用于生成点云的帧的对齐状态。（已弃用）</div></div>
 <div class="ttc" id="a_filter_8h_html_a4ad87b0f4851f01fbe3c8c369fc4cc02"><div class="ttname"><a href="_filter_8h.html#a4ad87b0f4851f01fbe3c8c369fc4cc02">ob_create_decompression_filter</a></div><div class="ttdeci">ob_filter * ob_create_decompression_filter(ob_error **error)</div><div class="ttdoc">创建decompressionr Filter</div></div>
 <div class="ttc" id="a_filter_8h_html_a64145ca451f2543b33cb5635c582f1ee"><div class="ttname"><a href="_filter_8h.html#a64145ca451f2543b33cb5635c582f1ee">ob_pointcloud_filter_set_color_data_normalization</a></div><div class="ttdeci">void ob_pointcloud_filter_set_color_data_normalization(ob_filter *filter, bool state, ob_error **error)</div><div class="ttdoc">设置点云颜色数据归一化。</div></div>
 <div class="ttc" id="a_filter_8h_html_a77a1ac123ecb1e3b8a0e280fbb2d2d06"><div class="ttname"><a href="_filter_8h.html#a77a1ac123ecb1e3b8a0e280fbb2d2d06">ob_delete_filter</a></div><div class="ttdeci">void ob_delete_filter(ob_filter *filter, ob_error **error)</div><div class="ttdoc">删除Filter</div></div>
@@ -147,14 +147,14 @@ $(function() {
 <div class="ttc" id="a_ob_types_8h_html_a45f27494cc950009dc699c523c842275"><div class="ttname"><a href="_ob_types_8h.html#a45f27494cc950009dc699c523c842275">ob_compression_mode</a></div><div class="ttdeci">enum OBCompressionMode ob_compression_mode</div></div>
 <div class="ttc" id="a_ob_types_8h_html_a6dbd05b8728989b2f5a1f169220a9e99"><div class="ttname"><a href="_ob_types_8h.html#a6dbd05b8728989b2f5a1f169220a9e99">ob_coordinate_system_type</a></div><div class="ttdeci">enum OB_COORDINATE_SYSTEM_TYPE ob_coordinate_system_type</div></div>
 <div class="ttc" id="a_ob_types_8h_html_a81c903a9209bac650a994502de50758d"><div class="ttname"><a href="_ob_types_8h.html#a81c903a9209bac650a994502de50758d">ob_convert_format</a></div><div class="ttdeci">enum OBConvertFormat ob_convert_format</div></div>
-<div class="ttc" id="a_ob_types_8h_html_a82628fc9f7fe087c4ac31b0a8197ea34"><div class="ttname"><a href="_ob_types_8h.html#a82628fc9f7fe087c4ac31b0a8197ea34">ob_filter_callback</a></div><div class="ttdeci">#define ob_filter_callback</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l01085">ObTypes.h:1085</a></div></div>
+<div class="ttc" id="a_ob_types_8h_html_a82628fc9f7fe087c4ac31b0a8197ea34"><div class="ttname"><a href="_ob_types_8h.html#a82628fc9f7fe087c4ac31b0a8197ea34">ob_filter_callback</a></div><div class="ttdeci">#define ob_filter_callback</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l01232">ObTypes.h:1232</a></div></div>
 <div class="ttc" id="a_ob_types_8h_html_aaa2a036e7bbf09bceb92f220395a09ea"><div class="ttname"><a href="_ob_types_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a></div><div class="ttdeci">struct FilterImpl ob_filter</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00063">ObTypes.h:63</a></div></div>
-<div class="ttc" id="astruct_o_b_camera_param_html"><div class="ttname"><a href="struct_o_b_camera_param.html">OBCameraParam</a></div><div class="ttdoc">相机参数</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00352">ObTypes.h:352</a></div></div>
-<div class="ttc" id="astructob__error_html"><div class="ttname"><a href="structob__error.html">ob_error</a></div><div class="ttdoc">SDK暴露的错误类，用户可以根据该错误类，获取详细的错误信息</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00124">ObTypes.h:124</a></div></div>
+<div class="ttc" id="astruct_o_b_camera_param_html"><div class="ttname"><a href="struct_o_b_camera_param.html">OBCameraParam</a></div><div class="ttdoc">相机参数</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00364">ObTypes.h:364</a></div></div>
+<div class="ttc" id="astructob__error_html"><div class="ttname"><a href="structob__error.html">ob_error</a></div><div class="ttdoc">SDK暴露的错误类，用户可以根据该错误类，获取详细的错误信息</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00135">ObTypes.h:135</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 八月 1日 星期二 19:05:49 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 九月 13日 星期三 18:10:29 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

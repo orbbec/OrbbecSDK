@@ -27,7 +27,7 @@ int main(int argc, char **argv) try {
     // Start the pipeline with config
     pipe.start(config);
 
-    // Create a window for rendering and set the resolution of the window
+    // Create a window for rendering, and set the resolution of the window
     Window app("DepthViewer", depthProfile->width(), depthProfile->height());
 
     while(app) {
@@ -37,11 +37,27 @@ int main(int argc, char **argv) try {
             continue;
         }
 
-        // Render a set of frame in the window, only the depth frame is rendered here.
-        app.addToRender(frameSet->depthFrame());
+        auto depthFrame = frameSet->depthFrame();
+
+        // for Y16 format depth frame, print the distance of the center pixel every 30 frames
+        if(depthFrame->index() % 30 == 0 && depthFrame->format() == OB_FORMAT_Y16) {
+            uint32_t  width  = depthFrame->width();
+            uint32_t  height = depthFrame->height();
+            float     scale  = depthFrame->getValueScale();
+            uint16_t *data   = (uint16_t *)depthFrame->data();
+
+            // pixel value multiplied by scale is the actual distance value in millimeters
+            float centerDistance = data[width * height / 2 + width / 2] * scale;
+
+            // attention: if the distance is 0, it means that the depth camera cannot detect the object（may be out of detection range）
+            std::cout << "Facing an object " << centerDistance << " mm away. " << std::endl;
+        }
+
+        // Render frame in the window
+        app.addToRender(depthFrame);
     }
 
-    // Stop the pipeline, no frame data will be generated
+    // Stop the pipeline
     pipe.stop();
 
     return 0;

@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['cameraparamlist_0',['CameraParamList',['../classob_1_1_camera_param_list.html',1,'ob']]],
-  ['colorframe_1',['ColorFrame',['../classob_1_1_color_frame.html',1,'ob']]],
-  ['compressionfilter_2',['CompressionFilter',['../classob_1_1_compression_filter.html',1,'ob']]],
-  ['config_3',['Config',['../classob_1_1_config.html',1,'ob']]],
-  ['context_4',['Context',['../classob_1_1_context.html',1,'ob']]]
+  ['baseline_5fcalibration_5fparam_0',['BASELINE_CALIBRATION_PARAM',['../struct_b_a_s_e_l_i_n_e___c_a_l_i_b_r_a_t_i_o_n___p_a_r_a_m.html',1,'']]]
 ];

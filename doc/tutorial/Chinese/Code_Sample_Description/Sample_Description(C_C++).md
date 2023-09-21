@@ -137,7 +137,7 @@ int main(int argc, char **argv) {
         printf("command: \n$ ./frameware_upgrade[.exe] firmwareFile.bin\n");
         return 0;
     }
-    
+
     // 接下来的业务代码
 
     return 0;
@@ -559,7 +559,7 @@ ob_delete_pipeline(pipe, &error);
 功能描述：本示例在OrbbecSDK1.5.5开始支持，仅支持Gemini2的设备。主要演示切换相机深度模式，先查询深度模式列表，然后选择对应的相机深度模式，调用接口切换
 
 首先获取设备
-```C
+```cpp
 //创建一个Context，与Pipeline不同，Context是底层API的入口，在开关流等常用操作上
 //使用低级会稍微复杂一些，但是底层API可以提供更多灵活的操作，如获取多个设备，读写
 //设备及相机的属性等
@@ -585,7 +585,7 @@ check_error(error);
 ```
 
 检查设备是否支持相机深度工作模式，当前只有Gemini2支持相机深度工作模式
-```C
+```cpp
 // 检查是否支持相机深度工作模式，目前（2022年12月5日）仅Gemini2双目摄像头支持深度工作模式
 if(!ob_device_is_property_supported(dev, OB_STRUCT_CURRENT_DEPTH_ALG_MODE, OB_PERMISSION_READ_WRITE, &error)) {
     printf("FAILED!!, Device not support depth work mode");
@@ -596,7 +596,7 @@ check_error(error);
 ```
 
 查询设备的当前深度工作模式
-```C
+```cpp
 // 查询当前的深度工作模式
 ob_depth_work_mode cur_work_mode = ob_device_get_current_depth_work_mode(dev, &error);
 check_error(error);
@@ -604,7 +604,7 @@ printf("Current depth work mode: %s\n", cur_work_mode.name);
 ```
 
 查询设备支持的相机深度模式列表
-```C
+```cpp
 // 获取列表长度
 uint32_t mode_count = ob_depth_work_mode_list_count(mode_list, &error);
 printf("Support depth work mode list count: %u\n", mode_count);
@@ -618,7 +618,7 @@ for(uint32_t i = 0; i < mode_count; i++) {
 ```
 
 切换相机深度模式
-```C
+```cpp
 // 切换到新的相机深度模式
 ob_device_switch_depth_work_mode_by_name(dev, mode.name, &error);
 check_error(error);
@@ -632,7 +632,7 @@ check_error(error);
 
 
 最后释放资源
-```C
+```cpp
 // 销毁mode_list
 ob_delete_depth_work_mode_list(mode_list, &error);
 check_error(error);
@@ -1650,7 +1650,7 @@ void StopStream( std::vector< std::shared_ptr< ob::Pipeline > > pipes) {
 功能描述：本示例在OrbbecSDK1.5.5开始支持，仅支持Gemini2的设备。本示例主要演示切换相机深度模式，先查询深度模式列表，然后选择对应的相机深度模式，调用接口切换
 
 首先获取设备
-```C
+```cpp
 //创建一个Context，与Pipeline不通，Context是底层API的入口，在开关流等常用操作上
 //使用低级会稍微复杂一些，但是底层API可以提供更多灵活的操作，如获取多个设备，读写
 //设备及相机的属性等
@@ -1670,7 +1670,7 @@ auto device = devList->getDevice(0);
 ```
 
 检查设备是否支持相机深度工作模式，当前只有Gemini2支持相机深度工作模式
-```C
+```cpp
 // 检查是否支持相机深度工作模式，目前（2022年12月5日）仅Gemini2双目摄像头支持深度工作模式
 if (!device->isPropertySupported(OB_STRUCT_CURRENT_DEPTH_ALG_MODE, OB_PERMISSION_READ_WRITE)) {
     pressKeyExit("Current device not support depth work mode!");
@@ -1679,13 +1679,13 @@ if (!device->isPropertySupported(OB_STRUCT_CURRENT_DEPTH_ALG_MODE, OB_PERMISSION
 ```
 
 查询设备的当前深度工作模式
-```C
+```cpp
 // 查询当前的相机深度模式
 auto curDepthMode = device->getCurrentDepthWorkMode();
 ```
 
 查询设备支持的相机深度模式列表
-```C
+```cpp
 // 获取相机深度模式列表
 auto depthModeList = device->getDepthWorkModeList();
 std::cout << "depthModeList size: " << depthModeList->count() << std::endl;
@@ -1700,7 +1700,7 @@ for(uint32_t i = 0; i < depthModeList->count(); i++) {
 ```
 
 切换相机深度模式
-```C
+```cpp
 // 切换到新的相机深度模式
 OBDepthMode depthMode = (*depthModeList)[index];
 device->switchDepthWorkMode(depthMode.name);
@@ -1825,13 +1825,13 @@ accelSensor->stop();
 3. 等待所有设备启动完毕，开始多机同步预览；
 
 构建OrbbecSDK的上下文
-```C
+```cpp
 OBContext context;
 ```
 
 #### 读取配置文件，配置设备
 获取设备列表
-```C
+```cpp
 // 查询已经接入设备的列表
 auto devList = context.queryDeviceList();
 
@@ -1843,7 +1843,7 @@ for(int i = 0; i < devCount; i++) {
 ```
 
 下发多机同步配置
-```C
+```cpp
 for(auto config: deviceConfigList) {
     auto findItr = std::find_if(configDevList.begin(), configDevList.end(), [config](std::shared_ptr<ob::Device> device) {
         auto serialNumber = device->getDeviceInfo()->serialNumber();
@@ -1870,7 +1870,7 @@ for(auto config: deviceConfigList) {
 ```
 
 重启设备
-```C
+```cpp
 // 重启设备
 for(auto device: configDevList) {
     rebootingDevInfoList.push_back(device->getDeviceInfo());
@@ -1883,16 +1883,52 @@ configDevList.clear();
 
 
 #### 多机同步开流
+多机同步开流示例演示了多个设备通过信号连接器连接然后同步触发出图的功能。
+
+主要关键步骤：
+1. 设置多机同步配置
+2. 重启设备
+3. 等待设备重启完毕，枚举设备并打开color和depth相机，并处理数据
+备注：以下说明仅列关键代码，具体请参考Example\cpp\Sample-MultiDeviceSync\MultiDeviceSync.cpp
+
+
+设置多机同步配置信息
+```cpp
+auto curConfig = device->getMultiDeviceSyncConfig();
+
+// Update the configuration items of the configuration file, and keep the original configuration for other items
+curConfig.syncMode                   = config->syncConfig.syncMode;
+curConfig.depthDelayUs               = config->syncConfig.depthDelayUs;
+curConfig.colorDelayUs               = config->syncConfig.colorDelayUs;
+curConfig.trigger2ImageDelayUs       = config->syncConfig.trigger2ImageDelayUs;
+curConfig.triggerSignalOutputEnable  = config->syncConfig.triggerSignalOutputEnable;
+curConfig.triggerSignalOutputDelayUs = config->syncConfig.triggerSignalOutputDelayUs;
+
+device->setMultiDeviceSyncConfig(curConfig);
+```
+
+重启所有设备
+```cpp
+std::cout << "Device sn[" << std::string(device->getDeviceInfo()->serialNumber()) << "] is configured, rebooting..." << std::endl;
+try {
+    device->reboot();
+}
+catch(ob::Error &e) {
+    std::cout << "Device sn[" << std::string(device->getDeviceInfo()->serialNumber()) << "] is not configured, skipping...";
+    // The early firmware versions of some models of devices will restart immediately after receiving the restart command, causing the SDK to fail to
+    // receive a response to the command request and throw an exception
+}
+```
+
+等待设备重启完毕，不同产品等待的时间不同
+
 
 获取设备列表
-```C
-// 公共对象，用于存储已经开流的pipe对象
-std::vector<std::shared_ptr<ob::Pipeline>> pipeList;
-
-// 查询已经接入设备的列表
+```cpp
+// Query the list of connected devices
 auto devList = context.queryDeviceList();
 
-// 获取接入设备的数量
+// Get the number of connected devices
 int devCount = devList->deviceCount();
 for(int i = 0; i < devCount; i++) {
     streamDevList.push_back(devList->getDevice(i));
@@ -1905,18 +1941,17 @@ if(streamDevList.empty()) {
 ```
 
 从设备读取多机同步配置，区分主机、从机
-```C
-// 遍历设备列表并创建设备
+```cpp
+// traverse the device list and create the device
 std::vector<std::shared_ptr<ob::Device>> primary_devices;
-std::vector<std::shared_ptr<ob::Device>> common_devices;
+std::vector<std::shared_ptr<ob::Device>> secondary_devices;
 for(auto dev: streamDevList) {
-    auto config = dev->getSyncConfig();
-    if(config.syncMode == OB_SYNC_MODE_PRIMARY || config.syncMode == OB_SYNC_MODE_PRIMARY_MCU_TRIGGER || config.syncMode == OB_SYNC_MODE_PRIMARY_IR_TRIGGER
-        || config.syncMode == OB_SYNC_MODE_PRIMARY_SOFT_TRIGGER) {
+    auto config = dev->getMultiDeviceSyncConfig();
+    if(config.syncMode == OB_MULTI_DEVICE_SYNC_MODE_PRIMARY) {
         primary_devices.push_back(dev);
     }
     else {
-        common_devices.push_back(dev);
+        secondary_devices.push_back(dev);
     }
 }
 
@@ -1926,114 +1961,93 @@ if(primary_devices.empty()) {
 ```
 
 设置时间同步频率
-```C
+```cpp
 // 启动多设备时间同步功能
-context.enableMultiDeviceSync(60000);  // 每一分钟更新同步一次
+context.enableDeviceClockSync(3600000);  // 每一小时更新同步一次
+```
+
+pipeline类PipelineHolder
+因为一个pipeline关联一个sensorType，所以用PipelineHolder关联device和sensor信息，方便处理frame数据。
+```cpp
+typedef struct PipelineHolder_t {
+    std::shared_ptr<ob::Pipeline> pipeline;
+    OBSensorType                  sensorType;
+    int                           deviceIndex;
+    std::string                   deviceSN;
+} PipelineHolder;
+
+std::shared_ptr<PipelineHolder> createPipelineHolder(std::shared_ptr<ob::Device> device, OBSensorType sensorType, int deviceIndex) {
+    PipelineHolder *pHolder = new PipelineHolder();
+    pHolder->pipeline       = std::shared_ptr<ob::Pipeline>(new ob::Pipeline(device));
+    pHolder->sensorType     = sensorType;
+    pHolder->deviceIndex    = deviceIndex;
+    pHolder->deviceSN       = std::string(device->getDeviceInfo()->serialNumber());
+
+    return std::shared_ptr<PipelineHolder>(pHolder);
+}
 ```
 
 打开设备数据流
-```C
-// 先打开主模式设备的流，后打开其他模式设备的流（非所有型号设备都有此顺序要求，具体可查看相关型号设备说明文档）
-startStream(primary_devices, 0);
-std::this_thread::sleep_for(std::chrono::milliseconds(500));
-startStream(common_devices, primary_devices.size());
-```
+```cpp
+std::cout << "Secondary devices start..." << std::endl;
+int deviceIndex = 0;  // Sencondary device display first
+for(auto itr = secondary_devices.begin(); itr != secondary_devices.end(); itr++) {
+    auto depthHolder = createPipelineHolder(*itr, OB_SENSOR_DEPTH, deviceIndex);
+    pipelineHolderList.push_back(depthHolder);
+    startStream(depthHolder);
 
-开关流函数实现
-```C
-void startStream(std::vector<std::shared_ptr<ob::Device>> devices, int deviceIndexBase) {
-    for(auto &&dev: devices) {
-        // 获取相机列表
-        auto pipe = std::shared_ptr<ob::Pipeline>(new ob::Pipeline(dev));
-        auto config = std::shared_ptr<ob::Config>(new ob::Config());
-        try {
-            // 获取Color sensor的配置列表，并开启播放配置
-            auto profileList = pipe->getStreamProfileList(OB_SENSOR_COLOR);
-            auto videoProfile = profileList->getProfile(0)->as<ob::VideoStreamProfile>();
-            config->enableStream(videoProfile);
-        } catch (ob::Error &e) {
-            std::error << "Config Color sensor StreamProfile failed" << std::endl;
-        }
-        try {
-            // 获取Depth sensor的配置列表，并开启播放配置
-            auto profileList = pipe->getStreamProfileList(OB_SENSOR_DEPTH);
-            auto videoProfile = profileList->getProfile(0)->as<ob::VideoStreamProfile>();
-            config->enableStream(videoProfile);
-        } catch (ob::Error &e) {
-            std::error << "Config Depth sensor StreamProfile failed" << std::endl;
-        }
-        try {
-            // 使用配置进行开流, 并处理帧集合回调FrameSetCallback
-            pipe->start(config, [deviceIndexBase](std::shared_ptr<ob::FrameSet> frameSet) {
-                // 处理color帧
-                auto colorProfile = frameSet->colorFrame();
-                if (colorProfile) {
-                    handleColorStream(deviceIndexBase, colorProfile);
-                }
+    auto colorHolder = createPipelineHolder(*itr, OB_SENSOR_COLOR, deviceIndex);
+    pipelineHolderList.push_back(colorHolder);
+    startStream(colorHolder);
 
-                // 处理depth帧
-                auto depthProfile = frameSet->colorFrame();
-                if (depthProfile) {
-                    handleDepthStream(deviceIndexBase, depthProfile);
-                }
-            });
-
-            // 关流时需要
-            pipeList.push_back(pipe);
-        } catch (ob::Error &e) {
-            std::error << "Start pipeline failed" << std::endl;
-        }
-
-
-        // 下一个设备
-        deviceIndexBase++;
-    }
+    deviceIndex++;
 }
 
-void stopStream(std::vector<std::shared_ptr<ob::Device>> devices) {
-    for(auto &&dev: devices) {
-        for (aut it = pipeList.begin(); it != pipeList.end();) {
-            // 根据ob::Device匹配目标pipeline并关流
-            if (dev == (*it)->getDevice()) {
-                // 使用ob::Pipeline#stop停流
-                (*it)->stop();
+// Delay and wait for 5s to ensure that the initialization of the slave device is completed
+std::this_thread::sleep_for(std::chrono::milliseconds(5000));
 
-                // remove inactive pipeline
-                it = pipeList.erase(it);
-            } else {
-                // next loop
-                it++;
-            }
-        }
-    }
+std::cout << "Primary device start..." << std::endl;
+deviceIndex = secondary_devices.size();  // Primary device display after primary devices.
+for(auto itr = primary_devices.begin(); itr != primary_devices.end(); itr++) {
+    auto depthHolder = createPipelineHolder(*itr, OB_SENSOR_DEPTH, deviceIndex);
+    startStream(depthHolder);
+    pipelineHolderList.push_back(depthHolder);
+
+    auto colorHolder = createPipelineHolder(*itr, OB_SENSOR_COLOR, deviceIndex);
+    startStream(colorHolder);
+    pipelineHolderList.push_back(colorHolder);
+
+    deviceIndex++;
 }
 ```
 
 处理开关流的函数实现
-```C
+```cpp
 void handleColorStream(int devIndex, std::shared_ptr<ob::Frame> frame) {
-    std::lock_guard<std::mutex> lock(frameMutex);
     std::cout << "Device#" << devIndex << ", color frame index=" << frame->index() << ", timestamp=" << frame->timeStamp()
               << ", system timestamp=" << frame->systemTimeStamp() << std::endl;
 
+    std::lock_guard<std::mutex> lock(frameMutex);
     colorFrames[devIndex] = frame;
 }
 
 void handleDepthStream(int devIndex, std::shared_ptr<ob::Frame> frame) {
-    std::lock_guard<std::mutex> lock(frameMutex);
     std::cout << "Device#" << devIndex << ", depth frame index=" << frame->index() << ", timestamp=" << frame->timeStamp()
               << ", system timestamp=" << frame->systemTimeStamp() << std::endl;
 
+    std::lock_guard<std::mutex> lock(frameMutex);
     depthFrames[devIndex] = frame;
 }
 ```
 在这里我们就可以根据colorFrames和depthFrames处理多台设备输出的数据。
 
 关闭设备数据流
-```C
-// 关闭数据流
-stopStream(primary_devices);
-stopStream(common_devices);
+```cpp
+// close data stream
+for(auto itr = pipelineHolderList.begin(); itr != pipelineHolderList.end(); itr++) {
+    stopStream(*itr);
+}
+pipelineHolderList.clear();
 ```
 
 

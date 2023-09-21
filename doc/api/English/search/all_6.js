@@ -40,12 +40,13 @@ var searchData=
   ['framecallback_37',['FrameCallback',['../namespaceob.html#a46d3e40b30648ef9c30cc8be177cedda',1,'ob']]],
   ['framecount_38',['frameCount',['../classob_1_1_frame_set.html#ab492b8616d7a13fa17c4b53b43ad3374',1,'ob::FrameSet']]],
   ['framehelper_39',['FrameHelper',['../classob_1_1_frame.html#aed198f6baa08dbce96c148a0a65540c3',1,'ob::Frame::FrameHelper'],['../classob_1_1_frame_helper.html',1,'ob::FrameHelper']]],
-  ['frameset_40',['FrameSet',['../classob_1_1_frame_set.html#ade0d0e0b738e298c8990adcdbcf4ca60',1,'ob::FrameSet::FrameSet(std::unique_ptr&lt; FrameImpl &gt; impl)'],['../classob_1_1_frame_set.html#a98ad7aba82289d48d2846b20fc573cba',1,'ob::FrameSet::FrameSet(Frame &amp;frame)'],['../classob_1_1_frame_set.html',1,'ob::FrameSet']]],
+  ['frameset_40',['FrameSet',['../classob_1_1_frame_set.html#a98ad7aba82289d48d2846b20fc573cba',1,'ob::FrameSet::FrameSet(Frame &amp;frame)'],['../classob_1_1_frame_set.html#ade0d0e0b738e298c8990adcdbcf4ca60',1,'ob::FrameSet::FrameSet(std::unique_ptr&lt; FrameImpl &gt; impl)'],['../classob_1_1_frame_set.html',1,'ob::FrameSet']]],
   ['framesetcallback_41',['FrameSetCallback',['../namespaceob.html#a079312e9113ca7d35fd7ccb68fb7c7fa',1,'ob']]],
-  ['freeidlememory_42',['freeIdleMemory',['../classob_1_1_context.html#aafe9d3abd6873ae6ab7c82cf3a0c597b',1,'ob::Context']]],
-  ['fulldatasize_43',['fullDataSize',['../struct_o_b_data_chunk.html#ac8d21406d4aa4977098e38ec76b7d547',1,'OBDataChunk']]],
-  ['fullscalerange_44',['fullScaleRange',['../classob_1_1_gyro_stream_profile.html#afafa054fa630ae00dc24fa5138049371',1,'ob::GyroStreamProfile::fullScaleRange()'],['../classob_1_1_accel_stream_profile.html#ae27aaeccc57aa48d3849f690157d278e',1,'ob::AccelStreamProfile::fullScaleRange()']]],
-  ['function_45',['function',['../structob__error.html#a121eb9726f88325d2fd4e3476821f147',1,'ob_error']]],
-  ['fx_46',['fx',['../struct_o_b_camera_intrinsic.html#a28e78b645f05ca5114b4f0c3565d8449',1,'OBCameraIntrinsic']]],
-  ['fy_47',['fy',['../struct_o_b_camera_intrinsic.html#af3311d00d3b4c8c0ab9955bb7c884407',1,'OBCameraIntrinsic']]]
+  ['framespertriggerfortriggeringmode_42',['framesPerTriggerForTriggeringMode',['../structob__multi__device__sync__config.html#ac99992ebe5e96224827e3ce150512329',1,'ob_multi_device_sync_config']]],
+  ['freeidlememory_43',['freeIdleMemory',['../classob_1_1_context.html#aafe9d3abd6873ae6ab7c82cf3a0c597b',1,'ob::Context']]],
+  ['fulldatasize_44',['fullDataSize',['../struct_o_b_data_chunk.html#ac8d21406d4aa4977098e38ec76b7d547',1,'OBDataChunk']]],
+  ['fullscalerange_45',['fullScaleRange',['../classob_1_1_gyro_stream_profile.html#afafa054fa630ae00dc24fa5138049371',1,'ob::GyroStreamProfile::fullScaleRange()'],['../classob_1_1_accel_stream_profile.html#ae27aaeccc57aa48d3849f690157d278e',1,'ob::AccelStreamProfile::fullScaleRange()']]],
+  ['function_46',['function',['../structob__error.html#a121eb9726f88325d2fd4e3476821f147',1,'ob_error']]],
+  ['fx_47',['fx',['../struct_o_b_camera_intrinsic.html#a28e78b645f05ca5114b4f0c3565d8449',1,'OBCameraIntrinsic']]],
+  ['fy_48',['fy',['../struct_o_b_camera_intrinsic.html#af3311d00d3b4c8c0ab9955bb7c884407',1,'OBCameraIntrinsic']]]
 ];

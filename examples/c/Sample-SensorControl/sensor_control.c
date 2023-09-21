@@ -14,7 +14,8 @@ ob_error *g_error = NULL;
 
 ob_device  *select_device(ob_device_list *device_list);
 void        get_property_list(ob_device *device, ob_property_item **property_list, int *size);
-void        printf_property_list(ob_device *device);
+bool        is_primary_type_property(ob_property_item property_item);
+void        printf_property_list(ob_device *device, ob_property_item *property_list, int property_list_size);
 void        set_property_value(ob_device *device, ob_property_item property_item, const char *value);
 void        get_property_value(ob_device *device, ob_property_item property_item);
 void        check_error();
@@ -78,7 +79,10 @@ int main(int argc, char **argv) {
             break;
         }
         printf("Input \"?\" to get all properties.\n");
-        int isSelectProperty = 1;
+        const int         property_list_room = 100;
+        int               property_list_size = 0;
+        ob_property_item *property_list      = (ob_property_item *)malloc(sizeof(ob_property_item) * property_list_room);
+        int               isSelectProperty   = 1;
         while(isSelectProperty) {
             char str[100] = { 0 };
             // fgets(str,100, stdin);
@@ -129,10 +133,7 @@ int main(int argc, char **argv) {
                     continue;
                 }
 
-                int               size          = 0;
-                ob_property_item *property_list = (ob_property_item *)malloc(sizeof(ob_property_item) * 100);
-                get_property_list(device, &property_list, &size);
-                if(selectId >= size) {
+                if(selectId >= property_list_size) {
                     printf("Your selection is out of range, please reselect.\n");
                     continue;
                 }
@@ -148,9 +149,19 @@ int main(int argc, char **argv) {
                 }
             }
             else {
-                printf_property_list(device);
+                if(property_list_size <= 0) {
+                    memset(property_list, 0, sizeof(ob_property_item) * property_list_room);
+                    get_property_list(device, &property_list, &property_list_size);
+                }
+                printf_property_list(device, property_list, property_list_size);
                 printf("Please select property.(Property control usage: [property number] [set/get] [property value])\n");
             }
+        }
+
+        // free property list resource
+        if(NULL != property_list) {
+            property_list      = NULL;
+            property_list_size = 0;
         }
 
         // destroy device
@@ -206,44 +217,39 @@ ob_device *select_device(ob_device_list *device_list) {
 }
 
 // Print a list of supported properties
-void printf_property_list(ob_device *device) {
-    uint32_t size = ob_device_get_supported_property_count(device, &g_error);
-    check_error(g_error);
-    if(size == 0) {
+void printf_property_list(ob_device *device, ob_property_item *property_list, int property_list_size) {
+    if(property_list_size <= 0) {
         printf("No supported property!\n");
+        return;
     }
+
     printf("\n------------------------------------------------------------------------\n");
-    int i = 0, index = 0;
-    for(i = 0; i < size; i++) {
-        ob_property_item property_item = ob_device_get_supported_property(device, i, &g_error);
-        check_error(g_error);
-        if(property_item.type != OB_STRUCT_PROPERTY && (property_item.permission & OB_PERMISSION_READ)) {
-            char str[100] = "";
+    for(int i = 0; i < property_list_size; i++) {
+        ob_property_item property_item = *(property_list + i);
+        char             str[100]      = "";
 
-            ob_int_property_range   int_range;
-            ob_float_property_range float_range;
-            ob_bool_property_range  bool_range;
-            switch(property_item.type) {
-            case OB_BOOL_PROPERTY:
-                sprintf(str, "Bool value(min:0, max:1, step:1)");
-                break;
-            case OB_INT_PROPERTY:
-                int_range = ob_device_get_int_property_range(device, property_item.id, &g_error);
-                check_control_property_error(g_error);
-                sprintf(str, "Int value(min:%d, max:%d, step:%d,)", int_range.min, int_range.max, int_range.step);
-                break;
-            case OB_FLOAT_PROPERTY:
-                float_range = ob_device_get_float_property_range(device, property_item.id, &g_error);
-                check_control_property_error(g_error);
-                sprintf(str, "Float value(min:%f, max:%f, step:%f,)", float_range.min, float_range.max, float_range.step);
-                break;
-            default:
-                break;
-            }
-
-            printf("%d: %s, permission=%s, range=%s\n", index, property_item.name, permissionTypeToString(property_item.permission), str);
-            index++;
+        ob_int_property_range   int_range;
+        ob_float_property_range float_range;
+        ob_bool_property_range  bool_range;
+        switch(property_item.type) {
+        case OB_BOOL_PROPERTY:
+            sprintf(str, "Bool value(min:0, max:1, step:1)");
+            break;
+        case OB_INT_PROPERTY:
+            int_range = ob_device_get_int_property_range(device, property_item.id, &g_error);
+            check_control_property_error(g_error);
+            sprintf(str, "Int value(min:%d, max:%d, step:%d,)", int_range.min, int_range.max, int_range.step);
+            break;
+        case OB_FLOAT_PROPERTY:
+            float_range = ob_device_get_float_property_range(device, property_item.id, &g_error);
+            check_control_property_error(g_error);
+            sprintf(str, "Float value(min:%f, max:%f, step:%f,)", float_range.min, float_range.max, float_range.step);
+            break;
+        default:
+            break;
         }
+
+        printf("%d: %s, permission=%s, range=%s\n", i, property_item.name, permissionTypeToString(property_item.permission), str);
     }
     printf("\n------------------------------------------------------------------------\n");
 }
@@ -257,12 +263,16 @@ void get_property_list(ob_device *device, ob_property_item **property_list, int 
     for(i = 0; i < propertySize; i++) {
         ob_property_item property_item = ob_device_get_supported_property(device, i, &g_error);
         check_error(g_error);
-        if(property_item.type != OB_STRUCT_PROPERTY && property_item.permission != OB_PERMISSION_DENY) {
+        if(is_primary_type_property(property_item) && property_item.permission != OB_PERMISSION_DENY) {
             (*property_list)[index] = property_item;
             index++;
         }
     }
     (*size) = index;
+}
+
+bool is_primary_type_property(ob_property_item property_item) {
+    return property_item.type == OB_INT_PROPERTY || property_item.type == OB_FLOAT_PROPERTY || property_item.type == OB_BOOL_PROPERTY;
 }
 
 // set property value

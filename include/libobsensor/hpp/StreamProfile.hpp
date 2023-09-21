@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file StreamProfile.hpp
  * @brief The stream profile related type is used to get information such as the width, height, frame rate, and format of the stream.
  */

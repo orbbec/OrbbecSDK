@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -133,8 +133,11 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:ad4f59acb5ed8ed7db43535513fb9bcf2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_b_camera_param.html">OBCameraParam</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#ad4f59acb5ed8ed7db43535513fb9bcf2">getCameraParam</a> ()</td></tr>
 <tr class="memdesc:ad4f59acb5ed8ed7db43535513fb9bcf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取相机参数  <br /></td></tr>
 <tr class="separator:ad4f59acb5ed8ed7db43535513fb9bcf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8049e3e75826e4873af2010058ad363a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_b_camera_param.html">OBCameraParam</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#a8049e3e75826e4873af2010058ad363a">getCameraParamWithProfile</a> (uint32_t colorWidth, uint32_t colorHeight, uint32_t depthWidth, uint32_t depthHeight)</td></tr>
+<tr class="memdesc:a8049e3e75826e4873af2010058ad363a"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回与输入的彩色传感器分辨率对应的支持D2C的深度传感器分辨率列表  <br /></td></tr>
+<tr class="separator:a8049e3e75826e4873af2010058ad363a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac25d95d510c864b9d1ee7a93e9f31c74"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1_stream_profile_list.html">StreamProfileList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#ac25d95d510c864b9d1ee7a93e9f31c74">getD2CDepthProfileList</a> (std::shared_ptr&lt; <a class="el" href="classob_1_1_stream_profile.html">StreamProfile</a> &gt; colorProfile, <a class="el" href="_ob_types_8h.html#ade914070120de80d4338ee74e73dc9d5">OBAlignMode</a> alignMode)</td></tr>
-<tr class="memdesc:ac25d95d510c864b9d1ee7a93e9f31c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回与输入的彩色传感器分辨率对应的支持D2C的深度传感器分辨率列表  <br /></td></tr>
+<tr class="memdesc:ac25d95d510c864b9d1ee7a93e9f31c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回与输入颜色传感器分辨率相对应的启用D2C的深度传感器分辨率的列表  <br /></td></tr>
 <tr class="separator:ac25d95d510c864b9d1ee7a93e9f31c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f7a9208d6a1035302993c9683cba4f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_b_rect.html">OBRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#a5f7a9208d6a1035302993c9683cba4f2">getD2CValidArea</a> (uint32_t minimumDistance, uint32_t maximumDistance=0)</td></tr>
 <tr class="memdesc:a5f7a9208d6a1035302993c9683cba4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取D2C后给定工作范围的有效区域 如果需要获取指定距离D2C后的ROI区域，将minimum_distance与maximum_distance设置成一样或者将maximum_distance设置成0  <br /></td></tr>
@@ -500,6 +503,56 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
+<a id="a8049e3e75826e4873af2010058ad363a" name="a8049e3e75826e4873af2010058ad363a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8049e3e75826e4873af2010058ad363a">&#9670;&#160;</a></span>getCameraParamWithProfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_o_b_camera_param.html">OBCameraParam</a> ob::Pipeline::getCameraParamWithProfile </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>colorWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>colorHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>depthWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>depthHeight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>返回与输入的彩色传感器分辨率对应的支持D2C的深度传感器分辨率列表 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">colorProfile</td><td>输入的彩色传感器分辨率 </td></tr>
+    <tr><td class="paramname">alignMode</td><td>输入的对齐模式</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;StreamProfileList&gt; 返回深度传感器分辨率列表 </dd></dl>
+
+</div>
+</div>
 <a id="ac25d95d510c864b9d1ee7a93e9f31c74" name="ac25d95d510c864b9d1ee7a93e9f31c74"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac25d95d510c864b9d1ee7a93e9f31c74">&#9670;&#160;</a></span>getD2CDepthProfileList()</h2>
 
@@ -526,15 +579,15 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>返回与输入的彩色传感器分辨率对应的支持D2C的深度传感器分辨率列表 </p>
+<p>返回与输入颜色传感器分辨率相对应的启用D2C的深度传感器分辨率的列表 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">colorProfile</td><td>输入的彩色传感器分辨率 </td></tr>
-    <tr><td class="paramname">alignMode</td><td>输入的对齐模式</td></tr>
+    <tr><td class="paramname">colorProfile</td><td>输入颜色传感器分辨率 </td></tr>
+    <tr><td class="paramname">alignMode</td><td>输入对齐模式 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;StreamProfileList&gt; 返回深度传感器分辨率列表 </dd></dl>
+<dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;StreamProfileList&gt; 深度传感器分辨率列表 </dd></dl>
 
 </div>
 </div>
@@ -653,7 +706,7 @@ Public 成员函数</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 八月 1日 星期二 19:05:54 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 九月 13日 星期三 18:10:30 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

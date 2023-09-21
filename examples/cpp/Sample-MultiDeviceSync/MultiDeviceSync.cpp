@@ -1,6 +1,6 @@
 /*
 Notes:
-on the Arm platform ,this sample requires users to compile with Opencv4.2 or above,otherwise, it cannot be rendered.
+on the Arm/Linux platform ,this sample requires users to compile with Opencv4.2 or above,otherwise, it cannot be rendered.
 */
 #include "window.hpp"
 
@@ -28,9 +28,8 @@ on the Arm platform ,this sample requires users to compile with Opencv4.2 or abo
 #define CONFIG_FILE "./MultiDeviceSyncConfig.json"
 
 typedef struct DeviceConfigInfo_t {
-    std::string        deviceSN;
-    OBDeviceSyncConfig syncConfig;
-    bool               triggleSignalOutEnable;
+    std::string             deviceSN;
+    OBMultiDeviceSyncConfig syncConfig;
 } DeviceConfigInfo;
 
 typedef struct PipelineHolderr_t {
@@ -60,13 +59,13 @@ std::vector<std::shared_ptr<ob::DeviceInfo>> rebootingDevInfoList;
 
 OBFrameType mapFrameType(OBSensorType sensorType);
 
-OBSyncMode  textToOBSyncMode(const char *text);
-std::string readFileContent(const char *filePath);
-bool        loadConfigFile();
-int         configMultiDeviceSync();
-int         testMultiDeviceSync();
-bool        checkDevicesWithDeviceConfigs(const std::vector<std::shared_ptr<ob::Device>> &deviceList);
-int         strcmp_nocase(const char *str0, const char *str1);
+OBMultiDeviceSyncMode textToOBSyncMode(const char *text);
+std::string           readFileContent(const char *filePath);
+bool                  loadConfigFile();
+int                   configMultiDeviceSync();
+int                   testMultiDeviceSync();
+bool                  checkDevicesWithDeviceConfigs(const std::vector<std::shared_ptr<ob::Device>> &deviceList);
+int                   strcmp_nocase(const char *str0, const char *str1);
 
 std::shared_ptr<PipelineHolder> createPipelineHolder(std::shared_ptr<ob::Device> device, OBSensorType sensorType, int deviceIndex);
 void                            startStream(std::shared_ptr<PipelineHolder> pipelineHolder);
@@ -145,22 +144,19 @@ int configMultiDeviceSync() try {
             return strcmp_nocase(serialNumber, config->deviceSN.c_str()) == 0;
         });
         if(findItr != configDevList.end()) {
-            auto device    = (*findItr);
-            auto curConfig = device->getSyncConfig();
+            auto device = (*findItr);
+
+            auto curConfig = device->getMultiDeviceSyncConfig();
 
             // Update the configuration items of the configuration file, and keep the original configuration for other items
-            curConfig.syncMode                    = config->syncConfig.syncMode;
-            curConfig.irTriggerSignalInDelay      = config->syncConfig.irTriggerSignalInDelay;
-            curConfig.rgbTriggerSignalInDelay     = config->syncConfig.rgbTriggerSignalInDelay;
-            curConfig.deviceTriggerSignalOutDelay = config->syncConfig.deviceTriggerSignalOutDelay;
-            curConfig.deviceId                    = config->syncConfig.deviceId;
+            curConfig.syncMode                   = config->syncConfig.syncMode;
+            curConfig.depthDelayUs               = config->syncConfig.depthDelayUs;
+            curConfig.colorDelayUs               = config->syncConfig.colorDelayUs;
+            curConfig.trigger2ImageDelayUs       = config->syncConfig.trigger2ImageDelayUs;
+            curConfig.triggerSignalOutputEnable  = config->syncConfig.triggerSignalOutputEnable;
+            curConfig.triggerSignalOutputDelayUs = config->syncConfig.triggerSignalOutputDelayUs;
 
-            device->setSyncConfig(curConfig);
-
-            // Gemini2 device need set the sync signal external trigger enable,  Star Configuration: false,  Daisy Chain Configuration: true
-            if(device->isPropertySupported(OB_PROP_SYNC_SIGNAL_TRIGGER_OUT_BOOL, OB_PERMISSION_READ_WRITE)) {
-                device->setBoolProperty(OB_PROP_SYNC_SIGNAL_TRIGGER_OUT_BOOL, config->triggleSignalOutEnable);
-            }
+            device->setMultiDeviceSyncConfig(curConfig);
         }
     }
 
@@ -254,9 +250,8 @@ int testMultiDeviceSync() try {
     std::vector<std::shared_ptr<ob::Device>> primary_devices;
     std::vector<std::shared_ptr<ob::Device>> secondary_devices;
     for(auto dev: streamDevList) {
-        auto config = dev->getSyncConfig();
-        if(config.syncMode == OB_SYNC_MODE_PRIMARY || config.syncMode == OB_SYNC_MODE_PRIMARY_MCU_TRIGGER || config.syncMode == OB_SYNC_MODE_PRIMARY_IR_TRIGGER
-           || config.syncMode == OB_SYNC_MODE_PRIMARY_SOFT_TRIGGER) {
+        auto config = dev->getMultiDeviceSyncConfig();
+        if(config.syncMode == OB_MULTI_DEVICE_SYNC_MODE_PRIMARY) {
             primary_devices.push_back(dev);
         }
         else {
@@ -269,7 +264,7 @@ int testMultiDeviceSync() try {
     }
 
     // Start the multi-device time synchronization function
-    context.enableMultiDeviceSync(60000);  // update and sync every minute
+    context.enableDeviceClockSync(3600000);  // update and sync every hour
 
     std::cout << "Secondary devices start..." << std::endl;
     int deviceIndex = 0;  // Sencondary device display first
@@ -311,7 +306,7 @@ int testMultiDeviceSync() try {
         auto key = app.waitKey();
         if(key == 'S' || key == 's') {
             std::cout << "syncDevicesTime..." << std::endl;
-            context.enableMultiDeviceSync(60000);  // Manual update synchronization
+            context.enableDeviceClockSync(3600000);  // Manual update synchronization
         }
 
         std::vector<std::shared_ptr<ob::Frame>> framesVec;
@@ -498,7 +493,7 @@ bool loadConfigFile() {
     cJSON_ArrayForEach(deviceElem, devicesElem) {
         devConfigInfo = std::make_shared<DeviceConfigInfo>();
         memset(&devConfigInfo->syncConfig, 0, sizeof(devConfigInfo->syncConfig));
-        devConfigInfo->syncConfig.syncMode = OB_SYNC_MODE_UNKNOWN;
+        devConfigInfo->syncConfig.syncMode = OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN;
 
         cJSON *snElem = cJSON_GetObjectItem(deviceElem, "sn");
         if(cJSON_IsString(snElem) && snElem->valuestring != nullptr) {
@@ -516,33 +511,33 @@ bool loadConfigFile() {
                 std::cout << "config[" << (deviceCount++) << "]: SN=" << std::string(devConfigInfo->deviceSN) << ", mode=" << strElem->valuestring << std::endl;
             }
 
-            numberElem = cJSON_GetObjectItemCaseSensitive(deviceConfigElem, "irTriggerSignalInDelay");
+            numberElem = cJSON_GetObjectItemCaseSensitive(deviceConfigElem, "depthDelayUs");
             if(cJSON_IsNumber(numberElem)) {
-                devConfigInfo->syncConfig.irTriggerSignalInDelay = numberElem->valueint;
+                devConfigInfo->syncConfig.depthDelayUs = numberElem->valueint;
             }
 
-            numberElem = cJSON_GetObjectItemCaseSensitive(deviceConfigElem, "rgbTriggerSignalInDelay");
+            numberElem = cJSON_GetObjectItemCaseSensitive(deviceConfigElem, "colorDelayUs");
             if(cJSON_IsNumber(numberElem)) {
-                devConfigInfo->syncConfig.rgbTriggerSignalInDelay = numberElem->valueint;
+                devConfigInfo->syncConfig.colorDelayUs = numberElem->valueint;
             }
 
-            numberElem = cJSON_GetObjectItemCaseSensitive(deviceConfigElem, "deviceTriggerSignalOutDelay");
+            numberElem = cJSON_GetObjectItemCaseSensitive(deviceConfigElem, "trigger2ImageDelayUs");
             if(cJSON_IsNumber(numberElem)) {
-                devConfigInfo->syncConfig.deviceTriggerSignalOutDelay = numberElem->valueint;
+                devConfigInfo->syncConfig.trigger2ImageDelayUs = numberElem->valueint;
             }
 
-            bElem = cJSON_GetObjectItemCaseSensitive(deviceConfigElem, "triggleSignalOutEnable");
+            numberElem = cJSON_GetObjectItemCaseSensitive(deviceConfigElem, "triggerSignalOutputDelayUs");
+            if(cJSON_IsNumber(numberElem)) {
+                devConfigInfo->syncConfig.triggerSignalOutputDelayUs = numberElem->valueint;
+            }
+
+            bElem = cJSON_GetObjectItemCaseSensitive(deviceConfigElem, "triggerSignalOutputEnable");
             if(cJSON_IsBool(bElem)) {
-                devConfigInfo->triggleSignalOutEnable = (bool)bElem->valueint;
-            }
-
-            numberElem = cJSON_GetObjectItemCaseSensitive(deviceConfigElem, "deviceId");
-            if(cJSON_IsNumber(numberElem)) {
-                devConfigInfo->syncConfig.deviceId = numberElem->valueint;
+                devConfigInfo->syncConfig.triggerSignalOutputEnable = (bool)bElem->valueint;
             }
         }
 
-        if(OB_SYNC_MODE_UNKNOWN != devConfigInfo->syncConfig.syncMode) {
+        if(OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN != devConfigInfo->syncConfig.syncMode) {
             deviceConfigList.push_back(devConfigInfo);
         }
         else {
@@ -556,33 +551,30 @@ bool loadConfigFile() {
     return true;
 }
 
-OBSyncMode textToOBSyncMode(const char *text) {
-    if(strcmp(text, "OB_SYNC_MODE_CLOSE") == 0) {
-        return OB_SYNC_MODE_CLOSE;
+OBMultiDeviceSyncMode textToOBSyncMode(const char *text) {
+    if(strcmp(text, "OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN") == 0) {
+        return OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN;
     }
-    else if(strcmp(text, "OB_SYNC_MODE_STANDALONE") == 0) {
-        return OB_SYNC_MODE_STANDALONE;
+    else if(strcmp(text, "OB_MULTI_DEVICE_SYNC_MODE_STANDALONE") == 0) {
+        return OB_MULTI_DEVICE_SYNC_MODE_STANDALONE;
     }
-    else if(strcmp(text, "OB_SYNC_MODE_PRIMARY") == 0) {
-        return OB_SYNC_MODE_PRIMARY;
+    else if(strcmp(text, "OB_MULTI_DEVICE_SYNC_MODE_PRIMARY") == 0) {
+        return OB_MULTI_DEVICE_SYNC_MODE_PRIMARY;
     }
-    else if(strcmp(text, "OB_SYNC_MODE_SECONDARY") == 0) {
-        return OB_SYNC_MODE_SECONDARY;
+    else if(strcmp(text, "OB_MULTI_DEVICE_SYNC_MODE_SECONDARY") == 0) {
+        return OB_MULTI_DEVICE_SYNC_MODE_SECONDARY;
     }
-    else if(strcmp(text, "OB_SYNC_MODE_PRIMARY_MCU_TRIGGER") == 0) {
-        return OB_SYNC_MODE_PRIMARY_MCU_TRIGGER;
+    else if(strcmp(text, "OB_MULTI_DEVICE_SYNC_MODE_SECONDARY_SYNCED") == 0) {
+        return OB_MULTI_DEVICE_SYNC_MODE_SECONDARY_SYNCED;
     }
-    else if(strcmp(text, "OB_SYNC_MODE_PRIMARY_IR_TRIGGER") == 0) {
-        return OB_SYNC_MODE_PRIMARY_IR_TRIGGER;
+    else if(strcmp(text, "OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING") == 0) {
+        return OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING;
     }
-    else if(strcmp(text, "OB_SYNC_MODE_PRIMARY_SOFT_TRIGGER") == 0) {
-        return OB_SYNC_MODE_PRIMARY_SOFT_TRIGGER;
-    }
-    else if(strcmp(text, "OB_SYNC_MODE_SECONDARY_SOFT_TRIGGER") == 0) {
-        return OB_SYNC_MODE_SECONDARY_SOFT_TRIGGER;
+    else if(strcmp(text, "OB_MULTI_DEVICE_SYNC_MODE_HARDWARE_TRIGGERING") == 0) {
+        return OB_MULTI_DEVICE_SYNC_MODE_HARDWARE_TRIGGERING;
     }
     else {
-        return OB_SYNC_MODE_UNKNOWN;
+        return OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN;
     }
 }
 

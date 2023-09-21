@@ -96,6 +96,7 @@ int main(int argc, char **argv) try {
     // configure the device before creating the filter)
     ob::PointCloudFilter pointCloud;
 
+    // get camera intrinsic and extrinsic parameters form pipeline and set to point cloud filter
     auto cameraParam = pipeline.getCameraParam();
     pointCloud.setCameraParam(cameraParam);
 
@@ -120,6 +121,10 @@ int main(int argc, char **argv) try {
                     // Wait for a frame of data, the timeout is 100ms
                     auto frameset = pipeline.waitForFrames(100);
                     if(frameset != nullptr && frameset->depthFrame() != nullptr && frameset->colorFrame() != nullptr) {
+                        // point position value multiply depth value scale to convert uint to millimeter (for some devices, the default depth value uint is not
+                        // millimeter)
+                        auto depthValueScale = frameset->depthFrame()->getValueScale();
+                        pointCloud.setPositionDataScaled(depthValueScale);
                         try {
                             // Generate a colored point cloud and save it
                             std::cout << "Save RGBD PointCloud ply file..." << std::endl;
@@ -145,6 +150,10 @@ int main(int argc, char **argv) try {
                     // Wait for up to 100ms for a frameset in blocking mode.
                     auto frameset = pipeline.waitForFrames(100);
                     if(frameset != nullptr && frameset->depthFrame() != nullptr) {
+                        // point position value multiply depth value scale to convert uint to millimeter (for some devices, the default depth value uint is not
+                        // millimeter)
+                        auto depthValueScale = frameset->depthFrame()->getValueScale();
+                        pointCloud.setPositionDataScaled(depthValueScale);
                         try {
                             // generate point cloud and save
                             std::cout << "Save Depth PointCloud to ply file..." << std::endl;

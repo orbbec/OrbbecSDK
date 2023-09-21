@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -111,6 +111,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afc0b773a0beaa5aa671c511497c86371"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device_list.html#afc0b773a0beaa5aa671c511497c86371">serialNumber</a> (uint32_t index)</td></tr>
 <tr class="memdesc:afc0b773a0beaa5aa671c511497c86371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the serial number of the device at the specified index.  <br /></td></tr>
 <tr class="separator:afc0b773a0beaa5aa671c511497c86371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ec53640c44e7ccd84050319442e707e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device_list.html#a9ec53640c44e7ccd84050319442e707e">connectionType</a> (uint32_t index)</td></tr>
+<tr class="memdesc:a9ec53640c44e7ccd84050319442e707e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device connection type.  <br /></td></tr>
+<tr class="separator:a9ec53640c44e7ccd84050319442e707e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc5ac8bf21281df1d92df2470c8b18d4"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device_list.html#acc5ac8bf21281df1d92df2470c8b18d4">ipAddress</a> (uint32_t index)</td></tr>
+<tr class="memdesc:acc5ac8bf21281df1d92df2470c8b18d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the ip address of the device at the specified index  <br /></td></tr>
+<tr class="separator:acc5ac8bf21281df1d92df2470c8b18d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99a005ed94df1df342bcb40d6265a4a3"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1_device.html">Device</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device_list.html#a99a005ed94df1df342bcb40d6265a4a3">getDevice</a> (uint32_t index)</td></tr>
 <tr class="memdesc:a99a005ed94df1df342bcb40d6265a4a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the device object at the specified index.  <br /></td></tr>
 <tr class="separator:a99a005ed94df1df342bcb40d6265a4a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,7 +130,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class representing a list of devices. </p>
 
-<p class="definition">Definition at line <a class="el" href="_device_8hpp_source.html#l00536">536</a> of file <a class="el" href="_device_8hpp_source.html">Device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_device_8hpp_source.html#l00657">657</a> of file <a class="el" href="_device_8hpp_source.html">Device.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a78325a6d57af6744915cb4dd75e295ab" name="a78325a6d57af6744915cb4dd75e295ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a78325a6d57af6744915cb4dd75e295ab">&#9670;&#160;</a></span>DeviceList()</h2>
@@ -325,6 +331,61 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a9ec53640c44e7ccd84050319442e707e" name="a9ec53640c44e7ccd84050319442e707e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ec53640c44e7ccd84050319442e707e">&#9670;&#160;</a></span>connectionType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * ob::DeviceList::connectionType </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get device connection type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>device index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>const char* returns connection type，currently supports："USB", "USB1.0", "USB1.1", "USB2.0", "USB2.1", "USB3.0", "USB3.1", "USB3.2", "Ethernet" </dd></dl>
+
+</div>
+</div>
+<a id="acc5ac8bf21281df1d92df2470c8b18d4" name="acc5ac8bf21281df1d92df2470c8b18d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc5ac8bf21281df1d92df2470c8b18d4">&#9670;&#160;</a></span>ipAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * ob::DeviceList::ipAddress </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get the ip address of the device at the specified index </p>
+<dl class="section attention"><dt>Attention</dt><dd>Only valid for network devices, otherwise it will return "0.0.0.0".</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>the index of the device </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>const char* the ip address of the device </dd></dl>
+
+</div>
+</div>
 <a id="a99a005ed94df1df342bcb40d6265a4a3" name="a99a005ed94df1df342bcb40d6265a4a3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a99a005ed94df1df342bcb40d6265a4a3">&#9670;&#160;</a></span>getDevice()</h2>
 
@@ -416,7 +477,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 1 2023 19:06:02 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Wed Sep 13 2023 18:10:31 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

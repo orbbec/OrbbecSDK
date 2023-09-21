@@ -67,12 +67,15 @@ int main(int argc, char **argv) try {
         depthProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(0))->as<ob::VideoStreamProfile>();
     }
 
-    // Configure the stream type opened by Pipeline
+    // Create a Config to configure which streams to enable for the Pipeline, here the depth stream will be enabled
+    // User can enable other type of stream, all streams that has been enabled will be recorded
     std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
     config->enableStream(depthProfile);
 
     // Start the pipeline with config
     pipe.start(config);
+
+    // Start record
     pipe.startRecord("./OrbbecPipeline.bag");
 
     // Create a window for rendering and set the resolution of the window

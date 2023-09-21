@@ -65,7 +65,7 @@ int main(int argc, char **args) {
     ob_pipeline_start_with_config(pipe, config, &error);
     check_error(error);
 
-    // Create a rendering display window
+    // Create a window for rendering, and set the resolution of the window
     uint32_t width = ob_video_stream_profile_width(depth_profile, &error);
     check_error(error);
     uint32_t height = ob_video_stream_profile_height(depth_profile, &error);
@@ -86,10 +86,32 @@ int main(int argc, char **args) {
         ob_frame *depth_frame = ob_frameset_depth_frame(frameset, &error);
         check_error(error);
         if(depth_frame != nullptr) {
-            // add frame to render, will auto delete frame when render finished
+            // for Y16 format depth frame, print the distance of the center pixel every 30 frames
+            uint32_t index = ob_frame_index(depth_frame, &error);
+            check_error(error);
+            ob_format format = ob_frame_format(depth_frame, &error);
+            check_error(error);
+            if(index % 30 == 0 && format == OB_FORMAT_Y16) {
+                uint32_t width = ob_video_frame_width(depth_frame, &error);
+                check_error(error);
+                uint32_t height = ob_video_frame_height(depth_frame, &error);
+                check_error(error);
+                float scale = ob_depth_frame_get_value_scale(depth_frame, &error);
+                check_error(error);
+                uint16_t *data = (uint16_t *)ob_frame_data(depth_frame, &error);
+                check_error(error);
+
+                // pixel value multiplied by scale is the actual distance value in millimeters
+                float center_distance = data[width * height / 2 + width / 2] * scale;
+
+                // attention: if the distance is 0, it means that the depth camera cannot detect the object（may be out of detection range）
+                printf("Facing an object %.2f mm away.\n", center_distance);
+            }
+
+            // add frame to render
+            // attention: the frame will be released inside the window，for user's code should release it by call ob_delete_frame()
             win->addToRender(depth_frame);
         }
-
         ob_delete_frame(frameset, &error);
         check_error(error);
     };

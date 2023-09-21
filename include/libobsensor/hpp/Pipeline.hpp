@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file Pipeline.hpp
  * @brief The SDK's advanced API type can quickly implement switching streaming and frame synchronization
  * operations.
@@ -131,6 +131,19 @@ public:
      * @return OBCameraParam The camera parameters
      */
     OBCameraParam getCameraParam();
+
+    /**
+     * @brief Get camera parameters by entering color and depth resolution
+     * @attention If D2C is enabled, it will return the camera parameters after D2C, if not, it will return to the default parameters
+     *
+     * @param colorWidth Width of color resolution
+     * @param colorHeight High of color resolution
+     * @param depthWidth Width of depth resolution
+     * @param depthHeight High of depth resolution
+     *
+     * @return  OBCameraParam returns camera parameters
+     */
+    OBCameraParam getCameraParamWithProfile(uint32_t colorWidth, uint32_t colorHeight, uint32_t depthWidth, uint32_t depthHeight);
 
     /**
      * @brief Return a list of D2C-enabled depth sensor resolutions corresponding to the input color sensor resolution

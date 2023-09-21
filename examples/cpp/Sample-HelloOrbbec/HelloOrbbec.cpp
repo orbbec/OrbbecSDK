@@ -62,6 +62,12 @@ int main(int argc, char **argv) try {
         case OB_SENSOR_IR:
             std::cout << "\tIR sensor" << std::endl;
             break;
+        case OB_SENSOR_IR_LEFT:
+            std::cout << "\tIR Left sensor" << std::endl;
+            break;
+        case OB_SENSOR_IR_RIGHT:
+            std::cout << "\tIR Right sensor" << std::endl;
+            break;
         case OB_SENSOR_GYRO:
             std::cout << "\tGyro sensor" << std::endl;
             break;

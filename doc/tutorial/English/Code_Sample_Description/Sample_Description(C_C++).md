@@ -122,7 +122,7 @@ int main(int argc, char **argv) {
         printf("command: \n$ ./frameware_upgrade[.exe] firmwareFile.bin\n");
         return 0;
     }
-    
+
     // Process more business code
 
     return 0;
@@ -225,7 +225,7 @@ void device_upgrade_callback(ob_upgrade_state state, const char *message, uint8_
         printf("Upgrade Firmware verify image\n");
     }
     else {
-        // Upgrade failed 
+        // Upgrade failed
         printf("Upgrade Firmware failed. state: %d, errMsg: %s, percent: %u \n", (int)state, message ? message : "", (uint32_t)percent);
     }
 }
@@ -1627,82 +1627,50 @@ accelSensor->stop();
 Resources will be automatically released after the program exits normally.
 
 ## MultiDeviceSync
-Function Description: Demonstrates how to set synchronization parameters, start devices stream and handle frames
+The multi-machine synchronization open flow example demonstrates the function of connecting multiple devices through signal connectors and then synchronously triggering the graph output.
 
 Steps for synchronizing multiple devices:
 1. Load the configuration file and configure the device;
 2. Reboot devices;
 3. Wait for all devices to reboot complete, start all devices's color and depth sensor to handle it frames;
 
-Create OBContext
+Set multi-device synchronization configuration information
 ```cpp
-OBContext context;
+auto curConfig = device->getMultiDeviceSyncConfig();
+
+// Update the configuration items of the configuration file, and keep the original configuration for other items
+curConfig.syncMode                   = config->syncConfig.syncMode;
+curConfig.depthDelayUs               = config->syncConfig.depthDelayUs;
+curConfig.colorDelayUs               = config->syncConfig.colorDelayUs;
+curConfig.trigger2ImageDelayUs       = config->syncConfig.trigger2ImageDelayUs;
+curConfig.triggerSignalOutputEnable  = config->syncConfig.triggerSignalOutputEnable;
+curConfig.triggerSignalOutputDelayUs = config->syncConfig.triggerSignalOutputDelayUs;
+
+device->setMultiDeviceSyncConfig(curConfig);
 ```
 
-#### Load the configuration file and configure the device;
-Get connected device list
+Reboot all devices
 ```cpp
-// Public object, used to store the pipe object that has been opened
-std::vector<std::shared_ptr<ob::Pipeline>> pipeList;
-
-// Get connected device list
-auto devList = context.queryDeviceList();
-
-// Get the number contain in devList
-int devCount = devList->deviceCount();
-for(int i = 0; i < devCount; i++) {
-    configDevList.push_back(devList->getDevice(i));
-}
-```
-
-Setting multiple device config to each device.
-```C
-for(auto config: deviceConfigList) {
-    auto findItr = std::find_if(configDevList.begin(), configDevList.end(), [config](std::shared_ptr<ob::Device> device) {
-        auto serialNumber = device->getDeviceInfo()->serialNumber();
-        auto cmpSize      = (std::min)(strlen(serialNumber), config->deviceSN.size());
-        return strncmp(serialNumber, config->deviceSN.c_str(), cmpSize) == 0;
-    });
-    if(findItr != configDevList.end()) {
-        auto curConfig = (*findItr)->getSyncConfig();
-
-        // Update the configuration items in the configuration file and retain the original configurations for other items
-        curConfig.syncMode                    = config->syncConfig.syncMode;
-        curConfig.irTriggerSignalInDelay      = config->syncConfig.irTriggerSignalInDelay;
-        curConfig.rgbTriggerSignalInDelay     = config->syncConfig.rgbTriggerSignalInDelay;
-        curConfig.deviceTriggerSignalOutDelay = config->syncConfig.deviceTriggerSignalOutDelay;
-        curConfig.deviceId                    = config->syncConfig.deviceId;
-
-        (*findItr)->setSyncConfig(curConfig);
-    }
-    else {
-        std::cerr << "Device sn[" << config->deviceSN << "] is not connected. Set sync config failed" << std::endl;
-        notMatchCount++;
-    }
-}
-```
-
-Reboot devices
-```C
-// Reboot devices
-for(auto device: configDevList) {
-    rebootingDevInfoList.push_back(device->getDeviceInfo());
+std::cout << "Device sn[" << std::string(device->getDeviceInfo()->serialNumber()) << "] is configured, rebooting..." << std::endl;
+try {
     device->reboot();
 }
-configDevList.clear();
+catch(ob::Error &e) {
+    std::cout << "Device sn[" << std::string(device->getDeviceInfo()->serialNumber()) << "] is not configured, skipping...";
+    // The early firmware versions of some models of devices will restart immediately after receiving the restart command, causing the SDK to fail to
+    // receive a response to the command request and throw an exception
+}
 ```
 
 Wait for all devices to restart, and then start stream on multiple devices.
 
 
-#### Start stream on connected devices
-
-Get connected devices
-```C
-// Get connected device list
+Get device list
+```cpp
+// Query the list of connected devices
 auto devList = context.queryDeviceList();
 
-// Get the number contain in devList
+// Get the number of connected devices
 int devCount = devList->deviceCount();
 for(int i = 0; i < devCount; i++) {
     streamDevList.push_back(devList->getDevice(i));
@@ -1714,19 +1682,18 @@ if(streamDevList.empty()) {
 }
 ```
 
-Read the multi-device synchronization configuration from the device, Distinguish between host and slave
-```C
-// Iterate through the list of devices and create devices
+Read the multi-device synchronization configuration from the device, Distinguish between Primary and Secondary 
+```cpp
+// traverse the device list and create the device
 std::vector<std::shared_ptr<ob::Device>> primary_devices;
-std::vector<std::shared_ptr<ob::Device>> common_devices;
+std::vector<std::shared_ptr<ob::Device>> secondary_devices;
 for(auto dev: streamDevList) {
-    auto config = dev->getSyncConfig();
-    if(config.syncMode == OB_SYNC_MODE_PRIMARY || config.syncMode == OB_SYNC_MODE_PRIMARY_MCU_TRIGGER || config.syncMode == OB_SYNC_MODE_PRIMARY_IR_TRIGGER
-        || config.syncMode == OB_SYNC_MODE_PRIMARY_SOFT_TRIGGER) {
+    auto config = dev->getMultiDeviceSyncConfig();
+    if(config.syncMode == OB_MULTI_DEVICE_SYNC_MODE_PRIMARY) {
         primary_devices.push_back(dev);
     }
     else {
-        common_devices.push_back(dev);
+        secondary_devices.push_back(dev);
     }
 }
 
@@ -1738,112 +1705,91 @@ if(primary_devices.empty()) {
 Set the time synchronization frequency
 ```C
 // Enable time synchronization among multiple devices
-context.enableMultiDeviceSync(60000);  // Updates are synchronized every minute
+context.enableDeviceClockSync(3600000);  // Updates are synchronized every hour 
+```
+
+The PipelineHolder
+Because a pipeline is associated with a sensorType, PipelineHolder is used to associate device and sensor information to facilitate processing of frame data.
+```cpp
+typedef struct PipelineHolder_t {
+    std::shared_ptr<ob::Pipeline> pipeline;
+    OBSensorType                  sensorType;
+    int                           deviceIndex;
+    std::string                   deviceSN;
+} PipelineHolder;
+
+std::shared_ptr<PipelineHolder> createPipelineHolder(std::shared_ptr<ob::Device> device, OBSensorType sensorType, int deviceIndex) {
+    PipelineHolder *pHolder = new PipelineHolder();
+    pHolder->pipeline       = std::shared_ptr<ob::Pipeline>(new ob::Pipeline(device));
+    pHolder->sensorType     = sensorType;
+    pHolder->deviceIndex    = deviceIndex;
+    pHolder->deviceSN       = std::string(device->getDeviceInfo()->serialNumber());
+
+    return std::shared_ptr<PipelineHolder>(pHolder);
+}
 ```
 
 Open the device data stream of color sensor and depth sensor
-```C
-// Open the stream of the main mode device first, and then open the stream of other mode devices. (This sequence is required for devices of other models. For details, please refer to the related device documentation.)
-startStream(primary_devices, 0);
-std::this_thread::sleep_for(std::chrono::milliseconds(500));
-startStream(common_devices, primary_devices.size());
-```
-
-Implementation of start stream.
 ```cpp
-void startStream(std::vector<std::shared_ptr<ob::Device>> devices, int deviceIndexBase) {
-    for(auto &&dev: devices) {
-        // Obtain device
-        auto pipe = std::shared_ptr<ob::Pipeline>(new ob::Pipeline(dev));
-        auto config = std::shared_ptr<ob::Config>(new ob::Config());
-        try {
-            // Obtain the configuration list of the Color sensor and enable the playback configuration
-            auto profileList = pipe->getStreamProfileList(OB_SENSOR_COLOR);
-            auto videoProfile = profileList->getProfile(0)->as<ob::VideoStreamProfile>();
-            config->enableStream(videoProfile);
-        } catch (ob::Error &e) {
-            std::error << "Config Color sensor StreamProfile failed" << std::endl;
-        }
-        try {
-            // Obtain the configuration list of the Depth sensor and enable the playback configuration
-            auto profileList = pipe->getStreamProfileList(OB_SENSOR_DEPTH);
-            auto videoProfile = profileList->getProfile(0)->as<ob::VideoStreamProfile>();
-            config->enableStream(videoProfile);
-        } catch (ob::Error &e) {
-            std::error << "Config Depth sensor StreamProfile failed" << std::endl;
-        }
-        try {
-            // Obtain the configuration list of the IR sensor and enable the playback configuration
-            pipe->start(config, [deviceIndexBase](std::shared_ptr<ob::FrameSet> frameSet) {
-                // Process Color frame
-                auto colorProfile = frameSet->colorFrame();
-                if (colorProfile) {
-                    handleColorStream(deviceIndexBase, colorProfile);
-                }
+std::cout << "Secondary devices start..." << std::endl;
+int deviceIndex = 0;  // Sencondary device display first
+for(auto itr = secondary_devices.begin(); itr != secondary_devices.end(); itr++) {
+    auto depthHolder = createPipelineHolder(*itr, OB_SENSOR_DEPTH, deviceIndex);
+    pipelineHolderList.push_back(depthHolder);
+    startStream(depthHolder);
 
-                // Process Depth frame
-                auto depthProfile = frameSet->colorFrame();
-                if (depthProfile) {
-                    handleDepthStream(deviceIndexBase, depthProfile);
-                }
-            });
+    auto colorHolder = createPipelineHolder(*itr, OB_SENSOR_COLOR, deviceIndex);
+    pipelineHolderList.push_back(colorHolder);
+    startStream(colorHolder);
 
-            // Required when stop stream
-            pipeList.push_back(pipe);
-        } catch (ob::Error &e) {
-            std::error << "Start pipeline failed" << std::endl;
-        }
-
-        // Next device, update deviceIndex
-        deviceIndexBase++;
-    }
+    deviceIndex++;
 }
 
-void stopStream(std::vector<std::shared_ptr<ob::Device>> devices) {
-    for(auto &&dev: devices) {
-        for (aut it = pipeList.begin(); it != pipeList.end();) {
-            // Match the target pipeline according to ob::Device and close stream
-            if (dev == (*it)->getDevice()) {
-                // Use ob::Pipeline#stop to stop stream
-                (*it)->stop();
+// Delay and wait for 5s to ensure that the initialization of the slave device is completed
+std::this_thread::sleep_for(std::chrono::milliseconds(5000));
 
-                // remove inactive pipeline
-                it = pipeList.erase(it);
-            } else {
-                // next loop
-                it++;
-            }
-        }
-    }
+std::cout << "Primary device start..." << std::endl;
+deviceIndex = secondary_devices.size();  // Primary device display after primary devices.
+for(auto itr = primary_devices.begin(); itr != primary_devices.end(); itr++) {
+    auto depthHolder = createPipelineHolder(*itr, OB_SENSOR_DEPTH, deviceIndex);
+    startStream(depthHolder);
+    pipelineHolderList.push_back(depthHolder);
+
+    auto colorHolder = createPipelineHolder(*itr, OB_SENSOR_COLOR, deviceIndex);
+    startStream(colorHolder);
+    pipelineHolderList.push_back(colorHolder);
+
+    deviceIndex++;
 }
 ```
 
 Process sensor frame data
-```C
+```cpp
 void handleColorStream(int devIndex, std::shared_ptr<ob::Frame> frame) {
-    std::lock_guard<std::mutex> lock(frameMutex);
     std::cout << "Device#" << devIndex << ", color frame index=" << frame->index() << ", timestamp=" << frame->timeStamp()
               << ", system timestamp=" << frame->systemTimeStamp() << std::endl;
 
+    std::lock_guard<std::mutex> lock(frameMutex);
     colorFrames[devIndex] = frame;
 }
 
 void handleDepthStream(int devIndex, std::shared_ptr<ob::Frame> frame) {
-    std::lock_guard<std::mutex> lock(frameMutex);
     std::cout << "Device#" << devIndex << ", depth frame index=" << frame->index() << ", timestamp=" << frame->timeStamp()
               << ", system timestamp=" << frame->systemTimeStamp() << std::endl;
 
+    std::lock_guard<std::mutex> lock(frameMutex);
     depthFrames[devIndex] = frame;
 }
 ```
-Here we can process the output of multiple devices according to colorFrames and depthFrames.
+Here we can process the data output by multiple devices based on colorFrames and depthFrames.
 
-Stop sensor stream
-```C
 // stop stream
-stopStream(primary_devices);
-stopStream(common_devices);
-
+```cpp
+// close data stream
+for(auto itr = pipelineHolderList.begin(); itr != pipelineHolderList.end(); itr++) {
+    stopStream(*itr);
+}
+pipelineHolderList.clear();
 ```
 
 ## PointCloud

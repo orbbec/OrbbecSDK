@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -137,6 +137,9 @@ $(function() {
 <tr class="memitem:a83b1fe8d79f220ed1c82f1fc8db2da98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pipeline_8h.html#a83b1fe8d79f220ed1c82f1fc8db2da98">ob_pipeline_switch_config</a> (<a class="el" href="_ob_types_8h.html#a10c4aa61e784c84629c2fc9934dabb02">ob_pipeline</a> *pipeline, <a class="el" href="_ob_types_8h.html#a58e217beaf8c5e9a0da42b84902cb6b5">ob_config</a> *config, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a83b1fe8d79f220ed1c82f1fc8db2da98"><td class="mdescLeft">&#160;</td><td class="mdescRight">动态切换对应的config配置  <br /></td></tr>
 <tr class="separator:a83b1fe8d79f220ed1c82f1fc8db2da98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f077318b42d07ac0ffe299a481d3f07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a0a9062fd0ef0ed06f67494e3011f40ef">ob_camera_param</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pipeline_8h.html#a6f077318b42d07ac0ffe299a481d3f07">ob_pipeline_get_camera_param_with_profile</a> (<a class="el" href="_ob_types_8h.html#a10c4aa61e784c84629c2fc9934dabb02">ob_pipeline</a> *pipeline, uint32_t colorWidth, uint32_t colorHeight, uint32_t depthWidth, uint32_t depthHeight, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a6f077318b42d07ac0ffe299a481d3f07"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前相机参数  <br /></td></tr>
+<tr class="separator:a6f077318b42d07ac0ffe299a481d3f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d90685efdd4b7fb7c6f6259c48769b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a0a9062fd0ef0ed06f67494e3011f40ef">ob_camera_param</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pipeline_8h.html#a0d90685efdd4b7fb7c6f6259c48769b2">ob_pipeline_get_camera_param</a> (<a class="el" href="_ob_types_8h.html#a10c4aa61e784c84629c2fc9934dabb02">ob_pipeline</a> *pipeline, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a0d90685efdd4b7fb7c6f6259c48769b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前相机参数  <br /></td></tr>
 <tr class="separator:a0d90685efdd4b7fb7c6f6259c48769b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,7 +150,7 @@ $(function() {
 <tr class="memdesc:ad95856ed676c3bb347dfe837a7b59cf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取D2C后有效的区域 (废弃接口)）  <br /></td></tr>
 <tr class="separator:ad95856ed676c3bb347dfe837a7b59cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48a4640a53c2fb44cb93be53e5bbb6a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a30e19824c53330eab0ddb7a30e445624">ob_rect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pipeline_8h.html#a48a4640a53c2fb44cb93be53e5bbb6a8">ob_get_d2c_range_valid_area</a> (<a class="el" href="_ob_types_8h.html#a10c4aa61e784c84629c2fc9934dabb02">ob_pipeline</a> *pipeline, uint32_t minimum_distance, uint32_t maximum_distance, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a48a4640a53c2fb44cb93be53e5bbb6a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取D2C后有效的区域。 如果需要获取指定距离D2C后的ROI区域，将minimum_distance与maximum_distance设置成一样或者将maximum_distance设置成0  <br /></td></tr>
+<tr class="memdesc:a48a4640a53c2fb44cb93be53e5bbb6a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取D2C后有效的区域。  <br /></td></tr>
 <tr class="separator:a48a4640a53c2fb44cb93be53e5bbb6a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2eb3b7e09108f0e7527a893cd478f0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pipeline_8h.html#aa2eb3b7e09108f0e7527a893cd478f0b">ob_pipeline_start_record</a> (<a class="el" href="_ob_types_8h.html#a10c4aa61e784c84629c2fc9934dabb02">ob_pipeline</a> *pipeline, const char *file_name, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:aa2eb3b7e09108f0e7527a893cd478f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">开启录制  <br /></td></tr>
@@ -829,6 +832,73 @@ $(function() {
 
 </div>
 </div>
+<a id="a6f077318b42d07ac0ffe299a481d3f07" name="a6f077318b42d07ac0ffe299a481d3f07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f077318b42d07ac0ffe299a481d3f07">&#9670;&#160;</a></span>ob_pipeline_get_camera_param_with_profile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ob_types_8h.html#a0a9062fd0ef0ed06f67494e3011f40ef">ob_camera_param</a> ob_pipeline_get_camera_param_with_profile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ob_types_8h.html#a10c4aa61e784c84629c2fc9934dabb02">ob_pipeline</a> *&#160;</td>
+          <td class="paramname"><em>pipeline</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>colorWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>colorHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>depthWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>depthHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前相机参数 </p>
+<dl class="section attention"><dt>注意</dt><dd>如果开启了D2C将返回D2C后的相机参数，如果没有将返回默认参数</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pipeline</td><td>pipeline对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorWidth</td><td>彩色分辨率宽 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorHeight</td><td>彩色分辨率高 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">depthWidth</td><td>深度分辨率宽 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">depthHeight</td><td>深度分辨率高 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ob_camera_param 返回相机内参  </dd></dl>
+
+</div>
+</div>
 <a id="a0d90685efdd4b7fb7c6f6259c48769b2" name="a0d90685efdd4b7fb7c6f6259c48769b2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d90685efdd4b7fb7c6f6259c48769b2">&#9670;&#160;</a></span>ob_pipeline_get_camera_param()</h2>
 
@@ -1003,7 +1073,8 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p>获取D2C后有效的区域。 如果需要获取指定距离D2C后的ROI区域，将minimum_distance与maximum_distance设置成一样或者将maximum_distance设置成0 </p>
+<p>获取D2C后有效的区域。 </p>
+<p>如果需要获取指定距离D2C后的ROI区域，将minimum_distance与maximum_distance设置成一样或者将maximum_distance设置成0</p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pipeline</td><td>pipeline对象 </td></tr>
@@ -1510,7 +1581,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 八月 1日 星期二 19:05:51 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 九月 13日 星期三 18:10:29 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

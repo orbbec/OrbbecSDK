@@ -671,8 +671,8 @@ fail:
 static cJSON_bool parse_string(cJSON *const item, parse_buffer *const input_buffer) {
     const unsigned char *input_pointer  = buffer_at_offset(input_buffer) + 1;
     const unsigned char *input_end      = buffer_at_offset(input_buffer) + 1;
-    unsigned char *      output_pointer = NULL;
-    unsigned char *      output         = NULL;
+    unsigned char       *output_pointer = NULL;
+    unsigned char       *output         = NULL;
 
     /* not a string */
     if(buffer_at_offset(input_buffer)[0] != '\"') {
@@ -784,8 +784,8 @@ fail:
 /* Render the cstring provided to an escaped version that can be printed. */
 static cJSON_bool print_string_ptr(const unsigned char *const input, printbuffer *const output_buffer) {
     const unsigned char *input_pointer  = NULL;
-    unsigned char *      output         = NULL;
-    unsigned char *      output_pointer = NULL;
+    unsigned char       *output         = NULL;
+    unsigned char       *output_pointer = NULL;
     size_t               output_length  = 0;
     /* numbers of additional characters needed for escaping */
     size_t escape_characters = 0;
@@ -953,7 +953,7 @@ CJSON_PUBLIC(cJSON *) cJSON_ParseWithOpts(const char *value, const char **return
 /* Parse an object - create a new root, and populate. */
 CJSON_PUBLIC(cJSON *) cJSON_ParseWithLengthOpts(const char *value, size_t buffer_length, const char **return_parse_end, cJSON_bool require_null_terminated) {
     parse_buffer buffer = { 0, 0, 0, 0, { 0, 0, 0 } };
-    cJSON *      item   = NULL;
+    cJSON       *item   = NULL;
 
     /* reset error position */
     global_error.json     = NULL;
@@ -1033,7 +1033,7 @@ CJSON_PUBLIC(cJSON *) cJSON_ParseWithLength(const char *value, size_t buffer_len
 static unsigned char *print(const cJSON *const item, cJSON_bool format, const internal_hooks *const hooks) {
     static const size_t default_buffer_size = 256;
     printbuffer         buffer[1];
-    unsigned char *     printed = NULL;
+    unsigned char      *printed = NULL;
 
     memset(buffer, 0, sizeof(buffer));
 
@@ -1340,7 +1340,7 @@ fail:
 static cJSON_bool print_array(const cJSON *const item, printbuffer *const output_buffer) {
     unsigned char *output_pointer  = NULL;
     size_t         length          = 0;
-    cJSON *        current_element = item->child;
+    cJSON         *current_element = item->child;
 
     if(output_buffer == NULL) {
         return false;
@@ -1491,7 +1491,7 @@ fail:
 static cJSON_bool print_object(const cJSON *const item, printbuffer *const output_buffer) {
     unsigned char *output_pointer = NULL;
     size_t         length         = 0;
-    cJSON *        current_item   = item->child;
+    cJSON         *current_item   = item->child;
 
     if(output_buffer == NULL) {
         return false;

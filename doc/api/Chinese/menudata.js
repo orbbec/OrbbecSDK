@@ -24,6 +24,7 @@
 */
 var menudata={children:[
 {text:"首页",url:"index.html"},
+{text:"相关页面",url:"pages.html"},
 {text:"命名空间",url:"namespaces.html",children:[
 {text:"命名空间列表",url:"namespaces.html"},
 {text:"命名空间成员",url:"namespacemembers.html",children:[
@@ -119,6 +120,7 @@ var menudata={children:[
 {text:"e",url:"globals_e.html#index_e"},
 {text:"f",url:"globals_f.html#index_f"},
 {text:"g",url:"globals_g.html#index_g"},
+{text:"h",url:"globals_h.html#index_h"},
 {text:"i",url:"globals_i.html#index_i"},
 {text:"o",url:"globals_o.html#index_o"},
 {text:"s",url:"globals_s.html#index_s"},
@@ -138,11 +140,7 @@ var menudata={children:[
 {text:"d",url:"globals_eval_d.html#index_d"},
 {text:"e",url:"globals_eval_e.html#index_e"},
 {text:"f",url:"globals_eval_f.html#index_f"},
+{text:"h",url:"globals_eval_h.html#index_h"},
 {text:"o",url:"globals_eval_o.html#index_o"},
 {text:"s",url:"globals_eval_s.html#index_s"}]},
-{text:"宏定义",url:"globals_defs.html",children:[
-{text:"_",url:"globals_defs.html#index__5F"},
-{text:"d",url:"globals_defs.html#index_d"},
-{text:"f",url:"globals_defs.html#index_f"},
-{text:"i",url:"globals_defs.html#index_i"},
-{text:"o",url:"globals_defs.html#index_o"}]}]}]}]}
+{text:"宏定义",url:"globals_defs.html"}]}]}]}

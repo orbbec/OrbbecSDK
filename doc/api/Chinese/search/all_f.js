@@ -12,10 +12,9 @@ var searchData=
   ['playback_9',['Playback',['../classob_1_1_playback.html',1,'ob::Playback'],['../classob_1_1_playback.html#a9379f67eeda937f916efaf6159d0e106',1,'ob::Playback::Playback(const char *filename)'],['../classob_1_1_playback.html#af4eb1cd7296a3f162ada98f07aee5957',1,'ob::Playback::Playback(std::unique_ptr&lt; PlaybackImpl &gt; impl)']]],
   ['playbackcallback_10',['PlaybackCallback',['../namespaceob.html#a122b204df3efecf2e12fb80f5460ee9d',1,'ob']]],
   ['pointcloudfilter_11',['PointCloudFilter',['../classob_1_1_point_cloud_filter.html',1,'ob::PointCloudFilter'],['../classob_1_1_point_cloud_filter.html#aa8b59d9e70d1f9c24054b2db9f1604a1',1,'ob::PointCloudFilter::PointCloudFilter()']]],
-  ['pointsframe_12',['PointsFrame',['../classob_1_1_points_frame.html',1,'ob']]],
+  ['pointsframe_12',['PointsFrame',['../classob_1_1_points_frame.html',1,'ob::PointsFrame'],['../classob_1_1_points_frame.html#af291e750e1f5a67e3757782052907a40',1,'ob::PointsFrame::PointsFrame(Frame &amp;frame)'],['../classob_1_1_points_frame.html#a7e2e5b1d4eebba8c07f601ee5ad98a6b',1,'ob::PointsFrame::PointsFrame(std::unique_ptr&lt; FrameImpl &gt; impl)']]],
   ['pointsframe_13',['pointsFrame',['../classob_1_1_frame_set.html#ac1a1fc0d1172de5dd92fc06e23db1026',1,'ob::FrameSet']]],
-  ['pointsframe_14',['PointsFrame',['../classob_1_1_points_frame.html#af291e750e1f5a67e3757782052907a40',1,'ob::PointsFrame::PointsFrame(Frame &amp;frame)'],['../classob_1_1_points_frame.html#a7e2e5b1d4eebba8c07f601ee5ad98a6b',1,'ob::PointsFrame::PointsFrame(std::unique_ptr&lt; FrameImpl &gt; impl)']]],
-  ['process_15',['process',['../classob_1_1_filter.html#a220c46e6f376c8891b0b566d3495e047',1,'ob::Filter']]],
-  ['property_2eh_16',['Property.h',['../_property_8h.html',1,'']]],
-  ['pushframe_17',['pushFrame',['../classob_1_1_filter.html#ad5d756ea42afacff5aaa1f466792de03',1,'ob::Filter::pushFrame()'],['../classob_1_1_frame_helper.html#ad52aaa6f41413f6c4792ea4e8d420b00',1,'ob::FrameHelper::pushFrame()']]]
+  ['process_14',['process',['../classob_1_1_filter.html#a220c46e6f376c8891b0b566d3495e047',1,'ob::Filter']]],
+  ['property_2eh_15',['Property.h',['../_property_8h.html',1,'']]],
+  ['pushframe_16',['pushFrame',['../classob_1_1_filter.html#ad5d756ea42afacff5aaa1f466792de03',1,'ob::Filter::pushFrame()'],['../classob_1_1_frame_helper.html#ad52aaa6f41413f6c4792ea4e8d420b00',1,'ob::FrameHelper::pushFrame()']]]
 ];

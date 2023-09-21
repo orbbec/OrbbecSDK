@@ -1,11 +1,14 @@
 #  minimum required cmake version: 3.1.15 support vs2019
+
 cmake_minimum_required(VERSION 3.1.15)
 project(OBMultiDeviceSync)
 
 add_executable(${PROJECT_NAME}
   MultiDeviceSync.cpp
   cJSON.c
-  )
+  cJSON.h
+)
+
 target_link_libraries(${PROJECT_NAME}
   ${OpenCV_LIBS}
   ${OrbbecSDK_LIBS}

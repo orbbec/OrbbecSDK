@@ -23,7 +23,6 @@ extern "C" {
 Window      *win    = nullptr;  // render window, based on opencv
 ob_error    *error  = NULL;     // Used to return SDK interface error information
 ob_pipeline *pipe   = nullptr;  // pipeline, used to open the Infrared stream after connecting the device
-ob_device   *device = nullptr;  // device, obtained through the pipeline, and the Infrared image can be set through the device
 
 void check_error(ob_error *error) {
     if(error) {
@@ -45,9 +44,15 @@ int main(int argc, char **args) {
     check_error(error);
 
     // Configure the infrared stream
+    // Please adjust the sensor according to the actual product, some device types only have OB_SENSOR_IR_LEFT and OB_SENSOR_IR_RIGHT.
     ob_stream_profile      *ir_profile = NULL;
     ob_stream_profile_list *profiles   = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_IR, &error);
     check_error(error);
+
+    if (profiles == nullptr) {
+        printf("The obtained IR resolution list is NULL. For binocular structured light devices, try using the doubleIr example to turn on the ir data stream. ");
+        return 0;
+    }
 
     // Find the corresponding profile according to the specified format, first look for the y16 format
     ir_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_Y16, 30, &error);
@@ -60,19 +65,6 @@ int main(int argc, char **args) {
 
     // enable stream
     ob_config_enable_stream(config, ir_profile, &error);
-    check_error(error);
-
-    // Get the device through the pipeline
-    device = ob_pipeline_get_device(pipe, &error);
-    check_error(error);
-
-    // Determine whether to support switching left and right ir channels
-    if(ob_device_is_property_supported(device, OB_PROP_IR_CHANNEL_DATA_SOURCE_INT, OB_PERMISSION_READ_WRITE, &error)) {
-        // Gemini2 products support SENSOR_IR to select sensor output, 0 is left IR, 1 is right IR.
-        int32_t dataSource = 0;
-        ob_device_set_int_property(device, OB_PROP_IR_CHANNEL_DATA_SOURCE_INT, dataSource, &error);
-        check_error(error);
-    }
     check_error(error);
 
     // Start the pipeline with config
@@ -96,7 +88,7 @@ int main(int argc, char **args) {
         if(frameset == nullptr) {
             continue;
         }
-
+        // If the open stream type is not OB_SENSOR_IR, use the ob_frameset_get_frame interface to get the frame.
         ob_frame *ir_frame = ob_frameset_ir_frame(frameset, &error);
         check_error(error);
         if(ir_frame != nullptr) {
@@ -121,10 +113,6 @@ int main(int argc, char **args) {
 
     // destroy profile list
     ob_delete_stream_profile_list(profiles, &error);
-    check_error(error);
-
-    // destroy device
-    ob_delete_device(device, &error);
     check_error(error);
 
     // destroy the pipeline

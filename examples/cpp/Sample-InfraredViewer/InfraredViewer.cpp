@@ -8,7 +8,13 @@ int main(int argc, char **argv) try {
     ob::Pipeline pipe;
 
     // Get all stream profiles of the infrared camera, including stream resolution, frame rate, and frame format
+    // Please adjust the sensor according to the actual product, some device types only have OB_SENSOR_IR_LEFT and OB_SENSOR_IR_RIGHT.
     auto profiles = pipe.getStreamProfileList(OB_SENSOR_IR);
+
+    if (profiles == nullptr){
+        std::cerr << "The obtained IR resolution list is NULL. For binocular structured light devices, try using the doubleIr example to turn on the ir data stream. " << std::endl;
+        return 0;
+    }
 
     std::shared_ptr<ob::VideoStreamProfile> irProfile = nullptr;
     try {
@@ -24,13 +30,6 @@ int main(int argc, char **argv) try {
     std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
     config->enableStream(irProfile);
 
-    // Determine whether to support switching left and right ir channels
-    if(pipe.getDevice()->isPropertySupported(OB_PROP_IR_CHANNEL_DATA_SOURCE_INT, OB_PERMISSION_READ_WRITE)) {
-        // Gemini2 products support SENSOR_IR to select sensor output, 0 is left IR, 1 is right IR.
-        int32_t dataSource = 0;
-        pipe.getDevice()->setIntProperty(OB_PROP_IR_CHANNEL_DATA_SOURCE_INT, dataSource);
-    }
-
     // Start the pipeline with config
     pipe.start(config);
 
@@ -44,6 +43,7 @@ int main(int argc, char **argv) try {
         }
 
         // Render a set of frame in the window, only the infrared frame is rendered here.
+        // If the open stream type is not OB_SENSOR_IR, use the getFrame interface to get the frame.
         app.addToRender(frameSet->irFrame());
     }
 

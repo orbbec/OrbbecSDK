@@ -178,6 +178,26 @@ int main(int argc, char **argv) {
                     ob_frame *frameset = ob_pipeline_wait_for_frameset(pipeline, 100, &error);
                     check_error(error);
                     if(frameset != NULL) {
+                        // get depth value scale
+                        ob_frame *depth_frame = ob_frameset_depth_frame(frameset, &error);
+                        check_error(error);
+                        if(depth_frame == NULL) {
+                            continue;
+                        }
+
+                        // get depth value scale
+                        float depth_value_scale = ob_depth_frame_get_value_scale(depth_frame, &error);
+                        check_error(error);
+
+                        // delete depth frame
+                        ob_delete_frame(depth_frame, &error);
+                        check_error(error);
+
+                        // point position value multiply depth value scale to convert uint to millimeter (for some devices, the default depth value uint is not
+                        // millimeter)
+                        ob_pointcloud_filter_set_position_data_scale(point_cloud, depth_value_scale, &error);
+                        check_error(error);
+
                         ob_pointcloud_filter_set_point_format(point_cloud, OB_FORMAT_RGB_POINT, &error);
                         check_error(error);
                         ob_frame *pointsFrame = ob_filter_process(point_cloud, frameset, &error);
@@ -208,6 +228,26 @@ int main(int argc, char **argv) {
                     ob_frame *frameset = ob_pipeline_wait_for_frameset(pipeline, 100, &error);
                     check_error(error);
                     if(frameset != NULL) {
+                        // get depth
+                        ob_frame *depth_frame = ob_frameset_depth_frame(frameset, &error);
+                        check_error(error);
+                        if(depth_frame == NULL) {
+                            continue;
+                        }
+
+                        // get depth value scale
+                        float depth_value_scale = ob_depth_frame_get_value_scale(depth_frame, &error);
+                        check_error(error);
+
+                        // delete depth frame
+                        ob_delete_frame(depth_frame, &error);
+                        check_error(error);
+
+                        // point position value multiply depth value scale to convert uint to millimeter (for some devices, the default depth value uint is not
+                        // millimeter)
+                        ob_pointcloud_filter_set_position_data_scale(point_cloud, depth_value_scale, &error);
+                        check_error(error);
+
                         ob_pointcloud_filter_set_point_format(point_cloud, OB_FORMAT_POINT, &error);
                         check_error(error);
                         ob_frame *pointsFrame = ob_filter_process(point_cloud, frameset, &error);
