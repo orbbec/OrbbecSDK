@@ -100,11 +100,10 @@ cd OrbbecSDK/build/bin # build output dir
 ```
 
 ## Download OrbbecViewer
-
-* [OrbbecViewer_v1.6.3_202308011123_win_x64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.6.3/OrbbecViewer_v1.6.3_202308011930_win_x64_release.zip)
-* [OrbbecViewer_v1.6.3_202308011123_linux_x64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.6.3/OrbbecViewer_v1.6.3_202308011123_linux_x64_release.zip)
-* [OrbbecViewer_v1.6.3_202308011123_linux_arm64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.6.3/OrbbecViewer_v1.6.3_202308011143_arm64_release.zip)
-
+* [OrbbecViewer_v1.7.4_202309131846_win_x64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.7.4/OrbbecViewer_v1.7.4_202309131846_win_x64_release.zip)
+* [OrbbecViewer_v1.7.4_202309131054_linux_x64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.7.4/OrbbecViewer_v1.7.4_202309131054_linux_x64_release.zip)
+* [OrbbecViewer_v1.7.4_202309131859_arm64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.7.4/OrbbecViewer_v1.7.4_202309131859_arm64_release.zip)
+  
 ## Documents
 
 * API Reference: Use browse to open [doc/api/English/index.html](doc/api/English/index.html)
