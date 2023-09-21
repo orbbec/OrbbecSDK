@@ -89,10 +89,9 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 
 * 编写代码
 
-    请参考示例代码 [examples directory](examples) 完成您的应用代码编写。
+    请参考[示例代码](examples) 完成您的应用代码编写。
 
 ## 相关链接
 
 * [3D 视觉开发者社区](https://developer.orbbec.com.cn/)
 * [OrbbecSDK 主页](https://developer.orbbec.com.cn/develop_details.html?id=1)
-

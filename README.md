@@ -108,7 +108,8 @@ cd OrbbecSDK/build/bin # build output dir
 ## Documents
 
 * API Reference: Use browse to open [doc/api/English/index.html](doc/api/English/index.html)
-* Tutorial:  placed in the `doc/tutorial` directory.
+* Tutorial: placed in the `doc/tutorial` directory.
+* examples: [README](examples\README.md)
 
 ## Related links
 
