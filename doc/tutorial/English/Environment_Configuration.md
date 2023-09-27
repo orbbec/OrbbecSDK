@@ -1,4 +1,3 @@
-<!-- 本文档面向开发者 -->
 # introduction
 This document introduces the installation of OrbbecSDK dependencies and the compilation instructions of OrbbecSDK Sample.
 
@@ -8,7 +7,7 @@ The Orbbec SDK is compatible with the standard UVC protocol, and the standard UV
 ## 1. install driver
 
 Dabai, Dabai DCW, Dabai DW, Astra mini Pro, Astra Pro Plus, A1 Pro, Gemini E, Gemini E Lite, Gemini These use the private protocol of openni and need to install private drivers.
-The directory of the openni driver is as follows: double-click the following .exe image directory to install the driver. 
+The directory of the openni driver is as follows: double-click the following .exe image directory to install the driver.
 
 ![image0](Image/orbbec_driver_000.png)
 
@@ -72,12 +71,12 @@ Method 2: In the folder, directly start the Visual Studio project in Examples/bu
 
 # Linux
 ## 1. System environment configuration
-* Install libudev library: 
+* Install libudev library:
 ``` bash
 sudo apt install libudev-dev
 ```
 
-* Install libusb library: 
+* Install libusb library:
 ``` bash
 sudo apt install libusb-dev
 ```
@@ -110,8 +109,8 @@ VID: 2bc5 PID: 0636 (depth camera)
 Create a build directory in the Examples directory, as follows:
 ![image17](Image/orbbec_sample_linux_003.png)
 ``` bash
-cd build 
-cmake .. 
+cd build
+cmake ..
 make
 ```
 
