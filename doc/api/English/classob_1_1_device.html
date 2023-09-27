@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -1975,7 +1975,7 @@ Friends</h2></td></tr>
 
 <p>send the capture command to the device. </p>
 <p>The device will start one time image capture after receiving the capture command when it is in the <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba2fe8400ffd77e63929e69bb0f0ab1da6">OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING</a></p>
-<dl class="section attention"><dt>Attention</dt><dd>The frequency of the user call this function multiplied by the number of frames per trigger should be less than the frame rate of the stream. The number of frames per trigger can be set by framesPerTriggerForTriggeringMode. </dd>
+<dl class="section attention"><dt>Attention</dt><dd>The frequency of the user call this function multiplied by the number of frames per trigger should be less than the frame rate of the stream. The number of frames per trigger can be set by framesPerTrigger. </dd>
 <dd>
 For some models，receive and execute the capture command will have a certain delay and performance consumption, so the frequency of calling this function should not be too high, please refer to the product manual for the specific supported frequency. </dd>
 <dd>
@@ -2125,7 +2125,7 @@ Due to the timer of device is not high-accuracy, the timestamp of the continuous
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 13 2023 18:10:31 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Mon Sep 25 2023 20:08:22 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

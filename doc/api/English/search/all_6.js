@@ -42,7 +42,7 @@ var searchData=
   ['framehelper_39',['FrameHelper',['../classob_1_1_frame.html#aed198f6baa08dbce96c148a0a65540c3',1,'ob::Frame::FrameHelper'],['../classob_1_1_frame_helper.html',1,'ob::FrameHelper']]],
   ['frameset_40',['FrameSet',['../classob_1_1_frame_set.html#a98ad7aba82289d48d2846b20fc573cba',1,'ob::FrameSet::FrameSet(Frame &amp;frame)'],['../classob_1_1_frame_set.html#ade0d0e0b738e298c8990adcdbcf4ca60',1,'ob::FrameSet::FrameSet(std::unique_ptr&lt; FrameImpl &gt; impl)'],['../classob_1_1_frame_set.html',1,'ob::FrameSet']]],
   ['framesetcallback_41',['FrameSetCallback',['../namespaceob.html#a079312e9113ca7d35fd7ccb68fb7c7fa',1,'ob']]],
-  ['framespertriggerfortriggeringmode_42',['framesPerTriggerForTriggeringMode',['../structob__multi__device__sync__config.html#ac99992ebe5e96224827e3ce150512329',1,'ob_multi_device_sync_config']]],
+  ['framespertrigger_42',['framesPerTrigger',['../structob__multi__device__sync__config.html#a31ff38c5da91e77454a6080bde4bce1d',1,'ob_multi_device_sync_config']]],
   ['freeidlememory_43',['freeIdleMemory',['../classob_1_1_context.html#aafe9d3abd6873ae6ab7c82cf3a0c597b',1,'ob::Context']]],
   ['fulldatasize_44',['fullDataSize',['../struct_o_b_data_chunk.html#ac8d21406d4aa4977098e38ec76b7d547',1,'OBDataChunk']]],
   ['fullscalerange_45',['fullScaleRange',['../classob_1_1_gyro_stream_profile.html#afafa054fa630ae00dc24fa5138049371',1,'ob::GyroStreamProfile::fullScaleRange()'],['../classob_1_1_accel_stream_profile.html#ae27aaeccc57aa48d3849f690157d278e',1,'ob::AccelStreamProfile::fullScaleRange()']]],

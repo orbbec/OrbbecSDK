@@ -7,7 +7,7 @@ var searchData=
   ['trans_4',['trans',['../struct_o_b_d2_c_transform.html#a4e506691c5068ec155c98fcdf74fca76',1,'OBD2CTransform']]],
   ['transform_5',['transform',['../struct_o_b_camera_param.html#aefa2186816920b0cc826f6b3dc11a1ba',1,'OBCameraParam::transform'],['../struct_o_b_camera_param___v0.html#a2ff860371c45b4c1c902f56d6bcb0089',1,'OBCameraParam_V0::transform']]],
   ['trigger2imagedelayus_6',['trigger2ImageDelayUs',['../structob__multi__device__sync__config.html#a6c855a8eed5304c1fc6561a02834575b',1,'ob_multi_device_sync_config']]],
-  ['triggersignaloutputdelayus_7',['triggerSignalOutputDelayUs',['../structob__multi__device__sync__config.html#ab5ae949c20fa53bd1ef46e68afff07c0',1,'ob_multi_device_sync_config']]],
-  ['triggersignaloutputenable_8',['triggerSignalOutputEnable',['../structob__multi__device__sync__config.html#a0a8801b3e3d06f4af5010449ce79f1b7',1,'ob_multi_device_sync_config']]],
+  ['triggeroutdelayus_7',['triggerOutDelayUs',['../structob__multi__device__sync__config.html#a795f1464f91aa518eda82ca7a2b5536d',1,'ob_multi_device_sync_config']]],
+  ['triggeroutenable_8',['triggerOutEnable',['../structob__multi__device__sync__config.html#acf58447721d8b16d6b16d726c98a38ec',1,'ob_multi_device_sync_config']]],
   ['type_9',['type',['../struct_o_b_property_item.html#ab776230cd4b8de227ccc2a4b1191bf90',1,'OBPropertyItem']]]
 ];

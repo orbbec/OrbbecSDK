@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -305,7 +305,7 @@ $(function() {
 
 <p>发送捕获信息至设备 </p>
 <p>当设备处于 OB_MULTI_device_SYNC_MODE_SOFTWARE_TRIGGERING中时，收到捕获命令后，设备将开始一次图像捕获</p>
-<dl class="section attention"><dt>注意</dt><dd>用户调用此函数的频率乘以每个触发器的帧数应该小于流的帧速率。每个触发器的帧数可以由 framesPerTriggerForTriggeringMode 设置 </dd>
+<dl class="section attention"><dt>注意</dt><dd>用户调用此函数的频率乘以每个触发器的帧数应该小于流的帧速率。每个触发器的帧数可以由 framesPerTrigger 设置 </dd>
 <dd>
 对于某些型号，接收和执行捕获命令会有一定的延迟和性能消耗，因此调用该功能的频率不应过高，具体支持的频率请参阅产品手册 </dd>
 <dd>
@@ -487,7 +487,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 九月 13日 星期三 18:10:29 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 九月 25日 星期一 20:08:20 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

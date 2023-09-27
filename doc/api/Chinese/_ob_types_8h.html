@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -4313,12 +4313,12 @@ $(function() {
 <dl class="section attention"><dt>注意</dt><dd>触发信号的频率应当与在启动流时设置的流简档的帧速率相同 </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="aabad929b67059752029c3374594ac63ba2fe8400ffd77e63929e69bb0f0ab1da6" name="aabad929b67059752029c3374594ac63ba2fe8400ffd77e63929e69bb0f0ab1da6"></a>OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING&#160;</td><td class="fielddoc"><p>software triggering 模式 </p>
-<p>该设备在接收到捕获命令后将开始一次图像捕获，并且默认情况下将通过VSYNC_OUT引脚输出触发信号。捕获命令可以 通过调用 ob_device_trigger_capture从主机发送。每次拍摄的图像数量可以由 设置framesPerTriggerForTriggeringMode</p>
+<p>该设备在接收到捕获命令后将开始一次图像捕获，并且默认情况下将通过VSYNC_OUT引脚输出触发信号。捕获命令可以 通过调用 ob_device_trigger_capture从主机发送。每次拍摄的图像数量可以由 设置framesPerTrigger</p>
 <p>颜色和深度应设置为相同的帧速率，颜色和深度将同步，并可通过 colorDelayUs、 depthDelayUss或 trigger2ImageDelayUs进行调整</p>
 <p>用户调用ob_device_trigger_capture发送捕获命令的频率乘以每个触发器的帧数应该小于启动流时设置的流配置文件的帧速率 </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aabad929b67059752029c3374594ac63ba39ca63ef583695c083588ae28ea22ad9" name="aabad929b67059752029c3374594ac63ba39ca63ef583695c083588ae28ea22ad9"></a>OB_MULTI_DEVICE_SYNC_MODE_HARDWARE_TRIGGERING&#160;</td><td class="fielddoc"><p>hardware triggering 模式 </p>
-<p>该设备将在通过同步端口上的 VSYNC_IN 引脚接收到触发信号后开始一次图像捕获，并将输出默认情况下，通过 VSYNC_OUT 引脚触发信号。每次捕获的图像数量可以由 framesPerTriggerForTriggeringMode设置。</p>
+<p>该设备将在通过同步端口上的 VSYNC_IN 引脚接收到触发信号后开始一次图像捕获，并将输出默认情况下，通过 VSYNC_OUT 引脚触发信号。每次捕获的图像数量可以由 framesPerTrigger设置。</p>
 <p>颜色和深度应设置为相同的帧速率，颜色和深度将同步，并可通过 colorDelayUs、 depthDelayUss或 trigger2ImageDelayUs进行调整</p>
 <dl class="section attention"><dt>注意</dt><dd>触发信号的频率乘以每个触发的帧数应该小于在启动流时设置的流配置文件的帧速率 </dd>
 <dd>
@@ -4335,7 +4335,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 九月 13日 星期三 18:10:29 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 九月 25日 星期一 20:08:20 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

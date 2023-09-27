@@ -1643,8 +1643,8 @@ curConfig.syncMode                   = config->syncConfig.syncMode;
 curConfig.depthDelayUs               = config->syncConfig.depthDelayUs;
 curConfig.colorDelayUs               = config->syncConfig.colorDelayUs;
 curConfig.trigger2ImageDelayUs       = config->syncConfig.trigger2ImageDelayUs;
-curConfig.triggerSignalOutputEnable  = config->syncConfig.triggerSignalOutputEnable;
-curConfig.triggerSignalOutputDelayUs = config->syncConfig.triggerSignalOutputDelayUs;
+curConfig.triggerOutEnable  = config->syncConfig.triggerOutEnable;
+curConfig.triggerOutDelayUs = config->syncConfig.triggerOutDelayUs;
 
 device->setMultiDeviceSyncConfig(curConfig);
 ```
@@ -1682,7 +1682,7 @@ if(streamDevList.empty()) {
 }
 ```
 
-Read the multi-device synchronization configuration from the device, Distinguish between Primary and Secondary 
+Read the multi-device synchronization configuration from the device, Distinguish between Primary and Secondary
 ```cpp
 // traverse the device list and create the device
 std::vector<std::shared_ptr<ob::Device>> primary_devices;
@@ -1705,7 +1705,7 @@ if(primary_devices.empty()) {
 Set the time synchronization frequency
 ```C
 // Enable time synchronization among multiple devices
-context.enableDeviceClockSync(3600000);  // Updates are synchronized every hour 
+context.enableDeviceClockSync(3600000);  // Updates are synchronized every hour
 ```
 
 The PipelineHolder

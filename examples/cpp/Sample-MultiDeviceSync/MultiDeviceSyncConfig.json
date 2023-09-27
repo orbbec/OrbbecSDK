@@ -3,14 +3,15 @@
     "configTime": "2023/01/01",
     "devices": [
         {
-            "sn": "AY3A131007M",
+            "sn": "AY3JB200027",
             "syncConfig": {
                 "syncMode": "OB_MULTI_DEVICE_SYNC_MODE_PRIMARY",
                 "depthDelayUs": 0,
                 "colorDelayUs": 0,
                 "trigger2ImageDelayUs": 0,
-                "triggerSignalOutputEnable": true,
-                "triggerSignalOutputDelayUs": 0
+                "triggerOutEnable": true,
+                "triggerOutDelayUs": 0,
+                "framesPerTrigger": 1
             }
         },
         {
@@ -20,8 +21,9 @@
                 "depthDelayUs": 0,
                 "colorDelayUs": 0,
                 "trigger2ImageDelayUs": 0,
-                "triggerSignalOutputEnable": true,
-                "triggerSignalOutputDelayUs": 0
+                "triggerOutEnable": true,
+                "triggerOutDelayUs": 0,
+                "framesPerTrigger": 1
             }
         }
     ]

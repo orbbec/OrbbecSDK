@@ -149,12 +149,13 @@ int configMultiDeviceSync() try {
             auto curConfig = device->getMultiDeviceSyncConfig();
 
             // Update the configuration items of the configuration file, and keep the original configuration for other items
-            curConfig.syncMode                   = config->syncConfig.syncMode;
-            curConfig.depthDelayUs               = config->syncConfig.depthDelayUs;
-            curConfig.colorDelayUs               = config->syncConfig.colorDelayUs;
-            curConfig.trigger2ImageDelayUs       = config->syncConfig.trigger2ImageDelayUs;
-            curConfig.triggerSignalOutputEnable  = config->syncConfig.triggerSignalOutputEnable;
-            curConfig.triggerSignalOutputDelayUs = config->syncConfig.triggerSignalOutputDelayUs;
+            curConfig.syncMode             = config->syncConfig.syncMode;
+            curConfig.depthDelayUs         = config->syncConfig.depthDelayUs;
+            curConfig.colorDelayUs         = config->syncConfig.colorDelayUs;
+            curConfig.trigger2ImageDelayUs = config->syncConfig.trigger2ImageDelayUs;
+            curConfig.triggerOutEnable     = config->syncConfig.triggerOutEnable;
+            curConfig.triggerOutDelayUs    = config->syncConfig.triggerOutDelayUs;
+            curConfig.framesPerTrigger     = config->syncConfig.framesPerTrigger;
 
             device->setMultiDeviceSyncConfig(curConfig);
         }
@@ -307,6 +308,15 @@ int testMultiDeviceSync() try {
         if(key == 'S' || key == 's') {
             std::cout << "syncDevicesTime..." << std::endl;
             context.enableDeviceClockSync(3600000);  // Manual update synchronization
+        }
+        else if(key == 'T' || key == 't') {
+            // software trigger
+            for(auto &dev: streamDevList) {
+                auto multiDeviceSyncConfig = dev->getMultiDeviceSyncConfig();
+                if(multiDeviceSyncConfig.syncMode == OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING) {
+                    dev->triggerCapture();
+                }
+            }
         }
 
         std::vector<std::shared_ptr<ob::Frame>> framesVec;
@@ -526,14 +536,19 @@ bool loadConfigFile() {
                 devConfigInfo->syncConfig.trigger2ImageDelayUs = numberElem->valueint;
             }
 
-            numberElem = cJSON_GetObjectItemCaseSensitive(deviceConfigElem, "triggerSignalOutputDelayUs");
+            numberElem = cJSON_GetObjectItemCaseSensitive(deviceConfigElem, "triggerOutDelayUs");
             if(cJSON_IsNumber(numberElem)) {
-                devConfigInfo->syncConfig.triggerSignalOutputDelayUs = numberElem->valueint;
+                devConfigInfo->syncConfig.triggerOutDelayUs = numberElem->valueint;
             }
 
-            bElem = cJSON_GetObjectItemCaseSensitive(deviceConfigElem, "triggerSignalOutputEnable");
+            bElem = cJSON_GetObjectItemCaseSensitive(deviceConfigElem, "triggerOutEnable");
             if(cJSON_IsBool(bElem)) {
-                devConfigInfo->syncConfig.triggerSignalOutputEnable = (bool)bElem->valueint;
+                devConfigInfo->syncConfig.triggerOutEnable = (bool)bElem->valueint;
+            }
+
+            bElem = cJSON_GetObjectItemCaseSensitive(deviceConfigElem, "framesPerTrigger");
+            if(cJSON_IsNumber(bElem)) {
+                devConfigInfo->syncConfig.framesPerTrigger = bElem->valueint;
             }
         }
 

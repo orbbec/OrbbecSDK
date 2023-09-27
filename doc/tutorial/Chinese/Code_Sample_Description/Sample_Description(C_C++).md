@@ -1901,8 +1901,8 @@ curConfig.syncMode                   = config->syncConfig.syncMode;
 curConfig.depthDelayUs               = config->syncConfig.depthDelayUs;
 curConfig.colorDelayUs               = config->syncConfig.colorDelayUs;
 curConfig.trigger2ImageDelayUs       = config->syncConfig.trigger2ImageDelayUs;
-curConfig.triggerSignalOutputEnable  = config->syncConfig.triggerSignalOutputEnable;
-curConfig.triggerSignalOutputDelayUs = config->syncConfig.triggerSignalOutputDelayUs;
+curConfig.triggerOutEnable  = config->syncConfig.triggerOutEnable;
+curConfig.triggerOutDelayUs = config->syncConfig.triggerOutDelayUs;
 
 device->setMultiDeviceSyncConfig(curConfig);
 ```

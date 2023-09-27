@@ -1,5 +1,6 @@
 # OrbbecSDK
-![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.7.4-green)
+
+![stability](https://img.shields.io/badge/stability-unstable-orange) ![version](https://img.shields.io/badge/version-1.7.5-orange)
 
 Orbbec 3D 相机产品软件开发套件，全面支持 UVC，实现免驱动即插即用，提供低层和高层简单易用的 API，帮助开发者在不同场景下灵活使用。
 
@@ -21,7 +22,7 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 
 ## 支持产品
 
-| ** 产品列表 ** | ** 固件版本 ** |
+| **产品列表** | **固件版本** |
 | --- | --- |
 | Gemini 2 XL      | Obox: V1.2.5  VL:1.4.54    |
 | Astra 2          | 2.8.20                     |
@@ -45,7 +46,7 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 * 获取源码
 
     ```bash
-    git clone https://github.com/OrbbecDeveloper/OrbbecSDK.git
+    git clone https://github.com/Orbbec/OrbbecSDK.git
     ```
 
 * 环境配置

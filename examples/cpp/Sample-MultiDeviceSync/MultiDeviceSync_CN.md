@@ -18,9 +18,10 @@
     "syncMode": "OB_MULTI_DEVICE_SYNC_MODE_PRIMARY",  // 同步模式配置，常用模式：“OB_MULTI_DEVICE_SYNC_MODE_PRIMARY、OB_MULTI_DEVICE_SYNC_MODE_SECONDARY、OB_MULTI_DEVICE_SYNC_MODE_SECONDARY_SYNCED”, 在include\libobsensor\h\ObTypes.h中定义的枚举
     "depthDelayUs": 160,// ir/depth/tof 触发信号输入延时，单位微秒；为防止激光干扰，建议不同设备间通过将该延时配置，使激光错开160us
     "colorDelayUs": 0, // rgb 触发信号输入延时，单位微秒
-    "triggerSignalOutputEnable": true, // 设备触发信号输出延迟的使能开关
-    "triggerSignalOutputDelayUs": 0,  // 设备触发信号输出延时，单位微秒
-    "deviceId": 0  // 设备ID，可用于设备编号
+    "trigger2ImageDelayUs": 0, //  触发信号输入到捕获图像的延时，单位微秒
+    "triggerOutEnable": true, // 设备触发信号输出延迟的使能开关
+    "triggerOutDelayUs": 0,  // 设备触发信号输出延时，单位微秒
+    "framesPerTrigger": 1  // 单次触发图像采集的帧数，仅在软件触发模式和硬件触发模式下有效。
   }
 }
 ```
@@ -136,4 +137,23 @@ for(auto itr = primary_devices.begin(); itr != primary_devices.end(); itr++) {
     deviceIndex++;
 }
 ```
+### 触发模式
 
+#### 软件触发模式
+
+将设备同步模式配置为 `OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING`，在开流后，设备会等待上位机发送触发信号（命令）后采集图像，单次触发采集帧数可通过 `framesPerTrigger` 参数配置。触发采集图像的方法：
+
+```c++
+auto multiDeviceSyncConfig = dev->getMultiDeviceSyncConfig();
+if(multiDeviceSyncConfig.syncMode == OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING) {
+    dev->triggerCapture();
+}
+```
+
+*sample运行后在渲染窗口按下`t`将可触发一次采集。*
+
+#### 硬件触发模式
+
+将设备同步模式配置为 `OB_MULTI_DEVICE_SYNC_MODE_HARDWARE_TRIGGERING`，在开流后，设备会等待外部硬件触发信号输入后采集图像，单次触发采集帧数可通过 `framesPerTrigger` 参数配置。
+
+**注意：由于硬件触发需要由特殊编码的信号触发，改信号通常需要由相同信号设备的软触发模式设备输出，如果需要自行使用其他外部触发信号源，请查看产品说明书确定是否可行。**

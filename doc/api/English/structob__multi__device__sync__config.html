@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -97,15 +97,15 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a6c855a8eed5304c1fc6561a02834575b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__multi__device__sync__config.html#a6c855a8eed5304c1fc6561a02834575b">trigger2ImageDelayUs</a></td></tr>
 <tr class="memdesc:a6c855a8eed5304c1fc6561a02834575b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The delay time of the image capture after receiving the capture command or trigger signal in microseconds.  <br /></td></tr>
 <tr class="separator:a6c855a8eed5304c1fc6561a02834575b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a8801b3e3d06f4af5010449ce79f1b7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__multi__device__sync__config.html#a0a8801b3e3d06f4af5010449ce79f1b7">triggerSignalOutputEnable</a></td></tr>
-<tr class="memdesc:a0a8801b3e3d06f4af5010449ce79f1b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger signal output enable flag.  <br /></td></tr>
-<tr class="separator:a0a8801b3e3d06f4af5010449ce79f1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5ae949c20fa53bd1ef46e68afff07c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__multi__device__sync__config.html#ab5ae949c20fa53bd1ef46e68afff07c0">triggerSignalOutputDelayUs</a></td></tr>
-<tr class="memdesc:ab5ae949c20fa53bd1ef46e68afff07c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The delay time of the trigger signal output after receiving the capture command or trigger signal in microseconds.  <br /></td></tr>
-<tr class="separator:ab5ae949c20fa53bd1ef46e68afff07c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac99992ebe5e96224827e3ce150512329"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__multi__device__sync__config.html#ac99992ebe5e96224827e3ce150512329">framesPerTriggerForTriggeringMode</a></td></tr>
-<tr class="memdesc:ac99992ebe5e96224827e3ce150512329"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of frames per trigger in the triggering mode.  <br /></td></tr>
-<tr class="separator:ac99992ebe5e96224827e3ce150512329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf58447721d8b16d6b16d726c98a38ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__multi__device__sync__config.html#acf58447721d8b16d6b16d726c98a38ec">triggerOutEnable</a></td></tr>
+<tr class="memdesc:acf58447721d8b16d6b16d726c98a38ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger signal output enable flag.  <br /></td></tr>
+<tr class="separator:acf58447721d8b16d6b16d726c98a38ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a795f1464f91aa518eda82ca7a2b5536d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__multi__device__sync__config.html#a795f1464f91aa518eda82ca7a2b5536d">triggerOutDelayUs</a></td></tr>
+<tr class="memdesc:a795f1464f91aa518eda82ca7a2b5536d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The delay time of the trigger signal output after receiving the capture command or trigger signal in microseconds.  <br /></td></tr>
+<tr class="separator:a795f1464f91aa518eda82ca7a2b5536d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ff38c5da91e77454a6080bde4bce1d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__multi__device__sync__config.html#a31ff38c5da91e77454a6080bde4bce1d">framesPerTrigger</a></td></tr>
+<tr class="memdesc:a31ff38c5da91e77454a6080bde4bce1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The frame number of each stream after each trigger in triggering mode.  <br /></td></tr>
+<tr class="separator:a31ff38c5da91e77454a6080bde4bce1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The synchronization configuration of the device. </p>
@@ -182,7 +182,7 @@ Public Attributes</h2></td></tr>
 
 <p>The delay time of the image capture after receiving the capture command or trigger signal in microseconds. </p>
 <p>The depth and color images are captured synchronously as the product design and can not change the delay between the depth and color images.</p>
-<dl class="section attention"><dt>Attention</dt><dd>For Orbbec Astra 2 device, this parameter is valid only when the <a class="el" href="structob__multi__device__sync__config.html#ab5ae949c20fa53bd1ef46e68afff07c0">triggerSignalOutputDelayUs</a> is set to 0. </dd>
+<dl class="section attention"><dt>Attention</dt><dd>For Orbbec Astra 2 device, this parameter is valid only when the <a class="el" href="structob__multi__device__sync__config.html#a795f1464f91aa518eda82ca7a2b5536d">triggerOutDelayUs</a> is set to 0. </dd>
 <dd>
 This parameter is only valid for some models to replace <a class="el" href="structob__multi__device__sync__config.html#a0413ddb90e90b291e14544c38d88a697">depthDelayUs</a> and <a class="el" href="structob__multi__device__sync__config.html#aa5909e5e5238eb9c5cfe8261561c38fd">colorDelayUs</a>, please refer to the product manual for details. </dd></dl>
 
@@ -190,21 +190,21 @@ This parameter is only valid for some models to replace <a class="el" href="stru
 
 </div>
 </div>
-<a id="a0a8801b3e3d06f4af5010449ce79f1b7" name="a0a8801b3e3d06f4af5010449ce79f1b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a8801b3e3d06f4af5010449ce79f1b7">&#9670;&#160;</a></span>triggerSignalOutputEnable</h2>
+<a id="acf58447721d8b16d6b16d726c98a38ec" name="acf58447721d8b16d6b16d726c98a38ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf58447721d8b16d6b16d726c98a38ec">&#9670;&#160;</a></span>triggerOutEnable</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ob_multi_device_sync_config::triggerSignalOutputEnable</td>
+          <td class="memname">bool ob_multi_device_sync_config::triggerOutEnable</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Trigger signal output enable flag. </p>
-<p>After the trigger signal output is enabled, the trigger signal will be output when the capture command or trigger signal is received. User can adjust the delay time of the trigger signal output by <a class="el" href="structob__multi__device__sync__config.html#ab5ae949c20fa53bd1ef46e68afff07c0">triggerSignalOutputDelayUs</a>.</p>
-<dl class="section attention"><dt>Attention</dt><dd>For some models, the trigger signal output is always enabled and cannot be disabled in some modes. </dd>
+<p>After the trigger signal output is enabled, the trigger signal will be output when the capture command or trigger signal is received. User can adjust the delay time of the trigger signal output by <a class="el" href="structob__multi__device__sync__config.html#a795f1464f91aa518eda82ca7a2b5536d">triggerOutDelayUs</a>.</p>
+<dl class="section attention"><dt>Attention</dt><dd>For some models, the trigger signal output is always enabled and cannot be disabled. </dd>
 <dd>
 If device is in the <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a> or <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225">OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</a> mode, the trigger signal output is always disabled. Set this parameter to true will not take effect. </dd></dl>
 
@@ -212,14 +212,14 @@ If device is in the <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3
 
 </div>
 </div>
-<a id="ab5ae949c20fa53bd1ef46e68afff07c0" name="ab5ae949c20fa53bd1ef46e68afff07c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5ae949c20fa53bd1ef46e68afff07c0">&#9670;&#160;</a></span>triggerSignalOutputDelayUs</h2>
+<a id="a795f1464f91aa518eda82ca7a2b5536d" name="a795f1464f91aa518eda82ca7a2b5536d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a795f1464f91aa518eda82ca7a2b5536d">&#9670;&#160;</a></span>triggerOutDelayUs</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int ob_multi_device_sync_config::triggerSignalOutputDelayUs</td>
+          <td class="memname">int ob_multi_device_sync_config::triggerOutDelayUs</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -231,19 +231,19 @@ If device is in the <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3
 
 </div>
 </div>
-<a id="ac99992ebe5e96224827e3ce150512329" name="ac99992ebe5e96224827e3ce150512329"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac99992ebe5e96224827e3ce150512329">&#9670;&#160;</a></span>framesPerTriggerForTriggeringMode</h2>
+<a id="a31ff38c5da91e77454a6080bde4bce1d" name="a31ff38c5da91e77454a6080bde4bce1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ff38c5da91e77454a6080bde4bce1d">&#9670;&#160;</a></span>framesPerTrigger</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int ob_multi_device_sync_config::framesPerTriggerForTriggeringMode</td>
+          <td class="memname">int ob_multi_device_sync_config::framesPerTrigger</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The number of frames per trigger in the triggering mode. </p>
+<p>The frame number of each stream after each trigger in triggering mode. </p>
 <dl class="section attention"><dt>Attention</dt><dd>This parameter is only valid when the triggering mode is set to <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba39ca63ef583695c083588ae28ea22ad9">OB_MULTI_DEVICE_SYNC_MODE_HARDWARE_TRIGGERING</a> or <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba2fe8400ffd77e63929e69bb0f0ab1da6">OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING</a>. </dd>
 <dd>
 The trigger frequency multiplied by the number of frames per trigger cannot exceed the maximum frame rate of the stream profile which is set when starting the stream. </dd></dl>
@@ -258,7 +258,7 @@ The trigger frequency multiplied by the number of frames per trigger cannot exce
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 13 2023 18:10:30 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Mon Sep 25 2023 20:08:22 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>
