@@ -6,13 +6,13 @@ if(UNIX)
 endif()
 
 if(NOT DEFINED OrbbecSDK_FOUND)
-    set(OrbbecSDK_DIR "path/to/OrbbecSDK/lib" )
+    # set(OrbbecSDK_DIR "path/to/OrbbecSDK/lib" )
     message(STATUS "OrbbecSDK_DIR: ${OrbbecSDK_DIR}")
     find_package(OrbbecSDK REQUIRED)
 endif()
 
 # find opencv
-set(OpenCV_DIR "your/path/to/opencv/lib")
+# set(OpenCV_DIR "your/path/to/opencv/lib")
 find_package(OpenCV QUIET)
 
 if(UNIX)
