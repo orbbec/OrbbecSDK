@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -4367,12 +4367,12 @@ Enumerations</h2></td></tr>
 <dl class="section attention"><dt>Attention</dt><dd>The frequency of the trigger signal should be same as the frame rate of the stream profile which is set when starting the stream. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="aabad929b67059752029c3374594ac63ba2fe8400ffd77e63929e69bb0f0ab1da6" name="aabad929b67059752029c3374594ac63ba2fe8400ffd77e63929e69bb0f0ab1da6"></a>OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING&#160;</td><td class="fielddoc"><p>software triggering mode </p>
-<p>The device will start one time image capture after receiving the capture command and will output the trigger signal via VSYNC_OUT pin by default. The capture command can be sent form host by call <a class="el" href="_multiple_devices_8h.html#a686e2dcdc402e88b116ac55e2bb2e354">ob_device_trigger_capture</a>. The number of images captured each time can be set by framesPerTriggerForTriggeringMode.</p>
+<p>The device will start one time image capture after receiving the capture command and will output the trigger signal via VSYNC_OUT pin by default. The capture command can be sent form host by call <a class="el" href="_multiple_devices_8h.html#a686e2dcdc402e88b116ac55e2bb2e354">ob_device_trigger_capture</a>. The number of images captured each time can be set by framesPerTrigger.</p>
 <p>The Color and Depth should be set to same frame rates, the Color and Depth will be synchronized and can be adjusted by colorDelayUs, depthDelayUs or trigger2ImageDelayUs.</p>
 <p>The frequency of the user call <a class="el" href="_multiple_devices_8h.html#a686e2dcdc402e88b116ac55e2bb2e354">ob_device_trigger_capture</a> to send the capture command multiplied by the number of frames per trigger should be less than the frame rate of the stream profile which is set when starting the stream. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aabad929b67059752029c3374594ac63ba39ca63ef583695c083588ae28ea22ad9" name="aabad929b67059752029c3374594ac63ba39ca63ef583695c083588ae28ea22ad9"></a>OB_MULTI_DEVICE_SYNC_MODE_HARDWARE_TRIGGERING&#160;</td><td class="fielddoc"><p>hardware triggering mode </p>
-<p>The device will start one time image capture after receiving the trigger signal via VSYNC_IN pin on synchronization port and will output the trigger signal via VSYNC_OUT pin by default. The number of images captured each time can be set by framesPerTriggerForTriggeringMode.</p>
+<p>The device will start one time image capture after receiving the trigger signal via VSYNC_IN pin on synchronization port and will output the trigger signal via VSYNC_OUT pin by default. The number of images captured each time can be set by framesPerTrigger.</p>
 <p>The Color and Depth should be set to same frame rates, the Color and Depth will be synchronized and can be adjusted by colorDelayUs, depthDelayUs or trigger2ImageDelayUs.</p>
 <dl class="section attention"><dt>Attention</dt><dd>The frequency of the trigger signal multiplied by the number of frames per trigger should be less than the frame rate of the stream profile which is set when starting the stream. </dd>
 <dd>
@@ -4389,7 +4389,7 @@ Due to different models may have different signal input requirements, please do 
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 13 2023 18:10:30 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Mon Sep 25 2023 20:08:21 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

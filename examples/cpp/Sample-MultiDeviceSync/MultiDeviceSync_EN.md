@@ -18,9 +18,10 @@ First, you need to refer to the product manual to connect the device, and then f
         "syncMode": "OB_MULTI_DEVICE_SYNC_MODE_PRIMARY",  // device sync mode：“OB_MULTI_DEVICE_SYNC_MODE_PRIMARY, OB_MULTI_DEVICE_SYNC_MODE_SECONDARY，OB_MULTI_DEVICE_SYNC_MODE_SECONDARY_SYNCED etc.” Enum define at include\libobsensor\h\ObTypes.h
         "depthDelayUs": 160,// The delay time of the color image capture after receiving the capture command or trigger signal in microseconds.; In order to prevent laser interference, it is recommended that the laser be staggered by 160us by configuring this delay between different devices
         "colorDelayUs": 0, // Rgb trigger signal input delay in microseconds
-        "triggerSignalOutputEnable": true, // Device trigger signal output delay enable flag.
-        "triggerSignalOutputDelayUs": 0,  // Device trigger signal output delay, in microseconds
-        "deviceId": 0  // The device ID, which can be used for the device number
+        "trigger2ImageDelayUs": 0, // Trigger signal input to capture image delay in microseconds
+        "triggerOutEnable": true, // Device trigger signal output delay enable flag.
+        "triggerOutDelayUs": 0,  // Device trigger signal output delay, in microseconds
+        "framesPerTrigger": 1  // The number of frames to be captured for each trigger signal input; Only valid in software triggering mode and hardware triggering mode
       }
     }
 ```
@@ -136,3 +137,25 @@ for(auto itr = primary_devices.begin(); itr != primary_devices.end(); itr++) {
     deviceIndex++;
 }
 ```
+
+### Triggering Mode
+
+#### Software Triggering Mode
+
+Set the device synchronization mode to `OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING` after opening the stream, and the device will wait for the trigger signal (command) sent by the upper layer after opening the stream. The number of frames to be triggered for triggering mode can be configured through `framesPerTrigger`. The method for triggering images:
+
+```c++
+auto multiDeviceSyncConfig = dev->getMultiDeviceSyncConfig();
+if(multiDeviceSyncConfig.syncMode == OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING)
+{
+    dev->triggerCapture();
+}
+```
+
+*Press `t` in the render window to trigger a capture once.*
+
+#### Hardware Triggering Mode
+
+Set the device synchronization mode to `OB_MULTI_DEVICE_SYNC_MODE_HARDWARE_TRIGGERING` after opening the stream, and the device will wait for the external hardware trigger signal input after opening the stream. The number of frames to be triggered for triggering mode can be configured through `framesPerTrigger`.
+
+**Note: Due to the hardware triggering need to be a special encoding signal trigger, the signal usually needs to be output by the same signal device of the soft trigger mode device, if you need to use hardware triggering, please contact the technical support of the device vendor.**

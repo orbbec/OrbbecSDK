@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.4</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -97,15 +97,15 @@ Public 属性</h2></td></tr>
 <tr class="memitem:a6c855a8eed5304c1fc6561a02834575b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__multi__device__sync__config.html#a6c855a8eed5304c1fc6561a02834575b">trigger2ImageDelayUs</a></td></tr>
 <tr class="memdesc:a6c855a8eed5304c1fc6561a02834575b"><td class="mdescLeft">&#160;</td><td class="mdescRight">在接收到捕获命令或触发信号之后的图像捕获的延迟时间（以微秒为单位）  <br /></td></tr>
 <tr class="separator:a6c855a8eed5304c1fc6561a02834575b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a8801b3e3d06f4af5010449ce79f1b7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__multi__device__sync__config.html#a0a8801b3e3d06f4af5010449ce79f1b7">triggerSignalOutputEnable</a></td></tr>
-<tr class="memdesc:a0a8801b3e3d06f4af5010449ce79f1b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">触发信号输出启用标志  <br /></td></tr>
-<tr class="separator:a0a8801b3e3d06f4af5010449ce79f1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5ae949c20fa53bd1ef46e68afff07c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__multi__device__sync__config.html#ab5ae949c20fa53bd1ef46e68afff07c0">triggerSignalOutputDelayUs</a></td></tr>
-<tr class="memdesc:ab5ae949c20fa53bd1ef46e68afff07c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">接收到捕获命令或触发信号后输出的触发信号的延迟时间，单位为微秒  <br /></td></tr>
-<tr class="separator:ab5ae949c20fa53bd1ef46e68afff07c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac99992ebe5e96224827e3ce150512329"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__multi__device__sync__config.html#ac99992ebe5e96224827e3ce150512329">framesPerTriggerForTriggeringMode</a></td></tr>
-<tr class="memdesc:ac99992ebe5e96224827e3ce150512329"><td class="mdescLeft">&#160;</td><td class="mdescRight">触发模式中每个触发器的帧数  <br /></td></tr>
-<tr class="separator:ac99992ebe5e96224827e3ce150512329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf58447721d8b16d6b16d726c98a38ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__multi__device__sync__config.html#acf58447721d8b16d6b16d726c98a38ec">triggerOutEnable</a></td></tr>
+<tr class="memdesc:acf58447721d8b16d6b16d726c98a38ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">触发信号输出启用标志  <br /></td></tr>
+<tr class="separator:acf58447721d8b16d6b16d726c98a38ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a795f1464f91aa518eda82ca7a2b5536d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__multi__device__sync__config.html#a795f1464f91aa518eda82ca7a2b5536d">triggerOutDelayUs</a></td></tr>
+<tr class="memdesc:a795f1464f91aa518eda82ca7a2b5536d"><td class="mdescLeft">&#160;</td><td class="mdescRight">接收到捕获命令或触发信号后输出的触发信号的延迟时间，单位为微秒  <br /></td></tr>
+<tr class="separator:a795f1464f91aa518eda82ca7a2b5536d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ff38c5da91e77454a6080bde4bce1d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__multi__device__sync__config.html#a31ff38c5da91e77454a6080bde4bce1d">framesPerTrigger</a></td></tr>
+<tr class="memdesc:a31ff38c5da91e77454a6080bde4bce1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">触发模式中每个触发器的帧数  <br /></td></tr>
+<tr class="separator:a31ff38c5da91e77454a6080bde4bce1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>设备的同步配置 </p>
@@ -188,20 +188,20 @@ Public 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="a0a8801b3e3d06f4af5010449ce79f1b7" name="a0a8801b3e3d06f4af5010449ce79f1b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a8801b3e3d06f4af5010449ce79f1b7">&#9670;&#160;</a></span>triggerSignalOutputEnable</h2>
+<a id="acf58447721d8b16d6b16d726c98a38ec" name="acf58447721d8b16d6b16d726c98a38ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf58447721d8b16d6b16d726c98a38ec">&#9670;&#160;</a></span>triggerOutEnable</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ob_multi_device_sync_config::triggerSignalOutputEnable</td>
+          <td class="memname">bool ob_multi_device_sync_config::triggerOutEnable</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>触发信号输出启用标志 </p>
-<p>在触发信号输出被使能之后，当接收到捕获命令或触发信号时，触发信号将被输出。用户可以调整 triggerSignalOutputDelayUs输出的触发信号的延迟时间</p>
+<p>在触发信号输出被使能之后，当接收到捕获命令或触发信号时，触发信号将被输出。用户可以调整 triggerOutDelayUs输出的触发信号的延迟时间</p>
 <dl class="section attention"><dt>注意</dt><dd>对于某些型号，触发信号输出始终处于启用状态，在某些模式下无法禁用 </dd>
 <dd>
 如果设备处于 <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a> 或 OB_MULTI_DEVICE_SYNC_MODE_STANDALONE模式，则触发信号输出始终被禁用。将此参数设置为true将不会生效 </dd></dl>
@@ -210,14 +210,14 @@ Public 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="ab5ae949c20fa53bd1ef46e68afff07c0" name="ab5ae949c20fa53bd1ef46e68afff07c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5ae949c20fa53bd1ef46e68afff07c0">&#9670;&#160;</a></span>triggerSignalOutputDelayUs</h2>
+<a id="a795f1464f91aa518eda82ca7a2b5536d" name="a795f1464f91aa518eda82ca7a2b5536d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a795f1464f91aa518eda82ca7a2b5536d">&#9670;&#160;</a></span>triggerOutDelayUs</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int ob_multi_device_sync_config::triggerSignalOutputDelayUs</td>
+          <td class="memname">int ob_multi_device_sync_config::triggerOutDelayUs</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -228,14 +228,14 @@ Public 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="ac99992ebe5e96224827e3ce150512329" name="ac99992ebe5e96224827e3ce150512329"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac99992ebe5e96224827e3ce150512329">&#9670;&#160;</a></span>framesPerTriggerForTriggeringMode</h2>
+<a id="a31ff38c5da91e77454a6080bde4bce1d" name="a31ff38c5da91e77454a6080bde4bce1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ff38c5da91e77454a6080bde4bce1d">&#9670;&#160;</a></span>framesPerTrigger</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int ob_multi_device_sync_config::framesPerTriggerForTriggeringMode</td>
+          <td class="memname">int ob_multi_device_sync_config::framesPerTrigger</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -255,7 +255,7 @@ Public 属性</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 九月 13日 星期三 18:10:29 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 九月 25日 星期一 20:08:20 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

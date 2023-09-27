@@ -1,6 +1,6 @@
 # OrbbecSDK
 
-![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.7.4-green)
+![stability](https://img.shields.io/badge/stability-unstable-orange) ![version](https://img.shields.io/badge/version-1.7.5-orange)
 
 The Orbbec 3D camera product software development kit，fully supports UVC, realizes driver-free plug-and-play, provides low-level and high-level simple and easy-to-use APIs, and helps developers use it flexibly in different scenarios.
 
@@ -46,7 +46,7 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 ### Get source code
 
 ```bash
-git clone https://github.com/OrbbecDeveloper/OrbbecSDK.git
+git clone https://github.com/orbbec/OrbbecSDK.git
 ```
 
 ### Environment setup
@@ -100,15 +100,16 @@ cd OrbbecSDK/build/bin # build output dir
 ```
 
 ## Download OrbbecViewer
+
 * [OrbbecViewer_v1.7.4_202309131846_win_x64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.7.4/OrbbecViewer_v1.7.4_202309131846_win_x64_release.zip)
 * [OrbbecViewer_v1.7.4_202309131054_linux_x64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.7.4/OrbbecViewer_v1.7.4_202309131054_linux_x64_release.zip)
 * [OrbbecViewer_v1.7.4_202309131859_arm64_release.zip](https://github.com/orbbec/OrbbecSDK/releases/download/v1.7.4/OrbbecViewer_v1.7.4_202309131859_arm64_release.zip)
-  
+
 ## Documents
 
-* API Reference: Use browse to open [doc/api/English/index.html](doc/api/English/index.html)
-* Tutorial: placed in the `doc/tutorial` directory.
-* examples: [README](examples/README.md)
+* API Reference: [doc/api/English/index.html](doc/api/English/index.html)
+* Tutorial: placed in the [doc/tutorial](doc/tutorial) directory.
+* examples: [examples/README.md](examples/README.md)
 
 ## Related links
 

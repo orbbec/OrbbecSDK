@@ -1,3 +1,4 @@
+<!-- 本文档面向开发者 -->
 # 简介
 本文档主要介绍 OrbbecSDK 依赖的安装及 OrbbecSDK的编译说明。
 
@@ -68,11 +69,11 @@ openni私有驱动的目录如下：双击以下.exe 图片目录，安装驱动
 * 安装libudev库：
 ``` bash
 sudo apt install libudev-dev
-```
+``` 
 * 安装libusb库：
 ``` bash
 sudo apt install libusb-dev
-```
+``` 
 
 ## 2、USB访问权限配置
 Linux系统默认对USB设备的直接访问需要root权限，可以通过rules配置文件解决。在OrbbecSDK发布的文件解压后，在Script目录下会有一个“99-obsensor-libusb.rules”配置文件和“install.sh”安装脚本，通过sudo命令执行“install.sh”脚本，即可完成rules配置文件的安装。
@@ -81,7 +82,7 @@ Linux系统默认对USB设备的直接访问需要root权限，可以通过rules
 ``` bash
 sudo chmod +x ./install.sh
 sudo ./install.sh
-```
+``` 
 
 成功执行安装脚本后，再接入设备时生效（已接入的设备需要重新拔插）。
 
@@ -103,13 +104,13 @@ VID：2bc5	PID：0636(深度相机)
 ![image17](Image/orbbec_sample_linux_003.png)
 
 ``` bash
-cd build
-cmake ..
-make
-```
+cd build 
+cmake .. 
+make 
+``` 
 
 
 # 常见FAQ
 
-[常见问题FAQ](https://developer.orbbec.com.cn/technical_library.html?id=59)
+[常见问题FAQ](https://developer.orbbec.com.cn/technical_library.html?id=59) 
 
