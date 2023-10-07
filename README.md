@@ -1,14 +1,14 @@
-# OrbbecSDK
+# Orbbec SDK
 
 ![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.7.5-green)
 
 The Orbbec 3D camera product software development kit，fully supports UVC, realizes driver-free plug-and-play, provides low-level and high-level simple and easy-to-use APIs, and helps developers use it flexibly in different scenarios.
 
-Besides, this SDK is compatible with Orbbec's original OpenNI protocol devices through built-in code, so that developers can completely migrate to OrbbecSDK to support Orbbec's new generation of products and old products with one set of code.
+Besides, this SDK is compatible with Orbbec's original OpenNI protocol devices through built-in code, so that developers can completely migrate to Orbbec SDK to support Orbbec's new generation of products and old products with one set of code.
 
 ## What is included in the repository
 
-* **library** : OrbbecSDK core library files and C/C++ header files.
+* **library** : Orbbec SDK core library files and C/C++ header files.
 * **examples** : C/C++ samples project source code.
 * **doc** : API reference documentation and sample documentation.
 * **driver** : Windows device driver for OpenNI protocol devices (Dabai, Dabai DCW, Dabai DW, Astra mini Pro, Astra Pro Plus, A1 Pro, Gemini E, Gemini E Lite, Gemini). While modules that use the standard UVC protocol do not need to install drivers.
@@ -67,7 +67,7 @@ git clone https://github.com/orbbec/OrbbecSDK.git
 
 ### 4.3 Use OrbbecSDK in your CMake project
 
-Put the OrbbecSDK directory in the subdirectory of your project, and load the OrbbecSDK in your CMakeLists.txt file like this:
+Put the Orbbec SDK directory in the subdirectory of your project, and load the Orbbec SDK in your CMakeLists.txt file like this:
 
 ```cmake
 cmake_minimum_required(VERSION 3.1.15)
@@ -99,10 +99,17 @@ cd OrbbecSDK/build/bin # build output dir
 ./OBMultiStream  # OBMultiStream.exe on Windows
 ```
 
-## Download OrbbecViewer
-[Release v1.7.5](https://github.com/orbbec/OrbbecSDK/releases/tag/v1.7.5)
+## OrbbecViewer
+
+OrbbecViewer is a simple application base Orbbec SDK，that can be used to view the data stream from the Orbbec camera and control the camera.
+![OrbbecViewer](doc/resources/OrbbecViewer.png)
+
+**Supported platforms**: Windows x64, Linux x64&ARM64
+
+**Download link**: [Release v1.7.5](https://github.com/orbbec/OrbbecSDK/releases/tag/v1.7.5)
 
 ## Documents
+
 * Github Pages：[https://orbbec.github.io/OrbbecSDK/](https://orbbec.github.io/OrbbecSDK/)
 * API Reference: [doc/api/English/index.html](doc/api/English/index.html)
 * Tutorial: placed in the [doc/tutorial](doc/tutorial) directory.
@@ -110,5 +117,5 @@ cd OrbbecSDK/build/bin # build output dir
 
 ## Related links
 
+* [Orbbec Main Page](https://www.orbbec.com/)
 * [Orbbec 3D Club](https://3dclub.orbbec3d.com)
-* [Download OrbbecSDK](https://www.orbbec.com/developers/orbbec-sdk/)

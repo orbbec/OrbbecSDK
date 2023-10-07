@@ -94,5 +94,5 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 
 ## 相关链接
 
+* [奥比中光主页](https://www.orbbec.com.cn/)
 * [3D 视觉开发者社区](https://developer.orbbec.com.cn/)
-* [OrbbecSDK 主页](https://developer.orbbec.com.cn/develop_details.html?id=1)
