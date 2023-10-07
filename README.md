@@ -81,7 +81,7 @@ target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 
 ## Examples
 
-The sample code is placed in the `./examples` directory, user can be build by CMake.
+The sample code is located in the `./examples` directory and can be built using CMake.
 
 ### Build
 
