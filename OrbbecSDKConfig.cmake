@@ -16,7 +16,6 @@ set(OrbbecSDK_INCLUDE_DIRS ${CMAKE_CURRENT_LIST_DIR}/include/)
 set(OrbbecSDK_LIBS_DIR ${CMAKE_CURRENT_LIST_DIR}/lib/${HOST_PLATFORM})
 set(OrbbecSDK_LIBRARY  ${OrbbecSDK_LIBS_DIR}/${ORBBEC_LIB_PREFIX}OrbbecSDK${ORBBEC_LIB_SUFFIX})
 set(OrbbecSDK_DLL ${OrbbecSDK_LIBS_DIR}/${ORBBEC_LIB_PREFIX}OrbbecSDK${ORBBEC_DLL_SUFFIX})
-message("OrbbecSDK_DLL:${OrbbecSDK_DLL}")
 
 add_library(OrbbecSDK::OrbbecSDK SHARED IMPORTED GLOBAL)
 set_target_properties(OrbbecSDK::OrbbecSDK PROPERTIES
@@ -26,5 +25,5 @@ set_target_properties(OrbbecSDK::OrbbecSDK PROPERTIES
 )
 
 set(OrbbecSDK_LIBS ${OrbbecSDK_LIBRARY})
-file(GLOB OrbbecSDK_DLL_FILES ${OrbbecSDK_LIBS_DIR}/*${ORBBEC_DLL_SUFFIX})
+file(GLOB OrbbecSDK_DLL_FILES ${OrbbecSDK_LIBS_DIR}/*${ORBBEC_DLL_SUFFIX}*)
 set(OrbbecSDK_FOUND TRUE)
