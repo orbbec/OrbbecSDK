@@ -30,7 +30,14 @@ file(GLOB OrbbecSDK_DLL_FILES ${OrbbecSDK_LIBS_DIR}/*${ORBBEC_DLL_SUFFIX}*)
 # runtime resource file should copy to cwd.
 file(GLOB OrbbecSDK_RUNTIME_RESOURCE_FILES  ${OrbbecSDK_LIBS_DIR}/*depthengine*)
 
-# config file 
+# config file
 file(GLOB OrbbecSDK_CONFIG_FILES  ${CMAKE_CURRENT_LIST_DIR}/misc/config/*)
+
+# script
+if(WIN32)
+    file(GLOB OrbbecSDK_SCRIPT_FILES  ${CMAKE_CURRENT_LIST_DIR}/misc/scripts/obsensor_metadata_win10*)
+else()
+    file(GLOB OrbbecSDK_SCRIPT_FILES  ${CMAKE_CURRENT_LIST_DIR}/misc/scripts/*rules*)
+endif()
 
 set(OrbbecSDK_FOUND TRUE)
