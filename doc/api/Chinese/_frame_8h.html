@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.8.1</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -81,7 +81,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>帧相关函数,主要用于获取帧数据和帧信息  
+<p>帧相关函数, 主要用于获取帧数据和帧信息  
 <a href="#details">更多...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>&quot;</code><br />
 </div>
@@ -126,16 +126,16 @@ $(function() {
 <tr class="memdesc:ac9096648e25cfa045fb0ab6b3b3c93c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧的元数据大小  <br /></td></tr>
 <tr class="separator:ac9096648e25cfa045fb0ab6b3b3c93c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a7f7edea6d5963c2bbd2360edc3a489"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_frame_8h.html#a4a7f7edea6d5963c2bbd2360edc3a489">ob_video_frame_pixel_available_bit_size</a> (<a class="el" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a4a7f7edea6d5963c2bbd2360edc3a489"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取像素有效位数（如Y16格式帧，每个像素占16bit，但实际只有低10位是有效位，高6位填充0）  <br /></td></tr>
+<tr class="memdesc:a4a7f7edea6d5963c2bbd2360edc3a489"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取像素有效位数（如 Y16 格式帧，每个像素占 16bit，但实际只有低 10 位是有效位，高 6 位填充 0）  <br /></td></tr>
 <tr class="separator:a4a7f7edea6d5963c2bbd2360edc3a489"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac69985299cbe7ca46cdddab955d26a33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#aca9dc7e0b11a78f00fa8a2ffd8b9ca1b">ob_sensor_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_frame_8h.html#ac69985299cbe7ca46cdddab955d26a33">ob_ir_frame_get_source_sensor_type</a> (<a class="el" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **<a class="el" href="structob__error.html">ob_error</a>)</td></tr>
 <tr class="memdesc:ac69985299cbe7ca46cdddab955d26a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取红外数据帧的源传感器类型（双摄像头为左或右）  <br /></td></tr>
 <tr class="separator:ac69985299cbe7ca46cdddab955d26a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84d908c9407ef8f96086c6d0911122e0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_frame_8h.html#a84d908c9407ef8f96086c6d0911122e0">ob_depth_frame_get_value_scale</a> (<a class="el" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a84d908c9407ef8f96086c6d0911122e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取深度帧的值的深度单位，深度像素值乘以深度单位后，可以得到单位为毫米的深度值； 如valueScale=0.1, 某坐标像素值为pixelValue=10000， 则表示深度值value = pixelValue*valueScale = 10000*0.1=1000mm。  <br /></td></tr>
+<tr class="memdesc:a84d908c9407ef8f96086c6d0911122e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取深度帧的值的深度单位，深度像素值乘以深度单位后，可以得到单位为毫米的深度值； 如 valueScale=0.1, 某坐标像素值为 pixelValue=10000， 则表示深度值 value = pixelValue*valueScale = 10000*0.1=1000mm。  <br /></td></tr>
 <tr class="separator:a84d908c9407ef8f96086c6d0911122e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42e33dafc2a310292a84bc4e59b624b3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_frame_8h.html#a42e33dafc2a310292a84bc4e59b624b3">ob_points_frame_get_position_value_scale</a> (<a class="el" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a42e33dafc2a310292a84bc4e59b624b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取点云帧的点坐标值缩放系数，点坐标值乘以缩放系数后，可以得到单位为毫米的坐标值； 如scale=0.1, 某个点的x坐标值为x=10000， 则表示实际x坐标value = x*scale = 10000*0.1=1000mm。  <br /></td></tr>
+<tr class="memdesc:a42e33dafc2a310292a84bc4e59b624b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取点云帧的点坐标值缩放系数，点坐标值乘以缩放系数后，可以得到单位为毫米的坐标值； 如 scale=0.1, 某个点的 x 坐标值为 x=10000， 则表示实际 x 坐标 value = x*scale = 10000*0.1=1000mm。  <br /></td></tr>
 <tr class="separator:a42e33dafc2a310292a84bc4e59b624b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a572bd900dfe085bd8618e53b2670f069"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_frame_8h.html#a572bd900dfe085bd8618e53b2670f069">ob_delete_frame</a> (<a class="el" href="_ob_types_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a572bd900dfe085bd8618e53b2670f069"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除数据帧对象  <br /></td></tr>
@@ -196,7 +196,7 @@ $(function() {
 <tr class="separator:a5ce57b8b10a7dddf118ccd9663f7dd06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>帧相关函数,主要用于获取帧数据和帧信息 </p>
+<div class="textblock"><p>帧相关函数, 主要用于获取帧数据和帧信息 </p>
 
 <p class="definition">在文件 <a class="el" href="_frame_8h_source.html">Frame.h</a> 中定义.</p>
 </div><h2 class="groupheader">函数说明</h2>
@@ -503,7 +503,7 @@ $(function() {
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>返回</dt><dd>uint32_t 返回帧数据大小 如果是点云数据返回的是所有点集合占的字节数，若需要求出点的个数需要将dataSize除以对应的点类型的结构体大小 </dd></dl>
+<dl class="section return"><dt>返回</dt><dd>uint32_t 返回帧数据大小 如果是点云数据返回的是所有点集合占的字节数，若需要求出点的个数需要将 dataSize 除以对应的点类型的结构体大小 </dd></dl>
 
 </div>
 </div>
@@ -579,7 +579,7 @@ $(function() {
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>返回</dt><dd>uint32_t返回数据帧高度 </dd></dl>
+<dl class="section return"><dt>返回</dt><dd>uint32_t 返回数据帧高度 </dd></dl>
 
 </div>
 </div>
@@ -685,8 +685,8 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p>获取像素有效位数（如Y16格式帧，每个像素占16bit，但实际只有低10位是有效位，高6位填充0） </p>
-<dl class="section attention"><dt>注意</dt><dd>仅对Y8/Y10/Y11/Y12/Y14/Y16格式有效</dd></dl>
+<p>获取像素有效位数（如 Y16 格式帧，每个像素占 16bit，但实际只有低 10 位是有效位，高 6 位填充 0） </p>
+<dl class="section attention"><dt>注意</dt><dd>仅对 Y8/Y10/Y11/Y12/Y14/Y16 格式有效</dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>帧对象 </td></tr>
@@ -728,7 +728,7 @@ $(function() {
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>帧对象 </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname"><a class="el" href="structob__error.html" title="SDK暴露的错误类，用户可以根据该错误类，获取详细的错误信息">ob_error</a></td><td>记录错误消息 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname"><a class="el" href="structob__error.html" title="SDK 暴露的错误类，用户可以根据该错误类，获取详细的错误信息">ob_error</a></td><td>记录错误消息 </td></tr>
   </table>
   </dd>
 </dl>
@@ -762,7 +762,7 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p>获取深度帧的值的深度单位，深度像素值乘以深度单位后，可以得到单位为毫米的深度值； 如valueScale=0.1, 某坐标像素值为pixelValue=10000， 则表示深度值value = pixelValue*valueScale = 10000*0.1=1000mm。 </p>
+<p>获取深度帧的值的深度单位，深度像素值乘以深度单位后，可以得到单位为毫米的深度值； 如 valueScale=0.1, 某坐标像素值为 pixelValue=10000， 则表示深度值 value = pixelValue*valueScale = 10000*0.1=1000mm。 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>帧对象 </td></tr>
@@ -800,7 +800,7 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p>获取点云帧的点坐标值缩放系数，点坐标值乘以缩放系数后，可以得到单位为毫米的坐标值； 如scale=0.1, 某个点的x坐标值为x=10000， 则表示实际x坐标value = x*scale = 10000*0.1=1000mm。 </p>
+<p>获取点云帧的点坐标值缩放系数，点坐标值乘以缩放系数后，可以得到单位为毫米的坐标值； 如 scale=0.1, 某个点的 x 坐标值为 x=10000， 则表示实际 x 坐标 value = x*scale = 10000*0.1=1000mm。 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>帧对象 </td></tr>
@@ -1035,7 +1035,7 @@ $(function() {
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>返回</dt><dd>ob_frame*返回点云帧。 </dd></dl>
+<dl class="section return"><dt>返回</dt><dd>ob_frame * 返回点云帧。 </dd></dl>
 
 </div>
 </div>
@@ -1621,7 +1621,7 @@ $(function() {
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>设置的帧对象 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">device_timestamp_us</td><td>设备时间戳,单位微秒。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">device_timestamp_us</td><td>设备时间戳，单位微秒。 </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息。 </td></tr>
   </table>
   </dd>
@@ -1632,7 +1632,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 九月 25日 星期一 20:08:20 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 十月 10日 星期二 20:29:16 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

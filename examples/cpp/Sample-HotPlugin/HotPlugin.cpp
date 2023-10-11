@@ -278,7 +278,7 @@ std::ostream &operator<<(std::ostream &os, std::shared_ptr<ob::DepthFrame> frame
     auto      scale      = frame->getValueScale();
     uint16_t  pixelValue = *(data + width * height / 2 + width / 2);
     os << "FrameType: " << frame->type() << ", index: " << frame->index() << ", width: " << width << ", height: " << height << ", format: " << frame->format()
-       << ", timeStampUs: " << frame->timeStampUs() << "us, centerDepth: " << (int)(pixelValue * scale) << "mm";
+       << ", timeStampUs: " << frame->timeStampUs() << "us, centerDepth: " << (float)pixelValue * scale << "mm";
     return os;
 }
 

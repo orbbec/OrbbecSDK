@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.8.1</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -110,7 +110,7 @@ Public 属性</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>设备的同步配置 </p>
 
-<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l01078">1078</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l01082">1082</a> 行定义.</p>
 </div><h2 class="groupheader">类成员变量说明</h2>
 <a id="a8cc39ed5db27676bdf5cffcb5ccbed67" name="a8cc39ed5db27676bdf5cffcb5ccbed67"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8cc39ed5db27676bdf5cffcb5ccbed67">&#9670;&#160;</a></span>syncMode</h2>
@@ -126,7 +126,7 @@ Public 属性</h2></td></tr>
 
 <p>设备的同步模式 </p>
 
-<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l01083">1083</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l01087">1087</a> 行定义.</p>
 
 </div>
 </div>
@@ -145,7 +145,7 @@ Public 属性</h2></td></tr>
 <p>深度图像捕获在接收到捕获命令或触发信号之后的延迟时间（以微秒为单位） </p>
 <dl class="section attention"><dt>注意</dt><dd>此参数仅对某些型号有效，请参阅产品手册了解详细信息 </dd></dl>
 
-<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l01091">1091</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l01095">1095</a> 行定义.</p>
 
 </div>
 </div>
@@ -164,7 +164,7 @@ Public 属性</h2></td></tr>
 <p>彩色图像捕获在接收到捕获命令或触发信号之后的延迟时间（以微秒为单位） </p>
 <dl class="section attention"><dt>注意</dt><dd>此参数仅对某些型号有效，请参阅产品手册了解详细信息 </dd></dl>
 
-<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l01097">1097</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l01101">1101</a> 行定义.</p>
 
 </div>
 </div>
@@ -182,9 +182,9 @@ Public 属性</h2></td></tr>
 
 <p>在接收到捕获命令或触发信号之后的图像捕获的延迟时间（以微秒为单位） </p>
 <p>深度图像和彩色图像是作为产品设计同步捕获的，并且不能改变深度图像和色彩图像之间的延迟</p>
-<dl class="section attention"><dt>注意</dt><dd>此参数仅对某些型号有效，以替换 depthDelayUs和 colorDelayUs，请参阅产品手册了解详细信息 </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>此参数仅对某些型号有效，以替换 <a class="el" href="structob__multi__device__sync__config.html#a0413ddb90e90b291e14544c38d88a697">depthDelayUs</a> 和 colorDelayUs，请参阅产品手册了解详细信息 </dd></dl>
 
-<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l01105">1105</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l01109">1109</a> 行定义.</p>
 
 </div>
 </div>
@@ -201,12 +201,12 @@ Public 属性</h2></td></tr>
 </div><div class="memdoc">
 
 <p>触发信号输出启用标志 </p>
-<p>在触发信号输出被使能之后，当接收到捕获命令或触发信号时，触发信号将被输出。用户可以调整 triggerOutDelayUs输出的触发信号的延迟时间</p>
+<p>在触发信号输出被使能之后，当接收到捕获命令或触发信号时，触发信号将被输出。用户可以调整 <a class="el" href="structob__multi__device__sync__config.html#a795f1464f91aa518eda82ca7a2b5536d">triggerOutDelayUs</a> 输出的触发信号的延迟时间</p>
 <dl class="section attention"><dt>注意</dt><dd>对于某些型号，触发信号输出始终处于启用状态，在某些模式下无法禁用 </dd>
 <dd>
-如果设备处于 <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a> 或 OB_MULTI_DEVICE_SYNC_MODE_STANDALONE模式，则触发信号输出始终被禁用。将此参数设置为true将不会生效 </dd></dl>
+如果设备处于 <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a> 或 <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225">OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</a> 模式，则触发信号输出始终被禁用。将此参数设置为 true 将不会生效 </dd></dl>
 
-<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l01115">1115</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l01119">1119</a> 行定义.</p>
 
 </div>
 </div>
@@ -224,7 +224,7 @@ Public 属性</h2></td></tr>
 
 <p>接收到捕获命令或触发信号后输出的触发信号的延迟时间，单位为微秒 </p>
 
-<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l01121">1121</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l01125">1125</a> 行定义.</p>
 
 </div>
 </div>
@@ -241,11 +241,11 @@ Public 属性</h2></td></tr>
 </div><div class="memdoc">
 
 <p>触发模式中每个触发器的帧数 </p>
-<dl class="section attention"><dt>注意</dt><dd>仅当触发模式设置为 <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba39ca63ef583695c083588ae28ea22ad9">OB_MULTI_DEVICE_SYNC_MODE_HARDWARE_TRIGGERING</a> 或 OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING时，此参数才有效 </dd>
+<dl class="section attention"><dt>注意</dt><dd>仅当触发模式设置为 <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba39ca63ef583695c083588ae28ea22ad9">OB_MULTI_DEVICE_SYNC_MODE_HARDWARE_TRIGGERING</a> 或 <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba2fe8400ffd77e63929e69bb0f0ab1da6">OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING</a> 时，此参数才有效 </dd>
 <dd>
 触发频率乘以每个触发的帧数不能超过在启动流时设置的流配置文件的最大帧速率 </dd></dl>
 
-<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l01129">1129</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l01133">1133</a> 行定义.</p>
 
 </div>
 </div>
@@ -255,7 +255,7 @@ Public 属性</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 九月 25日 星期一 20:08:20 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 十月 10日 星期二 20:29:16 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

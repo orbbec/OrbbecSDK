@@ -11,31 +11,33 @@ int main(int argc, char **argv) try {
     std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
 
     // Get the ir_left camera configuration list
-    auto irLeftprofiles = pipe.getStreamProfileList(OB_SENSOR_IR_LEFT);
+    auto irLeftProfiles = pipe.getStreamProfileList(OB_SENSOR_IR_LEFT);
 
-    if (irLeftprofiles == nullptr){
-        std::cerr << "The obtained IR_Left resolution list is NULL. For monocular structured light devices, try opening the IR data stream using the IR example. " << std::endl;
+    if(irLeftProfiles == nullptr) {
+        std::cerr
+            << "The obtained IR_Left resolution list is NULL. For monocular structured light devices, try opening the IR data stream using the IR example. "
+            << std::endl;
         return 0;
     }
 
     // Open the default profile of IR_LEFT Sensor, which can be configured through the configuration file
     try {
-        auto irLeftProfile = irLeftprofiles->getProfile(0);
+        auto irLeftProfile = irLeftProfiles->getProfile(OB_PROFILE_DEFAULT);
         config->enableStream(irLeftProfile->as<ob::VideoStreamProfile>());
     }
-    catch (...) {
+    catch(...) {
         std::cout << "IR_Left stream not found!" << std::endl;
     }
 
     // Get the ir_right camera configuration list
-    auto irRightprofiles = pipe.getStreamProfileList(OB_SENSOR_IR_RIGHT);
+    auto irRightProfiles = pipe.getStreamProfileList(OB_SENSOR_IR_RIGHT);
 
     // Open the default profile of IR_RIGHT Sensor, which can be configured through the configuration file
     try {
-        auto irRightProfile = irRightprofiles->getProfile(0);
+        auto irRightProfile = irRightProfiles->getProfile(OB_PROFILE_DEFAULT);
         config->enableStream(irRightProfile->as<ob::VideoStreamProfile>());
     }
-    catch (...) {
+    catch(...) {
         std::cout << "IR_Right stream not found!" << std::endl;
     }
 
@@ -53,9 +55,9 @@ int main(int argc, char **argv) try {
         }
 
         // Get the data of left and right IR
-        auto leftFrame = frameSet->getFrame(OB_FRAME_IR_LEFT);
+        auto leftFrame  = frameSet->getFrame(OB_FRAME_IR_LEFT);
         auto rightFrame = frameSet->getFrame(OB_FRAME_IR_RIGHT);
-        if (leftFrame == nullptr || rightFrame == nullptr) {
+        if(leftFrame == nullptr || rightFrame == nullptr) {
             std::cout << "left ir frame or right ir frame is null. leftFrame: " << leftFrame << ", rightFrame: " << rightFrame << std::endl;
             continue;
         }

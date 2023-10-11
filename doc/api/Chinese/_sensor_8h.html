@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.8.1</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -111,13 +111,13 @@ $(function() {
 <tr class="memdesc:a070ec0f952476423f9fd691082370a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取传感器列表内传感器个数  <br /></td></tr>
 <tr class="separator:a070ec0f952476423f9fd691082370a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e23ff09993d0d9c1d3678df66911c45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#aca9dc7e0b11a78f00fa8a2ffd8b9ca1b">ob_sensor_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_sensor_8h.html#a2e23ff09993d0d9c1d3678df66911c45">ob_sensor_list_get_sensor_type</a> (<a class="el" href="_ob_types_8h.html#a56a65d68fac102481c425341bb70a510">ob_sensor_list</a> *sensor_list, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a2e23ff09993d0d9c1d3678df66911c45"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定Sensor的类型  <br /></td></tr>
+<tr class="memdesc:a2e23ff09993d0d9c1d3678df66911c45"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定 Sensor 的类型  <br /></td></tr>
 <tr class="separator:a2e23ff09993d0d9c1d3678df66911c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab26f83415ddf2d8ef9e364f2f5fa66f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a818d3a4166de3a59430e6fd2bdf9eb28">ob_sensor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_sensor_8h.html#ab26f83415ddf2d8ef9e364f2f5fa66f8">ob_sensor_list_get_sensor_by_type</a> (<a class="el" href="_ob_types_8h.html#a56a65d68fac102481c425341bb70a510">ob_sensor_list</a> *sensor_list, <a class="el" href="_ob_types_8h.html#aca9dc7e0b11a78f00fa8a2ffd8b9ca1b">ob_sensor_type</a> sensorType, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:ab26f83415ddf2d8ef9e364f2f5fa66f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过Sensor类型获取Sensor  <br /></td></tr>
+<tr class="memdesc:ab26f83415ddf2d8ef9e364f2f5fa66f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过 Sensor 类型获取 Sensor  <br /></td></tr>
 <tr class="separator:ab26f83415ddf2d8ef9e364f2f5fa66f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa62e0011ecc2afad794595a5468bb5bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a818d3a4166de3a59430e6fd2bdf9eb28">ob_sensor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_sensor_8h.html#aa62e0011ecc2afad794595a5468bb5bc">ob_sensor_list_get_sensor</a> (<a class="el" href="_ob_types_8h.html#a56a65d68fac102481c425341bb70a510">ob_sensor_list</a> *sensor_list, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:aa62e0011ecc2afad794595a5468bb5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过索引号获取Sensor  <br /></td></tr>
+<tr class="memdesc:aa62e0011ecc2afad794595a5468bb5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过索引号获取 Sensor  <br /></td></tr>
 <tr class="separator:aa62e0011ecc2afad794595a5468bb5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a396811d4fa7a910cb1384d37c6820646"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_sensor_8h.html#a396811d4fa7a910cb1384d37c6820646">ob_delete_sensor</a> (<a class="el" href="_ob_types_8h.html#a818d3a4166de3a59430e6fd2bdf9eb28">ob_sensor</a> *sensor, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a396811d4fa7a910cb1384d37c6820646"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除传感器对象  <br /></td></tr>
@@ -450,16 +450,16 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p>获取指定Sensor的类型 </p>
+<p>获取指定 Sensor 的类型 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">sensor_list</td><td>通过device获取返回的sensor列表 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Sensor索引 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sensor_list</td><td>通过 device 获取返回的 sensor 列表 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Sensor 索引 </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>返回</dt><dd>OBSensorType 返回Sensor类型 </dd></dl>
+<dl class="section return"><dt>返回</dt><dd>OBSensorType 返回 Sensor 类型 </dd></dl>
 
 </div>
 </div>
@@ -495,16 +495,16 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p>通过Sensor类型获取Sensor </p>
+<p>通过 Sensor 类型获取 Sensor </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">sensor_list</td><td>通过device获取返回的sensor列表 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sensorType</td><td>要获取的Sensor类型 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sensor_list</td><td>通过 device 获取返回的 sensor 列表 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sensorType</td><td>要获取的 Sensor 类型 </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>返回</dt><dd>返回Sensor指针，如果指定类型Sensor不存在，将返回空 </dd></dl>
+<dl class="section return"><dt>返回</dt><dd>返回 Sensor 指针，如果指定类型 Sensor 不存在，将返回空 </dd></dl>
 
 </div>
 </div>
@@ -540,16 +540,16 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p>通过索引号获取Sensor </p>
+<p>通过索引号获取 Sensor </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">sensor_list</td><td>通过device获取返回的sensor列表 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>要创建设备的索引，范围 [0, count-1]，如果index超出范围将抛异常 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sensor_list</td><td>通过 device 获取返回的 sensor 列表 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>要创建设备的索引，范围 [0, count-1]，如果 index 超出范围将抛异常 </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>记录错误信息 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;Sensor&gt; 返回Sensor对象 </dd></dl>
+<dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;Sensor&gt; 返回 Sensor 对象 </dd></dl>
 
 </div>
 </div>
@@ -593,7 +593,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 九月 25日 星期一 20:08:20 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 十月 10日 星期二 20:29:16 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

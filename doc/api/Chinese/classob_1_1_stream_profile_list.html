@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.8.1</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -83,7 +83,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>StreamProfileList类, 通过宽、高、帧率、格式等 获取匹配的StreamProfile  
+<p><a class="el" href="classob_1_1_stream_profile_list.html" title="StreamProfileList 类, 通过宽、高、帧率、格式等 获取匹配的 StreamProfile">StreamProfileList</a> 类, 通过宽、高、帧率、格式等 获取匹配的 <a class="el" href="classob_1_1_stream_profile.html" title="定义 StreamProfile 类, 用于获取流格式和类型等">StreamProfile</a>  
  <a href="classob_1_1_stream_profile_list.html#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_stream_profile_8hpp_source.html">StreamProfile.hpp</a>&gt;</code></p>
@@ -95,19 +95,19 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a155ce94fa7b01e91bb78c8305caa8684"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_stream_profile_list.html#a155ce94fa7b01e91bb78c8305caa8684">~StreamProfileList</a> () noexcept</td></tr>
 <tr class="separator:a155ce94fa7b01e91bb78c8305caa8684"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad779483a26e6feca3c074c726936ffb0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_stream_profile_list.html#ad779483a26e6feca3c074c726936ffb0">count</a> () const</td></tr>
-<tr class="memdesc:ad779483a26e6feca3c074c726936ffb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取StreamProfile数量  <br /></td></tr>
+<tr class="memdesc:ad779483a26e6feca3c074c726936ffb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 <a class="el" href="classob_1_1_stream_profile.html" title="定义 StreamProfile 类, 用于获取流格式和类型等">StreamProfile</a> 数量  <br /></td></tr>
 <tr class="separator:ad779483a26e6feca3c074c726936ffb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd44c9f0b6e04a6183259714937f74ac"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="classob_1_1_stream_profile.html">StreamProfile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_stream_profile_list.html#acd44c9f0b6e04a6183259714937f74ac">getProfile</a> (uint32_t index)</td></tr>
-<tr class="memdesc:acd44c9f0b6e04a6183259714937f74ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过索引号获取StreamProfile  <br /></td></tr>
+<tr class="memdesc:acd44c9f0b6e04a6183259714937f74ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过索引号获取 <a class="el" href="classob_1_1_stream_profile.html" title="定义 StreamProfile 类, 用于获取流格式和类型等">StreamProfile</a>  <br /></td></tr>
 <tr class="separator:acd44c9f0b6e04a6183259714937f74ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b4d1c62503f614d9b35e57b5a78031b"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="classob_1_1_video_stream_profile.html">VideoStreamProfile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_stream_profile_list.html#a6b4d1c62503f614d9b35e57b5a78031b">getVideoStreamProfile</a> (int width=0, int height=0, <a class="el" href="_ob_types_8h.html#a30904eab1a667b797e7ce1099ba7c36a">OBFormat</a> format=<a class="el" href="_ob_types_8h.html#a30904eab1a667b797e7ce1099ba7c36aa62bbf740c7702c0232734a8209fcbf5f">OB_FORMAT_UNKNOWN</a>, int fps=0)</td></tr>
-<tr class="memdesc:a6b4d1c62503f614d9b35e57b5a78031b"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过传入的参数进行匹配对应的StreamProfile。若有多个匹配项默认返回列表中的第一个, 若没有找到匹配的项，则抛异常  <br /></td></tr>
-<tr class="separator:a6b4d1c62503f614d9b35e57b5a78031b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aec9a1fec68afe0afe675a6082f81d7"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="classob_1_1_video_stream_profile.html">VideoStreamProfile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_stream_profile_list.html#a8aec9a1fec68afe0afe675a6082f81d7">getVideoStreamProfile</a> (int width=<a class="el" href="_ob_types_8h.html#a9b361dc99aceea67424ab913937a5f68">OB_WIDTH_ANY</a>, int height=<a class="el" href="_ob_types_8h.html#ab2a356174680c09f5afda003b724f116">OB_HEIGHT_ANY</a>, <a class="el" href="_ob_types_8h.html#a30904eab1a667b797e7ce1099ba7c36a">OBFormat</a> format=<a class="el" href="_ob_types_8h.html#ab4517bcbc296d6ff427db1eea50b7070">OB_FORMAT_ANY</a>, int fps=<a class="el" href="_ob_types_8h.html#aae0778156fa30d9e595a6150d603b62e">OB_FPS_ANY</a>)</td></tr>
+<tr class="memdesc:a8aec9a1fec68afe0afe675a6082f81d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过传入的参数进行匹配对应的 StreamProfile。若有多个匹配项默认返回列表中的第一个, 若没有找到匹配的项，则抛异常  <br /></td></tr>
+<tr class="separator:a8aec9a1fec68afe0afe675a6082f81d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f990703f5d9aa21bf6dd804103f0be5"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="classob_1_1_accel_stream_profile.html">AccelStreamProfile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_stream_profile_list.html#a5f990703f5d9aa21bf6dd804103f0be5">getAccelStreamProfile</a> (<a class="el" href="_ob_types_8h.html#a6cb24ce2297d40025a4882b22b4550d0">OBAccelFullScaleRange</a> fullScaleRange, <a class="el" href="_ob_types_8h.html#a314cdb6e5a6da080536ad34be1bd97c9">OBAccelSampleRate</a> sampleRate)</td></tr>
-<tr class="memdesc:a5f990703f5d9aa21bf6dd804103f0be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过传入的参数进行匹配对应的StreamProfile。若有多个匹配项默认返回列表中的第一个, 若没有找到匹配的项，则抛异常  <br /></td></tr>
+<tr class="memdesc:a5f990703f5d9aa21bf6dd804103f0be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过传入的参数进行匹配对应的 StreamProfile。若有多个匹配项默认返回列表中的第一个, 若没有找到匹配的项，则抛异常  <br /></td></tr>
 <tr class="separator:a5f990703f5d9aa21bf6dd804103f0be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01b3f6274b4cedae78a8b816ca293fcd"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="classob_1_1_gyro_stream_profile.html">GyroStreamProfile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_stream_profile_list.html#a01b3f6274b4cedae78a8b816ca293fcd">getGyroStreamProfile</a> (<a class="el" href="_ob_types_8h.html#a1d34f2e7fcba8d1a60b7d5df918ba3f8">OBGyroFullScaleRange</a> fullScaleRange, <a class="el" href="_ob_types_8h.html#a3b444d13ed4a263aefa2b44e6da22b67">OBGyroSampleRate</a> sampleRate)</td></tr>
-<tr class="memdesc:a01b3f6274b4cedae78a8b816ca293fcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过传入的参数进行匹配对应的StreamProfile。若有多个匹配项默认返回列表中的第一个, 若没有找到匹配的项，则抛异常  <br /></td></tr>
+<tr class="memdesc:a01b3f6274b4cedae78a8b816ca293fcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过传入的参数进行匹配对应的 StreamProfile。若有多个匹配项默认返回列表中的第一个, 若没有找到匹配的项，则抛异常  <br /></td></tr>
 <tr class="separator:a01b3f6274b4cedae78a8b816ca293fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -116,7 +116,7 @@ Protected 属性</h2></td></tr>
 <tr class="separator:a24ceb6b2aa542cd316cee6c4ab2a15e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>StreamProfileList类, 通过宽、高、帧率、格式等 获取匹配的StreamProfile </p>
+<div class="textblock"><p><a class="el" href="classob_1_1_stream_profile_list.html" title="StreamProfileList 类, 通过宽、高、帧率、格式等 获取匹配的 StreamProfile">StreamProfileList</a> 类, 通过宽、高、帧率、格式等 获取匹配的 <a class="el" href="classob_1_1_stream_profile.html" title="定义 StreamProfile 类, 用于获取流格式和类型等">StreamProfile</a> </p>
 
 <p class="definition">在文件 <a class="el" href="_stream_profile_8hpp_source.html">StreamProfile.hpp</a> 第 <a class="el" href="_stream_profile_8hpp_source.html#l00182">182</a> 行定义.</p>
 </div><h2 class="groupheader">构造及析构函数说明</h2>
@@ -187,8 +187,8 @@ Protected 属性</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>获取StreamProfile数量 </p>
-<dl class="section return"><dt>返回</dt><dd>uint32_t 返回StreamProfile的数量 </dd></dl>
+<p>获取 <a class="el" href="classob_1_1_stream_profile.html" title="定义 StreamProfile 类, 用于获取流格式和类型等">StreamProfile</a> 数量 </p>
+<dl class="section return"><dt>返回</dt><dd>uint32_t 返回 <a class="el" href="classob_1_1_stream_profile.html" title="定义 StreamProfile 类, 用于获取流格式和类型等">StreamProfile</a> 的数量 </dd></dl>
 
 </div>
 </div>
@@ -208,19 +208,19 @@ Protected 属性</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>通过索引号获取StreamProfile </p>
+<p>通过索引号获取 <a class="el" href="classob_1_1_stream_profile.html" title="定义 StreamProfile 类, 用于获取流格式和类型等">StreamProfile</a> </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>要创建设备的索，范围 [0, count-1]，如果index超出范围将抛异常 </td></tr>
+    <tr><td class="paramname">index</td><td>要创建设备的索，范围 [0, count-1]，如果 index 超出范围将抛异常 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;StreamProfile&gt; 返回StreamProfile对象 </dd></dl>
+<dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;StreamProfile&gt; 返回 <a class="el" href="classob_1_1_stream_profile.html" title="定义 StreamProfile 类, 用于获取流格式和类型等">StreamProfile</a> 对象 </dd></dl>
 
 </div>
 </div>
-<a id="a6b4d1c62503f614d9b35e57b5a78031b" name="a6b4d1c62503f614d9b35e57b5a78031b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b4d1c62503f614d9b35e57b5a78031b">&#9670;&#160;</a></span>getVideoStreamProfile()</h2>
+<a id="a8aec9a1fec68afe0afe675a6082f81d7" name="a8aec9a1fec68afe0afe675a6082f81d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aec9a1fec68afe0afe675a6082f81d7">&#9670;&#160;</a></span>getVideoStreamProfile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,25 +229,25 @@ Protected 属性</h2></td></tr>
           <td class="memname">const std::shared_ptr&lt; <a class="el" href="classob_1_1_video_stream_profile.html">VideoStreamProfile</a> &gt; ob::StreamProfileList::getVideoStreamProfile </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>width</em> = <code>0</code>, </td>
+          <td class="paramname"><em>width</em> = <code><a class="el" href="_ob_types_8h.html#a9b361dc99aceea67424ab913937a5f68">OB_WIDTH_ANY</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>height</em> = <code>0</code>, </td>
+          <td class="paramname"><em>height</em> = <code><a class="el" href="_ob_types_8h.html#ab2a356174680c09f5afda003b724f116">OB_HEIGHT_ANY</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="_ob_types_8h.html#a30904eab1a667b797e7ce1099ba7c36a">OBFormat</a>&#160;</td>
-          <td class="paramname"><em>format</em> = <code><a class="el" href="_ob_types_8h.html#a30904eab1a667b797e7ce1099ba7c36aa62bbf740c7702c0232734a8209fcbf5f">OB_FORMAT_UNKNOWN</a></code>, </td>
+          <td class="paramname"><em>format</em> = <code><a class="el" href="_ob_types_8h.html#ab4517bcbc296d6ff427db1eea50b7070">OB_FORMAT_ANY</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>fps</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>fps</em> = <code><a class="el" href="_ob_types_8h.html#aae0778156fa30d9e595a6150d603b62e">OB_FPS_ANY</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -257,13 +257,13 @@ Protected 属性</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>通过传入的参数进行匹配对应的StreamProfile。若有多个匹配项默认返回列表中的第一个, 若没有找到匹配的项，则抛异常 </p>
+<p>通过传入的参数进行匹配对应的 StreamProfile。若有多个匹配项默认返回列表中的第一个, 若没有找到匹配的项，则抛异常 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">width</td><td>宽度，如不要求加入匹配条件，可传0 </td></tr>
-    <tr><td class="paramname">height</td><td>高度，如不要求加入匹配条件，可传0 </td></tr>
-    <tr><td class="paramname">format</td><td>类型，如不要求加入匹配条件，可传OB_FORMAT_UNKNOWN </td></tr>
-    <tr><td class="paramname">fps</td><td>帧率，如不要求加入匹配条件，可传0 </td></tr>
+    <tr><td class="paramname">width</td><td>宽度，如不要求加入匹配条件，可传 OB_WIDTH_ANY </td></tr>
+    <tr><td class="paramname">height</td><td>高度，如不要求加入匹配条件，可传 OB_HEIGHT_ANY </td></tr>
+    <tr><td class="paramname">format</td><td>类型，如不要求加入匹配条件，可传 OB_FORMAT_ANY </td></tr>
+    <tr><td class="paramname">fps</td><td>帧率，如不要求加入匹配条件，可传 OB_FPS_ANY </td></tr>
   </table>
   </dd>
 </dl>
@@ -297,11 +297,11 @@ Protected 属性</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>通过传入的参数进行匹配对应的StreamProfile。若有多个匹配项默认返回列表中的第一个, 若没有找到匹配的项，则抛异常 </p>
+<p>通过传入的参数进行匹配对应的 StreamProfile。若有多个匹配项默认返回列表中的第一个, 若没有找到匹配的项，则抛异常 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">fullScaleRange</td><td>加速度量程，如不要求加入匹配条件，可传0 </td></tr>
-    <tr><td class="paramname">sampleRate</td><td>加速度帧率，如不要求加入匹配条件，可传0 </td></tr>
+    <tr><td class="paramname">fullScaleRange</td><td>加速度量程，如不要求加入匹配条件，可传 0 </td></tr>
+    <tr><td class="paramname">sampleRate</td><td>加速度帧率，如不要求加入匹配条件，可传 0 </td></tr>
   </table>
   </dd>
 </dl>
@@ -335,11 +335,11 @@ Protected 属性</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>通过传入的参数进行匹配对应的StreamProfile。若有多个匹配项默认返回列表中的第一个, 若没有找到匹配的项，则抛异常 </p>
+<p>通过传入的参数进行匹配对应的 StreamProfile。若有多个匹配项默认返回列表中的第一个, 若没有找到匹配的项，则抛异常 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">fullScaleRange</td><td>陀螺仪量程，如不要求加入匹配条件，可传0 </td></tr>
-    <tr><td class="paramname">sampleRate</td><td>陀螺仪帧率，如不要求加入匹配条件，可传0 </td></tr>
+    <tr><td class="paramname">fullScaleRange</td><td>陀螺仪量程，如不要求加入匹配条件，可传 0 </td></tr>
+    <tr><td class="paramname">sampleRate</td><td>陀螺仪帧率，如不要求加入匹配条件，可传 0 </td></tr>
   </table>
   </dd>
 </dl>
@@ -378,7 +378,7 @@ Protected 属性</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 九月 25日 星期一 20:08:21 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 十月 10日 星期二 20:29:16 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.8.1</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -82,7 +82,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>context是描述SDK的runtime一个管理类，负责SDK的资源申请与释放。 context具备多设备的管理能力，负责枚举设备，监听设备回调，启用多设备同步等功能。  
+<p>context 是描述 SDK 的 runtime 一个管理类，负责 SDK 的资源申请与释放。 context 具备多设备的管理能力，负责枚举设备，监听设备回调，启用多设备同步等功能。  
 <a href="#details">更多...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>&quot;</code><br />
 </div>
@@ -135,14 +135,14 @@ $(function() {
 <tr class="memdesc:a3fa8b36789dc4795a62e12921d43465d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置日志输出到控制台  <br /></td></tr>
 <tr class="separator:a3fa8b36789dc4795a62e12921d43465d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75ca999bcd3dea0808ed9ccff28bf00b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_context_8h.html#a75ca999bcd3dea0808ed9ccff28bf00b">ob_load_license</a> (const char *filePath, const char *key, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a75ca999bcd3dea0808ed9ccff28bf00b"><td class="mdescLeft">&#160;</td><td class="mdescRight">加载license  <br /></td></tr>
+<tr class="memdesc:a75ca999bcd3dea0808ed9ccff28bf00b"><td class="mdescLeft">&#160;</td><td class="mdescRight">加载 license  <br /></td></tr>
 <tr class="separator:a75ca999bcd3dea0808ed9ccff28bf00b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf0f9777acf870a662b04ec73f57bab5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_context_8h.html#abf0f9777acf870a662b04ec73f57bab5">ob_load_license_from_data</a> (const char *data, uint32_t dataLen, const char *key, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:abf0f9777acf870a662b04ec73f57bab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">从数据加载license  <br /></td></tr>
+<tr class="memdesc:abf0f9777acf870a662b04ec73f57bab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">从数据加载 license  <br /></td></tr>
 <tr class="separator:abf0f9777acf870a662b04ec73f57bab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>context是描述SDK的runtime一个管理类，负责SDK的资源申请与释放。 context具备多设备的管理能力，负责枚举设备，监听设备回调，启用多设备同步等功能。 </p>
+<div class="textblock"><p>context 是描述 SDK 的 runtime 一个管理类，负责 SDK 的资源申请与释放。 context 具备多设备的管理能力，负责枚举设备，监听设备回调，启用多设备同步等功能。 </p>
 
 <p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 中定义.</p>
 </div><h2 class="groupheader">宏定义说明</h2>
@@ -336,7 +336,7 @@ $(function() {
 </div><div class="memdoc">
 
 <p>启用或禁用网络设备枚举 </p>
-<p>启用后，网络设备将自动被发现，并且可以通过 query_device_list 获取。默认状态可以在配置文件中设置。</p>
+<p>启用后，网络设备将自动被发现，并且可以通过 <a class="el" href="_context_8h.html#a826dd28946acd5108a720784a1a03e7b">ob_query_device_list</a> 获取。默认状态可以在配置文件中设置。</p>
 <dl class="section attention"><dt>注意</dt><dd>网络设备枚举通过 gvcp 协议，如果设备和主机不在同一子网，将被发现但无法连接。</dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
@@ -391,7 +391,7 @@ $(function() {
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>指向上下文对象的指针 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>IP地址 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>IP 地址 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">port</td><td>端口号 </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>指向错误对象的指针，如果在设备创建过程中发生错误，将填充该对象 </td></tr>
   </table>
@@ -440,7 +440,7 @@ $(function() {
 </div><div class="memdoc">
 
 <p>设置设备插拔回调函数 </p>
-<dl class="section attention"><dt>注意</dt><dd>通过回调接口返回的added和removed设备列表,需要手动释放设备列表</dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>通过回调接口返回的 added 和 removed 设备列表, 需要手动释放设备列表</dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>指向上下文对象的指针 </td></tr>
@@ -489,7 +489,7 @@ $(function() {
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>指向上下文对象的指针 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">repeatInterval</td><td>自动重复同步的时间间隔，以毫秒为单位。如果值为0，则仅执行一次同步。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">repeatInterval</td><td>自动重复同步的时间间隔，以毫秒为单位。如果值为 0，则仅执行一次同步。 </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>指向错误对象的指针，如果执行期间发生错误，则将填充该对象 </td></tr>
   </table>
   </dd>
@@ -527,7 +527,7 @@ $(function() {
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>指向上下文对象的指针 </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>指向错误对象的指针,在释放内存期间出现错误时,将填充该对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>指向错误对象的指针，在释放内存期间出现错误时，将填充该对象 </td></tr>
   </table>
   </dd>
 </dl>
@@ -565,7 +565,7 @@ $(function() {
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">severity</td><td>日志等级 </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>指向错误对象的指针,在日志等级设置期间出现错误时,将填充该对象 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>指向错误对象的指针，在日志等级设置期间出现错误时，将填充该对象 </td></tr>
   </table>
   </dd>
 </dl>
@@ -736,12 +736,12 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p>加载license </p>
+<p>加载 license </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">filePath</td><td>license文件的路径 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>“OB_DEFAULT_DECRYPT_KEY”可用于表示默认密钥。 </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>指向错误对象的指针，如果在license加载期间发生错误，将填充该对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filePath</td><td>license 文件的路径 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>“OB_DEFAULT_DECRYPT_KEY” 可用于表示默认密钥。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>指向错误对象的指针，如果在 license 加载期间发生错误，将填充该对象 </td></tr>
   </table>
   </dd>
 </dl>
@@ -786,13 +786,13 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p>从数据加载license </p>
+<p>从数据加载 license </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>指向license数据的指针 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dataLen</td><td>license数据的长度 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>“OB_DEFAULT_DECRYPT_KEY”可用于表示默认密钥。 </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>指向错误对象的指针，如果在license加载期间发生错误，将填充该对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>指向 license 数据的指针 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dataLen</td><td>license 数据的长度 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>“OB_DEFAULT_DECRYPT_KEY” 可用于表示默认密钥。 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>指向错误对象的指针，如果在 license 加载期间发生错误，将填充该对象 </td></tr>
   </table>
   </dd>
 </dl>
@@ -802,7 +802,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 九月 25日 星期一 20:08:20 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 十月 10日 星期二 20:29:16 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

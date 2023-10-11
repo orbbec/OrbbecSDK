@@ -397,10 +397,10 @@ ob_config* config = ob_create_config( &error );
 ob_stream_profile *     depth_profile = NULL;
 ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_DEPTH, &error);
 //根据指定的格式查找对应的Profile,优先查找Y16格式
-depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_Y16, 30, &error);
+depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30, &error);
 //没找到Y16格式后不匹配格式查找对应的Profile进行开流
 if(error){
-    depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_UNKNOWN, 30, &error);
+    depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_ANY, 30, &error);
     error = nullptr;
 }
 ob_config_enable_stream(config, depth_profile, &error);  // 使能配置
@@ -451,10 +451,10 @@ ob_config* config = ob_create_config( &error );
 ob_stream_profile *     color_profile = NULL;
 ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_Color, &error);
 //根据指定的格式查找对应的Profile,优先选择RGB888格式
-color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_RGB, 30, &error);
+color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_RGB, 30, &error);
 //没找到RGB888格式后不匹配格式查找对应的Profile进行开流
 if(error){
-	color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_UNKNOWN, 30, &error);
+	color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_ANY, 30, &error);
 	error = nullptr;
 }
 ob_config_enable_stream(config, depth_profile, &error);  // 使能配置
@@ -510,10 +510,10 @@ ob_config* config = ob_create_config( &error );
 ob_stream_profile *     ir_profile = NULL;
 ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_IR, &error);
 //根据指定的格式查找对应的Profile,优先查找Y16格式
-ir_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_Y16, 30, &error);
+ir_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30, &error);
 //没找到Y16格式后不匹配格式查找对应的Profile进行开流
 if(error) {
-    ir_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_UNKNOWN, 30, &error);
+    ir_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_ANY, 30, &error);
     error = nullptr;
 }
 ob_config_enable_stream(config, depth_profile, &error);  // 使能配置
@@ -812,10 +812,10 @@ void save_rgb_points_to_ply( ob_frame* frame, const char* fileName ) {
     ob_stream_profile *     depth_profile = NULL;
     ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_DEPTH, &error);
      //根据指定的格式查找对应的Profile,优先查找Y16格式
-    depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_Y16, 30, &error);
+    depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30, &error);
     //没找到Y16格式后不匹配格式查找对应的Profile进行开流
     if(error){
-        depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_UNKNOWN, 30, &error);
+        depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_ANY, 30, &error);
         error = NULL;
     }
 
@@ -831,11 +831,11 @@ void save_rgb_points_to_ply( ob_frame* frame, const char* fileName ) {
     }
     //根据指定的格式查找对应的Profile,优先选择RGB888格式
     if(profiles){
-        color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_RGB, 30, &error);
+        color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_RGB, 30, &error);
     }
     //没找到RGB888格式后不匹配格式查找对应的Profile进行开流
     if(profiles && error){
-        color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_UNKNOWN, 30, &error);
+        color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_ANY, 30, &error);
         error = NULL;
     }
     ob_config_enable_stream( config, color_profile, &error );  // 使能配置
@@ -983,10 +983,10 @@ auto profiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
 std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
 try{
 	//根据指定的格式查找对应的Profile,优先查找Y16格式
-	depthProfile = profiles->getVideoStreamProfile(640,0,OB_FORMAT_Y16,30);
+	depthProfile = profiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_Y16,30);
 }catch(ob::Error &e){
 	//没找到Y16格式后不匹配格式查找对应的Profile进行开流
-	depthProfile = profiles->getVideoStreamProfile(640,0,OB_FORMAT_UNKNOWN,30);
+	depthProfile = profiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
 }
 ```
 通过创建Config来配置Pipeline要启用或者禁用哪些流，这里将启用深度流
@@ -1035,10 +1035,10 @@ try{
 	std::shared_ptr<ob::VideoStreamProfile> colorProfile = nullptr;
 	try{
 		//根据指定的格式查找对应的Profile,优先选择RGB888格式
-		colorProfile = profiles->getVideoStreamProfile(640,0,OB_FORMAT_RGB,30);
+		colorProfile = profiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_RGB,30);
 	}catch(ob::Error &e){
 		//没找到RGB888格式后不匹配格式查找对应的Profile进行开流
-		colorProfile = profiles->getVideoStreamProfile(640,0,OB_FORMAT_UNKNOWN,30);
+		colorProfile = profiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
 	}
 	config->enableStream(colorProfile);
 }catch(ob::Error &e){
@@ -1089,10 +1089,10 @@ auto profiles = pipe.getStreamProfileList(OB_SENSOR_IR);
 std::shared_ptr<ob::VideoStreamProfile> irProfile = nullptr;
 try{
 	//根据指定的格式查找对应的Profile,优先查找Y16格式
-	irProfile = profiles->getVideoStreamProfile(640, 0, OB_FORMAT_Y16,30);
+	irProfile = profiles-getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_Y16,30);
 }catch(ob::Error &e){
 	//没找到Y16格式后不匹配格式查找对应的Profile进行开流
-	irProfile = profiles->getVideoStreamProfile(640, 0, OB_FORMAT_UNKNOWN,30);
+	irProfile = profiles-getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_ANY,30);
 }
 ```
 通过创建Config来配置Pipeline要启用或者禁用哪些流，这里将启用红外流
@@ -1149,10 +1149,10 @@ try{
     std::shared_ptr<ob::VideoStreamProfile> colorProfile = nullptr;
     try{
         //根据指定的格式查找对应的Profile,优先选择RGB888格式
-        colorProfile = colorProfiles->getVideoStreamProfile(640,0,OB_FORMAT_RGB,30);
+        colorProfile = colorProfiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_RGB,30);
     }catch(ob::Error &e){
         //没找到RGB888格式后不匹配格式查找对应的Profile进行开流
-        colorProfile = colorProfiles->getVideoStreamProfile(640,0,OB_FORMAT_UNKNOWN,30);
+        colorProfile = colorProfiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
     }
     config->enableStream(colorProfile);
 }catch(...){
@@ -1165,10 +1165,10 @@ auto depthProfiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
 std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
 try{
     //根据指定的格式查找对应的Profile,优先查找Y16格式
-    depthProfile = depthProfiles->getVideoStreamProfile(640,0,OB_FORMAT_Y16,30);
+    depthProfile = depthProfiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_Y16,30);
 }catch(ob::Error &e){
     //没找到Y16格式后不匹配格式查找对应的Profile进行开流
-    depthProfile = depthProfiles->getVideoStreamProfile(640,0,OB_FORMAT_UNKNOWN,30);
+    depthProfile = depthProfiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
 }
 ```
 通过创建Config来配置Pipeline要启用或者禁用哪些流，这里将启用彩色流和深度流
@@ -1461,7 +1461,7 @@ ob::Pipeline pipe(device);
     // 尝试配置Color流
     try {
         auto colorProfiles = pipe.getStreamProfileList(OB_SENSOR_COLOR);
-        auto colorProfile  = colorProfiles->getProfile(0);
+        auto colorProfile  = colorProfiles->getProfile(OB_PROFILE_DEFAULT);
         config->enableStream(colorProfile->as<ob::VideoStreamProfile>());
     }
     catch(...) {
@@ -1471,7 +1471,7 @@ ob::Pipeline pipe(device);
     // 尝试配置Depth流
     try {
         auto depthProfiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
-        auto depthProfile  = depthProfiles->getProfile(0);
+        auto depthProfile  = depthProfiles->getProfile(OB_PROFILE_DEFAULT);
         config->enableStream(depthProfile->as<ob::VideoStreamProfile>());
     }
     catch(...) {
@@ -1481,7 +1481,7 @@ ob::Pipeline pipe(device);
     // 尝试配置IR流
     try {
         auto irProfiles = pipe.getStreamProfileList(OB_SENSOR_IR);
-        auto irProfile  = irProfiles->getProfile(0);
+        auto irProfile  = irProfiles->getProfile(OB_PROFILE_DEFAULT);
         config->enableStream(irProfile->as<ob::VideoStreamProfile>());
     }
     catch(...) {
@@ -1529,7 +1529,7 @@ catch(...) {
 if(accelSensor && gyroSensor) {
     // 获取AccelStreamProfile
     auto accelProfiles = accelSensor->getStreamProfileList();
-    auto accelProfile  = accelProfiles->getProfile(0);
+    auto accelProfile  = accelProfiles->getProfile(OB_PROFILE_DEFAULT);
     // 用ob::Sensor#start函数开流，需要传入StreamProfile和FrameCallback
     // 在FrameCallback帧回调函数中处理device返回的数据帧
     accelSensor->start(accelProfile, [&](std::shared_ptr<ob::Frame> frame) {
@@ -1539,7 +1539,7 @@ if(accelSensor && gyroSensor) {
 
     // 获取GyroStreamProfile
     auto gyroProfiles = gyroSensor->getStreamProfileList();
-    auto gyroProfile  = gyroProfiles->getProfile(0);
+    auto gyroProfile  = gyroProfiles->getProfile(OB_PROFILE_DEFAULT);
     // 用ob::Sensor#start函数开流，需要传入StreamProfile和FrameCallback
     // 在FrameCallback帧回调函数中处理device返回的数据帧
     gyroSensor->start(gyroProfile, [&](std::shared_ptr<ob::Frame> frame) {
@@ -1589,10 +1589,10 @@ for(auto &&pipe: pipes) {
     std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
     try{
         //根据指定的格式查找对应的Profile,优先查找Y16格式
-        depthProfile = depthProfileList->getVideoStreamProfile(640,0,OB_FORMAT_Y16,30);
+        depthProfile = depthProfileList-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_Y16,30);
     }catch(ob::Error &e){
         //没找到Y16格式后不匹配格式查找对应的Profile进行开流
-        depthProfile = depthProfileList->getVideoStreamProfile(640,0,OB_FORMAT_UNKNOWN,30);
+        depthProfile = depthProfileList-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
     }
     config->enableStream(depthProfile);
 
@@ -1603,10 +1603,10 @@ for(auto &&pipe: pipes) {
 
         try{
             //根据指定的格式查找对应的Profile,优先选择RGB888格式
-            colorProfile = colorProfileList->getVideoStreamProfile(640,0,OB_FORMAT_RGB,30);
+            colorProfile = colorProfileList-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_RGB,30);
         }catch(ob::Error &e){
             //没找到RGB888格式后不匹配格式查找对应的Profile进行开流
-            colorProfile = colorProfileList->getVideoStreamProfile(640,0,OB_FORMAT_UNKNOWN,30);
+            colorProfile = colorProfileList-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
         }
         config->enableStream(colorProfile);
     }catch(ob::Error &e){
@@ -1740,11 +1740,11 @@ try{
 //获取深度相机的所有流配置，包括流的分辨率，帧率，以及帧的格式
 auto depthProfiles = pipeline->getStreamProfileList(OB_SENSOR_DEPTH);
 //获取对应流配置列表的第0个Profile，如果有配置文件，配置文件里面流配置是流配置列表的第0个
-auto depthProfile = depthProfiles->getProfile(0)->as<ob::VideoStreamProfile>();
+auto depthProfile = depthProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
 //获取彩色相机的所有流配置，包括流的分辨率，帧率，以及帧的格式
 auto colorProfiles = pipeline->getStreamProfileList(OB_SENSOR_COLOR);
 //获取对应流配置列表的第0个Profile，如果有配置文件，配置文件里面流配置是流配置列表的第0个
-auto colorProfile = colorProfiles->getProfile(0)->as<ob::VideoStreamProfile>();
+auto colorProfile = colorProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
 //获取帧率
 colorFps = colorProfile->fps();
 depthFps = depthProfile->fps();
@@ -2124,10 +2124,10 @@ auto depthProfiles = pipeline.getStreamProfileList(OB_SENSOR_DEPTH);
 std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
 try{
     //根据指定的格式查找对应的Profile,优先查找Y16格式
-    depthProfile = depthProfiles->getVideoStreamProfile(640,0,OB_FORMAT_Y16,30);
+    depthProfile = depthProfiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_Y16,30);
 }catch(ob::Error &e){
     //没找到Y16格式后不匹配格式查找对应的Profile进行开流
-    depthProfile = depthProfiles->getVideoStreamProfile(640,0,OB_FORMAT_UNKNOWN,30);
+    depthProfile = depthProfiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
 }
 config->enableStream(depthProfile);
 
@@ -2137,10 +2137,10 @@ try{
     std::shared_ptr<ob::VideoStreamProfile> colorProfile = nullptr;
     try{
         //根据指定的格式查找对应的Profile,优先选择RGB888格式
-        colorProfile = colorProfiles->getVideoStreamProfile(640,0,OB_FORMAT_RGB,30);
+        colorProfile = colorProfiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_RGB,30);
     }catch(ob::Error &e){
         //没找到RGB888格式后不匹配格式查找对应的Profile进行开流
-        colorProfile = colorProfiles->getVideoStreamProfile(640,0,OB_FORMAT_UNKNOWN,30);
+        colorProfile = colorProfiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
     }
     config->enableStream(colorProfile);
 }catch(ob::Error &e){
@@ -2273,9 +2273,9 @@ try{
     std::shared_ptr<ob::VideoStreamProfile> colorProfile = nullptr;
     try{
         //通过接口设置感兴趣项，返回对应Profile列表的首个Profile
-        colorProfile = colorProfiles->getVideoStreamProfile(640,0,OB_FORMAT_MJPG,30);
+        colorProfile = colorProfiles->getVideoStreamProfile(640,OB_HEIGHT_ANY,OB_FORMAT_MJPG,30);
     }catch(ob::Error &e){
-        colorProfile = colorProfiles->getVideoStreamProfile(640,0,OB_FORMAT_UNKNOWN,30);
+        colorProfile = colorProfiles->getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
     }
     config->enableStream(colorProfile);
 }catch(ob::Error &e) {
@@ -2288,10 +2288,10 @@ auto depthProfiles = pipeline.getStreamProfileList(OB_SENSOR_DEPTH);
 std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
 try{
     //根据指定的格式查找对应的Profile,优先查找Y16格式
-    depthProfile = depthProfiles->getVideoStreamProfile(640,0,OB_FORMAT_Y16,30);
+    depthProfile = depthProfiles->getVideoStreamProfile(640,OB_HEIGHT_ANY,OB_FORMAT_Y16,30);
 }catch(ob::Error &e){
     //没找到Y16格式后不匹配格式查找对应的Profile进行开流
-    depthProfile = depthProfiles->getVideoStreamProfile(640,0,OB_FORMAT_UNKNOWN,30);
+    depthProfile = depthProfiles->getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
 }
 config->enableStream(depthProfile);
 ```
@@ -2344,11 +2344,11 @@ auto profiles     = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
 std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
 try {
     //根据指定的格式查找对应的Profile,优先查找Y16格式
-    depthProfile = profiles->getVideoStreamProfile(640, 0, OB_FORMAT_Y16, 30);
+    depthProfile = profiles->getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30);
 }
 catch (ob::Error& e) {
     //没找到Y16格式后不匹配格式查找对应的Profile进行开流
-    depthProfile = profiles->getVideoStreamProfile(640, 0, OB_FORMAT_UNKNOWN, 30);
+    depthProfile = profiles->getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_ANY, 30);
 }
 ```
 通过创建Config来配置Pipeline要启用或者禁用哪些流，这里将启用深度流

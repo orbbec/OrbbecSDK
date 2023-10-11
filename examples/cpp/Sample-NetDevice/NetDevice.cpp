@@ -37,14 +37,14 @@ int main(int argc, char **argv) try {
     // Get the depth camera configuration list
     auto depthProfileList = pipe->getStreamProfileList(OB_SENSOR_DEPTH);
     // use default configuration
-    auto depthProfile = depthProfileList->getProfile(0);
+    auto depthProfile = depthProfileList->getProfile(OB_PROFILE_DEFAULT);
     // enable depth stream
     config->enableStream(depthProfile);
 
     // Get the color camera configuration list
     auto colorProfileList = pipe->getStreamProfileList(OB_SENSOR_COLOR);
     // use default configuration
-    auto colorProfile = colorProfileList->getProfile(0);
+    auto colorProfile = colorProfileList->getProfile(OB_PROFILE_DEFAULT);
     // enable depth stream
     config->enableStream(colorProfile);
 

@@ -46,6 +46,7 @@ public:
         cv::namedWindow(name_, cv::WINDOW_NORMAL | cv::WINDOW_KEEPRATIO);
         cv::resizeWindow(name_, width_, height_);
 #endif
+        renderMat_ = cv::Mat::zeros(height_, width_, CV_8UC3);
     }
 
     ~Window() {

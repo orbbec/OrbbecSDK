@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.8.1</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -82,7 +82,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>该文件包含多个设备相关的API开关，用于控制多个设备之间的同步以及单个设备内不同传感器之间的同步  
+<p>该文件包含多个设备相关的 API 开关，用于控制多个设备之间的同步以及单个设备内不同传感器之间的同步  
 <a href="#details">更多...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_device_8h_source.html">Device.h</a>&quot;</code><br />
@@ -92,7 +92,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 宏定义</h2></td></tr>
 <tr class="memitem:ace7ff470963cf026bd05166caaee9ce2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_multiple_devices_8h.html#ace7ff470963cf026bd05166caaee9ce2">ob_device_timer_reset</a>&#160;&#160;&#160;<a class="el" href="_multiple_devices_8h.html#acaba609185cfe990f2614ed3eb6df82f">ob_device_timestamp_reset</a></td></tr>
-<tr class="memdesc:ace7ff470963cf026bd05166caaee9ce2"><td class="mdescLeft">&#160;</td><td class="mdescRight">ob_device_timestamp_reset的别名，因为它更准确。  <br /></td></tr>
+<tr class="memdesc:ace7ff470963cf026bd05166caaee9ce2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="_multiple_devices_8h.html#acaba609185cfe990f2614ed3eb6df82f">ob_device_timestamp_reset</a> 的别名，因为它更准确。  <br /></td></tr>
 <tr class="separator:ace7ff470963cf026bd05166caaee9ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -123,9 +123,9 @@ $(function() {
 <tr class="separator:a3c4c68af4d9217991d87c128c593cd36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>该文件包含多个设备相关的API开关，用于控制多个设备之间的同步以及单个设备内不同传感器之间的同步 </p>
+<div class="textblock"><p>该文件包含多个设备相关的 API 开关，用于控制多个设备之间的同步以及单个设备内不同传感器之间的同步 </p>
 <p>多个设备之间的同步是复杂的，不同的型号有不同的同步模式和限制。请参照有关详细信息，请参阅产品手册。</p>
-<p>由于“深度”和“红外”在物理上是相同的传感器，因此“红外”的行为与同步模式中的“深度”相同 </p>
+<p>由于深度相机和红外相机在物理上是相同的传感器，因此红外相机的行为与同步模式中的深度相机相同 </p>
 
 <p class="definition">在文件 <a class="el" href="_multiple_devices_8h_source.html">MultipleDevices.h</a> 中定义.</p>
 </div><h2 class="groupheader">宏定义说明</h2>
@@ -141,7 +141,7 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p>ob_device_timestamp_reset的别名，因为它更准确。 </p>
+<p><a class="el" href="_multiple_devices_8h.html#acaba609185cfe990f2614ed3eb6df82f">ob_device_timestamp_reset</a> 的别名，因为它更准确。 </p>
 
 <p class="definition">在文件 <a class="el" href="_multiple_devices_8h_source.html">MultipleDevices.h</a> 第 <a class="el" href="_multiple_devices_8h_source.html#l00101">101</a> 行定义.</p>
 
@@ -175,15 +175,15 @@ $(function() {
 </div><div class="memdoc">
 
 <p>获取设备支持的多机同步模式位图 </p>
-<p>例如，如果返回值为0b00001100，则表示设备支持 OB_MULTI_device_SYNC_MODE_PRIMARY 和 OB_MULTI_DEVICE_SYNC_MODE_SECONDARY，用户可以通过以下代码检查支持的模式： </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(supported_mode_bitmap &amp; <a class="code hl_enumvalue" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a>){</div>
+<p>例如，如果返回值为 0b00001100，则表示设备支持 <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba8e2f43bf0dd49abc986b551b75e0a923">OB_MULTI_DEVICE_SYNC_MODE_PRIMARY</a> 和 OB_MULTI_DEVICE_SYNC_MODE_SECONDARY，用户可以通过以下代码检查支持的模式： </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(supported_mode_bitmap &amp; <a class="code hl_enumvalue" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a>){</div>
 <div class="line">   <span class="comment">//support OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</span></div>
 <div class="line">}</div>
 <div class="line"><span class="keywordflow">if</span>(supported_mode_bitmap &amp; <a class="code hl_enumvalue" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225">OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</a>){</div>
 <div class="line">  <span class="comment">//support OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</span></div>
 <div class="line">}</div>
 <div class="line"><span class="comment">// and so on</span></div>
-<div class="ttc" id="a_ob_types_8h_html_aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225"><div class="ttname"><a href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225">OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</a></div><div class="ttdeci">@ OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</div><div class="ttdoc">standalone 模式</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l01021">ObTypes.h:1021</a></div></div>
-<div class="ttc" id="a_ob_types_8h_html_aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89"><div class="ttname"><a href="_ob_types_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a></div><div class="ttdeci">@ OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</div><div class="ttdoc">free run 模式</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l01014">ObTypes.h:1014</a></div></div>
+<div class="ttc" id="a_ob_types_8h_html_aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225"><div class="ttname"><a href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225">OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</a></div><div class="ttdeci">@ OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</div><div class="ttdoc">standalone 模式</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l01025">ObTypes.h:1025</a></div></div>
+<div class="ttc" id="a_ob_types_8h_html_aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89"><div class="ttname"><a href="_ob_types_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a></div><div class="ttdeci">@ OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</div><div class="ttdoc">free run 模式</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l01018">ObTypes.h:1018</a></div></div>
 </div><!-- fragment --> <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备句柄 </td></tr>
@@ -304,12 +304,12 @@ $(function() {
 </div><div class="memdoc">
 
 <p>发送捕获信息至设备 </p>
-<p>当设备处于 OB_MULTI_device_SYNC_MODE_SOFTWARE_TRIGGERING中时，收到捕获命令后，设备将开始一次图像捕获</p>
+<p>当设备处于 <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba2fe8400ffd77e63929e69bb0f0ab1da6">OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING</a> 中时，收到捕获命令后，设备将开始一次图像捕获</p>
 <dl class="section attention"><dt>注意</dt><dd>用户调用此函数的频率乘以每个触发器的帧数应该小于流的帧速率。每个触发器的帧数可以由 framesPerTrigger 设置 </dd>
 <dd>
 对于某些型号，接收和执行捕获命令会有一定的延迟和性能消耗，因此调用该功能的频率不应过高，具体支持的频率请参阅产品手册 </dd>
 <dd>
-如果设备未处于 OB_MULTI_device_SYNC_MODE_HARDWARE_TRIGGERING 模式，则设备将忽略捕获命令</dd></dl>
+如果设备未处于 <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba39ca63ef583695c083588ae28ea22ad9">OB_MULTI_DEVICE_SYNC_MODE_HARDWARE_TRIGGERING</a> 模式，则设备将忽略捕获命令</dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备句柄 </td></tr>
@@ -429,10 +429,10 @@ $(function() {
 </div><div class="memdoc">
 
 <p>发送时间戳重置命令至设备 </p>
-<p>当时间戳重置功能启用时，设备在接收到时间戳重置命令后，将用于计算输出帧的时间戳的计时器重置为0。时间戳重置功能可以通过调用 ob_device_set_timestamp_reset_config来启用。</p>
+<p>当时间戳重置功能启用时，设备在接收到时间戳重置命令后，将用于计算输出帧的时间戳的计时器重置为 0。时间戳重置功能可以通过调用 <a class="el" href="_multiple_devices_8h.html#a293ead22918e776ce10334e26e20d313">ob_device_set_timestamp_reset_config</a> 来启用。</p>
 <dl class="section attention"><dt>注意</dt><dd>如果设备的流被启动，则流输出的连续帧的时间戳将在时间戳重置后跳一次 </dd>
 <dd>
-由于设备的定时器精度不高，流输出的连续帧的时间戳在长时间后会漂移。用户可以定期调用此功能来重置计时器，以避免时间戳漂移，建议间隔时间为60分钟。</dd></dl>
+由于设备的定时器精度不高，流输出的连续帧的时间戳在长时间后会漂移。用户可以定期调用此功能来重置计时器，以避免时间戳漂移，建议间隔时间为 60 分钟。</dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备句柄 </td></tr>
@@ -473,7 +473,7 @@ $(function() {
 <p>调用此功能后，设备的计时器将与主机同步。用户可以将此功能调用到多个设备，以同步设备的所有计时器</p>
 <dl class="section attention"><dt>注意</dt><dd>如果设备的流被启动，则该流输出的连续帧的时间戳可能在定时器同步之后跳一次 </dd>
 <dd>
-由于设备的定时器精度不高，所以流输出的连续帧的时间戳在长时间后会出现漂移。用户可以通过定期调用此功能来同步计时器，以避免出现时间戳漂移现象，建议调用间隔时间为60分钟</dd></dl>
+由于设备的定时器精度不高，所以流输出的连续帧的时间戳在长时间后会出现漂移。用户可以通过定期调用此功能来同步计时器，以避免出现时间戳漂移现象，建议调用间隔时间为 60 分钟</dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备句柄 </td></tr>
@@ -487,7 +487,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 九月 25日 星期一 20:08:20 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 十月 10日 星期二 20:29:16 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

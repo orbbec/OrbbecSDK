@@ -31,12 +31,13 @@ int        main(int argc, char **argv) try {
             // Get configuration list
             auto profiles = gyroSensor->getStreamProfileList();
             // Select the first profile to open stream
-            auto profile = profiles->getProfile(0);
+            auto profile = profiles->getProfile(OB_PROFILE_DEFAULT);
             gyroSensor->start(profile, [](std::shared_ptr<ob::Frame> frame) {
                 std::unique_lock<std::mutex> lk(printerMutex);
                 auto                         timeStamp = frame->timeStamp();
+                auto                         index     = frame->index();
                 auto                         gyroFrame = frame->as<ob::GyroFrame>();
-                if(gyroFrame != nullptr && (timeStamp % 500) < 2) {  //( timeStamp % 500 ) < 2: Reduce printing frequency
+                if(gyroFrame != nullptr && (index % 50) == 2) {  //( timeStamp % 500 ) < 2: Reduce printing frequency
                     auto value = gyroFrame->value();
                     std::cout << "Gyro Frame: \n\r{\n\r"
                               << "  tsp = " << timeStamp << "\n\r"
@@ -66,12 +67,13 @@ int        main(int argc, char **argv) try {
         // Get configuration list
         auto profiles = accelSensor->getStreamProfileList();
         // Select the first profile to open stream
-        auto profile = profiles->getProfile(0);
+        auto profile = profiles->getProfile(OB_PROFILE_DEFAULT);
         accelSensor->start(profile, [](std::shared_ptr<ob::Frame> frame) {
             std::unique_lock<std::mutex> lk(printerMutex);
             auto                         timeStamp  = frame->timeStamp();
+            auto                         index      = frame->index();
             auto                         accelFrame = frame->as<ob::AccelFrame>();
-            if(accelFrame != nullptr && (timeStamp % 500) < 2) {
+            if(accelFrame != nullptr && (index % 50) == 0) {
                 auto value = accelFrame->value();
                 std::cout << "Accel Frame: \n\r{\n\r"
                           << "  tsp = " << timeStamp << "\n\r"

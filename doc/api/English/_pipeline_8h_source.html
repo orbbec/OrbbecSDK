@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.8.1</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -169,7 +169,7 @@ $(function() {
 <div class="ttc" id="a_ob_types_8h_html_a849f89cf0aae370ceb08ed7bc77bf0f6"><div class="ttname"><a href="_ob_types_8h.html#a849f89cf0aae370ceb08ed7bc77bf0f6">ob_stream_type</a></div><div class="ttdeci">enum OBStreamType ob_stream_type</div></div>
 <div class="ttc" id="a_ob_types_8h_html_aa7bf7c140d08fad46a2fd2aad2eeb441"><div class="ttname"><a href="_ob_types_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a></div><div class="ttdeci">struct StreamProfileImpl ob_stream_profile</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00061">ObTypes.h:61</a></div></div>
 <div class="ttc" id="a_ob_types_8h_html_aca9dc7e0b11a78f00fa8a2ffd8b9ca1b"><div class="ttname"><a href="_ob_types_8h.html#aca9dc7e0b11a78f00fa8a2ffd8b9ca1b">ob_sensor_type</a></div><div class="ttdeci">enum OBSensorType ob_sensor_type</div></div>
-<div class="ttc" id="a_ob_types_8h_html_afb35a0fe8ad0a8ebaed3de262e1705a0"><div class="ttname"><a href="_ob_types_8h.html#afb35a0fe8ad0a8ebaed3de262e1705a0">ob_frameset_callback</a></div><div class="ttdeci">void(* ob_frameset_callback)(ob_frame *frameset, void *user_data)</div><div class="ttdoc">Callback for frameset.</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l01288">ObTypes.h:1288</a></div></div>
+<div class="ttc" id="a_ob_types_8h_html_afb35a0fe8ad0a8ebaed3de262e1705a0"><div class="ttname"><a href="_ob_types_8h.html#afb35a0fe8ad0a8ebaed3de262e1705a0">ob_frameset_callback</a></div><div class="ttdeci">void(* ob_frameset_callback)(ob_frame *frameset, void *user_data)</div><div class="ttdoc">Callback for frameset.</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l01297">ObTypes.h:1297</a></div></div>
 <div class="ttc" id="a_pipeline_8h_html_a0d90685efdd4b7fb7c6f6259c48769b2"><div class="ttname"><a href="_pipeline_8h.html#a0d90685efdd4b7fb7c6f6259c48769b2">ob_pipeline_get_camera_param</a></div><div class="ttdeci">ob_camera_param ob_pipeline_get_camera_param(ob_pipeline *pipeline, ob_error **error)</div></div>
 <div class="ttc" id="a_pipeline_8h_html_a1541607f8a38381b76c4b5f8080252ff"><div class="ttname"><a href="_pipeline_8h.html#a1541607f8a38381b76c4b5f8080252ff">ob_create_config</a></div><div class="ttdeci">ob_config * ob_create_config(ob_error **error)</div><div class="ttdoc">Create the pipeline configuration.</div></div>
 <div class="ttc" id="a_pipeline_8h_html_a189f09ce18fe9f22b2973973f10299e8"><div class="ttname"><a href="_pipeline_8h.html#a189f09ce18fe9f22b2973973f10299e8">ob_config_enable_all_stream</a></div><div class="ttdeci">void ob_config_enable_all_stream(ob_config *config, ob_error **error)</div><div class="ttdoc">Enable all streams in the pipeline configuration.</div></div>
@@ -203,13 +203,13 @@ $(function() {
 <div class="ttc" id="a_pipeline_8h_html_ae9ae4f165cf84cb0f6c06988e525a2d5"><div class="ttname"><a href="_pipeline_8h.html#ae9ae4f165cf84cb0f6c06988e525a2d5">ob_config_set_depth_scale_require</a></div><div class="ttdeci">void ob_config_set_depth_scale_require(ob_config *config, bool enable, ob_error **error)</div><div class="ttdoc">Set whether depth scaling is required after setting D2C.</div></div>
 <div class="ttc" id="a_pipeline_8h_html_af930191baa7ff3d76b131e21a52d2b6f"><div class="ttname"><a href="_pipeline_8h.html#af930191baa7ff3d76b131e21a52d2b6f">ob_pipeline_get_device</a></div><div class="ttdeci">ob_device * ob_pipeline_get_device(ob_pipeline *pipeline, ob_error **error)</div><div class="ttdoc">Get the device object associated with the pipeline.</div></div>
 <div class="ttc" id="a_pipeline_8h_html_afda334fdc68a0cdc200ca5c4f27b1480"><div class="ttname"><a href="_pipeline_8h.html#afda334fdc68a0cdc200ca5c4f27b1480">ob_config_enable_stream</a></div><div class="ttdeci">void ob_config_enable_stream(ob_config *config, ob_stream_profile *profile, ob_error **error)</div><div class="ttdoc">Enable the specified stream in the pipeline configuration.</div></div>
-<div class="ttc" id="astruct_o_b_camera_param_html"><div class="ttname"><a href="struct_o_b_camera_param.html">OBCameraParam</a></div><div class="ttdoc">Structure for camera parameters.</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00366">ObTypes.h:366</a></div></div>
-<div class="ttc" id="astruct_o_b_rect_html"><div class="ttname"><a href="struct_o_b_rect.html">OBRect</a></div><div class="ttdoc">Rectangle.</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00412">ObTypes.h:412</a></div></div>
-<div class="ttc" id="astructob__error_html"><div class="ttname"><a href="structob__error.html">ob_error</a></div><div class="ttdoc">The error class exposed by the SDK, users can get detailed error information according to the error.</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00137">ObTypes.h:137</a></div></div>
+<div class="ttc" id="astruct_o_b_camera_param_html"><div class="ttname"><a href="struct_o_b_camera_param.html">OBCameraParam</a></div><div class="ttdoc">Structure for camera parameters.</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00375">ObTypes.h:375</a></div></div>
+<div class="ttc" id="astruct_o_b_rect_html"><div class="ttname"><a href="struct_o_b_rect.html">OBRect</a></div><div class="ttdoc">Rectangle.</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00421">ObTypes.h:421</a></div></div>
+<div class="ttc" id="astructob__error_html"><div class="ttname"><a href="structob__error.html">ob_error</a></div><div class="ttdoc">The error class exposed by the SDK, users can get detailed error information according to the error.</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l00143">ObTypes.h:143</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 25 2023 20:08:21 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Tue Oct 10 2023 20:29:17 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

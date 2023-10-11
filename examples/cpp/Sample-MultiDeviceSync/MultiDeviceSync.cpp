@@ -376,7 +376,7 @@ void startStream(std::shared_ptr<PipelineHolder> holder) {
 
         // get Stream Profile.
         auto profileList   = pipeline->getStreamProfileList(holder->sensorType);
-        auto streamProfile = profileList->getProfile(0)->as<ob::VideoStreamProfile>();
+        auto streamProfile = profileList->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
         config->enableStream(streamProfile);
         auto frameType   = mapFrameType(holder->sensorType);
         auto deviceIndex = holder->deviceIndex;
@@ -410,18 +410,18 @@ void stopStream(std::shared_ptr<PipelineHolder> holder) {
 }
 
 void handleColorStream(int devIndex, std::shared_ptr<ob::Frame> frame) {
+    std::lock_guard<std::mutex> lock(frameMutex);
     std::cout << "Device#" << devIndex << ", color frame index=" << frame->index() << ", timestamp=" << frame->timeStamp()
               << ", system timestamp=" << frame->systemTimeStamp() << std::endl;
 
-    std::lock_guard<std::mutex> lock(frameMutex);
     colorFrames[devIndex] = frame;
 }
 
 void handleDepthStream(int devIndex, std::shared_ptr<ob::Frame> frame) {
+    std::lock_guard<std::mutex> lock(frameMutex);
     std::cout << "Device#" << devIndex << ", depth frame index=" << frame->index() << ", timestamp=" << frame->timeStamp()
               << ", system timestamp=" << frame->systemTimeStamp() << std::endl;
 
-    std::lock_guard<std::mutex> lock(frameMutex);
     depthFrames[devIndex] = frame;
 }
 

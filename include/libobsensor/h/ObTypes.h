@@ -68,8 +68,14 @@ typedef struct RecorderImpl            ob_recorder;
 typedef struct PlaybackImpl            ob_playback;
 typedef struct OBDepthWorkModeListImpl ob_depth_work_mode_list;
 
+#define OB_WIDTH_ANY 0
+#define OB_HEIGHT_ANY 0
+#define OB_FPS_ANY 0
+#define OB_FORMAT_ANY OB_FORMAT_UNKNOWN
+#define OB_PROFILE_DEFAULT 0
+
 /**
- * @brief senddata or recdata return status type
+ * @brief send data or receive data return status type
  */
 typedef enum {
     HP_STATUS_OK                      = 0,      /**< success*/
@@ -146,14 +152,15 @@ typedef struct ob_error {
  * @brief Enumeration value describing the sensor type
  */
 typedef enum {
-    OB_SENSOR_UNKNOWN  = 0, /**< Unknown type sensor */
-    OB_SENSOR_IR       = 1, /**< IR */
-    OB_SENSOR_COLOR    = 2, /**< Color */
-    OB_SENSOR_DEPTH    = 3, /**< Depth */
-    OB_SENSOR_ACCEL    = 4, /**< Accel */
-    OB_SENSOR_GYRO     = 5, /**< Gyro */
-    OB_SENSOR_IR_LEFT  = 6, /**< left IR */
-    OB_SENSOR_IR_RIGHT = 7, /**< Right IR */
+    OB_SENSOR_UNKNOWN   = 0, /**< Unknown type sensor */
+    OB_SENSOR_IR        = 1, /**< IR */
+    OB_SENSOR_COLOR     = 2, /**< Color */
+    OB_SENSOR_DEPTH     = 3, /**< Depth */
+    OB_SENSOR_ACCEL     = 4, /**< Accel */
+    OB_SENSOR_GYRO      = 5, /**< Gyro */
+    OB_SENSOR_IR_LEFT   = 6, /**< left IR */
+    OB_SENSOR_IR_RIGHT  = 7, /**< Right IR */
+    OB_SENSOR_RAW_PHASE = 8, /**< Raw Phase */
 } OBSensorType,
     ob_sensor_type;
 
@@ -161,15 +168,16 @@ typedef enum {
  * @brief Enumeration value describing the type of data stream
  */
 typedef enum {
-    OB_STREAM_UNKNOWN  = -1, /**< Unknown type stream */
-    OB_STREAM_VIDEO    = 0,  /**< Video stream (infrared, color, depth streams are all video streams) */
-    OB_STREAM_IR       = 1,  /**< IR stream */
-    OB_STREAM_COLOR    = 2,  /**< color stream */
-    OB_STREAM_DEPTH    = 3,  /**< depth stream */
-    OB_STREAM_ACCEL    = 4,  /**< Accelerometer data stream */
-    OB_STREAM_GYRO     = 5,  /**< Gyroscope data stream */
-    OB_STREAM_IR_LEFT  = 6,  /**< Left IR stream */
-    OB_STREAM_IR_RIGHT = 7,  /**< Right IR stream */
+    OB_STREAM_UNKNOWN   = -1, /**< Unknown type stream */
+    OB_STREAM_VIDEO     = 0,  /**< Video stream (infrared, color, depth streams are all video streams) */
+    OB_STREAM_IR        = 1,  /**< IR stream */
+    OB_STREAM_COLOR     = 2,  /**< color stream */
+    OB_STREAM_DEPTH     = 3,  /**< depth stream */
+    OB_STREAM_ACCEL     = 4,  /**< Accelerometer data stream */
+    OB_STREAM_GYRO      = 5,  /**< Gyroscope data stream */
+    OB_STREAM_IR_LEFT   = 6,  /**< Left IR stream */
+    OB_STREAM_IR_RIGHT  = 7,  /**< Right IR stream */
+    OB_STREAM_RAW_PHASE = 8,  /**< RawPhase Stream */
 } OBStreamType,
     ob_stream_type;
 
@@ -177,17 +185,18 @@ typedef enum {
  * @brief Enumeration value describing the type of frame
  */
 typedef enum {
-    OB_FRAME_UNKNOWN  = -1, /**< Unknown frame type */
-    OB_FRAME_VIDEO    = 0,  /**< Video frame */
-    OB_FRAME_IR       = 1,  /**< IR frame */
-    OB_FRAME_COLOR    = 2,  /**< Color frame */
-    OB_FRAME_DEPTH    = 3,  /**< Depth frame */
-    OB_FRAME_ACCEL    = 4,  /**< Accelerometer data frame */
-    OB_FRAME_SET      = 5,  /**< Frame collection (internally contains a variety of data frames) */
-    OB_FRAME_POINTS   = 6,  /**< Point cloud frame */
-    OB_FRAME_GYRO     = 7,  /**< Gyroscope data frame */
-    OB_FRAME_IR_LEFT  = 8,  /**< Left IR frame */
-    OB_FRAME_IR_RIGHT = 9,  /**< Right IR frame */
+    OB_FRAME_UNKNOWN   = -1, /**< Unknown frame type */
+    OB_FRAME_VIDEO     = 0,  /**< Video frame */
+    OB_FRAME_IR        = 1,  /**< IR frame */
+    OB_FRAME_COLOR     = 2,  /**< Color frame */
+    OB_FRAME_DEPTH     = 3,  /**< Depth frame */
+    OB_FRAME_ACCEL     = 4,  /**< Accelerometer data frame */
+    OB_FRAME_SET       = 5,  /**< Frame collection (internally contains a variety of data frames) */
+    OB_FRAME_POINTS    = 6,  /**< Point cloud frame */
+    OB_FRAME_GYRO      = 7,  /**< Gyroscope data frame */
+    OB_FRAME_IR_LEFT   = 8,  /**< Left IR frame */
+    OB_FRAME_IR_RIGHT  = 9,  /**< Right IR frame */
+    OB_FRAME_RAW_PHASE = 10, /**< Rawphase frame*/
 } OBFrameType,
     ob_frame_type;
 

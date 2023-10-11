@@ -95,25 +95,9 @@ int main(int argc, char **argv) {
     ob_config *config = ob_create_config(&error);
     check_error(error);
 
-    // Configure depth flow
-    ob_stream_profile      *depth_profile = NULL;
-    ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_DEPTH, &error);
-    check_error(error);
-    // Open the default profile of Depth Sensor, which can be configured through the configuration file
-    if(profiles) {
-        depth_profile = ob_stream_profile_list_get_profile(profiles, 0, &error);
-        check_error(error);
-    }
-    ob_config_enable_stream(config, depth_profile, &error);  // enable stream
-    check_error(error);
-
-    // Turn on D2C alignment, which needs to be turned on when generating RGBD point clouds
-    ob_config_set_align_mode(config, ALIGN_D2C_HW_MODE, &error);
-    check_error(error);
-
     // Configure color flow
-    ob_stream_profile *color_profile = NULL;
-    profiles                         = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_COLOR, &error);
+    ob_stream_profile      *color_profile = NULL;
+    ob_stream_profile_list *colorProfiles = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_COLOR, &error);
     if(error) {
         printf("Current device is not support color sensor!\n");
         ob_delete_error(error);
@@ -124,13 +108,65 @@ int main(int argc, char **argv) {
     }
 
     // Open the default profile of Color Sensor, which can be configured through the configuration file
-    if(profiles) {
-        color_profile = ob_stream_profile_list_get_profile(profiles, 0, &error);
+    if(colorProfiles) {
+        color_profile = ob_stream_profile_list_get_profile(colorProfiles, OB_PROFILE_DEFAULT, &error);
     }
 
     // enable stream
     if(color_profile) {
         ob_config_enable_stream(config, color_profile, &error);
+        check_error(error);
+    }
+
+    // Configure depth flow
+    ob_stream_profile      *depth_profile = NULL;
+    ob_align_mode           align_mode    = ALIGN_DISABLE;
+    ob_stream_profile_list *depthProfiles = NULL;
+    if(color_profile) {
+        // Try find supported depth to color align hardware mode profile
+        depthProfiles = ob_get_d2c_depth_profile_list(pipeline, color_profile, ALIGN_D2C_HW_MODE, &error);
+        check_error(error);
+        int d2cCount = ob_stream_profile_list_count(depthProfiles, &error);
+        check_error(error);
+        if(d2cCount > 0) {
+            align_mode = ALIGN_D2C_HW_MODE;
+        }
+        else {
+            // Try find supported depth to color align software mode profile
+            depthProfiles = ob_get_d2c_depth_profile_list(pipeline, color_profile, ALIGN_D2C_SW_MODE, &error);
+            check_error(error);
+            d2cCount = ob_stream_profile_list_count(depthProfiles, &error);
+            check_error(error);
+            if(d2cCount > 0) {
+                align_mode = ALIGN_D2C_SW_MODE;
+            }
+        }
+    }
+    else {
+        depthProfiles = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_DEPTH, &error);
+        check_error(error);
+    }
+
+    int listCount = ob_stream_profile_list_count(depthProfiles, &error);
+    check_error(error);
+    if(listCount > 0) {
+        // Select the profile with the same frame rate as color.
+        int color_fps = ob_video_stream_profile_fps(color_profile, &error);
+        check_error(error);
+        depth_profile = ob_stream_profile_list_get_video_stream_profile(depthProfiles, OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_ANY, color_fps, &error);
+        check_error(error);
+
+        if(depth_profile == NULL) {
+            // If no matching profile is found, select the default profile.
+            depth_profile = ob_stream_profile_list_get_profile(depthProfiles, OB_PROFILE_DEFAULT, &error);
+            check_error(error);
+        }
+
+        ob_config_enable_stream(config, depth_profile, &error);  // enable stream
+        check_error(error);
+
+        // Turn on D2C alignment, which needs to be turned on when generating RGBD point clouds
+        ob_config_set_align_mode(config, align_mode, &error);
         check_error(error);
     }
 
@@ -303,7 +339,10 @@ int main(int argc, char **argv) {
     check_error(error);
 
     // destroy profile list
-    ob_delete_stream_profile_list(profiles, &error);
+    ob_delete_stream_profile_list(colorProfiles, &error);
+    check_error(error);
+
+    ob_delete_stream_profile_list(depthProfiles, &error);
     check_error(error);
 
     return 0;

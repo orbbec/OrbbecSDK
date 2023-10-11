@@ -89,7 +89,7 @@ int main(int argc, char **argv) try {
     // Get the depth stream profile, if the count of stream profile list is 0, it means that the playback file does not contain this type of stream.
     auto depthStreamProfileList = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
     if(depthStreamProfileList->count() > 0) {
-        auto depthStreamProfile = depthStreamProfileList->getProfile(0)->as<ob::VideoStreamProfile>();
+        auto depthStreamProfile = depthStreamProfileList->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
         std::cout << "======================Depth stream : width:" << depthStreamProfile->width() << " height: " << depthStreamProfile->height()
                   << " fps: " << depthStreamProfile->fps() << " format: " << depthStreamProfile->format() << std::endl;
     }
@@ -97,7 +97,7 @@ int main(int argc, char **argv) try {
     // Get the color stream profile
     auto colorStreamProfileList = pipe.getStreamProfileList(OB_SENSOR_COLOR);
     if(colorStreamProfileList->count() > 0) {
-        auto colorStreamProfile = colorStreamProfileList->getProfile(0)->as<ob::VideoStreamProfile>();
+        auto colorStreamProfile = colorStreamProfileList->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
         std::cout << "======================Color stream : width:" << colorStreamProfile->width() << " height: " << colorStreamProfile->height()
                   << " fps: " << colorStreamProfile->fps() << " format: " << colorStreamProfile->format() << std::endl;
     }
@@ -105,7 +105,7 @@ int main(int argc, char **argv) try {
     // Get the ir stream profile
     auto irStreamProfileList = pipe.getStreamProfileList(OB_SENSOR_IR);
     if(irStreamProfileList->count() > 0) {
-        auto irStreamProfile = irStreamProfileList->getProfile(0)->as<ob::VideoStreamProfile>();
+        auto irStreamProfile = irStreamProfileList->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
         std::cout << "======================IR stream : width:" << irStreamProfile->width() << " height: " << irStreamProfile->height()
                   << " fps: " << irStreamProfile->fps() << " format: " << irStreamProfile->format() << std::endl;
     }

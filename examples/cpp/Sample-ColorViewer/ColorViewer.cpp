@@ -16,11 +16,11 @@ int main(int argc, char **argv) try {
         auto profiles = pipe.getStreamProfileList(OB_SENSOR_COLOR);
         try {
             // Find the corresponding Profile according to the specified format, and choose the RGB888 format first
-            colorProfile = profiles->getVideoStreamProfile(1280, 0, OB_FORMAT_RGB, 30);
+            colorProfile = profiles->getVideoStreamProfile(1280, OB_HEIGHT_ANY, OB_FORMAT_RGB, 30);
         }
         catch(ob::Error &e) {
             // If the specified format is not found, select the first one (default stream profile)
-            colorProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(0))->as<ob::VideoStreamProfile>();
+            colorProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
         }
         config->enableStream(colorProfile);
     }

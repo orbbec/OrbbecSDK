@@ -84,7 +84,7 @@ int main(int argc, char **args) {
     ob_stream_profile_list *color_profiles = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_COLOR, &error);
     check_error(error);
     // Select the default stream configuration
-    color_profile = ob_stream_profile_list_get_profile(color_profiles, 0, &error);
+    color_profile = ob_stream_profile_list_get_profile(color_profiles, OB_PROFILE_DEFAULT, &error);
     check_error(error);
     // enable stream
     ob_config_enable_stream(config, color_profile, &error);
@@ -95,7 +95,7 @@ int main(int argc, char **args) {
     ob_stream_profile_list *depth_profiles = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_DEPTH, &error);
     check_error(error);
     // Select the default stream configuration
-    depth_profile = ob_stream_profile_list_get_profile(depth_profiles, 0, &error);
+    depth_profile = ob_stream_profile_list_get_profile(depth_profiles, OB_PROFILE_DEFAULT, &error);
     check_error(error);
     // enable stream
     ob_config_enable_stream(config, depth_profile, &error);

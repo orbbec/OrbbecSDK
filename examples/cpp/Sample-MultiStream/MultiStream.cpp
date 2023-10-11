@@ -33,7 +33,7 @@ int main(int argc, char **argv) try {
 
     try {
         auto colorProfiles = pipe.getStreamProfileList(OB_SENSOR_COLOR);
-        auto colorProfile  = colorProfiles->getProfile(0);
+        auto colorProfile  = colorProfiles->getProfile(OB_PROFILE_DEFAULT);
         config->enableStream(colorProfile->as<ob::VideoStreamProfile>());
     }
     catch(...) {
@@ -42,7 +42,7 @@ int main(int argc, char **argv) try {
 
     try {
         auto depthProfiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
-        auto depthProfile  = depthProfiles->getProfile(0);
+        auto depthProfile  = depthProfiles->getProfile(OB_PROFILE_DEFAULT);
         config->enableStream(depthProfile->as<ob::VideoStreamProfile>());
     }
     catch(...) {
@@ -51,7 +51,7 @@ int main(int argc, char **argv) try {
 
     try {
         auto irProfiles = pipe.getStreamProfileList(OB_SENSOR_IR);
-        auto irProfile  = irProfiles->getProfile(0);
+        auto irProfile  = irProfiles->getProfile(OB_PROFILE_DEFAULT);
         config->enableStream(irProfile->as<ob::VideoStreamProfile>());
     }
     catch(...) {
@@ -82,14 +82,14 @@ int main(int argc, char **argv) try {
     }
     if(accelSensor && gyroSensor) {
         auto accelProfiles = accelSensor->getStreamProfileList();
-        auto accelProfile  = accelProfiles->getProfile(0);
+        auto accelProfile  = accelProfiles->getProfile(OB_PROFILE_DEFAULT);
         accelSensor->start(accelProfile, [&](std::shared_ptr<ob::Frame> frame) {
             std::unique_lock<std::mutex> lk(accelFrameMutex);
             accelFrame = frame;
         });
 
         auto gyroProfiles = gyroSensor->getStreamProfileList();
-        auto gyroProfile  = gyroProfiles->getProfile(0);
+        auto gyroProfile  = gyroProfiles->getProfile(OB_PROFILE_DEFAULT);
         gyroSensor->start(gyroProfile, [&](std::shared_ptr<ob::Frame> frame) {
             std::unique_lock<std::mutex> lk(gyroFrameMutex);
             gyroFrame = frame;

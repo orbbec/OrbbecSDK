@@ -39,7 +39,7 @@ int main(int argc, char **argv) try {
     // Create ob:Context.
     ctx = std::make_shared<ob::Context>();
 
-    // register device callback
+    // Register device callback
     ctx->setDeviceChangedCallback([](std::shared_ptr<ob::DeviceList> removedList, std::shared_ptr<ob::DeviceList> addedList) {
         handleDeviceDisconnected(removedList);
         handleDeviceConnected(addedList);
@@ -48,7 +48,7 @@ int main(int argc, char **argv) try {
     // Query the list of connected devices.
     std::shared_ptr<ob::DeviceList> devices = ctx->queryDeviceList();
 
-    // handle connected devices（and open one device）
+    // Handle connected devices（and open one device）
     handleDeviceConnected(devices);
 
     if(!device) {
@@ -60,11 +60,11 @@ int main(int argc, char **argv) try {
 
     printUsage();
 
-    while(*win) {  // wait until ESC key pressed
+    while(true) { 
         std::string cmd;
         std::cout << "\nInput command: ";
         std::getline(std::cin, cmd);
-        if(cmd == "quit") {
+        if(cmd == "quit" || cmd == "q") {
             break;
         }
         else {
@@ -176,7 +176,7 @@ void switchDepthWorkMode() {
 
 void turnOffHwD2d() {
     try {
-        // some models dose not support this feature
+        // Some models dose not support this feature
         if(device->isPropertySupported(OB_PROP_DISPARITY_TO_DEPTH_BOOL, OB_PERMISSION_WRITE)) {
             device->setBoolProperty(OB_PROP_DISPARITY_TO_DEPTH_BOOL, false);
             std::cout << "turn off hardware disparity to depth converter (Turn on Software D2D)" << std::endl;
@@ -258,15 +258,15 @@ void startStream() {
         // create config to configure pipeline
         auto config = std::make_shared<ob::Config>();
 
-        std::shared_ptr<ob::StreamProfile> colorProfile;
+        std::shared_ptr<ob::VideoStreamProfile> colorProfile;
         try {
             auto colorProfileList = pipeline->getStreamProfileList(OB_SENSOR_COLOR);
             if(colorProfileList->count() > 0) {
                 // get default (index=0) stream profile
-                colorProfile = colorProfileList->getProfile(0);
+                auto profile = colorProfileList->getProfile(OB_PROFILE_DEFAULT);
 
-                auto videoProfile = colorProfile->as<ob::VideoStreamProfile>();
-                std::cout << "color profile: " << videoProfile->width() << "x" << videoProfile->height() << " @ " << videoProfile->fps() << "fps" << std::endl;
+                colorProfile = profile->as<ob::VideoStreamProfile>();
+                std::cout << "color profile: " << colorProfile->width() << "x" << colorProfile->height() << " @ " << colorProfile->fps() << "fps" << std::endl;
 
                 // enable color stream
                 config->enableStream(colorProfile);
@@ -276,7 +276,7 @@ void startStream() {
             // dose not support color stream or other error
         }
 
-        std::shared_ptr<ob::StreamProfile> depthProfile;
+        std::shared_ptr<ob::VideoStreamProfile> depthProfile;
         try {
             std::shared_ptr<ob::StreamProfileList> depthProfileList;
             OBAlignMode                            alignMode = ALIGN_DISABLE;
@@ -302,11 +302,23 @@ void startStream() {
             } while(0);
 
             if(depthProfileList->count() > 0) {
-                // get default (index=0) stream profile
-                depthProfile = depthProfileList->getProfile(0);
+                std::shared_ptr<ob::StreamProfile> profile;
 
-                auto videoProfile = depthProfile->as<ob::VideoStreamProfile>();
-                std::cout << "depth profile: " << videoProfile->width() << "x" << videoProfile->height() << " @ " << videoProfile->fps() << "fps" << std::endl;
+                try {
+                    // Select the profile with the same frame rate as color.
+                    profile = depthProfileList->getVideoStreamProfile(OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_ANY, colorProfile->fps());
+                }
+                catch(...) {
+                    profile = nullptr;
+                }
+
+                if(!profile) {
+                    // If no matching profile is found, select the default profile.
+                    profile = depthProfileList->getProfile(OB_PROFILE_DEFAULT);
+                }
+
+                depthProfile = profile->as<ob::VideoStreamProfile>();
+                std::cout << "depth profile: " << depthProfile->width() << "x" << depthProfile->height() << " @ " << depthProfile->fps() << "fps" << std::endl;
 
                 // enable depth stream
                 config->enableStream(depthProfile);
@@ -319,30 +331,30 @@ void startStream() {
             // dose not support depth stream or other error
         }
 
-        std::shared_ptr<ob::StreamProfile> irProfile;
+        std::shared_ptr<ob::VideoStreamProfile> irProfile;
         try {
             auto irProfileList = pipeline->getStreamProfileList(OB_SENSOR_IR);
             if(irProfileList->count() > 0) {
+                std::shared_ptr<ob::StreamProfile> profile;
                 if(depthProfile) {
-                    auto depthVideoProfile = depthProfile->as<ob::VideoStreamProfile>();
                     // Try to get same resolution and frame rate with depth, due to same model ir stream resolution and frame rate must be same with depth
-                    for(int i = 0; i < irProfileList->count(); i++) {
-                        auto videoProfile = irProfileList->getProfile(i)->as<ob::VideoStreamProfile>();
-                        if(videoProfile->width() == depthVideoProfile->width() && videoProfile->height() == depthVideoProfile->height()
-                           && videoProfile->fps() == depthVideoProfile->fps()) {
-                            irProfile = irProfileList->getProfile(i);
-                            break;
-                        }
+                    try {
+                        profile = irProfileList->getVideoStreamProfile(depthProfile->width(), depthProfile->height(), OB_FORMAT_ANY, depthProfile->fps());
+                    }
+                    catch(...) {
+                        // dose not support same resolution and frame rate
+                        profile = nullptr;
                     }
                 }
 
-                if(!irProfile) {
-                    // get default (index=0) stream profile
-                    irProfile = irProfileList->getProfile(0);
+                if(!profile) {
+                    // If no matching profile is found, select the default profile.
+                    profile = irProfileList->getProfile(OB_PROFILE_DEFAULT);
                 }
 
-                auto videoProfile = irProfile->as<ob::VideoStreamProfile>();
-                std::cout << "ir profile: " << videoProfile->width() << "x" << videoProfile->height() << " @ " << videoProfile->fps() << "fps" << std::endl;
+                irProfile = profile->as<ob::VideoStreamProfile>();
+
+                std::cout << "ir profile: " << irProfile->width() << "x" << irProfile->height() << " @ " << irProfile->fps() << "fps" << std::endl;
 
                 // enable ir stream
                 config->enableStream(irProfile);

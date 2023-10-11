@@ -54,7 +54,7 @@ var searchData=
   ['gettimestampresetconfig_51',['getTimestampResetConfig',['../classob_1_1_device.html#a6fba7fe67888ae13691b731a6952396f',1,'ob::Device']]],
   ['getvaluescale_52',['getValueScale',['../classob_1_1_depth_frame.html#a27e281da8812527280d2ad434e0b2a86',1,'ob::DepthFrame']]],
   ['getversion_53',['getVersion',['../classob_1_1_version.html#acf70150b35fd9e479887f6b215ae3ccf',1,'ob::Version']]],
-  ['getvideostreamprofile_54',['getVideoStreamProfile',['../classob_1_1_stream_profile_list.html#a6b4d1c62503f614d9b35e57b5a78031b',1,'ob::StreamProfileList']]],
+  ['getvideostreamprofile_54',['getVideoStreamProfile',['../classob_1_1_stream_profile_list.html#a8aec9a1fec68afe0afe675a6082f81d7',1,'ob::StreamProfileList']]],
   ['gyroframe_55',['GyroFrame',['../classob_1_1_gyro_frame.html#a186545bf3c0806feed3abd652ede32ed',1,'ob::GyroFrame::GyroFrame(Frame &amp;frame)'],['../classob_1_1_gyro_frame.html#ab193b28b69c7738f7975b5bbaff08e47',1,'ob::GyroFrame::GyroFrame(std::unique_ptr&lt; FrameImpl &gt; impl)'],['../classob_1_1_gyro_frame.html',1,'ob::GyroFrame']]],
   ['gyrostreamprofile_56',['GyroStreamProfile',['../classob_1_1_gyro_stream_profile.html#a059b6a963572c5e2a4aa01319efc18d0',1,'ob::GyroStreamProfile::GyroStreamProfile(StreamProfile &amp;profile)'],['../classob_1_1_gyro_stream_profile.html#a8f1355ffdc6cec3198906b7d1e14d402',1,'ob::GyroStreamProfile::GyroStreamProfile(std::unique_ptr&lt; StreamProfileImpl &gt; impl)'],['../classob_1_1_gyro_stream_profile.html',1,'ob::GyroStreamProfile']]]
 ];

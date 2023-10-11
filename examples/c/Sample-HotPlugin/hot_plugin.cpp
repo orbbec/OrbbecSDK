@@ -429,8 +429,8 @@ void print_depth_frame(ob_frame *frame) {
     check_error(error);
     uint16_t pixelValue = *(data + width * height / 2 + width / 2);
 
-    printf("FrameType:%s, index:%d, width:%d, height:%d, format:%d, timeStampUs:%" PRIu64 "us, centerDepth:%" PRIu32 "mm", frameTypeToString(type).c_str(),
-           index, width, height, format, timestampUs, (uint32_t)(pixelValue * scale));
+    printf("FrameType:%s, index:%d, width:%d, height:%d, format:%d, timeStampUs:%" PRIu64 "us, centerDepth:%02fmm", frameTypeToString(type).c_str(), index,
+           width, height, format, timestampUs, (float)pixelValue * scale);
 }
 
 void print_video_frame(ob_frame *frame) {

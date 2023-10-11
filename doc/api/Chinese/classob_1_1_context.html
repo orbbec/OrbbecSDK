@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.8.1</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -84,7 +84,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>定义 Context类,用于获取设备列表，处理设备的回调，日志等级的设置操作  
+<p>定义 <a class="el" href="classob_1_1_context.html" title="定义 Context 类, 用于获取设备列表，处理设备的回调，日志等级的设置操作">Context</a> 类, 用于获取设备列表，处理设备的回调，日志等级的设置操作  
  <a href="classob_1_1_context.html#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_context_8hpp_source.html">Context.hpp</a>&gt;</code></p>
@@ -100,7 +100,7 @@ Public 类型</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:add1d4b543d4765207462b1af057244a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_context.html#add1d4b543d4765207462b1af057244a9">Context</a> (const char *configPath=&quot;&quot;)</td></tr>
-<tr class="memdesc:add1d4b543d4765207462b1af057244a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">context是描述SDK的runtime一个管理类，负责SDK的资源申请与释放 context具备多设备的管理能力，负责枚举设备，监听设备回调，启用多设备同步等功能  <br /></td></tr>
+<tr class="memdesc:add1d4b543d4765207462b1af057244a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">context 是描述 SDK 的 runtime 一个管理类，负责 SDK 的资源申请与释放 context 具备多设备的管理能力，负责枚举设备，监听设备回调，启用多设备同步等功能  <br /></td></tr>
 <tr class="separator:add1d4b543d4765207462b1af057244a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ca8598da9d7cb72a5e3b2661b9c637b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_context.html#a3ca8598da9d7cb72a5e3b2661b9c637b">~Context</a> () noexcept</td></tr>
 <tr class="separator:a3ca8598da9d7cb72a5e3b2661b9c637b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -111,7 +111,7 @@ Public 成员函数</h2></td></tr>
 <tr class="memdesc:ac4164180385e809c8fd5b2c3defc5711"><td class="mdescLeft">&#160;</td><td class="mdescRight">使能或禁用网络设备枚举。  <br /></td></tr>
 <tr class="separator:ac4164180385e809c8fd5b2c3defc5711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b44f5e42b729acd98fe0485f16f9f5e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1_device.html">Device</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_context.html#a2b44f5e42b729acd98fe0485f16f9f5e">createNetDevice</a> (const char *address, uint16_t port)</td></tr>
-<tr class="memdesc:a2b44f5e42b729acd98fe0485f16f9f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过IP地址创建网络设备  <br /></td></tr>
+<tr class="memdesc:a2b44f5e42b729acd98fe0485f16f9f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过 IP 地址创建网络设备  <br /></td></tr>
 <tr class="separator:a2b44f5e42b729acd98fe0485f16f9f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4091c5bcd5b1300e6d4f2eb54b6352f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_context.html#a4091c5bcd5b1300e6d4f2eb54b6352f4">changeNetDeviceIpConfig</a> (const char *deviceUid, const <a class="el" href="struct_o_b_net_ip_config.html">OBNetIpConfig</a> &amp;config)</td></tr>
 <tr class="memdesc:a4091c5bcd5b1300e6d4f2eb54b6352f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">更改网络设备的 IP 配置。  <br /></td></tr>
@@ -141,14 +141,14 @@ Public 成员函数</h2></td></tr>
 <tr class="memdesc:a70e6ed3b860ac6bdd4ef25c048f18f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置日志回调  <br /></td></tr>
 <tr class="separator:a70e6ed3b860ac6bdd4ef25c048f18f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4881f168178c2d2d28934fc5be901e56"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_context.html#a4881f168178c2d2d28934fc5be901e56">loadLicense</a> (const char *filePath, const char *key=<a class="el" href="_ob_types_8h.html#a5eeadb4cea31961aab689e5d7a225e9c">OB_DEFAULT_DECRYPT_KEY</a>)</td></tr>
-<tr class="memdesc:a4881f168178c2d2d28934fc5be901e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">加载license文件  <br /></td></tr>
+<tr class="memdesc:a4881f168178c2d2d28934fc5be901e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">加载 license 文件  <br /></td></tr>
 <tr class="separator:a4881f168178c2d2d28934fc5be901e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af77259be549896524493d14d32a4e204"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_context.html#af77259be549896524493d14d32a4e204">loadLicenseFromData</a> (const char *data, uint32_t dataLen, const char *key=<a class="el" href="_ob_types_8h.html#a5eeadb4cea31961aab689e5d7a225e9c">OB_DEFAULT_DECRYPT_KEY</a>)</td></tr>
-<tr class="memdesc:af77259be549896524493d14d32a4e204"><td class="mdescLeft">&#160;</td><td class="mdescRight">加载license数据  <br /></td></tr>
+<tr class="memdesc:af77259be549896524493d14d32a4e204"><td class="mdescLeft">&#160;</td><td class="mdescRight">加载 license 数据  <br /></td></tr>
 <tr class="separator:af77259be549896524493d14d32a4e204"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>定义 Context类,用于获取设备列表，处理设备的回调，日志等级的设置操作 </p>
+<div class="textblock"><p>定义 <a class="el" href="classob_1_1_context.html" title="定义 Context 类, 用于获取设备列表，处理设备的回调，日志等级的设置操作">Context</a> 类, 用于获取设备列表，处理设备的回调，日志等级的设置操作 </p>
 
 <p class="definition">在文件 <a class="el" href="_context_8hpp_source.html">Context.hpp</a> 第 <a class="el" href="_context_8hpp_source.html#l00023">23</a> 行定义.</p>
 </div><h2 class="groupheader">成员类型定义说明</h2>
@@ -210,7 +210,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>context是描述SDK的runtime一个管理类，负责SDK的资源申请与释放 context具备多设备的管理能力，负责枚举设备，监听设备回调，启用多设备同步等功能 </p>
+<p>context 是描述 SDK 的 runtime 一个管理类，负责 SDK 的资源申请与释放 context 具备多设备的管理能力，负责枚举设备，监听设备回调，启用多设备同步等功能 </p>
 
 </div>
 </div>
@@ -256,7 +256,7 @@ Public 成员函数</h2></td></tr>
 </div><div class="memdoc">
 
 <p>获取枚举到的设备列表 </p>
-<dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;DeviceList&gt;返回设备列表类的指针 </dd></dl>
+<dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;DeviceList &gt; 返回设备列表类的指针 </dd></dl>
 
 </div>
 </div>
@@ -277,8 +277,8 @@ Public 成员函数</h2></td></tr>
 </div><div class="memdoc">
 
 <p>使能或禁用网络设备枚举。 </p>
-<p>使能后，网络设备会自动被发现，并且可以通过queryDeviceList获取。默认状态可以在配置文件中设置。</p>
-<dl class="section attention"><dt>注意</dt><dd>网络设备枚举通过gvcp协议，如果设备和主机不在同一个子网，会被发现但是无法连接。</dd></dl>
+<p>使能后，网络设备会自动被发现，并且可以通过 <a class="el" href="classob_1_1_context.html#a4ce3502d4b87dccc0304790507b04615">queryDeviceList</a> 获取。默认状态可以在配置文件中设置。</p>
+<dl class="section attention"><dt>注意</dt><dd>网络设备枚举通过 gvcp 协议，如果设备和主机不在同一个子网，会被发现但是无法连接。</dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>true 使能，false 禁用 </td></tr>
@@ -314,7 +314,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>通过IP地址创建网络设备 </p>
+<p>通过 IP 地址创建网络设备 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">address</td><td>ip 地址 </td></tr>
@@ -355,8 +355,8 @@ Public 成员函数</h2></td></tr>
 <p>更改网络设备的 IP 配置。 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">deviceUid</td><td>设备唯一ID，即网络设备MAC地址。可以通过<a class="el" href="classob_1_1_device_list.html#a7636b3fca3e41d867103d3e29e4f2e7a">函数获取。</a> </td></tr>
-    <tr><td class="paramname">config</td><td>新的IP配置。 </td></tr>
+    <tr><td class="paramname">deviceUid</td><td>设备唯一 ID，即网络设备 MAC 地址。可以通过 <a class="el" href="classob_1_1_device_list.html#a7636b3fca3e41d867103d3e29e4f2e7a">DeviceList::uid()</a> 函数获取。 </td></tr>
+    <tr><td class="paramname">config</td><td>新的 IP 配置。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -408,7 +408,7 @@ Public 成员函数</h2></td></tr>
 <p>使能设备时钟同步以同步主机和所有已创建设备的时钟（如果支持）。 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">repeatInterval</td><td>自动重复同步的时间间隔，以毫秒为单位。如果值为0，则仅执行一次同步。 </td></tr>
+    <tr><td class="paramname">repeatInterval</td><td>自动重复同步的时间间隔，以毫秒为单位。如果值为 0，则仅执行一次同步。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -506,7 +506,7 @@ Public 成员函数</h2></td></tr>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">severity</td><td>输出到文件的日志等级 </td></tr>
-    <tr><td class="paramname">directory</td><td>日志文件输出路径，如果路径为空，则继续使用已有设置(已有配置也为空则不输出日志到文件) </td></tr>
+    <tr><td class="paramname">directory</td><td>日志文件输出路径，如果路径为空，则继续使用已有设置 (已有配置也为空则不输出日志到文件) </td></tr>
   </table>
   </dd>
 </dl>
@@ -626,11 +626,11 @@ Public 成员函数</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>加载license文件 </p>
+<p>加载 license 文件 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filePath</td><td>license文件路径 </td></tr>
-    <tr><td class="paramname">key</td><td>解密的key </td></tr>
+    <tr><td class="paramname">filePath</td><td>license 文件路径 </td></tr>
+    <tr><td class="paramname">key</td><td>解密的 key </td></tr>
   </table>
   </dd>
 </dl>
@@ -677,12 +677,12 @@ Public 成员函数</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>加载license数据 </p>
+<p>加载 license 数据 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>license数据 </td></tr>
-    <tr><td class="paramname">dataLen</td><td>license数据长度 </td></tr>
-    <tr><td class="paramname">key</td><td>解密的key </td></tr>
+    <tr><td class="paramname">data</td><td>license 数据 </td></tr>
+    <tr><td class="paramname">dataLen</td><td>license 数据长度 </td></tr>
+    <tr><td class="paramname">key</td><td>解密的 key </td></tr>
   </table>
   </dd>
 </dl>
@@ -695,7 +695,7 @@ Public 成员函数</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 九月 25日 星期一 20:08:21 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 十月 10日 星期二 20:29:16 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

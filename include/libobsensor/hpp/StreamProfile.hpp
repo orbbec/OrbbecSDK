@@ -161,6 +161,7 @@ template <typename T> bool StreamProfile::is() {
     case OB_STREAM_IR_RIGHT:
     case OB_STREAM_COLOR:
     case OB_STREAM_DEPTH:
+    case OB_STREAM_RAW_PHASE:
         return typeid(T) == typeid(VideoStreamProfile);
     case OB_STREAM_ACCEL:
         return typeid(T) == typeid(AccelStreamProfile);
@@ -199,13 +200,14 @@ public:
      * @brief Match the corresponding video stream profile based on the passed-in parameters. If multiple Match are found, the first one in the list is
      * returned by default. Throws an exception if no matching profile is found.
      *
-     * @param width The width of the stream. Pass 0 if no matching condition is required.
-     * @param height The height of the stream. Pass 0 if no matching condition is required.
-     * @param format The type of the stream. Pass OB_FORMAT_UNKNOWN if no matching condition is required.
-     * @param fps The frame rate of the stream. Pass 0 if no matching condition is required.
+     * @param width The width of the stream. Pass OB_WIDTH_ANY if no matching condition is required.
+     * @param height The height of the stream. Pass OB_HEIGHT_ANY if no matching condition is required.
+     * @param format The type of the stream. Pass OB_FORMAT_ANY if no matching condition is required.
+     * @param fps The frame rate of the stream. Pass OB_FPS_ANY if no matching condition is required.
      * @return std::shared_ptr<VideoStreamProfile> Return the matching resolution.
      */
-    const std::shared_ptr<VideoStreamProfile> getVideoStreamProfile(int width = 0, int height = 0, OBFormat format = OB_FORMAT_UNKNOWN, int fps = 0);
+    const std::shared_ptr<VideoStreamProfile> getVideoStreamProfile(int width = OB_WIDTH_ANY, int height = OB_HEIGHT_ANY, OBFormat format = OB_FORMAT_ANY,
+                                                                    int fps = OB_FPS_ANY);
 
     /**
      * @brief Match the corresponding accelerometer stream profile based on the passed-in parameters. If multiple Match are found, the first one in the list

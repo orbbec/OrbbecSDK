@@ -13,11 +13,11 @@ int main(int argc, char **argv) try {
     std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
     try {
         // Find the corresponding profile according to the specified format, first look for the y16 format
-        depthProfile = profiles->getVideoStreamProfile(640, 0, OB_FORMAT_Y16, 30);
+        depthProfile = profiles->getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30);
     }
     catch(ob::Error &e) {
         // If the specified format is not found, search for the default profile to open the stream
-        depthProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(0))->as<ob::VideoStreamProfile>();
+        depthProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
     }
 
     // By creating config to configure which streams to enable or disable for the pipeline, here the depth stream will be enabled

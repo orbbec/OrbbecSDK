@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.8.1</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -97,9 +97,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acd44c9f0b6e04a6183259714937f74ac"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="classob_1_1_stream_profile.html">StreamProfile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_stream_profile_list.html#acd44c9f0b6e04a6183259714937f74ac">getProfile</a> (uint32_t index)</td></tr>
 <tr class="memdesc:acd44c9f0b6e04a6183259714937f74ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the <a class="el" href="classob_1_1_stream_profile.html">StreamProfile</a> object at the specified index.  <br /></td></tr>
 <tr class="separator:acd44c9f0b6e04a6183259714937f74ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b4d1c62503f614d9b35e57b5a78031b"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="classob_1_1_video_stream_profile.html">VideoStreamProfile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_stream_profile_list.html#a6b4d1c62503f614d9b35e57b5a78031b">getVideoStreamProfile</a> (int width=0, int height=0, <a class="el" href="_ob_types_8h.html#a30904eab1a667b797e7ce1099ba7c36a">OBFormat</a> format=<a class="el" href="_ob_types_8h.html#a30904eab1a667b797e7ce1099ba7c36aa62bbf740c7702c0232734a8209fcbf5f">OB_FORMAT_UNKNOWN</a>, int fps=0)</td></tr>
-<tr class="memdesc:a6b4d1c62503f614d9b35e57b5a78031b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Match the corresponding video stream profile based on the passed-in parameters. If multiple Match are found, the first one in the list is returned by default. Throws an exception if no matching profile is found.  <br /></td></tr>
-<tr class="separator:a6b4d1c62503f614d9b35e57b5a78031b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aec9a1fec68afe0afe675a6082f81d7"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="classob_1_1_video_stream_profile.html">VideoStreamProfile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_stream_profile_list.html#a8aec9a1fec68afe0afe675a6082f81d7">getVideoStreamProfile</a> (int width=<a class="el" href="_ob_types_8h.html#a9b361dc99aceea67424ab913937a5f68">OB_WIDTH_ANY</a>, int height=<a class="el" href="_ob_types_8h.html#ab2a356174680c09f5afda003b724f116">OB_HEIGHT_ANY</a>, <a class="el" href="_ob_types_8h.html#a30904eab1a667b797e7ce1099ba7c36a">OBFormat</a> format=<a class="el" href="_ob_types_8h.html#ab4517bcbc296d6ff427db1eea50b7070">OB_FORMAT_ANY</a>, int fps=<a class="el" href="_ob_types_8h.html#aae0778156fa30d9e595a6150d603b62e">OB_FPS_ANY</a>)</td></tr>
+<tr class="memdesc:a8aec9a1fec68afe0afe675a6082f81d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Match the corresponding video stream profile based on the passed-in parameters. If multiple Match are found, the first one in the list is returned by default. Throws an exception if no matching profile is found.  <br /></td></tr>
+<tr class="separator:a8aec9a1fec68afe0afe675a6082f81d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f990703f5d9aa21bf6dd804103f0be5"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="classob_1_1_accel_stream_profile.html">AccelStreamProfile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_stream_profile_list.html#a5f990703f5d9aa21bf6dd804103f0be5">getAccelStreamProfile</a> (<a class="el" href="_ob_types_8h.html#a6cb24ce2297d40025a4882b22b4550d0">OBAccelFullScaleRange</a> fullScaleRange, <a class="el" href="_ob_types_8h.html#a314cdb6e5a6da080536ad34be1bd97c9">OBAccelSampleRate</a> sampleRate)</td></tr>
 <tr class="memdesc:a5f990703f5d9aa21bf6dd804103f0be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Match the corresponding accelerometer stream profile based on the passed-in parameters. If multiple Match are found, the first one in the list is returned by default. Throws an exception if no matching profile is found.  <br /></td></tr>
 <tr class="separator:a5f990703f5d9aa21bf6dd804103f0be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,7 +114,7 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_stream_profile_8hpp_source.html#l00175">175</a> of file <a class="el" href="_stream_profile_8hpp_source.html">StreamProfile.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_stream_profile_8hpp_source.html#l00176">176</a> of file <a class="el" href="_stream_profile_8hpp_source.html">StreamProfile.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa49f05597b4238e171fb2dfb00742d4c" name="aa49f05597b4238e171fb2dfb00742d4c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa49f05597b4238e171fb2dfb00742d4c">&#9670;&#160;</a></span>StreamProfileList()</h2>
@@ -215,8 +215,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a6b4d1c62503f614d9b35e57b5a78031b" name="a6b4d1c62503f614d9b35e57b5a78031b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b4d1c62503f614d9b35e57b5a78031b">&#9670;&#160;</a></span>getVideoStreamProfile()</h2>
+<a id="a8aec9a1fec68afe0afe675a6082f81d7" name="a8aec9a1fec68afe0afe675a6082f81d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aec9a1fec68afe0afe675a6082f81d7">&#9670;&#160;</a></span>getVideoStreamProfile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,25 +225,25 @@ Protected Attributes</h2></td></tr>
           <td class="memname">const std::shared_ptr&lt; <a class="el" href="classob_1_1_video_stream_profile.html">VideoStreamProfile</a> &gt; ob::StreamProfileList::getVideoStreamProfile </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>width</em> = <code>0</code>, </td>
+          <td class="paramname"><em>width</em> = <code><a class="el" href="_ob_types_8h.html#a9b361dc99aceea67424ab913937a5f68">OB_WIDTH_ANY</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>height</em> = <code>0</code>, </td>
+          <td class="paramname"><em>height</em> = <code><a class="el" href="_ob_types_8h.html#ab2a356174680c09f5afda003b724f116">OB_HEIGHT_ANY</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="_ob_types_8h.html#a30904eab1a667b797e7ce1099ba7c36a">OBFormat</a>&#160;</td>
-          <td class="paramname"><em>format</em> = <code><a class="el" href="_ob_types_8h.html#a30904eab1a667b797e7ce1099ba7c36aa62bbf740c7702c0232734a8209fcbf5f">OB_FORMAT_UNKNOWN</a></code>, </td>
+          <td class="paramname"><em>format</em> = <code><a class="el" href="_ob_types_8h.html#ab4517bcbc296d6ff427db1eea50b7070">OB_FORMAT_ANY</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>fps</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>fps</em> = <code><a class="el" href="_ob_types_8h.html#aae0778156fa30d9e595a6150d603b62e">OB_FPS_ANY</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -256,10 +256,10 @@ Protected Attributes</h2></td></tr>
 <p>Match the corresponding video stream profile based on the passed-in parameters. If multiple Match are found, the first one in the list is returned by default. Throws an exception if no matching profile is found. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">width</td><td>The width of the stream. Pass 0 if no matching condition is required. </td></tr>
-    <tr><td class="paramname">height</td><td>The height of the stream. Pass 0 if no matching condition is required. </td></tr>
-    <tr><td class="paramname">format</td><td>The type of the stream. Pass OB_FORMAT_UNKNOWN if no matching condition is required. </td></tr>
-    <tr><td class="paramname">fps</td><td>The frame rate of the stream. Pass 0 if no matching condition is required. </td></tr>
+    <tr><td class="paramname">width</td><td>The width of the stream. Pass OB_WIDTH_ANY if no matching condition is required. </td></tr>
+    <tr><td class="paramname">height</td><td>The height of the stream. Pass OB_HEIGHT_ANY if no matching condition is required. </td></tr>
+    <tr><td class="paramname">format</td><td>The type of the stream. Pass OB_FORMAT_ANY if no matching condition is required. </td></tr>
+    <tr><td class="paramname">fps</td><td>The frame rate of the stream. Pass OB_FPS_ANY if no matching condition is required. </td></tr>
   </table>
   </dd>
 </dl>
@@ -362,7 +362,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_stream_profile_8hpp_source.html#l00177">177</a> of file <a class="el" href="_stream_profile_8hpp_source.html">StreamProfile.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_stream_profile_8hpp_source.html#l00178">178</a> of file <a class="el" href="_stream_profile_8hpp_source.html">StreamProfile.hpp</a>.</p>
 
 </div>
 </div>
@@ -372,7 +372,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 25 2023 20:08:22 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Tue Oct 10 2023 20:29:17 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

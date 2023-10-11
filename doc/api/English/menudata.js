@@ -143,4 +143,11 @@ var menudata={children:[
 {text:"h",url:"globals_eval_h.html#index_h"},
 {text:"o",url:"globals_eval_o.html#index_o"},
 {text:"s",url:"globals_eval_s.html#index_s"}]},
-{text:"Macros",url:"globals_defs.html"}]}]}]}
+{text:"Macros",url:"globals_defs.html",children:[
+{text:"_",url:"globals_defs.html#index__5F"},
+{text:"d",url:"globals_defs.html#index_d"},
+{text:"e",url:"globals_defs.html#index_e"},
+{text:"f",url:"globals_defs.html#index_f"},
+{text:"i",url:"globals_defs.html#index_i"},
+{text:"o",url:"globals_defs.html#index_o"},
+{text:"t",url:"globals_defs.html#index_t"}]}]}]}]}

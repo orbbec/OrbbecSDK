@@ -49,10 +49,10 @@ int main(int argc, char **args) {
     check_error(error);
 
     // Find the corresponding profile according to the specified format, first look for the y16 format
-    depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 0, OB_FORMAT_Y16, 30, &error);
+    depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30, &error);
     // If the specified format is not found, search for the default profile to open the stream
     if(error) {
-        depth_profile = ob_stream_profile_list_get_profile(profiles, 0, &error);
+        depth_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
         ob_delete_error(error);
         error = nullptr;
     }

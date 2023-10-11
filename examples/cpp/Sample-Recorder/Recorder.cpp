@@ -17,10 +17,10 @@ int main(int argc, char **argv) try {
     // Get the corresponding stream configuration
     auto profiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
     // Find the corresponding Profile according to the specified format, and look for the Y16 format first
-    auto depthProfile = profiles->getVideoStreamProfile(640, 0, OB_FORMAT_Y16, 30);
+    auto depthProfile = profiles->getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30);
     // After the Y16 format is not found, the format does not match and the corresponding Profile is searched for open stream
     if(!depthProfile) {
-        depthProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(0))->as<ob::VideoStreamProfile>();
+        depthProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
     }
 
     // Create a Config to configure which streams to enable or disable for the Pipeline, here the depth stream will be enabled
@@ -64,7 +64,7 @@ int main(int argc, char **argv) try {
     auto                                    profiles     = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
     std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
     if(profiles) {
-        depthProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(0))->as<ob::VideoStreamProfile>();
+        depthProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
     }
 
     // Create a Config to configure which streams to enable for the Pipeline, here the depth stream will be enabled

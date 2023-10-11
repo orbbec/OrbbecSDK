@@ -55,10 +55,10 @@ int main(int argc, char **args) {
     }
 
     // Find the corresponding Profile according to the specified format, and choose the RGB888 format first
-    color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 1280, 0, OB_FORMAT_RGB, 30, &error);
+    color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 1280, OB_HEIGHT_ANY, OB_FORMAT_RGB, 30, &error);
     // If the specified format is not found, search for the default Profile to open the stream
     if(error) {
-        color_profile = ob_stream_profile_list_get_profile(profiles, 0, &error);
+        color_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
         ob_delete_error(error);
         error = nullptr;
     }

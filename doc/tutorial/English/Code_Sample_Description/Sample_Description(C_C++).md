@@ -382,7 +382,7 @@ ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipe
 //Find the corresponding Profile according to the specified format.
 depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 480, OB_FORMAT_Y16, 30, &error);
 if(!depth_profile) {  // If the specified format profile is not found, the first profile in the profile list is used.
-     depth_profile = ob_stream_profile_list_get_profile(profiles, 0, &error);
+     depth_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
 }
 ob_config_enable_stream(config, depth_profile, &error);  // Enable stream
 
@@ -392,7 +392,7 @@ profiles                         = ob_pipeline_get_stream_profile_list(pipe, OB_
 //Find the corresponding Profile according to the specified format.
 color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 480, OB_FORMAT_MJPG, 30, &error);
 if(!color_profile) {  // If the specified format profile is not found, the first profile in the profile list is used.
-    color_profile = ob_stream_profile_list_get_profile(profiles, 0, &error);
+    color_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
 }
 ob_config_enable_stream(config, color_profile, &error);  // Enable stream
 ```
@@ -675,10 +675,10 @@ Create pipeline and stream profile
     ob_stream_profile *color_profile = NULL;
     profiles                         = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_COLOR, &error);
     //Find the corresponding Profile according to the specified format
-    color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 480, OB_FORMAT_YUYV, 0, &error);
+    color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 480, OB_FORMAT_YUYV, OB_FPS_ANY, &error);
     //If YUYV is not found, look for I420 format
     if(!color_profile) {
-        color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 480, OB_FORMAT_I420, 0, &error);
+        color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 480, OB_FORMAT_I420, OB_FPS_ANY, &error);
         check_error(error);
     }
     ob_config_enable_stream( config, color_profile, &error );  // Enable configuration
@@ -841,7 +841,7 @@ std::shared_ptr<ob::StreamProfile> depthProfile;
 
 // If no suitable stream profile is found, open the first profile in the list
 if(!depthProfile) {
-    depthProfile = profiles->getProfile(0)->as<ob::VideoStreamProfile>();
+    depthProfile = profiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
 }
 ```
 By creating Config to configure which streams to be enabled or disabled by Pipeline, depth stream will be enabled here.
@@ -897,7 +897,7 @@ for (int i = 0; i < profiles->count(); i++) {
 
 //If no suitable stream profile is found, open the first profile in the list
 if(!colorProfile) {
-    colorProfile = profiles->getProfile(0)->as<ob::VideoStreamProfile>();
+    colorProfile = profiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
 }
 ```
 By creating Config to configure which streams to be enabled or disabled by Pipeline, color stream will be enabled here.
@@ -939,7 +939,7 @@ Get all stream profiles of the infrared camera, including stream resolution, fra
 // Set the item of interest through the interface and return the first profile in the corresponding profile list
 auto irProfile = profiles->getVideoStreamProfile(640, 480, OB_FORMAT_Y16);
 if(!irProfile) {
-    irProfile = profiles->getProfile(0)->as<ob::VideoStreamProfile>();
+    irProfile = profiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
 }
 ```
 By creating Config to configure which streams to be enabled or disabled by Pipeline, depth stream will be enabled here.
@@ -984,7 +984,7 @@ auto colorProfiles = pipe.getStreamProfiles(OB_SENSOR_COLOR);
 //Set the item of interest through the interface and return the first profile in the corresponding profile list
 auto colorProfile = colorProfiles->getVideoStreamProfile(colorWidth, colorHeight, OB_FORMAT_MJPG, 30);
 if(!colorProfile) {
-    colorProfile = colorProfiles->getProfile(0)->as<ob::VideoStreamProfile>();
+    colorProfile = colorProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
 }
 
 //Get all stream profiles of the depth camera, including stream resolution, frame rate, and frame format.
@@ -993,7 +993,7 @@ auto depthProfiles = pipe.getStreamProfiles(OB_SENSOR_DEPTH);
 //Set the item of interest through the interface and return the first profile in the corresponding profile list
 auto depthProfile = depthProfiles->getVideoStreamProfile(depthWidth, depthHeight, OB_FORMAT_Y16, 30);
 if(!depthProfile) {
-    depthProfile = depthProfiles->getProfile(0)->as<ob::VideoStreamProfile>();
+    depthProfile = depthProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
 }
 ```
 By creating Config to configure which streams to enable or disable in Pipeline, color stream and depth stream will be enabled here.
@@ -1285,7 +1285,7 @@ Create ob::Config to configure the stream to be opened by the pipeline. Currentl
     // Try to configure Color stream
     try {
         auto colorProfiles = pipe.getStreamProfileList(OB_SENSOR_COLOR);
-        auto colorProfile  = colorProfiles->getProfile(0);
+        auto colorProfile  = colorProfiles->getProfile(OB_PROFILE_DEFAULT);
         config->enableStream(colorProfile->as<ob::VideoStreamProfile>());
     }
     catch(...) {
@@ -1295,7 +1295,7 @@ Create ob::Config to configure the stream to be opened by the pipeline. Currentl
     // Try to configure Depth stream
     try {
         auto depthProfiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
-        auto depthProfile  = depthProfiles->getProfile(0);
+        auto depthProfile  = depthProfiles->getProfile(OB_PROFILE_DEFAULT);
         config->enableStream(depthProfile->as<ob::VideoStreamProfile>());
     }
     catch(...) {
@@ -1305,7 +1305,7 @@ Create ob::Config to configure the stream to be opened by the pipeline. Currentl
     // Try to configure IR stream
     try {
         auto irProfiles = pipe.getStreamProfileList(OB_SENSOR_IR);
-        auto irProfile  = irProfiles->getProfile(0);
+        auto irProfile  = irProfiles->getProfile(OB_PROFILE_DEFAULT);
         config->enableStream(irProfile->as<ob::VideoStreamProfile>());
     }
     catch(...) {
@@ -1353,7 +1353,7 @@ catch(...) {
 if(accelSensor && gyroSensor) {
     // Get AccelStreamProfile
     auto accelProfiles = accelSensor->getStreamProfileList();
-    auto accelProfile  = accelProfiles->getProfile(0);
+    auto accelProfile  = accelProfiles->getProfile(OB_PROFILE_DEFAULT);
     // Open the stream with the ob::Sensor#start function, you need to pass in StreamProfile and FrameCallback
     // Process the data frame returned by device in the FrameCallback frame callback function
     accelSensor->start(accelProfile, [&](std::shared_ptr<ob::Frame> frame) {
@@ -1363,7 +1363,7 @@ if(accelSensor && gyroSensor) {
 
     // Get GyroStreamProfile
     auto gyroProfiles = gyroSensor->getStreamProfileList();
-    auto gyroProfile  = gyroProfiles->getProfile(0);
+    auto gyroProfile  = gyroProfiles->getProfile(OB_PROFILE_DEFAULT);
     // Open the stream with the ob::Sensor#start function, you need to pass in StreamProfile and FrameCallback
     // Process the data frame returned by device in the FrameCallback frame callback function
     gyroSensor->start(gyroProfile, [&](std::shared_ptr<ob::Frame> frame) {
@@ -1413,7 +1413,7 @@ for ( auto&& pipe : pipes ) {
     auto depthProfile = depthProfileList->getVideoStreamProfile(640, 480,
 OB_FORMAT_Y16)->as<ob::VideoStreamProfile>();
     if(!depthProfile) {
-        depthProfile = depthProfileList->getProfile(0)->as<ob::VideoStreamProfile>();
+        depthProfile = depthProfileList->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
     }
     config->enableStream(depthProfile);
 
@@ -1424,7 +1424,7 @@ OB_FORMAT_Y16)->as<ob::VideoStreamProfile>();
    auto colorProfile = colorProfileList->getVideoStreamProfile(640, 480,
 OB_FORMAT_MJPG)->as<ob::VideoStreamProfile>();
     if(!colorProfile) {
-       colorProfile = colorProfileList->getProfile(0)->as<ob::VideoStreamProfile>();
+       colorProfile = colorProfileList->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
     }
     config->enableStream(colorProfile);
 
@@ -1551,11 +1551,11 @@ try{
 //Get all stream profiles of the depth camera, including stream resolution, frame rate, and frame format
 auto depthProfiles = pipeline->getStreamProfileList(OB_SENSOR_DEPTH);
 //Get the first Profile in the corresponding stream profile list. If there is a configuration file, the stream profile in the configuration file is the first in the stream profile list.
-auto depthProfile = depthProfiles->getProfile(0)->as<ob::VideoStreamProfile>();
+auto depthProfile = depthProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
 //Get all stream profiles for color cameras, including stream resolution, frame rate, and frame format
 auto colorProfiles = pipeline->getStreamProfileList(OB_SENSOR_COLOR);
 //Get the first Profile in the corresponding stream profile list. If there is a configuration file, the stream profile in the configuration file is the first in the stream profile list.
-auto colorProfile = colorProfiles->getProfile(0)->as<ob::VideoStreamProfile>();
+auto colorProfile = colorProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
 //get frame rate
 colorFps = colorProfile->fps();
 depthFps = depthProfile->fps();
@@ -1866,7 +1866,7 @@ auto colorProfile = colorProfiles->getVideoStreamProfile(640, 480, OB_FORMAT_YUY
 if(!colorProfile) {
   colorProfile = colorProfiles->getVideoStreamProfile(640, 480, OB_FORMAT_I420);
   if(!colorProfile)
-      colorProfile = colorProfiles->getProfile(0)->as<ob::VideoStreamProfile>();
+      colorProfile = colorProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
 }
 ```
 According to the method of setting the profile of the color stream above, set the profile of the depth stream in the same way.
@@ -1876,7 +1876,7 @@ auto depthProfiles = pipeline.getStreamProfileList(OB_SENSOR_DEPTH);
 //Set the item of interest through the interface, and return the first Profile corresponding to the Profile list
 auto depthProfile = depthProfiles->getVideoStreamProfile(640, 480, OB_FORMAT_Y16);
 if(!depthProfile) {
-    depthProfile = depthProfiles->getProfile(0)->as<ob::VideoStreamProfile>();
+    depthProfile = depthProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
 }
 ```
 By creating Config to configure which streams to be enabled or disabled in Pipeline, color stream and depth stream will be enabled here.
@@ -2007,7 +2007,7 @@ Then select the profile of the stream, we need to get the profile list of the co
 //Set the item of interest through the interface, and return the first Profile corresponding to the Profile list
 auto colorProfile = colorProfiles->getVideoStreamProfile(640, 480, OB_FORMAT_MJPG, 30);
 if(!colorProfile){
-  colorProfile = colorProfiles->getProfile(0)->as<ob::VideoStreamProfile>();
+  colorProfile = colorProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
 }
 ```
 Configure the depth stream in the same way as getting the color stream configuration
@@ -2018,7 +2018,7 @@ auto depthProfiles = pipeline.getStreamProfileList(OB_SENSOR_DEPTH);
 //Set the item of interest through the interface, and return the first Profile corresponding to the Profile list
 auto depthProfile = depthProfiles->getVideoStreamProfile(640, 480, OB_FORMAT_Y16, 30);
 if(!depthProfile){
-    depthProfile = depthProfiles->getProfile(0)->as<ob::VideoStreamProfile>();
+    depthProfile = depthProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
 }
 ```
 Configure the stream we want to open by creating Config.

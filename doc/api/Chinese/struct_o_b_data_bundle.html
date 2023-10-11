@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.8.1</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -78,7 +78,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>OrbbecSDK私有接口, 未来对外开放  
+<p>OrbbecSDK 私有接口, 未来对外开放  
  <a href="struct_o_b_data_bundle.html#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_ob_types_8h_source.html">ObTypes.h</a>&gt;</code></p>
@@ -89,7 +89,7 @@ Public 属性</h2></td></tr>
 <tr class="memdesc:a680a947cb52f7a64ec0aa17b4bfe2d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">与控制命令关联的数据结构的版本号  <br /></td></tr>
 <tr class="separator:a680a947cb52f7a64ec0aa17b4bfe2d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac88e7834ff571269c27a4bf9f9b0b79f"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_o_b_data_bundle.html#ac88e7834ff571269c27a4bf9f9b0b79f">data</a></td></tr>
-<tr class="memdesc:ac88e7834ff571269c27a4bf9f9b0b79f"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据内容，是一个数组,长度为 itemCount,包含 itemCount 元素的数据  <br /></td></tr>
+<tr class="memdesc:ac88e7834ff571269c27a4bf9f9b0b79f"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据内容，是一个数组, 长度为 itemCount, 包含 itemCount 元素的数据  <br /></td></tr>
 <tr class="separator:ac88e7834ff571269c27a4bf9f9b0b79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a894e264e761bfcea31c96e9d19b0876e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_o_b_data_bundle.html#a894e264e761bfcea31c96e9d19b0876e">dataSize</a></td></tr>
 <tr class="memdesc:a894e264e761bfcea31c96e9d19b0876e"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据大小（以字节为单位）  <br /></td></tr>
@@ -102,15 +102,15 @@ Public 属性</h2></td></tr>
 <tr class="separator:a6662b409fe251df58966a04d7d69c09d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>OrbbecSDK私有接口, 未来对外开放 </p>
+<div class="textblock"><p>OrbbecSDK 私有接口, 未来对外开放 </p>
 <p>功能：保存多版本数据结构的数据内容。</p><ol type="1">
-<li>通过propertyId和cmdVersion可以决定具体的数据类型；</li>
-<li>通过itemCount可以决定data内容映射的对象数量；</li>
+<li>通过 propertyId 和 cmdVersion 可以决定具体的数据类型；</li>
+<li>通过 itemCount 可以决定 data 内容映射的对象数量；</li>
 <li>由于 C 语言和 C++ 支持的特性差异，OBDataBundle 的 data 需要释放资源，导致实现上的差异 C 语言： 由于 C 语言没有模板，因此 data 是 uint8_t 数组，itemTypeSize == 1，dataSize == itemCount； C 语言需要开发者自行将 data 的 byte 数组转换为目标数据结构</li>
 </ol>
-<p>C++: C++支持模板，因此data是目标数据结构T的数组，itemTypeSize = sizeof(T)，itemCount = dataSize / itemTypeSize; </p>
+<p>C++: C++ 支持模板，因此 data 是目标数据结构 T 的数组，itemTypeSize = sizeof(T)，itemCount = dataSize / itemTypeSize; </p>
 
-<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l00838">838</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l00842">842</a> 行定义.</p>
 </div><h2 class="groupheader">类成员变量说明</h2>
 <a id="a680a947cb52f7a64ec0aa17b4bfe2d9c" name="a680a947cb52f7a64ec0aa17b4bfe2d9c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a680a947cb52f7a64ec0aa17b4bfe2d9c">&#9670;&#160;</a></span>cmdVersion</h2>
@@ -126,7 +126,7 @@ Public 属性</h2></td></tr>
 
 <p>与控制命令关联的数据结构的版本号 </p>
 
-<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l00842">842</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l00846">846</a> 行定义.</p>
 
 </div>
 </div>
@@ -142,10 +142,10 @@ Public 属性</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>数据内容，是一个数组,长度为 itemCount,包含 itemCount 元素的数据 </p>
-<dl class="section note"><dt>注解</dt><dd>void *data = new T[itemCount];数组元素类型为 T，类型 T 由 propertyId 和 cmdVersion 决定 </dd></dl>
+<p>数据内容，是一个数组, 长度为 itemCount, 包含 itemCount 元素的数据 </p>
+<dl class="section note"><dt>注解</dt><dd>void *data = new T[itemCount]; 数组元素类型为 T，类型 T 由 propertyId 和 cmdVersion 决定 </dd></dl>
 
-<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l00849">849</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l00853">853</a> 行定义.</p>
 
 </div>
 </div>
@@ -164,7 +164,7 @@ Public 属性</h2></td></tr>
 <p>数据大小（以字节为单位） </p>
 <dl class="section note"><dt>注解</dt><dd>dataSize == itemTypeSize *itemCount </dd></dl>
 
-<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l00856">856</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l00860">860</a> 行定义.</p>
 
 </div>
 </div>
@@ -181,9 +181,9 @@ Public 属性</h2></td></tr>
 </div><div class="memdoc">
 
 <p>数据项的大小 </p>
-<dl class="section note"><dt>注解</dt><dd>C语言：itemTypeSize = 1，C++：itemTypeSize = sizeof(T) </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>C 语言：itemTypeSize = 1，C++：itemTypeSize = sizeof(T) </dd></dl>
 
-<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l00863">863</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l00867">867</a> 行定义.</p>
 
 </div>
 </div>
@@ -202,7 +202,7 @@ Public 属性</h2></td></tr>
 <p>数据项个数 </p>
 <dl class="section note"><dt>注解</dt><dd>itemCount = dataSize /itemTypeSize; </dd></dl>
 
-<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l00870">870</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_ob_types_8h_source.html">ObTypes.h</a> 第 <a class="el" href="_ob_types_8h_source.html#l00874">874</a> 行定义.</p>
 
 </div>
 </div>
@@ -212,7 +212,7 @@ Public 属性</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 九月 25日 星期一 20:08:20 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 十月 10日 星期二 20:29:16 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

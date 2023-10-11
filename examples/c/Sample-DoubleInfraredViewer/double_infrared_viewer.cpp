@@ -20,9 +20,9 @@ extern "C" {
  */
 
 // Create global variables
-Window      *win    = nullptr;  // render window, based on opencv
-ob_error    *error  = NULL;     // Used to return SDK interface error information
-ob_pipeline *pipe   = nullptr;  // pipeline, used to open the Infrared stream after connecting the device
+Window      *win   = nullptr;  // render window, based on opencv
+ob_error    *error = NULL;     // Used to return SDK interface error information
+ob_pipeline *pipe  = nullptr;  // pipeline, used to open the Infrared stream after connecting the device
 
 void check_error(ob_error *error) {
     if(error) {
@@ -44,17 +44,17 @@ int main(int argc, char **args) {
     check_error(error);
 
     // Configure the infrared stream(IR_LEFT)
-    ob_stream_profile      *ir_left_profile = NULL;
-    ob_stream_profile_list *ir_left_profiles   = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_IR_LEFT, &error);
+    ob_stream_profile      *ir_left_profile  = NULL;
+    ob_stream_profile_list *ir_left_profiles = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_IR_LEFT, &error);
     check_error(error);
 
-    if (ir_left_profiles == nullptr) {
+    if(ir_left_profiles == nullptr) {
         printf("The obtained IR_Left resolution list is NULL. For monocular structured light devices, try opening the IR data stream using the IR example. ");
         return 0;
     }
 
     // Find the corresponding profile according to the specified format, first look for the y16 format
-    ir_left_profile = ob_stream_profile_list_get_profile(ir_left_profiles, 0, &error);
+    ir_left_profile = ob_stream_profile_list_get_profile(ir_left_profiles, OB_PROFILE_DEFAULT, &error);
     check_error(error);
 
     // enable stream
@@ -62,12 +62,12 @@ int main(int argc, char **args) {
     check_error(error);
 
     // Configure the infrared stream(IR_RIGHT)
-    ob_stream_profile* ir_right_profile = NULL;
-    ob_stream_profile_list* ir_right_profiles = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_IR_RIGHT, &error);
+    ob_stream_profile      *ir_right_profile  = NULL;
+    ob_stream_profile_list *ir_right_profiles = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_IR_RIGHT, &error);
     check_error(error);
 
     // Find the corresponding profile according to the specified format, first look for the y16 format
-    ir_right_profile = ob_stream_profile_list_get_profile(ir_right_profiles, 0, &error);
+    ir_right_profile = ob_stream_profile_list_get_profile(ir_right_profiles, OB_PROFILE_DEFAULT, &error);
     check_error(error);
 
     // enable stream
@@ -92,13 +92,13 @@ int main(int argc, char **args) {
             continue;
         }
 
-        ob_frame *ir_left_frame = ob_frameset_get_frame(frameset, OB_FRAME_IR_LEFT,&error);
+        ob_frame *ir_left_frame = ob_frameset_get_frame(frameset, OB_FRAME_IR_LEFT, &error);
         check_error(error);
 
-        ob_frame* ir_right_frame = ob_frameset_get_frame(frameset, OB_FRAME_IR_RIGHT, &error);
+        ob_frame *ir_right_frame = ob_frameset_get_frame(frameset, OB_FRAME_IR_RIGHT, &error);
         check_error(error);
-        
-        if (ir_left_frame == nullptr || ir_right_frame == nullptr) {
+
+        if(ir_left_frame == nullptr || ir_right_frame == nullptr) {
             std::cout << "left ir frame or right ir frame is null. leftFrame: " << ir_left_frame << ", rightFrame: " << ir_right_frame << std::endl;
             continue;
         }

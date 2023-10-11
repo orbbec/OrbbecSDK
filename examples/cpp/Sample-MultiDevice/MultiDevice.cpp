@@ -88,7 +88,7 @@ void StartStream(std::vector<std::shared_ptr<ob::Pipeline>> pipes) {
         std::shared_ptr<ob::VideoStreamProfile> depthProfile     = nullptr;
         if(depthProfileList) {
             // Open the default profile of Depth Sensor, which can be configured through the configuration file
-            depthProfile = std::const_pointer_cast<ob::StreamProfile>(depthProfileList->getProfile(0))->as<ob::VideoStreamProfile>();
+            depthProfile = std::const_pointer_cast<ob::StreamProfile>(depthProfileList->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
         }
         config->enableStream(depthProfile);
 
@@ -98,7 +98,7 @@ void StartStream(std::vector<std::shared_ptr<ob::Pipeline>> pipes) {
             std::shared_ptr<ob::VideoStreamProfile> colorProfile     = nullptr;
             if(colorProfileList) {
                 // Open the default profile of Color Sensor, which can be configured through the configuration file
-                colorProfile = std::const_pointer_cast<ob::StreamProfile>(colorProfileList->getProfile(0))->as<ob::VideoStreamProfile>();
+                colorProfile = std::const_pointer_cast<ob::StreamProfile>(colorProfileList->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
             }
             config->enableStream(colorProfile);
         }

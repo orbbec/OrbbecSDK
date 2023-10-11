@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.8.1</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -83,7 +83,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>定义 Device类  
+<p>定义 <a class="el" href="classob_1_1_device.html" title="定义 Device 类">Device</a> 类  
  <a href="classob_1_1_device.html#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_device_8hpp_source.html">Device.hpp</a>&gt;</code></p>
@@ -91,7 +91,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:a4bbc101b3b034fda60a903b1e72719f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a4bbc101b3b034fda60a903b1e72719f5">Device</a> (std::unique_ptr&lt; DeviceImpl &gt; impl)</td></tr>
-<tr class="memdesc:a4bbc101b3b034fda60a903b1e72719f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">描述RGBD相机的实体，代表一个具体型号的RGBD相机  <br /></td></tr>
+<tr class="memdesc:a4bbc101b3b034fda60a903b1e72719f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">描述 RGBD 相机的实体，代表一个具体型号的 RGBD 相机  <br /></td></tr>
 <tr class="separator:a4bbc101b3b034fda60a903b1e72719f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fbdd8a07a50e4ce4a30804d216fe175"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a9fbdd8a07a50e4ce4a30804d216fe175">~Device</a> () noexcept</td></tr>
 <tr class="separator:a9fbdd8a07a50e4ce4a30804d216fe175"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -102,76 +102,76 @@ Public 成员函数</h2></td></tr>
 <tr class="memdesc:a179003f3413400d785bdb6ee617e7a86"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备传感器列表  <br /></td></tr>
 <tr class="separator:a179003f3413400d785bdb6ee617e7a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae177edd1ed8253f42e780190820113be"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1_sensor.html">Sensor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#ae177edd1ed8253f42e780190820113be">getSensor</a> (<a class="el" href="_ob_types_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a> type)</td></tr>
-<tr class="memdesc:ae177edd1ed8253f42e780190820113be"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定类型传感器 如果设备没有打开传感器，在SDK内部会自动打开设备并返回实例  <br /></td></tr>
+<tr class="memdesc:ae177edd1ed8253f42e780190820113be"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定类型传感器 如果设备没有打开传感器，在 SDK 内部会自动打开设备并返回实例  <br /></td></tr>
 <tr class="separator:ae177edd1ed8253f42e780190820113be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66eae09af03e4af525e5e95256c56d0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a66eae09af03e4af525e5e95256c56d0e">setIntProperty</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId, int32_t property)</td></tr>
-<tr class="memdesc:a66eae09af03e4af525e5e95256c56d0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置int类型的设备属性  <br /></td></tr>
+<tr class="memdesc:a66eae09af03e4af525e5e95256c56d0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 int 类型的设备属性  <br /></td></tr>
 <tr class="separator:a66eae09af03e4af525e5e95256c56d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c822d67da621031f270fe2644f4bf83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a7c822d67da621031f270fe2644f4bf83">setFloatProperty</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId, float property)</td></tr>
-<tr class="memdesc:a7c822d67da621031f270fe2644f4bf83"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置float类型的设备属性  <br /></td></tr>
+<tr class="memdesc:a7c822d67da621031f270fe2644f4bf83"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 float 类型的设备属性  <br /></td></tr>
 <tr class="separator:a7c822d67da621031f270fe2644f4bf83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a1dcbafd7d0283253cc69b153a13d87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a6a1dcbafd7d0283253cc69b153a13d87">setBoolProperty</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId, bool property)</td></tr>
-<tr class="memdesc:a6a1dcbafd7d0283253cc69b153a13d87"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置bool类型的设备属性  <br /></td></tr>
+<tr class="memdesc:a6a1dcbafd7d0283253cc69b153a13d87"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 bool 类型的设备属性  <br /></td></tr>
 <tr class="separator:a6a1dcbafd7d0283253cc69b153a13d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3c95519c4f9237b54abadf6fd06920e"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#aa3c95519c4f9237b54abadf6fd06920e">getIntProperty</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId)</td></tr>
-<tr class="memdesc:aa3c95519c4f9237b54abadf6fd06920e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取int类型的设备属性  <br /></td></tr>
+<tr class="memdesc:aa3c95519c4f9237b54abadf6fd06920e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 int 类型的设备属性  <br /></td></tr>
 <tr class="separator:aa3c95519c4f9237b54abadf6fd06920e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e904d68d7a99c3f7cbd095394f8725a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a7e904d68d7a99c3f7cbd095394f8725a">getFloatProperty</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId)</td></tr>
-<tr class="memdesc:a7e904d68d7a99c3f7cbd095394f8725a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取float类型的设备属性  <br /></td></tr>
+<tr class="memdesc:a7e904d68d7a99c3f7cbd095394f8725a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 float 类型的设备属性  <br /></td></tr>
 <tr class="separator:a7e904d68d7a99c3f7cbd095394f8725a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac88b748fde7f65dbb8618b3c78d4f111"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#ac88b748fde7f65dbb8618b3c78d4f111">getBoolProperty</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId)</td></tr>
-<tr class="memdesc:ac88b748fde7f65dbb8618b3c78d4f111"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取bool类型的设备属性  <br /></td></tr>
+<tr class="memdesc:ac88b748fde7f65dbb8618b3c78d4f111"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 bool 类型的设备属性  <br /></td></tr>
 <tr class="separator:ac88b748fde7f65dbb8618b3c78d4f111"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62c9666afdf498bed5a75f8d06ab6990"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_b_int_property_range.html">OBIntPropertyRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a62c9666afdf498bed5a75f8d06ab6990">getIntPropertyRange</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId)</td></tr>
-<tr class="memdesc:a62c9666afdf498bed5a75f8d06ab6990"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取int类型的设备属性的范围(包括当前值和默认值)  <br /></td></tr>
+<tr class="memdesc:a62c9666afdf498bed5a75f8d06ab6990"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 int 类型的设备属性的范围 (包括当前值和默认值)  <br /></td></tr>
 <tr class="separator:a62c9666afdf498bed5a75f8d06ab6990"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5729b4690b32abb92da9afeda170d1eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_b_float_property_range.html">OBFloatPropertyRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a5729b4690b32abb92da9afeda170d1eb">getFloatPropertyRange</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId)</td></tr>
-<tr class="memdesc:a5729b4690b32abb92da9afeda170d1eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取float类型的设备属性的范围(包括当前值和默认值)  <br /></td></tr>
+<tr class="memdesc:a5729b4690b32abb92da9afeda170d1eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 float 类型的设备属性的范围 (包括当前值和默认值)  <br /></td></tr>
 <tr class="separator:a5729b4690b32abb92da9afeda170d1eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bf83911afddf9f427a92a64acd58524"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_b_bool_property_range.html">OBBoolPropertyRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a6bf83911afddf9f427a92a64acd58524">getBoolPropertyRange</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId)</td></tr>
-<tr class="memdesc:a6bf83911afddf9f427a92a64acd58524"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取bool类型的设备属性的范围(包括当前值和默认值)  <br /></td></tr>
+<tr class="memdesc:a6bf83911afddf9f427a92a64acd58524"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 bool 类型的设备属性的范围 (包括当前值和默认值)  <br /></td></tr>
 <tr class="separator:a6bf83911afddf9f427a92a64acd58524"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba075ac90895eb023a100490ccc6d6f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#aba075ac90895eb023a100490ccc6d6f3">writeAHB</a> (uint32_t reg, uint32_t mask, uint32_t value)</td></tr>
-<tr class="memdesc:aba075ac90895eb023a100490ccc6d6f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">AHB写寄存器  <br /></td></tr>
+<tr class="memdesc:aba075ac90895eb023a100490ccc6d6f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">AHB 写寄存器  <br /></td></tr>
 <tr class="separator:aba075ac90895eb023a100490ccc6d6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a635a8e05753a59500c092d0e127d2b3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a635a8e05753a59500c092d0e127d2b3a">readAHB</a> (uint32_t reg, uint32_t mask, uint32_t *value)</td></tr>
-<tr class="memdesc:a635a8e05753a59500c092d0e127d2b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">AHB读寄存器  <br /></td></tr>
+<tr class="memdesc:a635a8e05753a59500c092d0e127d2b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">AHB 读寄存器  <br /></td></tr>
 <tr class="separator:a635a8e05753a59500c092d0e127d2b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0afce85aa8d085e210925db912492d3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a0afce85aa8d085e210925db912492d3b">writeI2C</a> (uint32_t moduleId, uint32_t reg, uint32_t mask, uint32_t value)</td></tr>
-<tr class="memdesc:a0afce85aa8d085e210925db912492d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C写寄存器  <br /></td></tr>
+<tr class="memdesc:a0afce85aa8d085e210925db912492d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C 写寄存器  <br /></td></tr>
 <tr class="separator:a0afce85aa8d085e210925db912492d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bb47c0b13611b7dd00e3ffbcee21aec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a1bb47c0b13611b7dd00e3ffbcee21aec">readI2C</a> (uint32_t moduleId, uint32_t reg, uint32_t mask, uint32_t *value)</td></tr>
-<tr class="memdesc:a1bb47c0b13611b7dd00e3ffbcee21aec"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C读寄存器  <br /></td></tr>
+<tr class="memdesc:a1bb47c0b13611b7dd00e3ffbcee21aec"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C 读寄存器  <br /></td></tr>
 <tr class="separator:a1bb47c0b13611b7dd00e3ffbcee21aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05f4f760a391cbae0571623e1525fd54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a05f4f760a391cbae0571623e1525fd54">writeFlash</a> (uint32_t offset, const void *data, uint32_t dataSize, <a class="el" href="_types_8hpp.html#a55032b39d9a625cc1b43684765ad46b1">SetDataCallback</a> callback, bool async=false)</td></tr>
-<tr class="memdesc:a05f4f760a391cbae0571623e1525fd54"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置写入Flash的属性  <br /></td></tr>
+<tr class="memdesc:a05f4f760a391cbae0571623e1525fd54"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置写入 Flash 的属性  <br /></td></tr>
 <tr class="separator:a05f4f760a391cbae0571623e1525fd54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7726384f7d51bd80124c0d3de505e99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#ab7726384f7d51bd80124c0d3de505e99">readFlash</a> (uint32_t offset, uint32_t dataSize, <a class="el" href="_types_8hpp.html#ad61b52694f0b59f151b1a380d3db0876">GetDataCallback</a> callback, bool async=false)</td></tr>
-<tr class="memdesc:ab7726384f7d51bd80124c0d3de505e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取Flash的属性  <br /></td></tr>
+<tr class="memdesc:ab7726384f7d51bd80124c0d3de505e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取 Flash 的属性  <br /></td></tr>
 <tr class="separator:ab7726384f7d51bd80124c0d3de505e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab691352346a2f3c9b3244b9013eb3516"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#ab691352346a2f3c9b3244b9013eb3516">writeCustomerData</a> (const void *data, uint32_t dataSize)</td></tr>
-<tr class="memdesc:ab691352346a2f3c9b3244b9013eb3516"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置客户自定义数据，写入到flash。  <br /></td></tr>
+<tr class="memdesc:ab691352346a2f3c9b3244b9013eb3516"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置客户自定义数据，写入到 flash。  <br /></td></tr>
 <tr class="separator:ab691352346a2f3c9b3244b9013eb3516"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33ea10323fe7e482fa58fa8925aa6eeb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a33ea10323fe7e482fa58fa8925aa6eeb">readCustomerData</a> (void *data, uint32_t *dataSize)</td></tr>
-<tr class="memdesc:a33ea10323fe7e482fa58fa8925aa6eeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取保存在flash的客户自定义数据  <br /></td></tr>
+<tr class="memdesc:a33ea10323fe7e482fa58fa8925aa6eeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取保存在 flash 的客户自定义数据  <br /></td></tr>
 <tr class="separator:a33ea10323fe7e482fa58fa8925aa6eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10a91864fdff7248c3a2a8a2d4944fdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a10a91864fdff7248c3a2a8a2d4944fdf">setRawData</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId, const void *data, uint32_t dataSize, <a class="el" href="_types_8hpp.html#a55032b39d9a625cc1b43684765ad46b1">SetDataCallback</a> callback, bool async=false)</td></tr>
-<tr class="memdesc:a10a91864fdff7248c3a2a8a2d4944fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置raw data类型的设备属性数据[异步回调]  <br /></td></tr>
+<tr class="memdesc:a10a91864fdff7248c3a2a8a2d4944fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 raw data 类型的设备属性数据 [异步回调]  <br /></td></tr>
 <tr class="separator:a10a91864fdff7248c3a2a8a2d4944fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90a74519cb001a6af1137d7d17361ac4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a90a74519cb001a6af1137d7d17361ac4">getRawData</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId, <a class="el" href="_types_8hpp.html#ad61b52694f0b59f151b1a380d3db0876">GetDataCallback</a> callback, bool async=false)</td></tr>
-<tr class="memdesc:a90a74519cb001a6af1137d7d17361ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取raw data类型的设备属性数据[异步回调]  <br /></td></tr>
+<tr class="memdesc:a90a74519cb001a6af1137d7d17361ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 raw data 类型的设备属性数据 [异步回调]  <br /></td></tr>
 <tr class="separator:a90a74519cb001a6af1137d7d17361ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e19420a05358a7d0017132e0db3425b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a5e19420a05358a7d0017132e0db3425b">setStructuredData</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId, const void *data, uint32_t dataSize)</td></tr>
-<tr class="memdesc:a5e19420a05358a7d0017132e0db3425b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置structured data类型的设备属性  <br /></td></tr>
+<tr class="memdesc:a5e19420a05358a7d0017132e0db3425b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 structured data 类型的设备属性  <br /></td></tr>
 <tr class="separator:a5e19420a05358a7d0017132e0db3425b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49cb98480e2528dd1149d158945852e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a49cb98480e2528dd1149d158945852e8">getStructuredData</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId, void *data, uint32_t *dataSize)</td></tr>
-<tr class="memdesc:a49cb98480e2528dd1149d158945852e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取structured data类型的设备属性  <br /></td></tr>
+<tr class="memdesc:a49cb98480e2528dd1149d158945852e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 structured data 类型的设备属性  <br /></td></tr>
 <tr class="separator:a49cb98480e2528dd1149d158945852e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4eed1a9902604fdeb34f53f2c75e12be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a4eed1a9902604fdeb34f53f2c75e12be">setStructuredDataExt</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId, std::shared_ptr&lt; <a class="el" href="struct_o_b_data_bundle.html">OBDataBundle</a> &gt; dataBundle, <a class="el" href="_types_8hpp.html#a55032b39d9a625cc1b43684765ad46b1">SetDataCallback</a> callback)</td></tr>
-<tr class="memdesc:a4eed1a9902604fdeb34f53f2c75e12be"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置Structured Data Ext对象  <br /></td></tr>
+<tr class="memdesc:a4eed1a9902604fdeb34f53f2c75e12be"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 Structured Data Ext 对象  <br /></td></tr>
 <tr class="separator:a4eed1a9902604fdeb34f53f2c75e12be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89313fdff4b57d6605d6f4067b0e6930"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_o_b_data_bundle.html">OBDataBundle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a89313fdff4b57d6605d6f4067b0e6930">getStructuredDataExt</a> (<a class="el" href="_property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId)</td></tr>
-<tr class="memdesc:a89313fdff4b57d6605d6f4067b0e6930"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取structured data类型的数据  <br /></td></tr>
+<tr class="memdesc:a89313fdff4b57d6605d6f4067b0e6930"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 structured data 类型的数据  <br /></td></tr>
 <tr class="separator:a89313fdff4b57d6605d6f4067b0e6930"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62e5bf0c91dbb9e43d3c3c1bfceac071"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_b_protocol_version.html">OBProtocolVersion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a62e5bf0c91dbb9e43d3c3c1bfceac071">getProtocolVersion</a> ()</td></tr>
 <tr class="memdesc:a62e5bf0c91dbb9e43d3c3c1bfceac071"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备的控制命令协议版本  <br /></td></tr>
@@ -195,7 +195,7 @@ Public 成员函数</h2></td></tr>
 <tr class="memdesc:a6f0f110f2ef0edeba0bf776241878580"><td class="mdescLeft">&#160;</td><td class="mdescRight">升级设备固件  <br /></td></tr>
 <tr class="separator:a6f0f110f2ef0edeba0bf776241878580"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0a525cebe10c3369d3060516a1ab3ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#ad0a525cebe10c3369d3060516a1ab3ef">sendFile</a> (const char *filePath, const char *dstPath, <a class="el" href="_types_8hpp.html#af4ed1a1867e655fa5e4b77e646f080a4">SendFileCallback</a> callback, bool async=true)</td></tr>
-<tr class="memdesc:ad0a525cebe10c3369d3060516a1ab3ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送文件到设备端指定路径[异步回调]  <br /></td></tr>
+<tr class="memdesc:ad0a525cebe10c3369d3060516a1ab3ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送文件到设备端指定路径 [异步回调]  <br /></td></tr>
 <tr class="separator:ad0a525cebe10c3369d3060516a1ab3ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac2306bc576a712b9ac2ce8ec72d55f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a22fc53a75b8fa17029bb0befcb9c6829">OBDeviceState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#aac2306bc576a712b9ac2ce8ec72d55f8">getDeviceState</a> ()</td></tr>
 <tr class="memdesc:aac2306bc576a712b9ac2ce8ec72d55f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前设备状态  <br /></td></tr>
@@ -216,7 +216,7 @@ Public 成员函数</h2></td></tr>
 <tr class="memdesc:a1377e9b551a7b35fc59c984896cc5df0"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询当前的相机深度模式  <br /></td></tr>
 <tr class="separator:a1377e9b551a7b35fc59c984896cc5df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab952b1ebbfb58738024e8a8a164b5bcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a16946a0e76e54d58fe6a945fccc3190b">OBStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#ab952b1ebbfb58738024e8a8a164b5bcf">switchDepthWorkMode</a> (const <a class="el" href="struct_o_b_depth_work_mode.html">OBDepthWorkMode</a> &amp;workMode)</td></tr>
-<tr class="memdesc:ab952b1ebbfb58738024e8a8a164b5bcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换相机深度模式（根据深度工作模式对象），如果知道设备支持的深度工作模式名称，那么推荐用switchDepthWorkMode(const char *modeName)  <br /></td></tr>
+<tr class="memdesc:ab952b1ebbfb58738024e8a8a164b5bcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换相机深度模式（根据深度工作模式对象），如果知道设备支持的深度工作模式名称，那么推荐用 <a class="el" href="classob_1_1_device.html#a9601703a8e0c49a6128fc5fbba012be8" title="切换相机深度模式（根据深度工作模式名称）">switchDepthWorkMode(const char *modeName)</a>  <br /></td></tr>
 <tr class="separator:ab952b1ebbfb58738024e8a8a164b5bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9601703a8e0c49a6128fc5fbba012be8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ob_types_8h.html#a16946a0e76e54d58fe6a945fccc3190b">OBStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_device.html#a9601703a8e0c49a6128fc5fbba012be8">switchDepthWorkMode</a> (const char *modeName)</td></tr>
 <tr class="memdesc:a9601703a8e0c49a6128fc5fbba012be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换相机深度模式（根据深度工作模式名称）  <br /></td></tr>
@@ -272,7 +272,7 @@ Public 成员函数</h2></td></tr>
 <tr class="separator:a2950f414c752afb074d9849f834ae58e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>定义 Device类 </p>
+<div class="textblock"><p>定义 <a class="el" href="classob_1_1_device.html" title="定义 Device 类">Device</a> 类 </p>
 
 <p class="definition">在文件 <a class="el" href="_device_8hpp_source.html">Device.hpp</a> 第 <a class="el" href="_device_8hpp_source.html#l00030">30</a> 行定义.</p>
 </div><h2 class="groupheader">构造及析构函数说明</h2>
@@ -292,7 +292,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>描述RGBD相机的实体，代表一个具体型号的RGBD相机 </p>
+<p>描述 RGBD 相机的实体，代表一个具体型号的 RGBD 相机 </p>
 
 </div>
 </div>
@@ -378,8 +378,8 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>获取指定类型传感器 如果设备没有打开传感器，在SDK内部会自动打开设备并返回实例 </p>
-<dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;Sensor&gt; 返回传感器示例，如果设备没有该设备，返回nullptr </dd></dl>
+<p>获取指定类型传感器 如果设备没有打开传感器，在 SDK 内部会自动打开设备并返回实例 </p>
+<dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;Sensor&gt; 返回传感器示例，如果设备没有该设备，返回 nullptr </dd></dl>
 
 </div>
 </div>
@@ -409,10 +409,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>设置int类型的设备属性 </p>
+<p>设置 int 类型的设备属性 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
     <tr><td class="paramname">property</td><td>要设置的属性 </td></tr>
   </table>
   </dd>
@@ -446,10 +446,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>设置float类型的设备属性 </p>
+<p>设置 float 类型的设备属性 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
     <tr><td class="paramname">property</td><td>要设置的属性 </td></tr>
   </table>
   </dd>
@@ -483,10 +483,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>设置bool类型的设备属性 </p>
+<p>设置 bool 类型的设备属性 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
     <tr><td class="paramname">property</td><td>要设置的属性 </td></tr>
   </table>
   </dd>
@@ -510,10 +510,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>获取int类型的设备属性 </p>
+<p>获取 int 类型的设备属性 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
   </table>
   </dd>
 </dl>
@@ -537,10 +537,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>获取float类型的设备属性 </p>
+<p>获取 float 类型的设备属性 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
   </table>
   </dd>
 </dl>
@@ -564,10 +564,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>获取bool类型的设备属性 </p>
+<p>获取 bool 类型的设备属性 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
   </table>
   </dd>
 </dl>
@@ -591,10 +591,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>获取int类型的设备属性的范围(包括当前值和默认值) </p>
+<p>获取 int 类型的设备属性的范围 (包括当前值和默认值) </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
   </table>
   </dd>
 </dl>
@@ -618,10 +618,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>获取float类型的设备属性的范围(包括当前值和默认值) </p>
+<p>获取 float 类型的设备属性的范围 (包括当前值和默认值) </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
   </table>
   </dd>
 </dl>
@@ -645,10 +645,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>获取bool类型的设备属性的范围(包括当前值和默认值) </p>
+<p>获取 bool 类型的设备属性的范围 (包括当前值和默认值) </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
   </table>
   </dd>
 </dl>
@@ -688,7 +688,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>AHB写寄存器 </p>
+<p>AHB 写寄存器 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">reg</td><td>要写入的寄存器 </td></tr>
@@ -732,7 +732,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>AHB读寄存器 </p>
+<p>AHB 读寄存器 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">reg</td><td>要读取的寄存器 </td></tr>
@@ -782,10 +782,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>I2C写寄存器 </p>
+<p>I2C 写寄存器 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">moduleId</td><td>要写入的I2C模块ID </td></tr>
+    <tr><td class="paramname">moduleId</td><td>要写入的 I2C 模块 ID </td></tr>
     <tr><td class="paramname">reg</td><td>要写入的寄存器 </td></tr>
     <tr><td class="paramname">mask</td><td>要写入的掩码 </td></tr>
     <tr><td class="paramname">value</td><td>要写入的值 </td></tr>
@@ -833,10 +833,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>I2C读寄存器 </p>
+<p>I2C 读寄存器 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">moduleId</td><td>要读取的I2C模块ID </td></tr>
+    <tr><td class="paramname">moduleId</td><td>要读取的 I2C 模块 ID </td></tr>
     <tr><td class="paramname">reg</td><td>要读取的寄存器 </td></tr>
     <tr><td class="paramname">mask</td><td>要读取的掩码 </td></tr>
     <tr><td class="paramname">value</td><td>读取的值返回 </td></tr>
@@ -890,13 +890,13 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>设置写入Flash的属性 </p>
+<p>设置写入 Flash 的属性 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">offset</td><td>flash 偏移地址 </td></tr>
     <tr><td class="paramname">data</td><td>要写入的属性数据 </td></tr>
     <tr><td class="paramname">dataSize</td><td>要写入的属性大小 </td></tr>
-    <tr><td class="paramname">callback</td><td>写flash进度回调 </td></tr>
+    <tr><td class="paramname">callback</td><td>写 flash 进度回调 </td></tr>
     <tr><td class="paramname">async</td><td>是否异步执行 </td></tr>
   </table>
   </dd>
@@ -942,12 +942,12 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>读取Flash的属性 </p>
+<p>读取 Flash 的属性 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">offset</td><td>flash 偏移地址 </td></tr>
     <tr><td class="paramname">dataSize</td><td>获取的属性大小 </td></tr>
-    <tr><td class="paramname">callback</td><td>读flash返回的数据及进度回调 </td></tr>
+    <tr><td class="paramname">callback</td><td>读 flash 返回的数据及进度回调 </td></tr>
     <tr><td class="paramname">async</td><td>是否异步执行 </td></tr>
   </table>
   </dd>
@@ -981,11 +981,11 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>设置客户自定义数据，写入到flash。 </p>
+<p>设置客户自定义数据，写入到 flash。 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>要设置的属性数据 </td></tr>
-    <tr><td class="paramname">dataSize</td><td>要设置的属性的大小，最大长度不能超过65532字节。 </td></tr>
+    <tr><td class="paramname">dataSize</td><td>要设置的属性的大小，最大长度不能超过 65532 字节。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1018,7 +1018,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>获取保存在flash的客户自定义数据 </p>
+<p>获取保存在 flash 的客户自定义数据 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>获取的属性数据 </td></tr>
@@ -1073,13 +1073,13 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>设置raw data类型的设备属性数据[异步回调] </p>
+<p>设置 raw data 类型的设备属性数据 [异步回调] </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
     <tr><td class="paramname">data</td><td>要设置的属性数据 </td></tr>
     <tr><td class="paramname">dataSize</td><td>要设置的属性数据大小 </td></tr>
-    <tr><td class="paramname">callback</td><td>rawdata设置进度回调 </td></tr>
+    <tr><td class="paramname">callback</td><td>rawdata 设置进度回调 </td></tr>
     <tr><td class="paramname">async</td><td>是否异步执行 </td></tr>
   </table>
   </dd>
@@ -1119,10 +1119,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>获取raw data类型的设备属性数据[异步回调] </p>
+<p>获取 raw data 类型的设备属性数据 [异步回调] </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
     <tr><td class="paramname">callback</td><td>获取返回的数据及进度回调 </td></tr>
     <tr><td class="paramname">async</td><td>是否异步执行 </td></tr>
   </table>
@@ -1163,10 +1163,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>设置structured data类型的设备属性 </p>
+<p>设置 structured data 类型的设备属性 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
     <tr><td class="paramname">data</td><td>要设置的属性数据 </td></tr>
     <tr><td class="paramname">dataSize</td><td>要设置的属性大小 </td></tr>
   </table>
@@ -1207,10 +1207,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>获取structured data类型的设备属性 </p>
+<p>获取 structured data 类型的设备属性 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
     <tr><td class="paramname">data</td><td>获取的属性数据 </td></tr>
     <tr><td class="paramname">dataSize</td><td>获取的属性大小 </td></tr>
   </table>
@@ -1251,10 +1251,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>设置Structured Data Ext对象 </p>
+<p>设置 Structured Data Ext 对象 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
     <tr><td class="paramname">dataBundle</td><td>设置的目标数据 </td></tr>
     <tr><td class="paramname">callback</td><td>设置数据回调 </td></tr>
   </table>
@@ -1279,10 +1279,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>获取structured data类型的数据 </p>
+<p>获取 structured data 类型的数据 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
   </table>
   </dd>
 </dl>
@@ -1329,7 +1329,7 @@ Public 成员函数</h2></td></tr>
 <p>获取控制命令的版本号 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
   </table>
   </dd>
 </dl>
@@ -1413,7 +1413,7 @@ Public 成员函数</h2></td></tr>
 <p>判断属性权限支持情况 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">propertyId</td><td>属性id </td></tr>
+    <tr><td class="paramname">propertyId</td><td>属性 id </td></tr>
     <tr><td class="paramname">permission</td><td>需要判读的读写权限类型 </td></tr>
   </table>
   </dd>
@@ -1555,7 +1555,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>发送文件到设备端指定路径[异步回调] </p>
+<p>发送文件到设备端指定路径 [异步回调] </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">filePath</td><td>原文件路径 </td></tr>
@@ -1683,7 +1683,7 @@ Public 成员函数</h2></td></tr>
 </div><div class="memdoc">
 
 <p>获取设备内保存的相机标定的原始参数列表， </p>
-<dl class="section attention"><dt>注意</dt><dd>列表内参数不与当前开流配置相对应，需要自行根据实际情况选用参数并可能需要做缩放、镜像等处理。非专业用户建议使用Pipeline::getCameraParam()接口。</dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>列表内参数不与当前开流配置相对应，需要自行根据实际情况选用参数并可能需要做缩放、镜像等处理。非专业用户建议使用 <a class="el" href="classob_1_1_pipeline.html#ad4f59acb5ed8ed7db43535513fb9bcf2" title="获取相机参数">Pipeline::getCameraParam()</a> 接口。</dd></dl>
 <dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;CameraParamList&gt; 相机参数列表 </dd></dl>
 
 </div>
@@ -1724,7 +1724,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>切换相机深度模式（根据深度工作模式对象），如果知道设备支持的深度工作模式名称，那么推荐用switchDepthWorkMode(const char *modeName) </p>
+<p>切换相机深度模式（根据深度工作模式对象），如果知道设备支持的深度工作模式名称，那么推荐用 <a class="el" href="classob_1_1_device.html#a9601703a8e0c49a6128fc5fbba012be8" title="切换相机深度模式（根据深度工作模式名称）">switchDepthWorkMode(const char *modeName)</a> </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">workMode</td><td>要切换的相机深度模式</td></tr>
@@ -1754,11 +1754,11 @@ Public 成员函数</h2></td></tr>
 <p>切换相机深度模式（根据深度工作模式名称） </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">modeName</td><td>相机深度工作模式的名称，模式名称必须与OBDepthWorkMode.name一致</td></tr>
+    <tr><td class="paramname">modeName</td><td>相机深度工作模式的名称，模式名称必须与 <a class="el" href="struct_o_b_depth_work_mode.html#a3d869051a5fb201a042fa33135fcfb6b" title="工作模式名称">OBDepthWorkMode.name</a> 一致</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>返回</dt><dd>ob_status 设置设置结果，OB_STATUS_OK成功，其他：设置失败 </dd></dl>
+<dl class="section return"><dt>返回</dt><dd>ob_status 设置设置结果，OB_STATUS_OK 成功，其他：设置失败 </dd></dl>
 
 </div>
 </div>
@@ -1798,7 +1798,7 @@ Public 成员函数</h2></td></tr>
 </div><div class="memdoc">
 
 <p>设备重启 </p>
-<dl class="section attention"><dt>注意</dt><dd>设备会掉线重连，设备掉线后对Device对象接口访问可能会发生异常，请直接删除该对象， 待设备重连后可重新获取。 </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>设备会掉线重连，设备掉线后对 <a class="el" href="classob_1_1_device.html" title="定义 Device 类">Device</a> 对象接口访问可能会发生异常，请直接删除该对象， 待设备重连后可重新获取。 </dd></dl>
 
 </div>
 </div>
@@ -1819,7 +1819,7 @@ Public 成员函数</h2></td></tr>
 </div><div class="memdoc">
 
 <p>设备重启延迟模式 </p>
-<dl class="section attention"><dt>注意</dt><dd>设备将断开并重新连接。设备断开连接后，访问Device对象接口可能会出现异常。 请直接删除该对象，并在设备重新连接后重新获取。 支持设备：Gemini2 L</dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>设备将断开并重新连接。设备断开连接后，访问 <a class="el" href="classob_1_1_device.html" title="定义 Device 类">Device</a> 对象接口可能会出现异常。 请直接删除该对象，并在设备重新连接后重新获取。 支持设备：Gemini2 L</dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">delayMs</td><td>时间单位：ms。delayMs == 0：无延迟；delayMs &gt; 0, 重启后延迟毫秒连接主机设备 </td></tr>
@@ -1891,7 +1891,7 @@ Public 成员函数</h2></td></tr>
 <p>设置设备同步配置 </p>
 <p>用于在单机中配置不同传感器的曝光同步功能和多摄像头同步功能</p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">弃用:</a></b></dt><dd>此接口已弃用，请改用 <a class="el" href="classob_1_1_device.html#a0c85a231a9d0fa0adfc23038adb185b3">setMultiDeviceSyncConfig</a></dd></dl>
-<dl class="section attention"><dt>注意</dt><dd>调用此函数将直接将配置写入设备Flash，并且在设备重新启动后仍然有效。为避免影响Flash的使用寿命，请不要频繁更新配置</dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>调用此函数将直接将配置写入设备 Flash，并且在设备重新启动后仍然有效。为避免影响 Flash 的使用寿命，请不要频繁更新配置</dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">deviceSyncConfig</td><td>设备同步配置 </td></tr>
@@ -1917,15 +1917,15 @@ Public 成员函数</h2></td></tr>
 </div><div class="memdoc">
 
 <p>获取设备支持的多设备同步模式位图 </p>
-<p>例如，如果返回值为0b00001100 ，则表示设备支持 OB_MULTI_device_SYNC_MODE_PRIMARY 和 OB_MULTI_vice_SYNC_MODE_SECONDARY 。用户可以通过以下代码检查支持的模式： </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(supported_mode_bitmap &amp; <a class="code hl_enumvalue" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a>){</div>
+<p>例如，如果返回值为 0b00001100 ，则表示设备支持 <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba8e2f43bf0dd49abc986b551b75e0a923">OB_MULTI_DEVICE_SYNC_MODE_PRIMARY</a> 和 OB_MULTI_vice_SYNC_MODE_SECONDARY 。用户可以通过以下代码检查支持的模式： </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(supported_mode_bitmap &amp; <a class="code hl_enumvalue" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a>){</div>
 <div class="line">   <span class="comment">//support OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</span></div>
 <div class="line">}</div>
 <div class="line"><span class="keywordflow">if</span>(supported_mode_bitmap &amp; <a class="code hl_enumvalue" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225">OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</a>){</div>
 <div class="line">  <span class="comment">//support OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</span></div>
 <div class="line">}</div>
 <div class="line"><span class="comment">// and so on</span></div>
-<div class="ttc" id="a_ob_types_8h_html_aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225"><div class="ttname"><a href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225">OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</a></div><div class="ttdeci">@ OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</div><div class="ttdoc">standalone 模式</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l01021">ObTypes.h:1021</a></div></div>
-<div class="ttc" id="a_ob_types_8h_html_aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89"><div class="ttname"><a href="_ob_types_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a></div><div class="ttdeci">@ OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</div><div class="ttdoc">free run 模式</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l01014">ObTypes.h:1014</a></div></div>
+<div class="ttc" id="a_ob_types_8h_html_aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225"><div class="ttname"><a href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225">OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</a></div><div class="ttdeci">@ OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</div><div class="ttdoc">standalone 模式</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l01025">ObTypes.h:1025</a></div></div>
+<div class="ttc" id="a_ob_types_8h_html_aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89"><div class="ttname"><a href="_ob_types_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a></div><div class="ttdeci">@ OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</div><div class="ttdoc">free run 模式</div><div class="ttdef"><b>Definition</b> <a href="_ob_types_8h_source.html#l01018">ObTypes.h:1018</a></div></div>
 </div><!-- fragment --> <dl class="section return"><dt>返回</dt><dd>uint16_t 返回设备支持的多设备同步模式位图 </dd></dl>
 
 </div>
@@ -1997,7 +1997,7 @@ Public 成员函数</h2></td></tr>
 <dd>
 对于某些型号，接收和执行捕获命令会有一定的延迟和性能消耗，因此调用的频率此功能不宜过高，具体支持频率请参阅产品说明书 </dd>
 <dd>
-如果设备未处于 OB_MULTI_device_SYNC_MODE_HARDWARE_TRIGGERING模式，则设备将忽略捕获命令 </dd></dl>
+如果设备未处于 <a class="el" href="_ob_types_8h.html#aabad929b67059752029c3374594ac63ba39ca63ef583695c083588ae28ea22ad9">OB_MULTI_DEVICE_SYNC_MODE_HARDWARE_TRIGGERING</a> 模式，则设备将忽略捕获命令 </dd></dl>
 
 </div>
 </div>
@@ -2057,11 +2057,11 @@ Public 成员函数</h2></td></tr>
 </div><div class="memdoc">
 
 <p>向设备发送时间戳重置命令 </p>
-<p>当时间戳重置功能已启用。时间戳重置功能可以通过调用 ob_device_set_timestamp_reset_config来启用</p>
+<p>当时间戳重置功能已启用。时间戳重置功能可以通过调用 <a class="el" href="_multiple_devices_8h.html#a293ead22918e776ce10334e26e20d313">ob_device_set_timestamp_reset_config</a> 来启用</p>
 <p>在调用此函数之前，用户应该调用 <a class="el" href="_multiple_devices_8h.html#a293ead22918e776ce10334e26e20d313">ob_device_set_timestamp_reset_config</a> 来禁用时间戳重置函数（它不是某些型号需要，但为了代码兼容性，仍然建议这样做）</p>
 <dl class="section attention"><dt>注意</dt><dd>如果设备的流被启动，则流输出的连续帧的时间戳将在时间戳重置后跳一次 </dd>
 <dd>
-由于设备的定时器精度不高，流输出的连续帧的时间戳在长时间后会漂移，用户可以定期调用此功能来重置计时器，以避免时间戳漂移，建议间隔时间为60分钟 </dd></dl>
+由于设备的定时器精度不高，流输出的连续帧的时间戳在长时间后会漂移，用户可以定期调用此功能来重置计时器，以避免时间戳漂移，建议间隔时间为 60 分钟 </dd></dl>
 
 </div>
 </div>
@@ -2084,7 +2084,7 @@ Public 成员函数</h2></td></tr>
 <p>调用此功能后，设备的计时器将与主机同步。用户可以将此函数调用到多个设备同步设备的所有定时器</p>
 <dl class="section attention"><dt>注意</dt><dd>如果设备的流被启动，则该流输出的连续帧的时间戳可能在定时器同步之后跳一次 </dd>
 <dd>
-由于设备的定时器精度不高，流输出的连续帧的时间戳在长时间后会漂移。用户可以定期调用此功能来同步定时器，以避免时间戳漂移，建议间隔时间为60分钟 </dd></dl>
+由于设备的定时器精度不高，流输出的连续帧的时间戳在长时间后会漂移。用户可以定期调用此功能来同步定时器，以避免时间戳漂移，建议间隔时间为 60 分钟 </dd></dl>
 
 </div>
 </div>
@@ -2109,7 +2109,7 @@ Public 成员函数</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_device_8hpp_source.html">Device.hpp</a> 第 <a class="el" href="_device_8hpp_source.html#l00524">524</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_device_8hpp_source.html">Device.hpp</a> 第 <a class="el" href="_device_8hpp_source.html#l00525">525</a> 行定义.</p>
 
 </div>
 </div>
@@ -2133,7 +2133,7 @@ Public 成员函数</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_device_8hpp_source.html">Device.hpp</a> 第 <a class="el" href="_device_8hpp_source.html#l00525">525</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_device_8hpp_source.html">Device.hpp</a> 第 <a class="el" href="_device_8hpp_source.html#l00526">526</a> 行定义.</p>
 
 </div>
 </div>
@@ -2143,7 +2143,7 @@ Public 成员函数</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 九月 25日 星期一 20:08:21 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 十月 10日 星期二 20:29:16 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.7.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.8.1</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -82,7 +82,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Pipeline类,实现开关流、帧同步等  
+<p><a class="el" href="classob_1_1_pipeline.html" title="Pipeline 类, 实现开关流、帧同步等">Pipeline</a> 类, 实现开关流、帧同步等  
  <a href="classob_1_1_pipeline.html#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_pipeline_8hpp_source.html">Pipeline.hpp</a>&gt;</code></p>
@@ -90,27 +90,27 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:a7640a92561c0a10f34fcf874f7dbfbad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#a7640a92561c0a10f34fcf874f7dbfbad">Pipeline</a> ()</td></tr>
-<tr class="memdesc:a7640a92561c0a10f34fcf874f7dbfbad"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classob_1_1_pipeline.html" title="Pipeline类,实现开关流、帧同步等">Pipeline</a> 是SDK的高级接口，适用于应用，算法等重点关注RGBD数据流常见，Pipeline在SDK内部可以提供对齐，同步后的FrameSet桢集合 直接方便客户使用。 <a class="el" href="classob_1_1_pipeline.html#a7640a92561c0a10f34fcf874f7dbfbad" title="Pipeline 是SDK的高级接口，适用于应用，算法等重点关注RGBD数据流常见，Pipeline在SDK内部可以提供对齐，同步后的FrameSet桢集合 直接方便客户使用。 Pipeline()无参...">Pipeline()</a>无参数版本，默认打开连接到OS的设备列表中的第一个设备。若应用已经通过DeviceList获取设备，此时打开Pipeline()会抛出设备已经创建异常。 需要开发者捕获异常处理。  <br /></td></tr>
+<tr class="memdesc:a7640a92561c0a10f34fcf874f7dbfbad"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classob_1_1_pipeline.html" title="Pipeline 类, 实现开关流、帧同步等">Pipeline</a> 是 SDK 的高级接口，适用于应用，算法等重点关注 RGBD 数据流常见，Pipeline 在 SDK 内部可以提供对齐，同步后的 <a class="el" href="classob_1_1_frame_set.html" title="定义 FrameSet 类, 继承 Frame 类">FrameSet</a> 桢集合 直接方便客户使用。 <a class="el" href="classob_1_1_pipeline.html#a7640a92561c0a10f34fcf874f7dbfbad" title="Pipeline 是 SDK 的高级接口，适用于应用，算法等重点关注 RGBD 数据流常见，Pipeline 在 SDK 内部可以提供对齐，同步后的 FrameSet 桢集合 直接方便客户使用。 Pip...">Pipeline()</a> 无参数版本，默认打开连接到 OS 的设备列表中的第一个设备。若应用已经通过 <a class="el" href="classob_1_1_device_list.html" title="表示设备列表的类">DeviceList</a> 获取设备，此时打开 <a class="el" href="classob_1_1_pipeline.html#a7640a92561c0a10f34fcf874f7dbfbad" title="Pipeline 是 SDK 的高级接口，适用于应用，算法等重点关注 RGBD 数据流常见，Pipeline 在 SDK 内部可以提供对齐，同步后的 FrameSet 桢集合 直接方便客户使用。 Pip...">Pipeline()</a> 会抛出设备已经创建异常。 需要开发者捕获异常处理。  <br /></td></tr>
 <tr class="separator:a7640a92561c0a10f34fcf874f7dbfbad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab0777ee6f7f5be19871877c7942cac3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#aab0777ee6f7f5be19871877c7942cac3">Pipeline</a> (std::shared_ptr&lt; <a class="el" href="classob_1_1_device.html">Device</a> &gt; device)</td></tr>
-<tr class="memdesc:aab0777ee6f7f5be19871877c7942cac3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classob_1_1_pipeline.html#aab0777ee6f7f5be19871877c7942cac3" title="Pipeline(std::shared_ptr&lt; Device &gt; device )函数，适用于多设备操作常见，此时需要通过DeviceList获取多个设备，通过该接口实现device和pipelin...">Pipeline(std::shared_ptr&lt; Device &gt; device )</a>函数，适用于多设备操作常见，此时需要通过DeviceList获取多个设备，通过该接口实现device和pipeline绑定。  <br /></td></tr>
+<tr class="memdesc:aab0777ee6f7f5be19871877c7942cac3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classob_1_1_pipeline.html#aab0777ee6f7f5be19871877c7942cac3" title="Pipeline(std::shared_ptr&lt; Device &gt; device ) 函数，适用于多设备操作常见，此时需要通过 DeviceList 获取多个设备，通过该接口实现 device 和 p...">Pipeline(std::shared_ptr&lt; Device &gt; device )</a> 函数，适用于多设备操作常见，此时需要通过 <a class="el" href="classob_1_1_device_list.html" title="表示设备列表的类">DeviceList</a> 获取多个设备，通过该接口实现 device 和 pipeline 绑定。  <br /></td></tr>
 <tr class="separator:aab0777ee6f7f5be19871877c7942cac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c539f66996938d4c35977a124df027e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#a8c539f66996938d4c35977a124df027e">Pipeline</a> (const char *filename)</td></tr>
-<tr class="memdesc:a8c539f66996938d4c35977a124df027e"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建pipeline用于回放录制好的流文件  <br /></td></tr>
+<tr class="memdesc:a8c539f66996938d4c35977a124df027e"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建 pipeline 用于回放录制好的流文件  <br /></td></tr>
 <tr class="separator:a8c539f66996938d4c35977a124df027e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f91b419f8f1d345cd4400365bc59d91"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#a3f91b419f8f1d345cd4400365bc59d91">~Pipeline</a> () noexcept</td></tr>
 <tr class="separator:a3f91b419f8f1d345cd4400365bc59d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a9d7d03161138a172aed81b640ea702"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#a0a9d7d03161138a172aed81b640ea702">start</a> (std::shared_ptr&lt; <a class="el" href="classob_1_1_config.html">Config</a> &gt; config)</td></tr>
-<tr class="memdesc:a0a9d7d03161138a172aed81b640ea702"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动pipeline并配置参数  <br /></td></tr>
+<tr class="memdesc:a0a9d7d03161138a172aed81b640ea702"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动 pipeline 并配置参数  <br /></td></tr>
 <tr class="separator:a0a9d7d03161138a172aed81b640ea702"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7addded117fbb45e5316a58481b6b534"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#a7addded117fbb45e5316a58481b6b534">start</a> (std::shared_ptr&lt; <a class="el" href="classob_1_1_config.html">Config</a> &gt; config, <a class="el" href="namespaceob.html#a079312e9113ca7d35fd7ccb68fb7c7fa">FrameSetCallback</a> callback)</td></tr>
-<tr class="memdesc:a7addded117fbb45e5316a58481b6b534"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动pipeline并设置帧集合数据回调  <br /></td></tr>
+<tr class="memdesc:a7addded117fbb45e5316a58481b6b534"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动 pipeline 并设置帧集合数据回调  <br /></td></tr>
 <tr class="separator:a7addded117fbb45e5316a58481b6b534"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6962165254f3a2115ad24f826537c894"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#a6962165254f3a2115ad24f826537c894">stop</a> ()</td></tr>
-<tr class="memdesc:a6962165254f3a2115ad24f826537c894"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止pipeline  <br /></td></tr>
+<tr class="memdesc:a6962165254f3a2115ad24f826537c894"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止 pipeline  <br /></td></tr>
 <tr class="separator:a6962165254f3a2115ad24f826537c894"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9856611c012e32b589369e1328ed02d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1_config.html">Config</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#ad9856611c012e32b589369e1328ed02d">getConfig</a> ()</td></tr>
-<tr class="memdesc:ad9856611c012e32b589369e1328ed02d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取pipeline的配置参数  <br /></td></tr>
+<tr class="memdesc:ad9856611c012e32b589369e1328ed02d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 pipeline 的配置参数  <br /></td></tr>
 <tr class="separator:ad9856611c012e32b589369e1328ed02d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3b2681cdd2682c6d388f144c87d1278"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1_frame_set.html">FrameSet</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#ae3b2681cdd2682c6d388f144c87d1278">waitForFrames</a> (uint32_t timeout_ms)</td></tr>
 <tr class="memdesc:ae3b2681cdd2682c6d388f144c87d1278"><td class="mdescLeft">&#160;</td><td class="mdescRight">等待帧集合数据  <br /></td></tr>
@@ -134,16 +134,16 @@ Public 成员函数</h2></td></tr>
 <tr class="memdesc:ad4f59acb5ed8ed7db43535513fb9bcf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取相机参数  <br /></td></tr>
 <tr class="separator:ad4f59acb5ed8ed7db43535513fb9bcf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8049e3e75826e4873af2010058ad363a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_b_camera_param.html">OBCameraParam</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#a8049e3e75826e4873af2010058ad363a">getCameraParamWithProfile</a> (uint32_t colorWidth, uint32_t colorHeight, uint32_t depthWidth, uint32_t depthHeight)</td></tr>
-<tr class="memdesc:a8049e3e75826e4873af2010058ad363a"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回与输入的彩色传感器分辨率对应的支持D2C的深度传感器分辨率列表  <br /></td></tr>
+<tr class="memdesc:a8049e3e75826e4873af2010058ad363a"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回与输入的彩色传感器分辨率对应的支持 D2C 的深度传感器分辨率列表  <br /></td></tr>
 <tr class="separator:a8049e3e75826e4873af2010058ad363a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac25d95d510c864b9d1ee7a93e9f31c74"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1_stream_profile_list.html">StreamProfileList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#ac25d95d510c864b9d1ee7a93e9f31c74">getD2CDepthProfileList</a> (std::shared_ptr&lt; <a class="el" href="classob_1_1_stream_profile.html">StreamProfile</a> &gt; colorProfile, <a class="el" href="_ob_types_8h.html#ade914070120de80d4338ee74e73dc9d5">OBAlignMode</a> alignMode)</td></tr>
-<tr class="memdesc:ac25d95d510c864b9d1ee7a93e9f31c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回与输入颜色传感器分辨率相对应的启用D2C的深度传感器分辨率的列表  <br /></td></tr>
+<tr class="memdesc:ac25d95d510c864b9d1ee7a93e9f31c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回与输入颜色传感器分辨率相对应的启用 D2C 的深度传感器分辨率的列表  <br /></td></tr>
 <tr class="separator:ac25d95d510c864b9d1ee7a93e9f31c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f7a9208d6a1035302993c9683cba4f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_b_rect.html">OBRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#a5f7a9208d6a1035302993c9683cba4f2">getD2CValidArea</a> (uint32_t minimumDistance, uint32_t maximumDistance=0)</td></tr>
-<tr class="memdesc:a5f7a9208d6a1035302993c9683cba4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取D2C后给定工作范围的有效区域 如果需要获取指定距离D2C后的ROI区域，将minimum_distance与maximum_distance设置成一样或者将maximum_distance设置成0  <br /></td></tr>
+<tr class="memdesc:a5f7a9208d6a1035302993c9683cba4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 D2C 后给定工作范围的有效区域 如果需要获取指定距离 D2C 后的 ROI 区域，将 minimum_distance 与 maximum_distance 设置成一样或者将 maximum_distance 设置成 0  <br /></td></tr>
 <tr class="separator:a5f7a9208d6a1035302993c9683cba4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa21ee5ac861bec48247de5958c3cd704"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#aa21ee5ac861bec48247de5958c3cd704">switchConfig</a> (std::shared_ptr&lt; <a class="el" href="classob_1_1_config.html">Config</a> &gt; config)</td></tr>
-<tr class="memdesc:aa21ee5ac861bec48247de5958c3cd704"><td class="mdescLeft">&#160;</td><td class="mdescRight">动态切换对应的config配置  <br /></td></tr>
+<tr class="memdesc:aa21ee5ac861bec48247de5958c3cd704"><td class="mdescLeft">&#160;</td><td class="mdescRight">动态切换对应的 config 配置  <br /></td></tr>
 <tr class="separator:aa21ee5ac861bec48247de5958c3cd704"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0d1d11a72e5f803fc747017f074b18d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1_pipeline.html#aa0d1d11a72e5f803fc747017f074b18d">startRecord</a> (const char *filename)</td></tr>
 <tr class="memdesc:aa0d1d11a72e5f803fc747017f074b18d"><td class="mdescLeft">&#160;</td><td class="mdescRight">开始录制  <br /></td></tr>
@@ -153,7 +153,7 @@ Public 成员函数</h2></td></tr>
 <tr class="separator:a550084f2d2c0ae538c3a3e6b4e55abe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>Pipeline类,实现开关流、帧同步等 </p>
+<div class="textblock"><p><a class="el" href="classob_1_1_pipeline.html" title="Pipeline 类, 实现开关流、帧同步等">Pipeline</a> 类, 实现开关流、帧同步等 </p>
 
 <p class="definition">在文件 <a class="el" href="_pipeline_8hpp_source.html">Pipeline.hpp</a> 第 <a class="el" href="_pipeline_8hpp_source.html#l00030">30</a> 行定义.</p>
 </div><h2 class="groupheader">构造及析构函数说明</h2>
@@ -172,7 +172,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classob_1_1_pipeline.html" title="Pipeline类,实现开关流、帧同步等">Pipeline</a> 是SDK的高级接口，适用于应用，算法等重点关注RGBD数据流常见，Pipeline在SDK内部可以提供对齐，同步后的FrameSet桢集合 直接方便客户使用。 <a class="el" href="classob_1_1_pipeline.html#a7640a92561c0a10f34fcf874f7dbfbad" title="Pipeline 是SDK的高级接口，适用于应用，算法等重点关注RGBD数据流常见，Pipeline在SDK内部可以提供对齐，同步后的FrameSet桢集合 直接方便客户使用。 Pipeline()无参...">Pipeline()</a>无参数版本，默认打开连接到OS的设备列表中的第一个设备。若应用已经通过DeviceList获取设备，此时打开Pipeline()会抛出设备已经创建异常。 需要开发者捕获异常处理。 </p>
+<p><a class="el" href="classob_1_1_pipeline.html" title="Pipeline 类, 实现开关流、帧同步等">Pipeline</a> 是 SDK 的高级接口，适用于应用，算法等重点关注 RGBD 数据流常见，Pipeline 在 SDK 内部可以提供对齐，同步后的 <a class="el" href="classob_1_1_frame_set.html" title="定义 FrameSet 类, 继承 Frame 类">FrameSet</a> 桢集合 直接方便客户使用。 <a class="el" href="classob_1_1_pipeline.html#a7640a92561c0a10f34fcf874f7dbfbad" title="Pipeline 是 SDK 的高级接口，适用于应用，算法等重点关注 RGBD 数据流常见，Pipeline 在 SDK 内部可以提供对齐，同步后的 FrameSet 桢集合 直接方便客户使用。 Pip...">Pipeline()</a> 无参数版本，默认打开连接到 OS 的设备列表中的第一个设备。若应用已经通过 <a class="el" href="classob_1_1_device_list.html" title="表示设备列表的类">DeviceList</a> 获取设备，此时打开 <a class="el" href="classob_1_1_pipeline.html#a7640a92561c0a10f34fcf874f7dbfbad" title="Pipeline 是 SDK 的高级接口，适用于应用，算法等重点关注 RGBD 数据流常见，Pipeline 在 SDK 内部可以提供对齐，同步后的 FrameSet 桢集合 直接方便客户使用。 Pip...">Pipeline()</a> 会抛出设备已经创建异常。 需要开发者捕获异常处理。 </p>
 
 </div>
 </div>
@@ -192,7 +192,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classob_1_1_pipeline.html#aab0777ee6f7f5be19871877c7942cac3" title="Pipeline(std::shared_ptr&lt; Device &gt; device )函数，适用于多设备操作常见，此时需要通过DeviceList获取多个设备，通过该接口实现device和pipelin...">Pipeline(std::shared_ptr&lt; Device &gt; device )</a>函数，适用于多设备操作常见，此时需要通过DeviceList获取多个设备，通过该接口实现device和pipeline绑定。 </p>
+<p><a class="el" href="classob_1_1_pipeline.html#aab0777ee6f7f5be19871877c7942cac3" title="Pipeline(std::shared_ptr&lt; Device &gt; device ) 函数，适用于多设备操作常见，此时需要通过 DeviceList 获取多个设备，通过该接口实现 device 和 p...">Pipeline(std::shared_ptr&lt; Device &gt; device )</a> 函数，适用于多设备操作常见，此时需要通过 <a class="el" href="classob_1_1_device_list.html" title="表示设备列表的类">DeviceList</a> 获取多个设备，通过该接口实现 device 和 pipeline 绑定。 </p>
 
 </div>
 </div>
@@ -212,7 +212,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>创建pipeline用于回放录制好的流文件 </p>
+<p>创建 pipeline 用于回放录制好的流文件 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>回放文件路径 </td></tr>
@@ -264,10 +264,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>启动pipeline并配置参数 </p>
+<p>启动 pipeline 并配置参数 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">config</td><td>pipeline的参数配置 </td></tr>
+    <tr><td class="paramname">config</td><td>pipeline 的参数配置 </td></tr>
   </table>
   </dd>
 </dl>
@@ -300,10 +300,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>启动pipeline并设置帧集合数据回调 </p>
+<p>启动 pipeline 并设置帧集合数据回调 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">config</td><td>pipeline的参数配置 </td></tr>
+    <tr><td class="paramname">config</td><td>pipeline 的参数配置 </td></tr>
     <tr><td class="paramname">callback</td><td>设置帧集合中的所有帧数据都到达时触发回调 </td></tr>
   </table>
   </dd>
@@ -326,7 +326,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>停止pipeline </p>
+<p>停止 pipeline </p>
 
 </div>
 </div>
@@ -345,7 +345,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>获取pipeline的配置参数 </p>
+<p>获取 pipeline 的配置参数 </p>
 <dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;Config&gt; 返回配置的参数 </dd></dl>
 
 </div>
@@ -369,7 +369,7 @@ Public 成员函数</h2></td></tr>
 <p>等待帧集合数据 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">timeout_ms</td><td>等待超时时间(毫秒) </td></tr>
+    <tr><td class="paramname">timeout_ms</td><td>等待超时时间 (毫秒) </td></tr>
   </table>
   </dd>
 </dl>
@@ -498,8 +498,8 @@ Public 成员函数</h2></td></tr>
 </div><div class="memdoc">
 
 <p>获取相机参数 </p>
-<dl class="section attention"><dt>注意</dt><dd>如果开启了D2C将返回D2C后的相机参数，如果没有将返回默认参数</dd></dl>
-<dl class="section return"><dt>返回</dt><dd>OBCameraParam返回相机参数 </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>如果开启了 D2C 将返回 D2C 后的相机参数，如果没有将返回默认参数</dd></dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="struct_o_b_camera_param.html" title="相机参数">OBCameraParam</a> 返回相机参数 </dd></dl>
 
 </div>
 </div>
@@ -541,7 +541,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>返回与输入的彩色传感器分辨率对应的支持D2C的深度传感器分辨率列表 </p>
+<p>返回与输入的彩色传感器分辨率对应的支持 D2C 的深度传感器分辨率列表 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">colorProfile</td><td>输入的彩色传感器分辨率 </td></tr>
@@ -579,7 +579,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>返回与输入颜色传感器分辨率相对应的启用D2C的深度传感器分辨率的列表 </p>
+<p>返回与输入颜色传感器分辨率相对应的启用 D2C 的深度传感器分辨率的列表 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">colorProfile</td><td>输入颜色传感器分辨率 </td></tr>
@@ -617,7 +617,7 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>获取D2C后给定工作范围的有效区域 如果需要获取指定距离D2C后的ROI区域，将minimum_distance与maximum_distance设置成一样或者将maximum_distance设置成0 </p>
+<p>获取 D2C 后给定工作范围的有效区域 如果需要获取指定距离 D2C 后的 ROI 区域，将 minimum_distance 与 maximum_distance 设置成一样或者将 maximum_distance 设置成 0 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">minimumDistance</td><td>最小工作距离 </td></tr>
@@ -625,7 +625,7 @@ Public 成员函数</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>返回</dt><dd><a class="el" href="struct_o_b_rect.html" title="矩形">OBRect</a> 返回在工作距离下D2C后有效的区域信息 </dd></dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="struct_o_b_rect.html" title="矩形">OBRect</a> 返回在工作距离下 D2C 后有效的区域信息 </dd></dl>
 
 </div>
 </div>
@@ -645,10 +645,10 @@ Public 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>动态切换对应的config配置 </p>
+<p>动态切换对应的 config 配置 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">config</td><td>更新后的config配置 </td></tr>
+    <tr><td class="paramname">config</td><td>更新后的 config 配置 </td></tr>
   </table>
   </dd>
 </dl>
@@ -706,7 +706,7 @@ Public 成员函数</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 九月 25日 星期一 20:08:21 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+生成于 2023年 十月 10日 星期二 20:29:16 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>
