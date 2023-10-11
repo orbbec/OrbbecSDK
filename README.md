@@ -68,7 +68,7 @@ git clone https://github.com/orbbec/OrbbecSDK.git
 
 ### 4.3 Use OrbbecSDK in your CMake project
 
-Put the Orbbec SDK directory in the subdirectory of your project, and load the Orbbec SDK in your CMakeLists.txt file like this:
+Find and link Orbbec SDK in your CMakeLists.txt file like this:
 
 ```cmake
 cmake_minimum_required(VERSION 3.1.15)
@@ -76,7 +76,11 @@ project(OrbbecSDKTest)
 
 add_executable(${PROJECT_NAME} main.cpp)
 
-add_subdirectory("your/path/to/OrbbecSDK")
+# find OrbbecSDK
+set(OrbbecSDK_DIR "/your/path/to/OrbbecSDK")
+find_package(OrbbecSDK REQUIRED)
+
+# link OrbbecSDK
 target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 ```
 
