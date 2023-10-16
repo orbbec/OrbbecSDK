@@ -1,6 +1,6 @@
 # Orbbec SDK
 
-![stability](https://img.shields.io/badge/stability-unstable-orange) ![version](https://img.shields.io/badge/version-1.8.x_beta-orange)
+![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.8.1-green)
 
 The Orbbec 3D camera product software development kit，fully supports UVC, realizes driver-free plug-and-play, provides low-level and high-level simple and easy-to-use APIs, and helps developers use it flexibly in different scenarios.
 
@@ -66,7 +66,7 @@ git clone https://github.com/orbbec/OrbbecSDK.git
 
     Timestamp registration: [follow this: obsensor_metadata_win10](misc/scripts/obsensor_metadata_win10.md)
 
-### 4.3 Use OrbbecSDK in your CMake project
+### 4.3 Use Orbbec SDK in your CMake project
 
 Find and link Orbbec SDK in your CMakeLists.txt file like this:
 
@@ -76,11 +76,11 @@ project(OrbbecSDKTest)
 
 add_executable(${PROJECT_NAME} main.cpp)
 
-# find OrbbecSDK
+# find Orbbec SDK
 set(OrbbecSDK_DIR "/your/path/to/OrbbecSDK")
 find_package(OrbbecSDK REQUIRED)
 
-# link OrbbecSDK
+# link Orbbec SDK
 target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 ```
 
@@ -111,7 +111,7 @@ OrbbecViewer is a simple application base Orbbec SDK，that can be used to view 
 
 **Supported platforms**: Windows x64, Linux x64&ARM64
 
-**Download link**: [Release v1.7.5](https://github.com/orbbec/OrbbecSDK/releases/tag/v1.7.5)
+**Download link**: [Release v1.8.1](https://github.com/orbbec/OrbbecSDK/releases/tag/v1.8.1)
 
 ## Documents
 
