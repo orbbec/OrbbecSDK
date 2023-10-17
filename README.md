@@ -67,7 +67,7 @@ git clone https://github.com/orbbec/OrbbecSDK.git
 
     Timestamp registration: [follow this: obsensor_metadata_win10](misc/scripts/obsensor_metadata_win10.md)
 
-* *For more information, please refer to：[Environment Configuration](doc\tutorial\English\Environment_Configuration.md)*
+* *For more information, please refer to：[Environment Configuration](doc/tutorial/English/Environment_Configuration.md)*
 
 ### 4.3 Use Orbbec SDK in your CMake project
 
@@ -125,5 +125,6 @@ OrbbecViewer is a simple application base Orbbec SDK，that can be used to view 
 
 ## Related links
 
+* [Orbbec SDK Repo](https://github.com/orbbec/OrbbecSDK)
 * [Orbbec Main Page](https://www.orbbec.com/)
 * [Orbbec 3D Club](https://3dclub.orbbec3d.com)
