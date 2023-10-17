@@ -13,6 +13,8 @@ std::shared_ptr<ob::Device>   device;
 std::shared_ptr<ob::Pipeline> pipeline;
 std::recursive_mutex          deviceMutex;
 
+std::thread inputWatchThread;
+
 bool streamStarted = false;
 
 void handleDeviceConnected(std::shared_ptr<ob::DeviceList> connectList);
@@ -28,6 +30,8 @@ void commandProcess(std::string cmd);
 
 void handleFrameset(std::shared_ptr<ob::FrameSet> frameset);
 void startStream();
+
+void inputWatcher();
 
 int main(int argc, char **argv) try {
     // create window for render
@@ -60,17 +64,13 @@ int main(int argc, char **argv) try {
 
     printUsage();
 
-    while(true) { 
-        std::string cmd;
-        std::cout << "\nInput command: ";
-        std::getline(std::cin, cmd);
-        if(cmd == "quit" || cmd == "q") {
-            break;
-        }
-        else {
-            commandProcess(cmd);
-        }
+    inputWatchThread = std::thread(inputWatcher);
+
+    while(*win) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
+
+    inputWatchThread.join();
 
     if(pipeline) {
         pipeline->stop();
@@ -372,10 +372,9 @@ void startStream() {
 }
 
 void handleFrameset(std::shared_ptr<ob::FrameSet> frameset) {
-    static std::shared_ptr<ob::Frame> depthFrame;
-    static std::shared_ptr<ob::Frame> colorFrame;
-    static std::shared_ptr<ob::Frame> irFrame;
-
+    static std::shared_ptr<ob::Frame>       depthFrame;
+    static std::shared_ptr<ob::Frame>       colorFrame;
+    static std::shared_ptr<ob::Frame>       irFrame;
     std::vector<std::shared_ptr<ob::Frame>> frames;
 
     try {
@@ -976,5 +975,20 @@ void commandProcess(std::string cmd) {
     }
     else {
         std::cerr << "Unsupported command received! Input \"help\" to get usage" << std::endl;
+    }
+}
+
+void inputWatcher() {
+    while(true) {
+        std::string cmd;
+        std::cout << "\nInput command:  ";
+        std::getline(std::cin, cmd);
+        if(cmd == "quit" || cmd == "q") {
+            win->close();
+            break;
+        }
+        else {
+            commandProcess(cmd);
+        }
     }
 }

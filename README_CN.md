@@ -24,12 +24,12 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 
 | **产品列表** | **固件版本** |
 | --- | --- |
+| Femto Bolt       | 1.0.6  (unsupported ARM32) |
+| Femto Mega       | 1.1.7  (window10、ubuntu20.04、ubuntu22.04)  |
 | Gemini 2 XL      | Obox: V1.2.5  VL:1.4.54    |
 | Astra 2          | 2.8.20                     |
 | Gemini 2 L       | 1.4.32                     |
 | Gemini 2         | 1.4.60 /1.4.76             |
-| Femto Mega       | 1.1.7  (window10、ubuntu20.04、ubuntu22.04)  |
-| Femto Bolt       | 1.0.6  (unsupported ARM32) |
 | Astra+           | 1.0.22/1.0.21/1.0.20/1.0.19 |
 | Femto            | 1.6.7                       |
 | Femto W          | 1.1.8                       |

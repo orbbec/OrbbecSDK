@@ -103,6 +103,9 @@ public:
 
     // close window
     void close() {
+        if(windowClose_) {
+            return;
+        }
         windowClose_ = true;
         srcFramesCv_.notify_all();
         processThread_.join();

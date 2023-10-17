@@ -24,12 +24,12 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 
 | **products list** | **firmware version** |
 | --- | --- |
+| Femto Bolt       | 1.0.6  (unsupported ARM32) |
+| Femto Mega       | 1.1.7  (window10、ubuntu20.04、ubuntu22.04)  |
 | Gemini 2 XL      | Obox: V1.2.5  VL:1.4.54    |
 | Astra 2          | 2.8.20                     |
 | Gemini 2 L       | 1.4.32                     |
 | Gemini 2         | 1.4.60 /1.4.76             |
-| Femto Mega       | 1.1.7  (window10、ubuntu20.04、ubuntu22.04)  |
-| Femto Bolt       | 1.0.6  (unsupported ARM32) |
 | Astra+           | 1.0.22/1.0.21/1.0.20/1.0.19 |
 | Femto            | 1.6.7                       |
 | Femto W          | 1.1.8                       |
@@ -52,6 +52,7 @@ git clone https://github.com/orbbec/OrbbecSDK.git
 
 ### Environment setup
 
+
 * Linux:
 
     Install udev rules file
@@ -65,6 +66,8 @@ git clone https://github.com/orbbec/OrbbecSDK.git
 * Windows:
 
     Timestamp registration: [follow this: obsensor_metadata_win10](misc/scripts/obsensor_metadata_win10.md)
+
+* *For more information, please refer to：[Environment Configuration](doc\tutorial\English\Environment_Configuration.md)*
 
 ### 4.3 Use Orbbec SDK in your CMake project
 
@@ -111,13 +114,13 @@ OrbbecViewer is a simple application base Orbbec SDK，that can be used to view 
 
 **Supported platforms**: Windows x64, Linux x64&ARM64
 
-**Download link**: [Release v1.8.1](https://github.com/orbbec/OrbbecSDK/releases/tag/v1.8.1)
+**Download link**: [Releases](https://github.com/orbbec/OrbbecSDK/releases)
 
 ## Documents
 
 * Github Pages：[https://orbbec.github.io/OrbbecSDK/](https://orbbec.github.io/OrbbecSDK/)
 * API Reference: [doc/api/English/index.html](doc/api/English/index.html)
-* Tutorial: placed in the [doc/tutorial](doc/tutorial) directory.
+* Tutorial: placed in the `doc/tutorial` directory.
 * examples: [examples/README.md](examples/README.md)
 
 ## Related links
