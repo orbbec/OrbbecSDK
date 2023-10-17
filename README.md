@@ -119,7 +119,7 @@ OrbbecViewer is a simple application base Orbbec SDK，that can be used to view 
 ## Documents
 
 * Github Pages：[https://orbbec.github.io/OrbbecSDK/](https://orbbec.github.io/OrbbecSDK/)
-* API Reference: [doc/api/English/index.html](doc/api/English/index.html)
+* API Reference: [doc/api/English/index.html](https://orbbec.github.io/OrbbecSDK/doc/api/English/index.html)
 * Tutorial: placed in the `doc/tutorial` directory.
 * examples: [examples/README.md](examples/README.md)
 
