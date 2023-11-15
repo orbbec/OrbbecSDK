@@ -109,7 +109,7 @@ cd OrbbecSDK/build/bin # build output dir
 
 ## OrbbecViewer
 
-OrbbecViewer is a simple application base Orbbec SDK，that can be used to view the data stream from the Orbbec camera and control the camera.
+OrbbecViewer is a useful tool based on Orbbec SDK，that can be used to view the data stream from the Orbbec camera and control the camera.
 ![OrbbecViewer](doc/resources/OrbbecViewer.png)
 
 **Supported platforms**: Windows x64, Linux x64&ARM64
