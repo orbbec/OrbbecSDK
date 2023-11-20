@@ -69,7 +69,7 @@ git clone https://github.com/orbbec/OrbbecSDK.git
 
 * *For more information, please refer to：[Environment Configuration](doc/tutorial/English/Environment_Configuration.md)*
 
-### 4.3 Use Orbbec SDK in your CMake project
+### Use Orbbec SDK in your CMake project
 
 Find and link Orbbec SDK in your CMakeLists.txt file like this:
 

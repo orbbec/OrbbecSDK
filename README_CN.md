@@ -44,14 +44,16 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 
 ## 快速开始
 
-* 获取源码
+### 获取源码
 
     ```bash
     git clone https://github.com/Orbbec/OrbbecSDK.git
     ```
 
-* 环境配置
-    Linux: 安装 udev rules 文件
+### 环境配置
+* Linux：
+
+    安装 udev rules 文件
 
     ``` bash
     cd OrbbecSDK/misc/scripts
@@ -59,39 +61,62 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
     ./install_udev_rules.sh
     ```
 
-    Windows: 时间戳注册: [obsensor_metadata_win10](misc\scripts\obsensor_metadata_win10.md)
+* Windows：
+    metadat时间戳注册: [obsensor_metadata_win10](misc\scripts\obsensor_metadata_win10.md)
 
-* 编译
+* 有关环境配置的更多信息请参考：[Environment Configuration](doc/tutorial/Chinese/Environment_Configuration.md)
+
+### CMake项目中使用Orbbec SDK
+
+在CMakeLists.txt文件中查找并链接Orbbec SDK：
+
+```cmake
+cmake_minimum_required(VERSION 3.1.15)
+project(OrbbecSDKTest)
+
+add_executable(${PROJECT_NAME} main.cpp)
+
+# find Orbbec SDK
+set(OrbbecSDK_DIR "/your/path/to/OrbbecSDK")
+find_package(OrbbecSDK REQUIRED)
+
+# link Orbbec SDK
+target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
+```
+
+## 示例
+示例代码位于./examples目录中，可以使用CMake进行编译
+
+### 编译
 
     ```bash
     cd OrbbecSDK && mkdir build && cd build &&
     cmake .. && cmake --build . --config Release
     ```
 
-* 运行示例
-
+### 运行示例
+    首先连接Orbbec相机，然后运行如下脚本：
     ```bash
     cd OrbbecSDK/build/bin # build output dir
     ./OBMultiStream  # OBMultiStream.exe on Windows
     ```
 
-* 在你的工程中使用 OrbbecSDK
+## OrbbecViewer
+OrbbecViewer是一个基于Orbbec SDK的实用工具，用于查看来自Orbbec相机的数据流并控制相机.
 
-    将 OrbbecSDK 拷贝到你的 CMake 工程子目录下，再 CMake 配置中增加如下配置：
+![OrbbecViewer](doc/resources/OrbbecViewer.png)
 
-    ```cmake
-    cmake_minimum_required(VERSION 3.1.15)
-    project(OrbbecSDKTest)
+**支持平台**: Windows x64, Linux x64&ARM64
 
-    add_executable(${PROJECT_NAME} main.cpp)
+**下载链接**: [Releases](https://github.com/orbbec/OrbbecSDK/releases)
 
-    add_subdirectory("your/path/to/OrbbecSDK")
-    target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
-    ```
+## 文档
 
-* 编写代码
+* Github：[https://orbbec.github.io/OrbbecSDK/](https://orbbec.github.io/OrbbecSDK/README_CN)
+* API 参考: [doc/api/Chinese/index.html](https://orbbec.github.io/OrbbecSDK/doc/api/Chinese/index.html)
+* 教程: 请参考'doc/tutorial'目录.
+* 示例说明: [examples/README.md](examples/README_CN.md)
 
-    请参考[示例代码](examples/README_CN.md) 完成您的应用代码编写。
 
 ## 相关链接
 
