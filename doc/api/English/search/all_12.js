@@ -3,7 +3,7 @@ var searchData=
   ['samplerate_0',['sampleRate',['../classob_1_1_accel_stream_profile.html#a9d0ada286af10a49877b98ca6987de82',1,'ob::AccelStreamProfile::sampleRate()'],['../classob_1_1_gyro_stream_profile.html#aadf4d0440cbf7e19ec0ecbd16d5586a8',1,'ob::GyroStreamProfile::sampleRate()']]],
   ['sendfile_1',['sendFile',['../classob_1_1_device.html#ad0a525cebe10c3369d3060516a1ab3ef',1,'ob::Device']]],
   ['sendfilecallback_2',['SendFileCallback',['../_types_8hpp.html#af4ed1a1867e655fa5e4b77e646f080a4',1,'Types.hpp']]],
-  ['sensor_3',['Sensor',['../classob_1_1_sensor.html',1,'ob::Sensor'],['../classob_1_1_stream_profile.html#ae29bab6174b34a6cba6ae54ab31ef8dd',1,'ob::StreamProfile::Sensor'],['../classob_1_1_sensor.html#ae61409be636894608ae694494ccd0377',1,'ob::Sensor::Sensor()']]],
+  ['sensor_3',['Sensor',['../classob_1_1_sensor.html',1,'ob::Sensor'],['../classob_1_1_stream_profile.html#ae29bab6174b34a6cba6ae54ab31ef8dd',1,'ob::StreamProfile::Sensor()'],['../classob_1_1_sensor.html#ae61409be636894608ae694494ccd0377',1,'ob::Sensor::Sensor()']]],
   ['sensor_2eh_4',['Sensor.h',['../_sensor_8h.html',1,'']]],
   ['sensor_2ehpp_5',['Sensor.hpp',['../_sensor_8hpp.html',1,'']]],
   ['sensorlist_6',['SensorList',['../classob_1_1_sensor_list.html',1,'ob::SensorList'],['../classob_1_1_sensor_list.html#afaa12bf8a1c3ac5fdae171a24c0d2bde',1,'ob::SensorList::SensorList()']]],
@@ -50,7 +50,7 @@ var searchData=
   ['stat_5fverify_5fimage_47',['STAT_VERIFY_IMAGE',['../_ob_types_8h.html#abc9ca4deac2966e28197760a66c5ed34a4cb156866b9775624d834b8345dff730',1,'ObTypes.h']]],
   ['stat_5fverify_5fsuccess_48',['STAT_VERIFY_SUCCESS',['../_ob_types_8h.html#abc9ca4deac2966e28197760a66c5ed34a9c2741e379cbe1713537e8e2cfaf6605',1,'ObTypes.h']]],
   ['status_49',['status',['../structob__error.html#afc2451cf30a6e060b284e38ec60c2993',1,'ob_error']]],
-  ['step_50',['step',['../struct_o_b_int_property_range.html#a01e6e87553be91eaff2ac559eb114f94',1,'OBIntPropertyRange::step'],['../struct_o_b_float_property_range.html#ae67f00fcb8e7a103b749835a0e0cbaa5',1,'OBFloatPropertyRange::step'],['../struct_o_b_bool_property_range.html#ac3fa21c03a908853058b4ab33451fb22',1,'OBBoolPropertyRange::step']]],
+  ['step_50',['step',['../struct_o_b_int_property_range.html#a01e6e87553be91eaff2ac559eb114f94',1,'OBIntPropertyRange::step()'],['../struct_o_b_float_property_range.html#ae67f00fcb8e7a103b749835a0e0cbaa5',1,'OBFloatPropertyRange::step()'],['../struct_o_b_bool_property_range.html#ac3fa21c03a908853058b4ab33451fb22',1,'OBBoolPropertyRange::step()']]],
   ['stop_51',['stop',['../classob_1_1_pipeline.html#a6962165254f3a2115ad24f826537c894',1,'ob::Pipeline::stop()'],['../classob_1_1_recorder.html#ac4fe634ead9a37d0a87f2b7e7d252f98',1,'ob::Recorder::stop()'],['../classob_1_1_playback.html#a81656a5a68f8df525e7a8875722f86bf',1,'ob::Playback::stop()'],['../classob_1_1_sensor.html#ae13ee851da868f2cc156213cd3dfe981',1,'ob::Sensor::stop()']]],
   ['stoprecord_52',['stopRecord',['../classob_1_1_pipeline.html#a550084f2d2c0ae538c3a3e6b4e55abe7',1,'ob::Pipeline']]],
   ['streamprofile_53',['StreamProfile',['../classob_1_1_stream_profile.html',1,'ob::StreamProfile'],['../classob_1_1_stream_profile.html#ad84c91294e1689458a3e7589d9ac8fba',1,'ob::StreamProfile::StreamProfile(std::unique_ptr&lt; StreamProfileImpl &gt; impl)'],['../classob_1_1_stream_profile.html#ad80ab7f30a0180b2a4b12b131a092693',1,'ob::StreamProfile::StreamProfile(StreamProfile &amp;streamProfile)']]],
@@ -62,6 +62,6 @@ var searchData=
   ['switchdepthworkmode_59',['switchDepthWorkMode',['../classob_1_1_device.html#ab952b1ebbfb58738024e8a8a164b5bcf',1,'ob::Device::switchDepthWorkMode(const OBDepthWorkMode &amp;workMode)'],['../classob_1_1_device.html#a9601703a8e0c49a6128fc5fbba012be8',1,'ob::Device::switchDepthWorkMode(const char *modeName)']]],
   ['switchprofile_60',['switchProfile',['../classob_1_1_sensor.html#af2c1cc86f39ccc128fd842023f1688c2',1,'ob::Sensor']]],
   ['syncdevicetime_61',['syncDeviceTime',['../classob_1_1_device.html#a39fb107e1de53d5b5a122f3178b5dde0',1,'ob::Device']]],
-  ['syncmode_62',['syncMode',['../structob__multi__device__sync__config.html#a8cc39ed5db27676bdf5cffcb5ccbed67',1,'ob_multi_device_sync_config::syncMode'],['../struct_o_b_device_sync_config.html#a19078aa83a64a13f659613811f27b152',1,'OBDeviceSyncConfig::syncMode']]],
+  ['syncmode_62',['syncMode',['../structob__multi__device__sync__config.html#a8cc39ed5db27676bdf5cffcb5ccbed67',1,'ob_multi_device_sync_config::syncMode()'],['../struct_o_b_device_sync_config.html#a19078aa83a64a13f659613811f27b152',1,'OBDeviceSyncConfig::syncMode()']]],
   ['systemtimestamp_63',['systemTimeStamp',['../classob_1_1_frame.html#a0950bcb7600016f3f9d71ed82d9257a6',1,'ob::Frame']]]
 ];

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['id_0',['id',['../struct_o_b_property_item.html#ac8bdcd2e6ca56004b5e380356b293e2b',1,'OBPropertyItem']]],
-  ['impl_5f_1',['impl_',['../classob_1_1_filter.html#ac80715de348ec5eedcaa8eaf019b7587',1,'ob::Filter::impl_'],['../classob_1_1_frame.html#a2683616ec8b3346cf9412051779b9721',1,'ob::Frame::impl_'],['../classob_1_1_sensor.html#a5b82258d1cacac7162763da9298a4bb4',1,'ob::Sensor::impl_'],['../classob_1_1_stream_profile.html#a666c4ae5317ebe38efb63833231ebdaa',1,'ob::StreamProfile::impl_'],['../classob_1_1_stream_profile_list.html#a24ceb6b2aa542cd316cee6c4ab2a15e7',1,'ob::StreamProfileList::impl_']]],
+  ['impl_5f_1',['impl_',['../classob_1_1_filter.html#ac80715de348ec5eedcaa8eaf019b7587',1,'ob::Filter::impl_()'],['../classob_1_1_frame.html#a2683616ec8b3346cf9412051779b9721',1,'ob::Frame::impl_()'],['../classob_1_1_sensor.html#a5b82258d1cacac7162763da9298a4bb4',1,'ob::Sensor::impl_()'],['../classob_1_1_stream_profile.html#a666c4ae5317ebe38efb63833231ebdaa',1,'ob::StreamProfile::impl_()'],['../classob_1_1_stream_profile_list.html#a24ceb6b2aa542cd316cee6c4ab2a15e7',1,'ob::StreamProfileList::impl_()']]],
   ['imutemp_2',['imuTemp',['../struct_o_b_device_temperature.html#a216f0f34b5ff54e64f2674cd41fe90da',1,'OBDeviceTemperature']]],
   ['index_3',['index',['../classob_1_1_frame.html#a1001bd44f6b2a2eb0b4c4b7bb0f317f1',1,'ob::Frame']]],
   ['ipaddress_4',['ipAddress',['../classob_1_1_device_info.html#a2309d299b9a4133f87f56dac9be2da29',1,'ob::DeviceInfo::ipAddress()'],['../classob_1_1_device_list.html#acc5ac8bf21281df1d92df2470c8b18d4',1,'ob::DeviceList::ipAddress()']]],

@@ -13,11 +13,11 @@ var searchData=
   ['tof_5fexposure_5fthreshold_5fcontrol_10',['TOF_EXPOSURE_THRESHOLD_CONTROL',['../_ob_types_8h.html#adfeca2238eac37d7af37739b809dab7c',1,'ObTypes.h']]],
   ['tof_5ffilter_5frange_11',['TOF_FILTER_RANGE',['../_ob_types_8h.html#a626d4bb43871e60deab25d777bddb57a',1,'ObTypes.h']]],
   ['trans_12',['trans',['../struct_o_b_d2_c_transform.html#a4e506691c5068ec155c98fcdf74fca76',1,'OBD2CTransform']]],
-  ['transform_13',['transform',['../struct_o_b_camera_param.html#aefa2186816920b0cc826f6b3dc11a1ba',1,'OBCameraParam::transform'],['../struct_o_b_camera_param___v0.html#a2ff860371c45b4c1c902f56d6bcb0089',1,'OBCameraParam_V0::transform']]],
+  ['transform_13',['transform',['../struct_o_b_camera_param.html#aefa2186816920b0cc826f6b3dc11a1ba',1,'OBCameraParam::transform()'],['../struct_o_b_camera_param___v0.html#a2ff860371c45b4c1c902f56d6bcb0089',1,'OBCameraParam_V0::transform()']]],
   ['trigger2imagedelayus_14',['trigger2ImageDelayUs',['../structob__multi__device__sync__config.html#a6c855a8eed5304c1fc6561a02834575b',1,'ob_multi_device_sync_config']]],
   ['triggercapture_15',['triggerCapture',['../classob_1_1_device.html#aa9d3807dae6d8a1fab5ffde4c51b30bf',1,'ob::Device']]],
   ['triggeroutdelayus_16',['triggerOutDelayUs',['../structob__multi__device__sync__config.html#a795f1464f91aa518eda82ca7a2b5536d',1,'ob_multi_device_sync_config']]],
   ['triggeroutenable_17',['triggerOutEnable',['../structob__multi__device__sync__config.html#acf58447721d8b16d6b16d726c98a38ec',1,'ob_multi_device_sync_config']]],
-  ['type_18',['type',['../struct_o_b_property_item.html#ab776230cd4b8de227ccc2a4b1191bf90',1,'OBPropertyItem::type'],['../classob_1_1_frame.html#a34fba5e4839efa8fd8a6acec47df9637',1,'ob::Frame::type()'],['../classob_1_1_sensor.html#aa62d80b41dd6674b3a85ad6c458c5a57',1,'ob::Sensor::type()'],['../classob_1_1_sensor_list.html#aef695bb71aa59160bc6d31e0c56a345d',1,'ob::SensorList::type()'],['../classob_1_1_stream_profile.html#a4ea3045b40043e7fb16f9a28215e502a',1,'ob::StreamProfile::type()']]],
+  ['type_18',['type',['../struct_o_b_property_item.html#ab776230cd4b8de227ccc2a4b1191bf90',1,'OBPropertyItem::type()'],['../classob_1_1_frame.html#a34fba5e4839efa8fd8a6acec47df9637',1,'ob::Frame::type()'],['../classob_1_1_sensor.html#aa62d80b41dd6674b3a85ad6c458c5a57',1,'ob::Sensor::type()'],['../classob_1_1_sensor_list.html#aef695bb71aa59160bc6d31e0c56a345d',1,'ob::SensorList::type()'],['../classob_1_1_stream_profile.html#a4ea3045b40043e7fb16f9a28215e502a',1,'ob::StreamProfile::type()']]],
   ['types_2ehpp_19',['Types.hpp',['../_types_8hpp.html',1,'']]]
 ];
