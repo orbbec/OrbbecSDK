@@ -163,6 +163,7 @@ VID: 2bc5 PID: 0636 (depth camera)
 ## 5. Linux Sample compile
 
 Create a build directory in the Examples directory, as follows:
+
 ![image17](Image/orbbec_sample_linux_003.png)
 
 ``` bash
