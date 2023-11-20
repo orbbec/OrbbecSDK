@@ -30,7 +30,7 @@ Data rendering relies on the third-party library OpenCV. Here we take OpenCV 4.3
 
 ![4](Image/orbbec_opencv_003.png)
 
-## 3. metadata 时间戳注册
+## 3. metadata (timestamp) registration
 
 Now due to the Windows system mechanism, for UVC protocol devices, if you need to obtain metadata information such as timestamps, you need to first register in the registry. Using obsensor_metadata_win10.md document guide to complete the registry registration.
 
