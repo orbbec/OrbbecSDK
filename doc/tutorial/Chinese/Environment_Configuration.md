@@ -153,6 +153,7 @@ VID：2bc5 PID：0636(深度相机)
 ## 5. Linux Sample 编译
 
 在 Examples 目录下新建一个 build 目录，如下：
+
 ![image17](Image/orbbec_sample_linux_003.png)
 
 ``` bash
