@@ -16,7 +16,7 @@ Orbbec 3D 相机产品软件开发套件，全面支持 UVC，实现免驱动即
 
 ## 支持平台
 
-Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jetson Nano, A311D 等.)
+Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jetson Nano, A311D ，AGX orin, orin NX, orin nano 等.)
 
 *Windows 11, Ubuntu 22.04 和其他一些 Linux 平台理论上也支持，但是未经过完整测试”
 
@@ -25,7 +25,7 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 | **产品列表** | **固件版本** |
 | --- | --- |
 | Femto Bolt       | 1.0.6  (unsupported ARM32) |
-| Femto Mega       | 1.1.7  (window10、ubuntu20.04、ubuntu22.04)  |
+| Femto Mega       | 1.1.7  (support window10、ubuntu20.04、ubuntu22.04、Arm64(AGX orin, orin NX, orin nano))  |
 | Gemini 2 XL      | Obox: V1.2.5  VL:1.4.54    |
 | Astra 2          | 2.8.20                     |
 | Gemini 2 L       | 1.4.32                     |
