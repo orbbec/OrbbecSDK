@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OrbbecSDK: header_cn/libobsensor/h/MultipleDevices.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OrbbecSDK
+   &#160;<span id="projectnumber">1.8.3</span>
+   </div>
+   <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9a5345e98321307492e41331ab8e5636.html">header_cn</a></li><li class="navelem"><a class="el" href="dir_a57403e30bad3723557b0550251f8216.html">libobsensor</a></li><li class="navelem"><a class="el" href="dir_afa7ddcbc480a7aa37c5239e71e2d522.html">h</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">MultipleDevices.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>该文件包含多个设备相关的 API 开关，用于控制多个设备之间的同步以及单个设备内不同传感器之间的同步  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Device_8h_source.html">Device.h</a>&quot;</code><br />
+</div>
+<p><a href="MultipleDevices_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ace7ff470963cf026bd05166caaee9ce2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MultipleDevices_8h.html#ace7ff470963cf026bd05166caaee9ce2">ob_device_timer_reset</a>&#160;&#160;&#160;<a class="el" href="MultipleDevices_8h.html#acaba609185cfe990f2614ed3eb6df82f">ob_device_timestamp_reset</a></td></tr>
+<tr class="memdesc:ace7ff470963cf026bd05166caaee9ce2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="MultipleDevices_8h.html#acaba609185cfe990f2614ed3eb6df82f">ob_device_timestamp_reset</a> 的别名，因为它更准确。  <a href="#ace7ff470963cf026bd05166caaee9ce2">更多...</a><br /></td></tr>
+<tr class="separator:ace7ff470963cf026bd05166caaee9ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:adaca940a602a04e4a366ffdb1210386c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MultipleDevices_8h.html#adaca940a602a04e4a366ffdb1210386c">ob_device_get_supported_multi_device_sync_mode_bitmap</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:adaca940a602a04e4a366ffdb1210386c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备支持的多机同步模式位图  <a href="#adaca940a602a04e4a366ffdb1210386c">更多...</a><br /></td></tr>
+<tr class="separator:adaca940a602a04e4a366ffdb1210386c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a4ee062f6b3d2b52eaa9d0eb080de79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MultipleDevices_8h.html#a0a4ee062f6b3d2b52eaa9d0eb080de79">ob_device_set_multi_device_sync_config</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, const <a class="el" href="structob__multi__device__sync__config.html">ob_multi_device_sync_config</a> *config, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a0a4ee062f6b3d2b52eaa9d0eb080de79"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置设备的多机同步配置  <a href="#a0a4ee062f6b3d2b52eaa9d0eb080de79">更多...</a><br /></td></tr>
+<tr class="separator:a0a4ee062f6b3d2b52eaa9d0eb080de79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d233a903c9abc491f668a9216c4773a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structob__multi__device__sync__config.html">ob_multi_device_sync_config</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MultipleDevices_8h.html#a4d233a903c9abc491f668a9216c4773a">ob_device_get_multi_device_sync_config</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a4d233a903c9abc491f668a9216c4773a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备的多机同步信息  <a href="#a4d233a903c9abc491f668a9216c4773a">更多...</a><br /></td></tr>
+<tr class="separator:a4d233a903c9abc491f668a9216c4773a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a686e2dcdc402e88b116ac55e2bb2e354"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MultipleDevices_8h.html#a686e2dcdc402e88b116ac55e2bb2e354">ob_device_trigger_capture</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a686e2dcdc402e88b116ac55e2bb2e354"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送捕获信息至设备  <a href="#a686e2dcdc402e88b116ac55e2bb2e354">更多...</a><br /></td></tr>
+<tr class="separator:a686e2dcdc402e88b116ac55e2bb2e354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a293ead22918e776ce10334e26e20d313"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MultipleDevices_8h.html#a293ead22918e776ce10334e26e20d313">ob_device_set_timestamp_reset_config</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, const <a class="el" href="structob__device__timestamp__reset__config.html">ob_device_timestamp_reset_config</a> *config, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a293ead22918e776ce10334e26e20d313"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置设备的时间戳重置配置  <a href="#a293ead22918e776ce10334e26e20d313">更多...</a><br /></td></tr>
+<tr class="separator:a293ead22918e776ce10334e26e20d313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32c8b85142a200efac0a4df723c06010"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structob__device__timestamp__reset__config.html">ob_device_timestamp_reset_config</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MultipleDevices_8h.html#a32c8b85142a200efac0a4df723c06010">ob_device_get_timestamp_reset_config</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a32c8b85142a200efac0a4df723c06010"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备的时间戳重置配置  <a href="#a32c8b85142a200efac0a4df723c06010">更多...</a><br /></td></tr>
+<tr class="separator:a32c8b85142a200efac0a4df723c06010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaba609185cfe990f2614ed3eb6df82f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MultipleDevices_8h.html#acaba609185cfe990f2614ed3eb6df82f">ob_device_timestamp_reset</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:acaba609185cfe990f2614ed3eb6df82f"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送时间戳重置命令至设备  <a href="#acaba609185cfe990f2614ed3eb6df82f">更多...</a><br /></td></tr>
+<tr class="separator:acaba609185cfe990f2614ed3eb6df82f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c4c68af4d9217991d87c128c593cd36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MultipleDevices_8h.html#a3c4c68af4d9217991d87c128c593cd36">ob_device_timer_sync_with_host</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a3c4c68af4d9217991d87c128c593cd36"><td class="mdescLeft">&#160;</td><td class="mdescRight">将设备的计时器与主机同步  <a href="#a3c4c68af4d9217991d87c128c593cd36">更多...</a><br /></td></tr>
+<tr class="separator:a3c4c68af4d9217991d87c128c593cd36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>该文件包含多个设备相关的 API 开关，用于控制多个设备之间的同步以及单个设备内不同传感器之间的同步 </p>
+<p>多个设备之间的同步是复杂的，不同的型号有不同的同步模式和限制。请参照有关详细信息，请参阅产品手册。 由于深度相机和红外相机在物理上是相同的传感器，因此红外相机的行为与同步模式中的深度相机相同 </p>
+
+<p>在文件 <a class="el" href="MultipleDevices_8h_source.html">MultipleDevices.h</a> 中定义.</p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a class="anchor" id="ace7ff470963cf026bd05166caaee9ce2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ob_device_timer_reset&#160;&#160;&#160;<a class="el" href="MultipleDevices_8h.html#acaba609185cfe990f2614ed3eb6df82f">ob_device_timestamp_reset</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="MultipleDevices_8h.html#acaba609185cfe990f2614ed3eb6df82f">ob_device_timestamp_reset</a> 的别名，因为它更准确。 </p>
+
+<p>在文件 <a class="el" href="MultipleDevices_8h_source.html">MultipleDevices.h</a> 第 <a class="el" href="MultipleDevices_8h_source.html#l00101">101</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a class="anchor" id="adaca940a602a04e4a366ffdb1210386c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t ob_device_get_supported_multi_device_sync_mode_bitmap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备支持的多机同步模式位图 </p>
+<p>例如，如果返回值为 0b00001100，则表示设备支持 <a class="el" href="ObTypes_8h.html#aabad929b67059752029c3374594ac63ba8e2f43bf0dd49abc986b551b75e0a923">OB_MULTI_DEVICE_SYNC_MODE_PRIMARY</a> 和 OB_MULTI_DEVICE_SYNC_MODE_SECONDARY，用户可以通过以下代码检查支持的模式： </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(supported_mode_bitmap &amp; <a class="code" href="ObTypes_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a>){</div><div class="line">   <span class="comment">//support OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</span></div><div class="line">}</div><div class="line"><span class="keywordflow">if</span>(supported_mode_bitmap &amp; <a class="code" href="ObTypes_8h.html#aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225">OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</a>){</div><div class="line">  <span class="comment">//support OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</span></div><div class="line">}</div><div class="line"><span class="comment">// and so on</span></div></div><!-- fragment --> <dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备句柄 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>uint16_t 返回设备支持的多设备同步模式位图 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0a4ee062f6b3d2b52eaa9d0eb080de79"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_set_multi_device_sync_config </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structob__multi__device__sync__config.html">ob_multi_device_sync_config</a> *&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置设备的多机同步配置 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备句柄 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>多机同步配置 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4d233a903c9abc491f668a9216c4773a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structob__multi__device__sync__config.html">ob_multi_device_sync_config</a> ob_device_get_multi_device_sync_config </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备的多机同步信息 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备句柄 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="structob__multi__device__sync__config.html" title="设备的同步配置 ">ob_multi_device_sync_config</a> 返回设备的多机同步配置 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a686e2dcdc402e88b116ac55e2bb2e354"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_trigger_capture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>发送捕获信息至设备 </p>
+<p>当设备处于 <a class="el" href="ObTypes_8h.html#aabad929b67059752029c3374594ac63ba2fe8400ffd77e63929e69bb0f0ab1da6">OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING</a> 中时，收到捕获命令后，设备将开始一次图像捕获</p>
+<dl class="section attention"><dt>注意</dt><dd>用户调用此函数的频率乘以每个触发器的帧数应该小于流的帧速率。每个触发器的帧数可以由 framesPerTrigger 设置 </dd>
+<dd>
+对于某些型号，接收和执行捕获命令会有一定的延迟和性能消耗，因此调用该功能的频率不应过高，具体支持的频率请参阅产品手册 </dd>
+<dd>
+如果设备未处于 <a class="el" href="ObTypes_8h.html#aabad929b67059752029c3374594ac63ba39ca63ef583695c083588ae28ea22ad9">OB_MULTI_DEVICE_SYNC_MODE_HARDWARE_TRIGGERING</a> 模式，则设备将忽略捕获命令</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备句柄 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a293ead22918e776ce10334e26e20d313"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_set_timestamp_reset_config </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structob__device__timestamp__reset__config.html">ob_device_timestamp_reset_config</a> *&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置设备的时间戳重置配置 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备句柄 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>时间戳重置配置 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a32c8b85142a200efac0a4df723c06010"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structob__device__timestamp__reset__config.html">ob_device_timestamp_reset_config</a> ob_device_get_timestamp_reset_config </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备的时间戳重置配置 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备句柄 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="structob__device__timestamp__reset__config.html" title="设备的时间戳重置配置 ">ob_device_timestamp_reset_config</a> 返回设备的时间戳重置配置 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acaba609185cfe990f2614ed3eb6df82f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_timestamp_reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>发送时间戳重置命令至设备 </p>
+<p>当时间戳重置功能启用时，设备在接收到时间戳重置命令后，将用于计算输出帧的时间戳的计时器重置为 0。时间戳重置功能可以通过调用 <a class="el" href="MultipleDevices_8h.html#a293ead22918e776ce10334e26e20d313">ob_device_set_timestamp_reset_config</a> 来启用。</p>
+<dl class="section attention"><dt>注意</dt><dd>如果设备的流被启动，则流输出的连续帧的时间戳将在时间戳重置后跳一次 </dd>
+<dd>
+由于设备的定时器精度不高，流输出的连续帧的时间戳在长时间后会漂移。用户可以定期调用此功能来重置计时器，以避免时间戳漂移，建议间隔时间为 60 分钟。</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备句柄 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3c4c68af4d9217991d87c128c593cd36"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_timer_sync_with_host </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将设备的计时器与主机同步 </p>
+<p>调用此功能后，设备的计时器将与主机同步。用户可以将此功能调用到多个设备，以同步设备的所有计时器</p>
+<dl class="section attention"><dt>注意</dt><dd>如果设备的流被启动，则该流输出的连续帧的时间戳可能在定时器同步之后跳一次 </dd>
+<dd>
+由于设备的定时器精度不高，所以流输出的连续帧的时间戳在长时间后会出现漂移。用户可以通过定期调用此功能来同步计时器，以避免出现时间戳漂移现象，建议调用间隔时间为 60 分钟</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备句柄 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2023年 十一月 24日 星期五 10:56:17 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

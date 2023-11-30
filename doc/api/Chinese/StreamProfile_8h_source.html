@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OrbbecSDK: header_cn/libobsensor/h/StreamProfile.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OrbbecSDK
+   &#160;<span id="projectnumber">1.8.3</span>
+   </div>
+   <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9a5345e98321307492e41331ab8e5636.html">header_cn</a></li><li class="navelem"><a class="el" href="dir_a57403e30bad3723557b0550251f8216.html">libobsensor</a></li><li class="navelem"><a class="el" href="dir_afa7ddcbc480a7aa37c5239e71e2d522.html">h</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">StreamProfile.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="StreamProfile_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ObTypes_8h.html">ObTypes.h</a>&quot;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<a class="code" href="ObTypes_8h.html#a2dd00351b3c3e24fba7b2e9d1bb033a8">ob_format</a> <a class="code" href="StreamProfile_8h.html#ae8159fd10f2d3472825293e5523268f5">ob_stream_profile_format</a>(<a class="code" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<a class="code" href="ObTypes_8h.html#aa798b202d6ea1fe688ceaaa5dd1c42fe">ob_stream_type</a> <a class="code" href="StreamProfile_8h.html#a35b867041d3758ba158d9fc4af8546cd">ob_stream_profile_type</a>(<a class="code" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;uint32_t <a class="code" href="StreamProfile_8h.html#ae4c0669d1629d462182d19e6199ac69c">ob_video_stream_profile_fps</a>(<a class="code" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;uint32_t <a class="code" href="StreamProfile_8h.html#ab2ab197d64a33161689d3fbde443fbc9">ob_video_stream_profile_width</a>(<a class="code" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;uint32_t <a class="code" href="StreamProfile_8h.html#a6c76dc19ab6f6f34391a16518041b459">ob_video_stream_profile_height</a>(<a class="code" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<a class="code" href="ObTypes_8h.html#a0bf2de2e45304822b341d9a9d090ad14">ob_accel_full_scale_range</a> <a class="code" href="StreamProfile_8h.html#a7618c934918abea2d9966a7406cef159">ob_accel_stream_profile_full_scale_range</a>(<a class="code" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<a class="code" href="ObTypes_8h.html#a300e1133da26a9f13d3a94dda0455071">ob_accel_sample_rate</a> <a class="code" href="StreamProfile_8h.html#a73ddbe7d616a73dc2fb59feaa8697960">ob_accel_stream_profile_sample_rate</a>(<a class="code" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<a class="code" href="ObTypes_8h.html#a33a82adec450f4be6202c1acd63a65ce">ob_gyro_full_scale_range</a> <a class="code" href="StreamProfile_8h.html#a4c820b7e521534b400f831f9648ab248">ob_gyro_stream_profile_full_scale_range</a>(<a class="code" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<a class="code" href="ObTypes_8h.html#a71ff701d07eaf80bac07fe6815609ab0">ob_gyro_sample_rate</a> <a class="code" href="StreamProfile_8h.html#aa740ac4cda4a92eb8a2ac61b411b93f1">ob_gyro_stream_profile_sample_rate</a>(<a class="code" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<a class="code" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *<a class="code" href="StreamProfile_8h.html#a8524b19813333703c1fc59560e399453">ob_stream_profile_list_get_video_stream_profile</a>(<a class="code" href="ObTypes_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *profile_list, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <a class="code" href="ObTypes_8h.html#a2dd00351b3c3e24fba7b2e9d1bb033a8">ob_format</a> format, <span class="keywordtype">int</span> fps,</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                                                   <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<a class="code" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *<a class="code" href="StreamProfile_8h.html#af30123770ad4a7a6c3db15b6b3bbf895">ob_stream_profile_list_get_accel_stream_profile</a>(<a class="code" href="ObTypes_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *profile_list, <a class="code" href="ObTypes_8h.html#a0bf2de2e45304822b341d9a9d090ad14">ob_accel_full_scale_range</a> fullScaleRange,</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                                                   <a class="code" href="ObTypes_8h.html#a300e1133da26a9f13d3a94dda0455071">ob_accel_sample_rate</a> sampleRate, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<a class="code" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *<a class="code" href="StreamProfile_8h.html#a99d64b5edca92a20a5871af962eab823">ob_stream_profile_list_get_gyro_stream_profile</a>(<a class="code" href="ObTypes_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *profile_list, <a class="code" href="ObTypes_8h.html#a33a82adec450f4be6202c1acd63a65ce">ob_gyro_full_scale_range</a> fullScaleRange,</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                                                  <a class="code" href="ObTypes_8h.html#a71ff701d07eaf80bac07fe6815609ab0">ob_gyro_sample_rate</a> sampleRate, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<a class="code" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *<a class="code" href="StreamProfile_8h.html#a93951e0c25f48ce97499f2a49ba29f59">ob_stream_profile_list_get_profile</a>(<a class="code" href="ObTypes_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *profile_list, <span class="keywordtype">int</span> index, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;uint32_t <a class="code" href="StreamProfile_8h.html#a3a8b94176ddbdb03df8af9006a028189">ob_stream_profile_list_count</a>(<a class="code" href="ObTypes_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *profile_list, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keywordtype">void</span> <a class="code" href="StreamProfile_8h.html#ad55c8b82f1eff26cfc7b59f5a8dca24f">ob_delete_stream_profile_list</a>(<a class="code" href="ObTypes_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *profile_list, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keywordtype">void</span> <a class="code" href="StreamProfile_8h.html#af079a3b0493c43fa5782b5d1c67f30c9">ob_delete_stream_profile</a>(<a class="code" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *profile, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="ObTypes_8h_html_a300e1133da26a9f13d3a94dda0455071"><div class="ttname"><a href="ObTypes_8h.html#a300e1133da26a9f13d3a94dda0455071">ob_accel_sample_rate</a></div><div class="ttdeci">enum OBGyroSampleRate ob_accel_sample_rate</div></div>
+<div class="ttc" id="StreamProfile_8h_html_a4c820b7e521534b400f831f9648ab248"><div class="ttname"><a href="StreamProfile_8h.html#a4c820b7e521534b400f831f9648ab248">ob_gyro_stream_profile_full_scale_range</a></div><div class="ttdeci">ob_gyro_full_scale_range ob_gyro_stream_profile_full_scale_range(ob_stream_profile *profile, ob_error **error)</div><div class="ttdoc">获取陀螺仪流配置的量程范围 </div></div>
+<div class="ttc" id="ObTypes_8h_html_a71ff701d07eaf80bac07fe6815609ab0"><div class="ttname"><a href="ObTypes_8h.html#a71ff701d07eaf80bac07fe6815609ab0">ob_gyro_sample_rate</a></div><div class="ttdeci">enum OBGyroSampleRate ob_gyro_sample_rate</div></div>
+<div class="ttc" id="ObTypes_8h_html_a563dd4686a4630bca388a41919cdb369"><div class="ttname"><a href="ObTypes_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a></div><div class="ttdeci">struct StreamProfileListImpl ob_stream_profile_list</div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00059">ObTypes.h:59</a></div></div>
+<div class="ttc" id="StreamProfile_8h_html_a3a8b94176ddbdb03df8af9006a028189"><div class="ttname"><a href="StreamProfile_8h.html#a3a8b94176ddbdb03df8af9006a028189">ob_stream_profile_list_count</a></div><div class="ttdeci">uint32_t ob_stream_profile_list_count(ob_stream_profile_list *profile_list, ob_error **error)</div><div class="ttdoc">获取 StreamProfile 列表的数量 </div></div>
+<div class="ttc" id="ObTypes_8h_html_a0bf2de2e45304822b341d9a9d090ad14"><div class="ttname"><a href="ObTypes_8h.html#a0bf2de2e45304822b341d9a9d090ad14">ob_accel_full_scale_range</a></div><div class="ttdeci">enum OBAccelFullScaleRange ob_accel_full_scale_range</div></div>
+<div class="ttc" id="ObTypes_8h_html_aa798b202d6ea1fe688ceaaa5dd1c42fe"><div class="ttname"><a href="ObTypes_8h.html#aa798b202d6ea1fe688ceaaa5dd1c42fe">ob_stream_type</a></div><div class="ttdeci">enum OBStreamType ob_stream_type</div></div>
+<div class="ttc" id="StreamProfile_8h_html_af30123770ad4a7a6c3db15b6b3bbf895"><div class="ttname"><a href="StreamProfile_8h.html#af30123770ad4a7a6c3db15b6b3bbf895">ob_stream_profile_list_get_accel_stream_profile</a></div><div class="ttdeci">ob_stream_profile * ob_stream_profile_list_get_accel_stream_profile(ob_stream_profile_list *profile_list, ob_accel_full_scale_range fullScaleRange, ob_accel_sample_rate sampleRate, ob_error **error)</div><div class="ttdoc">通过传入的参数进行匹配对应的 ob_stream_profile。若有多个匹配项默认返回列表中的第一个, 若未找打匹配的项，则返回错误。 </div></div>
+<div class="ttc" id="StreamProfile_8h_html_a73ddbe7d616a73dc2fb59feaa8697960"><div class="ttname"><a href="StreamProfile_8h.html#a73ddbe7d616a73dc2fb59feaa8697960">ob_accel_stream_profile_sample_rate</a></div><div class="ttdeci">ob_accel_sample_rate ob_accel_stream_profile_sample_rate(ob_stream_profile *profile, ob_error **error)</div><div class="ttdoc">获取加速度计流配置的采样频率 </div></div>
+<div class="ttc" id="StreamProfile_8h_html_a7618c934918abea2d9966a7406cef159"><div class="ttname"><a href="StreamProfile_8h.html#a7618c934918abea2d9966a7406cef159">ob_accel_stream_profile_full_scale_range</a></div><div class="ttdeci">ob_accel_full_scale_range ob_accel_stream_profile_full_scale_range(ob_stream_profile *profile, ob_error **error)</div><div class="ttdoc">获取加速度计流配置的量程范围 </div></div>
+<div class="ttc" id="StreamProfile_8h_html_a6c76dc19ab6f6f34391a16518041b459"><div class="ttname"><a href="StreamProfile_8h.html#a6c76dc19ab6f6f34391a16518041b459">ob_video_stream_profile_height</a></div><div class="ttdeci">uint32_t ob_video_stream_profile_height(ob_stream_profile *profile, ob_error **error)</div><div class="ttdoc">获取视频流配置的高 </div></div>
+<div class="ttc" id="ObTypes_8h_html"><div class="ttname"><a href="ObTypes_8h.html">ObTypes.h</a></div><div class="ttdoc">提供 SDK 中常用的结构体，枚举常量定义。 </div></div>
+<div class="ttc" id="StreamProfile_8h_html_a93951e0c25f48ce97499f2a49ba29f59"><div class="ttname"><a href="StreamProfile_8h.html#a93951e0c25f48ce97499f2a49ba29f59">ob_stream_profile_list_get_profile</a></div><div class="ttdeci">ob_stream_profile * ob_stream_profile_list_get_profile(ob_stream_profile_list *profile_list, int index, ob_error **error)</div><div class="ttdoc">通过下标获取对应的 StreamProfile </div></div>
+<div class="ttc" id="StreamProfile_8h_html_ae4c0669d1629d462182d19e6199ac69c"><div class="ttname"><a href="StreamProfile_8h.html#ae4c0669d1629d462182d19e6199ac69c">ob_video_stream_profile_fps</a></div><div class="ttdeci">uint32_t ob_video_stream_profile_fps(ob_stream_profile *profile, ob_error **error)</div><div class="ttdoc">获取视频流配置的帧率 </div></div>
+<div class="ttc" id="StreamProfile_8h_html_ad55c8b82f1eff26cfc7b59f5a8dca24f"><div class="ttname"><a href="StreamProfile_8h.html#ad55c8b82f1eff26cfc7b59f5a8dca24f">ob_delete_stream_profile_list</a></div><div class="ttdeci">void ob_delete_stream_profile_list(ob_stream_profile_list *profile_list, ob_error **error)</div><div class="ttdoc">删除流配置列表 </div></div>
+<div class="ttc" id="StreamProfile_8h_html_ae8159fd10f2d3472825293e5523268f5"><div class="ttname"><a href="StreamProfile_8h.html#ae8159fd10f2d3472825293e5523268f5">ob_stream_profile_format</a></div><div class="ttdeci">ob_format ob_stream_profile_format(ob_stream_profile *profile, ob_error **error)</div><div class="ttdoc">获取流配置的格式 </div></div>
+<div class="ttc" id="StreamProfile_8h_html_a99d64b5edca92a20a5871af962eab823"><div class="ttname"><a href="StreamProfile_8h.html#a99d64b5edca92a20a5871af962eab823">ob_stream_profile_list_get_gyro_stream_profile</a></div><div class="ttdeci">ob_stream_profile * ob_stream_profile_list_get_gyro_stream_profile(ob_stream_profile_list *profile_list, ob_gyro_full_scale_range fullScaleRange, ob_gyro_sample_rate sampleRate, ob_error **error)</div><div class="ttdoc">通过传入的参数进行匹配对应的 ob_stream_profile。若有多个匹配项默认返回列表中的第一个, 若未找打匹配的项，则返回错误。 </div></div>
+<div class="ttc" id="StreamProfile_8h_html_a8524b19813333703c1fc59560e399453"><div class="ttname"><a href="StreamProfile_8h.html#a8524b19813333703c1fc59560e399453">ob_stream_profile_list_get_video_stream_profile</a></div><div class="ttdeci">ob_stream_profile * ob_stream_profile_list_get_video_stream_profile(ob_stream_profile_list *profile_list, int width, int height, ob_format format, int fps, ob_error **error)</div><div class="ttdoc">通过传入的参数进行匹配对应的 ob_stream_profile。若有多个匹配项默认返回列表中的第一个, 若未找打匹配的项，则返回错误。 </div></div>
+<div class="ttc" id="ObTypes_8h_html_aa7bf7c140d08fad46a2fd2aad2eeb441"><div class="ttname"><a href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a></div><div class="ttdeci">struct StreamProfileImpl ob_stream_profile</div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00058">ObTypes.h:58</a></div></div>
+<div class="ttc" id="StreamProfile_8h_html_af079a3b0493c43fa5782b5d1c67f30c9"><div class="ttname"><a href="StreamProfile_8h.html#af079a3b0493c43fa5782b5d1c67f30c9">ob_delete_stream_profile</a></div><div class="ttdeci">void ob_delete_stream_profile(ob_stream_profile *profile, ob_error **error)</div><div class="ttdoc">删除流配置 </div></div>
+<div class="ttc" id="StreamProfile_8h_html_a35b867041d3758ba158d9fc4af8546cd"><div class="ttname"><a href="StreamProfile_8h.html#a35b867041d3758ba158d9fc4af8546cd">ob_stream_profile_type</a></div><div class="ttdeci">ob_stream_type ob_stream_profile_type(ob_stream_profile *profile, ob_error **error)</div><div class="ttdoc">获取流的类型 </div></div>
+<div class="ttc" id="StreamProfile_8h_html_aa740ac4cda4a92eb8a2ac61b411b93f1"><div class="ttname"><a href="StreamProfile_8h.html#aa740ac4cda4a92eb8a2ac61b411b93f1">ob_gyro_stream_profile_sample_rate</a></div><div class="ttdeci">ob_gyro_sample_rate ob_gyro_stream_profile_sample_rate(ob_stream_profile *profile, ob_error **error)</div><div class="ttdoc">获取陀螺仪流配置的采样频率 </div></div>
+<div class="ttc" id="ObTypes_8h_html_a2dd00351b3c3e24fba7b2e9d1bb033a8"><div class="ttname"><a href="ObTypes_8h.html#a2dd00351b3c3e24fba7b2e9d1bb033a8">ob_format</a></div><div class="ttdeci">enum OBFormat ob_format</div></div>
+<div class="ttc" id="ObTypes_8h_html_a33a82adec450f4be6202c1acd63a65ce"><div class="ttname"><a href="ObTypes_8h.html#a33a82adec450f4be6202c1acd63a65ce">ob_gyro_full_scale_range</a></div><div class="ttdeci">enum OBGyroFullScaleRange ob_gyro_full_scale_range</div></div>
+<div class="ttc" id="StreamProfile_8h_html_ab2ab197d64a33161689d3fbde443fbc9"><div class="ttname"><a href="StreamProfile_8h.html#ab2ab197d64a33161689d3fbde443fbc9">ob_video_stream_profile_width</a></div><div class="ttdeci">uint32_t ob_video_stream_profile_width(ob_stream_profile *profile, ob_error **error)</div><div class="ttdoc">获取视频流配置的宽 </div></div>
+<div class="ttc" id="structob__error_html"><div class="ttname"><a href="structob__error.html">ob_error</a></div><div class="ttdoc">SDK 暴露的错误类，用户可以根据该错误类，获取详细的错误信息 </div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00139">ObTypes.h:139</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2023年 十一月 24日 星期五 10:56:17 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OrbbecSDK: header_cn/libobsensor/h/Filter.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OrbbecSDK
+   &#160;<span id="projectnumber">1.8.3</span>
+   </div>
+   <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9a5345e98321307492e41331ab8e5636.html">header_cn</a></li><li class="navelem"><a class="el" href="dir_a57403e30bad3723557b0550251f8216.html">libobsensor</a></li><li class="navelem"><a class="el" href="dir_afa7ddcbc480a7aa37c5239e71e2d522.html">h</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Filter.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Filter_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ObTypes_8h.html">ObTypes.h</a>&quot;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *<a class="code" href="Filter_8h.html#ab3a27dd97b86a8aa2f57038ad0d3dea9">ob_create_pointcloud_filter</a>(<a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Filter_8h.html#a9d15730626989891136e7ee89e2cc411">ob_pointcloud_filter_set_camera_param</a>(<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="code" href="structOBCameraParam.html">ob_camera_param</a> param, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Filter_8h.html#ad36cacee113394f43bc3cec213ea0a42">ob_pointcloud_filter_set_point_format</a>(<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="code" href="ObTypes_8h.html#a2dd00351b3c3e24fba7b2e9d1bb033a8">ob_format</a> type, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Filter_8h.html#a41f921518de12fde5a1c194d7c09dea3">ob_pointcloud_filter_set_frame_align_state</a>(<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <span class="keywordtype">bool</span> state, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Filter_8h.html#a25d2073ecb0d7e4a25a6e0cdf6da110b">ob_pointcloud_filter_set_position_data_scale</a>(<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <span class="keywordtype">float</span> scale, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Filter_8h.html#a64145ca451f2543b33cb5635c582f1ee">ob_pointcloud_filter_set_color_data_normalization</a>(<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <span class="keywordtype">bool</span> state, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Filter_8h.html#a7e9807ef5a74eee149003f0811ef538d">ob_pointcloud_filter_set_coordinate_system</a>(<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="code" href="ObTypes_8h.html#a90e575f04de5a60d51a11a662ec7439d">ob_coordinate_system_type</a> type, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *<a class="code" href="Filter_8h.html#a18aa340a13c52abad9b609a44390d0bd">ob_create_format_convert_filter</a>(<a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Filter_8h.html#aecc354120b7fe24472eb52bbba770d4b">ob_format_convert_filter_set_format</a>(<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="code" href="ObTypes_8h.html#a8ead334c9bd834a516cfd7a5532836b2">ob_convert_format</a> type, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *<a class="code" href="Filter_8h.html#a5aa7094e4747e7faec9a1e2bec3681b0">ob_create_compression_filter</a>(<a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Filter_8h.html#ae850d65f4334a0de5bc80d08111aae70">ob_compression_filter_set_compression_params</a>(<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="code" href="ObTypes_8h.html#ad6da803dd947379980b5326054a103ce">ob_compression_mode</a> mode, <span class="keywordtype">void</span> *params, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *<a class="code" href="Filter_8h.html#a86ce0cfa2c1ff95a75bd017c7fdd678f">ob_create_decompression_filter</a>(<a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Filter_8h.html#a84c21cee66655eeab849ccfbc6bf5aef">ob_filter_reset</a>(<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<a class="code" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *<a class="code" href="Filter_8h.html#afddf8d97e45db38c60fa7ebc8aea5c78">ob_filter_process</a>(<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="code" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Filter_8h.html#ad0592855be34027579a2b1099f015f9d">ob_filter_set_callback</a>(<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="code" href="ObTypes_8h.html#a82628fc9f7fe087c4ac31b0a8197ea34">ob_filter_callback</a> callback, <span class="keywordtype">void</span> *user_data, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Filter_8h.html#aac115614db4f0d3c25f8db91ee549169">ob_filter_push_frame</a>(<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="code" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Filter_8h.html#a77a1ac123ecb1e3b8a0e280fbb2d2d06">ob_delete_filter</a>(<a class="code" href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a> *filter, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="ObTypes_8h_html_a82628fc9f7fe087c4ac31b0a8197ea34"><div class="ttname"><a href="ObTypes_8h.html#a82628fc9f7fe087c4ac31b0a8197ea34">ob_filter_callback</a></div><div class="ttdeci">#define ob_filter_callback</div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l01236">ObTypes.h:1236</a></div></div>
+<div class="ttc" id="Filter_8h_html_a5aa7094e4747e7faec9a1e2bec3681b0"><div class="ttname"><a href="Filter_8h.html#a5aa7094e4747e7faec9a1e2bec3681b0">ob_create_compression_filter</a></div><div class="ttdeci">ob_filter * ob_create_compression_filter(ob_error **error)</div><div class="ttdoc">创建 compression Filter。 </div></div>
+<div class="ttc" id="Filter_8h_html_ae850d65f4334a0de5bc80d08111aae70"><div class="ttname"><a href="Filter_8h.html#ae850d65f4334a0de5bc80d08111aae70">ob_compression_filter_set_compression_params</a></div><div class="ttdeci">void ob_compression_filter_set_compression_params(ob_filter *filter, ob_compression_mode mode, void *params, ob_error **error)</div><div class="ttdoc">设置 compression Filter 的压缩参数 </div></div>
+<div class="ttc" id="ObTypes_8h_html_a8ead334c9bd834a516cfd7a5532836b2"><div class="ttname"><a href="ObTypes_8h.html#a8ead334c9bd834a516cfd7a5532836b2">ob_convert_format</a></div><div class="ttdeci">enum OBConvertFormat ob_convert_format</div></div>
+<div class="ttc" id="Filter_8h_html_ad36cacee113394f43bc3cec213ea0a42"><div class="ttname"><a href="Filter_8h.html#ad36cacee113394f43bc3cec213ea0a42">ob_pointcloud_filter_set_point_format</a></div><div class="ttdeci">void ob_pointcloud_filter_set_point_format(ob_filter *filter, ob_format type, ob_error **error)</div><div class="ttdoc">设置 PointCloud Filter 的点云类型参数。 </div></div>
+<div class="ttc" id="Filter_8h_html_a77a1ac123ecb1e3b8a0e280fbb2d2d06"><div class="ttname"><a href="Filter_8h.html#a77a1ac123ecb1e3b8a0e280fbb2d2d06">ob_delete_filter</a></div><div class="ttdeci">void ob_delete_filter(ob_filter *filter, ob_error **error)</div><div class="ttdoc">删除 Filter </div></div>
+<div class="ttc" id="ObTypes_8h_html_ad6da803dd947379980b5326054a103ce"><div class="ttname"><a href="ObTypes_8h.html#ad6da803dd947379980b5326054a103ce">ob_compression_mode</a></div><div class="ttdeci">enum OBCompressionMode ob_compression_mode</div></div>
+<div class="ttc" id="Filter_8h_html_a84c21cee66655eeab849ccfbc6bf5aef"><div class="ttname"><a href="Filter_8h.html#a84c21cee66655eeab849ccfbc6bf5aef">ob_filter_reset</a></div><div class="ttdeci">void ob_filter_reset(ob_filter *filter, ob_error **error)</div><div class="ttdoc">Filter 重置、清除缓存并重置状态。如果使用异步接口，处理线程也会被停止， 待处理的缓存帧将被清除。 ...</div></div>
+<div class="ttc" id="Filter_8h_html_afddf8d97e45db38c60fa7ebc8aea5c78"><div class="ttname"><a href="Filter_8h.html#afddf8d97e45db38c60fa7ebc8aea5c78">ob_filter_process</a></div><div class="ttdeci">ob_frame * ob_filter_process(ob_filter *filter, ob_frame *frame, ob_error **error)</div><div class="ttdoc">Filter 处理帧（同步接口）。 </div></div>
+<div class="ttc" id="Filter_8h_html_a41f921518de12fde5a1c194d7c09dea3"><div class="ttname"><a href="Filter_8h.html#a41f921518de12fde5a1c194d7c09dea3">ob_pointcloud_filter_set_frame_align_state</a></div><div class="ttdeci">void ob_pointcloud_filter_set_frame_align_state(ob_filter *filter, bool state, ob_error **error)</div><div class="ttdoc">设置输入用于生成点云的帧的对齐状态。（已弃用） </div></div>
+<div class="ttc" id="ObTypes_8h_html"><div class="ttname"><a href="ObTypes_8h.html">ObTypes.h</a></div><div class="ttdoc">提供 SDK 中常用的结构体，枚举常量定义。 </div></div>
+<div class="ttc" id="Filter_8h_html_a25d2073ecb0d7e4a25a6e0cdf6da110b"><div class="ttname"><a href="Filter_8h.html#a25d2073ecb0d7e4a25a6e0cdf6da110b">ob_pointcloud_filter_set_position_data_scale</a></div><div class="ttdeci">void ob_pointcloud_filter_set_position_data_scale(ob_filter *filter, float scale, ob_error **error)</div><div class="ttdoc">设置点云数据缩放比例 </div></div>
+<div class="ttc" id="Filter_8h_html_aecc354120b7fe24472eb52bbba770d4b"><div class="ttname"><a href="Filter_8h.html#aecc354120b7fe24472eb52bbba770d4b">ob_format_convert_filter_set_format</a></div><div class="ttdeci">void ob_format_convert_filter_set_format(ob_filter *filter, ob_convert_format type, ob_error **error)</div><div class="ttdoc">设置 FormatConvert Filter 的格式转换类型。 </div></div>
+<div class="ttc" id="Filter_8h_html_a86ce0cfa2c1ff95a75bd017c7fdd678f"><div class="ttname"><a href="Filter_8h.html#a86ce0cfa2c1ff95a75bd017c7fdd678f">ob_create_decompression_filter</a></div><div class="ttdeci">ob_filter * ob_create_decompression_filter(ob_error **error)</div><div class="ttdoc">创建 decompressionr Filter </div></div>
+<div class="ttc" id="Filter_8h_html_a7e9807ef5a74eee149003f0811ef538d"><div class="ttname"><a href="Filter_8h.html#a7e9807ef5a74eee149003f0811ef538d">ob_pointcloud_filter_set_coordinate_system</a></div><div class="ttdeci">void ob_pointcloud_filter_set_coordinate_system(ob_filter *filter, ob_coordinate_system_type type, ob_error **error)</div><div class="ttdoc">设置点云坐标系。 </div></div>
+<div class="ttc" id="structOBCameraParam_html"><div class="ttname"><a href="structOBCameraParam.html">OBCameraParam</a></div><div class="ttdoc">相机参数 </div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00368">ObTypes.h:368</a></div></div>
+<div class="ttc" id="Filter_8h_html_a18aa340a13c52abad9b609a44390d0bd"><div class="ttname"><a href="Filter_8h.html#a18aa340a13c52abad9b609a44390d0bd">ob_create_format_convert_filter</a></div><div class="ttdeci">ob_filter * ob_create_format_convert_filter(ob_error **error)</div><div class="ttdoc">创建 FormatConvert Filter。 </div></div>
+<div class="ttc" id="ObTypes_8h_html_a90e575f04de5a60d51a11a662ec7439d"><div class="ttname"><a href="ObTypes_8h.html#a90e575f04de5a60d51a11a662ec7439d">ob_coordinate_system_type</a></div><div class="ttdeci">enum OB_COORDINATE_SYSTEM_TYPE ob_coordinate_system_type</div></div>
+<div class="ttc" id="ObTypes_8h_html_a2d32dd7fcbb88ebb408e9f9081e6f896"><div class="ttname"><a href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a></div><div class="ttdeci">struct CFrameImpl ob_frame</div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00060">ObTypes.h:60</a></div></div>
+<div class="ttc" id="Filter_8h_html_a64145ca451f2543b33cb5635c582f1ee"><div class="ttname"><a href="Filter_8h.html#a64145ca451f2543b33cb5635c582f1ee">ob_pointcloud_filter_set_color_data_normalization</a></div><div class="ttdeci">void ob_pointcloud_filter_set_color_data_normalization(ob_filter *filter, bool state, ob_error **error)</div><div class="ttdoc">设置点云颜色数据归一化。 </div></div>
+<div class="ttc" id="Filter_8h_html_ad0592855be34027579a2b1099f015f9d"><div class="ttname"><a href="Filter_8h.html#ad0592855be34027579a2b1099f015f9d">ob_filter_set_callback</a></div><div class="ttdeci">void ob_filter_set_callback(ob_filter *filter, ob_filter_callback callback, void *user_data, ob_error **error)</div><div class="ttdoc">设置 filter 的处理结果回调函数（异步回调接口） </div></div>
+<div class="ttc" id="ObTypes_8h_html_a2dd00351b3c3e24fba7b2e9d1bb033a8"><div class="ttname"><a href="ObTypes_8h.html#a2dd00351b3c3e24fba7b2e9d1bb033a8">ob_format</a></div><div class="ttdeci">enum OBFormat ob_format</div></div>
+<div class="ttc" id="ObTypes_8h_html_aaa2a036e7bbf09bceb92f220395a09ea"><div class="ttname"><a href="ObTypes_8h.html#aaa2a036e7bbf09bceb92f220395a09ea">ob_filter</a></div><div class="ttdeci">struct FilterImpl ob_filter</div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00061">ObTypes.h:61</a></div></div>
+<div class="ttc" id="Filter_8h_html_a9d15730626989891136e7ee89e2cc411"><div class="ttname"><a href="Filter_8h.html#a9d15730626989891136e7ee89e2cc411">ob_pointcloud_filter_set_camera_param</a></div><div class="ttdeci">void ob_pointcloud_filter_set_camera_param(ob_filter *filter, ob_camera_param param, ob_error **error)</div><div class="ttdoc">设置 PointCloud Filter 的相机参数。 </div></div>
+<div class="ttc" id="Filter_8h_html_aac115614db4f0d3c25f8db91ee549169"><div class="ttname"><a href="Filter_8h.html#aac115614db4f0d3c25f8db91ee549169">ob_filter_push_frame</a></div><div class="ttdeci">void ob_filter_push_frame(ob_filter *filter, ob_frame *frame, ob_error **error)</div><div class="ttdoc">filter 压入 frame 到待处理缓存（异步回调接口） </div></div>
+<div class="ttc" id="Filter_8h_html_ab3a27dd97b86a8aa2f57038ad0d3dea9"><div class="ttname"><a href="Filter_8h.html#ab3a27dd97b86a8aa2f57038ad0d3dea9">ob_create_pointcloud_filter</a></div><div class="ttdeci">ob_filter * ob_create_pointcloud_filter(ob_error **error)</div><div class="ttdoc">创建 PointCloud Filter </div></div>
+<div class="ttc" id="structob__error_html"><div class="ttname"><a href="structob__error.html">ob_error</a></div><div class="ttdoc">SDK 暴露的错误类，用户可以根据该错误类，获取详细的错误信息 </div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00139">ObTypes.h:139</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2023年 十一月 24日 星期五 10:56:17 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

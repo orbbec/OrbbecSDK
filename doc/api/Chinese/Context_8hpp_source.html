@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OrbbecSDK: header_cn/libobsensor/hpp/Context.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OrbbecSDK
+   &#160;<span id="projectnumber">1.8.3</span>
+   </div>
+   <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9a5345e98321307492e41331ab8e5636.html">header_cn</a></li><li class="navelem"><a class="el" href="dir_a57403e30bad3723557b0550251f8216.html">libobsensor</a></li><li class="navelem"><a class="el" href="dir_8243e961fc5f523c63be320c0718524a.html">hpp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Context.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Context_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Types_8hpp.html">Types.hpp</a>&quot;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">struct </span>ContextImpl;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespaceob.html">   14</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceob.html">ob</a> {</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="classob_1_1Device.html">Device</a>;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span><a class="code" href="classob_1_1DeviceInfo.html">DeviceInfo</a>;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">class </span><a class="code" href="classob_1_1DeviceList.html">DeviceList</a>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classob_1_1Context.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="ObTypes_8h.html#aa0add2ff45ff52cc75dc92d44f883fbf">OB_EXTENSION_API</a> <a class="code" href="classob_1_1Context.html">Context</a> {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::unique_ptr&lt;ContextImpl&gt; impl_;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classob_1_1Context.html">Context</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *configPath = <span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classob_1_1Context.html">Context</a>() noexcept;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    std::shared_ptr&lt;DeviceList&gt; queryDeviceList();</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> enableNetDeviceEnumeration(<span class="keywordtype">bool</span> enable);</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::shared_ptr&lt;Device&gt; createNetDevice(<span class="keyword">const</span> <span class="keywordtype">char</span> *address, uint16_t port);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> changeNetDeviceIpConfig(<span class="keyword">const</span> <span class="keywordtype">char</span> *deviceUid, <span class="keyword">const</span> <a class="code" href="structOBNetIpConfig.html">OBNetIpConfig</a> &amp;config);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classob_1_1Context.html#a86116757cdd1d415d2687a7c9e505372">   68</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="classob_1_1Context.html#a86116757cdd1d415d2687a7c9e505372">DeviceChangedCallback</a> = std::function&lt;void(std::shared_ptr&lt;DeviceList&gt; removedList, std::shared_ptr&lt;DeviceList&gt; addedList)&gt;;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> setDeviceChangedCallback(<a class="code" href="classob_1_1Context.html#a86116757cdd1d415d2687a7c9e505372">DeviceChangedCallback</a> callback);</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> enableDeviceClockSync(uint64_t repeatInterval);</div><div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="Context_8hpp.html#a77befc5d9971137cb6980f723461e52c">   83</a></span>&#160;<span class="preprocessor">#define enableMultiDeviceSync enableDeviceClockSync</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> freeIdleMemory();</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> setLoggerSeverity(<a class="code" href="ObTypes_8h.html#af3552b30cb452c3065783e55bf0a6f42">OBLogSeverity</a> severity);</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> setLoggerToFile(<a class="code" href="ObTypes_8h.html#af3552b30cb452c3065783e55bf0a6f42">OBLogSeverity</a> severity, <span class="keyword">const</span> <span class="keywordtype">char</span> *directory);</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> setLoggerToConsole(<a class="code" href="ObTypes_8h.html#af3552b30cb452c3065783e55bf0a6f42">OBLogSeverity</a> severity);</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div><div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classob_1_1Context.html#aad80df0d99a8a939d58a476e00f7432f">  117</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="classob_1_1Context.html#aad80df0d99a8a939d58a476e00f7432f">LogCallback</a> = std::function&lt;void(OBLogSeverity severity, const char *logMsg)&gt;;</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> setLoggerToCallback(<a class="code" href="ObTypes_8h.html#af3552b30cb452c3065783e55bf0a6f42">OBLogSeverity</a> severity, <a class="code" href="classob_1_1Context.html#aad80df0d99a8a939d58a476e00f7432f">LogCallback</a> callback);</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> loadLicense(<span class="keyword">const</span> <span class="keywordtype">char</span> *filePath, <span class="keyword">const</span> <span class="keywordtype">char</span> *key = <a class="code" href="ObTypes_8h.html#a5eeadb4cea31961aab689e5d7a225e9c">OB_DEFAULT_DECRYPT_KEY</a>);</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> loadLicenseFromData(<span class="keyword">const</span> <span class="keywordtype">char</span> *data, uint32_t dataLen, <span class="keyword">const</span> <span class="keywordtype">char</span> *key = <a class="code" href="ObTypes_8h.html#a5eeadb4cea31961aab689e5d7a225e9c">OB_DEFAULT_DECRYPT_KEY</a>);</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;};</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}  <span class="comment">// namespace ob</span></div><div class="ttc" id="namespaceob_html"><div class="ttname"><a href="namespaceob.html">ob</a></div><div class="ttdef"><b>Definition:</b> <a href="Context_8hpp_source.html#l00014">Context.hpp:14</a></div></div>
+<div class="ttc" id="classob_1_1Device_html"><div class="ttname"><a href="classob_1_1Device.html">ob::Device</a></div><div class="ttdoc">定义 Device 类 </div><div class="ttdef"><b>Definition:</b> <a href="Device_8hpp_source.html#l00030">Device.hpp:30</a></div></div>
+<div class="ttc" id="classob_1_1Context_html_a86116757cdd1d415d2687a7c9e505372"><div class="ttname"><a href="classob_1_1Context.html#a86116757cdd1d415d2687a7c9e505372">ob::Context::DeviceChangedCallback</a></div><div class="ttdeci">std::function&lt; void(std::shared_ptr&lt; DeviceList &gt; removedList, std::shared_ptr&lt; DeviceList &gt; addedList)&gt; DeviceChangedCallback</div><div class="ttdef"><b>Definition:</b> <a href="Context_8hpp_source.html#l00068">Context.hpp:68</a></div></div>
+<div class="ttc" id="ObTypes_8h_html_af3552b30cb452c3065783e55bf0a6f42"><div class="ttname"><a href="ObTypes_8h.html#af3552b30cb452c3065783e55bf0a6f42">OBLogSeverity</a></div><div class="ttdeci">OBLogSeverity</div><div class="ttdoc">日志等级，等级越高，日志过滤越强 </div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00109">ObTypes.h:109</a></div></div>
+<div class="ttc" id="classob_1_1Context_html_aad80df0d99a8a939d58a476e00f7432f"><div class="ttname"><a href="classob_1_1Context.html#aad80df0d99a8a939d58a476e00f7432f">ob::Context::LogCallback</a></div><div class="ttdeci">std::function&lt; void(OBLogSeverity severity, const char *logMsg)&gt; LogCallback</div><div class="ttdoc">日志回调函数 </div><div class="ttdef"><b>Definition:</b> <a href="Context_8hpp_source.html#l00117">Context.hpp:117</a></div></div>
+<div class="ttc" id="Types_8hpp_html"><div class="ttname"><a href="Types_8hpp.html">Types.hpp</a></div><div class="ttdoc">提供 SDK 的结构体、枚举常量定义（依赖 libobsensor/h/ObTypes.h） </div></div>
+<div class="ttc" id="structOBNetIpConfig_html"><div class="ttname"><a href="structOBNetIpConfig.html">OBNetIpConfig</a></div><div class="ttdoc">网络设备的 IP 地址配置（IPv4） </div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00880">ObTypes.h:880</a></div></div>
+<div class="ttc" id="classob_1_1DeviceInfo_html"><div class="ttname"><a href="classob_1_1DeviceInfo.html">ob::DeviceInfo</a></div><div class="ttdoc">描述设备信息的类，如设备名称，id，序列号等信息。 </div><div class="ttdef"><b>Definition:</b> <a href="Device_8hpp_source.html#l00532">Device.hpp:532</a></div></div>
+<div class="ttc" id="classob_1_1DeviceList_html"><div class="ttname"><a href="classob_1_1DeviceList.html">ob::DeviceList</a></div><div class="ttdoc">表示设备列表的类 </div><div class="ttdef"><b>Definition:</b> <a href="Device_8hpp_source.html#l00647">Device.hpp:647</a></div></div>
+<div class="ttc" id="classob_1_1Context_html"><div class="ttname"><a href="classob_1_1Context.html">ob::Context</a></div><div class="ttdoc">定义 Context 类, 用于获取设备列表，处理设备的回调，日志等级的设置操作 </div><div class="ttdef"><b>Definition:</b> <a href="Context_8hpp_source.html#l00023">Context.hpp:23</a></div></div>
+<div class="ttc" id="ObTypes_8h_html_a5eeadb4cea31961aab689e5d7a225e9c"><div class="ttname"><a href="ObTypes_8h.html#a5eeadb4cea31961aab689e5d7a225e9c">OB_DEFAULT_DECRYPT_KEY</a></div><div class="ttdeci">#define OB_DEFAULT_DECRYPT_KEY</div><div class="ttdoc">默认解密密钥 </div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l01290">ObTypes.h:1290</a></div></div>
+<div class="ttc" id="ObTypes_8h_html_aa0add2ff45ff52cc75dc92d44f883fbf"><div class="ttname"><a href="ObTypes_8h.html#aa0add2ff45ff52cc75dc92d44f883fbf">OB_EXTENSION_API</a></div><div class="ttdeci">#define OB_EXTENSION_API</div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00025">ObTypes.h:25</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2023年 十一月 24日 星期五 10:56:17 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

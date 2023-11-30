@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OrbbecSDK: header_cn/libobsensor/hpp/Filter.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OrbbecSDK
+   &#160;<span id="projectnumber">1.8.3</span>
+   </div>
+   <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9a5345e98321307492e41331ab8e5636.html">header_cn</a></li><li class="navelem"><a class="el" href="dir_a57403e30bad3723557b0550251f8216.html">libobsensor</a></li><li class="navelem"><a class="el" href="dir_8243e961fc5f523c63be320c0718524a.html">hpp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Filter.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Filter_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Types_8hpp.html">Types.hpp</a>&quot;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceob.html">ob</a> {</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespaceob.html#a5c6cd771034a8052085dee9bdbbf80b0">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classob_1_1Frame.html">Frame</a>;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">typedef</span> std::function&lt;void(std::shared_ptr&lt;Frame&gt;)&gt; <a class="code" href="namespaceob.html#a5c6cd771034a8052085dee9bdbbf80b0">FilterCallback</a>;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classob_1_1Filter.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="ObTypes_8h.html#aa0add2ff45ff52cc75dc92d44f883fbf">OB_EXTENSION_API</a> <a class="code" href="classob_1_1Filter.html">Filter</a> {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classob_1_1Filter.html">Filter</a>();</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classob_1_1Filter.html">Filter</a>() = <span class="keywordflow">default</span>;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> reset();</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> std::shared_ptr&lt;Frame&gt; process(std::shared_ptr&lt;Frame&gt; frame);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> pushFrame(std::shared_ptr&lt;Frame&gt; frame);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> setCallBack(<a class="code" href="namespaceob.html#a5c6cd771034a8052085dee9bdbbf80b0">FilterCallback</a> callback);</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">protected</span>:</div><div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classob_1_1Filter.html#ac80715de348ec5eedcaa8eaf019b7587">   54</a></span>&#160;    std::shared_ptr&lt;FilterImpl&gt; <a class="code" href="classob_1_1Filter.html#ac80715de348ec5eedcaa8eaf019b7587">impl_</a>;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classob_1_1PointCloudFilter.html">   60</a></span>&#160;<span class="keyword">class </span><a class="code" href="ObTypes_8h.html#aa0add2ff45ff52cc75dc92d44f883fbf">OB_EXTENSION_API</a> <a class="code" href="classob_1_1PointCloudFilter.html">PointCloudFilter</a> : <span class="keyword">public</span> <a class="code" href="classob_1_1Filter.html">Filter</a> {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classob_1_1PointCloudFilter.html">PointCloudFilter</a>();</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> setCreatePointFormat(<a class="code" href="ObTypes_8h.html#a30904eab1a667b797e7ce1099ba7c36a">OBFormat</a> type);</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> setCameraParam(<a class="code" href="structOBCameraParam.html">OBCameraParam</a> param);</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> setFrameAlignState(<span class="keywordtype">bool</span> state);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> setPositionDataScaled(<span class="keywordtype">float</span> scale);</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> setColorDataNormalization(<span class="keywordtype">bool</span> state);</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> setCoordinateSystem(<a class="code" href="ObTypes_8h.html#aedf3502c5abaa3bfd8027d61e8f529de">OBCoordinateSystemType</a> type);</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div><div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classob_1_1FormatConvertFilter.html">  113</a></span>&#160;<span class="keyword">class </span><a class="code" href="ObTypes_8h.html#aa0add2ff45ff52cc75dc92d44f883fbf">OB_EXTENSION_API</a> <a class="code" href="classob_1_1FormatConvertFilter.html">FormatConvertFilter</a> : <span class="keyword">public</span> <a class="code" href="classob_1_1Filter.html">Filter</a> {</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="classob_1_1FormatConvertFilter.html">FormatConvertFilter</a>();</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span> setFormatConvertType(<a class="code" href="ObTypes_8h.html#ae57f11b2621f5e3b74a3983ad647133a">OBConvertFormat</a> type);</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div><div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classob_1_1CompressionFilter.html">  128</a></span>&#160;<span class="keyword">class </span><a class="code" href="ObTypes_8h.html#aa0add2ff45ff52cc75dc92d44f883fbf">OB_EXTENSION_API</a> <a class="code" href="classob_1_1CompressionFilter.html">CompressionFilter</a> : <span class="keyword">public</span> <a class="code" href="classob_1_1Filter.html">Filter</a> {</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="classob_1_1CompressionFilter.html">CompressionFilter</a>();</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">void</span> setCompressionParams(<a class="code" href="ObTypes_8h.html#ab079007f3780abff51925354f8b59a15">OBCompressionMode</a> mode, <span class="keywordtype">void</span> *params);</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;};</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div><div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classob_1_1DecompressionFilter.html">  144</a></span>&#160;<span class="keyword">class </span><a class="code" href="ObTypes_8h.html#aa0add2ff45ff52cc75dc92d44f883fbf">OB_EXTENSION_API</a> <a class="code" href="classob_1_1DecompressionFilter.html">DecompressionFilter</a> : <span class="keyword">public</span> <a class="code" href="classob_1_1Filter.html">Filter</a> {</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="classob_1_1DecompressionFilter.html">DecompressionFilter</a>();</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;};</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}  <span class="comment">// namespace ob</span></div><div class="ttc" id="classob_1_1DecompressionFilter_html"><div class="ttname"><a href="classob_1_1DecompressionFilter.html">ob::DecompressionFilter</a></div><div class="ttdoc">DecompressionFilter 类, 用于解压压缩帧, 如 Depth、Ir 帧 </div><div class="ttdef"><b>Definition:</b> <a href="Filter_8hpp_source.html#l00144">Filter.hpp:144</a></div></div>
+<div class="ttc" id="ObTypes_8h_html_a30904eab1a667b797e7ce1099ba7c36a"><div class="ttname"><a href="ObTypes_8h.html#a30904eab1a667b797e7ce1099ba7c36a">OBFormat</a></div><div class="ttdeci">OBFormat</div><div class="ttdoc">描述像素格式的枚举值 </div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00199">ObTypes.h:199</a></div></div>
+<div class="ttc" id="classob_1_1Frame_html"><div class="ttname"><a href="classob_1_1Frame.html">ob::Frame</a></div><div class="ttdoc">定义 Frame 类 </div><div class="ttdef"><b>Definition:</b> <a href="Frame_8hpp_source.html#l00042">Frame.hpp:42</a></div></div>
+<div class="ttc" id="classob_1_1Filter_html"><div class="ttname"><a href="classob_1_1Filter.html">ob::Filter</a></div><div class="ttdoc">Filter 类, 为点云 Filter、格式转换 Filter、压缩解压 Filter 的基类 </div><div class="ttdef"><b>Definition:</b> <a href="Filter_8hpp_source.html#l00019">Filter.hpp:19</a></div></div>
+<div class="ttc" id="namespaceob_html"><div class="ttname"><a href="namespaceob.html">ob</a></div><div class="ttdef"><b>Definition:</b> <a href="Context_8hpp_source.html#l00014">Context.hpp:14</a></div></div>
+<div class="ttc" id="ObTypes_8h_html_ab079007f3780abff51925354f8b59a15"><div class="ttname"><a href="ObTypes_8h.html#ab079007f3780abff51925354f8b59a15">OBCompressionMode</a></div><div class="ttdeci">OBCompressionMode</div><div class="ttdoc">压缩模式 </div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00629">ObTypes.h:629</a></div></div>
+<div class="ttc" id="classob_1_1FormatConvertFilter_html"><div class="ttname"><a href="classob_1_1FormatConvertFilter.html">ob::FormatConvertFilter</a></div><div class="ttdoc">FormatConvertFilter 类, 用于帧数据格式转换 </div><div class="ttdef"><b>Definition:</b> <a href="Filter_8hpp_source.html#l00113">Filter.hpp:113</a></div></div>
+<div class="ttc" id="ObTypes_8h_html_aedf3502c5abaa3bfd8027d61e8f529de"><div class="ttname"><a href="ObTypes_8h.html#aedf3502c5abaa3bfd8027d61e8f529de">OBCoordinateSystemType</a></div><div class="ttdeci">enum OB_COORDINATE_SYSTEM_TYPE OBCoordinateSystemType</div></div>
+<div class="ttc" id="structOBCameraParam_html"><div class="ttname"><a href="structOBCameraParam.html">OBCameraParam</a></div><div class="ttdoc">相机参数 </div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00368">ObTypes.h:368</a></div></div>
+<div class="ttc" id="Types_8hpp_html"><div class="ttname"><a href="Types_8hpp.html">Types.hpp</a></div><div class="ttdoc">提供 SDK 的结构体、枚举常量定义（依赖 libobsensor/h/ObTypes.h） </div></div>
+<div class="ttc" id="classob_1_1Filter_html_ac80715de348ec5eedcaa8eaf019b7587"><div class="ttname"><a href="classob_1_1Filter.html#ac80715de348ec5eedcaa8eaf019b7587">ob::Filter::impl_</a></div><div class="ttdeci">std::shared_ptr&lt; FilterImpl &gt; impl_</div><div class="ttdef"><b>Definition:</b> <a href="Filter_8hpp_source.html#l00054">Filter.hpp:54</a></div></div>
+<div class="ttc" id="classob_1_1CompressionFilter_html"><div class="ttname"><a href="classob_1_1CompressionFilter.html">ob::CompressionFilter</a></div><div class="ttdoc">CompressionFilter 类, 用于帧数据压缩, 如压缩 Depth、Ir 帧 </div><div class="ttdef"><b>Definition:</b> <a href="Filter_8hpp_source.html#l00128">Filter.hpp:128</a></div></div>
+<div class="ttc" id="ObTypes_8h_html_ae57f11b2621f5e3b74a3983ad647133a"><div class="ttname"><a href="ObTypes_8h.html#ae57f11b2621f5e3b74a3983ad647133a">OBConvertFormat</a></div><div class="ttdeci">OBConvertFormat</div><div class="ttdoc">格式转换类型枚举 </div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00423">ObTypes.h:423</a></div></div>
+<div class="ttc" id="namespaceob_html_a5c6cd771034a8052085dee9bdbbf80b0"><div class="ttname"><a href="namespaceob.html#a5c6cd771034a8052085dee9bdbbf80b0">ob::FilterCallback</a></div><div class="ttdeci">std::function&lt; void(std::shared_ptr&lt; Frame &gt;)&gt; FilterCallback</div><div class="ttdef"><b>Definition:</b> <a href="Filter_8hpp_source.html#l00012">Filter.hpp:12</a></div></div>
+<div class="ttc" id="classob_1_1PointCloudFilter_html"><div class="ttname"><a href="classob_1_1PointCloudFilter.html">ob::PointCloudFilter</a></div><div class="ttdoc">PointCloudFilter 类，用于生成点云 </div><div class="ttdef"><b>Definition:</b> <a href="Filter_8hpp_source.html#l00060">Filter.hpp:60</a></div></div>
+<div class="ttc" id="ObTypes_8h_html_aa0add2ff45ff52cc75dc92d44f883fbf"><div class="ttname"><a href="ObTypes_8h.html#aa0add2ff45ff52cc75dc92d44f883fbf">OB_EXTENSION_API</a></div><div class="ttdeci">#define OB_EXTENSION_API</div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00025">ObTypes.h:25</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2023年 十一月 24日 星期五 10:56:17 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>
