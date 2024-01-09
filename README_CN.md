@@ -42,6 +42,17 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 | Gemini           | 3.0.18                      |
 | Astra Mini S Pro | 1.0.05                      |
 
+
+## OrbbecViewer
+OrbbecViewer是一个基于Orbbec SDK的实用工具，用于查看来自Orbbec相机的数据流并控制相机.
+
+![OrbbecViewer](doc/resources/OrbbecViewer.png)
+
+**支持平台**: Windows x64, Linux x64&ARM64
+
+**下载链接**: [Releases](https://github.com/orbbec/OrbbecSDK/releases)
+
+
 ## 快速开始
 
 ### 获取源码
@@ -58,13 +69,34 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
     ``` bash
     cd OrbbecSDK/misc/scripts
     sudo chmod +x ./install_udev_rules.sh
-    ./install_udev_rules.sh
+    sudo ./install_udev_rules.sh
+    sudo udevadm control --reload && sudo udevadm trigger
     ```
 
 * Windows：
     metadat时间戳注册: [obsensor_metadata_win10](misc\scripts\obsensor_metadata_win10.md)
 
 * 有关环境配置的更多信息请参考：[Environment Configuration](doc/tutorial/Chinese/Environment_Configuration.md)
+
+
+
+## 示例
+示例代码位于./examples目录中，可以使用CMake进行编译
+
+### 编译
+
+    ```bash
+    cd OrbbecSDK && mkdir build && cd build && cmake .. && cmake --build . --config Release
+    ```
+
+### 运行示例
+    首先连接Orbbec相机，然后运行如下脚本：
+    ```bash
+    cd OrbbecSDK/build/bin # build output dir
+    ./OBMultiStream  # OBMultiStream.exe on Windows
+    ```
+
+
 
 ### CMake项目中使用Orbbec SDK
 
@@ -84,31 +116,6 @@ find_package(OrbbecSDK REQUIRED)
 target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 ```
 
-## 示例
-示例代码位于./examples目录中，可以使用CMake进行编译
-
-### 编译
-
-    ```bash
-    cd OrbbecSDK && mkdir build && cd build &&
-    cmake .. && cmake --build . --config Release
-    ```
-
-### 运行示例
-    首先连接Orbbec相机，然后运行如下脚本：
-    ```bash
-    cd OrbbecSDK/build/bin # build output dir
-    ./OBMultiStream  # OBMultiStream.exe on Windows
-    ```
-
-## OrbbecViewer
-OrbbecViewer是一个基于Orbbec SDK的实用工具，用于查看来自Orbbec相机的数据流并控制相机.
-
-![OrbbecViewer](doc/resources/OrbbecViewer.png)
-
-**支持平台**: Windows x64, Linux x64&ARM64
-
-**下载链接**: [Releases](https://github.com/orbbec/OrbbecSDK/releases)
 
 ## 文档
 

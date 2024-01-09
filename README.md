@@ -2,9 +2,9 @@
 
 ![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.8.3-green)
 
-The Orbbec 3D camera product software development kit，fully supports UVC, realizes driver-free plug-and-play, provides low-level and high-level simple and easy-to-use APIs, and helps developers use it flexibly in different scenarios.
+The Orbbec 3D camera product software development kit fully supports UVC, enabling driver-free plug-and-play. It provides both low-level and high-level APIs that are simple and easy to use, allowing developers to use it flexibly in different scenarios.
 
-Besides, this SDK is compatible with Orbbec's original OpenNI protocol devices through built-in code, so that developers can completely migrate to Orbbec SDK to support Orbbec's new generation of products and old products with one set of code.
+Additionally, this SDK is compatible with Orbbec's original OpenNI protocol devices through built-in code, enabling developers to migrate to Orbbec SDK to support both new and old products with one set of code.
 
 ## What is included in the repository
 
@@ -22,7 +22,7 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 
 ## Product support
 
-| **products list** | **firmware version** |
+| **Products List** | **Firmware Version** |
 | --- | --- |
 | Femto Bolt       | 1.0.6  (unsupported ARM32) |
 | Femto Mega       | 1.1.7  (support window10、Linux(ubuntu20.04、ubuntu22.04)、Arm64(AGX orin, orin NX, orin nano))  |
@@ -42,6 +42,18 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 | Gemini           | 3.0.18                      |
 | Astra Mini S Pro | 1.0.05                      |
 
+
+
+## OrbbecViewer
+
+OrbbecViewer is a useful tool based on Orbbec SDK，that can be used to view the data stream from the Orbbec camera and control the camera.
+![OrbbecViewer](doc/resources/OrbbecViewer.png)
+
+**Supported platforms**: Windows x64, Linux x64 & ARM64
+
+**Download link**: [Releases](https://github.com/orbbec/OrbbecSDK/releases)
+
+
 ## Getting started
 
 ### Get source code
@@ -60,7 +72,8 @@ git clone https://github.com/orbbec/OrbbecSDK.git
     ``` bash
     cd OrbbecSDK/misc/scripts
     sudo chmod +x ./install_udev_rules.sh
-    ./install_udev_rules.sh
+    sudo ./install_udev_rules.sh
+    sudo udevadm control --reload && sudo udevadm trigger
     ```
 
 * Windows:
@@ -68,6 +81,30 @@ git clone https://github.com/orbbec/OrbbecSDK.git
     Timestamp registration: [follow this: obsensor_metadata_win10](misc/scripts/obsensor_metadata_win10.md)
 
 * *For more information, please refer to：[Environment Configuration](doc/tutorial/English/Environment_Configuration.md)*
+
+
+
+## Examples
+
+The sample code is located in the `./examples` directory and can be built using CMake.
+
+### Build
+
+```bash
+cd OrbbecSDK && mkdir build && cd build && cmake .. && cmake --build . --config Release
+```
+
+### Run example
+
+To connect your Orbbec camera to your PC, run the following steps:
+
+``` bash
+cd OrbbecSDK/build/bin # build output dir
+./OBMultiStream  # OBMultiStream.exe on Windows
+```
+
+
+
 
 ### Use Orbbec SDK in your CMake project
 
@@ -87,34 +124,7 @@ find_package(OrbbecSDK REQUIRED)
 target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 ```
 
-## Examples
 
-The sample code is located in the `./examples` directory and can be built using CMake.
-
-### Build
-
-```bash
-cd OrbbecSDK && mkdir build && cd build &&
-cmake .. && cmake --build . --config Release
-```
-
-### Run example
-
-Connect Orbbec camera to you machine, and then run this:
-
-``` bash
-cd OrbbecSDK/build/bin # build output dir
-./OBMultiStream  # OBMultiStream.exe on Windows
-```
-
-## OrbbecViewer
-
-OrbbecViewer is a useful tool based on Orbbec SDK，that can be used to view the data stream from the Orbbec camera and control the camera.
-![OrbbecViewer](doc/resources/OrbbecViewer.png)
-
-**Supported platforms**: Windows x64, Linux x64&ARM64
-
-**Download link**: [Releases](https://github.com/orbbec/OrbbecSDK/releases)
 
 ## Documents
 
