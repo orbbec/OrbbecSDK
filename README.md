@@ -102,7 +102,8 @@ To connect your Orbbec camera to your PC, run the following steps:
 cd OrbbecSDK/build/bin # build output dir
 ./OBMultiStream  # OBMultiStream.exe on Windows
 ```
-The following image is the result of running MultiStream on the Gemini2 device. Other Devcies run result maybe different.
+The following image is the result of running MultiStream on the Gemini2 device. Other Devices run result maybe different.
+
 ![Multistream](doc/resources/Multistream.png)
 
 Notes:
