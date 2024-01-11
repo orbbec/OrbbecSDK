@@ -24,8 +24,8 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 
 | **Products List** | **Firmware Version** |
 | --- | --- |
-| Femto Bolt       | 1.0.6  (unsupported ARM32) |
-| Femto Mega       | 1.1.7  (support window10、Linux(ubuntu20.04、ubuntu22.04)、Arm64(AGX orin, orin NX, orin nano))  |
+| Femto Bolt       | 1.0.6/1.0.9  (unsupported ARM32) |
+| Femto Mega       | 1.1.7/1.2.7  (support window10、Linux(ubuntu20.04、ubuntu22.04)、Arm64(AGX orin, orin NX, orin nano))  |
 | Gemini 2 XL      | Obox: V1.2.5  VL:1.4.54    |
 | Astra 2          | 2.8.20                     |
 | Gemini 2 L       | 1.4.32                     |
@@ -102,8 +102,11 @@ To connect your Orbbec camera to your PC, run the following steps:
 cd OrbbecSDK/build/bin # build output dir
 ./OBMultiStream  # OBMultiStream.exe on Windows
 ```
+The following image is the result of running MultiStream on the Gemini2 device. Other Devcies run result maybe different.
+![Multistream](doc/resources/Multistream.png)
 
-
+Notes:
+On the Linux/Arm platform ,this sample requires users to compile with Opencv4.2 or above,otherwise, it cannot be rendered.
 
 
 ### Use Orbbec SDK in your CMake project

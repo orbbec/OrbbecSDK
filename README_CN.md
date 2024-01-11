@@ -96,7 +96,11 @@ OrbbecViewer是一个基于Orbbec SDK的实用工具，用于查看来自Orbbec�
     ./OBMultiStream  # OBMultiStream.exe on Windows
     ```
 
+下图是Gemini2 设备，运行MultiStream的结果图，其它设备运行的结果可能不一样.
+![Multistream](doc/resources/Multistream.png)
 
+注意事项:
+在Linux或Arm平台,需要安装Opencv 4.2或以上版本，否则不能渲染.
 
 ### CMake项目中使用Orbbec SDK
 
