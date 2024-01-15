@@ -13,6 +13,8 @@ if (UNIX)
         DESTINATION lib
         FILES_MATCHING PATTERN "libOrbbecSDK.so"
         PATTERN "libOrbbecSDK.so.*"
+        PATTERN "libOrbbecSDK.dylib"
+        PATTERN "libOrbbecSDK.*.dylib"
     )
 
     if (INSTALL_LIBUDEV)

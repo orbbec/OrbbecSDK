@@ -1,5 +1,7 @@
 set(HOST_PLATFORM "linux_x64")
-if (UNIX)
+if(APPLE)
+  set(HOST_PLATFORM "macOS")
+elseif (UNIX)
   execute_process(COMMAND uname -m OUTPUT_VARIABLE MACHINES)
   execute_process(COMMAND getconf LONG_BIT OUTPUT_VARIABLE MACHINES_BIT)
   if ((${MACHINES} MATCHES "x86_64") AND (${MACHINES_BIT} MATCHES "64"))
