@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">OrbbecSDK
-   &#160;<span id="projectnumber">1.8.3</span>
+   &#160;<span id="projectnumber">1.9.3</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -93,6 +93,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classob_1_1Device-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -202,6 +204,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6401bf12c3eccd82891da15ebf2dd81c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#a6401bf12c3eccd82891da15ebf2dd81c">isPropertySupported</a> (<a class="el" href="Property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">OBPropertyID</a> propertyId, <a class="el" href="ObTypes_8h.html#aabf1ee574b8ce0e574add2cea5fdbe27">OBPermissionType</a> permission)</td></tr>
 <tr class="memdesc:a6401bf12c3eccd82891da15ebf2dd81c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a property permission is supported.  <a href="#a6401bf12c3eccd82891da15ebf2dd81c">More...</a><br /></td></tr>
 <tr class="separator:a6401bf12c3eccd82891da15ebf2dd81c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeb33fac92905821f2038f0464a6b31b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#adeb33fac92905821f2038f0464a6b31b">isGlobalTimestampSupported</a> ()</td></tr>
+<tr class="memdesc:adeb33fac92905821f2038f0464a6b31b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the global timestamp is supported for the device.  <a href="#adeb33fac92905821f2038f0464a6b31b">More...</a><br /></td></tr>
+<tr class="separator:adeb33fac92905821f2038f0464a6b31b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2bd8a9f47d3fe9bb7be0b173b2cab7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#ab2bd8a9f47d3fe9bb7be0b173b2cab7d">deviceUpgrade</a> (const char *filePath, <a class="el" href="Types_8hpp.html#a7ba2b2a9b8b236cd9d7bbbf666c49989">DeviceUpgradeCallback</a> callback, bool async=true)</td></tr>
 <tr class="memdesc:ab2bd8a9f47d3fe9bb7be0b173b2cab7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upgrade the device firmware.  <a href="#ab2bd8a9f47d3fe9bb7be0b173b2cab7d">More...</a><br /></td></tr>
 <tr class="separator:ab2bd8a9f47d3fe9bb7be0b173b2cab7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -276,6 +281,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a22d32711d5d2c88f78da10b4af8af844"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#a22d32711d5d2c88f78da10b4af8af844">timerSyncWithHost</a> ()</td></tr>
 <tr class="memdesc:a22d32711d5d2c88f78da10b4af8af844"><td class="mdescLeft">&#160;</td><td class="mdescRight">synchronize the timer of the device with the host.  <a href="#a22d32711d5d2c88f78da10b4af8af844">More...</a><br /></td></tr>
 <tr class="separator:a22d32711d5d2c88f78da10b4af8af844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae1b8c76518bbd92b0e0b8b6e1ef8e35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#aae1b8c76518bbd92b0e0b8b6e1ef8e35">loadDepthFilterConfig</a> (const char *filePath)</td></tr>
+<tr class="memdesc:aae1b8c76518bbd92b0e0b8b6e1ef8e35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load depth filter config from file.  <a href="#aae1b8c76518bbd92b0e0b8b6e1ef8e35">More...</a><br /></td></tr>
+<tr class="separator:aae1b8c76518bbd92b0e0b8b6e1ef8e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c673fdd82aa383d34b5f252ec24f75a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#a7c673fdd82aa383d34b5f252ec24f75a">resetDefaultDepthFilterConfig</a> ()</td></tr>
+<tr class="memdesc:a7c673fdd82aa383d34b5f252ec24f75a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset depth filter config to device default define.  <a href="#a7c673fdd82aa383d34b5f252ec24f75a">More...</a><br /></td></tr>
+<tr class="separator:a7c673fdd82aa383d34b5f252ec24f75a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a0cd5f7d083d5ccf908596303f9cfdd2b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#a0cd5f7d083d5ccf908596303f9cfdd2b">Device</a> (<a class="el" href="classob_1_1Device.html">Device</a> &amp;&amp;device)</td></tr>
+<tr class="separator:a0cd5f7d083d5ccf908596303f9cfdd2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:affe52066e4c9993e4ed8bdf47fd15d48"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; DeviceImpl &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#affe52066e4c9993e4ed8bdf47fd15d48">impl_</a></td></tr>
+<tr class="separator:affe52066e4c9993e4ed8bdf47fd15d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -283,11 +304,37 @@ Friends</h2></td></tr>
 <tr class="separator:af9f0f1adbd5baee7830839447205af8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2950f414c752afb074d9849f834ae58e"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#a2950f414c752afb074d9849f834ae58e">Recorder</a></td></tr>
 <tr class="separator:a2950f414c752afb074d9849f834ae58e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bed2fe813d6c793ff9dadd249133dab"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#a4bed2fe813d6c793ff9dadd249133dab">CoordinateTransformHelper</a></td></tr>
+<tr class="separator:a4bed2fe813d6c793ff9dadd249133dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="Device_8hpp_source.html#l00028">28</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a0cd5f7d083d5ccf908596303f9cfdd2b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ob::Device::Device </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classob_1_1Device.html">Device</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>device</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a4bbc101b3b034fda60a903b1e72719f5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1368,6 +1415,24 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="adeb33fac92905821f2038f0464a6b31b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ob::Device::isGlobalTimestampSupported </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the global timestamp is supported for the device. </p>
+<dl class="section return"><dt>Returns</dt><dd>Whether the global timestamp is supported </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ab2bd8a9f47d3fe9bb7be0b173b2cab7d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1961,6 +2026,47 @@ Due to the timer of device is not high-accuracy, the timestamp of the continuous
 
 </div>
 </div>
+<a class="anchor" id="aae1b8c76518bbd92b0e0b8b6e1ef8e35"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Device::loadDepthFilterConfig </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load depth filter config from file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>Path of the config file. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7c673fdd82aa383d34b5f252ec24f75a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Device::resetDefaultDepthFilterConfig </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset depth filter config to device default define. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
 <a class="anchor" id="af9f0f1adbd5baee7830839447205af8d"></a>
 <div class="memitem">
@@ -1980,7 +2086,7 @@ Due to the timer of device is not high-accuracy, the timestamp of the continuous
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Device_8hpp_source.html#l00533">533</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Device_8hpp_source.html#l00553">553</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
 
 </div>
 </div>
@@ -2002,7 +2108,52 @@ Due to the timer of device is not high-accuracy, the timestamp of the continuous
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Device_8hpp_source.html#l00534">534</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Device_8hpp_source.html#l00554">554</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4bed2fe813d6c793ff9dadd249133dab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classob_1_1CoordinateTransformHelper.html">CoordinateTransformHelper</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Device_8hpp_source.html#l00555">555</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="affe52066e4c9993e4ed8bdf47fd15d48"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;DeviceImpl&gt; ob::Device::impl_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Device_8hpp_source.html#l00030">30</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
 
 </div>
 </div>
@@ -2012,7 +2163,7 @@ Due to the timer of device is not high-accuracy, the timestamp of the continuous
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 24 2023 10:56:17 for OrbbecSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 12 2024 13:57:05 for OrbbecSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

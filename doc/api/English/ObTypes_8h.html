@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">OrbbecSDK
-   &#160;<span id="projectnumber">1.8.3</span>
+   &#160;<span id="projectnumber">1.9.3</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -138,8 +138,14 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structOBCameraParam__V0.html">OBCameraParam_V0</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera parameters.  <a href="structOBCameraParam__V0.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structOBCalibrationParam.html">OBCalibrationParam</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">calibration parameters  <a href="structOBCalibrationParam.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structob__margin__filter__config.html">ob_margin_filter_config</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration for depth margin filter.  <a href="structob__margin__filter__config.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structOBMGCFilterConfig.html">OBMGCFilterConfig</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration for mgc filter.  <a href="structOBMGCFilterConfig.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structOBRect.html">OBRect</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rectangle.  <a href="structOBRect.html#details">More...</a><br /></td></tr>
@@ -152,6 +158,11 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structOBPoint.html">OBPoint</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">3D point structure in the SDK  <a href="structOBPoint.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structOBPoint2f.html">OBPoint2f</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">2D point structure in the SDK  <a href="structOBPoint2f.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structOBXYTables.html">OBXYTables</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structOBColorPoint.html">OBColorPoint</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">3D point structure with color information  <a href="structOBColorPoint.html#details">More...</a><br /></td></tr>
@@ -328,12 +339,20 @@ Typedefs</h2></td></tr>
 <tr class="separator:a9c59dcfb87c2a7da6d3746cc1459b558"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbb1d0c4db4e164a0be079a0ee0c7a58"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structOBD2CTransform.html">OBD2CTransform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#abbb1d0c4db4e164a0be079a0ee0c7a58">ob_d2c_transform</a></td></tr>
 <tr class="separator:abbb1d0c4db4e164a0be079a0ee0c7a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a489ba44f6e247def40a6400c29dae71a"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structOBD2CTransform.html">OBD2CTransform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#a489ba44f6e247def40a6400c29dae71a">OBTransform</a></td></tr>
+<tr class="separator:a489ba44f6e247def40a6400c29dae71a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac58558f02b16028f2c4b49bddea09ed9"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structOBD2CTransform.html">OBD2CTransform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#ac58558f02b16028f2c4b49bddea09ed9">ob_transform</a></td></tr>
+<tr class="separator:ac58558f02b16028f2c4b49bddea09ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5db514adf9ef2352c995122df7be0a6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structOBCameraParam.html">OBCameraParam</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#ae5db514adf9ef2352c995122df7be0a6">ob_camera_param</a></td></tr>
 <tr class="separator:ae5db514adf9ef2352c995122df7be0a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77212ab2c0194471f4325f30c3727080"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structOBCameraParam__V0.html">OBCameraParam_V0</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#a77212ab2c0194471f4325f30c3727080">ob_camera_param_v0</a></td></tr>
 <tr class="separator:a77212ab2c0194471f4325f30c3727080"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43c62630ddfd3f531f9a5ff624907f62"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structOBCalibrationParam.html">OBCalibrationParam</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#a43c62630ddfd3f531f9a5ff624907f62">ob_calibration_param</a></td></tr>
+<tr class="separator:a43c62630ddfd3f531f9a5ff624907f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addb9d83279f359ecaa7a750d7296a468"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structob__margin__filter__config.html">ob_margin_filter_config</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#addb9d83279f359ecaa7a750d7296a468">OBMarginFilterConfig</a></td></tr>
 <tr class="separator:addb9d83279f359ecaa7a750d7296a468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44d99c6bc90085f22ad51957625a0dfa"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structOBMGCFilterConfig.html">OBMGCFilterConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#a44d99c6bc90085f22ad51957625a0dfa">ob_mgc_filter_config</a></td></tr>
+<tr class="separator:a44d99c6bc90085f22ad51957625a0dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a139a522c50717937c190377a55ba2907"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="ObTypes_8h.html#ade914070120de80d4338ee74e73dc9d5">OBAlignMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#a139a522c50717937c190377a55ba2907">ob_align_mode</a></td></tr>
 <tr class="separator:a139a522c50717937c190377a55ba2907"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa718c495c5d93ddfefe6ebec8a1c7e36"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structOBRect.html">OBRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#aa718c495c5d93ddfefe6ebec8a1c7e36">ob_rect</a></td></tr>
@@ -397,6 +416,14 @@ Typedefs</h2></td></tr>
 <tr class="separator:ac9f1e0e8a32365b86333ba692b56e9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34bcdc4abe4df05390c3b2e3a1aec071"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structOBPoint.html">OBPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#a34bcdc4abe4df05390c3b2e3a1aec071">ob_point</a></td></tr>
 <tr class="separator:a34bcdc4abe4df05390c3b2e3a1aec071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1831a1083446be743f0776df9fa2a9a"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structOBPoint.html">OBPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#ab1831a1083446be743f0776df9fa2a9a">OBPoint3f</a></td></tr>
+<tr class="separator:ab1831a1083446be743f0776df9fa2a9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a381f1c956494d6ee51829391abd1d59f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structOBPoint.html">OBPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#a381f1c956494d6ee51829391abd1d59f">ob_point3f</a></td></tr>
+<tr class="separator:a381f1c956494d6ee51829391abd1d59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2705c1be45a69c1e24d1e2e7930ac26f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structOBPoint2f.html">OBPoint2f</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#a2705c1be45a69c1e24d1e2e7930ac26f">ob_point2f</a></td></tr>
+<tr class="separator:a2705c1be45a69c1e24d1e2e7930ac26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3bed1b8098ff8d526d8a118b2de5af6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structOBXYTables.html">OBXYTables</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#aa3bed1b8098ff8d526d8a118b2de5af6">ob_xy_tables</a></td></tr>
+<tr class="separator:aa3bed1b8098ff8d526d8a118b2de5af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9555eee46650acb24c9986264a65d2b2"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structOBColorPoint.html">OBColorPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#a9555eee46650acb24c9986264a65d2b2">ob_color_point</a></td></tr>
 <tr class="separator:a9555eee46650acb24c9986264a65d2b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6da803dd947379980b5326054a103ce"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="ObTypes_8h.html#ab079007f3780abff51925354f8b59a15">OBCompressionMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObTypes_8h.html#ad6da803dd947379980b5326054a103ce">ob_compression_mode</a></td></tr>
@@ -570,7 +597,8 @@ Enumerations</h2></td></tr>
 <a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8ac6adfa3af6c768496a1851684985f067">OB_SENSOR_IR_LEFT</a> = 6, 
 <a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8a0424821276529822aae2d8b0fff286c3">OB_SENSOR_IR_RIGHT</a> = 7, 
 <br />
-&#160;&#160;<a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8af4771efbbfe6e99c3e8b119387a6492b">OB_SENSOR_RAW_PHASE</a> = 8
+&#160;&#160;<a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8af4771efbbfe6e99c3e8b119387a6492b">OB_SENSOR_RAW_PHASE</a> = 8, 
+<a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8ac2ca377f84ec009730b05d9f7945bf3d">OB_SENSOR_COUNT</a>
 <br />
  }<tr class="memdesc:a0bf6f74f3eaabbf4a71720b9363b2aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration value describing the sensor type.  <a href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">More...</a><br /></td></tr>
 </td></tr>
@@ -725,7 +753,9 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="ObTypes_8h.html#ae57f11b2621f5e3b74a3983ad647133aaefb3c78c469b31330431d8e973d4ac49">FORMAT_MJPG_TO_BGR888</a>, 
 <a class="el" href="ObTypes_8h.html#ae57f11b2621f5e3b74a3983ad647133aaa3767aad721a99c34489e15e7887a937">FORMAT_MJPG_TO_BGRA</a>, 
 <a class="el" href="ObTypes_8h.html#ae57f11b2621f5e3b74a3983ad647133aa9fcd668cd449e9f375e4107946ae113b">FORMAT_UYVY_TO_RGB888</a>, 
-<a class="el" href="ObTypes_8h.html#ae57f11b2621f5e3b74a3983ad647133aa99799f4f2ef03ad0f4e1ab13022ecd73">FORMAT_BGR_TO_RGB</a>
+<a class="el" href="ObTypes_8h.html#ae57f11b2621f5e3b74a3983ad647133aa99799f4f2ef03ad0f4e1ab13022ecd73">FORMAT_BGR_TO_RGB</a>, 
+<br />
+&#160;&#160;<a class="el" href="ObTypes_8h.html#ae57f11b2621f5e3b74a3983ad647133aab3c0371b3aa690277eae9c4dc5ad8727">FORMAT_MJPG_TO_NV12</a>
 <br />
  }<tr class="memdesc:ae57f11b2621f5e3b74a3983ad647133a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of format conversion types.  <a href="ObTypes_8h.html#ae57f11b2621f5e3b74a3983ad647133a">More...</a><br /></td></tr>
 </td></tr>
@@ -1068,7 +1098,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00238">238</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00239">239</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1082,7 +1112,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00239">239</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00240">240</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1096,7 +1126,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00448">448</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00476">476</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1110,7 +1140,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00449">449</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00477">477</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1124,7 +1154,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00450">450</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00478">478</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1138,7 +1168,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00451">451</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00479">479</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1152,7 +1182,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00452">452</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00480">480</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1166,7 +1196,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00919">919</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00962">962</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1180,7 +1210,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00920">920</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00963">963</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1194,7 +1224,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01288">1288</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01331">1331</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1208,7 +1238,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01289">1289</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01332">1332</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1235,7 +1265,7 @@ Enumerations</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if sensor_type is an IR sensor, false otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01324">1324</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01367">1367</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1249,7 +1279,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01325">1325</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01368">1368</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1276,7 +1306,7 @@ Enumerations</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if stream_type is an IR stream, false otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01333">1333</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01376">1376</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1290,7 +1320,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01334">1334</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01377">1377</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1317,7 +1347,7 @@ Enumerations</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if frame_type is an IR frame, false otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01342">1342</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01385">1385</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1331,7 +1361,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01343">1343</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01386">1386</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1347,7 +1377,7 @@ Enumerations</h2></td></tr>
 
 <p>The default Decrypt Key. </p>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01348">1348</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01391">1391</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -1866,6 +1896,30 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a489ba44f6e247def40a6400c29dae71a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  struct <a class="el" href="structOBD2CTransform.html">OBD2CTransform</a>  <a class="el" href="ObTypes_8h.html#a489ba44f6e247def40a6400c29dae71a">OBTransform</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac58558f02b16028f2c4b49bddea09ed9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  struct <a class="el" href="structOBD2CTransform.html">OBD2CTransform</a>  <a class="el" href="ObTypes_8h.html#ac58558f02b16028f2c4b49bddea09ed9">ob_transform</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ae5db514adf9ef2352c995122df7be0a6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1890,12 +1944,36 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a43c62630ddfd3f531f9a5ff624907f62"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  struct <a class="el" href="structOBCalibrationParam.html">OBCalibrationParam</a>  <a class="el" href="ObTypes_8h.html#a43c62630ddfd3f531f9a5ff624907f62">ob_calibration_param</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="addb9d83279f359ecaa7a750d7296a468"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">typedef  struct <a class="el" href="structob__margin__filter__config.html">ob_margin_filter_config</a>  <a class="el" href="ObTypes_8h.html#addb9d83279f359ecaa7a750d7296a468">OBMarginFilterConfig</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a44d99c6bc90085f22ad51957625a0dfa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  struct <a class="el" href="structOBMGCFilterConfig.html">OBMGCFilterConfig</a>  <a class="el" href="ObTypes_8h.html#a44d99c6bc90085f22ad51957625a0dfa">ob_mgc_filter_config</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2087,7 +2165,7 @@ Enumerations</h2></td></tr>
 
 <p>Device state. </p>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00514">514</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00542">542</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -2101,7 +2179,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00514">514</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00542">542</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -2285,6 +2363,54 @@ Enumerations</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">typedef  struct <a class="el" href="structOBPoint.html">OBPoint</a>  <a class="el" href="ObTypes_8h.html#a34bcdc4abe4df05390c3b2e3a1aec071">ob_point</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab1831a1083446be743f0776df9fa2a9a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  struct <a class="el" href="structOBPoint.html">OBPoint</a>  <a class="el" href="ObTypes_8h.html#ab1831a1083446be743f0776df9fa2a9a">OBPoint3f</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a381f1c956494d6ee51829391abd1d59f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  struct <a class="el" href="structOBPoint.html">OBPoint</a>  <a class="el" href="ObTypes_8h.html#a381f1c956494d6ee51829391abd1d59f">ob_point3f</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2705c1be45a69c1e24d1e2e7930ac26f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  struct <a class="el" href="structOBPoint2f.html">OBPoint2f</a>  <a class="el" href="ObTypes_8h.html#a2705c1be45a69c1e24d1e2e7930ac26f">ob_point2f</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa3bed1b8098ff8d526d8a118b2de5af6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  struct <a class="el" href="structOBXYTables.html">OBXYTables</a>  <a class="el" href="ObTypes_8h.html#aa3bed1b8098ff8d526d8a118b2de5af6">ob_xy_tables</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2761,7 +2887,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01222">1222</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01265">1265</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -2786,7 +2912,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01232">1232</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01275">1275</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -2810,7 +2936,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01241">1241</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01284">1284</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -2834,7 +2960,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01250">1250</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01293">1293</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -2858,7 +2984,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01259">1259</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01302">1302</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -2881,7 +3007,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01267">1267</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01310">1310</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -2905,7 +3031,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01276">1276</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01319">1319</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -2928,7 +3054,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01287">1287</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01330">1330</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -2951,7 +3077,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01297">1297</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01340">1340</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -2974,7 +3100,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01305">1305</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01348">1348</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -2998,7 +3124,7 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01314">1314</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01357">1357</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3012,7 +3138,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01316">1316</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01359">1359</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3224,6 +3350,8 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a0bf6f74f3eaabbf4a71720b9363b2aa8af4771efbbfe6e99c3e8b119387a6492b"></a>OB_SENSOR_RAW_PHASE&#160;</td><td class="fielddoc">
 <p>Raw Phase </p>
 </td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a0bf6f74f3eaabbf4a71720b9363b2aa8ac2ca377f84ec009730b05d9f7945bf3d"></a>OB_SENSOR_COUNT&#160;</td><td class="fielddoc">
+</td></tr>
 </table>
 
 <p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00154">154</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
@@ -3274,7 +3402,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00170">170</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00171">171</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3328,7 +3456,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00187">187</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00188">188</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3430,7 +3558,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00206">206</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00207">207</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3490,7 +3618,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00244">244</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00245">245</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3535,7 +3663,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00265">265</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00266">266</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3583,7 +3711,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00281">281</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00282">282</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3610,7 +3738,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00411">411</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00438">438</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3662,9 +3790,12 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a class="anchor" id="ae57f11b2621f5e3b74a3983ad647133aa99799f4f2ef03ad0f4e1ab13022ecd73"></a>FORMAT_BGR_TO_RGB&#160;</td><td class="fielddoc">
 <p>BGR to RGB </p>
 </td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ae57f11b2621f5e3b74a3983ad647133aab3c0371b3aa690277eae9c4dc5ad8727"></a>FORMAT_MJPG_TO_NV12&#160;</td><td class="fielddoc">
+<p>MJPG to NV12 </p>
+</td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00431">431</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00458">458</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3727,7 +3858,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00457">457</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00485">485</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3769,7 +3900,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00479">479</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00507">507</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3799,7 +3930,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00494">494</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00522">522</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3826,7 +3957,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00536">536</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00564">564</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3853,7 +3984,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00546">546</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00574">574</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3904,7 +4035,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00556">556</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00584">584</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3934,7 +4065,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00576">576</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00604">604</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -3978,7 +4109,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00589">589</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00617">617</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4008,7 +4139,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00605">605</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00633">633</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4032,7 +4163,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00637">637</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00680">680</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4088,7 +4219,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00665">665</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00708">708</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4123,7 +4254,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00831">831</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00874">874</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4147,7 +4278,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00925">925</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00968">968</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4177,7 +4308,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00934">934</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00977">977</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4201,7 +4332,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00945">945</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00988">988</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4231,7 +4362,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00954">954</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00997">997</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4258,7 +4389,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00965">965</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01008">1008</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4288,7 +4419,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l00975">975</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01018">1018</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4310,7 +4441,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01001">1001</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01044">1044</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4334,7 +4465,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01010">1010</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01053">1053</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
@@ -4388,14 +4519,14 @@ Due to different models may have different signal input requirements, please do 
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01026">1026</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
+<p>Definition at line <a class="el" href="ObTypes_8h_source.html#l01069">1069</a> of file <a class="el" href="ObTypes_8h_source.html">ObTypes.h</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 24 2023 10:56:17 for OrbbecSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 12 2024 13:57:05 for OrbbecSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">OrbbecSDK
-   &#160;<span id="projectnumber">1.8.3</span>
+   &#160;<span id="projectnumber">1.9.3</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -185,7 +185,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>获取设备支持的多机同步模式位图 </p>
-<p>例如，如果返回值为 0b00001100，则表示设备支持 <a class="el" href="ObTypes_8h.html#aabad929b67059752029c3374594ac63ba8e2f43bf0dd49abc986b551b75e0a923">OB_MULTI_DEVICE_SYNC_MODE_PRIMARY</a> 和 OB_MULTI_DEVICE_SYNC_MODE_SECONDARY，用户可以通过以下代码检查支持的模式： </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(supported_mode_bitmap &amp; <a class="code" href="ObTypes_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a>){</div><div class="line">   <span class="comment">//support OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</span></div><div class="line">}</div><div class="line"><span class="keywordflow">if</span>(supported_mode_bitmap &amp; <a class="code" href="ObTypes_8h.html#aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225">OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</a>){</div><div class="line">  <span class="comment">//support OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</span></div><div class="line">}</div><div class="line"><span class="comment">// and so on</span></div></div><!-- fragment --> <dl class="params"><dt>参数</dt><dd>
+<p>例如，如果返回值为 0b00001100，则表示设备支持 <a class="el" href="ObTypes_8h.html#aabad929b67059752029c3374594ac63ba8e2f43bf0dd49abc986b551b75e0a923">OB_MULTI_DEVICE_SYNC_MODE_PRIMARY</a> 和 <a class="el" href="ObTypes_8h.html#aabad929b67059752029c3374594ac63ba23edc51a18fc3047d5390a065f83e06c">OB_MULTI_DEVICE_SYNC_MODE_SECONDARY</a> ，用户可以通过以下代码检查支持的模式： </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(supported_mode_bitmap &amp; <a class="code" href="ObTypes_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a>){</div><div class="line">   <span class="comment">//support OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</span></div><div class="line">}</div><div class="line"><span class="keywordflow">if</span>(supported_mode_bitmap &amp; <a class="code" href="ObTypes_8h.html#aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225">OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</a>){</div><div class="line">  <span class="comment">//support OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</span></div><div class="line">}</div><div class="line"><span class="comment">// and so on</span></div></div><!-- fragment --> <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>设备句柄 </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>错误信息 </td></tr>
@@ -474,7 +474,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 十一月 24日 星期五 10:56:17 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2024年 一月 12日 星期五 13:57:06 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

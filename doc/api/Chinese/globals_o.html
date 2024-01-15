@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">OrbbecSDK
-   &#160;<span id="projectnumber">1.8.3</span>
+   &#160;<span id="projectnumber">1.9.3</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -157,6 +157,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </li>
 <li>ob_bool_property_range
 : <a class="el" href="ObTypes_8h.html#ae0b05ad4fd3bf608f6b61804eb9b4a2f">ObTypes.h</a>
+</li>
+<li>ob_calibration_2d_to_2d()
+: <a class="el" href="Utils_8h.html#a3e95d2de0d19dd745f58837ea17b7d41">Utils.h</a>
+</li>
+<li>ob_calibration_2d_to_3d()
+: <a class="el" href="Utils_8h.html#a685e9d9afb5a0eb1efc4716772b6b398">Utils.h</a>
+</li>
+<li>ob_calibration_2d_to_3d_undistortion()
+: <a class="el" href="Utils_8h.html#ac38fb189c2c0b3511f71f3361dc1cba9">Utils.h</a>
+</li>
+<li>ob_calibration_3d_to_2d()
+: <a class="el" href="Utils_8h.html#aff230d6d794917037333636af168f413">Utils.h</a>
+</li>
+<li>ob_calibration_3d_to_3d()
+: <a class="el" href="Utils_8h.html#ab31c571d9d935a9bd3fa8129f8f43cbe">Utils.h</a>
 </li>
 <li>ob_camera_distortion
 : <a class="el" href="ObTypes_8h.html#a9c59dcfb87c2a7da6d3746cc1459b558">ObTypes.h</a>
@@ -539,6 +554,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <li>ob_device_info_firmware_version()
 : <a class="el" href="Device_8h.html#a21be3dfd27accf87aa1459cdcb52735e">Device.h</a>
 </li>
+<li>ob_device_info_get_extension_info()
+: <a class="el" href="Device_8h.html#adfece3d89e3fc8c2092ce5f5a60c793f">Device.h</a>
+</li>
 <li>ob_device_info_hardware_version()
 : <a class="el" href="Device_8h.html#aa01a4201092ff680d4d539ff07a59449">Device.h</a>
 </li>
@@ -568,6 +586,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </li>
 <li>ob_device_ip_addr_config
 : <a class="el" href="ObTypes_8h.html#a664e88ba24ee7ad71ae1e8e921b9567e">ObTypes.h</a>
+</li>
+<li>ob_device_is_global_timestamp_supported()
+: <a class="el" href="Device_8h.html#a40f676598f4affb100cabe462105c753">Device.h</a>
 </li>
 <li>ob_device_is_property_supported()
 : <a class="el" href="Device_8h.html#a0dcaa2cdfe5df58873988d086b486d1d">Device.h</a>
@@ -608,6 +629,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <li>ob_device_list_get_device_vid()
 : <a class="el" href="Device_8h.html#ae4e05e57a445e52e40da2e09a1248bf3">Device.h</a>
 </li>
+<li>ob_device_list_get_extension_info()
+: <a class="el" href="Device_8h.html#ae9ab7427abd876e84c3365458abe354c">Device.h</a>
+</li>
+<li>ob_device_load_depth_filter_config()
+: <a class="el" href="Device_8h.html#ae2a7fa577086d3d295e6a989e57b1c5c">Device.h</a>
+</li>
 <li>ob_device_log_severity_level
 : <a class="el" href="ObTypes_8h.html#a55a3e039f999bd1503936786c1490cd3">ObTypes.h</a>
 </li>
@@ -625,6 +652,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </li>
 <li>ob_device_reboot()
 : <a class="el" href="Device_8h.html#aa93166f1ca96f0be6d484596dd4ef775">Device.h</a>
+</li>
+<li>ob_device_reset_default_depth_filter_config()
+: <a class="el" href="Device_8h.html#ab42b0fe1a5b23465b01c308406ac8afc">Device.h</a>
 </li>
 <li>ob_device_send_file_to_destination()
 : <a class="el" href="Device_8h.html#ad1b4e5018401ef3a3b8c874223537e16">Device.h</a>
@@ -965,6 +995,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <li>ob_frame_get_type()
 : <a class="el" href="Frame_8h.html#adfa38aa0cc594622f1d00540cf108b5a">Frame.h</a>
 </li>
+<li>ob_frame_global_time_stamp_us()
+: <a class="el" href="Frame_8h.html#a3823a34cf10836c2e46904416dd4f7ae">Frame.h</a>
+</li>
 <li>OB_FRAME_GYRO
 : <a class="el" href="ObTypes_8h.html#a42b4219d92627d3cf51af225ec58a345a4b4153b3e7fdaaef53473ec4f6c5342e">ObTypes.h</a>
 </li>
@@ -1223,11 +1256,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <li>OB_MEDIA_STREAM_INFO
 : <a class="el" href="ObTypes_8h.html#aea80b2bb24e04f8d79c49b29ba6094fda1d0204c08ce1e88af33ab88e5c67fd79">ObTypes.h</a>
 </li>
-<li>ob_media_type
-: <a class="el" href="ObTypes_8h.html#aa18ddc89475052284ca5a21292e1229c">ObTypes.h</a>
-</li>
 <li>OB_MEDIA_TYPE
 : <a class="el" href="ObTypes_8h.html#aad1ca5b6803a800c411ca0c7ab9ff9b8">ObTypes.h</a>
+</li>
+<li>ob_media_type
+: <a class="el" href="ObTypes_8h.html#aa18ddc89475052284ca5a21292e1229c">ObTypes.h</a>
 </li>
 <li>ob_multi_device_sync_mode
 : <a class="el" href="ObTypes_8h.html#aabad929b67059752029c3374594ac63b">ObTypes.h</a>
@@ -2262,7 +2295,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 十一月 24日 星期五 10:56:17 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2024年 一月 12日 星期五 13:57:06 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

@@ -21,6 +21,7 @@ var searchData=
   ['_7epipeline',['~Pipeline',['../classob_1_1Pipeline.html#a3f91b419f8f1d345cd4400365bc59d91',1,'ob::Pipeline']]],
   ['_7eplayback',['~Playback',['../classob_1_1Playback.html#a83c6bbf075f94fd9d0339c6040ede6c4',1,'ob::Playback']]],
   ['_7epointsframe',['~PointsFrame',['../classob_1_1PointsFrame.html#a457fdb455d6c22d0ce29fa371e844c40',1,'ob::PointsFrame']]],
+  ['_7erawphaseframe',['~RawPhaseFrame',['../classob_1_1RawPhaseFrame.html#adafeac18a2e768dc1ab1de1531630898',1,'ob::RawPhaseFrame']]],
   ['_7erecorder',['~Recorder',['../classob_1_1Recorder.html#a9a89db910d8778a3c1f9e0a598b60430',1,'ob::Recorder']]],
   ['_7esensor',['~Sensor',['../classob_1_1Sensor.html#a9a2b323c694c7c40221e84572071b39e',1,'ob::Sensor']]],
   ['_7esensorlist',['~SensorList',['../classob_1_1SensorList.html#a48e69dc01ac2d1ff15c45336eedd04cc',1,'ob::SensorList']]],

@@ -16,7 +16,7 @@ var searchData=
   ['pointcloudfilter',['PointCloudFilter',['../classob_1_1PointCloudFilter.html#aa8b59d9e70d1f9c24054b2db9f1604a1',1,'ob::PointCloudFilter']]],
   ['pointcloudfilter',['PointCloudFilter',['../classob_1_1PointCloudFilter.html',1,'ob']]],
   ['pointsframe',['PointsFrame',['../classob_1_1PointsFrame.html',1,'ob']]],
-  ['pointsframe',['pointsFrame',['../classob_1_1FrameSet.html#ac505b33599d2cae882d913e1d60eb4a8',1,'ob::FrameSet::pointsFrame()'],['../classob_1_1PointsFrame.html#af291e750e1f5a67e3757782052907a40',1,'ob::PointsFrame::PointsFrame(Frame &amp;frame)'],['../classob_1_1PointsFrame.html#a7e2e5b1d4eebba8c07f601ee5ad98a6b',1,'ob::PointsFrame::PointsFrame(std::unique_ptr&lt; FrameImpl &gt; impl)']]],
+  ['pointsframe',['PointsFrame',['../classob_1_1PointsFrame.html#af291e750e1f5a67e3757782052907a40',1,'ob::PointsFrame::PointsFrame(Frame &amp;frame)'],['../classob_1_1PointsFrame.html#a7e2e5b1d4eebba8c07f601ee5ad98a6b',1,'ob::PointsFrame::PointsFrame(std::unique_ptr&lt; FrameImpl &gt; impl)'],['../classob_1_1FrameSet.html#ac505b33599d2cae882d913e1d60eb4a8',1,'ob::FrameSet::pointsFrame()']]],
   ['process',['process',['../classob_1_1Filter.html#ad884da085733df497cc9f593a703121d',1,'ob::Filter']]],
   ['property_2eh',['Property.h',['../Property_8h.html',1,'']]],
   ['pushframe',['pushFrame',['../classob_1_1Filter.html#ad5d756ea42afacff5aaa1f466792de03',1,'ob::Filter::pushFrame()'],['../classob_1_1FrameHelper.html#ad52aaa6f41413f6c4792ea4e8d420b00',1,'ob::FrameHelper::pushFrame()']]]

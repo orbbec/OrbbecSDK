@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">OrbbecSDK
-   &#160;<span id="projectnumber">1.8.3</span>
+   &#160;<span id="projectnumber">1.9.3</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -122,6 +122,9 @@ Functions</h2></td></tr>
 <tr class="memitem:adce8d3f7031629a3e3d7b25911b33886"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#adce8d3f7031629a3e3d7b25911b33886">ob_frame_system_time_stamp</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:adce8d3f7031629a3e3d7b25911b33886"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the system timestamp of the frame in milliseconds.  <a href="#adce8d3f7031629a3e3d7b25911b33886">More...</a><br /></td></tr>
 <tr class="separator:adce8d3f7031629a3e3d7b25911b33886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3823a34cf10836c2e46904416dd4f7ae"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a3823a34cf10836c2e46904416dd4f7ae">ob_frame_global_time_stamp_us</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a3823a34cf10836c2e46904416dd4f7ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the global timestamp of the frame in microseconds.  <a href="#a3823a34cf10836c2e46904416dd4f7ae">More...</a><br /></td></tr>
+<tr class="separator:a3823a34cf10836c2e46904416dd4f7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada0d3dca9c8d020451e8a1bb11dacf57"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#ada0d3dca9c8d020451e8a1bb11dacf57">ob_frame_data</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:ada0d3dca9c8d020451e8a1bb11dacf57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get frame data.  <a href="#ada0d3dca9c8d020451e8a1bb11dacf57">More...</a><br /></td></tr>
 <tr class="separator:ada0d3dca9c8d020451e8a1bb11dacf57"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -431,6 +434,44 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>uint64_t return the frame system timestamp in milliseconds </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3823a34cf10836c2e46904416dd4f7ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t ob_frame_global_time_stamp_us </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the global timestamp of the frame in microseconds. </p>
+<p>The global timestamp is the time point when the frame was was captured by the device, and has been converted to the host clock domain. The conversion process base on the device timestamp and can eliminate the timer drift of the device</p>
+<dl class="section attention"><dt>Attention</dt><dd>Only some devices support getting the global timestamp. If the device does not support it, this function will return 0. Check the device support status by <a class="el" href="Device_8h.html#a40f676598f4affb100cabe462105c753">ob_device_is_global_timestamp_supported()</a> function.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>Frame object </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint64_t The global timestamp of the frame in microseconds. </dd></dl>
 
 </div>
 </div>
@@ -1577,7 +1618,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 24 2023 10:56:17 for OrbbecSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 12 2024 13:57:05 for OrbbecSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

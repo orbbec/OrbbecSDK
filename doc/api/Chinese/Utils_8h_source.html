@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OrbbecSDK: header_cn/libobsensor/h/Utils.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OrbbecSDK
+   &#160;<span id="projectnumber">1.9.3</span>
+   </div>
+   <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9a5345e98321307492e41331ab8e5636.html">header_cn</a></li><li class="navelem"><a class="el" href="dir_a57403e30bad3723557b0550251f8216.html">libobsensor</a></li><li class="navelem"><a class="el" href="dir_afa7ddcbc480a7aa37c5239e71e2d522.html">h</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Utils.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Utils_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ObTypes_8h.html">ObTypes.h</a>&quot;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="Utils_8h.html#ab31c571d9d935a9bd3fa8129f8f43cbe">ob_calibration_3d_to_3d</a>(<span class="keyword">const</span> ob_calibration_param calibration_param, <span class="keyword">const</span> ob_point3f source_point3f, <span class="keyword">const</span> <a class="code" href="ObTypes_8h.html#a01cba50d4d558e4c2035f09b698bb10b">ob_sensor_type</a> source_sensor_type,</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                             <span class="keyword">const</span> <a class="code" href="ObTypes_8h.html#a01cba50d4d558e4c2035f09b698bb10b">ob_sensor_type</a> target_sensor_type, ob_point3f *target_point3f, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="Utils_8h.html#a685e9d9afb5a0eb1efc4716772b6b398">ob_calibration_2d_to_3d</a>(<span class="keyword">const</span> ob_calibration_param calibration_param, <span class="keyword">const</span> ob_point2f source_point2f, <span class="keyword">const</span> <span class="keywordtype">float</span> source_depth_pixel_value,</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                             <span class="keyword">const</span> <a class="code" href="ObTypes_8h.html#a01cba50d4d558e4c2035f09b698bb10b">ob_sensor_type</a> source_sensor_type, <span class="keyword">const</span> <a class="code" href="ObTypes_8h.html#a01cba50d4d558e4c2035f09b698bb10b">ob_sensor_type</a> target_sensor_type, ob_point3f *target_point3f, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="Utils_8h.html#ac38fb189c2c0b3511f71f3361dc1cba9">ob_calibration_2d_to_3d_undistortion</a>(<span class="keyword">const</span> ob_calibration_param calibration_param, <span class="keyword">const</span> ob_point2f source_point2f, <span class="keyword">const</span> <span class="keywordtype">float</span> source_depth_pixel_value,</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                          <span class="keyword">const</span> <a class="code" href="ObTypes_8h.html#a01cba50d4d558e4c2035f09b698bb10b">ob_sensor_type</a> source_sensor_type, <span class="keyword">const</span> <a class="code" href="ObTypes_8h.html#a01cba50d4d558e4c2035f09b698bb10b">ob_sensor_type</a> target_sensor_type, ob_point3f *target_point3f,</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                          <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="Utils_8h.html#aff230d6d794917037333636af168f413">ob_calibration_3d_to_2d</a>(<span class="keyword">const</span> ob_calibration_param calibration_param, <span class="keyword">const</span> ob_point3f source_point3f, <span class="keyword">const</span> <a class="code" href="ObTypes_8h.html#a01cba50d4d558e4c2035f09b698bb10b">ob_sensor_type</a> source_sensor_type,</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                             <span class="keyword">const</span> <a class="code" href="ObTypes_8h.html#a01cba50d4d558e4c2035f09b698bb10b">ob_sensor_type</a> target_sensor_type, ob_point2f *target_point2f, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="Utils_8h.html#a3e95d2de0d19dd745f58837ea17b7d41">ob_calibration_2d_to_2d</a>(<span class="keyword">const</span> ob_calibration_param calibration_param, <span class="keyword">const</span> ob_point2f source_point2f, <span class="keyword">const</span> <span class="keywordtype">float</span> source_depth_pixel_value,</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                             <span class="keyword">const</span> <a class="code" href="ObTypes_8h.html#a01cba50d4d558e4c2035f09b698bb10b">ob_sensor_type</a> source_sensor_type, <span class="keyword">const</span> <a class="code" href="ObTypes_8h.html#a01cba50d4d558e4c2035f09b698bb10b">ob_sensor_type</a> target_sensor_type, ob_point2f *target_point2f, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<a class="code" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *<a class="code" href="Utils_8h.html#a82807e04ca6e92240a13b55682e0be80">transformation_depth_frame_to_color_camera</a>(<a class="code" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="code" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *depth_frame, uint32_t target_color_camera_width,</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                                     uint32_t target_color_camera_height, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="Utils_8h.html#a124d390cebfeb7733e22427062c16d06">transformation_init_xy_tables</a>(<span class="keyword">const</span> ob_calibration_param calibration_param, <span class="keyword">const</span> <a class="code" href="ObTypes_8h.html#a01cba50d4d558e4c2035f09b698bb10b">ob_sensor_type</a> sensor_type, <span class="keywordtype">float</span> *data, uint32_t *data_size,</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                   ob_xy_tables *xy_tables, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Utils_8h.html#a5aaea5ad49126881384a4b6e55402836">transformation_depth_to_pointcloud</a>(ob_xy_tables *xy_tables, <span class="keyword">const</span> <span class="keywordtype">void</span> *depth_image_data, <span class="keywordtype">void</span> *pointcloud_data, <a class="code" href="structob__error.html">ob_error</a> **error);</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="Utils_8h_html_a5aaea5ad49126881384a4b6e55402836"><div class="ttname"><a href="Utils_8h.html#a5aaea5ad49126881384a4b6e55402836">transformation_depth_to_pointcloud</a></div><div class="ttdeci">void transformation_depth_to_pointcloud(ob_xy_tables *xy_tables, const void *depth_image_data, void *pointcloud_data, ob_error **error)</div><div class="ttdoc">深度转点云 </div></div>
+<div class="ttc" id="Utils_8h_html_ab31c571d9d935a9bd3fa8129f8f43cbe"><div class="ttname"><a href="Utils_8h.html#ab31c571d9d935a9bd3fa8129f8f43cbe">ob_calibration_3d_to_3d</a></div><div class="ttdeci">bool ob_calibration_3d_to_3d(const ob_calibration_param calibration_param, const ob_point3f source_point3f, const ob_sensor_type source_sensor_type, const ob_sensor_type target_sensor_type, ob_point3f *target_point3f, ob_error **error)</div><div class="ttdoc">将源坐标系统的一个三维点转换为目标坐标系统的三维点. </div></div>
+<div class="ttc" id="ObTypes_8h_html_a01cba50d4d558e4c2035f09b698bb10b"><div class="ttname"><a href="ObTypes_8h.html#a01cba50d4d558e4c2035f09b698bb10b">ob_sensor_type</a></div><div class="ttdeci">enum OBSensorType ob_sensor_type</div></div>
+<div class="ttc" id="ObTypes_8h_html"><div class="ttname"><a href="ObTypes_8h.html">ObTypes.h</a></div><div class="ttdoc">提供 SDK 中常用的结构体，枚举常量定义。 </div></div>
+<div class="ttc" id="ObTypes_8h_html_a3c87c98acfd9b143bb58c731d95fa437"><div class="ttname"><a href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a></div><div class="ttdeci">struct DeviceImpl ob_device</div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00052">ObTypes.h:52</a></div></div>
+<div class="ttc" id="Utils_8h_html_aff230d6d794917037333636af168f413"><div class="ttname"><a href="Utils_8h.html#aff230d6d794917037333636af168f413">ob_calibration_3d_to_2d</a></div><div class="ttdeci">bool ob_calibration_3d_to_2d(const ob_calibration_param calibration_param, const ob_point3f source_point3f, const ob_sensor_type source_sensor_type, const ob_sensor_type target_sensor_type, ob_point2f *target_point2f, ob_error **error)</div><div class="ttdoc">将源坐标系统的一个三维点转换为目标坐标系统的二维点. </div></div>
+<div class="ttc" id="Utils_8h_html_a685e9d9afb5a0eb1efc4716772b6b398"><div class="ttname"><a href="Utils_8h.html#a685e9d9afb5a0eb1efc4716772b6b398">ob_calibration_2d_to_3d</a></div><div class="ttdeci">bool ob_calibration_2d_to_3d(const ob_calibration_param calibration_param, const ob_point2f source_point2f, const float source_depth_pixel_value, const ob_sensor_type source_sensor_type, const ob_sensor_type target_sensor_type, ob_point3f *target_point3f, ob_error **error)</div><div class="ttdoc">将源坐标系统的一个二维点转换为目标坐标系统的三维点 </div></div>
+<div class="ttc" id="ObTypes_8h_html_a2d32dd7fcbb88ebb408e9f9081e6f896"><div class="ttname"><a href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a></div><div class="ttdeci">struct CFrameImpl ob_frame</div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00060">ObTypes.h:60</a></div></div>
+<div class="ttc" id="Utils_8h_html_a82807e04ca6e92240a13b55682e0be80"><div class="ttname"><a href="Utils_8h.html#a82807e04ca6e92240a13b55682e0be80">transformation_depth_frame_to_color_camera</a></div><div class="ttdeci">ob_frame * transformation_depth_frame_to_color_camera(ob_device *device, ob_frame *depth_frame, uint32_t target_color_camera_width, uint32_t target_color_camera_height, ob_error **error)</div><div class="ttdoc">将深度转换为彩色相机的坐标系的深度帧（D2C） </div></div>
+<div class="ttc" id="Utils_8h_html_a124d390cebfeb7733e22427062c16d06"><div class="ttname"><a href="Utils_8h.html#a124d390cebfeb7733e22427062c16d06">transformation_init_xy_tables</a></div><div class="ttdeci">bool transformation_init_xy_tables(const ob_calibration_param calibration_param, const ob_sensor_type sensor_type, float *data, uint32_t *data_size, ob_xy_tables *xy_tables, ob_error **error)</div><div class="ttdoc">初始化转换查找表 </div></div>
+<div class="ttc" id="Utils_8h_html_a3e95d2de0d19dd745f58837ea17b7d41"><div class="ttname"><a href="Utils_8h.html#a3e95d2de0d19dd745f58837ea17b7d41">ob_calibration_2d_to_2d</a></div><div class="ttdeci">bool ob_calibration_2d_to_2d(const ob_calibration_param calibration_param, const ob_point2f source_point2f, const float source_depth_pixel_value, const ob_sensor_type source_sensor_type, const ob_sensor_type target_sensor_type, ob_point2f *target_point2f, ob_error **error)</div><div class="ttdoc">将源坐标系统的一个二维点转换为目标坐标系统的二维点. </div></div>
+<div class="ttc" id="Utils_8h_html_ac38fb189c2c0b3511f71f3361dc1cba9"><div class="ttname"><a href="Utils_8h.html#ac38fb189c2c0b3511f71f3361dc1cba9">ob_calibration_2d_to_3d_undistortion</a></div><div class="ttdeci">bool ob_calibration_2d_to_3d_undistortion(const ob_calibration_param calibration_param, const ob_point2f source_point2f, const float source_depth_pixel_value, const ob_sensor_type source_sensor_type, const ob_sensor_type target_sensor_type, ob_point3f *target_point3f, ob_error **error)</div><div class="ttdoc">将源坐标系统的一个二维点转换为目标坐标系统的三维点. </div></div>
+<div class="ttc" id="structob__error_html"><div class="ttname"><a href="structob__error.html">ob_error</a></div><div class="ttdoc">SDK 暴露的错误类，用户可以根据该错误类，获取详细的错误信息 </div><div class="ttdef"><b>Definition:</b> <a href="ObTypes_8h_source.html#l00139">ObTypes.h:139</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2024年 一月 12日 星期五 13:57:06 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

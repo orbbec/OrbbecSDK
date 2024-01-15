@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">OrbbecSDK
-   &#160;<span id="projectnumber">1.8.3</span>
+   &#160;<span id="projectnumber">1.9.3</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -82,6 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
       <li class="current"><a href="globals_func.html#index_o"><span>o</span></a></li>
+      <li><a href="globals_func_t.html#index_t"><span>t</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -114,6 +115,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>ob_accel_stream_profile_sample_rate()
 : <a class="el" href="StreamProfile_8h.html#a73ddbe7d616a73dc2fb59feaa8697960">StreamProfile.h</a>
+</li>
+<li>ob_calibration_2d_to_2d()
+: <a class="el" href="Utils_8h.html#a3e95d2de0d19dd745f58837ea17b7d41">Utils.h</a>
+</li>
+<li>ob_calibration_2d_to_3d()
+: <a class="el" href="Utils_8h.html#a685e9d9afb5a0eb1efc4716772b6b398">Utils.h</a>
+</li>
+<li>ob_calibration_2d_to_3d_undistortion()
+: <a class="el" href="Utils_8h.html#ac38fb189c2c0b3511f71f3361dc1cba9">Utils.h</a>
+</li>
+<li>ob_calibration_3d_to_2d()
+: <a class="el" href="Utils_8h.html#aff230d6d794917037333636af168f413">Utils.h</a>
+</li>
+<li>ob_calibration_3d_to_3d()
+: <a class="el" href="Utils_8h.html#ab31c571d9d935a9bd3fa8129f8f43cbe">Utils.h</a>
 </li>
 <li>ob_camera_param_list_count()
 : <a class="el" href="Device_8h.html#a0496e545b110778bfc66ee913ebe9494">Device.h</a>
@@ -379,6 +395,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>ob_device_info_vid()
 : <a class="el" href="Device_8h.html#a64dfe77a997b53abb69582210ff1f43b">Device.h</a>
 </li>
+<li>ob_device_is_global_timestamp_supported()
+: <a class="el" href="Device_8h.html#a40f676598f4affb100cabe462105c753">Device.h</a>
+</li>
 <li>ob_device_is_property_supported()
 : <a class="el" href="Device_8h.html#a0dcaa2cdfe5df58873988d086b486d1d">Device.h</a>
 </li>
@@ -418,6 +437,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>ob_device_list_get_extension_info()
 : <a class="el" href="Device_8h.html#ae9ab7427abd876e84c3365458abe354c">Device.h</a>
 </li>
+<li>ob_device_load_depth_filter_config()
+: <a class="el" href="Device_8h.html#ae2a7fa577086d3d295e6a989e57b1c5c">Device.h</a>
+</li>
 <li>ob_device_read_ahb()
 : <a class="el" href="Device_8h.html#a29ff095e0bed66c38f425a37223a7b8b">Device.h</a>
 </li>
@@ -432,6 +454,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>ob_device_reboot()
 : <a class="el" href="Device_8h.html#aa93166f1ca96f0be6d484596dd4ef775">Device.h</a>
+</li>
+<li>ob_device_reset_default_depth_filter_config()
+: <a class="el" href="Device_8h.html#ab42b0fe1a5b23465b01c308406ac8afc">Device.h</a>
 </li>
 <li>ob_device_send_file_to_destination()
 : <a class="el" href="Device_8h.html#ad1b4e5018401ef3a3b8c874223537e16">Device.h</a>
@@ -553,6 +578,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>ob_frame_get_type()
 : <a class="el" href="Frame_8h.html#adfa38aa0cc594622f1d00540cf108b5a">Frame.h</a>
 </li>
+<li>ob_frame_global_time_stamp_us()
+: <a class="el" href="Frame_8h.html#a3823a34cf10836c2e46904416dd4f7ae">Frame.h</a>
+</li>
 <li>ob_frame_index()
 : <a class="el" href="Frame_8h.html#a5009d0e21fffddc2bb891357ccd611f7">Frame.h</a>
 </li>
@@ -648,6 +676,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>ob_pipeline_enable_frame_sync()
 : <a class="el" href="Pipeline_8h.html#a66619af96fc52f4a3ce183018e5542cd">Pipeline.h</a>
+</li>
+<li>ob_pipeline_get_calibration_param()
+: <a class="el" href="Pipeline_8h.html#aca122ca3b7ec82dc11b282f03d38546b">Pipeline.h</a>
 </li>
 <li>ob_pipeline_get_camera_param()
 : <a class="el" href="Pipeline_8h.html#a0d90685efdd4b7fb7c6f6259c48769b2">Pipeline.h</a>
@@ -830,7 +861,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 24 2023 10:56:17 for OrbbecSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 12 2024 13:57:06 for OrbbecSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

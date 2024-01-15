@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">OrbbecSDK
-   &#160;<span id="projectnumber">1.8.3</span>
+   &#160;<span id="projectnumber">1.9.3</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -132,6 +132,9 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a671ffb5fa3e62388f3e62b31bed22d56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Config.html#a671ffb5fa3e62388f3e62b31bed22d56">setD2CTargetResolution</a> (uint32_t d2cTargetWidth, uint32_t d2cTargetHeight)</td></tr>
 <tr class="memdesc:a671ffb5fa3e62388f3e62b31bed22d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 D2C 目标分辨率，适用于未使用 OrbbecSDK 开启 Color 流，且需要对深度进行 D2C 的情况 注意: 当使用 OrbbecSDK 开启 Color 流时，同时使用了此接口设置了 D2C 目标分辨率时。优先使用开启的 Color 流的配置进行 D2C。  <a href="#a671ffb5fa3e62388f3e62b31bed22d56">更多...</a><br /></td></tr>
 <tr class="separator:a671ffb5fa3e62388f3e62b31bed22d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae055f1434f00a26404116c40dbc6e118"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Config.html#ae055f1434f00a26404116c40dbc6e118">setFrameAggregateOutputMode</a> (<a class="el" href="ObTypes_8h.html#ad6f9e1e2a35635e969a7b425af59627b">OBFrameAggregateOutputMode</a> mode)</td></tr>
+<tr class="memdesc:ae055f1434f00a26404116c40dbc6e118"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置帧聚合的输出模式  <a href="#ae055f1434f00a26404116c40dbc6e118">更多...</a><br /></td></tr>
+<tr class="separator:ae055f1434f00a26404116c40dbc6e118"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 友元</h2></td></tr>
@@ -141,7 +144,7 @@ Public 成员函数</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p><a class="el" href="classob_1_1Config.html" title="Config 类, 用于配置 pipeline 类参数 ">Config</a> 类, 用于配置 pipeline 类参数 </p>
 
-<p>在文件 <a class="el" href="Pipeline_8hpp_source.html">Pipeline.hpp</a> 第 <a class="el" href="Pipeline_8hpp_source.html#l00184">184</a> 行定义.</p>
+<p>在文件 <a class="el" href="Pipeline_8hpp_source.html">Pipeline.hpp</a> 第 <a class="el" href="Pipeline_8hpp_source.html#l00193">193</a> 行定义.</p>
 </div><h2 class="groupheader">构造及析构函数说明</h2>
 <a class="anchor" id="acf833ba3b0f52198fed44a7fad39b566"></a>
 <div class="memitem">
@@ -347,6 +350,31 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ae055f1434f00a26404116c40dbc6e118"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Config::setFrameAggregateOutputMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ad6f9e1e2a35635e969a7b425af59627b">OBFrameAggregateOutputMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置帧聚合的输出模式 </p>
+<p>当由帧聚合函数生成的FrameSet不包含所有已打开流的帧时（可能由于每个流的帧率不同或某个流的帧丢失），处理策略是直接丢弃还是输出给用户</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>帧聚合的输出模式 (默认值 <a class="el" href="ObTypes_8h.html#aa02146e9ed035f45a6d85efe212e5ecda331a3db7c2bb11bfd9c2f70d81194db6">OB_FRAME_AGGREGATE_OUTPUT_ANY_SITUATION</a>) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">友元及相关函数文档</h2>
 <a class="anchor" id="af9f0f1adbd5baee7830839447205af8d"></a>
 <div class="memitem">
@@ -366,7 +394,7 @@ Public 成员函数</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>在文件 <a class="el" href="Pipeline_8hpp_source.html">Pipeline.hpp</a> 第 <a class="el" href="Pipeline_8hpp_source.html#l00239">239</a> 行定义.</p>
+<p>在文件 <a class="el" href="Pipeline_8hpp_source.html">Pipeline.hpp</a> 第 <a class="el" href="Pipeline_8hpp_source.html#l00255">255</a> 行定义.</p>
 
 </div>
 </div>
@@ -376,7 +404,7 @@ Public 成员函数</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 十一月 24日 星期五 10:56:17 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2024年 一月 12日 星期五 13:57:06 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

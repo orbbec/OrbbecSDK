@@ -22,9 +22,9 @@ var searchData=
   ['depthdelayus',['depthDelayUs',['../structob__multi__device__sync__config.html#a0413ddb90e90b291e14544c38d88a697',1,'ob_multi_device_sync_config']]],
   ['depthdistortion',['depthDistortion',['../structOBCameraParam.html#ae6e904b125b297f70aeae248efb5fe38',1,'OBCameraParam::depthDistortion()'],['../structOBCameraParam__V0.html#a9c236538df64a0a19116c9ca19dbe456',1,'OBCameraParam_V0::depthDistortion()']]],
   ['depthframe',['DepthFrame',['../classob_1_1DepthFrame.html',1,'ob']]],
-  ['depthframe',['depthFrame',['../classob_1_1FrameSet.html#a5c7d2bdc96cb417a5d45579696b6df4d',1,'ob::FrameSet::depthFrame()'],['../classob_1_1DepthFrame.html#a2ba14d4912b0aea80348a909a00f4fd1',1,'ob::DepthFrame::DepthFrame(Frame &amp;frame)'],['../classob_1_1DepthFrame.html#abd6a36d80258577ecff3b68852382fed',1,'ob::DepthFrame::DepthFrame(std::unique_ptr&lt; FrameImpl &gt; impl)']]],
+  ['depthframe',['DepthFrame',['../classob_1_1DepthFrame.html#a2ba14d4912b0aea80348a909a00f4fd1',1,'ob::DepthFrame::DepthFrame(Frame &amp;frame)'],['../classob_1_1DepthFrame.html#abd6a36d80258577ecff3b68852382fed',1,'ob::DepthFrame::DepthFrame(std::unique_ptr&lt; FrameImpl &gt; impl)'],['../classob_1_1FrameSet.html#a5c7d2bdc96cb417a5d45579696b6df4d',1,'ob::FrameSet::depthFrame()']]],
   ['depthintrinsic',['depthIntrinsic',['../structOBCameraParam.html#ae19c6de2bef4c15b282ea14614546629',1,'OBCameraParam::depthIntrinsic()'],['../structOBCameraParam__V0.html#ae123d678ab0873314da19778983ca28b',1,'OBCameraParam_V0::depthIntrinsic()']]],
-  ['device',['Device',['../classob_1_1Device.html#a4bbc101b3b034fda60a903b1e72719f5',1,'ob::Device']]],
+  ['device',['Device',['../classob_1_1Device.html#a0cd5f7d083d5ccf908596303f9cfdd2b',1,'ob::Device::Device(Device &amp;&amp;device)'],['../classob_1_1Device.html#a4bbc101b3b034fda60a903b1e72719f5',1,'ob::Device::Device(std::unique_ptr&lt; DeviceImpl &gt; impl)']]],
   ['device',['Device',['../classob_1_1Device.html',1,'ob']]],
   ['device_2eh',['Device.h',['../Device_8h.html',1,'']]],
   ['device_2ehpp',['Device.hpp',['../Device_8hpp.html',1,'']]],
@@ -34,10 +34,10 @@ var searchData=
   ['devicechangedcallback',['DeviceChangedCallback',['../classob_1_1Context.html#a86116757cdd1d415d2687a7c9e505372',1,'ob::Context']]],
   ['devicecount',['deviceCount',['../classob_1_1DeviceList.html#ada4e95ac534b1d072cba42f5a492c97b',1,'ob::DeviceList']]],
   ['deviceid',['deviceId',['../structOBDeviceSyncConfig.html#a793d1603876f061fc3ab0c26131e73ff',1,'OBDeviceSyncConfig']]],
-  ['deviceinfo',['DeviceInfo',['../classob_1_1DeviceInfo.html',1,'ob']]],
   ['deviceinfo',['DeviceInfo',['../classob_1_1DeviceInfo.html#a378453e2eaa8d140ef51125f9856b63e',1,'ob::DeviceInfo']]],
-  ['devicelist',['DeviceList',['../classob_1_1DeviceList.html',1,'ob']]],
+  ['deviceinfo',['DeviceInfo',['../classob_1_1DeviceInfo.html',1,'ob']]],
   ['devicelist',['DeviceList',['../classob_1_1DeviceInfo.html#a9917364f8c1918d159a456cca5fc304b',1,'ob::DeviceInfo::DeviceList()'],['../classob_1_1DeviceList.html#a78325a6d57af6744915cb4dd75e295ab',1,'ob::DeviceList::DeviceList()']]],
+  ['devicelist',['DeviceList',['../classob_1_1DeviceList.html',1,'ob']]],
   ['devicestatechangedcallback',['DeviceStateChangedCallback',['../Types_8hpp.html#a13d2e28ccdab82c8e22163d4b71f48aa',1,'Types.hpp']]],
   ['devicetriggersignaloutdelay',['deviceTriggerSignalOutDelay',['../structOBDeviceSyncConfig.html#acd2b333bb455fc6c6a716e16ae6e8bba',1,'OBDeviceSyncConfig']]],
   ['devicetriggersignaloutpolarity',['deviceTriggerSignalOutPolarity',['../structOBDeviceSyncConfig.html#a5e36a59f45da629155068a69dc8d7959',1,'OBDeviceSyncConfig']]],
@@ -48,5 +48,6 @@ var searchData=
   ['dhcp',['dhcp',['../structOBNetIpConfig.html#a3de2c46f23cb239f849d0b3a3fabc337',1,'OBNetIpConfig']]],
   ['disableallstream',['disableAllStream',['../classob_1_1Config.html#ad03b2517ffaca641ce78978a5f7e8b0d',1,'ob::Config']]],
   ['disableframesync',['disableFrameSync',['../classob_1_1Pipeline.html#ad46ea763b174c240b15279208b9e3d4c',1,'ob::Pipeline']]],
-  ['disablestream',['disableStream',['../classob_1_1Config.html#a5e3fcf7f5a0efc7b928409c19dd03dc9',1,'ob::Config']]]
+  ['disablestream',['disableStream',['../classob_1_1Config.html#a5e3fcf7f5a0efc7b928409c19dd03dc9',1,'ob::Config']]],
+  ['distortion',['distortion',['../structOBCalibrationParam.html#ab7bf5f50e9aa26ba9cd2710685bd5628',1,'OBCalibrationParam']]]
 ];

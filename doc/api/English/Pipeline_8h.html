@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">OrbbecSDK
-   &#160;<span id="projectnumber">1.8.3</span>
+   &#160;<span id="projectnumber">1.9.3</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -156,7 +156,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:a6f077318b42d07ac0ffe299a481d3f07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current camera parameters.  <a href="#a6f077318b42d07ac0ffe299a481d3f07">More...</a><br /></td></tr>
 <tr class="separator:a6f077318b42d07ac0ffe299a481d3f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d90685efdd4b7fb7c6f6259c48769b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#ae5db514adf9ef2352c995122df7be0a6">ob_camera_param</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Pipeline_8h.html#a0d90685efdd4b7fb7c6f6259c48769b2">ob_pipeline_get_camera_param</a> (<a class="el" href="ObTypes_8h.html#a10c4aa61e784c84629c2fc9934dabb02">ob_pipeline</a> *pipeline, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a0d90685efdd4b7fb7c6f6259c48769b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current camera parameters.  <a href="#a0d90685efdd4b7fb7c6f6259c48769b2">More...</a><br /></td></tr>
 <tr class="separator:a0d90685efdd4b7fb7c6f6259c48769b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca122ca3b7ec82dc11b282f03d38546b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a43c62630ddfd3f531f9a5ff624907f62">ob_calibration_param</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Pipeline_8h.html#aca122ca3b7ec82dc11b282f03d38546b">ob_pipeline_get_calibration_param</a> (<a class="el" href="ObTypes_8h.html#a10c4aa61e784c84629c2fc9934dabb02">ob_pipeline</a> *pipeline, <a class="el" href="ObTypes_8h.html#a58e217beaf8c5e9a0da42b84902cb6b5">ob_config</a> *config, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:aca122ca3b7ec82dc11b282f03d38546b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device calibration parameters.  <a href="#aca122ca3b7ec82dc11b282f03d38546b">More...</a><br /></td></tr>
+<tr class="separator:aca122ca3b7ec82dc11b282f03d38546b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c4940aa12cba3724f47422d5d532264"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Pipeline_8h.html#a9c4940aa12cba3724f47422d5d532264">ob_get_d2c_depth_profile_list</a> (<a class="el" href="ObTypes_8h.html#a10c4aa61e784c84629c2fc9934dabb02">ob_pipeline</a> *pipeline, <a class="el" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *color_profile, <a class="el" href="ObTypes_8h.html#a139a522c50717937c190377a55ba2907">ob_align_mode</a> align_mode, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a9c4940aa12cba3724f47422d5d532264"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a list of D2C-enabled depth sensor resolutions corresponding to the input color sensor resolution.  <a href="#a9c4940aa12cba3724f47422d5d532264">More...</a><br /></td></tr>
 <tr class="separator:a9c4940aa12cba3724f47422d5d532264"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -902,6 +906,59 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get current camera parameters. </p>
+<dl class="section attention"><dt>Attention</dt><dd>If D2C is enabled, it will return the camera parameters after D2C, if not, it will return to the default parameters</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pipeline</td><td>pipeline object </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ob_camera_param The camera internal parameters </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aca122ca3b7ec82dc11b282f03d38546b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a43c62630ddfd3f531f9a5ff624907f62">ob_calibration_param</a> ob_pipeline_get_calibration_param </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a10c4aa61e784c84629c2fc9934dabb02">ob_pipeline</a> *&#160;</td>
+          <td class="paramname"><em>pipeline</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a58e217beaf8c5e9a0da42b84902cb6b5">ob_config</a> *&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get device calibration parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pipeline</td><td>pipeline object </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ob_calibration_param The calibration parameters </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a9c4940aa12cba3724f47422d5d532264"></a>
@@ -1506,7 +1563,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>The pipeline configuration </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>The frame aggregation output mode to be set (default mode is <a class="el" href="ObTypes_8h.html#aa02146e9ed035f45a6d85efe212e5ecda331a3db7c2bb11bfd9c2f70d81194db6">OB_FRAME_AGGREGATE_OUTPUT_ANY_SITUATION</a>) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>The frame aggregation output mode to be set (default mode is <a class="el" href="ObTypes_8h.html#aa02146e9ed035f45a6d85efe212e5ecda30583df3aef9f5a660686bdf0a951324">OB_FRAME_AGGREGATE_OUTPUT_FULL_FRAME_REQUIRE</a>) </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
   </table>
   </dd>
@@ -1517,7 +1574,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 24 2023 10:56:17 for OrbbecSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 12 2024 13:57:05 for OrbbecSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

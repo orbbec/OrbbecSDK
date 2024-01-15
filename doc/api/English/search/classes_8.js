@@ -6,6 +6,7 @@ var searchData=
   ['ob_5fmulti_5fdevice_5fsync_5fconfig',['ob_multi_device_sync_config',['../structob__multi__device__sync__config.html',1,'']]],
   ['obaccelvalue',['OBAccelValue',['../structOBAccelValue.html',1,'']]],
   ['obboolpropertyrange',['OBBoolPropertyRange',['../structOBBoolPropertyRange.html',1,'']]],
+  ['obcalibrationparam',['OBCalibrationParam',['../structOBCalibrationParam.html',1,'']]],
   ['obcameradistortion',['OBCameraDistortion',['../structOBCameraDistortion.html',1,'']]],
   ['obcameraintrinsic',['OBCameraIntrinsic',['../structOBCameraIntrinsic.html',1,'']]],
   ['obcameraparam',['OBCameraParam',['../structOBCameraParam.html',1,'']]],
@@ -21,10 +22,13 @@ var searchData=
   ['obdevicetemperature',['OBDeviceTemperature',['../structOBDeviceTemperature.html',1,'']]],
   ['obfloatpropertyrange',['OBFloatPropertyRange',['../structOBFloatPropertyRange.html',1,'']]],
   ['obintpropertyrange',['OBIntPropertyRange',['../structOBIntPropertyRange.html',1,'']]],
+  ['obmgcfilterconfig',['OBMGCFilterConfig',['../structOBMGCFilterConfig.html',1,'']]],
   ['obnetipconfig',['OBNetIpConfig',['../structOBNetIpConfig.html',1,'']]],
   ['obpoint',['OBPoint',['../structOBPoint.html',1,'']]],
+  ['obpoint2f',['OBPoint2f',['../structOBPoint2f.html',1,'']]],
   ['obpropertyitem',['OBPropertyItem',['../structOBPropertyItem.html',1,'']]],
   ['obprotocolversion',['OBProtocolVersion',['../structOBProtocolVersion.html',1,'']]],
   ['obrect',['OBRect',['../structOBRect.html',1,'']]],
-  ['obtofexposurethresholdcontrol',['OBTofExposureThresholdControl',['../structOBTofExposureThresholdControl.html',1,'']]]
+  ['obtofexposurethresholdcontrol',['OBTofExposureThresholdControl',['../structOBTofExposureThresholdControl.html',1,'']]],
+  ['obxytables',['OBXYTables',['../structOBXYTables.html',1,'']]]
 ];

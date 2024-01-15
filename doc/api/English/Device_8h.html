@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">OrbbecSDK
-   &#160;<span id="projectnumber">1.8.3</span>
+   &#160;<span id="projectnumber">1.9.3</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -351,6 +351,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a7cb9e4ae03167f89651aaf597c230958"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a7cb9e4ae03167f89651aaf597c230958">ob_delete_data_bundle</a> (<a class="el" href="ObTypes_8h.html#a9cf8513da42dae2548a6151eb8a7770b">ob_data_bundle</a> *data_bundle, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a7cb9e4ae03167f89651aaf597c230958"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the resources of data_bundle which come from OrbbecSDK's API.  <a href="#a7cb9e4ae03167f89651aaf597c230958">More...</a><br /></td></tr>
 <tr class="separator:a7cb9e4ae03167f89651aaf597c230958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40f676598f4affb100cabe462105c753"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a40f676598f4affb100cabe462105c753">ob_device_is_global_timestamp_supported</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a40f676598f4affb100cabe462105c753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the device supports global timestamp.  <a href="#a40f676598f4affb100cabe462105c753">More...</a><br /></td></tr>
+<tr class="separator:a40f676598f4affb100cabe462105c753"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2a7fa577086d3d295e6a989e57b1c5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#ae2a7fa577086d3d295e6a989e57b1c5c">ob_device_load_depth_filter_config</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, const char *file_path, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ae2a7fa577086d3d295e6a989e57b1c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load depth filter config from file.  <a href="#ae2a7fa577086d3d295e6a989e57b1c5c">More...</a><br /></td></tr>
+<tr class="separator:ae2a7fa577086d3d295e6a989e57b1c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab42b0fe1a5b23465b01c308406ac8afc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#ab42b0fe1a5b23465b01c308406ac8afc">ob_device_reset_default_depth_filter_config</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ab42b0fe1a5b23465b01c308406ac8afc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset depth filter config to device default define.  <a href="#ab42b0fe1a5b23465b01c308406ac8afc">More...</a><br /></td></tr>
+<tr class="separator:ab42b0fe1a5b23465b01c308406ac8afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Device-related functions, including operations such as obtaining and creating a device, setting and obtaining device property, and obtaining sensors. </p>
@@ -728,7 +737,7 @@ Functions</h2></td></tr>
 <p>Get the device extension information. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>Device Information </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>Device list object </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Device index </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
   </table>
@@ -2943,7 +2952,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the original parameter list of camera calibration saved on the device. </p>
-<dl class="section attention"><dt>Attention</dt><dd>The parameters in the list do not correspond to the current open-stream configuration.You need to select the parameters according to the actual situation, and may need to do scaling, mirroring and other processing. Non-professional users are recommended to use the <a class="el" href="Pipeline_8h.html#a0d90685efdd4b7fb7c6f6259c48769b2">ob_pipeline_get_camera_param()</a> interface.</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>The parameters in the list do not correspond to the current open-stream configuration.You need to select the parameters according to the actual situation, and may need to do scaling, mirroring and other processing. Non-professional users are recommended to use the <a class="el" href="Pipeline_8h.html#a0d90685efdd4b7fb7c6f6259c48769b2" title="Get current camera parameters. ">ob_pipeline_get_camera_param()</a> interface.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>The device object. </td></tr>
@@ -3988,10 +3997,123 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a40f676598f4affb100cabe462105c753"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ob_device_is_global_timestamp_supported </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the device supports global timestamp. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>The device object. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool Whether the device supports global timestamp. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae2a7fa577086d3d295e6a989e57b1c5c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_load_depth_filter_config </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load depth filter config from file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>The device object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file_path</td><td>Path of the config file. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab42b0fe1a5b23465b01c308406ac8afc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_reset_default_depth_filter_config </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset depth filter config to device default define. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>The device object. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 24 2023 10:56:17 for OrbbecSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 12 2024 13:57:05 for OrbbecSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

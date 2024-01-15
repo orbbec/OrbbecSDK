@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">OrbbecSDK
-   &#160;<span id="projectnumber">1.8.3</span>
+   &#160;<span id="projectnumber">1.9.3</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -153,6 +153,9 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a8049e3e75826e4873af2010058ad363a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structOBCameraParam.html">OBCameraParam</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Pipeline.html#a8049e3e75826e4873af2010058ad363a">getCameraParamWithProfile</a> (uint32_t colorWidth, uint32_t colorHeight, uint32_t depthWidth, uint32_t depthHeight)</td></tr>
 <tr class="memdesc:a8049e3e75826e4873af2010058ad363a"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回与输入的彩色传感器分辨率对应的支持 D2C 的深度传感器分辨率列表  <a href="#a8049e3e75826e4873af2010058ad363a">更多...</a><br /></td></tr>
 <tr class="separator:a8049e3e75826e4873af2010058ad363a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00979f7e3cbc390548287b350dfc07c7"><td class="memItemLeft" align="right" valign="top">OBCalibrationParam&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Pipeline.html#a00979f7e3cbc390548287b350dfc07c7">getCalibrationParam</a> (std::shared_ptr&lt; <a class="el" href="classob_1_1Config.html">Config</a> &gt; config)</td></tr>
+<tr class="memdesc:a00979f7e3cbc390548287b350dfc07c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取标定参数  <a href="#a00979f7e3cbc390548287b350dfc07c7">更多...</a><br /></td></tr>
+<tr class="separator:a00979f7e3cbc390548287b350dfc07c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d068c940a9d4c597c59f7f6f6e151b8"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1StreamProfileList.html">StreamProfileList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Pipeline.html#a9d068c940a9d4c597c59f7f6f6e151b8">getD2CDepthProfileList</a> (std::shared_ptr&lt; <a class="el" href="classob_1_1StreamProfile.html">StreamProfile</a> &gt; colorProfile, <a class="el" href="ObTypes_8h.html#ade914070120de80d4338ee74e73dc9d5">OBAlignMode</a> alignMode)</td></tr>
 <tr class="memdesc:a9d068c940a9d4c597c59f7f6f6e151b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回与输入颜色传感器分辨率相对应的启用 D2C 的深度传感器分辨率的列表  <a href="#a9d068c940a9d4c597c59f7f6f6e151b8">更多...</a><br /></td></tr>
 <tr class="separator:a9d068c940a9d4c597c59f7f6f6e151b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -538,6 +541,31 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a00979f7e3cbc390548287b350dfc07c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OBCalibrationParam ob::Pipeline::getCalibrationParam </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classob_1_1Config.html">Config</a> &gt;&#160;</td>
+          <td class="paramname"><em>config</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取标定参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>配置参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>OBCalibrationParam 返回标定参数 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a9d068c940a9d4c597c59f7f6f6e151b8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -681,7 +709,7 @@ Public 成员函数</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2023年 十一月 24日 星期五 10:56:17 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2024年 一月 12日 星期五 13:57:06 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

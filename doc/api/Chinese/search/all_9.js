@@ -1,7 +1,7 @@
 var searchData=
 [
   ['id',['id',['../structOBPropertyItem.html#ac8bdcd2e6ca56004b5e380356b293e2b',1,'OBPropertyItem']]],
-  ['impl_5f',['impl_',['../classob_1_1Filter.html#ac80715de348ec5eedcaa8eaf019b7587',1,'ob::Filter::impl_()'],['../classob_1_1Frame.html#a2683616ec8b3346cf9412051779b9721',1,'ob::Frame::impl_()'],['../classob_1_1Sensor.html#a5b82258d1cacac7162763da9298a4bb4',1,'ob::Sensor::impl_()'],['../classob_1_1StreamProfile.html#a666c4ae5317ebe38efb63833231ebdaa',1,'ob::StreamProfile::impl_()'],['../classob_1_1StreamProfileList.html#a24ceb6b2aa542cd316cee6c4ab2a15e7',1,'ob::StreamProfileList::impl_()']]],
+  ['impl_5f',['impl_',['../classob_1_1Device.html#affe52066e4c9993e4ed8bdf47fd15d48',1,'ob::Device::impl_()'],['../classob_1_1Filter.html#ac80715de348ec5eedcaa8eaf019b7587',1,'ob::Filter::impl_()'],['../classob_1_1Frame.html#a2683616ec8b3346cf9412051779b9721',1,'ob::Frame::impl_()'],['../classob_1_1Sensor.html#a5b82258d1cacac7162763da9298a4bb4',1,'ob::Sensor::impl_()'],['../classob_1_1StreamProfile.html#a666c4ae5317ebe38efb63833231ebdaa',1,'ob::StreamProfile::impl_()'],['../classob_1_1StreamProfileList.html#a24ceb6b2aa542cd316cee6c4ab2a15e7',1,'ob::StreamProfileList::impl_()']]],
   ['imutemp',['imuTemp',['../structOBDeviceTemperature.html#a216f0f34b5ff54e64f2674cd41fe90da',1,'OBDeviceTemperature']]],
   ['index',['index',['../classob_1_1Frame.html#a1001bd44f6b2a2eb0b4c4b7bb0f317f1',1,'ob::Frame']]],
   ['ipaddress',['ipAddress',['../classob_1_1DeviceInfo.html#a556966c9c65b4ed4484d985356a86c74',1,'ob::DeviceInfo::ipAddress()'],['../classob_1_1DeviceList.html#ae94682c089d204359c5928919d08b374',1,'ob::DeviceList::ipAddress()']]],
@@ -15,6 +15,7 @@ var searchData=
   ['is_5fir_5fframe',['is_ir_frame',['../ObTypes_8h.html#a52307266a1ca005dea6d7bfdb3ccfbb1',1,'ObTypes.h']]],
   ['is_5fir_5fsensor',['is_ir_sensor',['../ObTypes_8h.html#ac1b4daef79e8a8397f52a942f498cd83',1,'ObTypes.h']]],
   ['is_5fir_5fstream',['is_ir_stream',['../ObTypes_8h.html#a5435c1aa7d509966d116971db508f303',1,'ObTypes.h']]],
+  ['isglobaltimestampsupported',['isGlobalTimestampSupported',['../classob_1_1Device.html#adeb33fac92905821f2038f0464a6b31b',1,'ob::Device']]],
   ['isirframe',['isIRFrame',['../ObTypes_8h.html#aabb66472b1e9671d71c8485b939fabb1',1,'ObTypes.h']]],
   ['isirsensor',['isIRSensor',['../ObTypes_8h.html#a042d71df32e7c35791f4ea02c2b39b74',1,'ObTypes.h']]],
   ['isirstream',['isIRStream',['../ObTypes_8h.html#aef6685c44da8eac31e856f397de1afd3',1,'ObTypes.h']]],

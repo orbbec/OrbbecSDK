@@ -19,6 +19,7 @@ var searchData=
   ['setdevicestatechangedcallback',['setDeviceStateChangedCallback',['../classob_1_1Device.html#acb598f9726aafc210c7fb01774065172',1,'ob::Device']]],
   ['setfloatproperty',['setFloatProperty',['../classob_1_1Device.html#a7c822d67da621031f270fe2644f4bf83',1,'ob::Device']]],
   ['setformatconverttype',['setFormatConvertType',['../classob_1_1FormatConvertFilter.html#ae926aab90a92ef2793ddd06e938bd62e',1,'ob::FormatConvertFilter']]],
+  ['setframeaggregateoutputmode',['setFrameAggregateOutputMode',['../classob_1_1Config.html#ae055f1434f00a26404116c40dbc6e118',1,'ob::Config']]],
   ['setframealignstate',['setFrameAlignState',['../classob_1_1PointCloudFilter.html#a980dc4e7ae1340245cd7fa4379420bf4',1,'ob::PointCloudFilter']]],
   ['setframedevicetimestamp',['setFrameDeviceTimestamp',['../classob_1_1FrameHelper.html#a5c94cdce84c1b9e577be58501133dc3d',1,'ob::FrameHelper']]],
   ['setframedevicetimestampus',['setFrameDeviceTimestampUs',['../classob_1_1FrameHelper.html#aa83b48c0ce3f5ab179f8e5aa2bbfd003',1,'ob::FrameHelper']]],

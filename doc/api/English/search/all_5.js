@@ -21,5 +21,6 @@ var searchData=
   ['error_2eh',['Error.h',['../Error_8h.html',1,'']]],
   ['error_2ehpp',['Error.hpp',['../Error_8hpp.html',1,'']]],
   ['exception_5ftype',['exception_type',['../structob__error.html#a7b17d1e49619022689d546255cce5dec',1,'ob_error']]],
-  ['extensioninfo',['extensionInfo',['../classob_1_1DeviceInfo.html#afb3fed1a79f612e83c9a0c06697bbc5b',1,'ob::DeviceInfo']]]
+  ['extensioninfo',['extensionInfo',['../classob_1_1DeviceInfo.html#afb3fed1a79f612e83c9a0c06697bbc5b',1,'ob::DeviceInfo']]],
+  ['extrinsics',['extrinsics',['../structOBCalibrationParam.html#ae24cdd63b68ce88b2cd6024588b69d16',1,'OBCalibrationParam']]]
 ];

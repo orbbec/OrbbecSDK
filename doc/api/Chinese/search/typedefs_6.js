@@ -86,7 +86,7 @@ var searchData=
   ['ob_5fstream_5fprofile',['ob_stream_profile',['../ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441',1,'ObTypes.h']]],
   ['ob_5fstream_5fprofile_5flist',['ob_stream_profile_list',['../ObTypes_8h.html#a563dd4686a4630bca388a41919cdb369',1,'ObTypes.h']]],
   ['ob_5fstream_5ftype',['ob_stream_type',['../ObTypes_8h.html#aa798b202d6ea1fe688ceaaa5dd1c42fe',1,'ObTypes.h']]],
-  ['ob_5fsync_5fmode',['OB_SYNC_MODE',['../ObTypes_8h.html#a20cc9f8d86fe5be3ca8c290dd6ba7534',1,'OB_SYNC_MODE():&#160;ObTypes.h'],['../ObTypes_8h.html#a79ec8efcd7e85cd704ea5769ad9007b0',1,'ob_sync_mode():&#160;ObTypes.h']]],
+  ['ob_5fsync_5fmode',['ob_sync_mode',['../ObTypes_8h.html#a79ec8efcd7e85cd704ea5769ad9007b0',1,'ob_sync_mode():&#160;ObTypes.h'],['../ObTypes_8h.html#a20cc9f8d86fe5be3ca8c290dd6ba7534',1,'OB_SYNC_MODE():&#160;ObTypes.h']]],
   ['ob_5ftof_5fexposure_5fthreshold_5fcontrol',['ob_tof_exposure_threshold_control',['../ObTypes_8h.html#aecbdc962795b976d7b98b0eae8b5053f',1,'ObTypes.h']]],
   ['ob_5ftof_5ffilter_5frange',['ob_tof_filter_range',['../ObTypes_8h.html#af39ef692865a5407a8838ebb113fc04b',1,'ObTypes.h']]],
   ['ob_5fupgrade_5fstate',['ob_upgrade_state',['../ObTypes_8h.html#ae49f2b6eb08afabe0ca4d65169897113',1,'ObTypes.h']]],

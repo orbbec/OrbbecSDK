@@ -30,7 +30,7 @@ Data rendering relies on the third-party library OpenCV. Here we take OpenCV 4.3
 
 ![4](Image/orbbec_opencv_003.png)
 
-## 3. metadata (timestamp) registration
+## 3. metadata(timestamp) registration
 
 Now due to the Windows system mechanism, for UVC protocol devices, if you need to obtain metadata information such as timestamps, you need to first register in the registry. Using obsensor_metadata_win10.md document guide to complete the registry registration.
 
@@ -163,7 +163,6 @@ VID: 2bc5 PID: 0636 (depth camera)
 ## 5. Linux Sample compile
 
 Create a build directory in the Examples directory, as follows:
-
 ![image17](Image/orbbec_sample_linux_003.png)
 
 ``` bash

@@ -13,6 +13,7 @@ var searchData=
   ['recordplayback_2eh',['RecordPlayback.h',['../RecordPlayback_8h.html',1,'']]],
   ['recordplayback_2ehpp',['RecordPlayback.hpp',['../RecordPlayback_8hpp.html',1,'']]],
   ['reset',['reset',['../classob_1_1Filter.html#aedb9c713b865dba8d0ae96a85737390d',1,'ob::Filter']]],
+  ['resetdefaultdepthfilterconfig',['resetDefaultDepthFilterConfig',['../classob_1_1Device.html#a7c673fdd82aa383d34b5f252ec24f75a',1,'ob::Device']]],
   ['rgbdistortion',['rgbDistortion',['../structOBCameraParam.html#a0629e0ee848fc0b6a1ded5ac64166235',1,'OBCameraParam::rgbDistortion()'],['../structOBCameraParam__V0.html#a8d49ffcb10562873b29c60864e512474',1,'OBCameraParam_V0::rgbDistortion()']]],
   ['rgbintrinsic',['rgbIntrinsic',['../structOBCameraParam.html#acc6d8df18c5216e8e1bd6188ed68d47e',1,'OBCameraParam::rgbIntrinsic()'],['../structOBCameraParam__V0.html#a9f9eeb405b3c19bc1c9422ae32474f7d',1,'OBCameraParam_V0::rgbIntrinsic()']]],
   ['rgbtemp',['rgbTemp',['../structOBDeviceTemperature.html#af3e639159fffb2171c01381db38527e8',1,'OBDeviceTemperature']]],

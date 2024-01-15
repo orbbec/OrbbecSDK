@@ -9,5 +9,6 @@ var searchData=
   ['deviceid',['deviceId',['../structOBDeviceSyncConfig.html#a793d1603876f061fc3ab0c26131e73ff',1,'OBDeviceSyncConfig']]],
   ['devicetriggersignaloutdelay',['deviceTriggerSignalOutDelay',['../structOBDeviceSyncConfig.html#acd2b333bb455fc6c6a716e16ae6e8bba',1,'OBDeviceSyncConfig']]],
   ['devicetriggersignaloutpolarity',['deviceTriggerSignalOutPolarity',['../structOBDeviceSyncConfig.html#a5e36a59f45da629155068a69dc8d7959',1,'OBDeviceSyncConfig']]],
-  ['dhcp',['dhcp',['../structOBNetIpConfig.html#a3de2c46f23cb239f849d0b3a3fabc337',1,'OBNetIpConfig']]]
+  ['dhcp',['dhcp',['../structOBNetIpConfig.html#a3de2c46f23cb239f849d0b3a3fabc337',1,'OBNetIpConfig']]],
+  ['distortion',['distortion',['../structOBCalibrationParam.html#ab7bf5f50e9aa26ba9cd2710685bd5628',1,'OBCalibrationParam']]]
 ];
