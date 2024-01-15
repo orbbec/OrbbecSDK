@@ -104,7 +104,7 @@ cd OrbbecSDK/build/bin # build output dir
 ```
 The following image is the result of running MultiStream on the Gemini2 device. Other Devices run result maybe different.
 
-![Multistream](doc/resources/Multistream.png)
+![Multistream](doc/resources/MultiStream.png)
 
 Notes:
 On the Linux/Arm platform ,this sample requires users to compile with Opencv4.2 or above,otherwise, it cannot be rendered.
