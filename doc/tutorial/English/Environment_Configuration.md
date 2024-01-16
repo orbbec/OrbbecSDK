@@ -170,4 +170,14 @@ cd build
 cmake ..
 make
 ```
-
+# MacOS
+### Compile and run the sample
+```bash
+cd OrbbecSDK
+mkdir build
+cd build
+cmake .. && make -j8
+make install
+cd install/bin
+sudo ./OBHelloOrbbec
+```
