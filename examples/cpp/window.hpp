@@ -38,7 +38,15 @@ class Window {
 public:
     // create a window with the specified name, width and height
     Window(std::string name, int width, int height, RenderType renderType_ = RENDER_SINGLE)
-        : name_(name), width_(width), height_(height), windowClose_(false), key_(-1), showInfo_(false), renderType_(renderType_), alpha_(0.6) {
+        : name_(name),
+          width_(width),
+          height_(height),
+          windowClose_(false),
+          threadExit_(false),
+          key_(-1),
+          showInfo_(false),
+          renderType_(renderType_),
+          alpha_(0.6) {
         processThread_ = std::thread(&Window::processFrames, this);
 #ifndef __APPLE__
         renderThread_ = std::thread(&Window::renderMats, this);
@@ -78,6 +86,7 @@ public:
             return;
         }
         windowClose_ = true;
+        threadExit_  = true;
         srcFramesCv_.notify_all();
         processThread_.join();
 #ifndef __APPLE__
@@ -99,7 +108,7 @@ public:
 #ifdef __APPLE__
         render();
 #endif
-        return !windowClose_;
+        return !threadExit_;
     }
 
     // set show frame info
@@ -124,6 +133,7 @@ private:
     int         width_;
     int         height_;
     bool        windowClose_;
+    bool        threadExit_;
     bool        showInfo_;
     float       alpha_;
 
@@ -149,11 +159,11 @@ private:
         cv::Mat                                 imuMat;
         cv::Mat                                 rstMat;
         std::vector<std::shared_ptr<ob::Frame>> frames;
-        while(!windowClose_) {
+        while(!threadExit_) {
             {
                 std::unique_lock<std::mutex> lk(srcFramesMtx_);
-                srcFramesCv_.wait(lk, [this] { return !srcFrames_.empty() || windowClose_; });
-                if(windowClose_) {
+                srcFramesCv_.wait(lk, [this] { return !srcFrames_.empty() || threadExit_; });
+                if(threadExit_) {
                     break;
                 }
                 frames = srcFrames_;
@@ -323,7 +333,7 @@ private:
             keyCv_.notify_all();
 
             if(key == ESC_KEY) {
-                windowClose_ = true;
+                threadExit_ = true;
                 srcFramesCv_.notify_all();
             }
         }
@@ -439,7 +449,7 @@ private:
         cv::namedWindow(name_, cv::WINDOW_NORMAL | cv::WINDOW_KEEPRATIO);
         cv::resizeWindow(name_, width_, height_);
 
-        while(!windowClose_) {
+        while(!threadExit_) {
             render();
         }
     }
