@@ -125,7 +125,7 @@ target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 
 * Github：[https://orbbec.github.io/OrbbecSDK/](https://orbbec.github.io/OrbbecSDK/README_CN)
 * API 参考: [doc/api/Chinese/index.html](https://orbbec.github.io/OrbbecSDK/doc/api/Chinese/index.html)
-* OrbbecSDK C++ API user guide：[doc/tutorial/Chinese/OrbbecSDK_C++_API_user_guide-v1.0.pdf](https://orbbec.github.io/OrbbecSDK/doc/api/Chinese/OrbbecSDK_C++_API_user_guide-v1.0.pdf)
+* OrbbecSDK C++ API user guide：[doc/tutorial/Chinese/OrbbecSDK_C++_API_user_guide-v1.0.pdf](https://orbbec.github.io/OrbbecSDK/doc/tutorial/Chinese/OrbbecSDK_C++_API_user_guide-v1.0.pdf)
 * Environment Configuration：[doc/tutorial/Chinese/Environment_Configuration.md](doc/tutorial/Chinese/Environment_Configuration.md)
 * 示例说明: [examples/README.md](examples/README_CN.md)
 * 示例描述: [doc/tutorial/Chinese/Code_Sample_Description/Sample_Description(C_C++).md](doc/tutorial/Chinese/Code_Sample_Description/Sample_Description(C_C++).md)
