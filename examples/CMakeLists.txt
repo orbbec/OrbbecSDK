@@ -24,3 +24,9 @@ endif()
 
 add_subdirectory(c)
 add_subdirectory(cpp)
+
+install(DIRECTORY
+  ${OrbbecSDK_LIBS_DIR}/ DESTINATION
+  bin
+  FILES_MATCHING PATTERN "*.dll" PATTERN "*.so" PATTERN "*.dylib"
+  )
