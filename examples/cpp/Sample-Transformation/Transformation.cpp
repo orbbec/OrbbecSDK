@@ -1,6 +1,8 @@
 #include "libobsensor/ObSensor.hpp"
 #include <fstream>
 #include <iostream>
+#include <cstring>
+using namespace std;
 #include <libobsensor/hpp/Utils.hpp>
 using namespace ob;
 
