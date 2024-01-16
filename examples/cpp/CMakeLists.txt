@@ -8,6 +8,7 @@ add_subdirectory(Sample-ImuReader)
 add_subdirectory(Sample-DepthWorkMode)
 add_subdirectory(Sample-HotPlugin)
 add_subdirectory(Sample-FirmwareUpgrade)
+add_subdirectory(Sample-Transformation)
 
 # opencv required
 if(${OpenCV_FOUND})
