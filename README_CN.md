@@ -25,7 +25,7 @@ Windows 10, Ubuntu 16.04/18.04/20.04, ARM Linux 32/64 bit (Raspberry Pi 4B, Jets
 | **产品列表** | **固件版本** |
 | --- | --- |
 | Femto Bolt       | 1.0.6  (unsupported ARM32) |
-| Femto Mega       | 1.1.7  (support window10、ubuntu20.04、ubuntu22.04、Arm64(AGX orin, orin NX, orin nano))  |
+| Femto Mega       | 1.1.7  (support window10、ubuntu20.04 and above、Arm64(AGX orin, orin NX, orin nano)、MacOS)  |
 | Gemini 2 XL      | Obox: V1.2.5  VL:1.4.54    |
 | Astra 2          | 2.8.20                     |
 | Gemini 2 L       | 1.4.32                     |
@@ -125,7 +125,8 @@ target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 
 * Github：[https://orbbec.github.io/OrbbecSDK/](https://orbbec.github.io/OrbbecSDK/README_CN)
 * API 参考: [doc/api/Chinese/index.html](https://orbbec.github.io/OrbbecSDK/doc/api/Chinese/index.html)
-* 教程: 请参考'doc/tutorial'目录.
+* OrbbecSDK C++ API user guide：[doc/tutorial/Chinese/OrbbecSDK_C++_API_user_guide-v1.0.pdf](https://orbbec.github.io/OrbbecSDK/doc/api/Chinese/OrbbecSDK_C++_API_user_guide-v1.0.pdf)
+* Environment Configuration：[doc/tutorial/Chinese/Environment_Configuration.md](doc/tutorial/Chinese/Environment_Configuration.md)
 * 示例说明: [examples/README.md](examples/README_CN.md)
 
 
