@@ -115,7 +115,7 @@ int depthPointCloudTransformation(std::shared_ptr<ob::Device> device, int number
 
                 for(uint32_t i = 0; i < height; i++) {
                     for(uint32_t j = 0; j < width; j++) {
-                        OBPoint2f sourcePixel = { j, i };
+                        OBPoint2f sourcePixel = { static_cast<float >(j), static_cast<float>(i) };
                         OBPoint3f targetPixel = {};
                         float     depthValue  = (float)pDepthData[i * width + j];
 
@@ -154,7 +154,7 @@ int depthPointCloudTransformation(std::shared_ptr<ob::Device> device, int number
 
                 for(uint32_t i = 0; i < height; i++) {
                     for(uint32_t j = 0; j < width; j++) {
-                        OBPoint2f sourcePixel = { j, i };
+                        OBPoint2f sourcePixel = { static_cast<float>(j), static_cast<float>(i) };
                         OBPoint3f targetPixel = {};
                         float     depthValue  = (float)pDepthData[i * width + j];
 
