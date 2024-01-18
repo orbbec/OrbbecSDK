@@ -16,10 +16,10 @@ Additionally, this SDK is compatible with Orbbec's original OpenNI protocol devi
 
 ## Platform support
 
-*Windows 10
-*Ubuntu 16.04/18.04/20.04
-*ARM Linux 32/64 bit (Raspberry Pi 4B, Jetson Nano, A311D, AGX orin, orin NX, orin nano etc.)
-*MacOS (intel x86 version 10.15 and above, M Serial version 11.0 and above)
+*Windows 10*
+*Ubuntu 16.04/18.04/20.04*
+*ARM Linux 32/64 bit (Raspberry Pi 4B, Jetson Nano, A311D, AGX orin, orin NX, orin nano etc.)*
+*MacOS (intel x86 version 10.15 and above, M Serial version 11.0 and above)*
 
 *Windows 11, Ubuntu 22.04 and other Linux platforms may also be supported, but have not been fully tested.*
 
