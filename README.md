@@ -16,12 +16,16 @@ Additionally, this SDK is compatible with Orbbec's original OpenNI protocol devi
 
 ## Platform support
 
-*Windows 10*
-*Ubuntu 16.04/18.04/20.04*
-*ARM Linux 32/64 bit (Raspberry Pi 4B, Jetson Nano, A311D, AGX orin, orin NX, orin nano etc.)*
-*MacOS (intel x86 version 10.15 and above, M Serial version 11.0 and above)*
+| Operating system | Requirement                                                  | Description |
+| --- | --- | --- |
+| Windows | - Windows 10 April 2018 (version 1803, operating system build 17134) release (x64) or higher<br /> | The generation of the VS project depends on the installation of the VS version and the cmake version, and supports VS2015/vs2017/vs2019 |
+| Linux | - Linux Ubuntu 16.04/18.04/20.04 (x64)<br />|Support GCC 7.5|
+| Arm32|- Linux Ubuntu 16.04/18.04/20.04<br /> |  Support GCC 7.5 |
+| Arm64 |- Linux Ubuntu 18.04/20.04<br /> |  Support GCC 7.5 |
+| MacOS |- M series chip, 11.0 and above、intel x86 chip, 10.15 and above. <br /> |  supported hardware products: Gemini 2, Gemini 2 L, Astra 2,Gemini 2 XL, Femto Mega |
 
-*Windows 11, Ubuntu 22.04 and other Linux platforms may also be supported, but have not been fully tested.*
+* Note: supported Arm platforms: jestson nano (arm64)、 AGX Orin(arm64)、Orin NX (arm64)、Orin Nano(arm64)、A311D (arm64), Raspberry Pi 4 (arm64), Raspberry Pi 3 (arm32), rk3399 (arm64), other Arm systems, may need to Cross-compile.
+* Windows 11, Ubuntu 22.04 and other Linux platforms may also be supported, but have not been fully tested.
 
 ## Product support
 
