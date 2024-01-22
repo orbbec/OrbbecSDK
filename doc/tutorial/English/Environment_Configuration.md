@@ -171,6 +171,27 @@ cmake ..
 make
 ```
 # MacOS
+
+### Install Xcode and Homebrew
+1. **Install Xcode**:
+   - Xcode is the official development tool provided by Apple, which includes the C++ compiler.
+   - You can download it for free from the Mac App Store.
+   - Installing Xcode will also install the Command Line Tools, which include the GCC compiler and other development tools.
+
+2. **Install Homebrew**:
+   - Homebrew is a package manager for macOS, useful for installing various development tools and libraries.
+   - To install Homebrew, execute the following command in the terminal:
+     ```bash
+     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+     ```
+   - With Homebrew, you can easily install other development tools, like Git.
+
+These steps will set up the fundamental tools needed for C++ development on macOS.
+
+### Install Dependency
+```bash
+brew install cmake opencv
+```
 ### Compile and run the sample
 ```bash
 cd OrbbecSDK
