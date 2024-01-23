@@ -24,7 +24,7 @@ OrbbecViewer工具专为最终用户/开发人员设计，用于使用Orbbec SDK
 | 区域二 | 控制面板区 | 数据流开关及参数配置、图像采集功能控制、D2C功能控制、点云控制 |
 | 区域三 | 图像预览区 | 传感器图像预览，帧率、时间戳等|
 
-![](images\OrbbecViewer.png)
+![OrbbecViewer](images/OrbbecViewer.png)
 其中，控制面板区左侧有六个按钮，最下方按钮![image14](images/language_button.png)用于切换中英文；![image15](images/info_button.png)用于打开软件详情页面。
 ![image16](images/device_info_button.png)用于查看设备信息和固件升级；剩下两个按钮用于切换不同功能的控制面板TAB页，从上往下一次为“相机控制”、“高级模式”。
 
@@ -34,7 +34,7 @@ OrbbecViewer 允许用户选择和配置深度、红外和彩色数据流。本�
 
 OrbbecViewer工具允许用户选择深度、红外和彩色数据流组合。
 
-![OrbbecViewer-1](images\OrbbecViewer-2.png)
+![OrbbecViewer2](images/OrbbecViewer-2.png) 
 
 ### 分辨率与帧率
 摄像机为用户提供了多种分辨率可供选择，以满足他们的解决方案需求。各路数据流都提供了多种可选的帧格式，以供用户自由选择合适的图像尺寸、图像格式和帧率组合。
