@@ -32,8 +32,8 @@ Orbbec 3D 相机产品软件开发套件，全面支持 UVC，实现免驱动即
 
 | **产品列表** | **固件版本** |
 | --- | --- |
-| Femto Bolt       | 1.0.6  (unsupported ARM32) |
-| Femto Mega       | 1.1.7  (support window10、ubuntu20.04 and above、Arm64(AGX orin, orin NX, orin nano)、MacOS)  |
+| Femto Bolt       | 1.0.6/1.0.9   |
+| Femto Mega       | 1.1.7/1.2.7   |
 | Gemini 2 XL      | Obox: V1.2.5  VL:1.4.54    |
 | Astra 2          | 2.8.20                     |
 | Gemini 2 L       | 1.4.32                     |
@@ -59,6 +59,8 @@ OrbbecViewer是一个基于Orbbec SDK的实用工具，用于查看来自Orbbec�
 **支持平台**: Windows x64, Linux x64&ARM64
 
 **下载链接**: [Releases](https://github.com/orbbec/OrbbecSDK/releases)
+
+**OrbbecViewer使用说明**: ![OrbbecViewer User Manual](https://orbbec.github.io/OrbbecSDK/doc/OrbbecViewer/Chinese/OrbbecViewer.md)
 
 
 ## 快速开始

@@ -60,6 +60,8 @@ OrbbecViewer is a useful tool based on Orbbec SDK，that can be used to view the
 
 **Download link**: [Releases](https://github.com/orbbec/OrbbecSDK/releases)
 
+**OrbbecViewer User Manual**: ![OrbbecViewer User Manual](https://orbbec.github.io/OrbbecSDK/doc/OrbbecViewer/English/OrbbecViewer.md)
+
 
 ## Getting started
 
