@@ -60,7 +60,7 @@ OrbbecViewer是一个基于Orbbec SDK的实用工具，用于查看来自Orbbec�
 
 **下载链接**: [Releases](https://github.com/orbbec/OrbbecSDK/releases)
 
-**OrbbecViewer使用说明**: [OrbbecViewerUserManual](doc/OrbbecViewer/Chinese/OrbbecViewer.md)
+**OrbbecViewer使用说明**: [OrbbecViewer User Manual](doc/OrbbecViewer/Chinese/OrbbecViewer.md)
 
 
 ## 快速开始

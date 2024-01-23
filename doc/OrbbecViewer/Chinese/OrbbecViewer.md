@@ -34,7 +34,7 @@ OrbbecViewer 允许用户选择和配置深度、红外和彩色数据流。本�
 
 OrbbecViewer工具允许用户选择深度、红外和彩色数据流组合。
 
-![OrbbecViewer-1](images\OrbbecViewer_1.png)
+![OrbbecViewer-1](images\OrbbecViewer-2.png)
 
 ### 分辨率与帧率
 摄像机为用户提供了多种分辨率可供选择，以满足他们的解决方案需求。各路数据流都提供了多种可选的帧格式，以供用户自由选择合适的图像尺寸、图像格式和帧率组合。
