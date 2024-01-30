@@ -5,6 +5,6 @@ includedir=${prefix}/include
 
 Name: OrbbecSDK
 Description:  OrbbecSDK is a comprehensive library that provides developers with intuitive interfaces to control and manipulate Orbbec cameras seamlessly.
-Version: 1.6.3
+Version: 1.9.4
 Libs: -L${libdir} -lOrbbecSDK
 Cflags: -I${includedir}

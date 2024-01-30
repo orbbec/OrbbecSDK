@@ -147,3 +147,4 @@ target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 
 * [奥比中光主页](https://www.orbbec.com.cn/)
 * [3D 视觉开发者社区](https://developer.orbbec.com.cn/)
+* [gitee 仓库](https://gitee.com/orbbecdeveloper/OrbbecSDK)
