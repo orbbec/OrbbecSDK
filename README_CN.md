@@ -1,6 +1,6 @@
 # OrbbecSDK
 
-![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.9.3-green)
+![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.9.4-green)
 
 Orbbec 3D 相机产品软件开发套件，全面支持 UVC，实现免驱动即插即用，提供低层和高层简单易用的 API，帮助开发者在不同场景下灵活使用。
 
@@ -134,6 +134,7 @@ target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 ## 文档
 
 * Github：[https://orbbec.github.io/OrbbecSDK/](https://orbbec.github.io/OrbbecSDK/README_CN)
+* 概述文档：[doc/tutorial/Chinese/OverviewDocument.md](doc/tutorial/Chinese/OverviewDocument.md)
 * API 参考: [doc/api/Chinese/index.html](https://orbbec.github.io/OrbbecSDK/doc/api/Chinese/index.html)
 * OrbbecSDK C++ API user guide：[doc/tutorial/Chinese/OrbbecSDK_C++_API_user_guide-v1.0.pdf](https://orbbec.github.io/OrbbecSDK/doc/tutorial/Chinese/OrbbecSDK_C++_API_user_guide-v1.0.pdf)
 * Environment Configuration：[doc/tutorial/Chinese/Environment_Configuration.md](doc/tutorial/Chinese/Environment_Configuration.md)
@@ -141,7 +142,9 @@ target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 * 示例描述: [doc/tutorial/Chinese/Code_Sample_Description/Sample_Description(C_C++).md](doc/tutorial/Chinese/Code_Sample_Description/Sample_Description(C_C++).md)
 
 
+
 ## 相关链接
 
 * [奥比中光主页](https://www.orbbec.com.cn/)
 * [3D 视觉开发者社区](https://developer.orbbec.com.cn/)
+* [gitee 仓库](https://gitee.com/orbbecdeveloper/OrbbecSDK)

@@ -1,6 +1,6 @@
 # Orbbec SDK
 
-![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.9.3-green)
+![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.9.4-green)
 
 The Orbbec 3D camera product software development kit fully supports UVC, enabling driver-free plug-and-play. It provides both low-level and high-level APIs that are simple and easy to use, allowing developers to use it flexibly in different scenarios.
 
@@ -149,6 +149,7 @@ target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 ## Documents
 
 * Github Pages：[https://orbbec.github.io/OrbbecSDK/](https://orbbec.github.io/OrbbecSDK/)
+* Overview Document：[doc/tutorial/English/OverviewDocument.md](doc/tutorial/English/OverviewDocument.md)
 * API Reference: [doc/api/English/index.html](https://orbbec.github.io/OrbbecSDK/doc/api/English/index.html)
 * OrbbecSDK C++ API user guide：[doc/tutorial/English/OrbbecSDK_C++_API_user_guide-v1.0.pdf](https://orbbec.github.io/OrbbecSDK/doc/tutorial/English/OrbbecSDK_C++_API_user_guide-v1.0.pdf)
 * Environment Configuration：[doc/tutorial/English/Environment_Configuration.md](doc/tutorial/English/Environment_Configuration.md)
@@ -160,3 +161,4 @@ target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 * [Orbbec SDK Repo](https://github.com/orbbec/OrbbecSDK)
 * [Orbbec Main Page](https://www.orbbec.com/)
 * [Orbbec 3D Club](https://3dclub.orbbec3d.com)
+* [gitee Repo](https://gitee.com/orbbecdeveloper/OrbbecSDK)
