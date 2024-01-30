@@ -4,7 +4,7 @@ Welcome to the Orbbec SDK (hereinafter referred to as "SDK") tutorial! The SDK n
 # Features
 Orbbec SDK is a cross-platform (Windows, Android, Linux) software development kit that provides device parameter configuration, data stream reading and stream processing for 3D sensing cameras such as Orbbec structured light, binocular, and iToF.
 
-**Core functions: **
+**Core functions:**
 
 - Depth camera access and related parameter settings 
 - RGB camera access and related parameter settings (eg exposure and white balance) 
