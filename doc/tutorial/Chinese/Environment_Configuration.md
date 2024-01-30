@@ -162,6 +162,45 @@ make
 ```
 
 
+# Mac 环境配置
+
+### 安装 Xcode 和 Homebrew
+
+1. **安装 Xcode**:
+
+   - Xcode 是Apple提供的官方开发工具，其中包含C++编译器.
+   - 您可以从 Mac App Store 免费下载.
+   - 安装Xcode还将安装命令行工具，其中包括GCC编译器和其他开发工具.
+2. **安装 Homebrew**:
+
+   - Homebrew 是 macOS 的包管理器，可用于安装各种开发工具和库.
+   - 安装 Homebrew，请在终端中执行以下命令:
+     ```bash
+     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+     ```
+   - 使用 Homebrew，您可以轻松安装其他开发工具，例如 Git.
+
+这些步骤将设置在 macOS 上进行 C++ 开发所需的基本工具.
+
+### 安装依赖项
+
+```bash
+brew install cmake opencv
+```
+
+### 编译并运行示例
+
+```bash
+cd OrbbecSDK
+mkdir build
+cd build
+cmake .. && make -j8
+make install
+cd install/bin
+sudo ./OBHelloOrbbec
+```
+
+
 # 常见 FAQ
 
 [常见问题 FAQ](https://developer.orbbec.com.cn/technical_library.html?id=59)
