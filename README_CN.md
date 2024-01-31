@@ -6,6 +6,8 @@ Orbbec 3D 相机产品软件开发套件，全面支持 UVC，实现免驱动即
 
 此外，该 SDK 通过内置代码兼容 Orbbec 原有的 OpenNI 协议设备，开发者可以完全迁移到 OrbbecSDK，一套代码即可支持 Orbbec 的新一代产品和老产品。
 
+如果你是中国的用户，建议使用 Gitee([gitee Repo](https://gitee.com/orbbecdeveloper/OrbbecSDK))。
+
 ## 本仓库包含内容
 
 * **library** : OrbbecSDK 核心库文件和 C/C++ 头文件。
@@ -147,4 +149,3 @@ target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 
 * [奥比中光主页](https://www.orbbec.com.cn/)
 * [3D 视觉开发者社区](https://developer.orbbec.com.cn/)
-* [gitee 仓库](https://gitee.com/orbbecdeveloper/OrbbecSDK)

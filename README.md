@@ -6,6 +6,9 @@ The Orbbec 3D camera product software development kit fully supports UVC, enabli
 
 Additionally, this SDK is compatible with Orbbec's original OpenNI protocol devices through built-in code, enabling developers to migrate to Orbbec SDK to support both new and old products with one set of code.
 
+
+If you are a user in China, it is recommended to use Gitee([gitee Repo](https://gitee.com/orbbecdeveloper/OrbbecSDK)).
+
 ## What is included in the repository
 
 * **library** : Orbbec SDK core library files and C/C++ header files.
@@ -161,4 +164,3 @@ target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 * [Orbbec SDK Repo](https://github.com/orbbec/OrbbecSDK)
 * [Orbbec Main Page](https://www.orbbec.com/)
 * [Orbbec 3D Club](https://3dclub.orbbec3d.com)
-* [gitee Repo](https://gitee.com/orbbecdeveloper/OrbbecSDK)
