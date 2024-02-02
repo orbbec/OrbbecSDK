@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1.15)
-project(OrbbecSDK VERSION 1.9.3 LANGUAGES C CXX)
+project(OrbbecSDK VERSION 1.9.4 LANGUAGES C CXX)
 
 # Determine host platform
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/DetermineHostPlatform.cmake)
@@ -94,6 +94,18 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})  # project is used 
         "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDKConfigVersion.cmake"
         DESTINATION lib/
     )
+    # OrbbecSDK.pc.in
+    if((UNIX))
+    configure_file(
+        "${CMAKE_CURRENT_SOURCE_DIR}/OrbbecSDK.pc.in"
+        "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDK.pc"
+        @ONLY
+    )
+    install(FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDK.pc"
+        DESTINATION lib/pkgconfig/
+    )
+    endif()
 
     # Uninstall target
     include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/UninstallTarget.cmake)
