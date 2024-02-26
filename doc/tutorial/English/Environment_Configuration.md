@@ -1,4 +1,5 @@
 <!-- 本文档面向开发者 -->
+
 # introduction
 
 This document introduces the installation of OrbbecSDK dependencies and the compilation instructions of OrbbecSDK Sample.
@@ -41,9 +42,7 @@ Now due to the Windows system mechanism, for UVC protocol devices, if you need t
 Software dependency: VisualStudio2019, cmake 3.10 and above.
 
 * Download OrbbecSDK software package. Take version 1.5.7 as an example to explain how Windows compiles.
-
 * Open Cmake and set the "Examples" folder as the code path, and the "build" folder under "Examples" as the path to generate the binary file, as shown in the figure below. If there is no build under Examples, you need to create a new folder.
-
 
 ![6](Image/orbbec_sample_005.png)
 
@@ -70,14 +69,10 @@ Method 2: In the folder, directly start the Visual Studio project in Examples/bu
 ![11](Image/orbbec_sample_010.png)
 
 * Select the project you want to run, right click and "set as startup project", select release and 64-bit version at the run option.
-
-
 * Connect the device to the host
-
 * Copy the dll files from the bin directory of the Examples folder to the build folder where the generated executables located at.
-![13](Image/orbbec_sample_013.png)
-
-*  run the HelloOrbbec project
+  ![13](Image/orbbec_sample_013.png)
+* run the OBHelloOrbbec project
 
 ![14](Image/orbbec_sample_014.png)
 
@@ -87,27 +82,26 @@ Method 2: In the folder, directly start the Visual Studio project in Examples/bu
 
 * Install libudev library:
 
-    ``` bash
-    sudo apt install libudev-dev
-    ```
-
+  ```bash
+  sudo apt install libudev-dev
+  ```
 * Install libusb library:
 
-    ``` bash
-    sudo apt install libusb-dev
-    ```
+  ```bash
+  sudo apt install libusb-dev
+  ```
 
 ## 2. USB access rights configuration
 
-By default, direct access to USB devices in Linux systems requires root privileges, which can be resolved through the rules configuration file. After the files released by OrbbecSDK are decompressed, there will be a "99-obsensor-libusb.rules" configuration file and "install.sh" installation script in the Script directory.
+By default, direct access to USB devices in Linux systems requires root privileges, which can be resolved through the rules configuration file. After the files released by OrbbecSDK are decompressed, there will be a "99-obsensor-libusb.rules" configuration file and "install_udev_rules.sh" installation script in the Script directory.
 
 ![20](Image/orbbec_sample_linux_001.png)
-Run the "install.sh" script through the sudo command to complete the rules Installation of configuration files.
+Run the "install_udev_rules.sh" script through the sudo command to complete the rules Installation of configuration files.
 
-``` bash
-sudo chmod +x ./install.sh
-sudo ./install.sh
- ```
+```bash
+sudo chmod +x ./install_udev_rules.sh
+sudo ./install_udev_rules.sh
+```
 
 ## 3. Increasing the USBFS buffer size (Optional)
 
@@ -121,7 +115,7 @@ cat /sys/module/usbcore/parameters/usbfs_memory_mb
 
 ### Increase the USBFS buffer size until the next reboot (here: example value 128)
 
-``` bash
+```bash
 sudo sh -c 'echo 128 > /sys/module/usbcore/parameters/usbfs_memory_mb'
 ```
 
@@ -131,24 +125,20 @@ To increase the buffer size permanently, add the kernel parameter usbcore.usbfs_
 
 For GRUB2 (most common):
 
-  1. Open /etc/default/grub. Replace: `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"` (or other contents within the quotation marks depending on your system) with: `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash usbcore.usbfs_memory_mb=128"`
+1. Open /etc/default/grub. Replace: `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"` (or other contents within the quotation marks depending on your system) with: `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash usbcore.usbfs_memory_mb=128"`
+2. Update grub
 
-  2. Update grub
-
-     ``` bash
-      sudo update-grub
-     ```
-
-  3. reboot your system
+   ```bash
+    sudo update-grub
+   ```
+3. reboot your system
 
 Other bootloaders: configure additional kernel parameters of other bootloaders, please see the manual of your bootloader.
 
 ## 4. Verify device status
 
 * Environment preparation: ubuntu18.04 x64 desktop
-
 * Take Astra+ as an example, use USB 3.0 Type-C data cable to connect with PC.
-
 * Use the lsusb command to check if the PC system correctly recognizes the camera.
 
 ![21](Image/orbbec_sample_linux_002.png)
@@ -162,23 +152,28 @@ VID: 2bc5 PID: 0636 (depth camera)
 
 ## 5. Linux Sample compile
 
-Create a build directory in the Examples directory, as follows:
+Create a build directory in the OrbbecSDK directory, as follows:
 ![image17](Image/orbbec_sample_linux_003.png)
 
-``` bash
+```bash
+cd OrbbecSDK
+mkdir build
 cd build
 cmake ..
 make
 ```
+
 # MacOS
 
 ### Install Xcode and Homebrew
+
 1. **Install Xcode**:
+
    - Xcode is the official development tool provided by Apple, which includes the C++ compiler.
    - You can download it for free from the Mac App Store.
    - Installing Xcode will also install the Command Line Tools, which include the GCC compiler and other development tools.
-
 2. **Install Homebrew**:
+
    - Homebrew is a package manager for macOS, useful for installing various development tools and libraries.
    - To install Homebrew, execute the following command in the terminal:
      ```bash
@@ -189,10 +184,13 @@ make
 These steps will set up the fundamental tools needed for C++ development on macOS.
 
 ### Install Dependency
+
 ```bash
 brew install cmake opencv
 ```
+
 ### Compile and run the sample
+
 ```bash
 cd OrbbecSDK
 mkdir build
