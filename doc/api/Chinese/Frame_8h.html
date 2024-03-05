@@ -1,9 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>OrbbecSDK: header_cn/libobsensor/h/Frame.h 文件参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -11,9 +12,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,11 +19,10 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
+ <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">OrbbecSDK
-   &#160;<span id="projectnumber">1.9.4</span>
+  <td id="projectalign">
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.9.5</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -34,41 +31,23 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.8.11 -->
+<!-- 制作者 Doxygen 1.9.7 -->
 <script type="text/javascript">
-var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>首页</span></a></li>
-      <li><a href="pages.html"><span>相关页面</span></a></li>
-      <li><a href="namespaces.html"><span>命名空间</span></a></li>
-      <li><a href="annotated.html"><span>类</span></a></li>
-      <li class="current"><a href="files.html"><span>文件</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="搜索" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>文件列表</span></a></li>
-      <li><a href="globals.html"><span>文件成员</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,9 +57,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
 </div>
 
 <div id="nav-path" class="navpath">
@@ -91,8 +77,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <div class="header">
   <div class="summary">
 <a href="#func-members">函数</a>  </div>
-  <div class="headertitle">
-<div class="title">Frame.h 文件参考</div>  </div>
+  <div class="headertitle"><div class="title">Frame.h 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -102,123 +87,125 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div>
 <p><a href="Frame_8h_source.html">浏览源代码.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 函数</h2></td></tr>
 <tr class="memitem:a5009d0e21fffddc2bb891357ccd611f7"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a5009d0e21fffddc2bb891357ccd611f7">ob_frame_index</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a5009d0e21fffddc2bb891357ccd611f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧索引  <a href="#a5009d0e21fffddc2bb891357ccd611f7">更多...</a><br /></td></tr>
+<tr class="memdesc:a5009d0e21fffddc2bb891357ccd611f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧索引  <br /></td></tr>
 <tr class="separator:a5009d0e21fffddc2bb891357ccd611f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac46511e8d0e4d5b962d2b9710d313bdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2dd00351b3c3e24fba7b2e9d1bb033a8">ob_format</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#ac46511e8d0e4d5b962d2b9710d313bdc">ob_frame_format</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:ac46511e8d0e4d5b962d2b9710d313bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧格式  <a href="#ac46511e8d0e4d5b962d2b9710d313bdc">更多...</a><br /></td></tr>
+<tr class="memitem:ac46511e8d0e4d5b962d2b9710d313bdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a083601614fe96b1ba4106227a4bd72f2">ob_format</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#ac46511e8d0e4d5b962d2b9710d313bdc">ob_frame_format</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ac46511e8d0e4d5b962d2b9710d313bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧格式  <br /></td></tr>
 <tr class="separator:ac46511e8d0e4d5b962d2b9710d313bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfa38aa0cc594622f1d00540cf108b5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#ad2256fb566c96c9a50ab5120012a1ed1">ob_frame_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#adfa38aa0cc594622f1d00540cf108b5a">ob_frame_get_type</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:adfa38aa0cc594622f1d00540cf108b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧类型  <a href="#adfa38aa0cc594622f1d00540cf108b5a">更多...</a><br /></td></tr>
+<tr class="memitem:adfa38aa0cc594622f1d00540cf108b5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#ac4da8d71ec61d4487d7eab4fff45f753">ob_frame_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#adfa38aa0cc594622f1d00540cf108b5a">ob_frame_get_type</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:adfa38aa0cc594622f1d00540cf108b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧类型  <br /></td></tr>
 <tr class="separator:adfa38aa0cc594622f1d00540cf108b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95b2242495cad6f1d1d7db82cc516a2e"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a95b2242495cad6f1d1d7db82cc516a2e">ob_frame_time_stamp</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a95b2242495cad6f1d1d7db82cc516a2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧的硬件时间戳（以毫秒为单位）。  <a href="#a95b2242495cad6f1d1d7db82cc516a2e">更多...</a><br /></td></tr>
+<tr class="memdesc:a95b2242495cad6f1d1d7db82cc516a2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧的硬件时间戳（以毫秒为单位）。  <br /></td></tr>
 <tr class="separator:a95b2242495cad6f1d1d7db82cc516a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacf461e938d508f05b7b1ba8324cfcf5"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#aacf461e938d508f05b7b1ba8324cfcf5">ob_frame_time_stamp_us</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:aacf461e938d508f05b7b1ba8324cfcf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧的硬件时间戳（以微秒为单位）。  <a href="#aacf461e938d508f05b7b1ba8324cfcf5">更多...</a><br /></td></tr>
+<tr class="memdesc:aacf461e938d508f05b7b1ba8324cfcf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧的硬件时间戳（以微秒为单位）。  <br /></td></tr>
 <tr class="separator:aacf461e938d508f05b7b1ba8324cfcf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adce8d3f7031629a3e3d7b25911b33886"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#adce8d3f7031629a3e3d7b25911b33886">ob_frame_system_time_stamp</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:adce8d3f7031629a3e3d7b25911b33886"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧的系统时间戳（以毫秒为单位）。  <a href="#adce8d3f7031629a3e3d7b25911b33886">更多...</a><br /></td></tr>
+<tr class="memdesc:adce8d3f7031629a3e3d7b25911b33886"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧的系统时间戳（以毫秒为单位）。  <br /></td></tr>
 <tr class="separator:adce8d3f7031629a3e3d7b25911b33886"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3823a34cf10836c2e46904416dd4f7ae"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a3823a34cf10836c2e46904416dd4f7ae">ob_frame_global_time_stamp_us</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a3823a34cf10836c2e46904416dd4f7ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧的全局时间戳（以微秒为单位）。  <a href="#a3823a34cf10836c2e46904416dd4f7ae">更多...</a><br /></td></tr>
+<tr class="memdesc:a3823a34cf10836c2e46904416dd4f7ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧的全局时间戳（以微秒为单位）。  <br /></td></tr>
 <tr class="separator:a3823a34cf10836c2e46904416dd4f7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada0d3dca9c8d020451e8a1bb11dacf57"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#ada0d3dca9c8d020451e8a1bb11dacf57">ob_frame_data</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:ada0d3dca9c8d020451e8a1bb11dacf57"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧数据  <a href="#ada0d3dca9c8d020451e8a1bb11dacf57">更多...</a><br /></td></tr>
-<tr class="separator:ada0d3dca9c8d020451e8a1bb11dacf57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d0de931cd1744fb141676c93c9dd8bc"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a4d0de931cd1744fb141676c93c9dd8bc">ob_frame_data</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a4d0de931cd1744fb141676c93c9dd8bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧数据  <br /></td></tr>
+<tr class="separator:a4d0de931cd1744fb141676c93c9dd8bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9350186e6d286d74466d07287871ce9"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#ab9350186e6d286d74466d07287871ce9">ob_frame_data_size</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:ab9350186e6d286d74466d07287871ce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧数据大小  <a href="#ab9350186e6d286d74466d07287871ce9">更多...</a><br /></td></tr>
+<tr class="memdesc:ab9350186e6d286d74466d07287871ce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧数据大小  <br /></td></tr>
 <tr class="separator:ab9350186e6d286d74466d07287871ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0105450d37ecd43b0e27c90e396231eb"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a0105450d37ecd43b0e27c90e396231eb">ob_video_frame_width</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a0105450d37ecd43b0e27c90e396231eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取视频帧宽  <a href="#a0105450d37ecd43b0e27c90e396231eb">更多...</a><br /></td></tr>
+<tr class="memdesc:a0105450d37ecd43b0e27c90e396231eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取视频帧宽  <br /></td></tr>
 <tr class="separator:a0105450d37ecd43b0e27c90e396231eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c31d615158ad377dab30a5886788a11"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a4c31d615158ad377dab30a5886788a11">ob_video_frame_height</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a4c31d615158ad377dab30a5886788a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取视频帧高  <a href="#a4c31d615158ad377dab30a5886788a11">更多...</a><br /></td></tr>
+<tr class="memdesc:a4c31d615158ad377dab30a5886788a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取视频帧高  <br /></td></tr>
 <tr class="separator:a4c31d615158ad377dab30a5886788a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6c4784af761b12ad13367594af78b58"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#ad6c4784af761b12ad13367594af78b58">ob_video_frame_metadata</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:ad6c4784af761b12ad13367594af78b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧的元数据  <a href="#ad6c4784af761b12ad13367594af78b58">更多...</a><br /></td></tr>
-<tr class="separator:ad6c4784af761b12ad13367594af78b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb038c68f498a145ce7774c606c3d9ff"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#acb038c68f498a145ce7774c606c3d9ff">ob_video_frame_metadata</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:acb038c68f498a145ce7774c606c3d9ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧的元数据  <br /></td></tr>
+<tr class="separator:acb038c68f498a145ce7774c606c3d9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9096648e25cfa045fb0ab6b3b3c93c0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#ac9096648e25cfa045fb0ab6b3b3c93c0">ob_video_frame_metadata_size</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:ac9096648e25cfa045fb0ab6b3b3c93c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧的元数据大小  <a href="#ac9096648e25cfa045fb0ab6b3b3c93c0">更多...</a><br /></td></tr>
+<tr class="memdesc:ac9096648e25cfa045fb0ab6b3b3c93c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧的元数据大小  <br /></td></tr>
 <tr class="separator:ac9096648e25cfa045fb0ab6b3b3c93c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a7f7edea6d5963c2bbd2360edc3a489"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a4a7f7edea6d5963c2bbd2360edc3a489">ob_video_frame_pixel_available_bit_size</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a4a7f7edea6d5963c2bbd2360edc3a489"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取像素有效位数（如 Y16 格式帧，每个像素占 16bit，但实际只有低 10 位是有效位，高 6 位填充 0）  <a href="#a4a7f7edea6d5963c2bbd2360edc3a489">更多...</a><br /></td></tr>
+<tr class="memdesc:a4a7f7edea6d5963c2bbd2360edc3a489"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取像素有效位数（如 Y16 格式帧，每个像素占 16bit，但实际只有低 10 位是有效位，高 6 位填充 0）  <br /></td></tr>
 <tr class="separator:a4a7f7edea6d5963c2bbd2360edc3a489"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac69985299cbe7ca46cdddab955d26a33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a01cba50d4d558e4c2035f09b698bb10b">ob_sensor_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#ac69985299cbe7ca46cdddab955d26a33">ob_ir_frame_get_source_sensor_type</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **<a class="el" href="structob__error.html">ob_error</a>)</td></tr>
-<tr class="memdesc:ac69985299cbe7ca46cdddab955d26a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取红外数据帧的源传感器类型（双摄像头为左或右）  <a href="#ac69985299cbe7ca46cdddab955d26a33">更多...</a><br /></td></tr>
+<tr class="memitem:ac69985299cbe7ca46cdddab955d26a33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#aca9dc7e0b11a78f00fa8a2ffd8b9ca1b">ob_sensor_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#ac69985299cbe7ca46cdddab955d26a33">ob_ir_frame_get_source_sensor_type</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **<a class="el" href="structob__error.html">ob_error</a>)</td></tr>
+<tr class="memdesc:ac69985299cbe7ca46cdddab955d26a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取红外数据帧的源传感器类型（双摄像头为左或右）  <br /></td></tr>
 <tr class="separator:ac69985299cbe7ca46cdddab955d26a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84d908c9407ef8f96086c6d0911122e0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a84d908c9407ef8f96086c6d0911122e0">ob_depth_frame_get_value_scale</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a84d908c9407ef8f96086c6d0911122e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取深度帧的值的深度单位，深度像素值乘以深度单位后，可以得到单位为毫米的深度值； 如 valueScale=0.1, 某坐标像素值为 pixelValue=10000， 则表示深度值 value = pixelValue*valueScale = 10000*0.1=1000mm。  <a href="#a84d908c9407ef8f96086c6d0911122e0">更多...</a><br /></td></tr>
+<tr class="memdesc:a84d908c9407ef8f96086c6d0911122e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取深度帧的值的深度单位，深度像素值乘以深度单位后，可以得到单位为毫米的深度值； 如 valueScale=0.1, 某坐标像素值为 pixelValue=10000， 则表示深度值 value = pixelValue*valueScale = 10000*0.1=1000mm。  <br /></td></tr>
 <tr class="separator:a84d908c9407ef8f96086c6d0911122e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42e33dafc2a310292a84bc4e59b624b3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a42e33dafc2a310292a84bc4e59b624b3">ob_points_frame_get_position_value_scale</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a42e33dafc2a310292a84bc4e59b624b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取点云帧的点坐标值缩放系数，点坐标值乘以缩放系数后，可以得到单位为毫米的坐标值； 如 scale=0.1, 某个点的 x 坐标值为 x=10000， 则表示实际 x 坐标 value = x*scale = 10000*0.1=1000mm。  <a href="#a42e33dafc2a310292a84bc4e59b624b3">更多...</a><br /></td></tr>
+<tr class="memdesc:a42e33dafc2a310292a84bc4e59b624b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取点云帧的点坐标值缩放系数，点坐标值乘以缩放系数后，可以得到单位为毫米的坐标值； 如 scale=0.1, 某个点的 x 坐标值为 x=10000， 则表示实际 x 坐标 value = x*scale = 10000*0.1=1000mm。  <br /></td></tr>
 <tr class="separator:a42e33dafc2a310292a84bc4e59b624b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a572bd900dfe085bd8618e53b2670f069"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a572bd900dfe085bd8618e53b2670f069">ob_delete_frame</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a572bd900dfe085bd8618e53b2670f069"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除数据帧对象  <a href="#a572bd900dfe085bd8618e53b2670f069">更多...</a><br /></td></tr>
+<tr class="memdesc:a572bd900dfe085bd8618e53b2670f069"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除数据帧对象  <br /></td></tr>
 <tr class="separator:a572bd900dfe085bd8618e53b2670f069"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48ab6c2f559f3af05f4147a5f2abb324"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a48ab6c2f559f3af05f4147a5f2abb324">ob_frameset_frame_count</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a48ab6c2f559f3af05f4147a5f2abb324"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取数据帧集中包含的帧数  <a href="#a48ab6c2f559f3af05f4147a5f2abb324">更多...</a><br /></td></tr>
+<tr class="memdesc:a48ab6c2f559f3af05f4147a5f2abb324"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取数据帧集中包含的帧数  <br /></td></tr>
 <tr class="separator:a48ab6c2f559f3af05f4147a5f2abb324"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fd791167ae8728c8796746cddfb98f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a5fd791167ae8728c8796746cddfb98f9">ob_frameset_depth_frame</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a5fd791167ae8728c8796746cddfb98f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">从数据帧集中获取深度数据帧。  <a href="#a5fd791167ae8728c8796746cddfb98f9">更多...</a><br /></td></tr>
-<tr class="separator:a5fd791167ae8728c8796746cddfb98f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea3b7d87129161528aeecf9cb06c0321"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#aea3b7d87129161528aeecf9cb06c0321">ob_frameset_color_frame</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:aea3b7d87129161528aeecf9cb06c0321"><td class="mdescLeft">&#160;</td><td class="mdescRight">从帧集合中获取彩色帧  <a href="#aea3b7d87129161528aeecf9cb06c0321">更多...</a><br /></td></tr>
-<tr class="separator:aea3b7d87129161528aeecf9cb06c0321"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e1afbac80830e8f9497e6fda23d5ca1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a6e1afbac80830e8f9497e6fda23d5ca1">ob_frameset_ir_frame</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a6e1afbac80830e8f9497e6fda23d5ca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">从数据帧中获取红外帧。  <a href="#a6e1afbac80830e8f9497e6fda23d5ca1">更多...</a><br /></td></tr>
-<tr class="separator:a6e1afbac80830e8f9497e6fda23d5ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaee352704126aa113327a3105f5ed3af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#aaee352704126aa113327a3105f5ed3af">ob_frameset_points_frame</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:aaee352704126aa113327a3105f5ed3af"><td class="mdescLeft">&#160;</td><td class="mdescRight">从数据帧集中获取点云数据。  <a href="#aaee352704126aa113327a3105f5ed3af">更多...</a><br /></td></tr>
-<tr class="separator:aaee352704126aa113327a3105f5ed3af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30f3200115ea77315b7bb8ace3087207"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a30f3200115ea77315b7bb8ace3087207">ob_frameset_get_frame</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="el" href="ObTypes_8h.html#ad2256fb566c96c9a50ab5120012a1ed1">ob_frame_type</a> frame_type, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a30f3200115ea77315b7bb8ace3087207"><td class="mdescLeft">&#160;</td><td class="mdescRight">从数据帧集中获取特定类型的数据帧。  <a href="#a30f3200115ea77315b7bb8ace3087207">更多...</a><br /></td></tr>
-<tr class="separator:a30f3200115ea77315b7bb8ace3087207"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abebc05a57d9906ff7b05e5e3edbe0537"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a73b09a6818b6e37a12ce17732e2e01c0">ob_accel_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#abebc05a57d9906ff7b05e5e3edbe0537">ob_accel_frame_value</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:abebc05a57d9906ff7b05e5e3edbe0537"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取加速度计帧数据。  <a href="#abebc05a57d9906ff7b05e5e3edbe0537">更多...</a><br /></td></tr>
+<tr class="memitem:a0dae884c0d1187261548faeff4720003"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a0dae884c0d1187261548faeff4720003">ob_frameset_depth_frame</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a0dae884c0d1187261548faeff4720003"><td class="mdescLeft">&#160;</td><td class="mdescRight">从数据帧集中获取深度数据帧。  <br /></td></tr>
+<tr class="separator:a0dae884c0d1187261548faeff4720003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d902e6efab126596147c7437c98e8f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a7d902e6efab126596147c7437c98e8f6">ob_frameset_color_frame</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a7d902e6efab126596147c7437c98e8f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">从帧集合中获取彩色帧  <br /></td></tr>
+<tr class="separator:a7d902e6efab126596147c7437c98e8f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d5f563302930ef23fc21fe344d2c91c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a3d5f563302930ef23fc21fe344d2c91c">ob_frameset_ir_frame</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a3d5f563302930ef23fc21fe344d2c91c"><td class="mdescLeft">&#160;</td><td class="mdescRight">从数据帧中获取红外帧。  <br /></td></tr>
+<tr class="separator:a3d5f563302930ef23fc21fe344d2c91c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7240dea3d3338837d7cdf9459eb8ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#aad7240dea3d3338837d7cdf9459eb8ab">ob_frameset_points_frame</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:aad7240dea3d3338837d7cdf9459eb8ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">从数据帧集中获取点云数据。  <br /></td></tr>
+<tr class="separator:aad7240dea3d3338837d7cdf9459eb8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af05a787de121f4c63ea41f7077609604"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#af05a787de121f4c63ea41f7077609604">ob_frameset_get_frame</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="el" href="ObTypes_8h.html#ac4da8d71ec61d4487d7eab4fff45f753">ob_frame_type</a> frame_type, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:af05a787de121f4c63ea41f7077609604"><td class="mdescLeft">&#160;</td><td class="mdescRight">从数据帧集中获取特定类型的数据帧。  <br /></td></tr>
+<tr class="separator:af05a787de121f4c63ea41f7077609604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abebc05a57d9906ff7b05e5e3edbe0537"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a6492e9923b828aee716db40004db9b4b">ob_accel_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#abebc05a57d9906ff7b05e5e3edbe0537">ob_accel_frame_value</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:abebc05a57d9906ff7b05e5e3edbe0537"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取加速度计帧数据。  <br /></td></tr>
 <tr class="separator:abebc05a57d9906ff7b05e5e3edbe0537"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaed95a72b4e138b7f25f1abc90f762c4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#aaed95a72b4e138b7f25f1abc90f762c4">ob_accel_frame_temperature</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:aaed95a72b4e138b7f25f1abc90f762c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取加速度帧采样时温度  <a href="#aaed95a72b4e138b7f25f1abc90f762c4">更多...</a><br /></td></tr>
+<tr class="memdesc:aaed95a72b4e138b7f25f1abc90f762c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取加速度帧采样时温度  <br /></td></tr>
 <tr class="separator:aaed95a72b4e138b7f25f1abc90f762c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a491583ded6975af8cb3948a6ec372529"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a3ad05ef746762121034a508f185b329b">ob_gyro_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a491583ded6975af8cb3948a6ec372529">ob_gyro_frame_value</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a491583ded6975af8cb3948a6ec372529"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取陀螺仪帧数据。  <a href="#a491583ded6975af8cb3948a6ec372529">更多...</a><br /></td></tr>
+<tr class="memitem:a491583ded6975af8cb3948a6ec372529"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a8785ff80bb1ac60427ff8e75d7b58761">ob_gyro_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a491583ded6975af8cb3948a6ec372529">ob_gyro_frame_value</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a491583ded6975af8cb3948a6ec372529"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取陀螺仪帧数据。  <br /></td></tr>
 <tr class="separator:a491583ded6975af8cb3948a6ec372529"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46144bd2d6c7d57b85f8b1f95d1be336"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a46144bd2d6c7d57b85f8b1f95d1be336">ob_gyro_frame_temperature</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a46144bd2d6c7d57b85f8b1f95d1be336"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取陀螺仪帧采样时温度  <a href="#a46144bd2d6c7d57b85f8b1f95d1be336">更多...</a><br /></td></tr>
+<tr class="memdesc:a46144bd2d6c7d57b85f8b1f95d1be336"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取陀螺仪帧采样时温度  <br /></td></tr>
 <tr class="separator:a46144bd2d6c7d57b85f8b1f95d1be336"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af136546f3099cfde42407c2ab91b5f2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#af136546f3099cfde42407c2ab91b5f2a">ob_frame_add_ref</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:af136546f3099cfde42407c2ab91b5f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">增加帧对象的引用计数。  <a href="#af136546f3099cfde42407c2ab91b5f2a">更多...</a><br /></td></tr>
+<tr class="memdesc:af136546f3099cfde42407c2ab91b5f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">增加帧对象的引用计数。  <br /></td></tr>
 <tr class="separator:af136546f3099cfde42407c2ab91b5f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a144bc4b6e9ba63d60eccba1c31b8c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a5a144bc4b6e9ba63d60eccba1c31b8c1">ob_create_frame</a> (<a class="el" href="ObTypes_8h.html#a2dd00351b3c3e24fba7b2e9d1bb033a8">ob_format</a> frame_format, int width, int height, int stride_bytes, <a class="el" href="ObTypes_8h.html#ad2256fb566c96c9a50ab5120012a1ed1">ob_frame_type</a> frame_type, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a5a144bc4b6e9ba63d60eccba1c31b8c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据指定的参数创建一个空数据帧对象。  <a href="#a5a144bc4b6e9ba63d60eccba1c31b8c1">更多...</a><br /></td></tr>
-<tr class="separator:a5a144bc4b6e9ba63d60eccba1c31b8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e49f68c6b77a2e80615e229cd3ae473"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a5e49f68c6b77a2e80615e229cd3ae473">ob_create_frame_from_buffer</a> (<a class="el" href="ObTypes_8h.html#a2dd00351b3c3e24fba7b2e9d1bb033a8">ob_format</a> frame_format, uint32_t frame_width, uint32_t frame_height, uint8_t *buffer, uint32_t buffer_size, <a class="el" href="ObTypes_8h.html#a3ba48a3ae08f73fc4c6beac4464dde1d">ob_frame_destroy_callback</a> *buffer_destroy_cb, void *buffer_destroy_context, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a5e49f68c6b77a2e80615e229cd3ae473"><td class="mdescLeft">&#160;</td><td class="mdescRight">基于外部创建的缓冲区创建帧对象。  <a href="#a5e49f68c6b77a2e80615e229cd3ae473">更多...</a><br /></td></tr>
-<tr class="separator:a5e49f68c6b77a2e80615e229cd3ae473"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91bc0d41b1bbe8885853e5b0346034d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a91bc0d41b1bbe8885853e5b0346034d9">ob_create_frameset</a> (<a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a91bc0d41b1bbe8885853e5b0346034d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建一个空的数据帧集对象。  <a href="#a91bc0d41b1bbe8885853e5b0346034d9">更多...</a><br /></td></tr>
-<tr class="separator:a91bc0d41b1bbe8885853e5b0346034d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a379ea3f58725a133c0d98efa99cfece2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a379ea3f58725a133c0d98efa99cfece2">ob_frameset_push_frame</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="el" href="ObTypes_8h.html#ad2256fb566c96c9a50ab5120012a1ed1">ob_frame_type</a> type, <a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a379ea3f58725a133c0d98efa99cfece2"><td class="mdescLeft">&#160;</td><td class="mdescRight">将指定类型的数据帧添加到数据帧集。  <a href="#a379ea3f58725a133c0d98efa99cfece2">更多...</a><br /></td></tr>
+<tr class="memitem:a2fb71c8a1afbaacb3948c27612bccac3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a2fb71c8a1afbaacb3948c27612bccac3">ob_create_frame</a> (<a class="el" href="ObTypes_8h.html#a083601614fe96b1ba4106227a4bd72f2">ob_format</a> frame_format, int width, int height, int stride_bytes, <a class="el" href="ObTypes_8h.html#ac4da8d71ec61d4487d7eab4fff45f753">ob_frame_type</a> frame_type, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a2fb71c8a1afbaacb3948c27612bccac3"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据指定的参数创建一个空数据帧对象。  <br /></td></tr>
+<tr class="separator:a2fb71c8a1afbaacb3948c27612bccac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93d32ab066009f6c44f9035b5d254a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#ae93d32ab066009f6c44f9035b5d254a9">ob_create_frame_from_buffer</a> (<a class="el" href="ObTypes_8h.html#a083601614fe96b1ba4106227a4bd72f2">ob_format</a> frame_format, uint32_t frame_width, uint32_t frame_height, uint8_t *buffer, uint32_t buffer_size, <a class="el" href="ObTypes_8h.html#a7830076d26e79bfe795c37149f693e02">ob_frame_destroy_callback</a> *buffer_destroy_cb, void *buffer_destroy_context, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ae93d32ab066009f6c44f9035b5d254a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">基于外部创建的缓冲区创建帧对象。  <br /></td></tr>
+<tr class="separator:ae93d32ab066009f6c44f9035b5d254a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa605ced9dd928aa2c214b7f2a221a6a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#aa605ced9dd928aa2c214b7f2a221a6a6">ob_create_frameset</a> (<a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:aa605ced9dd928aa2c214b7f2a221a6a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建一个空的数据帧集对象。  <br /></td></tr>
+<tr class="separator:aa605ced9dd928aa2c214b7f2a221a6a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a379ea3f58725a133c0d98efa99cfece2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a379ea3f58725a133c0d98efa99cfece2">ob_frameset_push_frame</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="el" href="ObTypes_8h.html#ac4da8d71ec61d4487d7eab4fff45f753">ob_frame_type</a> type, <a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a379ea3f58725a133c0d98efa99cfece2"><td class="mdescLeft">&#160;</td><td class="mdescRight">将指定类型的数据帧添加到数据帧集。  <br /></td></tr>
 <tr class="separator:a379ea3f58725a133c0d98efa99cfece2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35186cca3c0a561acb281b03c8ea6013"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a35186cca3c0a561acb281b03c8ea6013">ob_frame_set_system_time_stamp</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, uint64_t system_timestamp, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a35186cca3c0a561acb281b03c8ea6013"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置帧的系统时间戳  <a href="#a35186cca3c0a561acb281b03c8ea6013">更多...</a><br /></td></tr>
+<tr class="memdesc:a35186cca3c0a561acb281b03c8ea6013"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置帧的系统时间戳  <br /></td></tr>
 <tr class="separator:a35186cca3c0a561acb281b03c8ea6013"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f4b11364d2a74f80e9c6252b94e97bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a9f4b11364d2a74f80e9c6252b94e97bd">ob_frame_set_device_time_stamp</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, uint64_t device_timestamp, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a9f4b11364d2a74f80e9c6252b94e97bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置帧的设备时间戳  <a href="#a9f4b11364d2a74f80e9c6252b94e97bd">更多...</a><br /></td></tr>
+<tr class="memdesc:a9f4b11364d2a74f80e9c6252b94e97bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置帧的设备时间戳  <br /></td></tr>
 <tr class="separator:a9f4b11364d2a74f80e9c6252b94e97bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ce57b8b10a7dddf118ccd9663f7dd06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a5ce57b8b10a7dddf118ccd9663f7dd06">ob_frame_set_device_time_stamp_us</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, uint64_t device_timestamp_us, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:a5ce57b8b10a7dddf118ccd9663f7dd06"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置帧的设备时间戳  <a href="#a5ce57b8b10a7dddf118ccd9663f7dd06">更多...</a><br /></td></tr>
+<tr class="memdesc:a5ce57b8b10a7dddf118ccd9663f7dd06"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置帧的设备时间戳  <br /></td></tr>
 <tr class="separator:a5ce57b8b10a7dddf118ccd9663f7dd06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>帧相关函数, 主要用于获取帧数据和帧信息 </p>
 
-<p>在文件 <a class="el" href="Frame_8h_source.html">Frame.h</a> 中定义.</p>
+<p class="definition">在文件 <a class="el" href="Frame_8h_source.html">Frame.h</a> 中定义.</p>
 </div><h2 class="groupheader">函数说明</h2>
-<a class="anchor" id="a5009d0e21fffddc2bb891357ccd611f7"></a>
+<a id="a5009d0e21fffddc2bb891357ccd611f7" name="a5009d0e21fffddc2bb891357ccd611f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5009d0e21fffddc2bb891357ccd611f7">&#9670;&#160;</a></span>ob_frame_index()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -254,12 +241,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="ac46511e8d0e4d5b962d2b9710d313bdc"></a>
+<a id="ac46511e8d0e4d5b962d2b9710d313bdc" name="ac46511e8d0e4d5b962d2b9710d313bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac46511e8d0e4d5b962d2b9710d313bdc">&#9670;&#160;</a></span>ob_frame_format()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ObTypes_8h.html#a2dd00351b3c3e24fba7b2e9d1bb033a8">ob_format</a> ob_frame_format </td>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a083601614fe96b1ba4106227a4bd72f2">ob_format</a> ob_frame_format </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
           <td class="paramname"><em>frame</em>, </td>
@@ -290,12 +279,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="adfa38aa0cc594622f1d00540cf108b5a"></a>
+<a id="adfa38aa0cc594622f1d00540cf108b5a" name="adfa38aa0cc594622f1d00540cf108b5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfa38aa0cc594622f1d00540cf108b5a">&#9670;&#160;</a></span>ob_frame_get_type()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ObTypes_8h.html#ad2256fb566c96c9a50ab5120012a1ed1">ob_frame_type</a> ob_frame_get_type </td>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#ac4da8d71ec61d4487d7eab4fff45f753">ob_frame_type</a> ob_frame_get_type </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
           <td class="paramname"><em>frame</em>, </td>
@@ -326,7 +317,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a95b2242495cad6f1d1d7db82cc516a2e"></a>
+<a id="a95b2242495cad6f1d1d7db82cc516a2e" name="a95b2242495cad6f1d1d7db82cc516a2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95b2242495cad6f1d1d7db82cc516a2e">&#9670;&#160;</a></span>ob_frame_time_stamp()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -363,7 +356,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="aacf461e938d508f05b7b1ba8324cfcf5"></a>
+<a id="aacf461e938d508f05b7b1ba8324cfcf5" name="aacf461e938d508f05b7b1ba8324cfcf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacf461e938d508f05b7b1ba8324cfcf5">&#9670;&#160;</a></span>ob_frame_time_stamp_us()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -400,7 +395,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="adce8d3f7031629a3e3d7b25911b33886"></a>
+<a id="adce8d3f7031629a3e3d7b25911b33886" name="adce8d3f7031629a3e3d7b25911b33886"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adce8d3f7031629a3e3d7b25911b33886">&#9670;&#160;</a></span>ob_frame_system_time_stamp()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -437,7 +434,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a3823a34cf10836c2e46904416dd4f7ae"></a>
+<a id="a3823a34cf10836c2e46904416dd4f7ae" name="a3823a34cf10836c2e46904416dd4f7ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3823a34cf10836c2e46904416dd4f7ae">&#9670;&#160;</a></span>ob_frame_global_time_stamp_us()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -475,12 +474,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="ada0d3dca9c8d020451e8a1bb11dacf57"></a>
+<a id="a4d0de931cd1744fb141676c93c9dd8bc" name="a4d0de931cd1744fb141676c93c9dd8bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d0de931cd1744fb141676c93c9dd8bc">&#9670;&#160;</a></span>ob_frame_data()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* ob_frame_data </td>
+          <td class="memname">void * ob_frame_data </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
           <td class="paramname"><em>frame</em>, </td>
@@ -511,7 +512,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="ab9350186e6d286d74466d07287871ce9"></a>
+<a id="ab9350186e6d286d74466d07287871ce9" name="ab9350186e6d286d74466d07287871ce9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9350186e6d286d74466d07287871ce9">&#9670;&#160;</a></span>ob_frame_data_size()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -547,7 +550,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a0105450d37ecd43b0e27c90e396231eb"></a>
+<a id="a0105450d37ecd43b0e27c90e396231eb" name="a0105450d37ecd43b0e27c90e396231eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0105450d37ecd43b0e27c90e396231eb">&#9670;&#160;</a></span>ob_video_frame_width()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -583,7 +588,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a4c31d615158ad377dab30a5886788a11"></a>
+<a id="a4c31d615158ad377dab30a5886788a11" name="a4c31d615158ad377dab30a5886788a11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c31d615158ad377dab30a5886788a11">&#9670;&#160;</a></span>ob_video_frame_height()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -619,12 +626,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="ad6c4784af761b12ad13367594af78b58"></a>
+<a id="acb038c68f498a145ce7774c606c3d9ff" name="acb038c68f498a145ce7774c606c3d9ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb038c68f498a145ce7774c606c3d9ff">&#9670;&#160;</a></span>ob_video_frame_metadata()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* ob_video_frame_metadata </td>
+          <td class="memname">void * ob_video_frame_metadata </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
           <td class="paramname"><em>frame</em>, </td>
@@ -655,7 +664,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="ac9096648e25cfa045fb0ab6b3b3c93c0"></a>
+<a id="ac9096648e25cfa045fb0ab6b3b3c93c0" name="ac9096648e25cfa045fb0ab6b3b3c93c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9096648e25cfa045fb0ab6b3b3c93c0">&#9670;&#160;</a></span>ob_video_frame_metadata_size()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -691,7 +702,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a4a7f7edea6d5963c2bbd2360edc3a489"></a>
+<a id="a4a7f7edea6d5963c2bbd2360edc3a489" name="a4a7f7edea6d5963c2bbd2360edc3a489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a7f7edea6d5963c2bbd2360edc3a489">&#9670;&#160;</a></span>ob_video_frame_pixel_available_bit_size()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -728,12 +741,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="ac69985299cbe7ca46cdddab955d26a33"></a>
+<a id="ac69985299cbe7ca46cdddab955d26a33" name="ac69985299cbe7ca46cdddab955d26a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac69985299cbe7ca46cdddab955d26a33">&#9670;&#160;</a></span>ob_ir_frame_get_source_sensor_type()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ObTypes_8h.html#a01cba50d4d558e4c2035f09b698bb10b">ob_sensor_type</a> ob_ir_frame_get_source_sensor_type </td>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#aca9dc7e0b11a78f00fa8a2ffd8b9ca1b">ob_sensor_type</a> ob_ir_frame_get_source_sensor_type </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
           <td class="paramname"><em>frame</em>, </td>
@@ -756,7 +771,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>帧对象 </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname"><a class="el" href="structob__error.html" title="SDK 暴露的错误类，用户可以根据该错误类，获取详细的错误信息 ">ob_error</a></td><td>记录错误消息 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname"><a class="el" href="structob__error.html" title="SDK 暴露的错误类，用户可以根据该错误类，获取详细的错误信息">ob_error</a></td><td>记录错误消息 </td></tr>
   </table>
   </dd>
 </dl>
@@ -764,7 +779,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a84d908c9407ef8f96086c6d0911122e0"></a>
+<a id="a84d908c9407ef8f96086c6d0911122e0" name="a84d908c9407ef8f96086c6d0911122e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84d908c9407ef8f96086c6d0911122e0">&#9670;&#160;</a></span>ob_depth_frame_get_value_scale()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -800,7 +817,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a42e33dafc2a310292a84bc4e59b624b3"></a>
+<a id="a42e33dafc2a310292a84bc4e59b624b3" name="a42e33dafc2a310292a84bc4e59b624b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42e33dafc2a310292a84bc4e59b624b3">&#9670;&#160;</a></span>ob_points_frame_get_position_value_scale()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -836,7 +855,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a572bd900dfe085bd8618e53b2670f069"></a>
+<a id="a572bd900dfe085bd8618e53b2670f069" name="a572bd900dfe085bd8618e53b2670f069"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a572bd900dfe085bd8618e53b2670f069">&#9670;&#160;</a></span>ob_delete_frame()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -871,7 +892,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a48ab6c2f559f3af05f4147a5f2abb324"></a>
+<a id="a48ab6c2f559f3af05f4147a5f2abb324" name="a48ab6c2f559f3af05f4147a5f2abb324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48ab6c2f559f3af05f4147a5f2abb324">&#9670;&#160;</a></span>ob_frameset_frame_count()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -907,12 +930,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a5fd791167ae8728c8796746cddfb98f9"></a>
+<a id="a0dae884c0d1187261548faeff4720003" name="a0dae884c0d1187261548faeff4720003"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dae884c0d1187261548faeff4720003">&#9670;&#160;</a></span>ob_frameset_depth_frame()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a>* ob_frameset_depth_frame </td>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> * ob_frameset_depth_frame </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
           <td class="paramname"><em>frameset</em>, </td>
@@ -943,12 +968,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="aea3b7d87129161528aeecf9cb06c0321"></a>
+<a id="a7d902e6efab126596147c7437c98e8f6" name="a7d902e6efab126596147c7437c98e8f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d902e6efab126596147c7437c98e8f6">&#9670;&#160;</a></span>ob_frameset_color_frame()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a>* ob_frameset_color_frame </td>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> * ob_frameset_color_frame </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
           <td class="paramname"><em>frameset</em>, </td>
@@ -979,12 +1006,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a6e1afbac80830e8f9497e6fda23d5ca1"></a>
+<a id="a3d5f563302930ef23fc21fe344d2c91c" name="a3d5f563302930ef23fc21fe344d2c91c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d5f563302930ef23fc21fe344d2c91c">&#9670;&#160;</a></span>ob_frameset_ir_frame()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a>* ob_frameset_ir_frame </td>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> * ob_frameset_ir_frame </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
           <td class="paramname"><em>frameset</em>, </td>
@@ -1015,12 +1044,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="aaee352704126aa113327a3105f5ed3af"></a>
+<a id="aad7240dea3d3338837d7cdf9459eb8ab" name="aad7240dea3d3338837d7cdf9459eb8ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad7240dea3d3338837d7cdf9459eb8ab">&#9670;&#160;</a></span>ob_frameset_points_frame()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a>* ob_frameset_points_frame </td>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> * ob_frameset_points_frame </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
           <td class="paramname"><em>frameset</em>, </td>
@@ -1051,12 +1082,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a30f3200115ea77315b7bb8ace3087207"></a>
+<a id="af05a787de121f4c63ea41f7077609604" name="af05a787de121f4c63ea41f7077609604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af05a787de121f4c63ea41f7077609604">&#9670;&#160;</a></span>ob_frameset_get_frame()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a>* ob_frameset_get_frame </td>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> * ob_frameset_get_frame </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
           <td class="paramname"><em>frameset</em>, </td>
@@ -1064,7 +1097,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ad2256fb566c96c9a50ab5120012a1ed1">ob_frame_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ac4da8d71ec61d4487d7eab4fff45f753">ob_frame_type</a>&#160;</td>
           <td class="paramname"><em>frame_type</em>, </td>
         </tr>
         <tr>
@@ -1094,12 +1127,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="abebc05a57d9906ff7b05e5e3edbe0537"></a>
+<a id="abebc05a57d9906ff7b05e5e3edbe0537" name="abebc05a57d9906ff7b05e5e3edbe0537"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abebc05a57d9906ff7b05e5e3edbe0537">&#9670;&#160;</a></span>ob_accel_frame_value()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ObTypes_8h.html#a73b09a6818b6e37a12ce17732e2e01c0">ob_accel_value</a> ob_accel_frame_value </td>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a6492e9923b828aee716db40004db9b4b">ob_accel_value</a> ob_accel_frame_value </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
           <td class="paramname"><em>frame</em>, </td>
@@ -1130,7 +1165,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="aaed95a72b4e138b7f25f1abc90f762c4"></a>
+<a id="aaed95a72b4e138b7f25f1abc90f762c4" name="aaed95a72b4e138b7f25f1abc90f762c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaed95a72b4e138b7f25f1abc90f762c4">&#9670;&#160;</a></span>ob_accel_frame_temperature()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1166,12 +1203,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a491583ded6975af8cb3948a6ec372529"></a>
+<a id="a491583ded6975af8cb3948a6ec372529" name="a491583ded6975af8cb3948a6ec372529"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a491583ded6975af8cb3948a6ec372529">&#9670;&#160;</a></span>ob_gyro_frame_value()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ObTypes_8h.html#a3ad05ef746762121034a508f185b329b">ob_gyro_value</a> ob_gyro_frame_value </td>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a8785ff80bb1ac60427ff8e75d7b58761">ob_gyro_value</a> ob_gyro_frame_value </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
           <td class="paramname"><em>frame</em>, </td>
@@ -1202,7 +1241,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a46144bd2d6c7d57b85f8b1f95d1be336"></a>
+<a id="a46144bd2d6c7d57b85f8b1f95d1be336" name="a46144bd2d6c7d57b85f8b1f95d1be336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46144bd2d6c7d57b85f8b1f95d1be336">&#9670;&#160;</a></span>ob_gyro_frame_temperature()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1238,7 +1279,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="af136546f3099cfde42407c2ab91b5f2a"></a>
+<a id="af136546f3099cfde42407c2ab91b5f2a" name="af136546f3099cfde42407c2ab91b5f2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af136546f3099cfde42407c2ab91b5f2a">&#9670;&#160;</a></span>ob_frame_add_ref()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1273,14 +1316,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a5a144bc4b6e9ba63d60eccba1c31b8c1"></a>
+<a id="a2fb71c8a1afbaacb3948c27612bccac3" name="a2fb71c8a1afbaacb3948c27612bccac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fb71c8a1afbaacb3948c27612bccac3">&#9670;&#160;</a></span>ob_create_frame()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a>* ob_create_frame </td>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> * ob_create_frame </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2dd00351b3c3e24fba7b2e9d1bb033a8">ob_format</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a083601614fe96b1ba4106227a4bd72f2">ob_format</a>&#160;</td>
           <td class="paramname"><em>frame_format</em>, </td>
         </tr>
         <tr>
@@ -1304,7 +1349,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ad2256fb566c96c9a50ab5120012a1ed1">ob_frame_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ac4da8d71ec61d4487d7eab4fff45f753">ob_frame_type</a>&#160;</td>
           <td class="paramname"><em>frame_type</em>, </td>
         </tr>
         <tr>
@@ -1337,14 +1382,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a5e49f68c6b77a2e80615e229cd3ae473"></a>
+<a id="ae93d32ab066009f6c44f9035b5d254a9" name="ae93d32ab066009f6c44f9035b5d254a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93d32ab066009f6c44f9035b5d254a9">&#9670;&#160;</a></span>ob_create_frame_from_buffer()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a>* ob_create_frame_from_buffer </td>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> * ob_create_frame_from_buffer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2dd00351b3c3e24fba7b2e9d1bb033a8">ob_format</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a083601614fe96b1ba4106227a4bd72f2">ob_format</a>&#160;</td>
           <td class="paramname"><em>frame_format</em>, </td>
         </tr>
         <tr>
@@ -1374,7 +1421,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3ba48a3ae08f73fc4c6beac4464dde1d">ob_frame_destroy_callback</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a7830076d26e79bfe795c37149f693e02">ob_frame_destroy_callback</a> *&#160;</td>
           <td class="paramname"><em>buffer_destroy_cb</em>, </td>
         </tr>
         <tr>
@@ -1415,12 +1462,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a91bc0d41b1bbe8885853e5b0346034d9"></a>
+<a id="aa605ced9dd928aa2c214b7f2a221a6a6" name="aa605ced9dd928aa2c214b7f2a221a6a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa605ced9dd928aa2c214b7f2a221a6a6">&#9670;&#160;</a></span>ob_create_frameset()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a>* ob_create_frameset </td>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> * ob_create_frameset </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
           <td class="paramname"><em>error</em></td><td>)</td>
@@ -1440,7 +1489,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a379ea3f58725a133c0d98efa99cfece2"></a>
+<a id="a379ea3f58725a133c0d98efa99cfece2" name="a379ea3f58725a133c0d98efa99cfece2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a379ea3f58725a133c0d98efa99cfece2">&#9670;&#160;</a></span>ob_frameset_push_frame()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1453,7 +1504,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ad2256fb566c96c9a50ab5120012a1ed1">ob_frame_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ac4da8d71ec61d4487d7eab4fff45f753">ob_frame_type</a>&#160;</td>
           <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
@@ -1489,7 +1540,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a35186cca3c0a561acb281b03c8ea6013"></a>
+<a id="a35186cca3c0a561acb281b03c8ea6013" name="a35186cca3c0a561acb281b03c8ea6013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35186cca3c0a561acb281b03c8ea6013">&#9670;&#160;</a></span>ob_frame_set_system_time_stamp()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1531,7 +1584,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a9f4b11364d2a74f80e9c6252b94e97bd"></a>
+<a id="a9f4b11364d2a74f80e9c6252b94e97bd" name="a9f4b11364d2a74f80e9c6252b94e97bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f4b11364d2a74f80e9c6252b94e97bd">&#9670;&#160;</a></span>ob_frame_set_device_time_stamp()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1573,7 +1628,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a5ce57b8b10a7dddf118ccd9663f7dd06"></a>
+<a id="a5ce57b8b10a7dddf118ccd9663f7dd06" name="a5ce57b8b10a7dddf118ccd9663f7dd06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ce57b8b10a7dddf118ccd9663f7dd06">&#9670;&#160;</a></span>ob_frame_set_device_time_stamp_us()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1618,9 +1675,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2024年 一月 26日 星期五 13:27:37 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.11
+生成于 2024年 三月 5日 星期二 18:30:19 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

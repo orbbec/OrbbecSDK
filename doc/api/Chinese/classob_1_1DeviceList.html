@@ -1,9 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>OrbbecSDK: ob::DeviceList类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -11,9 +12,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,11 +19,10 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
+ <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">OrbbecSDK
-   &#160;<span id="projectnumber">1.9.4</span>
+  <td id="projectalign">
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.9.5</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -34,43 +31,23 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.8.11 -->
+<!-- 制作者 Doxygen 1.9.7 -->
 <script type="text/javascript">
-var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>首页</span></a></li>
-      <li><a href="pages.html"><span>相关页面</span></a></li>
-      <li><a href="namespaces.html"><span>命名空间</span></a></li>
-      <li class="current"><a href="annotated.html"><span>类</span></a></li>
-      <li><a href="files.html"><span>文件</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="搜索" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>类列表</span></a></li>
-      <li><a href="classes.html"><span>类索引</span></a></li>
-      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
-      <li><a href="functions.html"><span>类成员</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -80,9 +57,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
 </div>
 
 <div id="nav-path" class="navpath">
@@ -94,8 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   <div class="summary">
 <a href="#pub-methods">Public 成员函数</a> &#124;
 <a href="classob_1_1DeviceList-members.html">所有成员列表</a>  </div>
-  <div class="headertitle">
-<div class="title">ob::DeviceList类 参考</div>  </div>
+  <div class="headertitle"><div class="title">ob::DeviceList类 参考</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -104,52 +87,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 <p><code>#include &lt;<a class="el" href="Device_8hpp_source.html">Device.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:a78325a6d57af6744915cb4dd75e295ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#a78325a6d57af6744915cb4dd75e295ab">DeviceList</a> (std::unique_ptr&lt; DeviceListImpl &gt; impl)</td></tr>
 <tr class="separator:a78325a6d57af6744915cb4dd75e295ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf75efa477ec41362f32497404b8b667"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#aaf75efa477ec41362f32497404b8b667">~DeviceList</a> () noexcept</td></tr>
 <tr class="separator:aaf75efa477ec41362f32497404b8b667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada4e95ac534b1d072cba42f5a492c97b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#ada4e95ac534b1d072cba42f5a492c97b">deviceCount</a> ()</td></tr>
-<tr class="memdesc:ada4e95ac534b1d072cba42f5a492c97b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备数量  <a href="#ada4e95ac534b1d072cba42f5a492c97b">更多...</a><br /></td></tr>
+<tr class="memdesc:ada4e95ac534b1d072cba42f5a492c97b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备数量  <br /></td></tr>
 <tr class="separator:ada4e95ac534b1d072cba42f5a492c97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8e995e429946eccd954315b354107dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#ac1e8a42306d8e67cb94ca31c3956ee78">DEPRECATED</a> const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#ad8e995e429946eccd954315b354107dd">name</a> (uint32_t index)</td></tr>
-<tr class="memdesc:ad8e995e429946eccd954315b354107dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定设备的名称 (废弃接口)  <a href="#ad8e995e429946eccd954315b354107dd">更多...</a><br /></td></tr>
-<tr class="separator:ad8e995e429946eccd954315b354107dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a110f4f9e911c093e4342c8b4e713ff27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#ac1e8a42306d8e67cb94ca31c3956ee78">DEPRECATED</a> const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#a110f4f9e911c093e4342c8b4e713ff27">name</a> (uint32_t index)</td></tr>
+<tr class="memdesc:a110f4f9e911c093e4342c8b4e713ff27"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定设备的名称 (废弃接口)  <br /></td></tr>
+<tr class="separator:a110f4f9e911c093e4342c8b4e713ff27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a5c22a6107d48d498f3a64bdc8391c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#a5a5c22a6107d48d498f3a64bdc8391c5">pid</a> (uint32_t index)</td></tr>
-<tr class="memdesc:a5a5c22a6107d48d498f3a64bdc8391c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定设备的 pid  <a href="#a5a5c22a6107d48d498f3a64bdc8391c5">更多...</a><br /></td></tr>
+<tr class="memdesc:a5a5c22a6107d48d498f3a64bdc8391c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定设备的 pid  <br /></td></tr>
 <tr class="separator:a5a5c22a6107d48d498f3a64bdc8391c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74f6a148c7b47321f4fae8d1f558fa45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#a74f6a148c7b47321f4fae8d1f558fa45">vid</a> (uint32_t index)</td></tr>
-<tr class="memdesc:a74f6a148c7b47321f4fae8d1f558fa45"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定设备的 vid  <a href="#a74f6a148c7b47321f4fae8d1f558fa45">更多...</a><br /></td></tr>
+<tr class="memdesc:a74f6a148c7b47321f4fae8d1f558fa45"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定设备的 vid  <br /></td></tr>
 <tr class="separator:a74f6a148c7b47321f4fae8d1f558fa45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0c1f95a7750bd639d9412c59225c6b9"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#ac0c1f95a7750bd639d9412c59225c6b9">uid</a> (uint32_t index)</td></tr>
-<tr class="memdesc:ac0c1f95a7750bd639d9412c59225c6b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定设备的 uid  <a href="#ac0c1f95a7750bd639d9412c59225c6b9">更多...</a><br /></td></tr>
-<tr class="separator:ac0c1f95a7750bd639d9412c59225c6b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97e93ca3bb8e7e55f74c7d14308a1454"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#a97e93ca3bb8e7e55f74c7d14308a1454">serialNumber</a> (uint32_t index)</td></tr>
-<tr class="memdesc:a97e93ca3bb8e7e55f74c7d14308a1454"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定设备的序列号  <a href="#a97e93ca3bb8e7e55f74c7d14308a1454">更多...</a><br /></td></tr>
-<tr class="separator:a97e93ca3bb8e7e55f74c7d14308a1454"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcda8ac394c628d717348061c3a8b3c6"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#abcda8ac394c628d717348061c3a8b3c6">connectionType</a> (uint32_t index)</td></tr>
-<tr class="memdesc:abcda8ac394c628d717348061c3a8b3c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备连接类型  <a href="#abcda8ac394c628d717348061c3a8b3c6">更多...</a><br /></td></tr>
-<tr class="separator:abcda8ac394c628d717348061c3a8b3c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae94682c089d204359c5928919d08b374"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#ae94682c089d204359c5928919d08b374">ipAddress</a> (uint32_t index)</td></tr>
-<tr class="memdesc:ae94682c089d204359c5928919d08b374"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定索引处设备的 IP 地址  <a href="#ae94682c089d204359c5928919d08b374">更多...</a><br /></td></tr>
-<tr class="separator:ae94682c089d204359c5928919d08b374"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add9a199b3795a76b0244d9c0a59f762e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1Device.html">Device</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#add9a199b3795a76b0244d9c0a59f762e">getDevice</a> (uint32_t index)</td></tr>
-<tr class="memdesc:add9a199b3795a76b0244d9c0a59f762e"><td class="mdescLeft">&#160;</td><td class="mdescRight">从设备列表中获取指定设备对象,  <a href="#add9a199b3795a76b0244d9c0a59f762e">更多...</a><br /></td></tr>
-<tr class="separator:add9a199b3795a76b0244d9c0a59f762e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5bd74946c5d7bc1066dc9fb0df974b7"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1Device.html">Device</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#af5bd74946c5d7bc1066dc9fb0df974b7">getDeviceBySN</a> (const char *<a class="el" href="classob_1_1DeviceList.html#a97e93ca3bb8e7e55f74c7d14308a1454">serialNumber</a>)</td></tr>
-<tr class="memdesc:af5bd74946c5d7bc1066dc9fb0df974b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">从设备列表中获取指定设备对象  <a href="#af5bd74946c5d7bc1066dc9fb0df974b7">更多...</a><br /></td></tr>
-<tr class="separator:af5bd74946c5d7bc1066dc9fb0df974b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25a2b41118b2a3deea407ea780d67c47"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1Device.html">Device</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#a25a2b41118b2a3deea407ea780d67c47">getDeviceByUid</a> (const char *<a class="el" href="classob_1_1DeviceList.html#ac0c1f95a7750bd639d9412c59225c6b9">uid</a>)</td></tr>
-<tr class="memdesc:a25a2b41118b2a3deea407ea780d67c47"><td class="mdescLeft">&#160;</td><td class="mdescRight">从设备列表中获取指定设备对象  <a href="#a25a2b41118b2a3deea407ea780d67c47">更多...</a><br /></td></tr>
-<tr class="separator:a25a2b41118b2a3deea407ea780d67c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7636b3fca3e41d867103d3e29e4f2e7a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#a7636b3fca3e41d867103d3e29e4f2e7a">uid</a> (uint32_t index)</td></tr>
+<tr class="memdesc:a7636b3fca3e41d867103d3e29e4f2e7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定设备的 uid  <br /></td></tr>
+<tr class="separator:a7636b3fca3e41d867103d3e29e4f2e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc0b773a0beaa5aa671c511497c86371"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#afc0b773a0beaa5aa671c511497c86371">serialNumber</a> (uint32_t index)</td></tr>
+<tr class="memdesc:afc0b773a0beaa5aa671c511497c86371"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定设备的序列号  <br /></td></tr>
+<tr class="separator:afc0b773a0beaa5aa671c511497c86371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ec53640c44e7ccd84050319442e707e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#a9ec53640c44e7ccd84050319442e707e">connectionType</a> (uint32_t index)</td></tr>
+<tr class="memdesc:a9ec53640c44e7ccd84050319442e707e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备连接类型  <br /></td></tr>
+<tr class="separator:a9ec53640c44e7ccd84050319442e707e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc5ac8bf21281df1d92df2470c8b18d4"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#acc5ac8bf21281df1d92df2470c8b18d4">ipAddress</a> (uint32_t index)</td></tr>
+<tr class="memdesc:acc5ac8bf21281df1d92df2470c8b18d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定索引处设备的 IP 地址  <br /></td></tr>
+<tr class="separator:acc5ac8bf21281df1d92df2470c8b18d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99a005ed94df1df342bcb40d6265a4a3"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1Device.html">Device</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#a99a005ed94df1df342bcb40d6265a4a3">getDevice</a> (uint32_t index)</td></tr>
+<tr class="memdesc:a99a005ed94df1df342bcb40d6265a4a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">从设备列表中获取指定设备对象,  <br /></td></tr>
+<tr class="separator:a99a005ed94df1df342bcb40d6265a4a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc1e3926bc667359d5a8e72f102539fd"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1Device.html">Device</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#adc1e3926bc667359d5a8e72f102539fd">getDeviceBySN</a> (const char *<a class="el" href="classob_1_1DeviceList.html#afc0b773a0beaa5aa671c511497c86371">serialNumber</a>)</td></tr>
+<tr class="memdesc:adc1e3926bc667359d5a8e72f102539fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">从设备列表中获取指定设备对象  <br /></td></tr>
+<tr class="separator:adc1e3926bc667359d5a8e72f102539fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f78fb6ba0a9f68b51cc9f92215abccf"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1Device.html">Device</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DeviceList.html#a6f78fb6ba0a9f68b51cc9f92215abccf">getDeviceByUid</a> (const char *<a class="el" href="classob_1_1DeviceList.html#a7636b3fca3e41d867103d3e29e4f2e7a">uid</a>)</td></tr>
+<tr class="memdesc:a6f78fb6ba0a9f68b51cc9f92215abccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">从设备列表中获取指定设备对象  <br /></td></tr>
+<tr class="separator:a6f78fb6ba0a9f68b51cc9f92215abccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>表示设备列表的类 </p>
 
-<p>在文件 <a class="el" href="Device_8hpp_source.html">Device.hpp</a> 第 <a class="el" href="Device_8hpp_source.html#l00667">667</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="Device_8hpp_source.html">Device.hpp</a> 第 <a class="el" href="Device_8hpp_source.html#l00667">667</a> 行定义.</p>
 </div><h2 class="groupheader">构造及析构函数说明</h2>
-<a class="anchor" id="a78325a6d57af6744915cb4dd75e295ab"></a>
+<a id="a78325a6d57af6744915cb4dd75e295ab" name="a78325a6d57af6744915cb4dd75e295ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78325a6d57af6744915cb4dd75e295ab">&#9670;&#160;</a></span>DeviceList()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -165,7 +150,9 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aaf75efa477ec41362f32497404b8b667"></a>
+<a id="aaf75efa477ec41362f32497404b8b667" name="aaf75efa477ec41362f32497404b8b667"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf75efa477ec41362f32497404b8b667">&#9670;&#160;</a></span>~DeviceList()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -189,7 +176,9 @@ Public 成员函数</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">成员函数说明</h2>
-<a class="anchor" id="ada4e95ac534b1d072cba42f5a492c97b"></a>
+<a id="ada4e95ac534b1d072cba42f5a492c97b" name="ada4e95ac534b1d072cba42f5a492c97b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada4e95ac534b1d072cba42f5a492c97b">&#9670;&#160;</a></span>deviceCount()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -207,12 +196,14 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad8e995e429946eccd954315b354107dd"></a>
+<a id="a110f4f9e911c093e4342c8b4e713ff27" name="a110f4f9e911c093e4342c8b4e713ff27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a110f4f9e911c093e4342c8b4e713ff27">&#9670;&#160;</a></span>name()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ObTypes_8h.html#ac1e8a42306d8e67cb94ca31c3956ee78">DEPRECATED</a> const char* ob::DeviceList::name </td>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#ac1e8a42306d8e67cb94ca31c3956ee78">DEPRECATED</a> const char * ob::DeviceList::name </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -232,7 +223,9 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5a5c22a6107d48d498f3a64bdc8391c5"></a>
+<a id="a5a5c22a6107d48d498f3a64bdc8391c5" name="a5a5c22a6107d48d498f3a64bdc8391c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a5c22a6107d48d498f3a64bdc8391c5">&#9670;&#160;</a></span>pid()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -257,7 +250,9 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a74f6a148c7b47321f4fae8d1f558fa45"></a>
+<a id="a74f6a148c7b47321f4fae8d1f558fa45" name="a74f6a148c7b47321f4fae8d1f558fa45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74f6a148c7b47321f4fae8d1f558fa45">&#9670;&#160;</a></span>vid()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -282,12 +277,14 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac0c1f95a7750bd639d9412c59225c6b9"></a>
+<a id="a7636b3fca3e41d867103d3e29e4f2e7a" name="a7636b3fca3e41d867103d3e29e4f2e7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7636b3fca3e41d867103d3e29e4f2e7a">&#9670;&#160;</a></span>uid()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char* ob::DeviceList::uid </td>
+          <td class="memname">const char * ob::DeviceList::uid </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -307,12 +304,14 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a97e93ca3bb8e7e55f74c7d14308a1454"></a>
+<a id="afc0b773a0beaa5aa671c511497c86371" name="afc0b773a0beaa5aa671c511497c86371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc0b773a0beaa5aa671c511497c86371">&#9670;&#160;</a></span>serialNumber()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char* ob::DeviceList::serialNumber </td>
+          <td class="memname">const char * ob::DeviceList::serialNumber </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -332,12 +331,14 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abcda8ac394c628d717348061c3a8b3c6"></a>
+<a id="a9ec53640c44e7ccd84050319442e707e" name="a9ec53640c44e7ccd84050319442e707e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ec53640c44e7ccd84050319442e707e">&#9670;&#160;</a></span>connectionType()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char* ob::DeviceList::connectionType </td>
+          <td class="memname">const char * ob::DeviceList::connectionType </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -357,12 +358,14 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae94682c089d204359c5928919d08b374"></a>
+<a id="acc5ac8bf21281df1d92df2470c8b18d4" name="acc5ac8bf21281df1d92df2470c8b18d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc5ac8bf21281df1d92df2470c8b18d4">&#9670;&#160;</a></span>ipAddress()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char* ob::DeviceList::ipAddress </td>
+          <td class="memname">const char * ob::DeviceList::ipAddress </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -383,12 +386,14 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="add9a199b3795a76b0244d9c0a59f762e"></a>
+<a id="a99a005ed94df1df342bcb40d6265a4a3" name="a99a005ed94df1df342bcb40d6265a4a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99a005ed94df1df342bcb40d6265a4a3">&#9670;&#160;</a></span>getDevice()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="classob_1_1Device.html">Device</a>&gt; ob::DeviceList::getDevice </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classob_1_1Device.html">Device</a> &gt; ob::DeviceList::getDevice </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -409,12 +414,14 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af5bd74946c5d7bc1066dc9fb0df974b7"></a>
+<a id="adc1e3926bc667359d5a8e72f102539fd" name="adc1e3926bc667359d5a8e72f102539fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc1e3926bc667359d5a8e72f102539fd">&#9670;&#160;</a></span>getDeviceBySN()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="classob_1_1Device.html">Device</a>&gt; ob::DeviceList::getDeviceBySN </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classob_1_1Device.html">Device</a> &gt; ob::DeviceList::getDeviceBySN </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>serialNumber</em></td><td>)</td>
@@ -435,12 +442,14 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a25a2b41118b2a3deea407ea780d67c47"></a>
+<a id="a6f78fb6ba0a9f68b51cc9f92215abccf" name="a6f78fb6ba0a9f68b51cc9f92215abccf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f78fb6ba0a9f68b51cc9f92215abccf">&#9670;&#160;</a></span>getDeviceByUid()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="classob_1_1Device.html">Device</a>&gt; ob::DeviceList::getDeviceByUid </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classob_1_1Device.html">Device</a> &gt; ob::DeviceList::getDeviceByUid </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>uid</em></td><td>)</td>
@@ -467,9 +476,7 @@ Public 成员函数</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2024年 一月 26日 星期五 13:27:37 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.11
+生成于 2024年 三月 5日 星期二 18:30:20 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

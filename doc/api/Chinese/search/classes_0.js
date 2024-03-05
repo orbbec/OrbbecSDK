@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['accelframe',['AccelFrame',['../classob_1_1AccelFrame.html',1,'ob']]],
-  ['accelstreamprofile',['AccelStreamProfile',['../classob_1_1AccelStreamProfile.html',1,'ob']]]
+  ['accelframe_0',['AccelFrame',['../classob_1_1AccelFrame.html',1,'ob']]],
+  ['accelstreamprofile_1',['AccelStreamProfile',['../classob_1_1AccelStreamProfile.html',1,'ob']]]
 ];

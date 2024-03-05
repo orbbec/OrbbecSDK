@@ -1,9 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>OrbbecSDK: 文件成员</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -11,9 +12,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,11 +19,10 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
+ <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">OrbbecSDK
-   &#160;<span id="projectnumber">1.9.4</span>
+  <td id="projectalign">
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.9.5</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -34,56 +31,23 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.8.11 -->
+<!-- 制作者 Doxygen 1.9.7 -->
 <script type="text/javascript">
-var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>首页</span></a></li>
-      <li><a href="pages.html"><span>相关页面</span></a></li>
-      <li><a href="namespaces.html"><span>命名空间</span></a></li>
-      <li><a href="annotated.html"><span>类</span></a></li>
-      <li class="current"><a href="files.html"><span>文件</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="搜索" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>文件列表</span></a></li>
-      <li class="current"><a href="globals.html"><span>文件成员</span></a></li>
-    </ul>
-  </div>
-  <div id="navrow3" class="tabs2">
-    <ul class="tablist">
-      <li><a href="globals.html"><span>全部</span></a></li>
-      <li><a href="globals_func.html"><span>函数</span></a></li>
-      <li><a href="globals_type.html"><span>类型定义</span></a></li>
-      <li class="current"><a href="globals_enum.html"><span>枚举</span></a></li>
-      <li><a href="globals_eval.html"><span>枚举值</span></a></li>
-      <li><a href="globals_defs.html"><span>宏定义</span></a></li>
-    </ul>
-  </div>
-  <div id="navrow4" class="tabs3">
-    <ul class="tablist">
-      <li class="current"><a href="#index_o"><span>o</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -94,133 +58,64 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="contents">
-&#160;
+<div class="textblock">&#160;</div>
 
-<h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
-<li>OB_CMD_VERSION
-: <a class="el" href="ObTypes_8h.html#a77477afef404b58271412b9431abf930">ObTypes.h</a>
-</li>
-<li>OB_COORDINATE_SYSTEM_TYPE
-: <a class="el" href="ObTypes_8h.html#afbb016a9143a1d2978e849338d98b7d3">ObTypes.h</a>
-</li>
-<li>OB_DEVICE_DEVELOPMENT_MODE
-: <a class="el" href="ObTypes_8h.html#aa4e1c7899e4f4b08d3019c2fe87af9ea">ObTypes.h</a>
-</li>
-<li>OB_FRAME_AGGREGATE_OUTPUT_MODE
-: <a class="el" href="ObTypes_8h.html#aa02146e9ed035f45a6d85efe212e5ecd">ObTypes.h</a>
-</li>
-<li>ob_multi_device_sync_mode
-: <a class="el" href="ObTypes_8h.html#aabad929b67059752029c3374594ac63b">ObTypes.h</a>
-</li>
-<li>ob_power_line_freq_mode
-: <a class="el" href="ObTypes_8h.html#a2c52e4ff8f71007f970135bf4e50e9c3">ObTypes.h</a>
-</li>
-<li>ob_rotate_degree_type
-: <a class="el" href="ObTypes_8h.html#ae0d7750444d131ad8d013ea09178dbfa">ObTypes.h</a>
-</li>
-<li>OBAccelFullScaleRange
-: <a class="el" href="ObTypes_8h.html#a6cb24ce2297d40025a4882b22b4550d0">ObTypes.h</a>
-</li>
-<li>OBAlignMode
-: <a class="el" href="ObTypes_8h.html#ade914070120de80d4338ee74e73dc9d5">ObTypes.h</a>
-</li>
-<li>OBCommunicationType
-: <a class="el" href="ObTypes_8h.html#a7a0cd29a04f3b3eddfee1d3e824b52a2">ObTypes.h</a>
-</li>
-<li>OBCompressionMode
-: <a class="el" href="ObTypes_8h.html#ab079007f3780abff51925354f8b59a15">ObTypes.h</a>
-</li>
-<li>OBConvertFormat
-: <a class="el" href="ObTypes_8h.html#ae57f11b2621f5e3b74a3983ad647133a">ObTypes.h</a>
-</li>
-<li>OBDataTranState
-: <a class="el" href="ObTypes_8h.html#a3923c2ae80aefbd2943bd89286c6b3ba">ObTypes.h</a>
-</li>
-<li>OBDCPowerState
-: <a class="el" href="ObTypes_8h.html#ab0898528b8d056d1986d96b0b1f767a4">ObTypes.h</a>
-</li>
-<li>OBDepthCroppingMode
-: <a class="el" href="ObTypes_8h.html#a5b2b481f1a71132f1621e49da6b4748f">ObTypes.h</a>
-</li>
-<li>OBDepthPrecisionLevel
-: <a class="el" href="ObTypes_8h.html#ae08e57428df0ebafd9949b1a6e6c4e0d">ObTypes.h</a>
-</li>
-<li>OBDeviceType
-: <a class="el" href="ObTypes_8h.html#a4800aed5036eec930da88a589bb56ca1">ObTypes.h</a>
-</li>
-<li>OBExceptionType
-: <a class="el" href="ObTypes_8h.html#a63a34c60e68bddb4fd5fe26b54aaa7f3">ObTypes.h</a>
-</li>
-<li>OBFileTranState
-: <a class="el" href="ObTypes_8h.html#a7a0af88380a9afe0276bc5112dd11f8d">ObTypes.h</a>
-</li>
-<li>OBFormat
-: <a class="el" href="ObTypes_8h.html#a30904eab1a667b797e7ce1099ba7c36a">ObTypes.h</a>
-</li>
-<li>OBFrameType
-: <a class="el" href="ObTypes_8h.html#a42b4219d92627d3cf51af225ec58a345">ObTypes.h</a>
-</li>
-<li>OBGyroFullScaleRange
-: <a class="el" href="ObTypes_8h.html#a1d34f2e7fcba8d1a60b7d5df918ba3f8">ObTypes.h</a>
-</li>
-<li>OBGyroSampleRate
-: <a class="el" href="ObTypes_8h.html#a3b444d13ed4a263aefa2b44e6da22b67">ObTypes.h</a>
-</li>
-<li>OBHPStatusCode
-: <a class="el" href="ObTypes_8h.html#a30a00b26730789f292d4bca95ae5f84b">ObTypes.h</a>
-</li>
-<li>OBLogSeverity
-: <a class="el" href="ObTypes_8h.html#af3552b30cb452c3065783e55bf0a6f42">ObTypes.h</a>
-</li>
-<li>OBMediaState
-: <a class="el" href="ObTypes_8h.html#a305ef4d284b8f87682d7c8a6727a812a">ObTypes.h</a>
-</li>
-<li>OBMediaType
-: <a class="el" href="ObTypes_8h.html#aea80b2bb24e04f8d79c49b29ba6094fd">ObTypes.h</a>
-</li>
-<li>OBPermissionType
-: <a class="el" href="ObTypes_8h.html#aabf1ee574b8ce0e574add2cea5fdbe27">ObTypes.h</a>
-</li>
-<li>OBPropertyID
-: <a class="el" href="Property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">Property.h</a>
-</li>
-<li>OBPropertyType
-: <a class="el" href="Property_8h.html#a8bd3bd70ba66f9f966e9d23b9442fcfb">Property.h</a>
-</li>
-<li>OBSensorType
-: <a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">ObTypes.h</a>
-</li>
-<li>OBStatus
-: <a class="el" href="ObTypes_8h.html#a16946a0e76e54d58fe6a945fccc3190b">ObTypes.h</a>
-</li>
-<li>OBStreamType
-: <a class="el" href="ObTypes_8h.html#a4372502297ded5d6e6ee8db1d71d69d2">ObTypes.h</a>
-</li>
-<li>OBSyncMode
-: <a class="el" href="ObTypes_8h.html#a874b82e596881f5099d5358008640da2">ObTypes.h</a>
-</li>
-<li>OBTofFilterRange
-: <a class="el" href="ObTypes_8h.html#a3e42020720ac11e4a8cd1e2aba5dc6cc">ObTypes.h</a>
-</li>
-<li>OBUpgradeState
-: <a class="el" href="ObTypes_8h.html#abc9ca4deac2966e28197760a66c5ed34">ObTypes.h</a>
-</li>
-<li>OBUSBPowerState
-: <a class="el" href="ObTypes_8h.html#abcaa12738036a2a9bc67cc81e6ea1376">ObTypes.h</a>
-</li>
+<h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
+<li>OB_CMD_VERSION&#160;:&#160;<a class="el" href="ObTypes_8h.html#a77477afef404b58271412b9431abf930">ObTypes.h</a></li>
+<li>OB_COORDINATE_SYSTEM_TYPE&#160;:&#160;<a class="el" href="ObTypes_8h.html#afbb016a9143a1d2978e849338d98b7d3">ObTypes.h</a></li>
+<li>OB_DEVICE_DEVELOPMENT_MODE&#160;:&#160;<a class="el" href="ObTypes_8h.html#aa4e1c7899e4f4b08d3019c2fe87af9ea">ObTypes.h</a></li>
+<li>OB_FRAME_AGGREGATE_OUTPUT_MODE&#160;:&#160;<a class="el" href="ObTypes_8h.html#aa02146e9ed035f45a6d85efe212e5ecd">ObTypes.h</a></li>
+<li>ob_multi_device_sync_mode&#160;:&#160;<a class="el" href="ObTypes_8h.html#aabad929b67059752029c3374594ac63b">ObTypes.h</a></li>
+<li>ob_power_line_freq_mode&#160;:&#160;<a class="el" href="ObTypes_8h.html#a2c52e4ff8f71007f970135bf4e50e9c3">ObTypes.h</a></li>
+<li>ob_rotate_degree_type&#160;:&#160;<a class="el" href="ObTypes_8h.html#ae0d7750444d131ad8d013ea09178dbfa">ObTypes.h</a></li>
+<li>OBAccelFullScaleRange&#160;:&#160;<a class="el" href="ObTypes_8h.html#a6cb24ce2297d40025a4882b22b4550d0">ObTypes.h</a></li>
+<li>OBAlignMode&#160;:&#160;<a class="el" href="ObTypes_8h.html#ade914070120de80d4338ee74e73dc9d5">ObTypes.h</a></li>
+<li>OBCommunicationType&#160;:&#160;<a class="el" href="ObTypes_8h.html#a7a0cd29a04f3b3eddfee1d3e824b52a2">ObTypes.h</a></li>
+<li>OBCompressionMode&#160;:&#160;<a class="el" href="ObTypes_8h.html#ab079007f3780abff51925354f8b59a15">ObTypes.h</a></li>
+<li>OBConvertFormat&#160;:&#160;<a class="el" href="ObTypes_8h.html#ae57f11b2621f5e3b74a3983ad647133a">ObTypes.h</a></li>
+<li>OBDataTranState&#160;:&#160;<a class="el" href="ObTypes_8h.html#a3923c2ae80aefbd2943bd89286c6b3ba">ObTypes.h</a></li>
+<li>OBDCPowerState&#160;:&#160;<a class="el" href="ObTypes_8h.html#ab0898528b8d056d1986d96b0b1f767a4">ObTypes.h</a></li>
+<li>OBDepthCroppingMode&#160;:&#160;<a class="el" href="ObTypes_8h.html#a5b2b481f1a71132f1621e49da6b4748f">ObTypes.h</a></li>
+<li>OBDepthPrecisionLevel&#160;:&#160;<a class="el" href="ObTypes_8h.html#ae08e57428df0ebafd9949b1a6e6c4e0d">ObTypes.h</a></li>
+<li>OBDeviceType&#160;:&#160;<a class="el" href="ObTypes_8h.html#a4800aed5036eec930da88a589bb56ca1">ObTypes.h</a></li>
+<li>OBExceptionType&#160;:&#160;<a class="el" href="ObTypes_8h.html#a63a34c60e68bddb4fd5fe26b54aaa7f3">ObTypes.h</a></li>
+<li>OBFileTranState&#160;:&#160;<a class="el" href="ObTypes_8h.html#a7a0af88380a9afe0276bc5112dd11f8d">ObTypes.h</a></li>
+<li>OBFormat&#160;:&#160;<a class="el" href="ObTypes_8h.html#a30904eab1a667b797e7ce1099ba7c36a">ObTypes.h</a></li>
+<li>OBFrameType&#160;:&#160;<a class="el" href="ObTypes_8h.html#a42b4219d92627d3cf51af225ec58a345">ObTypes.h</a></li>
+<li>OBGyroFullScaleRange&#160;:&#160;<a class="el" href="ObTypes_8h.html#a1d34f2e7fcba8d1a60b7d5df918ba3f8">ObTypes.h</a></li>
+<li>OBGyroSampleRate&#160;:&#160;<a class="el" href="ObTypes_8h.html#a3b444d13ed4a263aefa2b44e6da22b67">ObTypes.h</a></li>
+<li>OBHPStatusCode&#160;:&#160;<a class="el" href="ObTypes_8h.html#a30a00b26730789f292d4bca95ae5f84b">ObTypes.h</a></li>
+<li>OBLogSeverity&#160;:&#160;<a class="el" href="ObTypes_8h.html#af3552b30cb452c3065783e55bf0a6f42">ObTypes.h</a></li>
+<li>OBMediaState&#160;:&#160;<a class="el" href="ObTypes_8h.html#a305ef4d284b8f87682d7c8a6727a812a">ObTypes.h</a></li>
+<li>OBMediaType&#160;:&#160;<a class="el" href="ObTypes_8h.html#aea80b2bb24e04f8d79c49b29ba6094fd">ObTypes.h</a></li>
+<li>OBPermissionType&#160;:&#160;<a class="el" href="ObTypes_8h.html#aabf1ee574b8ce0e574add2cea5fdbe27">ObTypes.h</a></li>
+<li>OBPropertyID&#160;:&#160;<a class="el" href="Property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbab">Property.h</a></li>
+<li>OBPropertyType&#160;:&#160;<a class="el" href="Property_8h.html#a8bd3bd70ba66f9f966e9d23b9442fcfb">Property.h</a></li>
+<li>OBSensorType&#160;:&#160;<a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">ObTypes.h</a></li>
+<li>OBStatus&#160;:&#160;<a class="el" href="ObTypes_8h.html#a16946a0e76e54d58fe6a945fccc3190b">ObTypes.h</a></li>
+<li>OBStreamType&#160;:&#160;<a class="el" href="ObTypes_8h.html#a4372502297ded5d6e6ee8db1d71d69d2">ObTypes.h</a></li>
+<li>OBSyncMode&#160;:&#160;<a class="el" href="ObTypes_8h.html#a874b82e596881f5099d5358008640da2">ObTypes.h</a></li>
+<li>OBTofFilterRange&#160;:&#160;<a class="el" href="ObTypes_8h.html#a3e42020720ac11e4a8cd1e2aba5dc6cc">ObTypes.h</a></li>
+<li>OBUpgradeState&#160;:&#160;<a class="el" href="ObTypes_8h.html#abc9ca4deac2966e28197760a66c5ed34">ObTypes.h</a></li>
+<li>OBUSBPowerState&#160;:&#160;<a class="el" href="ObTypes_8h.html#abcaa12738036a2a9bc67cc81e6ea1376">ObTypes.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2024年 一月 26日 星期五 13:27:37 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.11
+生成于 2024年 三月 5日 星期二 18:30:20 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>
