@@ -51,7 +51,7 @@ void saveRGBDPointsDataToPly(uint8_t *pointcloudData, uint32_t pointcloudSize, s
     fclose(fp);
 }
 
-int depthPointCloudTransformation(std::shared_ptr<ob::Device> device, int number) {
+int depthPointCloudTransformation(std::shared_ptr<ob::Device> device, int case_number) {
     // create pipeline
     auto pipeline = std::shared_ptr<ob::Pipeline>(new ob::Pipeline(device));
 
@@ -345,7 +345,7 @@ int RGBPointCloudTransformation(std::shared_ptr<ob::Device> device) {
 
 int main(int argc, char **argv) try {
 
-    int number = 3;
+    int case_number = 3;
 
     ob::Context ctx;
     ctx.setLoggerSeverity(OB_LOG_SEVERITY_WARN);
@@ -358,9 +358,9 @@ int main(int argc, char **argv) try {
     }
 
     // Invoking the utils class to generate an undistorted depth point cloud.
-    depthPointCloudTransformation(device, number);
+    depthPointCloudTransformation(device, case_number);
 
-    // Invoking the utils class to generate an undistorted depth point cloud.
+    // Invoking the utils class to generate an undistorted RGBD point cloud.
     RGBPointCloudTransformation(device);
 }
 catch(ob::Error &e) {
