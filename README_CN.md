@@ -1,6 +1,6 @@
 # OrbbecSDK
 
-![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.9.4-green)
+![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.9.5-green)
 
 Orbbec 3D 相机产品软件开发套件，全面支持 UVC，实现免驱动即插即用，提供低层和高层简单易用的 API，帮助开发者在不同场景下灵活使用。
 
@@ -18,13 +18,13 @@ Orbbec 3D 相机产品软件开发套件，全面支持 UVC，实现免驱动即
 
 ## 支持平台
 
-| Operating system | Requirement                                                  | Description |
-| --- | --- | --- |
-| Windows | - Windows 10 April 2018 (version 1803, operating system build 17134) release (x64) or higher<br /> | The generation of the VS project depends on the installation of the VS version and the cmake version, and supports VS2015/vs2017/vs2019 |
-| Linux | - Linux Ubuntu 16.04/18.04/20.04 (x64)<br />|Support GCC 7.5|
-| Arm32|- Linux Ubuntu 16.04/18.04/20.04<br /> |  Support GCC 7.5 |
-| Arm64 |- Linux Ubuntu 18.04/20.04<br /> |  Support GCC 7.5 |
-| MacOS |- M series chip, 11.0 and above、intel x86 chip, 10.15 and above. <br /> |  supported hardware products: Gemini 2, Gemini 2 L, Astra 2,Gemini 2 XL, Femto Mega |
+| Operating system | Requirement                                                                                        | Description                                                                                                                             |
+|------------------|----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| Windows          | - Windows 10 April 2018 (version 1803, operating system build 17134) release (x64) or higher<br /> | The generation of the VS project depends on the installation of the VS version and the cmake version, and supports VS2015/vs2017/vs2019 |
+| Linux            | - Linux Ubuntu 16.04/18.04/20.04 (x64)<br />                                                       | Support GCC 7.5                                                                                                                         |
+| Arm32            | - Linux Ubuntu 16.04/18.04/20.04<br />                                                             | Support GCC 7.5                                                                                                                         |
+| Arm64            | - Linux Ubuntu 18.04/20.04<br />                                                                   | Support GCC 7.5                                                                                                                         |
+| MacOS            | - M series chip, 11.0 and above、intel x86 chip, 10.15 and above. <br />                            | supported hardware products: Gemini 2, Gemini 2 L, Astra 2,Gemini 2 XL, Femto Mega                                                      |
 
 * 注: 当前版本支持的Arm平台：jestson nano(arm64)、AGX Orin(arm64)、Orin NX (arm64)、Orin Nano(arm64)、A311D(arm64)、树莓派4(arm64)、树莓派3（arm32)、rk3399(arm64), 其它Arm系统，可能需要重新交叉编译。
 
@@ -32,14 +32,14 @@ Orbbec 3D 相机产品软件开发套件，全面支持 UVC，实现免驱动即
 
 ## 支持产品
 
-| **产品列表** | **固件版本** |
-| --- | --- |
-| Femto Bolt       | 1.0.6/1.0.9   |
-| Femto Mega       | 1.1.7/1.2.7   |
-| Gemini 2 XL      | Obox: V1.2.5  VL:1.4.54    |
-| Astra 2          | 2.8.20                     |
-| Gemini 2 L       | 1.4.32                     |
-| Gemini 2         | 1.4.60 /1.4.76             |
+| **产品列表**     | **固件版本**                |
+|------------------|-----------------------------|
+| Femto Bolt       | 1.0.6/1.0.9                 |
+| Femto Mega       | 1.1.7/1.2.7                 |
+| Gemini 2 XL      | Obox: V1.2.5  VL:1.4.54     |
+| Astra 2          | 2.8.20                      |
+| Gemini 2 L       | 1.4.32                      |
+| Gemini 2         | 1.4.60 /1.4.76              |
 | Astra+           | 1.0.22/1.0.21/1.0.20/1.0.19 |
 | Femto            | 1.6.7                       |
 | Femto W          | 1.1.8                       |

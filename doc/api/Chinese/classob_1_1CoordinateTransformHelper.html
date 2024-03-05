@@ -1,9 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>OrbbecSDK: ob::CoordinateTransformHelper类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -11,9 +12,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,11 +19,10 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
+ <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">OrbbecSDK
-   &#160;<span id="projectnumber">1.9.4</span>
+  <td id="projectalign">
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.9.5</span>
    </div>
    <div id="projectbrief">OrbbecSDK: 奥比中光 3D 相机开发套件</div>
   </td>
@@ -34,43 +31,23 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.8.11 -->
+<!-- 制作者 Doxygen 1.9.7 -->
 <script type="text/javascript">
-var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>首页</span></a></li>
-      <li><a href="pages.html"><span>相关页面</span></a></li>
-      <li><a href="namespaces.html"><span>命名空间</span></a></li>
-      <li class="current"><a href="annotated.html"><span>类</span></a></li>
-      <li><a href="files.html"><span>文件</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="搜索" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>类列表</span></a></li>
-      <li><a href="classes.html"><span>类索引</span></a></li>
-      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
-      <li><a href="functions.html"><span>类成员</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -80,9 +57,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
 </div>
 
 <div id="nav-path" class="navpath">
@@ -94,48 +78,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   <div class="summary">
 <a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
 <a href="classob_1_1CoordinateTransformHelper-members.html">所有成员列表</a>  </div>
-  <div class="headertitle">
-<div class="title">ob::CoordinateTransformHelper类 参考</div>  </div>
+  <div class="headertitle"><div class="title">ob::CoordinateTransformHelper类 参考</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="Utils_8hpp_source.html">Utils.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 静态 Public 成员函数</h2></td></tr>
 <tr class="memitem:a4bfc5ce508df729b5406e121099e51d9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1CoordinateTransformHelper.html#a4bfc5ce508df729b5406e121099e51d9">calibration3dTo3d</a> (const OBCalibrationParam calibrationParam, const OBPoint3f sourcePoint3f, const <a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a> sourceSensorType, const <a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a> targetSensorType, OBPoint3f *targetPoint3f)</td></tr>
-<tr class="memdesc:a4bfc5ce508df729b5406e121099e51d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">将源坐标系统的一个三维点转换为目标坐标系统的三维点.  <a href="#a4bfc5ce508df729b5406e121099e51d9">更多...</a><br /></td></tr>
+<tr class="memdesc:a4bfc5ce508df729b5406e121099e51d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">将源坐标系统的一个三维点转换为目标坐标系统的三维点.  <br /></td></tr>
 <tr class="separator:a4bfc5ce508df729b5406e121099e51d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afee8f7ca1a4dda1d64e18f6ae9c7c7da"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1CoordinateTransformHelper.html#afee8f7ca1a4dda1d64e18f6ae9c7c7da">calibration2dTo3d</a> (const OBCalibrationParam calibrationParam, const OBPoint2f sourcePoint2f, const float sourceDepthPixelValue, const <a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a> sourceSensorType, const <a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a> targetSensorType, OBPoint3f *targetPoint3f)</td></tr>
-<tr class="memdesc:afee8f7ca1a4dda1d64e18f6ae9c7c7da"><td class="mdescLeft">&#160;</td><td class="mdescRight">将源坐标系统的一个二维点转换为目标坐标系统的三维点.  <a href="#afee8f7ca1a4dda1d64e18f6ae9c7c7da">更多...</a><br /></td></tr>
+<tr class="memdesc:afee8f7ca1a4dda1d64e18f6ae9c7c7da"><td class="mdescLeft">&#160;</td><td class="mdescRight">将源坐标系统的一个二维点转换为目标坐标系统的三维点.  <br /></td></tr>
 <tr class="separator:afee8f7ca1a4dda1d64e18f6ae9c7c7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f5c12013bfbafae1c65f8a505404924"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1CoordinateTransformHelper.html#a0f5c12013bfbafae1c65f8a505404924">calibration2dTo3dUndistortion</a> (const OBCalibrationParam calibrationParam, const OBPoint2f sourcePoint2f, const float sourceDepthPixelValue, const <a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a> sourceSensorType, const <a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a> targetSensorType, OBPoint3f *targetPoint3f)</td></tr>
-<tr class="memdesc:a0f5c12013bfbafae1c65f8a505404924"><td class="mdescLeft">&#160;</td><td class="mdescRight">将源坐标系统的一个二维点转换为目标坐标系统的三维点.  <a href="#a0f5c12013bfbafae1c65f8a505404924">更多...</a><br /></td></tr>
+<tr class="memdesc:a0f5c12013bfbafae1c65f8a505404924"><td class="mdescLeft">&#160;</td><td class="mdescRight">将源坐标系统的一个二维点转换为目标坐标系统的三维点.  <br /></td></tr>
 <tr class="separator:a0f5c12013bfbafae1c65f8a505404924"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a081edd5c6ec2ad74cba3b0e6a4377c5f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1CoordinateTransformHelper.html#a081edd5c6ec2ad74cba3b0e6a4377c5f">calibration3dTo2d</a> (const OBCalibrationParam calibrationParam, const OBPoint3f sourcePoint3f, const <a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a> sourceSensorType, const <a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a> targetSensorType, OBPoint2f *targetPoint2f)</td></tr>
-<tr class="memdesc:a081edd5c6ec2ad74cba3b0e6a4377c5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">将源坐标系统的一个三维点转换为目标坐标系统的二维点.  <a href="#a081edd5c6ec2ad74cba3b0e6a4377c5f">更多...</a><br /></td></tr>
+<tr class="memdesc:a081edd5c6ec2ad74cba3b0e6a4377c5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">将源坐标系统的一个三维点转换为目标坐标系统的二维点.  <br /></td></tr>
 <tr class="separator:a081edd5c6ec2ad74cba3b0e6a4377c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3171058b035b78d0a197acff65f3edf1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1CoordinateTransformHelper.html#a3171058b035b78d0a197acff65f3edf1">calibration2dTo2d</a> (const OBCalibrationParam calibrationParam, const OBPoint2f sourcePoint2f, const float sourceDepthPixelValue, const <a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a> sourceSensorType, const <a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a> targetSensorType, OBPoint2f *targetPoint2f)</td></tr>
-<tr class="memdesc:a3171058b035b78d0a197acff65f3edf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">将源坐标系统的一个二维点转换为目标坐标系统的二维点  <a href="#a3171058b035b78d0a197acff65f3edf1">更多...</a><br /></td></tr>
+<tr class="memdesc:a3171058b035b78d0a197acff65f3edf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">将源坐标系统的一个二维点转换为目标坐标系统的二维点  <br /></td></tr>
 <tr class="separator:a3171058b035b78d0a197acff65f3edf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a137a4366837963036a88def19bc53a0c"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classob_1_1Frame.html">ob::Frame</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1CoordinateTransformHelper.html#a137a4366837963036a88def19bc53a0c">transformationDepthFrameToColorCamera</a> (std::shared_ptr&lt; <a class="el" href="classob_1_1Device.html">ob::Device</a> &gt; device, std::shared_ptr&lt; <a class="el" href="classob_1_1Frame.html">ob::Frame</a> &gt; depthFrame, uint32_t targetColorCameraWidth, uint32_t targetColorCameraHeight)</td></tr>
-<tr class="memdesc:a137a4366837963036a88def19bc53a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">将深度转换为彩色相机的坐标系的深度帧（D2C）  <a href="#a137a4366837963036a88def19bc53a0c">更多...</a><br /></td></tr>
-<tr class="separator:a137a4366837963036a88def19bc53a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabea70310988002a00280268ef6e3c02"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classob_1_1Frame.html">ob::Frame</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1CoordinateTransformHelper.html#aabea70310988002a00280268ef6e3c02">transformationDepthFrameToColorCamera</a> (std::shared_ptr&lt; <a class="el" href="classob_1_1Device.html">ob::Device</a> &gt; device, std::shared_ptr&lt; <a class="el" href="classob_1_1Frame.html">ob::Frame</a> &gt; depthFrame, uint32_t targetColorCameraWidth, uint32_t targetColorCameraHeight)</td></tr>
+<tr class="memdesc:aabea70310988002a00280268ef6e3c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">将深度转换为彩色相机的坐标系的深度帧（D2C）  <br /></td></tr>
+<tr class="separator:aabea70310988002a00280268ef6e3c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f6c9e302d0ab213bdc38ed1c4964ab8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1CoordinateTransformHelper.html#a6f6c9e302d0ab213bdc38ed1c4964ab8">transformationInitXYTables</a> (const OBCalibrationParam calibrationParam, const <a class="el" href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a> sensorType, float *data, uint32_t *dataSize, OBXYTables *xyTables)</td></tr>
-<tr class="memdesc:a6f6c9e302d0ab213bdc38ed1c4964ab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化转换查找表  <a href="#a6f6c9e302d0ab213bdc38ed1c4964ab8">更多...</a><br /></td></tr>
+<tr class="memdesc:a6f6c9e302d0ab213bdc38ed1c4964ab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化转换查找表  <br /></td></tr>
 <tr class="separator:a6f6c9e302d0ab213bdc38ed1c4964ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acae26f98bf59fcff5e75b016d6b501e6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1CoordinateTransformHelper.html#acae26f98bf59fcff5e75b016d6b501e6">transformationDepthToPointCloud</a> (OBXYTables *xyTables, const void *depthImageData, void *pointCloudData)</td></tr>
-<tr class="memdesc:acae26f98bf59fcff5e75b016d6b501e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">深度转点云  <a href="#acae26f98bf59fcff5e75b016d6b501e6">更多...</a><br /></td></tr>
+<tr class="memdesc:acae26f98bf59fcff5e75b016d6b501e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">深度转点云  <br /></td></tr>
 <tr class="separator:acae26f98bf59fcff5e75b016d6b501e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4965c07369c943d30d378e19e7f6cb2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1CoordinateTransformHelper.html#ad4965c07369c943d30d378e19e7f6cb2">transformationDepthToRGBDPointCloud</a> (OBXYTables *xyTables, const void *depthImageData, const void *colorImageData, void *pointCloudData)</td></tr>
-<tr class="memdesc:ad4965c07369c943d30d378e19e7f6cb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">深度转RGBD点云  <a href="#ad4965c07369c943d30d378e19e7f6cb2">更多...</a><br /></td></tr>
+<tr class="memdesc:ad4965c07369c943d30d378e19e7f6cb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">深度转RGBD点云  <br /></td></tr>
 <tr class="separator:ad4965c07369c943d30d378e19e7f6cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock">
-<p>在文件 <a class="el" href="Utils_8hpp_source.html">Utils.hpp</a> 第 <a class="el" href="Utils_8hpp_source.html#l00013">13</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="Utils_8hpp_source.html">Utils.hpp</a> 第 <a class="el" href="Utils_8hpp_source.html#l00013">13</a> 行定义.</p>
 </div><h2 class="groupheader">成员函数说明</h2>
-<a class="anchor" id="a4bfc5ce508df729b5406e121099e51d9"></a>
+<a id="a4bfc5ce508df729b5406e121099e51d9" name="a4bfc5ce508df729b5406e121099e51d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bfc5ce508df729b5406e121099e51d9">&#9670;&#160;</a></span>calibration3dTo3d()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -200,7 +185,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="afee8f7ca1a4dda1d64e18f6ae9c7c7da"></a>
+<a id="afee8f7ca1a4dda1d64e18f6ae9c7c7da" name="afee8f7ca1a4dda1d64e18f6ae9c7c7da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afee8f7ca1a4dda1d64e18f6ae9c7c7da">&#9670;&#160;</a></span>calibration2dTo3d()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -272,7 +259,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a0f5c12013bfbafae1c65f8a505404924"></a>
+<a id="a0f5c12013bfbafae1c65f8a505404924" name="a0f5c12013bfbafae1c65f8a505404924"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f5c12013bfbafae1c65f8a505404924">&#9670;&#160;</a></span>calibration2dTo3dUndistortion()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -345,7 +334,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a081edd5c6ec2ad74cba3b0e6a4377c5f"></a>
+<a id="a081edd5c6ec2ad74cba3b0e6a4377c5f" name="a081edd5c6ec2ad74cba3b0e6a4377c5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a081edd5c6ec2ad74cba3b0e6a4377c5f">&#9670;&#160;</a></span>calibration3dTo2d()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -410,7 +401,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a3171058b035b78d0a197acff65f3edf1"></a>
+<a id="a3171058b035b78d0a197acff65f3edf1" name="a3171058b035b78d0a197acff65f3edf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3171058b035b78d0a197acff65f3edf1">&#9670;&#160;</a></span>calibration2dTo2d()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -482,7 +475,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a137a4366837963036a88def19bc53a0c"></a>
+<a id="aabea70310988002a00280268ef6e3c02" name="aabea70310988002a00280268ef6e3c02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabea70310988002a00280268ef6e3c02">&#9670;&#160;</a></span>transformationDepthFrameToColorCamera()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -490,7 +485,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::shared_ptr&lt;<a class="el" href="classob_1_1Frame.html">ob::Frame</a>&gt; ob::CoordinateTransformHelper::transformationDepthFrameToColorCamera </td>
+          <td class="memname">static std::shared_ptr&lt; <a class="el" href="classob_1_1Frame.html">ob::Frame</a> &gt; ob::CoordinateTransformHelper::transformationDepthFrameToColorCamera </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classob_1_1Device.html">ob::Device</a> &gt;&#160;</td>
           <td class="paramname"><em>device</em>, </td>
@@ -540,7 +535,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="a6f6c9e302d0ab213bdc38ed1c4964ab8"></a>
+<a id="a6f6c9e302d0ab213bdc38ed1c4964ab8" name="a6f6c9e302d0ab213bdc38ed1c4964ab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f6c9e302d0ab213bdc38ed1c4964ab8">&#9670;&#160;</a></span>transformationInitXYTables()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -605,7 +602,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="acae26f98bf59fcff5e75b016d6b501e6"></a>
+<a id="acae26f98bf59fcff5e75b016d6b501e6" name="acae26f98bf59fcff5e75b016d6b501e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acae26f98bf59fcff5e75b016d6b501e6">&#9670;&#160;</a></span>transformationDepthToPointCloud()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -655,7 +654,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
-<a class="anchor" id="ad4965c07369c943d30d378e19e7f6cb2"></a>
+<a id="ad4965c07369c943d30d378e19e7f6cb2" name="ad4965c07369c943d30d378e19e7f6cb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4965c07369c943d30d378e19e7f6cb2">&#9670;&#160;</a></span>transformationDepthToRGBDPointCloud()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -718,9 +719,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2024年 一月 26日 星期五 13:27:37 , 为 OrbbecSDK使用  &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.11
+生成于 2024年 三月 5日 星期二 18:30:20 , 为 OrbbecSDK使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>
