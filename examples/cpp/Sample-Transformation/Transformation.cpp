@@ -92,7 +92,7 @@ int depthPointCloudTransformation(std::shared_ptr<ob::Device> device, int case_n
     uint32_t pointcloudSize = depthWidth * depthHeight * sizeof(OBPoint3f);
     uint8_t *pointcloudData = new uint8_t[pointcloudSize];
 
-    uint32_t   tableSize = depthWidth * depthHeight * 2 * sizeof(float);
+    uint32_t   tableSize = depthWidth * depthHeight * 2;
     float *    data      = new float[tableSize];
     OBXYTables xyTables;
     if(!ob::CoordinateTransformHelper::transformationInitXYTables(param, OB_SENSOR_DEPTH, data, &tableSize, &xyTables)) {
@@ -100,7 +100,7 @@ int depthPointCloudTransformation(std::shared_ptr<ob::Device> device, int case_n
     }
 
     int count = 0;
-    if(number == 1) {
+    if (case_number == 1) {
         // Limit up to 10 repetitions
         while(count++ < 10) {
             // Wait for a frame of data, the timeout is 100ms
@@ -137,9 +137,8 @@ int depthPointCloudTransformation(std::shared_ptr<ob::Device> device, int case_n
                 std::cout << "Get depth frame or depth frame failed!" << std::endl;
             }
         }
-    }
-    else if(number == 2) {
-        // Limit up to 10 repetitions
+    } else if (case_number == 2) {
+      // Limit up to 10 repetitions
         while(count++ < 10) {
             // Wait for up to 100ms for a frameset in blocking mode.
             auto frameset = pipeline->waitForFrames(100);
@@ -172,9 +171,8 @@ int depthPointCloudTransformation(std::shared_ptr<ob::Device> device, int case_n
                 break;
             }
         }
-    }
-    else if(number == 3) {
-        while(count++ < 10) {
+    } else if (case_number == 3) {
+      while (count++ < 10) {
             // Wait for up to 100ms for a frameset in blocking mode.
             auto frameset = pipeline->waitForFrames(100);
             if(frameset != nullptr && frameset->depthFrame() != nullptr) {
@@ -290,7 +288,7 @@ int RGBPointCloudTransformation(std::shared_ptr<ob::Device> device) {
     auto     param       = pipeline->getCalibrationParam(config);
     uint32_t colorWidth  = colorProfile->width();
     uint32_t colorHeight = colorProfile->height();
-    uint32_t tableSize   = colorWidth * colorHeight * 2 * sizeof(float);
+    uint32_t tableSize   = colorWidth * colorHeight * 2;
     float *  data        = new float[tableSize];
 
     uint32_t pointcloudSize = colorWidth * colorHeight * sizeof(OBColorPoint);

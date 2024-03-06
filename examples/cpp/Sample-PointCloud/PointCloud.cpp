@@ -105,7 +105,9 @@ int main(int argc, char **argv) try {
         std::shared_ptr<ob::StreamProfile> depthProfile;
         try {
             // Select the profile with the same frame rate as color.
-            depthProfile = depthProfileList->getVideoStreamProfile(OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_ANY, colorProfile->fps());
+            if(colorProfile) {
+                depthProfile = depthProfileList->getVideoStreamProfile(OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_ANY, colorProfile->fps());
+            }
         }
         catch(...) {
             depthProfile = nullptr;
