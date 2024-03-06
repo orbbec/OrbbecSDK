@@ -19,15 +19,10 @@ extern "C" {
 #include <libobsensor/h/Sensor.h>
 }
 
-// Create global variables
-Window      *win    = nullptr;  // render window, based on opencv
-ob_error    *error  = NULL;     // Used to return SDK interface error information
-ob_context  *ctx    = nullptr;  // context, used to create device
-ob_device   *device = nullptr;  // device, used to create pipeline
-ob_pipeline *pipe   = nullptr;  // pipeline, used to open the data stream after connecting the device
-
 ob_frame  *current_frameset = nullptr;  // The frame used to render
 std::mutex frameset_mutex;              // frameSet mutex
+ob_error  *error = NULL;                // Used to return SDK interface error information
+
 // exception handler
 void check_error(ob_error *error) {
     if(error) {
@@ -51,6 +46,11 @@ void frameset_callback(ob_frame *frameset, void *user_data) {
 }
 
 int main(int argc, char **args) {
+    Window      *win      = nullptr;  // render window, based on opencv
+    ob_context  *ctx      = nullptr;  // context, used to create device
+    ob_device   *device   = nullptr;  // device, used to create pipeline
+    ob_pipeline *pipeline = nullptr;  // pipeline, used to open the data stream after connecting the device
+
     // create context
     ctx = ob_create_context(&error);
     check_error(error);
@@ -72,7 +72,7 @@ int main(int argc, char **args) {
     check_error(error);
 
     // Create a pipeline to open the color stream after connecting the device
-    pipe = ob_create_pipeline_with_device(device, &error);
+    pipeline = ob_create_pipeline_with_device(device, &error);
     check_error(error);
 
     // Create config to configure the resolution, frame rate, and format of the color stream
@@ -81,7 +81,7 @@ int main(int argc, char **args) {
 
     ob_stream_profile *color_profile = nullptr;
     // Get the list of Color stream profiles
-    ob_stream_profile_list *color_profiles = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_COLOR, &error);
+    ob_stream_profile_list *color_profiles = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_COLOR, &error);
     check_error(error);
     // Select the default stream configuration
     color_profile = ob_stream_profile_list_get_profile(color_profiles, OB_PROFILE_DEFAULT, &error);
@@ -92,7 +92,7 @@ int main(int argc, char **args) {
 
     ob_stream_profile *depth_profile = nullptr;
     // Get the depth stream profile list
-    ob_stream_profile_list *depth_profiles = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_DEPTH, &error);
+    ob_stream_profile_list *depth_profiles = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_DEPTH, &error);
     check_error(error);
     // Select the default stream configuration
     depth_profile = ob_stream_profile_list_get_profile(depth_profiles, OB_PROFILE_DEFAULT, &error);
@@ -102,7 +102,7 @@ int main(int argc, char **args) {
     check_error(error);
 
     // Start the pipeline with config
-    ob_pipeline_start_with_callback(pipe, config, frameset_callback, nullptr, &error);
+    ob_pipeline_start_with_callback(pipeline, config, frameset_callback, nullptr, &error);
     check_error(error);
 
     // Create a rendering display window
@@ -178,7 +178,7 @@ int main(int argc, char **args) {
     };
 
     // stop the pipeline
-    ob_pipeline_stop(pipe, &error);
+    ob_pipeline_stop(pipeline, &error);
     check_error(error);
 
     // destroy window
@@ -212,7 +212,7 @@ int main(int argc, char **args) {
     check_error(error);
 
     // destroy the pipeline
-    ob_delete_pipeline(pipe, &error);
+    ob_delete_pipeline(pipeline, &error);
     check_error(error);
 
     // destroy context

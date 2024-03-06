@@ -28,7 +28,7 @@ int main(int argc, char **argv) try {
     pipe.start(config);
 
     // Create a window for rendering, and set the resolution of the window
-    Window app("DepthViewer", depthProfile->width(), depthProfile->height());
+   Window app("DepthViewer", depthProfile->width(), depthProfile->height());
 
     while(app) {
         // Wait for up to 100ms for a frameset in blocking mode.
@@ -54,7 +54,7 @@ int main(int argc, char **argv) try {
         }
 
         // Render frame in the window
-        app.addToRender(depthFrame);
+       app.addToRender(depthFrame);
     }
 
     // Stop the pipeline

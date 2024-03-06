@@ -306,7 +306,9 @@ void startStream() {
 
                 try {
                     // Select the profile with the same frame rate as color.
-                    profile = depthProfileList->getVideoStreamProfile(OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_ANY, colorProfile->fps());
+                    if(colorProfile) {
+                        profile = depthProfileList->getVideoStreamProfile(OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_ANY, colorProfile->fps());
+                    }
                 }
                 catch(...) {
                     profile = nullptr;

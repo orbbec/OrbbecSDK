@@ -42,11 +42,11 @@ int main(int argc, char **argv) {
     ob_error *error = NULL;
 
     // Create a pipeline to open the depth stream after connecting the device
-    ob_pipeline *pipe = ob_create_pipeline(&error);
+    ob_pipeline *pipeline = ob_create_pipeline(&error);
     check_error(error);
 
     // Get the device through the pipeline
-    ob_device *dev = ob_pipeline_get_device(pipe, &error);
+    ob_device *dev = ob_pipeline_get_device(pipeline, &error);
     check_error(error);
 
     // Check whether the camera depth working mode is supported, currently (December 5, 2022) only the Gemini2 binocular camera supports the depth working mode
@@ -132,7 +132,7 @@ int main(int argc, char **argv) {
     check_error(error);
 
     // destroy the pipeline
-    ob_delete_pipeline(pipe, &error);
+    ob_delete_pipeline(pipeline, &error);
     check_error(error);
 
     return 0;

@@ -70,30 +70,34 @@ int main(int argc, char **argv) try {
         irFrame    = frameset->irFrame();
     });
 
-    auto                        dev = pipe.getDevice();
-    std::shared_ptr<ob::Sensor> accelSensor;
-    std::shared_ptr<ob::Sensor> gyroSensor;
+    auto dev         = pipe.getDevice();
+    auto imuPipeline = std::make_shared<ob::Pipeline>(dev);
     try {
-        accelSensor = dev->getSensor(OB_SENSOR_ACCEL);
-        gyroSensor  = dev->getSensor(OB_SENSOR_GYRO);
+        auto                        accelProfiles = imuPipeline->getStreamProfileList(OB_SENSOR_ACCEL);
+        auto                        gyroProfiles  = imuPipeline->getStreamProfileList(OB_SENSOR_GYRO);
+        auto                        accelProfile  = accelProfiles->getProfile(OB_PROFILE_DEFAULT);
+        auto                        gyroProfile   = gyroProfiles->getProfile(OB_PROFILE_DEFAULT);
+        std::shared_ptr<ob::Config> imuConfig     = std::make_shared<ob::Config>();
+        imuConfig->enableStream(accelProfile);
+        imuConfig->enableStream(gyroProfile);
+        imuPipeline->start(imuConfig, [&](std::shared_ptr<ob::Frame> frame) {
+            auto frameSet = frame->as<ob::FrameSet>();
+            auto aFrame   = frameSet->getFrame(OB_FRAME_ACCEL);
+            auto gFrame   = frameSet->getFrame(OB_FRAME_GYRO);
+
+            {
+                std::unique_lock<std::mutex> lk(accelFrameMutex);
+                accelFrame = aFrame;
+            }
+
+            {
+                std::unique_lock<std::mutex> lk(gyroFrameMutex);
+                gyroFrame = gFrame;
+            }
+        });
     }
     catch(...) {
         std::cout << "IMU sensor not found!" << std::endl;
-    }
-    if(accelSensor && gyroSensor) {
-        auto accelProfiles = accelSensor->getStreamProfileList();
-        auto accelProfile  = accelProfiles->getProfile(OB_PROFILE_DEFAULT);
-        accelSensor->start(accelProfile, [&](std::shared_ptr<ob::Frame> frame) {
-            std::unique_lock<std::mutex> lk(accelFrameMutex);
-            accelFrame = frame;
-        });
-
-        auto gyroProfiles = gyroSensor->getStreamProfileList();
-        auto gyroProfile  = gyroProfiles->getProfile(OB_PROFILE_DEFAULT);
-        gyroSensor->start(gyroProfile, [&](std::shared_ptr<ob::Frame> frame) {
-            std::unique_lock<std::mutex> lk(gyroFrameMutex);
-            gyroFrame = frame;
-        });
     }
 
     // Create a window for rendering and set the resolution of the window
@@ -135,9 +139,8 @@ int main(int argc, char **argv) try {
 
     // Stop the Pipeline, no frame data will be generated
     pipe.stop();
-    if(accelSensor && gyroSensor) {
-        accelSensor->stop();
-        gyroSensor->stop();
+    if(imuPipeline) {
+        imuPipeline->stop();
     }
     return 0;
 }

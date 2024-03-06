@@ -46,7 +46,7 @@ int main(int argc, char **argv) try {
         auto                                    colorProfiles = pipeline.getStreamProfileList(OB_SENSOR_COLOR);
         std::shared_ptr<ob::VideoStreamProfile> colorProfile  = nullptr;
         if(colorProfiles) {
-            colorProfile = std::const_pointer_cast<ob::StreamProfile>(colorProfiles->getProfile(0))->as<ob::VideoStreamProfile>();
+            colorProfile = std::const_pointer_cast<ob::StreamProfile>(colorProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
         }
         config->enableStream(colorProfile);
     }
@@ -60,7 +60,7 @@ int main(int argc, char **argv) try {
     auto                                    depthProfiles = pipeline.getStreamProfileList(OB_SENSOR_DEPTH);
     std::shared_ptr<ob::VideoStreamProfile> depthProfile  = nullptr;
     if(depthProfiles) {
-        depthProfile = std::const_pointer_cast<ob::StreamProfile>(depthProfiles->getProfile(0))->as<ob::VideoStreamProfile>();
+        depthProfile = std::const_pointer_cast<ob::StreamProfile>(depthProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
     }
     config->enableStream(depthProfile);
 
