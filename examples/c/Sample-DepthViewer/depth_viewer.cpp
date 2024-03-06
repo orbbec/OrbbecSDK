@@ -1,9 +1,5 @@
 #include "window.hpp"
-
-#include <condition_variable>
 #include <iostream>
-#include <mutex>
-#include <thread>
 
 extern "C" {
 #include <stdlib.h>
@@ -19,11 +15,6 @@ extern "C" {
  *This sample is written in C++ code, based on the C language version API of OrbbecSDK.
  */
 
-// Create global variables
-Window      *win   = nullptr;  // render window, based on opencv
-ob_error    *error = NULL;     // Used to return SDK interface error information
-ob_pipeline *pipe  = nullptr;  // pipeline, used to open the depth stream after connecting the device
-
 void check_error(ob_error *error) {
     if(error) {
         printf("ob_error was raised: \n\tcall: %s(%s)\n", ob_error_function(error), ob_error_args(error));
@@ -35,8 +26,12 @@ void check_error(ob_error *error) {
 }
 
 int main(int argc, char **args) {
+    Window      *win      = nullptr;  // render window, based on opencv
+    ob_error    *error    = NULL;     // Used to return SDK interface error information
+    ob_pipeline *pipeline = nullptr;  // pipeline, used to open the depth stream after connecting the device
+
     // Create a pipeline to open the depth stream after connecting the device
-    pipe = ob_create_pipeline(&error);
+    pipeline = ob_create_pipeline(&error);
     check_error(error);
 
     // Create config to configure the resolution, frame rate, and format of the depth stream
@@ -45,7 +40,7 @@ int main(int argc, char **args) {
 
     // Configure the depth stream
     ob_stream_profile      *depth_profile = NULL;
-    ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_DEPTH, &error);
+    ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_DEPTH, &error);
     check_error(error);
 
     // Find the corresponding profile according to the specified format, first look for the y16 format
@@ -62,7 +57,7 @@ int main(int argc, char **args) {
     check_error(error);
 
     // Start the pipeline with config
-    ob_pipeline_start_with_config(pipe, config, &error);
+    ob_pipeline_start_with_config(pipeline, config, &error);
     check_error(error);
 
     // Create a window for rendering, and set the resolution of the window
@@ -76,7 +71,7 @@ int main(int argc, char **args) {
     // Wait in a loop, exit after the window receives the "esc" key
     while(*win) {
         // Wait for up to 100ms for a frameset in blocking mode.
-        ob_frame *frameset = ob_pipeline_wait_for_frameset(pipe, 100, &error);
+        ob_frame *frameset = ob_pipeline_wait_for_frameset(pipeline, 100, &error);
         check_error(error);
 
         if(frameset == nullptr) {
@@ -117,7 +112,7 @@ int main(int argc, char **args) {
     };
 
     // stop the pipeline
-    ob_pipeline_stop(pipe, &error);
+    ob_pipeline_stop(pipeline, &error);
     check_error(error);
 
     // destroy the window
@@ -132,7 +127,7 @@ int main(int argc, char **args) {
     check_error(error);
 
     // destroy the pipeline
-    ob_delete_pipeline(pipe, &error);
+    ob_delete_pipeline(pipeline, &error);
     check_error(error);
 
     return 0;

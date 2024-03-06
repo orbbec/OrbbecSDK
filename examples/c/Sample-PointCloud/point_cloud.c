@@ -16,8 +16,7 @@
 #define KEY_R 82
 #define KEY_r 114
 
-ob_error    *error    = NULL;  // Used to return SDK interface error information
-ob_pipeline *pipeline = NULL;  // pipeline, used to open the Color and Depth streams after connecting the device
+ob_error *error = NULL;  // Used to return SDK interface error information
 
 void check_error(ob_error *error) {
     if(error) {
@@ -84,6 +83,8 @@ void save_rgb_points_to_ply(ob_frame *frame, const char *fileName) {
 }
 
 int main(int argc, char **argv) {
+    ob_pipeline *pipeline = NULL;  // pipeline, used to open the Color and Depth streams after connecting the device
+
     ob_set_logger_severity(OB_LOG_SEVERITY_ERROR, &error);
     check_error(error);
 
@@ -150,11 +151,13 @@ int main(int argc, char **argv) {
     int listCount = ob_stream_profile_list_count(depthProfiles, &error);
     check_error(error);
     if(listCount > 0) {
-        // Select the profile with the same frame rate as color.
-        int color_fps = ob_video_stream_profile_fps(color_profile, &error);
-        check_error(error);
-        depth_profile = ob_stream_profile_list_get_video_stream_profile(depthProfiles, OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_ANY, color_fps, &error);
-        check_error(error);
+        if(color_profile) {
+            // Select the profile with the same frame rate as color.
+            int color_fps = ob_video_stream_profile_fps(color_profile, &error);
+            check_error(error);
+            depth_profile = ob_stream_profile_list_get_video_stream_profile(depthProfiles, OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_ANY, color_fps, &error);
+            check_error(error);
+        }
 
         if(depth_profile == NULL) {
             // If no matching profile is found, select the default profile.

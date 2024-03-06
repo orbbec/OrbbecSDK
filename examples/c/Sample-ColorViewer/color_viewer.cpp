@@ -1,12 +1,8 @@
 #include "window.hpp"
-
-#include <condition_variable>
 #include <iostream>
-#include <mutex>
-#include <thread>
-#include <cstdlib>
 
 extern "C" {
+#include <stdlib.h>
 #include <libobsensor/h/Error.h>
 #include <libobsensor/h/Frame.h>
 #include <libobsensor/h/ObTypes.h>
@@ -21,12 +17,6 @@ extern "C" {
  * to demonstrate how to open color stream and get frames.
  */
 
-// create global variable
-Window      *win    = nullptr;  // rendering display window, based on opencv
-ob_error    *error  = NULL;     // Used to return SDK interface error information
-ob_pipeline *pipe   = nullptr;  // pipeline, used to open the color stream after connecting the device
-ob_device   *device = nullptr;  // device, obtained through the pipeline, and the corresponding sensor can be obtained through the device
-
 void check_error(ob_error *error) {
     if(error) {
         printf("ob_error was raised: \n\tcall: %s(%s)\n", ob_error_function(error), ob_error_args(error));
@@ -38,8 +28,13 @@ void check_error(ob_error *error) {
 }
 
 int main(int argc, char **args) {
+    Window      *win      = nullptr;  // rendering display window, based on opencv
+    ob_error    *error    = NULL;     // Used to return SDK interface error information
+    ob_pipeline *pipeline = nullptr;  // pipeline, used to open the color stream after connecting the device
+    ob_device   *device   = nullptr;  // device, obtained through the pipeline, and the corresponding sensor can be obtained through the device
+
     // Create a pipeline to open the color stream after connecting the device
-    pipe = ob_create_pipeline(&error);
+    pipeline = ob_create_pipeline(&error);
     check_error(error);
 
     // Create config to configure the resolution, frame rate, and format of the color stream
@@ -48,7 +43,7 @@ int main(int argc, char **args) {
 
     // Configure the color stream
     ob_stream_profile      *color_profile = nullptr;
-    ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_COLOR, &error);
+    ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_COLOR, &error);
     if(error) {
         printf("Current device is not support color sensor!\n");
         exit(EXIT_FAILURE);
@@ -68,11 +63,11 @@ int main(int argc, char **args) {
     check_error(error);
 
     // Get Device through Pipeline
-    device = ob_pipeline_get_device(pipe, &error);
+    device = ob_pipeline_get_device(pipeline, &error);
     check_error(error);
 
     // Start the pipeline with config
-    ob_pipeline_start_with_config(pipe, config, &error);
+    ob_pipeline_start_with_config(pipeline, config, &error);
     check_error(error);
 
     // Create a rendering display window
@@ -86,7 +81,7 @@ int main(int argc, char **args) {
     // Wait in a loop, and exit after the window receives the "ESC_KEY" key
     while(*win) {
         // Wait for up to 100ms for a frameset in blocking mode.
-        ob_frame *frameset = ob_pipeline_wait_for_frameset(pipe, 100, &error);
+        ob_frame *frameset = ob_pipeline_wait_for_frameset(pipeline, 100, &error);
         check_error(error);
 
         if(frameset == nullptr) {
@@ -105,7 +100,7 @@ int main(int argc, char **args) {
     };
 
     // stop the pipeline
-    ob_pipeline_stop(pipe, &error);
+    ob_pipeline_stop(pipeline, &error);
     check_error(error);
 
     // destroy window
@@ -124,7 +119,7 @@ int main(int argc, char **args) {
     check_error(error);
 
     // destroy the pipeline
-    ob_delete_pipeline(pipe, &error);
+    ob_delete_pipeline(pipeline, &error);
     check_error(error);
 
     return 0;

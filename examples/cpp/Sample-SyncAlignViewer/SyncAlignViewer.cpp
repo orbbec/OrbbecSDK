@@ -133,7 +133,7 @@ int main(int argc, char **argv) try {
         // Get all stream profiles of the color camera, including stream resolution, frame rate, and frame format
         auto colorProfiles = pipe.getStreamProfileList(OB_SENSOR_COLOR);
         if(colorProfiles) {
-            colorProfile = std::const_pointer_cast<ob::StreamProfile>(colorProfiles->getProfile(0))->as<ob::VideoStreamProfile>();
+            colorProfile = std::const_pointer_cast<ob::StreamProfile>(colorProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
         }
         config->enableStream(colorProfile);
     }
@@ -146,7 +146,7 @@ int main(int argc, char **argv) try {
     auto                                    depthProfiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
     std::shared_ptr<ob::VideoStreamProfile> depthProfile  = nullptr;
     if(depthProfiles) {
-        depthProfile = std::const_pointer_cast<ob::StreamProfile>(depthProfiles->getProfile(0))->as<ob::VideoStreamProfile>();
+        depthProfile = std::const_pointer_cast<ob::StreamProfile>(depthProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
     }
     config->enableStream(depthProfile);
 
