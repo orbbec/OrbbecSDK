@@ -4,6 +4,9 @@ project(OrbbecSDK VERSION 1.9.5 LANGUAGES C CXX)
 # Determine host platform
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/DetermineHostPlatform.cmake)
 
+# dependent lib & driver download
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/DependentDownload.cmake)
+
 if(WIN32)
     set(ORBBEC_LIB_PREFIX "")
     set(ORBBEC_LIB_SUFFIX ".lib")
