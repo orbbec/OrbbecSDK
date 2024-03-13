@@ -6,7 +6,6 @@ The Orbbec 3D camera product software development kit fully supports UVC, enabli
 
 Additionally, this SDK is compatible with Orbbec's original OpenNI protocol devices through built-in code, enabling developers to migrate to Orbbec SDK to support both new and old products with one set of code.
 
-
 If you are a user in China, it is recommended to use Gitee([gitee Repo](https://gitee.com/orbbecdeveloper/OrbbecSDK)).
 
 ## What is included in the repository
@@ -17,15 +16,23 @@ If you are a user in China, it is recommended to use Gitee([gitee Repo](https://
 * **driver** : Windows device driver for OpenNI protocol devices (Dabai, Dabai DCW, Dabai DW, Astra mini Pro, Astra Pro Plus, A1 Pro, Gemini E, Gemini E Lite, Gemini). While modules that use the standard UVC protocol do not need to install drivers.
 * **scripts** : Linux udev rules for resolving permission issues and Windows timestamp registration scripts for resolving timestamp and metadata issues.
 
+## license structure
+
+The current software license structure is as follows
+![SdkLicenseDiagram](doc/resources/sdk_licensediagram.png)
+
+In the near future following software lincense structure will be optimized as follows
+![SdkLicenseDiagramFuture](doc/resources/sdk_licenseiagram_future.png)
+
 ## Platform support
 
-| Operating system | Requirement                                                                                        | Description                                                                                                                             |
-|------------------|----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| Windows          | - Windows 10 April 2018 (version 1803, operating system build 17134) release (x64) or higher<br /> | The generation of the VS project depends on the installation of the VS version and the cmake version, and supports VS2015/vs2017/vs2019 |
-| Linux            | - Linux Ubuntu 16.04/18.04/20.04 (x64)<br />                                                       | Support GCC 7.5                                                                                                                         |
-| Arm32            | - Linux Ubuntu 16.04/18.04/20.04<br />                                                             | Support GCC 7.5                                                                                                                         |
-| Arm64            | - Linux Ubuntu 18.04/20.04<br />                                                                   | Support GCC 7.5                                                                                                                         |
-| MacOS            | - M series chip, 11.0 and above、intel x86 chip, 10.15 and above. <br />                            | supported hardware products: Gemini 2, Gemini 2 L, Astra 2,Gemini 2 XL, Femto Mega                                                      |
+| Operating system | Requirement                                                                                  | Description                                                                                                                             |
+|------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| Windows          | - Windows 10 April 2018 (version 1803, operating system build 17134) release (x64) or higher | The generation of the VS project depends on the installation of the VS version and the cmake version, and supports VS2015/vs2017/vs2019 |
+| Linux            | - Linux Ubuntu 16.04/18.04/20.04 (x64)                                                       | Support GCC 7.5                                                                                                                         |
+| Arm32            | - Linux Ubuntu 16.04/18.04/20.04                                                             | Support GCC 7.5                                                                                                                         |
+| Arm64            | - Linux Ubuntu 18.04/20.04                                                                   | Support GCC 7.5                                                                                                                         |
+| MacOS            | - M series chip, 11.0 and above、intel x86 chip, 10.15 and above.                             | supported hardware products: Gemini 2, Gemini 2 L, Astra 2,Gemini 2 XL, Femto Mega                                                      |
 
 * Note: supported Arm platforms: jestson nano (arm64)、 AGX Orin(arm64)、Orin NX (arm64)、Orin Nano(arm64)、A311D (arm64), Raspberry Pi 4 (arm64), Raspberry Pi 3 (arm32), rk3399 (arm64), other Arm systems, may need to Cross-compile.
 * Windows 11, Ubuntu 22.04 and other Linux platforms may also be supported, but have not been fully tested.
@@ -52,8 +59,6 @@ If you are a user in China, it is recommended to use Gitee([gitee Repo](https://
 | Gemini            | 3.0.18                      |
 | Astra Mini S Pro  | 1.0.05                      |
 
-
-
 ## OrbbecViewer
 
 OrbbecViewer is a useful tool based on Orbbec SDK，that can be used to view the data stream from the Orbbec camera and control the camera.
@@ -65,7 +70,6 @@ OrbbecViewer is a useful tool based on Orbbec SDK，that can be used to view the
 
 **OrbbecViewer User Manual**: [OrbbecViewer User Manual](doc/OrbbecViewer/English/OrbbecViewer.md)
 
-
 ## Getting started
 
 ### Get source code
@@ -76,25 +80,20 @@ git clone https://github.com/orbbec/OrbbecSDK.git
 
 ### Environment setup
 
-
 * Linux:
 
-    Install udev rules file
+  Install udev rules file
 
-    ``` bash
-    cd OrbbecSDK/misc/scripts
-    sudo chmod +x ./install_udev_rules.sh
-    sudo ./install_udev_rules.sh
-    sudo udevadm control --reload && sudo udevadm trigger
-    ```
-
+  ```bash
+  cd OrbbecSDK/misc/scripts
+  sudo chmod +x ./install_udev_rules.sh
+  sudo ./install_udev_rules.sh
+  sudo udevadm control --reload && sudo udevadm trigger
+  ```
 * Windows:
 
-    Timestamp registration: [follow this: obsensor_metadata_win10](misc/scripts/obsensor_metadata_win10.md)
-
+  Timestamp registration: [follow this: obsensor_metadata_win10](misc/scripts/obsensor_metadata_win10.md)
 * *For more information, please refer to：[Environment Configuration](doc/tutorial/English/Environment_Configuration.md)*
-
-
 
 ## Examples
 
@@ -110,12 +109,14 @@ cd OrbbecSDK && mkdir build && cd build && cmake .. && cmake --build . --config 
 
 To connect your Orbbec camera to your PC, run the following steps:
 
-``` bash
+```bash
 cd OrbbecSDK/build/bin # build output dir
 ./OBMultiStream  # OBMultiStream.exe on Windows
 ```
+
 Notes: On MacOS, sudo privileges are required.
-``` bash
+
+```bash
 # MacOS
 cd OrbbecSDK/build/bin # build output dir
 sudo ./OBMultiStream
@@ -127,7 +128,6 @@ The following image is the result of running MultiStream on the Gemini2 device. 
 
 Notes:
 On the Linux/Arm platform ,this sample requires users to compile with Opencv4.2 or above,otherwise, it cannot be rendered.
-
 
 ### Use Orbbec SDK in your CMake project
 
@@ -146,8 +146,6 @@ find_package(OrbbecSDK REQUIRED)
 # link Orbbec SDK
 target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 ```
-
-
 
 ## Documents
 
