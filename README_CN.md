@@ -19,9 +19,11 @@ Orbbec 3D 相机产品软件开发套件，全面支持 UVC，实现免驱动即
 ## 软件license结构说明
 
 当前遵循软件license结构如下
+
 ![SdkLicenseDiagram](doc/resources/sdk_licensediagram.png)
 
 在不久将来遵循软件lincense结构会优化如下
+
 ![SdkLicenseDiagramFuture](doc/resources/sdk_licenseiagram_future.png)
 
 ## 支持平台

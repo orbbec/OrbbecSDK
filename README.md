@@ -19,9 +19,11 @@ If you are a user in China, it is recommended to use Gitee([gitee Repo](https://
 ## license structure
 
 The current software license structure is as follows
+
 ![SdkLicenseDiagram](doc/resources/sdk_licensediagram.png)
 
 In the near future following software lincense structure will be optimized as follows
+
 ![SdkLicenseDiagramFuture](doc/resources/sdk_licenseiagram_future.png)
 
 ## Platform support
