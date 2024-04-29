@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.9.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.10.2</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -76,6 +76,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Frame.h File Reference</div></div>
 </div><!--header-->
@@ -87,6 +88,13 @@ $(function() {
 </div>
 <p><a href="Frame_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a8e7ec8be03a6df7fcfdf34bdebd4e932"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a8e7ec8be03a6df7fcfdf34bdebd4e932">ob_video_frame_metadata</a>&#160;&#160;&#160;<a class="el" href="Frame_8h.html#ad63df2c5ef15893b3283f5a499c42b35">ob_frame_metadata</a></td></tr>
+<tr class="separator:a8e7ec8be03a6df7fcfdf34bdebd4e932"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe2eada651497ac1d75121726199f75a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#abe2eada651497ac1d75121726199f75a">ob_video_frame_metadata_size</a>&#160;&#160;&#160;<a class="el" href="Frame_8h.html#a505189d1ff40dcbfdecea05b7c42f394">ob_frame_metadata_size</a></td></tr>
+<tr class="separator:abe2eada651497ac1d75121726199f75a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a5009d0e21fffddc2bb891357ccd611f7"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a5009d0e21fffddc2bb891357ccd611f7">ob_frame_index</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
@@ -107,6 +115,9 @@ Functions</h2></td></tr>
 <tr class="memitem:adce8d3f7031629a3e3d7b25911b33886"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#adce8d3f7031629a3e3d7b25911b33886">ob_frame_system_time_stamp</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:adce8d3f7031629a3e3d7b25911b33886"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the system timestamp of the frame in milliseconds.  <br /></td></tr>
 <tr class="separator:adce8d3f7031629a3e3d7b25911b33886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad19056f301daa6d4e7b18447dafcb732"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#ad19056f301daa6d4e7b18447dafcb732">ob_frame_system_time_stamp_us</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ad19056f301daa6d4e7b18447dafcb732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the system timestamp of the frame in microseconds.  <br /></td></tr>
+<tr class="separator:ad19056f301daa6d4e7b18447dafcb732"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3823a34cf10836c2e46904416dd4f7ae"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a3823a34cf10836c2e46904416dd4f7ae">ob_frame_global_time_stamp_us</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a3823a34cf10836c2e46904416dd4f7ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the global timestamp of the frame in microseconds.  <br /></td></tr>
 <tr class="separator:a3823a34cf10836c2e46904416dd4f7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,18 +127,33 @@ Functions</h2></td></tr>
 <tr class="memitem:ab9350186e6d286d74466d07287871ce9"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#ab9350186e6d286d74466d07287871ce9">ob_frame_data_size</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:ab9350186e6d286d74466d07287871ce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the frame data size.  <br /></td></tr>
 <tr class="separator:ab9350186e6d286d74466d07287871ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad63df2c5ef15893b3283f5a499c42b35"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#ad63df2c5ef15893b3283f5a499c42b35">ob_frame_metadata</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ad63df2c5ef15893b3283f5a499c42b35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the metadata of the frame.  <br /></td></tr>
+<tr class="separator:ad63df2c5ef15893b3283f5a499c42b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a505189d1ff40dcbfdecea05b7c42f394"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a505189d1ff40dcbfdecea05b7c42f394">ob_frame_metadata_size</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a505189d1ff40dcbfdecea05b7c42f394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the metadata size of the frame.  <br /></td></tr>
+<tr class="separator:a505189d1ff40dcbfdecea05b7c42f394"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4797a8f850c1608999981997297cb22b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a4797a8f850c1608999981997297cb22b">ob_frame_has_metadata</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="ObTypes_8h.html#ae080b7e9d4916ffd1d6493aae7ec0c94">ob_frame_metadata_type</a> type, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a4797a8f850c1608999981997297cb22b"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if the frame contains the specified metadata  <br /></td></tr>
+<tr class="separator:a4797a8f850c1608999981997297cb22b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addd8d0e89e5c4d0e2a1f970ef881dfc7"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#addd8d0e89e5c4d0e2a1f970ef881dfc7">ob_frame_get_metadata_value</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="ObTypes_8h.html#ae080b7e9d4916ffd1d6493aae7ec0c94">ob_frame_metadata_type</a> type, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:addd8d0e89e5c4d0e2a1f970ef881dfc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the metadata value of the frame.  <br /></td></tr>
+<tr class="separator:addd8d0e89e5c4d0e2a1f970ef881dfc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6b136164cacea2bd5d4fdd7f5b33e6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#af6b136164cacea2bd5d4fdd7f5b33e6a">ob_frame_get_stream_profile</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:af6b136164cacea2bd5d4fdd7f5b33e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the stream profile of the frame.  <br /></td></tr>
+<tr class="separator:af6b136164cacea2bd5d4fdd7f5b33e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa082888f11bbb34d797c3ee5a8b19d2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a818d3a4166de3a59430e6fd2bdf9eb28">ob_sensor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#aa082888f11bbb34d797c3ee5a8b19d2d">ob_frame_get_sensor</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:aa082888f11bbb34d797c3ee5a8b19d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the sensor of the frame.  <br /></td></tr>
+<tr class="separator:aa082888f11bbb34d797c3ee5a8b19d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c84e9592a37fd4e518315964f63da0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a3c84e9592a37fd4e518315964f63da0b">ob_frame_get_device</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a3c84e9592a37fd4e518315964f63da0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the device of the frame.  <br /></td></tr>
+<tr class="separator:a3c84e9592a37fd4e518315964f63da0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0105450d37ecd43b0e27c90e396231eb"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a0105450d37ecd43b0e27c90e396231eb">ob_video_frame_width</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a0105450d37ecd43b0e27c90e396231eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get video frame width.  <br /></td></tr>
 <tr class="separator:a0105450d37ecd43b0e27c90e396231eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c31d615158ad377dab30a5886788a11"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a4c31d615158ad377dab30a5886788a11">ob_video_frame_height</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a4c31d615158ad377dab30a5886788a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get video frame height.  <br /></td></tr>
 <tr class="separator:a4c31d615158ad377dab30a5886788a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb038c68f498a145ce7774c606c3d9ff"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#acb038c68f498a145ce7774c606c3d9ff">ob_video_frame_metadata</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:acb038c68f498a145ce7774c606c3d9ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the metadata of the frame.  <br /></td></tr>
-<tr class="separator:acb038c68f498a145ce7774c606c3d9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9096648e25cfa045fb0ab6b3b3c93c0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#ac9096648e25cfa045fb0ab6b3b3c93c0">ob_video_frame_metadata_size</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:ac9096648e25cfa045fb0ab6b3b3c93c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the metadata size of the frame.  <br /></td></tr>
-<tr class="separator:ac9096648e25cfa045fb0ab6b3b3c93c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a7f7edea6d5963c2bbd2360edc3a489"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a4a7f7edea6d5963c2bbd2360edc3a489">ob_video_frame_pixel_available_bit_size</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a4a7f7edea6d5963c2bbd2360edc3a489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the effective number of pixels (such as Y16 format frame, but only the lower 10 bits are effective bits, and the upper 6 bits are filled with 0)  <br /></td></tr>
 <tr class="separator:a4a7f7edea6d5963c2bbd2360edc3a489"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,6 +187,9 @@ Functions</h2></td></tr>
 <tr class="memitem:af05a787de121f4c63ea41f7077609604"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#af05a787de121f4c63ea41f7077609604">ob_frameset_get_frame</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, <a class="el" href="ObTypes_8h.html#ac4da8d71ec61d4487d7eab4fff45f753">ob_frame_type</a> frame_type, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:af05a787de121f4c63ea41f7077609604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a frame of a specific type from the frameset.  <br /></td></tr>
 <tr class="separator:af05a787de121f4c63ea41f7077609604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f1e990ff0a7eafa88eadf512d17297f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#a8f1e990ff0a7eafa88eadf512d17297f">ob_frameset_get_frame_by_index</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frameset, int index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a8f1e990ff0a7eafa88eadf512d17297f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a frame at a specific index from the FrameSet.  <br /></td></tr>
+<tr class="separator:a8f1e990ff0a7eafa88eadf512d17297f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abebc05a57d9906ff7b05e5e3edbe0537"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a6492e9923b828aee716db40004db9b4b">ob_accel_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Frame_8h.html#abebc05a57d9906ff7b05e5e3edbe0537">ob_accel_frame_value</a> (<a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *frame, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:abebc05a57d9906ff7b05e5e3edbe0537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get accelerometer frame data.  <br /></td></tr>
 <tr class="separator:abebc05a57d9906ff7b05e5e3edbe0537"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,7 +231,40 @@ Functions</h2></td></tr>
 <div class="textblock"><p>Frame related function is mainly used to obtain frame data and frame information. </p>
 
 <p class="definition">Definition in file <a class="el" href="Frame_8h_source.html">Frame.h</a>.</p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a8e7ec8be03a6df7fcfdf34bdebd4e932" name="a8e7ec8be03a6df7fcfdf34bdebd4e932"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e7ec8be03a6df7fcfdf34bdebd4e932">&#9670;&#160;</a></span>ob_video_frame_metadata</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ob_video_frame_metadata&#160;&#160;&#160;<a class="el" href="Frame_8h.html#ad63df2c5ef15893b3283f5a499c42b35">ob_frame_metadata</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Frame_8h_source.html#l00123">123</a> of file <a class="el" href="Frame_8h_source.html">Frame.h</a>.</p>
+
+</div>
+</div>
+<a id="abe2eada651497ac1d75121726199f75a" name="abe2eada651497ac1d75121726199f75a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe2eada651497ac1d75121726199f75a">&#9670;&#160;</a></span>ob_video_frame_metadata_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ob_video_frame_metadata_size&#160;&#160;&#160;<a class="el" href="Frame_8h.html#a505189d1ff40dcbfdecea05b7c42f394">ob_frame_metadata_size</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Frame_8h_source.html#l00133">133</a> of file <a class="el" href="Frame_8h_source.html">Frame.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a5009d0e21fffddc2bb891357ccd611f7" name="a5009d0e21fffddc2bb891357ccd611f7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5009d0e21fffddc2bb891357ccd611f7">&#9670;&#160;</a></span>ob_frame_index()</h2>
 
@@ -434,6 +496,45 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad19056f301daa6d4e7b18447dafcb732" name="ad19056f301daa6d4e7b18447dafcb732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad19056f301daa6d4e7b18447dafcb732">&#9670;&#160;</a></span>ob_frame_system_time_stamp_us()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t ob_frame_system_time_stamp_us </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the system timestamp of the frame in microseconds. </p>
+<p>The system timestamp is the time point when the frame was received by the host, on host clock domain.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>Frame object </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint64_t return the frame system timestamp in microseconds </dd></dl>
+
+</div>
+</div>
 <a id="a3823a34cf10836c2e46904416dd4f7ae" name="a3823a34cf10836c2e46904416dd4f7ae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3823a34cf10836c2e46904416dd4f7ae">&#9670;&#160;</a></span>ob_frame_global_time_stamp_us()</h2>
 
@@ -550,6 +651,288 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad63df2c5ef15893b3283f5a499c42b35" name="ad63df2c5ef15893b3283f5a499c42b35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad63df2c5ef15893b3283f5a499c42b35">&#9670;&#160;</a></span>ob_frame_metadata()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * ob_frame_metadata </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the metadata of the frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>frame object </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void* return the metadata pointer of the frame </dd></dl>
+
+</div>
+</div>
+<a id="a505189d1ff40dcbfdecea05b7c42f394" name="a505189d1ff40dcbfdecea05b7c42f394"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a505189d1ff40dcbfdecea05b7c42f394">&#9670;&#160;</a></span>ob_frame_metadata_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ob_frame_metadata_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the metadata size of the frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>frame object </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint32_t return the metadata size of the frame </dd></dl>
+
+</div>
+</div>
+<a id="a4797a8f850c1608999981997297cb22b" name="a4797a8f850c1608999981997297cb22b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4797a8f850c1608999981997297cb22b">&#9670;&#160;</a></span>ob_frame_has_metadata()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ob_frame_has_metadata </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ae080b7e9d4916ffd1d6493aae7ec0c94">ob_frame_metadata_type</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>check if the frame contains the specified metadata </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>frame object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>metadata type, refer to <a class="el" href="ObTypes_8h.html#ae080b7e9d4916ffd1d6493aae7ec0c94">ob_frame_metadata_type</a> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="addd8d0e89e5c4d0e2a1f970ef881dfc7" name="addd8d0e89e5c4d0e2a1f970ef881dfc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addd8d0e89e5c4d0e2a1f970ef881dfc7">&#9670;&#160;</a></span>ob_frame_get_metadata_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t ob_frame_get_metadata_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#ae080b7e9d4916ffd1d6493aae7ec0c94">ob_frame_metadata_type</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the metadata value of the frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>frame object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>metadata type, refer to <a class="el" href="ObTypes_8h.html#ae080b7e9d4916ffd1d6493aae7ec0c94">ob_frame_metadata_type</a> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int64_t return the metadata value of the frame </dd></dl>
+
+</div>
+</div>
+<a id="af6b136164cacea2bd5d4fdd7f5b33e6a" name="af6b136164cacea2bd5d4fdd7f5b33e6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6b136164cacea2bd5d4fdd7f5b33e6a">&#9670;&#160;</a></span>ob_frame_get_stream_profile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> * ob_frame_get_stream_profile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the stream profile of the frame. </p>
+<dl class="section attention"><dt>Attention</dt><dd>Require <a class="el" href="StreamProfile_8h.html#af079a3b0493c43fa5782b5d1c67f30c9">ob_delete_stream_profile()</a> to release the return stream profile.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>frame object </td></tr>
+    <tr><td class="paramname">error</td><td>Log error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ob_stream_profile* Return the stream profile of the frame, if the frame is not captured by a sensor stream, it will return NULL </dd></dl>
+
+</div>
+</div>
+<a id="aa082888f11bbb34d797c3ee5a8b19d2d" name="aa082888f11bbb34d797c3ee5a8b19d2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa082888f11bbb34d797c3ee5a8b19d2d">&#9670;&#160;</a></span>ob_frame_get_sensor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a818d3a4166de3a59430e6fd2bdf9eb28">ob_sensor</a> * ob_frame_get_sensor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the sensor of the frame. </p>
+<dl class="section attention"><dt>Attention</dt><dd>Require <a class="el" href="Sensor_8h.html#a396811d4fa7a910cb1384d37c6820646">ob_delete_sensor()</a> to release the return sensor.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>frame object </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ob_sensor* return the sensor of the frame, if the frame is not captured by a sensor or the sensor stream has been destroyed, it will return NULL </dd></dl>
+
+</div>
+</div>
+<a id="a3c84e9592a37fd4e518315964f63da0b" name="a3c84e9592a37fd4e518315964f63da0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c84e9592a37fd4e518315964f63da0b">&#9670;&#160;</a></span>ob_frame_get_device()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> * ob_frame_get_device </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the device of the frame. </p>
+<dl class="section attention"><dt>Attention</dt><dd>Require <a class="el" href="Device_8h.html#a8e59c9e48b96283cf735961d770b473a">ob_delete_device()</a> to release the return device.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">frame</td><td>frame object </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ob_device* return the device of the frame, if the frame is not captured by a sensor stream or the device has been destroyed, it will return NULL </dd></dl>
+
+</div>
+</div>
 <a id="a0105450d37ecd43b0e27c90e396231eb" name="a0105450d37ecd43b0e27c90e396231eb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0105450d37ecd43b0e27c90e396231eb">&#9670;&#160;</a></span>ob_video_frame_width()</h2>
 
@@ -623,82 +1006,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>uint32_t return the frame height </dd></dl>
-
-</div>
-</div>
-<a id="acb038c68f498a145ce7774c606c3d9ff" name="acb038c68f498a145ce7774c606c3d9ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb038c68f498a145ce7774c606c3d9ff">&#9670;&#160;</a></span>ob_video_frame_metadata()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * ob_video_frame_metadata </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
-          <td class="paramname"><em>frame</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
-          <td class="paramname"><em>error</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the metadata of the frame. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>Video frame object </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void* return the metadata pointer of the frame </dd></dl>
-
-</div>
-</div>
-<a id="ac9096648e25cfa045fb0ab6b3b3c93c0" name="ac9096648e25cfa045fb0ab6b3b3c93c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9096648e25cfa045fb0ab6b3b3c93c0">&#9670;&#160;</a></span>ob_video_frame_metadata_size()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t ob_video_frame_metadata_size </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
-          <td class="paramname"><em>frame</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
-          <td class="paramname"><em>error</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the metadata size of the frame. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>Video frame object </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>uint32_t return the metadata size of the frame </dd></dl>
 
 </div>
 </div>
@@ -1124,6 +1431,51 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ob_frame* Return the frame of the specified type, or nullptr if it does not exist. </dd></dl>
+
+</div>
+</div>
+<a id="a8f1e990ff0a7eafa88eadf512d17297f" name="a8f1e990ff0a7eafa88eadf512d17297f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f1e990ff0a7eafa88eadf512d17297f">&#9670;&#160;</a></span>ob_frameset_get_frame_by_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> * ob_frameset_get_frame_by_index </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a2d32dd7fcbb88ebb408e9f9081e6f896">ob_frame</a> *&#160;</td>
+          <td class="paramname"><em>frameset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a frame at a specific index from the FrameSet. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">frameset</td><td>Frameset object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The index of the frame. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ob_frame* Return the frame at the specified index, or nullptr if it does not exist. </dd></dl>
 
 </div>
 </div>
@@ -1675,7 +2027,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 5 2024 18:30:21 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Mon Apr 29 2024 18:30:23 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

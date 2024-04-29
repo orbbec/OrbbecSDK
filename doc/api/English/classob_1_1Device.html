@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.9.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.10.2</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -270,6 +270,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7c673fdd82aa383d34b5f252ec24f75a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#a7c673fdd82aa383d34b5f252ec24f75a">resetDefaultDepthFilterConfig</a> ()</td></tr>
 <tr class="memdesc:a7c673fdd82aa383d34b5f252ec24f75a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset depth filter config to device default define.  <br /></td></tr>
 <tr class="separator:a7c673fdd82aa383d34b5f252ec24f75a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81bcad10dbc6a5b00d100714afe0cd40"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#a81bcad10dbc6a5b00d100714afe0cd40">getCurrentPresetName</a> ()</td></tr>
+<tr class="memdesc:a81bcad10dbc6a5b00d100714afe0cd40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current preset name.  <br /></td></tr>
+<tr class="separator:a81bcad10dbc6a5b00d100714afe0cd40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b5064f0c4a748667f5cfbc3dcdf409b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#a9b5064f0c4a748667f5cfbc3dcdf409b">loadPreset</a> (const char *presetName)</td></tr>
+<tr class="memdesc:a9b5064f0c4a748667f5cfbc3dcdf409b"><td class="mdescLeft">&#160;</td><td class="mdescRight">load the preset according to the preset name.  <br /></td></tr>
+<tr class="separator:a9b5064f0c4a748667f5cfbc3dcdf409b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab01d4c3a7e1ba6d3d6f62485f02e967f"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classob_1_1DevicePresetList.html">DevicePresetList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#ab01d4c3a7e1ba6d3d6f62485f02e967f">getAvailablePresetList</a> ()</td></tr>
+<tr class="memdesc:ab01d4c3a7e1ba6d3d6f62485f02e967f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get available preset list.  <br /></td></tr>
+<tr class="separator:ab01d4c3a7e1ba6d3d6f62485f02e967f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b38ef1cdbcf8030809833176dd2719"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#a95b38ef1cdbcf8030809833176dd2719">loadPresetFromJsonFile</a> (const char *filePath)</td></tr>
+<tr class="memdesc:a95b38ef1cdbcf8030809833176dd2719"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load custom preset from file.  <br /></td></tr>
+<tr class="separator:a95b38ef1cdbcf8030809833176dd2719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a253fc2d87309ba3c1cbc0d37ea6fc77d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#a253fc2d87309ba3c1cbc0d37ea6fc77d">loadPresetFromJsonData</a> (const char *presetName, const uint8_t *data, uint32_t size)</td></tr>
+<tr class="memdesc:a253fc2d87309ba3c1cbc0d37ea6fc77d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load custom preset from data.  <br /></td></tr>
+<tr class="separator:a253fc2d87309ba3c1cbc0d37ea6fc77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3712fd38b3c49436c6fa1a8199bad7ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#a3712fd38b3c49436c6fa1a8199bad7ca">exportSettingsAsPresetJsonFile</a> (const char *filePath)</td></tr>
+<tr class="memdesc:a3712fd38b3c49436c6fa1a8199bad7ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export current device settings as a preset json file.  <br /></td></tr>
+<tr class="separator:a3712fd38b3c49436c6fa1a8199bad7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa45bf1cb1cca1da249c0396519958323"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Device.html#aa45bf1cb1cca1da249c0396519958323">exportSettingsAsPresetJsonData</a> (const char *presetName, const uint8_t **data, uint32_t *dataSize)</td></tr>
+<tr class="memdesc:aa45bf1cb1cca1da249c0396519958323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export current device settings as a preset json data.  <br /></td></tr>
+<tr class="separator:aa45bf1cb1cca1da249c0396519958323"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -292,7 +313,7 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Device_8hpp_source.html#l00028">28</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Device_8hpp_source.html#l00029">29</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0cd5f7d083d5ccf908596303f9cfdd2b" name="a0cd5f7d083d5ccf908596303f9cfdd2b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0cd5f7d083d5ccf908596303f9cfdd2b">&#9670;&#160;</a></span>Device() <span class="overload">[1/2]</span></h2>
@@ -1896,7 +1917,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Synchronize the device time (synchronize local system time to device) </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd>This interface is deprecated, please use <a class="el" href="classob_1_1Device.html#a22d32711d5d2c88f78da10b4af8af844">timerSyncWithHost</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd>This interface is deprecated, please use <a class="el" href="classob_1_1Device.html#a22d32711d5d2c88f78da10b4af8af844">timerSyncWithHost</a> instead. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>The command (round trip time, rtt) </dd></dl>
 
 </div>
@@ -1918,7 +1939,7 @@ Friends</h2></td></tr>
 
 <p>get the current device synchronization configuration </p>
 <p><a class="el" href="classob_1_1Device.html">Device</a> synchronization: including exposure synchronization function and multi-camera synchronization function of different sensors within a single machine</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd>This interface is deprecated, please use <a class="el" href="classob_1_1Device.html#a140c19bc71384cf4aaa751879a27a1ba">getMultiDeviceSyncConfig</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated:</a></b></dt><dd>This interface is deprecated, please use <a class="el" href="classob_1_1Device.html#a140c19bc71384cf4aaa751879a27a1ba">getMultiDeviceSyncConfig</a> instead.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structOBDeviceSyncConfig.html" title="Device synchronization configuration.">OBDeviceSyncConfig</a> return the device synchronization configuration </dd></dl>
 
 </div>
@@ -1941,7 +1962,7 @@ Friends</h2></td></tr>
 
 <p>Set the device synchronization configuration. </p>
 <p>Used to configure the exposure synchronization function and multi-camera synchronization function of different sensors in a single machine</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated:</a></b></dt><dd>This interface is deprecated, please use <a class="el" href="classob_1_1Device.html#a0c85a231a9d0fa0adfc23038adb185b3">setMultiDeviceSyncConfig</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated:</a></b></dt><dd>This interface is deprecated, please use <a class="el" href="classob_1_1Device.html#a0c85a231a9d0fa0adfc23038adb185b3">setMultiDeviceSyncConfig</a> instead.</dd></dl>
 <dl class="section attention"><dt>Attention</dt><dd>Calling this function will directly write the configuration to the device Flash, and it will still take effect after the device restarts. To avoid affecting the Flash lifespan, do not update the configuration frequently.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1975,8 +1996,8 @@ Friends</h2></td></tr>
 <div class="line">  <span class="comment">//support OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</span></div>
 <div class="line">}</div>
 <div class="line"><span class="comment">// and so on</span></div>
-<div class="ttc" id="aObTypes_8h_html_aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225"><div class="ttname"><a href="ObTypes_8h.html#aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225">OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</a></div><div class="ttdeci">@ OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</div><div class="ttdoc">standalone mode</div><div class="ttdef"><b>Definition</b> <a href="ObTypes_8h_source.html#l01083">ObTypes.h:1083</a></div></div>
-<div class="ttc" id="aObTypes_8h_html_aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89"><div class="ttname"><a href="ObTypes_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a></div><div class="ttdeci">@ OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</div><div class="ttdoc">free run mode</div><div class="ttdef"><b>Definition</b> <a href="ObTypes_8h_source.html#l01076">ObTypes.h:1076</a></div></div>
+<div class="ttc" id="aObTypes_8h_html_aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225"><div class="ttname"><a href="ObTypes_8h.html#aabad929b67059752029c3374594ac63ba6bd45c53211519f5392eab382e229225">OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</a></div><div class="ttdeci">@ OB_MULTI_DEVICE_SYNC_MODE_STANDALONE</div><div class="ttdoc">standalone mode</div><div class="ttdef"><b>Definition</b> <a href="ObTypes_8h_source.html#l01232">ObTypes.h:1232</a></div></div>
+<div class="ttc" id="aObTypes_8h_html_aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89"><div class="ttname"><a href="ObTypes_8h.html#aabad929b67059752029c3374594ac63bad662690d57f70c078659e39b4e4b1a89">OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</a></div><div class="ttdeci">@ OB_MULTI_DEVICE_SYNC_MODE_FREE_RUN</div><div class="ttdoc">free run mode</div><div class="ttdef"><b>Definition</b> <a href="ObTypes_8h_source.html#l01225">ObTypes.h:1225</a></div></div>
 </div><!-- fragment --> <dl class="section return"><dt>Returns</dt><dd>uint16_t return the supported multi device sync mode bitmap of the device. </dd></dl>
 
 </div>
@@ -2184,6 +2205,229 @@ Due to the timer of device is not high-accuracy, the timestamp of the continuous
 
 </div>
 </div>
+<a id="a81bcad10dbc6a5b00d100714afe0cd40" name="a81bcad10dbc6a5b00d100714afe0cd40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81bcad10dbc6a5b00d100714afe0cd40">&#9670;&#160;</a></span>getCurrentPresetName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * ob::Device::getCurrentPresetName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get current preset name. </p>
+<p>The preset mean a set of parameters or configurations that can be applied to the device to achieve a specific effect or function. </p><dl class="section return"><dt>Returns</dt><dd>const char* return the current preset name, it should be one of the preset names returned by <a class="el" href="classob_1_1Device.html#ab01d4c3a7e1ba6d3d6f62485f02e967f">getAvailablePresetList</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a9b5064f0c4a748667f5cfbc3dcdf409b" name="a9b5064f0c4a748667f5cfbc3dcdf409b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b5064f0c4a748667f5cfbc3dcdf409b">&#9670;&#160;</a></span>loadPreset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Device::loadPreset </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>presetName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>load the preset according to the preset name. </p>
+<dl class="section attention"><dt>Attention</dt><dd>After loading the preset, the settings in the preset will set to the device immediately. Therefore, it is recommended to re-read the device settings to update the user program temporarily. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">presetName</td><td>The preset name to set. The name should be one of the preset names returned by <a class="el" href="classob_1_1Device.html#ab01d4c3a7e1ba6d3d6f62485f02e967f">getAvailablePresetList</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab01d4c3a7e1ba6d3d6f62485f02e967f" name="ab01d4c3a7e1ba6d3d6f62485f02e967f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab01d4c3a7e1ba6d3d6f62485f02e967f">&#9670;&#160;</a></span>getAvailablePresetList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classob_1_1DevicePresetList.html">DevicePresetList</a> &gt; ob::Device::getAvailablePresetList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get available preset list. </p>
+<p>The available preset list usually defined by the device manufacturer and restores on the device.</p>
+<p>User can load the custom preset by calling <a class="el" href="classob_1_1Device.html#a95b38ef1cdbcf8030809833176dd2719">loadPresetFromJsonFile</a> to append the available preset list.</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classob_1_1DevicePresetList.html" title="Class representing a list of device presets @breif A device preset is a set of parameters or configur...">DevicePresetList</a> return the available preset list. </dd></dl>
+
+</div>
+</div>
+<a id="a95b38ef1cdbcf8030809833176dd2719" name="a95b38ef1cdbcf8030809833176dd2719"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95b38ef1cdbcf8030809833176dd2719">&#9670;&#160;</a></span>loadPresetFromJsonFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Device::loadPresetFromJsonFile </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load custom preset from file. </p>
+<p>After loading the custom preset, the settings in the custom preset will set to the device immediately.</p>
+<p>After loading the custom preset, the available preset list will be appended with the custom preset and named as the file name.</p>
+<dl class="section attention"><dt>Attention</dt><dd>The user should ensure that the custom preset file is adapted to the device and the settings in the file are valid. </dd>
+<dd>
+It is recommended to re-read the device settings to update the user program temporarily after successfully loading the custom preset.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>The path of the custom preset file. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a253fc2d87309ba3c1cbc0d37ea6fc77d" name="a253fc2d87309ba3c1cbc0d37ea6fc77d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a253fc2d87309ba3c1cbc0d37ea6fc77d">&#9670;&#160;</a></span>loadPresetFromJsonData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Device::loadPresetFromJsonData </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>presetName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load custom preset from data. </p>
+<p>After loading the custom preset, the settings in the custom preset will set to the device immediately.</p>
+<p>After loading the custom preset, the available preset list will be appended with the custom preset and named as the presetName.</p>
+<dl class="section attention"><dt>Attention</dt><dd>The user should ensure that the custom preset data is adapted to the device and the settings in the data are valid. </dd>
+<dd>
+It is recommended to re-read the device settings to update the user program temporarily after successfully loading the custom preset.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The custom preset data. </td></tr>
+    <tr><td class="paramname">size</td><td>The size of the custom preset data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3712fd38b3c49436c6fa1a8199bad7ca" name="a3712fd38b3c49436c6fa1a8199bad7ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3712fd38b3c49436c6fa1a8199bad7ca">&#9670;&#160;</a></span>exportSettingsAsPresetJsonFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Device::exportSettingsAsPresetJsonFile </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Export current device settings as a preset json file. </p>
+<p>The exported preset file can be loaded by calling <a class="el" href="classob_1_1Device.html#a95b38ef1cdbcf8030809833176dd2719">loadPresetFromJsonFile</a> to restore the device setting.</p>
+<p>After exporting the preset, a new preset named as the filePath will be added to the available preset list.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>The path of the preset file to be exported. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa45bf1cb1cca1da249c0396519958323" name="aa45bf1cb1cca1da249c0396519958323"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa45bf1cb1cca1da249c0396519958323">&#9670;&#160;</a></span>exportSettingsAsPresetJsonData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob::Device::exportSettingsAsPresetJsonData </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>presetName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t **&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>dataSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Export current device settings as a preset json data. </p>
+<p>After exporting the preset, a new preset named as the presetName will be added to the available preset list.</p>
+<dl class="section attention"><dt>Attention</dt><dd>The memory of the data is allocated by the SDK, and will automatically be released by the SDK. </dd>
+<dd>
+The memory of the data will be reused by the SDK on the next call, so the user should copy the data to a new buffer if it needs to be preserved.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>return the preset json data. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dataSize</td><td>return the size of the preset json data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Friends And Related Symbol Documentation</h2>
 <a id="af9f0f1adbd5baee7830839447205af8d" name="af9f0f1adbd5baee7830839447205af8d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9f0f1adbd5baee7830839447205af8d">&#9670;&#160;</a></span>Pipeline</h2>
@@ -2205,7 +2449,7 @@ Due to the timer of device is not high-accuracy, the timestamp of the continuous
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Device_8hpp_source.html#l00553">553</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Device_8hpp_source.html#l00625">625</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
 
 </div>
 </div>
@@ -2229,7 +2473,7 @@ Due to the timer of device is not high-accuracy, the timestamp of the continuous
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Device_8hpp_source.html#l00554">554</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Device_8hpp_source.html#l00626">626</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
 
 </div>
 </div>
@@ -2253,7 +2497,7 @@ Due to the timer of device is not high-accuracy, the timestamp of the continuous
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Device_8hpp_source.html#l00555">555</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Device_8hpp_source.html#l00627">627</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
 
 </div>
 </div>
@@ -2278,7 +2522,7 @@ Due to the timer of device is not high-accuracy, the timestamp of the continuous
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Device_8hpp_source.html#l00030">30</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Device_8hpp_source.html#l00031">31</a> of file <a class="el" href="Device_8hpp_source.html">Device.hpp</a>.</p>
 
 </div>
 </div>
@@ -2288,7 +2532,7 @@ Due to the timer of device is not high-accuracy, the timestamp of the continuous
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 5 2024 18:30:21 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Mon Apr 29 2024 18:30:23 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['metadata_0',['metadata',['../classob_1_1VideoFrame.html#a33821425981b027a28feb87d69126d9f',1,'ob::VideoFrame']]],
-  ['metadatasize_1',['metadataSize',['../classob_1_1VideoFrame.html#a8e0e66c61a5de2160bbec24fd5b98e8e',1,'ob::VideoFrame']]]
+  ['metadata_0',['metadata',['../classob_1_1Frame.html#a6f3b254af45d7aafe9fbd2176470d689',1,'ob::Frame']]],
+  ['metadatasize_1',['metadataSize',['../classob_1_1Frame.html#a92fc147ea74990dece08fbc6097c9b1e',1,'ob::Frame']]]
 ];

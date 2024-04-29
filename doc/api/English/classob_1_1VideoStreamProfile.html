@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.9.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.10.2</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -115,6 +115,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0fbddfb36ee911481838ed20e13b233b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1VideoStreamProfile.html#a0fbddfb36ee911481838ed20e13b233b">height</a> () const</td></tr>
 <tr class="memdesc:a0fbddfb36ee911481838ed20e13b233b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the height of the stream.  <br /></td></tr>
 <tr class="separator:a0fbddfb36ee911481838ed20e13b233b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab67a6c949f5f11c2616b4b5d269c2191"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structOBCameraIntrinsic.html">OBCameraIntrinsic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1VideoStreamProfile.html#ab67a6c949f5f11c2616b4b5d269c2191">getIntrinsic</a> ()</td></tr>
+<tr class="memdesc:ab67a6c949f5f11c2616b4b5d269c2191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the intrinsic parameters of the stream.  <br /></td></tr>
+<tr class="separator:ab67a6c949f5f11c2616b4b5d269c2191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46558643da2e857e7207c4b94d0fc01f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structOBCameraDistortion.html">OBCameraDistortion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1VideoStreamProfile.html#a46558643da2e857e7207c4b94d0fc01f">getDistortion</a> ()</td></tr>
+<tr class="memdesc:a46558643da2e857e7207c4b94d0fc01f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the distortion parameters of the stream.  <br /></td></tr>
+<tr class="separator:a46558643da2e857e7207c4b94d0fc01f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classob_1_1StreamProfile"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classob_1_1StreamProfile')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classob_1_1StreamProfile.html">ob::StreamProfile</a></td></tr>
 <tr class="memitem:ad84c91294e1689458a3e7589d9ac8fba inherit pub_methods_classob_1_1StreamProfile"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1StreamProfile.html#ad84c91294e1689458a3e7589d9ac8fba">StreamProfile</a> (std::unique_ptr&lt; StreamProfileImpl &gt; impl)</td></tr>
 <tr class="separator:ad84c91294e1689458a3e7589d9ac8fba inherit pub_methods_classob_1_1StreamProfile"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,6 +134,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4ea3045b40043e7fb16f9a28215e502a inherit pub_methods_classob_1_1StreamProfile"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a4372502297ded5d6e6ee8db1d71d69d2">OBStreamType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1StreamProfile.html#a4ea3045b40043e7fb16f9a28215e502a">type</a> () const</td></tr>
 <tr class="memdesc:a4ea3045b40043e7fb16f9a28215e502a inherit pub_methods_classob_1_1StreamProfile"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type of stream.  <br /></td></tr>
 <tr class="separator:a4ea3045b40043e7fb16f9a28215e502a inherit pub_methods_classob_1_1StreamProfile"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd4105b44c399f16d3fcf8b9040f45cb inherit pub_methods_classob_1_1StreamProfile"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a9af5fb461884fb9ee0ec2c1977048018">OBExtrinsic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1StreamProfile.html#acd4105b44c399f16d3fcf8b9040f45cb">getExtrinsicTo</a> (std::shared_ptr&lt; <a class="el" href="classob_1_1StreamProfile.html">StreamProfile</a> &gt; target)</td></tr>
+<tr class="memdesc:acd4105b44c399f16d3fcf8b9040f45cb inherit pub_methods_classob_1_1StreamProfile"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the extrinsic parameters from current stream profile to the given target stream profile.  <br /></td></tr>
+<tr class="separator:acd4105b44c399f16d3fcf8b9040f45cb inherit pub_methods_classob_1_1StreamProfile"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7db61937ccf512a635e08a3aba3cc422 inherit pub_methods_classob_1_1StreamProfile"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a7db61937ccf512a635e08a3aba3cc422 inherit pub_methods_classob_1_1StreamProfile"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classob_1_1StreamProfile.html#a7db61937ccf512a635e08a3aba3cc422">is</a> ()</td></tr>
 <tr class="memdesc:a7db61937ccf512a635e08a3aba3cc422 inherit pub_methods_classob_1_1StreamProfile"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if frame object is compatible with the given type.  <br /></td></tr>
@@ -146,7 +155,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class representing a video stream profile. </p>
 
-<p class="definition">Definition at line <a class="el" href="StreamProfile_8hpp_source.html#l00075">75</a> of file <a class="el" href="StreamProfile_8hpp_source.html">StreamProfile.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamProfile_8hpp_source.html#l00082">82</a> of file <a class="el" href="StreamProfile_8hpp_source.html">StreamProfile.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af90398015aee0e5b2ca4e2c417f91e6f" name="af90398015aee0e5b2ca4e2c417f91e6f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af90398015aee0e5b2ca4e2c417f91e6f">&#9670;&#160;</a></span>VideoStreamProfile() <span class="overload">[1/2]</span></h2>
@@ -286,13 +295,54 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="ab67a6c949f5f11c2616b4b5d269c2191" name="ab67a6c949f5f11c2616b4b5d269c2191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab67a6c949f5f11c2616b4b5d269c2191">&#9670;&#160;</a></span>getIntrinsic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structOBCameraIntrinsic.html">OBCameraIntrinsic</a> ob::VideoStreamProfile::getIntrinsic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the intrinsic parameters of the stream. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structOBCameraIntrinsic.html" title="Structure for camera intrinsic parameters.">OBCameraIntrinsic</a> Return the intrinsic parameters. </dd></dl>
+
+</div>
+</div>
+<a id="a46558643da2e857e7207c4b94d0fc01f" name="a46558643da2e857e7207c4b94d0fc01f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46558643da2e857e7207c4b94d0fc01f">&#9670;&#160;</a></span>getDistortion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structOBCameraDistortion.html">OBCameraDistortion</a> ob::VideoStreamProfile::getDistortion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the distortion parameters of the stream. </p>
+<p>Brown distortion model</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structOBCameraDistortion.html" title="Structure for distortion parameters.">OBCameraDistortion</a> Return the distortion parameters. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>E:/Projects/Jenkins/workspace/OrbbecSDK/libobsensor/include/libobsensor/hpp/<a class="el" href="StreamProfile_8hpp_source.html">StreamProfile.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 5 2024 18:30:21 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Mon Apr 29 2024 18:30:23 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pipeline_0',['Pipeline',['../classob_1_1Device.html#af9f0f1adbd5baee7830839447205af8d',1,'ob::Device::Pipeline'],['../classob_1_1DeviceInfo.html#af9f0f1adbd5baee7830839447205af8d',1,'ob::DeviceInfo::Pipeline'],['../classob_1_1FrameSet.html#af9f0f1adbd5baee7830839447205af8d',1,'ob::FrameSet::Pipeline'],['../classob_1_1Config.html#af9f0f1adbd5baee7830839447205af8d',1,'ob::Config::Pipeline'],['../classob_1_1StreamProfile.html#af9f0f1adbd5baee7830839447205af8d',1,'ob::StreamProfile::Pipeline']]]
+  ['obfilterlist_0',['OBFilterList',['../classob_1_1Filter.html#acc7739e314afed81050f33e673f3a295',1,'ob::Filter']]]
 ];

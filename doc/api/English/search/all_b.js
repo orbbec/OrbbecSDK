@@ -6,6 +6,9 @@ var searchData=
   ['loaddepthfilterconfig_3',['loadDepthFilterConfig',['../classob_1_1Device.html#aae1b8c76518bbd92b0e0b8b6e1ef8e35',1,'ob::Device']]],
   ['loadlicense_4',['loadLicense',['../classob_1_1Context.html#a4881f168178c2d2d28934fc5be901e56',1,'ob::Context']]],
   ['loadlicensefromdata_5',['loadLicenseFromData',['../classob_1_1Context.html#af77259be549896524493d14d32a4e204',1,'ob::Context']]],
-  ['logcallback_6',['LogCallback',['../classob_1_1Context.html#aad80df0d99a8a939d58a476e00f7432f',1,'ob::Context']]],
-  ['lower_7',['lower',['../structOBTofExposureThresholdControl.html#a4c5442cd07581b201e5480fcb04609ae',1,'OBTofExposureThresholdControl']]]
+  ['loadpreset_6',['loadPreset',['../classob_1_1Device.html#a9b5064f0c4a748667f5cfbc3dcdf409b',1,'ob::Device']]],
+  ['loadpresetfromjsondata_7',['loadPresetFromJsonData',['../classob_1_1Device.html#a253fc2d87309ba3c1cbc0d37ea6fc77d',1,'ob::Device']]],
+  ['loadpresetfromjsonfile_8',['loadPresetFromJsonFile',['../classob_1_1Device.html#a95b38ef1cdbcf8030809833176dd2719',1,'ob::Device']]],
+  ['logcallback_9',['LogCallback',['../classob_1_1Context.html#aad80df0d99a8a939d58a476e00f7432f',1,'ob::Context']]],
+  ['lower_10',['lower',['../structOBTofExposureThresholdControl.html#a4c5442cd07581b201e5480fcb04609ae',1,'OBTofExposureThresholdControl']]]
 ];

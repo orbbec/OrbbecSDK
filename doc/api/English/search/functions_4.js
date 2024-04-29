@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['filter_0',['Filter',['../classob_1_1Filter.html#a3d6076a5214105bffeaa57f1eab3a7ff',1,'ob::Filter']]],
+  ['filter_0',['Filter',['../classob_1_1Filter.html#a3d6076a5214105bffeaa57f1eab3a7ff',1,'ob::Filter::Filter()'],['../classob_1_1Filter.html#a69c54e66a2e8e430d6f7a790b4b03b02',1,'ob::Filter::Filter(std::shared_ptr&lt; FilterImpl &gt; impl)']]],
   ['firmwareversion_1',['firmwareVersion',['../classob_1_1DeviceInfo.html#a60bdd8f43977db53fbc1e9357563e9bd',1,'ob::DeviceInfo']]],
   ['format_2',['format',['../classob_1_1Frame.html#ac3de67739f93b5767c8fe952559b74db',1,'ob::Frame::format()'],['../classob_1_1StreamProfile.html#a857b2d48ed65fe1f8c8e525c621c70c1',1,'ob::StreamProfile::format()']]],
   ['formatconvertfilter_3',['FormatConvertFilter',['../classob_1_1FormatConvertFilter.html#ae8f175e46b2c48519a1778317e540df8',1,'ob::FormatConvertFilter']]],

@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.9.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.10.2</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -87,13 +87,21 @@ $(function() {
   <tr class="odd"><td class="entry"><a class="el" href="classob_1_1Frame.html#ac3de67739f93b5767c8fe952559b74db">format</a>()</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classob_1_1Frame.html#a78bdb1b88fcbeee6cd51592e72512a41">Frame</a>(std::unique_ptr&lt; FrameImpl &gt; impl)</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classob_1_1Frame.html#a0cb761a3a0a58bf2664a990ccf868e5b">Frame</a>(Frame &amp;frame)</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classob_1_1Frame.html#aa44c24bc2f2f49380827e941b5ad9182">getDevice</a>()</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classob_1_1Frame.html#ac0aa97b9cb758c96202df01bb8a1ce7c">getMetadataValue</a>(OBFrameMetadataType type)</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classob_1_1Frame.html#af38479a55816ffa4978f29451ae7f38e">getSensor</a>()</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classob_1_1Frame.html#aceb804ceecfdfa04362539c0fe132c9f">getStreamProfile</a>()</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classob_1_1Frame.html#a7bc8983a39c20bf93d50113bad8b56b6">globalTimeStampUs</a>()</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classob_1_1GyroFrame.html#a186545bf3c0806feed3abd652ede32ed">GyroFrame</a>(Frame &amp;frame)</td><td class="entry"><a class="el" href="classob_1_1GyroFrame.html">ob::GyroFrame</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classob_1_1GyroFrame.html#ab193b28b69c7738f7975b5bbaff08e47">GyroFrame</a>(std::unique_ptr&lt; FrameImpl &gt; impl)</td><td class="entry"><a class="el" href="classob_1_1GyroFrame.html">ob::GyroFrame</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classob_1_1Frame.html#a2683616ec8b3346cf9412051779b9721">impl_</a></td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classob_1_1Frame.html#a1001bd44f6b2a2eb0b4c4b7bb0f317f1">index</a>()</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classob_1_1Frame.html#ae6ce510d6e741d3f46ec34d475074b6f">is</a>()</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classob_1_1Frame.html#a0950bcb7600016f3f9d71ed82d9257a6">systemTimeStamp</a>()</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classob_1_1Frame.html#aa4850d6c534fc7acae4f7527b19f7b84">hasMetadata</a>(OBFrameMetadataType type)</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classob_1_1Frame.html#a2683616ec8b3346cf9412051779b9721">impl_</a></td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classob_1_1Frame.html#a1001bd44f6b2a2eb0b4c4b7bb0f317f1">index</a>()</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classob_1_1Frame.html#ae6ce510d6e741d3f46ec34d475074b6f">is</a>()</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classob_1_1Frame.html#a6f3b254af45d7aafe9fbd2176470d689">metadata</a>()</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classob_1_1Frame.html#a92fc147ea74990dece08fbc6097c9b1e">metadataSize</a>()</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classob_1_1Frame.html#a0950bcb7600016f3f9d71ed82d9257a6">systemTimeStamp</a>()</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classob_1_1Frame.html#aa2ac04b0e692be269a46036f3a09a6e6">systemTimeStampUs</a>()</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classob_1_1GyroFrame.html#aced01359f9f9d17fd8077dcebfe8a107">temperature</a>()</td><td class="entry"><a class="el" href="classob_1_1GyroFrame.html">ob::GyroFrame</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classob_1_1Frame.html#ae7df5f8bfe70a3a3e8543e24a04f85bc">timeStamp</a>()</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classob_1_1Frame.html#aebc0c3fb0c2c3d68519258abe4394908">timeStampUs</a>()</td><td class="entry"><a class="el" href="classob_1_1Frame.html">ob::Frame</a></td><td class="entry"></td></tr>
@@ -104,7 +112,7 @@ $(function() {
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 5 2024 18:30:21 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Mon Apr 29 2024 18:30:23 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

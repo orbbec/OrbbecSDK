@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.9.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.10.2</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -345,6 +345,33 @@ Functions</h2></td></tr>
 <tr class="memitem:ab42b0fe1a5b23465b01c308406ac8afc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#ab42b0fe1a5b23465b01c308406ac8afc">ob_device_reset_default_depth_filter_config</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:ab42b0fe1a5b23465b01c308406ac8afc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset depth filter config to device default define.  <br /></td></tr>
 <tr class="separator:ab42b0fe1a5b23465b01c308406ac8afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a598b17ef49321f7d67ffafdb14ca6d68"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a598b17ef49321f7d67ffafdb14ca6d68">ob_device_get_current_preset_name</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a598b17ef49321f7d67ffafdb14ca6d68"><td class="mdescLeft">&#160;</td><td class="mdescRight">The preset mean a set of parameters or configurations that can be applied to the device to achieve a specific effect or function.  <br /></td></tr>
+<tr class="separator:a598b17ef49321f7d67ffafdb14ca6d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95d3a28b49f81b0502237005b04a5237"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a95d3a28b49f81b0502237005b04a5237">ob_device_load_preset</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, const char *preset_name, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a95d3a28b49f81b0502237005b04a5237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the available preset list.  <br /></td></tr>
+<tr class="separator:a95d3a28b49f81b0502237005b04a5237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a670f3f6fc1d39327ec6aec206088700b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a670f3f6fc1d39327ec6aec206088700b">ob_device_load_preset_from_json_file</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, const char *json_file_path, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a670f3f6fc1d39327ec6aec206088700b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load preset from json string.  <br /></td></tr>
+<tr class="separator:a670f3f6fc1d39327ec6aec206088700b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35d5ac4636ee1fe6fda2e079cf2b6a54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a35d5ac4636ee1fe6fda2e079cf2b6a54">ob_device_export_current_settings_as_preset_json_file</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, const char *json_file_path, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a35d5ac4636ee1fe6fda2e079cf2b6a54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export current settings as a preset json file.  <br /></td></tr>
+<tr class="separator:a35d5ac4636ee1fe6fda2e079cf2b6a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e495e9a75d0c38d38d815effd1e6a16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a77864fa401c595a178a926e2c4a44e88">ob_device_preset_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a6e495e9a75d0c38d38d815effd1e6a16">ob_device_get_available_preset_list</a> (<a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *device, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a6e495e9a75d0c38d38d815effd1e6a16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the available preset list.  <br /></td></tr>
+<tr class="separator:a6e495e9a75d0c38d38d815effd1e6a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94b811049d2e5bf2a314fd498d532b12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a94b811049d2e5bf2a314fd498d532b12">ob_delete_preset_list</a> (<a class="el" href="ObTypes_8h.html#a77864fa401c595a178a926e2c4a44e88">ob_device_preset_list</a> *preset_list, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a94b811049d2e5bf2a314fd498d532b12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the available preset list.  <br /></td></tr>
+<tr class="separator:a94b811049d2e5bf2a314fd498d532b12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a865fad1cd6c513a2de6ead4abb8bde23"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#a865fad1cd6c513a2de6ead4abb8bde23">ob_device_preset_list_count</a> (<a class="el" href="ObTypes_8h.html#a77864fa401c595a178a926e2c4a44e88">ob_device_preset_list</a> *preset_list, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a865fad1cd6c513a2de6ead4abb8bde23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of preset in the preset list.  <br /></td></tr>
+<tr class="separator:a865fad1cd6c513a2de6ead4abb8bde23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4ecbd336f0c73d2de25bd09860db983"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#ac4ecbd336f0c73d2de25bd09860db983">ob_device_preset_list_get_name</a> (<a class="el" href="ObTypes_8h.html#a77864fa401c595a178a926e2c4a44e88">ob_device_preset_list</a> *preset_list, uint32_t index, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:ac4ecbd336f0c73d2de25bd09860db983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the preset in the preset list.  <br /></td></tr>
+<tr class="separator:ac4ecbd336f0c73d2de25bd09860db983"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd43f78adb82b2f49e06bb5c6686d347"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Device_8h.html#abd43f78adb82b2f49e06bb5c6686d347">ob_device_preset_list_has_preset</a> (<a class="el" href="ObTypes_8h.html#a77864fa401c595a178a926e2c4a44e88">ob_device_preset_list</a> *preset_list, const char *preset_name, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:abd43f78adb82b2f49e06bb5c6686d347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the preset list has the preset.  <br /></td></tr>
+<tr class="separator:abd43f78adb82b2f49e06bb5c6686d347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Device-related functions, including operations such as obtaining and creating a device, setting and obtaining device property, and obtaining sensors. </p>
@@ -4265,10 +4292,388 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a598b17ef49321f7d67ffafdb14ca6d68" name="a598b17ef49321f7d67ffafdb14ca6d68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a598b17ef49321f7d67ffafdb14ca6d68">&#9670;&#160;</a></span>ob_device_get_current_preset_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * ob_device_get_current_preset_name </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The preset mean a set of parameters or configurations that can be applied to the device to achieve a specific effect or function. </p>
+<p>@breif Get the current preset name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>The device object. </td></tr>
+    <tr><td class="paramname">error</td><td>Log error messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The current preset name, it should be one of the preset names returned by <a class="el" href="Device_8h.html#a6e495e9a75d0c38d38d815effd1e6a16">ob_device_get_available_preset_list</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a95d3a28b49f81b0502237005b04a5237" name="a95d3a28b49f81b0502237005b04a5237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95d3a28b49f81b0502237005b04a5237">&#9670;&#160;</a></span>ob_device_load_preset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_load_preset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>preset_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the available preset list. </p>
+<dl class="section attention"><dt>Attention</dt><dd>After loading the preset, the settings in the preset will set to the device immediately. Therefore, it is recommended to re-read the device settings to update the user program temporarily.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>The device object. </td></tr>
+    <tr><td class="paramname">preset_name</td><td>Log error messages. The name should be one of the preset names returned by <a class="el" href="Device_8h.html#a6e495e9a75d0c38d38d815effd1e6a16">ob_device_get_available_preset_list</a>. </td></tr>
+    <tr><td class="paramname">error</td><td>Log error messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a670f3f6fc1d39327ec6aec206088700b" name="a670f3f6fc1d39327ec6aec206088700b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a670f3f6fc1d39327ec6aec206088700b">&#9670;&#160;</a></span>ob_device_load_preset_from_json_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_load_preset_from_json_file </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>json_file_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load preset from json string. </p>
+<p>After loading the custom preset, the settings in the custom preset will set to the device immediately.</p>
+<p>After loading the custom preset, the available preset list will be appended with the custom preset and named as the file name.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>The device object. </td></tr>
+    <tr><td class="paramname">json_file_path</td><td>The json file path. </td></tr>
+    <tr><td class="paramname">error</td><td>Log error messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a35d5ac4636ee1fe6fda2e079cf2b6a54" name="a35d5ac4636ee1fe6fda2e079cf2b6a54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35d5ac4636ee1fe6fda2e079cf2b6a54">&#9670;&#160;</a></span>ob_device_export_current_settings_as_preset_json_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_device_export_current_settings_as_preset_json_file </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>json_file_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Export current settings as a preset json file. </p>
+<p>After exporting the custom preset, the available preset list will be appended with the custom preset and named as the file name.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>The device object. </td></tr>
+    <tr><td class="paramname">json_file_path</td><td>The json file path. </td></tr>
+    <tr><td class="paramname">error</td><td>Log error messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6e495e9a75d0c38d38d815effd1e6a16" name="a6e495e9a75d0c38d38d815effd1e6a16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e495e9a75d0c38d38d815effd1e6a16">&#9670;&#160;</a></span>ob_device_get_available_preset_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a77864fa401c595a178a926e2c4a44e88">ob_device_preset_list</a> * ob_device_get_available_preset_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a3c87c98acfd9b143bb58c731d95fa437">ob_device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the available preset list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>The device object. </td></tr>
+    <tr><td class="paramname">error</td><td>Log error messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The available preset list. </dd></dl>
+
+</div>
+</div>
+<a id="a94b811049d2e5bf2a314fd498d532b12" name="a94b811049d2e5bf2a314fd498d532b12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94b811049d2e5bf2a314fd498d532b12">&#9670;&#160;</a></span>ob_delete_preset_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ob_delete_preset_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a77864fa401c595a178a926e2c4a44e88">ob_device_preset_list</a> *&#160;</td>
+          <td class="paramname"><em>preset_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delete the available preset list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">preset_list</td><td>The available preset list. </td></tr>
+    <tr><td class="paramname">error</td><td>Log error messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a865fad1cd6c513a2de6ead4abb8bde23" name="a865fad1cd6c513a2de6ead4abb8bde23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a865fad1cd6c513a2de6ead4abb8bde23">&#9670;&#160;</a></span>ob_device_preset_list_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ob_device_preset_list_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a77864fa401c595a178a926e2c4a44e88">ob_device_preset_list</a> *&#160;</td>
+          <td class="paramname"><em>preset_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of preset in the preset list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">preset_list</td><td>The available preset list. </td></tr>
+    <tr><td class="paramname">error</td><td>Log error messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of preset in the preset list. </dd></dl>
+
+</div>
+</div>
+<a id="ac4ecbd336f0c73d2de25bd09860db983" name="ac4ecbd336f0c73d2de25bd09860db983"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4ecbd336f0c73d2de25bd09860db983">&#9670;&#160;</a></span>ob_device_preset_list_get_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * ob_device_preset_list_get_name </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a77864fa401c595a178a926e2c4a44e88">ob_device_preset_list</a> *&#160;</td>
+          <td class="paramname"><em>preset_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the name of the preset in the preset list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">preset_list</td><td>The available preset list. </td></tr>
+    <tr><td class="paramname">index</td><td>The index of the preset in the preset list. </td></tr>
+    <tr><td class="paramname">error</td><td>Log error messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The name of the preset in the preset list. </dd></dl>
+
+</div>
+</div>
+<a id="abd43f78adb82b2f49e06bb5c6686d347" name="abd43f78adb82b2f49e06bb5c6686d347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd43f78adb82b2f49e06bb5c6686d347">&#9670;&#160;</a></span>ob_device_preset_list_has_preset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ob_device_preset_list_has_preset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a77864fa401c595a178a926e2c4a44e88">ob_device_preset_list</a> *&#160;</td>
+          <td class="paramname"><em>preset_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>preset_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the preset list has the preset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">preset_list</td><td>The available preset list. </td></tr>
+    <tr><td class="paramname">preset_name</td><td>The name of the preset. </td></tr>
+    <tr><td class="paramname">error</td><td>Log error messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the preset list has the preset. If true, the preset list has the preset. If false, the preset list does not have the preset. </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 5 2024 18:30:21 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Mon Apr 29 2024 18:30:23 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>
