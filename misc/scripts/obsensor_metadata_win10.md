@@ -15,5 +15,5 @@ To get device timestamps through UVC protocol, users need to modify the registry
 
 连接设备并确认设备在线；
 以管理员权限打开powershell，然后使用cd命令进入scripts目录；
-执行Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser命令，并按提示输入Y确认；
-执行.\obsensor_metadata_win10.ps1 -op install_all来完成注册。
+执行`Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`命令，并按提示输入Y确认；
+执行`.\obsensor_metadata_win10.ps1 -op install_all`来完成注册。
