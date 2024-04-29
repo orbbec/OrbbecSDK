@@ -4,35 +4,43 @@
 | --- | --- | --- |
 | HelloOrbbec | C | 演示连接到设备获取SDK版本和设备信息 |
 | 固件升级示例 | C | 演示选择固件bin或者img文件给设备升级固件版本 |
-| 传感器控制示例 | C | 演示对设备、传感器控制命令的操作 |
 | 深度示例 | C | 演示使用SDK获取深度数据并绘制显示、获取分辨率并进行设置、显示深度图像 |
 | 彩色示例       | C        | 演示使用SDK获取彩色数据并绘制显示、获取分辨率并进行设置、显示彩色图像 |
-| 红外示例       | C        | 演示使用SDK获取红外数据并绘制显示、获取分辨率并进行设置、显示红外图像 |
-| 深度模式 | C | 演示如何获取相机深度工作模式，查询支持的深度模式列表，切换模式 |
 | 热拔插示例 | C | 演示设备热拔插监控，检测到设备上线自动连接设备打开深度流，检测到设备掉线自动断开设备连接 |
 | 点云示例 | C | 演示生成深度点云或RGBD点云并保存成ply格式文件 |
+| 流对齐处理单元 | C | 演示对传感器数据流对齐的操作 |
+| 双红外示例 | C | 演示获取双红外相机图像 |
+| 红外示例 | C | 演示获取红外相机图像 |
+| 后处理示例 | C | 演示进行后处理操作 |
+| HDR示例 | C | 演示开启HDR操作 |
+| 彩色和深度示例       | C        | 演示使用SDK获取彩色和深度0数据并绘制显示、获取分辨率并进行设置、显示彩色图像 |
 | HelloOrbbec | C++ | 演示连接到设备获取SDK版本和设备信息 |
 | 深度示例 | C++ | 演示使用SDK获取深度数据并绘制显示、获取分辨率并进行设置、显示深度图像 |
-| 彩色示例 | C++ | 演示使用SDK获取彩色数据并绘制显示、获取分辨率并进行设置、显示彩色图像 |
-| 红外示例 | C++ | 演示使用SDK获取红外数据并绘制显示、获取分辨率并进行设置、显示红外图像 |
-| 流对齐示例 | C++ | 演示对传感器数据流对齐的操作 |
+| 彩色示例 | C++ | 演示使用SDK获取彩色数据并绘制显示、获取分辨率并进行设置、显示彩色图像、输出metadata |
+| d2c对齐示例 | C++ | 演示对传感器数据流对齐的操作 |
 | 固件升级示例 | C++ | 演示选择固件bin或者img文件给设备升级固件版本 |
-| 传感器控制示例 | C++ | 演示对设备和传感器控制命令的操作 |
 | 多路流同时开流示例 | C++ | 演示一个设备同时打开多路流的操作 |
 | 多设备示例 | C++ | 演示对多设备进行操作 |
-| 深度模式 | C++ | 演示如何获取相机深度工作模式，查询支持的深度模式列表，切换模式 |
 | 热拔插示例 | C++ | 演示设备拔插回调的设置，并获取到插拔后处理的流 |
-| IMU示例 | C++ | 获取IMU数据并输出显示 |
-| 多机同步示例 | C++ | 演示多机同步功能 |
 | 点云示例 | C++ | 演示生成深度点云或RGBD点云并保存成ply格式文件 |
 | 存储示例 | C++ | 获取彩色和深度图并存储为png格式 |
 | 录制示例 | C++ | 录制当前视频流到文件 |
 | 回放示例 | C++ | 载入视频文件进行回放 |
+| 深度精度示例 | C++ | 演示获取深度精度操作 |
+| HDR示例 | C++ | 演示开启HDR操作 |
+| 深度工作模式示例 | C++ | 演示转换深度工作模式操作 |
+| 双红外示例 | C++ | 演示获取双红外相机图像 |
+| 红外示例 | C++ | 演示获取红外相机图像 |
+| imu读取示例 | C++ | 演示获取imu数据 |
+| 多设备同步示例 | C++ | 演示多设备同步操作 |
+| 后处理示例 | C++ | 演示进行后处理操作 |
+| 传感器控制示例 | C++ | 演示进行传感器控制操作 |
+| 流对齐处理单元 | C++ | 演示传感器数据流同步对齐的操作 |
 
 # C
 ## HelloOrbbec
 
-功能描述：用于演示SDK初始化、获取SDK版本、获取设备型号、获取设备序列号、获取固件版本号、SDK释放资源。
+功能描述：用于演示SDK初始化、获取SDK版本、获取设备型号、获取设备序列号、获取固件版本号、SDK释放资源，并通过ESC_KEY键退出程序
 > 本示例基于C Low Level API进行演示
 
 首先获取并打印当前SDK版本
@@ -301,86 +309,10 @@ void device_changed_callback(ob_device_list *removed, ob_device_list *added, voi
     check_error(error);
 }
 ```
-
-## 传感器控制示例-SensorControl
-
-功能描述：本示例主要演示了对device控制命令的操作、对Sensor控制命令的操作、对Sensor进行流操作。
-> 本示例基于C Low Level API进行演示
-
-创建一个Context，并查询已经接入设备的列表
-```c
-ob_error*   error = NULL;
-ob_context* ctx   = ob_create_context( &error );
-ob_device_list* dev_list = ob_query_device_list( ctx, &error );
-```
-通过索引号打印列表内设备信息
-```c
-const char *name = ob_device_list_get_device_name(device_list, i, &g_error);
-int pid = ob_device_list_get_device_pid(device_list, i, &g_error);
-int vid = ob_device_list_get_device_vid(device_list, i, &g_error);
-const char *uid = ob_device_list_get_device_uid(device_list, i, &g_error);
-const char *sn = ob_device_list_get_device_serial_number(device_list, i, &g_error);
-printf("%d. name: %s, pid: %d, vid: %d, uid: %s, sn: %s\n", i, name, pid, vid, uid, sn);
-```
-创建一个设备
-```c
-if(devCount <= 1) {
-    // 如果插入单个设备，默认选择第一个
-     device = ob_device_list_get_device(dev_list, 0, &g_error);
-}
-else {
-    // 如果有多个设备，用户输入选择
-    device = select_device(dev_list);  // select_device 代码请参考实例源码
-}
-```
-获取并打印当前创建的设备信息
-```c
- ob_device_info *deviceInfo = ob_device_get_device_info(device, &g_error);
- const char *name = ob_device_info_name(deviceInfo, &g_error);
- int pid = ob_device_info_pid(deviceInfo, &g_error);
- int vid = ob_device_info_vid(deviceInfo, &g_error);
- const char *uid = ob_device_info_uid(deviceInfo, &g_error);
- printf("Current Device: name: %s, pid: %d, vid: %d, uid: %s\n", name, pid, vid, uid);
-```
-获取支持的控制命令属性
-```c
-// 获取支持控制命令属性个数
-uint32_t propertySize = ob_device_get_supported_property_count(device, &g_error);
-// 通过索引号i获取控制命令属性项
-ob_property_item property_item = ob_device_get_supported_property(device, i, &g_error);
-```
-读/写控制命令
-```c
-// 读取
-bool_ret = ob_device_get_bool_property(device, property_item.id, &g_error);// bool型参数
-int_ret = ob_device_get_int_property(device, property_item.id, &g_error);/ int 型参数
-float_ret = ob_device_get_float_property(device, property_item.id, &g_error);// float型参数
-
-// 读取命令的值范围、默认值、步进值等信息
-ob_int_property_range   int_range;
-ob_float_property_range float_range;
-ob_bool_property_range  bool_range;
-sprintf(str, "Bool value(min:0, max:1, step:1)"); // bool 型
-int_range = ob_device_get_int_property_range(device, property_item.id, &g_error); // int 型
-float_range = ob_device_get_float_property_range(device, property_item.id, &g_error); // float型
-
-// 写入
-ob_device_set_bool_property(device, property_item.id, bool_value, &g_error); // bool型参数
-ob_device_set_int_property(device, property_item.id, int_value, &g_error); // int 型参数
-ob_device_set_float_property(device, property_item.id, float_value, &g_error); // float型参数
-```
-最后程序退出时需要释放相应的已创建资源。
-```c
-//销毁context
-ob_delete_context(ctx, &g_error);
-//销毁device list
-ob_delete_device_list(dev_list, &g_error);
-//销毁device
-ob_delete_device(device, &g_error);
-```
 ## 深度示例-DepthViewer
 
-功能描述：演示使用SDK获取深度数据并绘制显示、获取分辨率并进行设置、显示深度图像
+功能描述：演示使用SDK获取深度数据并绘制显示、获取分辨率并进行设置、显示深度图像，并通过ESC_KEY键退出程序
+
 > 本示例基于C High Level API进行演示
 
 首先需要创建Pipeline，用于连接设备后打开彩色和深度流
@@ -428,7 +360,7 @@ ob_delete_pipeline(pipe, &error);
 ```
 ## 彩色示例-ColorViewer
 
-功能描述：演示使用SDK获取彩色数据并绘制显示、获取分辨率并进行设置、显示彩色图像
+功能描述：演示使用SDK获取彩色数据并绘制显示、获取分辨率并进行设置、显示彩色图像，并通过ESC_KEY键退出程序
 
 > 本示例基于C High Level API进行演示
 
@@ -485,214 +417,107 @@ ob_delete_device(device, &error);
 ob_delete_pipeline(pipe, &error);
 ```
 
-## 红外示例-InfraredViewer
-
-功能描述：演示使用SDK获取红外数据并绘制显示、获取分辨率并进行设置、显示红外图像
-
-> 本示例基于C High Level API进行演示
-
-首先需要创建Pipeline，用于连接设备后打开彩色和深度流
-
-```c
-pipe = ob_create_pipeline( &error );
-```
-
-创建Config，用于配置彩色和深度流的分辨率、帧率、格式
-
-```c
-ob_config* config = ob_create_config( &error );
-```
-
-配置流
-
-```c
-//配置IR流
-ob_stream_profile *     ir_profile = NULL;
-ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_IR, &error);
-//根据指定的格式查找对应的Profile,优先查找Y16格式
-ir_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30, &error);
-//没找到Y16格式后不匹配格式查找对应的Profile进行开流
-if(error) {
-    ir_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_ANY, 30, &error);
-    error = nullptr;
-}
-ob_config_enable_stream(config, depth_profile, &error);  // 使能配置
-```
-
-配置IR输出源
-**说明：** 该功能仅Gemini2产品支持（OrbbecSDK1.5.5开始支持Gemini2产品），Gemini2产品默认左IR sensor输出数据流
-```c
-//判断是否支持切换左右IR通道
-if(ob_device_is_property_supported(device, OB_PROP_IR_CHANNEL_DATA_SOURCE_INT, OB_PERMISSION_READ_WRITE, &error)) {
-    // Gemini2产品支持SENSOR_IR选择sensor输出，0是左IR，1是右IR。
-    int32_t dataSource = 0;
-    ob_device_set_int_property(device, OB_PROP_IR_CHANNEL_DATA_SOURCE_INT, dataSource, &error);
-}
-```
-
-通过Config，启动Pipeline
-
-```c
-ob_pipeline_start_with_config(pipe, config, &error);
-```
-
-释放资源，退出程序。
-
-```c
-//销毁frameSet，回收内存
-ob_delete_frame(frameset, &error);
-
-//销毁profile
-ob_delete_stream_profile(ir_profile, &error);
-
-//销毁profile list
-ob_delete_stream_profile_list(profiles, &error);
-
-//销毁device
-ob_delete_device(device, &error);
-
-//销毁pipeline
-ob_delete_pipeline(pipe, &error);
-```
-
-## 切换相机深度工作模式-DepthWorkMode
-功能描述：本示例在OrbbecSDK1.5.5开始支持，仅支持Gemini2的设备。主要演示切换相机深度模式，先查询深度模式列表，然后选择对应的相机深度模式，调用接口切换
-
-首先获取设备
-```cpp
-//创建一个Context，与Pipeline不同，Context是底层API的入口，在开关流等常用操作上
-//使用低级会稍微复杂一些，但是底层API可以提供更多灵活的操作，如获取多个设备，读写
-//设备及相机的属性等
-ob_error *  error = NULL;
-ob_context *ctx   = ob_create_context(&error);
-check_error(error);
-
-//查询已经接入设备的列表
-ob_device_list *dev_list = ob_query_device_list(ctx, &error);
-check_error(error);
-
-//获取接入设备的数量
-int dev_count = ob_device_list_device_count(dev_list, &error);
-check_error(error);
-if(dev_count == 0) {
-    printf("Device not found!\n");
-    return -1;
-}
-
-//创建设备，0表示第一个设备的索引
-ob_device *dev = ob_device_list_get_device(dev_list, 0, &error);
-check_error(error);
-```
-
-检查设备是否支持相机深度工作模式，当前只有Gemini2支持相机深度工作模式
-```cpp
-// 检查是否支持相机深度工作模式，目前（2022年12月5日）仅Gemini2双目摄像头支持深度工作模式
-if(!ob_device_is_property_supported(dev, OB_STRUCT_CURRENT_DEPTH_ALG_MODE, OB_PERMISSION_READ_WRITE, &error)) {
-    printf("FAILED!!, Device not support depth work mode");
-    check_error(error);
-    return -1;
-}
-check_error(error);
-```
-
-查询设备的当前深度工作模式
-```cpp
-// 查询当前的深度工作模式
-ob_depth_work_mode cur_work_mode = ob_device_get_current_depth_work_mode(dev, &error);
-check_error(error);
-printf("Current depth work mode: %s\n", cur_work_mode.name);
-```
-
-查询设备支持的相机深度模式列表
-```cpp
-// 获取列表长度
-uint32_t mode_count = ob_depth_work_mode_list_count(mode_list, &error);
-printf("Support depth work mode list count: %u\n", mode_count);
-
-int cur_mode_index = -1;
-for(uint32_t i = 0; i < mode_count; i++) {
-    ob_depth_work_mode mode = ob_depth_work_mode_list_get_item(mode_list, i, &error);
-    check_error(error);
-    printf("depth work mode[%u], name: %s", i, mode.name);
-}
-```
-
-切换相机深度模式
-```cpp
-// 切换到新的相机深度模式
-ob_device_switch_depth_work_mode_by_name(dev, mode.name, &error);
-check_error(error);
-```
-
-到此切换相机深度模式结束，可以用pipeline进行打开相机取流
-注意：
-1. 如果需要切换相机深度模式，那么打开数据流必须在切换深度工作模式之后；每个相机深度模式下支持的有效分辨率不同
-2. 如果已经用pipeline打开数据流，那么切换相机深度工作模式前必须把原来申请的pipeline释放；
-   切换相机深度工作模式后重新创建pipeline，否则会造成野指针或者内存泄露；
-
-
-最后释放资源
-```cpp
-// 销毁mode_list
-ob_delete_depth_work_mode_list(mode_list, &error);
-check_error(error);
-
-//销毁device
-ob_delete_device(dev, &error);
-check_error(error);
-
-//销毁device list
-ob_delete_device_list(dev_list, &error);
-check_error(error);
-
-//销毁context
-ob_delete_context(ctx, &error);
-check_error(error);
-```
-
 
 ## 热拔插示例-HotPlugin
 
-功能描述： 设备热拔插监控，检测到设备上线自动连接设备打开深度流，检测到设备掉线自动断开设备连接。
+功能描述： 设备热拔插监控，检测到设备上线自动连接设备打开深度流，检测到设备掉线自动断开设备连接。，并通过ESC_KEY键退出程序
 > 本示例基于C Low Level API进行注册设备上下线回调，基于High Level API进行开流取帧演示
 
 创建设备连接处理函数，函数内创建pipeline并调用create_and_start_with_config开启彩色流和深度流。
 ```c
 //设备连接处理
-void device_connect_callback( ob_device_list* connectList ) {
-    uint32_t count = ob_device_list_device_count(connectList, &error);
+void handle_device_connected(ob_device_list *connect_list) {
+    ob_error *error = NULL;
+
+    std::lock_guard<std::recursive_mutex> lk(pipeline_holder_mutex);
+    uint32_t                              count = ob_device_list_device_count(connect_list, &error);
     check_error(error);
     printf("Device connect: %d\n", count);
-    if(count > 0) {
-        if(pipeline == NULL) {
-            pipeline = ob_create_pipeline(&error);
+    for(uint32_t i = 0; i < count; i++) {
+        const char *uid = ob_device_list_get_device_uid(connect_list, i, &error);
+        check_error(error);
+        std::string str_uid = std::string(uid);
+        auto        itr     = pipeline_holder_map.find(str_uid);
+        if(itr != pipeline_holder_map.end()) {
+            printf("Deveice connect, device already connection.");
+            print_device_info(itr->second->device_info);
+            printf("\n");
+        }
+        else {
+            ob_device *device = ob_device_list_get_device(connect_list, i, &error);
             check_error(error);
-            create_and_start_with_config();
+
+            ob_pipeline *pipeline = ob_create_pipeline_with_device(device, &error);
+            check_error(error);
+
+            ob_device_info *device_info = ob_device_get_device_info(device, &error);
+            check_error(error);
+
+            std::shared_ptr<pipeline_holder> holder(new pipeline_holder{ device, device_info, pipeline, false, 0, 0, 0, 0, 0 });
+            start_stream(holder);
+            pipeline_holder_map.insert({ str_uid, holder });
+
+            printf("Deveice connect, ");
+            print_device_info(device_info);
+            printf("\n");
         }
     }
 }
 ```
 创建设备断开处理函数，函数内将pipeline停止，并将退出pipeline标记isExit设为true
 ```c
-//设备断开处理
-void device_disconnect_callback( ob_device_list* disconnectList ) {
-    uint32_t count = ob_device_list_device_count(disconnectList, &error);
+void handle_device_disconnected(ob_device_list *disconnect_list) {
+    ob_error *error = NULL;
+
+    std::lock_guard<std::recursive_mutex> lk(pipeline_holder_mutex);
+    uint32_t                              count = ob_device_list_device_count(disconnect_list, &error);
     check_error(error);
     printf("Device disconnect: %d\n", count);
-    if(count > 0) {
-        isExit = true;
+
+    for(uint32_t i = 0; i < count; i++) {
+        const char *uid = ob_device_list_get_device_uid(disconnect_list, i, &error);
+        check_error(error);
+        std::string str_uid = std::string(uid);
+        auto        itr     = pipeline_holder_map.find(str_uid);
+        if(itr != pipeline_holder_map.end()) {
+            auto holder = itr->second;
+            stop_stream(holder);
+            pipeline_holder_map.erase(str_uid);
+
+            printf("Deveice discconnect, ");
+            print_device_info(holder->device_info);
+            printf("\n");
+
+            delete_holder(holder);
+        }
+        else {
+            const char *uid = ob_device_list_get_device_uid(disconnect_list, i, &error);
+            check_error(error);
+            printf("Device disconnect, Unsolve device, uid: %s\n", uid);
+        }
     }
 }
 ```
 设备连接、断开处理函数将会在设备上下线回调函数内被调用
 ```c
 //设备状态改变回调
-void on_device_changed_callback( ob_device_list* removed, ob_device_list* added, void* pCallback ) {
-    device_disconnect_callback( removed );
-    device_connect_callback( added );
+void on_device_changed_callback(ob_device_list *removed, ob_device_list *added, void *user_data) {
+    handle_device_disconnected(removed);
+    handle_device_connected(added);
+
+    ob_error *error = NULL;
+
+    // Need to manually destroy the device list
+    // destroy device list
+    ob_delete_device_list(removed, &error);
+    check_error(error);
+
+    // destroy device list
+    ob_delete_device_list(added, &error);
+    check_error(error);
 }
 ```
-主函数main内，首先需要创建一个Context并注册设备上下线回调
+主函数main内，创建一个Context并注册设备上下线回调
 ```c
  //创建上下文
 ob_context* ctx = ob_create_context( &error );
@@ -700,29 +525,7 @@ ob_context* ctx = ob_create_context( &error );
 //注册设备回调
 ob_set_device_changed_callback( ctx, on_device_changed_callback, NULL, &error );
 ```
-主循环主要任务是，当pipeline在设备上线后已创建启动，从pipeline获取数据帧集合，并将数据帧集合内的Color和Depth相关信息打印输出。
-```c
-//等待一帧数据，超时时间为100ms
-ob_frame* frameset = ob_pipeline_wait_for_frameset( pipeline, 100, &error );
-if ( frameset ) {
-    //获取深度数据帧
-    ob_frame* depth_frame = ob_frameset_depth_frame( frameset, &error );
-    if ( depth_frame ) {
-        printf( "=====Depth Frame Info======Index: %lld TimeStamp: %lld\n", ob_frame_index( depth_frame, &error ), ob_frame_time_stamp( depth_frame, &error ) );
-        //释放深度数据帧
-        ob_delete_frame( depth_frame, &error );
-    }
-    //获取Color数据帧
-    ob_frame* color_frame = ob_frameset_color_frame( frameset, &error );
-    if ( color_frame ) {
-        printf( "=====Color Frame Info======Index: %lld TimeStamp: %lld\n", ob_frame_index( color_frame, &error ), ob_frame_time_stamp( color_frame, &error ) );
-        //释放Color数据帧
-        ob_delete_frame( color_frame, &error );
-    }
-    //释放frameSet
-    ob_delete_frame( frameset, &error );
-}
-```
+
 退出主循环后，需要将相关资源释放
 ```c
 if ( pipeline ) {
@@ -742,7 +545,7 @@ if ( ctx ) {
 ```
 ## 点云示例-PointCloud
 
-功能描述：连接设备开流，生成深度点云或RGBD点云并保存成ply格式文件。
+功能描述：连接设备开流，生成深度点云或RGBD点云并保存成ply格式文件，并通过ESC_KEY键退出程序
 > 本示例基于C++ High Level API进行演示
 
 创建点云保存成ply格式文件函数，ply文件格式详细描述可在网络上查看
@@ -803,118 +606,815 @@ void save_rgb_points_to_ply( ob_frame* frame, const char* fileName ) {
 ```
 创建Pipeline及流配置
 ```c
-    //创建pipeline 用于连接设备后打开Color和Depth流
-    pipeline = ob_create_pipeline( &error );
-    //创建config，用于配置 Color 和 Depth 流的 分辨率、帧率、格式
-    ob_config* config = ob_create_config( &error );
+//创建pipeline 用于连接设备后打开Color和Depth流
+pipeline = ob_create_pipeline( &error );
+//创建config，用于配置 Color 和 Depth 流的 分辨率、帧率、格式
+ob_config* config = ob_create_config( &error );
 
-     //配置Depth流
-    ob_stream_profile *     depth_profile = NULL;
-    ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_DEPTH, &error);
-     //根据指定的格式查找对应的Profile,优先查找Y16格式
-    depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30, &error);
-    //没找到Y16格式后不匹配格式查找对应的Profile进行开流
-    if(error){
-        depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_ANY, 30, &error);
-        error = NULL;
-    }
 
-    //配置Color流
-    ob_stream_profile *color_profile = NULL;
-    profiles                         = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_COLOR, &error);
-    if(error){
-        printf("Current device is not support color sensor!\n");
-        //如果不存在Color Sensor 点云转换分辨率配置为深度分辨率
-        ob_config_set_d2c_target_resolution(config,ob_video_stream_profile_width(depth_profile, &error),ob_video_stream_profile_height(depth_profile, &error),&error);
-        ob_config_set_depth_scale_require(config,false,&error);
-        error = NULL;
+//配置Color流
+ob_stream_profile_list *colorProfiles = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_COLOR, &error);
+if(error) {
+    printf("Current device is not support color sensor!\n");
+    ob_delete_error(error);
+    error = NULL;
+    // Turn on D2C alignment, which needs to be turned on when generating RGBD point clouds
+    ob_config_set_align_mode(config, ALIGN_DISABLE, &error);
+    check_error(error);
+}
+// Open the default profile of Color Sensor, which can be configured through the configuration file
+if(colorProfiles) {
+    color_profile = ob_stream_profile_list_get_profile(colorProfiles, OB_PROFILE_DEFAULT, &error);
+}
+
+    //配置Depth流
+if(color_profile) {
+    // Try find supported depth to color align hardware mode profile
+    depthProfiles = ob_get_d2c_depth_profile_list(pipeline, color_profile, ALIGN_D2C_HW_MODE, &error);
+    check_error(error);
+    int d2cCount = ob_stream_profile_list_count(depthProfiles, &error);
+    check_error(error);
+    if(d2cCount > 0) {
+        align_mode = ALIGN_D2C_HW_MODE;
     }
-    //根据指定的格式查找对应的Profile,优先选择RGB888格式
-    if(profiles){
-        color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_RGB, 30, &error);
+    else {
+        // Try find supported depth to color align software mode profile
+        depthProfiles = ob_get_d2c_depth_profile_list(pipeline, color_profile, ALIGN_D2C_SW_MODE, &error);
+        check_error(error);
+        d2cCount = ob_stream_profile_list_count(depthProfiles, &error);
+        check_error(error);
+        if(d2cCount > 0) {
+            align_mode = ALIGN_D2C_SW_MODE;
+        }
     }
-    //没找到RGB888格式后不匹配格式查找对应的Profile进行开流
-    if(profiles && error){
-        color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_ANY, 30, &error);
-        error = NULL;
-    }
-    ob_config_enable_stream( config, color_profile, &error );  // 使能配置
+}
+else {
+    depthProfiles = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_DEPTH, &error);
+    check_error(error);
+}
 ```
-从Pipeline上获取当前打开的设备，用以打开设备D2C功能
+打开设备D2C功能
 ```c
-    //获取device句柄
-    ob_device *device = ob_pipeline_get_device(pipeline, &error);
-    // 开启D2C对齐, 生成RGBD点云时需要开启
-    ob_config_set_align_mode(config,ALIGN_D2C_HW_MODE,&error);
+// Turn on D2C alignment, which needs to be turned on when generating RGBD point clouds
+ob_config_set_align_mode(config, align_mode, &error);
+```
 
-```
-开流，并在开流后创建点云filter。点云filter用于将depth和color帧数据转换成点云数据。点云filter在开流后创建目的是让SDK内部自动根据当前开流配置设置好相机参数。当然也可以自行设置。
+开流
 ```c
-    //创建点云Filter对象（点云Filter创建时会在Pipeline内部获取设备参数, 所以尽量在Filter创建前配置好设备）
-    ob_filter *point_cloud = ob_create_pointcloud_filter(&error);
-    //从pipeline获取当前开流的相机参数，并传入到点云filter
-    ob_camera_param camera_param = ob_pipeline_get_camera_param(pipeline, &error);
-    ob_pointcloud_filter_set_camera_param(point_cloud, camera_param, &error);
+ob_pipeline_start_with_config(pipeline, config, &error);
 ```
+
+在开流后创建点云filter。点云filter用于将depth和color帧数据转换成点云数据。点云filter在开流后创建目的是让SDK内部自动根据当前开流配置设置好相机参数。当然也可以自行设置。
+```c
+// Create a point cloud Filter object (device parameters will be obtained inside the Pipeline when the point cloud filter is created, so try to configure
+// the device before creating the filter)
+ob_filter *point_cloud = ob_create_pointcloud_filter(&error);
+check_error(error);
+
+// Obtain the current open-stream camera parameters from the pipeline and pass them to the point cloud filter
+ob_camera_param camera_param = ob_pipeline_get_camera_param(pipeline, &error);
+check_error(error);
+ob_pointcloud_filter_set_camera_param(point_cloud, camera_param, &error);
+check_error(error);
+```
+
 启动主循环，循环内根据用户按键调用点云filter生成深度点云或RGBD点云数据，并保存成ply文件。
 ```c
 //等待一帧数据，超时时间为100ms
-ob_frame* frameset = ob_pipeline_wait_for_frames( pipeline, 100, &error );
-if ( frameset != NULL )
-{
-    //按R键保存ply数据
-    if ( ( key == 'R' || key == 'r' ) && frameset != NULL ) {
-        ob_pointcloud_filter_set_point_format( point_cloud, OB_FORMAT_RGB_POINT, &error );
-        ob_frame *pointsFrame = ob_filter_process(point_cloud, frameset, &error);
-        save_rgb_points_to_ply( pointsFrame, "rgb_points.ply" );
-        ob_delete_frame( pointsFrame, &error );
+ob_frame *frameset = ob_pipeline_wait_for_frameset(pipeline, 100, &error);
+check_error(error);
+if(frameset != NULL) {
+    // get depth value scale
+    ob_frame *depth_frame = ob_frameset_depth_frame(frameset, &error);
+    check_error(error);
+    if(depth_frame == NULL) {
+        continue;
     }
-    else if ( ( key == 'D' || key == 'd' ) && frameset != NULL ) {
-        //生成点云并保存
-        ob_pointcloud_filter_set_point_format( point_cloud, OB_FORMAT_POINT, &error );
-        ob_frame *pointsFrame = ob_filter_process(point_cloud, frameset, &error);
-        save_points_to_ply( pointsFrame, "points.ply" );
-        ob_delete_frame( pointsFrame, &error );
+
+    // get depth value scale
+    float depth_value_scale = ob_depth_frame_get_value_scale(depth_frame, &error);
+    check_error(error);
+
+    // delete depth frame
+    ob_delete_frame(depth_frame, &error);
+    check_error(error);
+
+    // point position value multiply depth value scale to convert uint to millimeter (for some devices, the default depth value uint is not
+    // millimeter)
+    ob_pointcloud_filter_set_position_data_scale(point_cloud, depth_value_scale, &error);
+    check_error(error);
+
+    ob_pointcloud_filter_set_point_format(point_cloud, OB_FORMAT_RGB_POINT, &error);
+    check_error(error);
+    ob_frame *pointsFrame = ob_filter_process(point_cloud, frameset, &error);
+    check_error(error);
+    if(pointsFrame != NULL) {
+        save_rgb_points_to_ply(pointsFrame, "rgb_points.ply");
+        printf("rgb_points.ply Saved\n");
+        ob_delete_frame(pointsFrame, &error);
+        check_error(error);
+        points_created = true;
     }
-    ob_delete_frame( frameset, &error );  // 销毁frameSet 回收内存
+    ob_delete_frame(frameset, &error);  // Destroy frameSet to reclaim memory
+    check_error(error);
+    if(points_created) {
+        break;
+    }
 }
 ```
 主循环退出后，停流并销毁回收资源
 ```c
-    // 停止pipeline
-    ob_pipeline_stop( pipeline, &error );
+// stop pipeline
+ob_pipeline_stop(pipeline, &error);
+check_error(error);
 
-    // 销毁pipeline
-    ob_delete_pipeline( pipeline, &error );
+// destroy pipeline
+ob_delete_pipeline(pipeline, &error);
+check_error(error);
 
-    ob_delete_context( ctx, &error );
+// destroy config
+ob_delete_config(config, &error);
+check_error(error);
+
+// destroy profile
+ob_delete_stream_profile(depth_profile, &error);
+check_error(error);
+
+// destroy profile
+ob_delete_stream_profile(color_profile, &error);
+check_error(error);
+
+// destroy profile list
+ob_delete_stream_profile_list(colorProfiles, &error);
+check_error(error);
+
+ob_delete_stream_profile_list(depthProfiles, &error);
+check_error(error);
 ```
+
+## 流对齐处理单元-AlignFilterViewer
+
+支持设备： G3系列相机，例如：Gemini G335
+
+功能描述：演示使用SDK进行流对齐演示，显示对齐后的图像，并通过ESC_KEY键退出程序
+
+>本示例基于C High Level API进行演示
+
+创建Pipeline及流配置
+```c
+// Create a pipeline to open the depth stream after connecting the device
+pipeline = ob_create_pipeline(&error);
+check_error(error);
+
+// Create config to configure the resolution, frame rate, and format of the depth stream
+ob_config *config = ob_create_config(&error);
+check_error(error);
+
+// Configure the depth stream
+ob_stream_profile      *depth_profile = NULL;
+ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_DEPTH, &error);
+check_error(error);
+
+// Find the corresponding profile according to the specified format, first look for the y16 format
+depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30, &error);
+// If the specified format is not found, search for the default profile to open the stream
+if(error) {
+    depth_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
+    ob_delete_error(error);
+    error = nullptr;
+}
+
+// enable stream
+ob_config_enable_stream(config, depth_profile, &error);
+check_error(error);
+
+// Configure the color stream
+ob_stream_profile *     color_profile = nullptr;
+ob_stream_profile_list *color_rofiles = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_COLOR, &error);
+if(error) {
+    printf("Current device is not support color sensor!\n");
+    exit(EXIT_FAILURE);
+}
+
+// Find the corresponding Profile according to the specified format, and choose the RGB888 format first
+color_profile = ob_stream_profile_list_get_video_stream_profile(color_rofiles, 1280, OB_HEIGHT_ANY, OB_FORMAT_RGB, 30, &error);
+// If the specified format is not found, search for the default Profile to open the stream
+if(error) {
+    color_profile = ob_stream_profile_list_get_profile(color_rofiles, OB_PROFILE_DEFAULT, &error);
+    ob_delete_error(error);
+    error = nullptr;
+}
+
+// enable stream
+ob_config_enable_stream(config, color_profile, &error);
+check_error(error);
+```
+
+配置流对齐方式
+```c
+/* Config depth align to color or color align to depth.
+ob_stream_type align_to_stream = OB_STREAM_DEPTH; */
+ob_stream_type align_to_stream = OB_STREAM_COLOR;
+ob_filter *    align_filter    = ob_create_align(&error, align_to_stream);
+```
+
+通过Config，启动Pipeline
+```c
+// Start the pipeline with config
+ob_pipeline_start_with_config(pipeline, config, &error);
+check_error(error);
+```
+
+获取对齐后的数据
+```c
+ob_frame *new_frame_set = ob_filter_process(align_filter, frameset, &error);
+check_error(error);
+
+new_depth_frame = ob_frameset_depth_frame(new_frame_set, &error);
+check_error(error);
+
+new_color_frame = ob_frameset_color_frame(new_frame_set, &error);
+check_error(error);
+```
+
+释放资源，退出程序。
+
+```c
+ob_delete_filter(align_filter, &error);
+check_error(error);
+
+// stop the pipeline
+ob_pipeline_stop(pipeline, &error);
+check_error(error);
+
+// destroy the window
+delete win;
+
+// destroy profile
+ob_delete_stream_profile(depth_profile, &error);
+check_error(error);
+
+// destroy profile list
+ob_delete_stream_profile_list(profiles, &error);
+check_error(error);
+
+// destroy profile
+ob_delete_stream_profile(color_profile, &error);
+check_error(error);
+
+// destroy profile list
+ob_delete_stream_profile_list(color_rofiles, &error);
+check_error(error);
+
+// destroy the pipeline
+ob_delete_pipeline(pipeline, &error);
+check_error(error);
+```
+
+## 双红外示例-DoubleInfraredViewer
+
+功能描述：演示获取双红外相机图像，显示左右红外图像，并通过ESC_KEY键退出程序
+
+>本示例基于C High Level API进行演示
+
+创建pipeline和config
+```c
+// Create a pipeline to open the Infrared stream after connecting the device
+pipeline = ob_create_pipeline(&error);
+check_error(error);
+
+// Create config to configure the resolution, frame rate, and format of the Infrared stream
+ob_config *config = ob_create_config(&error);
+check_error(error);
+```
+
+获取左IR流配置
+```c
+// Configure the infrared stream(IR_LEFT)
+ob_stream_profile      *ir_left_profile  = NULL;
+ob_stream_profile_list *ir_left_profiles = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_IR_LEFT, &error);
+check_error(error);
+
+if(ir_left_profiles == nullptr) {
+    printf("The obtained IR(Left) resolution list is NULL. For monocular structured light devices, try opening the IR data stream using the IR example. ");
+    return 0;
+}
+
+// Find the corresponding profile according to the specified format, first look for the y16 format
+ir_left_profile = ob_stream_profile_list_get_profile(ir_left_profiles, OB_PROFILE_DEFAULT, &error);
+check_error(error);
+
+// enable stream
+ob_config_enable_stream(config, ir_left_profile, &error);
+check_error(error);
+```
+
+获取右IR流配置
+```c
+// Configure the infrared stream(IR_RIGHT)
+ob_stream_profile      *ir_right_profile  = NULL;
+ob_stream_profile_list *ir_right_profiles = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_IR_RIGHT, &error);
+check_error(error);
+
+// Find the corresponding profile according to the specified format, first look for the y16 format
+ir_right_profile = ob_stream_profile_list_get_profile(ir_right_profiles, OB_PROFILE_DEFAULT, &error);
+check_error(error);
+
+// enable stream
+ob_config_enable_stream(config, ir_right_profile, &error);
+check_error(error);
+```
+
+通过config开启pipeline
+```c
+ob_pipeline_start_with_config(pipeline, config, &error);
+check_error(error);
+```
+
+获取左右IR帧数据
+```c
+ob_frame *ir_left_frame = ob_frameset_get_frame(frameset, OB_FRAME_IR_LEFT, &error);
+check_error(error);
+
+ob_frame *ir_right_frame = ob_frameset_get_frame(frameset, OB_FRAME_IR_RIGHT, &error);
+check_error(error);
+```
+
+// 停止 pipeline
+```c
+ob_pipeline_stop(pipeline, &error);
+check_error(error);
+```
+
+释放相关资源
+```c
+// destroy the window
+delete win;
+
+// destroy profile
+ob_delete_stream_profile(ir_left_profile, &error);
+check_error(error);
+
+// destroy profile list
+ob_delete_stream_profile_list(ir_left_profiles, &error);
+check_error(error);
+
+// destroy profile
+ob_delete_stream_profile(ir_right_profile, &error);
+check_error(error);
+
+// destroy profile list
+ob_delete_stream_profile_list(ir_right_profiles, &error);
+check_error(error);
+
+// destroy the pipeline
+ob_delete_pipeline(pipeline, &error);
+check_error(error);
+```
+
+## 红外示例-InfraredViewer
+
+功能描述：演示获取红外相机图像，显示红外图像，并通过ESC_KEY键退出程序
+
+>本示例基于C High Level API进行演示
+
+创建pipeline，进行流配置
+```c
+// Create a pipeline to open the Infrared stream after connecting the device
+pipeline = ob_create_pipeline(&error);
+check_error(error);
+
+// Create config to configure the resolution, frame rate, and format of the Infrared stream
+ob_config *config = ob_create_config(&error);
+check_error(error);
+
+// Configure the infrared stream
+// Please adjust the sensor according to the actual product, some device types only have OB_SENSOR_IR_LEFT and OB_SENSOR_IR_RIGHT.
+ob_stream_profile      *ir_profile = NULL;
+ob_stream_profile_list *profiles   = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_IR, &error);
+check_error(error);
+
+if(profiles == nullptr) {
+    printf(
+        "The obtained IR resolution list is NULL. For binocular structured light devices, try using the doubleIr example to turn on the ir data stream. ");
+    return 0;
+}
+
+// Find the corresponding profile according to the specified format, first look for the y16 format
+ir_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30, &error);
+// If the specified format is not found, search for the default profile to open the stream
+if(error) {
+    ir_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
+    ob_delete_error(error);
+    error = nullptr;
+}
+
+// enable stream
+ob_config_enable_stream(config, ir_profile, &error);
+check_error(error);
+```
+
+通过config开启pipeline
+```c
+// Start the pipeline with config
+ob_pipeline_start_with_config(pipeline, config, &error);
+check_error(error);
+```
+
+释放相关资源
+```c
+// stop the pipeline
+ob_pipeline_stop(pipeline, &error);
+check_error(error);
+
+// destroy the window
+delete win;
+
+// destroy profile
+ob_delete_stream_profile(ir_profile, &error);
+check_error(error);
+
+// destroy profile list
+ob_delete_stream_profile_list(profiles, &error);
+check_error(error);
+
+// destroy the pipeline
+ob_delete_pipeline(pipeline, &error);
+check_error(error);
+```
+
+## 后处理示例-Post-Processing
+
+支持设备： G3系列相机，例如：Gemini G335
+
+功能描述：演示使用后处理操作，显示后处理后的图像，并通过ESC_KEY键退出程序
+
+>本示例基于C High Level API进行演示
+
+创建pipeline，进行流配置
+```c
+// Create a pipeline to open the depth stream after connecting the device
+pipeline = ob_create_pipeline(&error);
+check_error(error);
+
+// Create config to configure the resolution, frame rate, and format of the depth stream
+ob_config *config = ob_create_config(&error);
+check_error(error);
+
+// Configure the depth stream
+ob_stream_profile      *depth_profile = NULL;
+ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_DEPTH, &error);
+check_error(error);
+
+// Find the corresponding profile according to the specified format, first look for the y16 format
+depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30, &error);
+// If the specified format is not found, search for the default profile to open the stream
+if(error) {
+    depth_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
+    ob_delete_error(error);
+    error = nullptr;
+}
+
+// enable stream
+ob_config_enable_stream(config, depth_profile, &error);
+check_error(error);
+```
+
+获取传感器
+```c
+// Get device
+ob_device *device = ob_pipeline_get_device(pipeline, &error);
+check_error(error);
+
+// Get depth sensor
+ob_sensor *depthSensor = ob_device_get_sensor(device, OB_SENSOR_DEPTH, &error);
+check_error(error);
+```
+
+获取后处理列表
+```c
+ob_filter_list *filterList = ob_sensor_get_recommended_filter_list(depthSensor, &error);
+check_error(error);
+```
+
+后处理
+```c
+ob_frame *depth_frame = ob_frameset_depth_frame(frameset, &error);
+check_error(error);
+
+if(depth_frame != nullptr) {
+    for(uint32_t i = 0; i < count; i++) {
+        ob_frame * new_depth_frame = nullptr;
+        ob_filter *obFilter = filters[i];
+        bool enable = ob_filter_is_enable(obFilter, &error);
+        check_error(error);
+        if(enable) {
+            new_depth_frame = ob_filter_process(obFilter, depth_frame, &error);
+            check_error(error);
+
+            ob_delete_frame(depth_frame, &error);
+            check_error(error);
+
+            depth_frame = new_depth_frame;
+        }
+    }
+}
+```
+
+释放相关资源
+```c
+for(uint32_t i = 0; i < count; i++) {
+    ob_filter *obFilter = filters[i];
+    ob_delete_filter(obFilter, &error);
+    check_error(error);
+}
+
+// destroy profile filterList
+ob_delete_filter_list(filterList, &error);
+check_error(error);
+
+// stop the pipeline
+ob_pipeline_stop(pipeline, &error);
+check_error(error);
+
+// destroy the window
+delete win;
+
+// destroy profile
+ob_delete_stream_profile(depth_profile, &error);
+check_error(error);
+
+// destroy profile list
+ob_delete_stream_profile_list(profiles, &error);
+check_error(error);
+
+// destroy the pipeline
+ob_delete_pipeline(pipeline, &error);
+check_error(error);
+```
+
+## HDR示例-HdrMerge
+
+支持设备： G3系列相机，例如：Gemini G335
+
+功能描述：演示使用HDR操作，显示HDR处理后的图像，并通过ESC_KEY键退出程序
+
+>本示例基于C High Level API进行演示
+
+创建pipeline，配置depth和ir流
+```c
+// Create a pipeline to open the depth stream after connecting the device
+pipeline = ob_create_pipeline(&error);
+check_error(error);
+
+// Create config to configure the resolution, frame rate, and format of the depth stream
+ob_config *config = ob_create_config(&error);
+check_error(error);
+
+// Configure the depth stream
+ob_stream_profile      *depth_profile = NULL;
+ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_DEPTH, &error);
+check_error(error);
+
+// Find the corresponding profile according to the specified format, first look for the y16 format
+depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30, &error);
+// If the specified format is not found, search for the default profile to open the stream
+if(error) {
+    depth_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
+    ob_delete_error(error);
+    error = nullptr;
+}
+
+// enable stream
+ob_config_enable_stream(config, depth_profile, &error);
+check_error(error);
+
+// Configure the infrared stream
+// Please adjust the sensor according to the actual product, some device types only have OB_SENSOR_IR_LEFT and OB_SENSOR_IR_RIGHT.
+ob_stream_profile *     ir_profile = NULL;
+ob_stream_profile_list *ir_profiles   = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_IR_LEFT, &error);
+check_error(error);
+
+if(profiles == nullptr) {
+    printf(
+        "The obtained IR resolution list is NULL. For binocular structured light devices, try using the doubleIr example to turn on the ir data stream. ");
+    return 0;
+}
+
+// Find the corresponding profile according to the specified format, first look for the y16 format
+ir_profile = ob_stream_profile_list_get_video_stream_profile(ir_profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_Y8, 30, &error);
+// If the specified format is not found, search for the default profile to open the stream
+if(error) {
+    ir_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
+    ob_delete_error(error);
+    error = nullptr;
+}
+
+// enable stream
+ob_config_enable_stream(config, ir_profile, &error);
+check_error(error);
+```
+
+获取device
+```c
+// Get the device through the pipeline
+ob_device *dev = ob_pipeline_get_device(pipeline, &error);
+check_error(error);
+```
+
+打开HDR处理
+```c
+// Create HdrMerage post processor
+ob_filter *hdr_merge_filter = ob_create_hdr_merge(&error);
+check_error(error);
+
+bool is_supported = ob_device_is_property_supported(dev, OB_STRUCT_DEPTH_HDR_CONFIG, OB_PERMISSION_READ_WRITE, &error);
+check_error(error);
+// open hdr merage
+if(is_supported) {
+    // Get depth exposure value range,the exposure_1 and exposure_2 in OBHdrConfig can be adjusted.
+    ob_int_property_range depth_exp_range = ob_device_get_int_property_range(dev, OB_PROP_DEPTH_EXPOSURE_INT, &error);
+    check_error(error);
+
+    // Get depth gain value range,,the gain_1 and gain_1 in OBHdrConfig can be adjusted.
+    ob_int_property_range depth_gain_range = ob_device_get_int_property_range(dev, OB_PROP_DEPTH_GAIN_INT, &error);
+    check_error(error);
+
+    ob_hdr_config hdr_config;
+    uint32_t      dataSize = sizeof(ob_hdr_config);
+    ob_device_get_structured_data(dev, OB_STRUCT_DEPTH_HDR_CONFIG, &hdr_config, &dataSize, &error);
+    check_error(error);
+    // open hdr
+    hdr_config.enable = true;
+
+    ob_device_set_structured_data(dev, OB_STRUCT_DEPTH_HDR_CONFIG, &hdr_config, dataSize, & error);
+    check_error(error);
+}
+```
+
+开启pipeline
+```c
+ob_pipeline_start_with_config(pipeline, config, &error);
+```
+
+获取HDR处理后的图像
+```c
+auto new_frame_set = ob_filter_process(hdr_merge_filter, frameset, &error);
+check_error(error);
+
+auto new_depth_frame = ob_frameset_depth_frame(new_frame_set, &error);
+check_error(error);
+if(new_depth_frame != nullptr) {
+    frames.push_back(new_depth_frame);
+}
+```
+
+停止pipeline
+```c
+ob_pipeline_stop(pipeline, &error);
+```
+
+## 彩色和深度示例-ColorDepthViewer
+
+功能描述：演示使用SDK获取彩色和深度0数据并绘制显示、获取分辨率并进行设置、显示彩色图像，并通过ESC_KEY键退出程序
+
+>本示例基于C High Level API进行演示
+
+创建pipeline，配置流信息
+```c
+// 1. Create a pipeline to open the Color and Depth streams after connecting the device
+pipe = ob_create_pipeline(&error);
+check_error(error);
+
+// 2. Create config to configure the resolution, frame rate, and format of Color and Depth streams
+ob_config *config = ob_create_config(&error);
+check_error(error);
+
+// 2.1 Configure Depth stream
+ob_stream_profile      *depth_profile = NULL;
+ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_DEPTH, &error);
+check_error(error);
+// Find the corresponding Profile according to the specified format
+depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, OB_WIDTH_ANY, OB_HEIGHT_ANY, , OB_FORMAT_Y16, 30, &error);
+check_error(error);
+if(!depth_profile) {  // If the specified profile is not found, use the first profile in the profile list
+    depth_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
+    check_error(error);
+}
+ob_config_enable_stream(config, depth_profile, &error);  // enable stream
+check_error(error);
+
+// 2.2 Configure Color stream
+ob_stream_profile *color_profile = NULL;
+profiles                         = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_COLOR, &error);
+check_error(error);
+// Find the corresponding Profile according to the specified format
+color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 480, OB_FORMAT_MJPG, 30, &error);
+check_error(error);
+if(!color_profile) {  // If the specified format profile is not found, use the first profile in the profile list
+    color_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
+    check_error(error);
+}
+ob_config_enable_stream(config, color_profile, &error);  // enable stream
+check_error(error);
+```
+
+关闭同步
+```c
+ob_pipeline_disable_frame_sync(pipe, &error);
+check_error(error);
+```
+
+通过配置开启pipeline
+```c
+ob_pipeline_start_with_config(pipe, config, &error);
+check_error(error);
+```
+
+获取帧数据
+```c
+ob_frame *color_frame = ob_frameset_color_frame(frameset, &error);
+ob_frame *depth_frame = ob_frameset_depth_frame(frameset, &error);
+```
+
+停止pipeline
+```c
+ob_pipeline_stop(pipe, &error);
+```
+
+释放相关资源
+```c
+ob_delete_stream_profile(depth_profile, &error);
+check_error(error);
+
+ob_delete_stream_profile(color_profile, &error);
+check_error(error);
+
+ob_delete_stream_profile_list(profiles, &error);
+check_error(error);
+
+ob_delete_pipeline(pipe, &error);
+check_error(error);
+```
+
 # C++
 ## HelloOrbbec
 
-功能描述：用于演示SDK初始化、获取SDK版本、获取设备型号、获取设备序列号、获取固件版本号、SDK释放资源。
+功能描述：用于演示SDK初始化、获取SDK版本、获取设备型号、获取设备序列号、获取固件版本号、SDK释放资源，并通过ESC_KEY键退出程序
 > 本示例基于C++ Low Level API进行演示
 
 打印SDK的版本号，SDK版本号分为主版本号，副版本号和修订版本号
 ```cpp
 std::cout << "SDK version: " << ob::Version::getMajor() << "." << ob::Version::getMinor() << "." << ob::Version::getPatch() << std::endl;
 ```
+
 首先需要创建一个Context，用于获取设备信息列表和创建设备
 ```cpp
 ob::Context ctx;
 ```
+
 查询已经接入设备的列表
 ```cpp
 auto devList = ctx.queryDeviceList();
 
 //获取接入设备的数量
-devList->deviceCount()
+if(devList->deviceCount() == 0) {
+    std::cerr << "Device not found!" << std::endl;
+    return -1;
+}
 ```
+
 创建设备
 ```cpp
 //创建设备，0表示第一个设备的索引
 auto dev = devList->getDevice(0);
 ```
+
+获取当前preset信息
+```cpp
+auto devicePresetList = dev->getAvailablePresetList();
+auto devicePreset     = dev->getCurrentPresetName();
+std::cout << "Available preset list: " << std::endl;
+for(uint32_t i = 0; i < devicePresetList->count(); i++) {
+    auto name = devicePresetList->getName(i);
+    if(std::string(name) == std::string(devicePreset)) {
+        std::cout << "\t" << name << " (current preset)" << std::endl;
+    }
+    else {
+        std::cout << "\t" << name << std::endl;
+    }
+}
+```
+
+设置当前preset
+```cpp
+auto newPreset = "High Accuracy";
+if(devicePresetList->hasPreset(newPreset)) {
+    dev->loadPreset(newPreset);
+    std::cout << "Current preset is changed to " << newPreset << std::endl;
+}
+```
+
 接下来就可以获取和这个设备相关的信息：设备信息、设备的名称、获取设备的pid, vid, uid、设备的固件版本号、设备的序列号
 ```cpp
 //获取设备信息
@@ -933,9 +1433,13 @@ std::cout << "Firmware version: " << fwVer << std::endl;
 //获取设备的序列号
 auto sn = devInfo->serialNumber();
 std::cout << "Serial number: " << sn << std::endl;
+
+// By getting the connection type of the device
+auto connectType = devInfo->connectionType();
 ```
+
 获取支持的传感器列表
-```
+```cpp
 //获取支持的传感器列表
 std::cout << "Sensor types: " << std::endl;
 auto sensorList = dev->getSensorList();
@@ -950,6 +1454,12 @@ for(uint32_t i = 0; i < sensorList->count(); i++) {
         break;
     case OB_SENSOR_IR:
         std::cout << "\tIR sensor" << std::endl;
+        break;
+    case OB_SENSOR_IR_LEFT:
+        std::cout << "\tIR Left sensor" << std::endl;
+        break;
+    case OB_SENSOR_IR_RIGHT:
+        std::cout << "\tIR Right sensor" << std::endl;
         break;
     case OB_SENSOR_GYRO:
         std::cout << "\tGyro sensor" << std::endl;
@@ -968,7 +1478,7 @@ for(uint32_t i = 0; i < sensorList->count(); i++) {
 
 ## 深度示例-DepthViewer
 
-功能描述：本示例主要演示了使用SDK获取深度数据并绘制显示、获取分辨率并选择进行设置、显示深度图像，并通过ESC键退出。
+功能描述：本示例主要演示了使用SDK获取深度数据并绘制显示、获取分辨率并选择进行设置、显示深度图像，并通过ESC_KEY键退出程序
 > 本示例基于C++ High Level API进行演示
 
 首先需要创建一个Pipeline，通过Pipeline可以很容易的打开和关闭多种类型的流并获取一组帧数据
@@ -983,29 +1493,30 @@ auto profiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
 std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
 try{
 	//根据指定的格式查找对应的Profile,优先查找Y16格式
-	depthProfile = profiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_Y16,30);
+	depthProfile = profiles->getVideoStreamProfile(640, 480, OB_FORMAT_Y16, 30);
 }catch(ob::Error &e){
 	//没找到Y16格式后不匹配格式查找对应的Profile进行开流
-	depthProfile = profiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
+	depthProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
 }
 ```
+
 通过创建Config来配置Pipeline要启用或者禁用哪些流，这里将启用深度流
 ```cpp
 std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
 config->enableStream(depthProfile);
 ```
+
+选择序列ID
+```cpp
+    ob::SequenceIdFilter sequenceIdFilter;
+    sequenceIdFilter.selectSequenceId(0);
+```
+
 启动在Config中配置的流，如果不传参数，将启动默认配置启动流
 ```cpp
 pipe.start(config);
 ```
-设置镜像模式，先判断设备是否有可读可写的权限，再进行设置
-```cpp
-//获取镜像属性是否有可写的权限
-if(pipe.getDevice()->isPropertySupported(OB_PROP_DEPTH_MIRROR_BOOL, OB_PERMISSION_WRITE)) {
-    //设置镜像
-    pipe.getDevice()->setBoolProperty(OB_PROP_DEPTH_MIRROR_BOOL, true);
-}
-```
+
 以阻塞的方式等待一帧数据，该帧是一个复合帧，里面包含配置里启用的所有流的帧数据，并设置帧的等待超时时间
 ```cpp
 auto frameSet = pipe.waitForFrames(100);	//设置等待时间为100ms
@@ -1018,7 +1529,7 @@ pipe.stop();
 
 ## 彩色示例-ColorViewer
 
-功能描述：本示例主要演示了使用SDK获取彩色数据并绘制显示、获取分辨率并选择进行设置、显示彩色图像，并通过ESC键退出。
+功能描述：本示例主要演示了使用SDK获取彩色数据并绘制显示、获取分辨率并选择进行设置、显示彩色图像，并通过ESC_KEY键退出程序
 > 本示例基于C++ High Level API进行演示
 
 首先需要创建一个Pipeline，通过Pipeline可以很容易的打开和关闭多种类型的流并获取一组帧数据
@@ -1027,114 +1538,69 @@ ob::Pipeline pipe;
 ```
 获取彩色相机的所有流配置，包括流的分辨率，帧率，以及帧的格式
 ```cpp
-auto profiles = pipe.getStreamProfiles(OB_SENSOR_COLOR);
-try{
-	//获取彩色相机的所有流配置，包括流的分辨率，帧率，以及帧的格式
-	auto profiles = pipe.getStreamProfileList(OB_SENSOR_COLOR);
+// Create a pipeline with default device
+ob::Pipeline pipe;
 
-	std::shared_ptr<ob::VideoStreamProfile> colorProfile = nullptr;
-	try{
-		//根据指定的格式查找对应的Profile,优先选择RGB888格式
-		colorProfile = profiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_RGB,30);
-	}catch(ob::Error &e){
-		//没找到RGB888格式后不匹配格式查找对应的Profile进行开流
-		colorProfile = profiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
-	}
-	config->enableStream(colorProfile);
-}catch(ob::Error &e){
-	std::cerr<<"Current device is not support color sensor!"<<std::endl;
-	exit(EXIT_FAILURE);
+// Configure which streams to enable or disable for the Pipeline by creating a Config
+std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
+
+std::shared_ptr<ob::VideoStreamProfile> colorProfile = nullptr;
+try {
+    // Get all stream profiles of the color camera, including stream resolution, frame rate, and frame format
+    auto profiles = pipe.getStreamProfileList(OB_SENSOR_COLOR);
+    try {
+        // Find the corresponding Profile according to the specified format, and choose the RGB888 format first
+        colorProfile = profiles->getVideoStreamProfile(640, 480, OB_FORMAT_YUYV, 30);
+    }
+    catch(ob::Error &e) {
+        // If the specified format is not found, select the first one (default stream profile)
+        colorProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+    }
+    config->enableStream(colorProfile);
+}
+catch(ob::Error &e) {
+    std::cerr << "Current device is not support color sensor!" << std::endl;
+    exit(EXIT_FAILURE);
 }
 ```
-通过创建Config来配置Pipeline要启用或者禁用哪些流，这里将启用彩色流
-```cpp
-std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
-config->enableStream(colorProfile);
 ```
 启动在Config中配置的流
 ```cpp
 pipe.start(config);
 ```
-设置镜像模式，先判断设备是否有可读可写的权限，再进行设置
-```cpp
-//获取镜像属性是否有可写的权限
-if(pipe.getDevice()->isPropertySupported(OB_PROP_COLOR_MIRROR_BOOL, OB_PERMISSION_WRITE)) {
-    //设置镜像
-    pipe.getDevice()->setBoolProperty(OB_PROP_COLOR_MIRROR_BOOL, true);
-}
-```
+
 以阻塞的方式等待一帧数据，该帧是一个复合帧，里面包含配置里启用的所有流的帧数据，并设置帧的等待超时时间
 ```cpp
 auto frameSet = pipe.waitForFrames(100);	//设置等待时间为100ms
+```
+每30帧打印一次metadata
+```cpp
+// print metadata every 30 frames
+auto index = colorFrame->index();
+if(index % 30 == 0) {
+    std::cout << "*************************** Color Frame #" << index << " Metadata List ********************************" << std::endl;
+    for(int metaDataType = 0; metaDataType < OB_FRAME_METADATA_TYPE_COUNT; metaDataType++) {
+        // Check if it is supported metaDataType for current frame
+        if(colorFrame->hasMetadata((OBFrameMetadataType)metaDataType)) {
+            // Get the value of the metadata
+            std::cout << metaDataTypes[metaDataType] << ": " << colorFrame->getMetadataValue((OBFrameMetadataType)metaDataType) << std::endl;
+        }
+        else {
+            std::cout << metaDataTypes[metaDataType] << ": " << "unsupported" << std::endl;
+        }
+    }
+    std::cout << "********************************************************************************" << std::endl << std::endl;
+}
 ```
 停止Pipeline，将不再产生帧数据
 ```cpp
 pipe.stop();
 ```
 最终的彩色图显示如下<br />![image3](https://developer-orbbec-oss.oss-cn-shenzhen.aliyuncs.com/images/technical_library/orbbec_sdkimage003.png)<br />程序正常退出之后资源将会自动释放
-## 红外示例-InfraredViewer
 
-功能描述：本示例主要演示了使用SDK获取红外数据并绘制显示、获取分辨率并选择进行设置、显示红外图像，并通过ESC键退出。
-> 本示例基于C++ High Level API进行演示
+## d2c对齐示例-SyncAlignViewer
 
-首先需要创建一个Pipeline，通过Pipeline可以很容易的打开和关闭多种类型的流并获取一组帧数据
-```cpp
-ob::Pipeline pipe;
-```
-通过输入的分辨率，格式，帧率等感兴趣项来获取红外相机的流配置
-```cpp
-//获取红外相机的所有流配置，包括流的分辨率，帧率，以及帧的格式
-auto profiles = pipe.getStreamProfileList(OB_SENSOR_IR);
-
-std::shared_ptr<ob::VideoStreamProfile> irProfile = nullptr;
-try{
-	//根据指定的格式查找对应的Profile,优先查找Y16格式
-	irProfile = profiles-getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_Y16,30);
-}catch(ob::Error &e){
-	//没找到Y16格式后不匹配格式查找对应的Profile进行开流
-	irProfile = profiles-getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_ANY,30);
-}
-```
-通过创建Config来配置Pipeline要启用或者禁用哪些流，这里将启用红外流
-```cpp
-std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
-config->enableStream(irProfile);
-```
-配置IR输出源
-**说明：** 该功能仅Gemini2产品支持（OrbbecSDK1.5.5开始支持Gemini2产品)，Gemini2产品默认左IR sensor输出数据流
-```c
-//判断是否支持切换左右IR通道
-if (pipe.getDevice()->isPropertySupported(OB_PROP_IR_CHANNEL_DATA_SOURCE_INT, OB_PERMISSION_READ_WRITE)) {
-    // Gemini2产品支持SENSOR_IR选择sensor输出，0是左IR，1是右IR。
-    int32_t dataSource = 0;
-    pipe.getDevice()->setIntProperty(OB_PROP_IR_CHANNEL_DATA_SOURCE_INT, dataSource);
-}
-```
-
-启动在Config中配置的流，如果不传参数，将启动默认配置启动流
-```cpp
-pipe.start(config);
-```
-设置镜像模式，先判断设备是否有可读可写的权限，再进行设置
-```cpp
-//获取镜像属性是否有可写的权限
-if(pipe.getDevice()->isPropertySupported(OB_PROP_COLOR_MIRROR_BOOL, OB_PERMISSION_WRITE)) {
-    //设置镜像
-    pipe.getDevice()->setBoolProperty(OB_PROP_COLOR_MIRROR_BOOL, true);
-}
-```
-以阻塞的方式等待一帧数据，该帧是一个复合帧，里面包含配置里启用的所有流的帧数据，并设置帧的等待超时时间
-```
-auto frameSet = pipe.waitForFrames(100);	//设置等待时间为100ms
-```
-停止Pipeline，将不再产生帧数据
-```cpp
-pipe.stop();
-```
-程序正常退出之后资源将会自动释放
-## 流对齐示例-SyncAlignViewer
-
-功能描述：本示例主要演示了对Sensor数据流控制对齐的操作。
+功能描述：本示例演示了对Sensor数据流控制对齐的操作，显示对齐后的图像，并通过ESC_KEY键退出程序
 > 本示例基于C++ High Level API进行演示
 
 首先需要创建一个Pipeline，通过Pipeline可以很容易的打开和关闭多种类型的流并获取一组帧数据
@@ -1143,51 +1609,45 @@ ob::Pipeline pipe;
 ```
 获取彩色相机和深度相机的所有流配置，包括流的分辨率，帧率，以及帧的格式
 ```cpp
-try{
-    //获取彩色相机的所有流配置，包括流的分辨率，帧率，以及帧的格式
+std::shared_ptr<ob::VideoStreamProfile> colorProfile = nullptr;
+try {
+    // Get all stream profiles of the color camera, including stream resolution, frame rate, and frame format
     auto colorProfiles = pipe.getStreamProfileList(OB_SENSOR_COLOR);
-    std::shared_ptr<ob::VideoStreamProfile> colorProfile = nullptr;
-    try{
-        //根据指定的格式查找对应的Profile,优先选择RGB888格式
-        colorProfile = colorProfiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_RGB,30);
-    }catch(ob::Error &e){
-        //没找到RGB888格式后不匹配格式查找对应的Profile进行开流
-        colorProfile = colorProfiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
+    if(colorProfiles) {
+        colorProfile = std::const_pointer_cast<ob::StreamProfile>(colorProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
     }
     config->enableStream(colorProfile);
-}catch(...){
-    std::cerr<<"Current device is not support color sensor!"<<std::endl;
+}
+catch(...) {
+    std::cerr << "Current device is not support color sensor!" << std::endl;
     exit(EXIT_FAILURE);
 }
 
-//获取深度相机的所有流配置，包括流的分辨率，帧率，以及帧的格式
-auto depthProfiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
-std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
-try{
-    //根据指定的格式查找对应的Profile,优先查找Y16格式
-    depthProfile = depthProfiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_Y16,30);
-}catch(ob::Error &e){
-    //没找到Y16格式后不匹配格式查找对应的Profile进行开流
-    depthProfile = depthProfiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
+// Get all stream profiles of the depth camera, including stream resolution, frame rate, and frame format
+auto                                    depthProfiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
+std::shared_ptr<ob::VideoStreamProfile> depthProfile  = nullptr;
+if(depthProfiles) {
+    depthProfile = std::const_pointer_cast<ob::StreamProfile>(depthProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
 }
+config->enableStream(depthProfile);
 ```
 通过创建Config来配置Pipeline要启用或者禁用哪些流，这里将启用彩色流和深度流
-```
+```cpp
 std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
 config->enableStream(colorProfile);
 config->enableStream(depthProfile);
 ```
 控制流对齐，此处开启软件对齐
-```
+```cpp
 // 配置对齐模式为软件D2C对齐
 config->setAlignMode(ALIGN_D2C_SW_MODE);
 ```
 启动在Config中配置的流，如果不传参数，将启动默认配置启动流
-```
+```cpp
 pipe.start(config);
 ```
  停止Pipeline，将不再产生帧数据
-```
+```cpp
 pipe.stop();
 ```
 程序正常退出之后资源将会自动释放
@@ -1378,130 +1838,73 @@ dev     = nullptr;
 
 程序正常退出之后资源将会自动释放
 
-## 传感器控制示例-SensorControl
-
-功能描述：本示例主要演示了对device控制命令的操作、对Sensor控制命令的操作、对Sensor进行流操作。
-> 本示例基于C++ Low Level API进行演示
-
-首先需要创建一个Context，用于获取设备信息列表和创建设备
-```
-ob::Context ctx;
-```
-查询设备信息列表
-```
-auto devList = ctx.queryDeviceList();
-```
-选择一个设备进行操作，如果插入单个设备默认选择并打开，如果存在多个设备提供选择
-```
-//选择一个设备进行操作
-std::shared_ptr<ob::Device> device = nullptr;
-if(deviceList->deviceCount() > 0) {
-    if(deviceList->deviceCount() <= 1) {
-    //如果插入单个设备，默认选择第一个
-        device = deviceList->getDevice(0);
-    }
-    else {
-        device = selectDevice(deviceList);
-    }
-}
-```
-控制命令控制，获取Property的范围，设置属性，获取属性
-```
-//获取Property的范围
-OBBoolPropertyRange  bool_range = device->getBoolPropertyRange(property_item.id)
-OBIntPropertyRange   int_range = device->getIntPropertyRange(property_item.id)
-OBFloatPropertyRange float_range = device->getFloatPropertyRange(property_item.id)
-
-//设置属性
-device->setBoolProperty(propertyItem.id, bool_value);
-device->setIntProperty(propertyItem.id, int_value);
-device->setFloatProperty(propertyItem.id, float_value);
-
-//获取属性
-bool bool_ret = device->getBoolProperty(propertyItem.id);
-int int_ret = device->getIntProperty(propertyItem.id);
-float float_ret = device->getFloatProperty(propertyItem.id);
-```
-程序正常退出之后资源将会自动释放
-
 ## 多路流同时开流示例-MultiStream
-功能描述：本示例主要演示用device同时打开多个sensor流的操作
-> 本示例基于C++ Low Level API进行演示
+功能描述：本示例主要演示用device同时打开多个sensor流的操作，显示多路流图像，并通过ESC_KEY键退出程序
+> 本示例基于C++ high Level API进行演示
 
-首先需要创建一个Context，用于获取设备信息列表和创建设备
+首先需要创建一个pipeline
 ```cpp
-ob::Context ctx;
+ob::Pipeline pipe;
 ```
-查询设备信息列表
+
+枚举设备，并进行流配置
 ```cpp
-auto devList = ctx.queryDeviceList();
-```
-选择一个设备进行操作，如果插入单个设备默认选择并打开，如果存在多个设备提供选择
-```cpp
-//选择一个设备进行操作
-std::shared_ptr<ob::Device> device = nullptr;
-if(deviceList->deviceCount() < 1) {
-    // 示例默认设备已经插入到上位机
-    return 0;
+// enumerate and config all sensors
+auto device     = pipe.getDevice();
+auto sensorList = device->getSensorList();
+for(int i = 0; i < sensorList->count(); i++) {
+    auto sensorType = sensorList->type(i);
+    if(sensorType == OB_SENSOR_GYRO || sensorType == OB_SENSOR_ACCEL) {
+        continue;
+    }
+    auto profiles = pipe.getStreamProfileList(sensorType);
+    auto profile  = profiles->getProfile(OB_PROFILE_DEFAULT);
+    config->enableStream(profile);
 }
-//默认选择第一个
-device = deviceList->getDevice(0);
 ```
 
-使用device创建ob::Pipeline对象
+通过配置开启pipeline
 ```cpp
-ob::Pipeline pipe(device);
-```
-
-创建ob::Config用于配置pipeline要打开的stream流，目前pipeline仅支持Color,IR,Depth等UVC类型的视频流，不支持IMU类型的Gyro, Accel的流。
-```cpp
-    // 构建ob::Config配置对象，后续pipeline开流需要该对象
-    std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
-
-    // 尝试配置Color流
-    try {
-        auto colorProfiles = pipe.getStreamProfileList(OB_SENSOR_COLOR);
-        auto colorProfile  = colorProfiles->getProfile(OB_PROFILE_DEFAULT);
-        config->enableStream(colorProfile->as<ob::VideoStreamProfile>());
-    }
-    catch(...) {
-        std::cout << "color stream not found!" << std::endl;
-    }
-
-    // 尝试配置Depth流
-    try {
-        auto depthProfiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
-        auto depthProfile  = depthProfiles->getProfile(OB_PROFILE_DEFAULT);
-        config->enableStream(depthProfile->as<ob::VideoStreamProfile>());
-    }
-    catch(...) {
-        std::cout << "depth stream not found!" << std::endl;
-    }
-
-    // 尝试配置IR流
-    try {
-        auto irProfiles = pipe.getStreamProfileList(OB_SENSOR_IR);
-        auto irProfile  = irProfiles->getProfile(OB_PROFILE_DEFAULT);
-        config->enableStream(irProfile->as<ob::VideoStreamProfile>());
-    }
-    catch(...) {
-        std::cout << "ir stream not found!" << std::endl;
-    }
-
-    // 可选，非必须。打开硬件D2C对齐
-    config->setAlignMode(ALIGN_D2C_HW_MODE);
-```
-
-将配置好的ob::Config传入到ob::Pipeline#start开流并监听回调
-```cpp
-// Pipeline#start需要传入config配置和FrameSetCallback帧回调对象
+// Start the pipeline with config
+std::mutex                                        frameMutex;
+std::map<OBFrameType, std::shared_ptr<ob::Frame>> frameMap;
 pipe.start(config, [&](std::shared_ptr<ob::FrameSet> frameset) {
-    std::unique_lock<std::mutex> lk(videoFrameMutex);
-    // 获取对应的帧数据，注意，colorFrame, depthFrame, irFrame可能为null
-    colorFrame = frameset->colorFrame();
-    depthFrame = frameset->depthFrame();
-    irFrame    = frameset->irFrame();
+    auto count = frameset->frameCount();
+    for(int i = 0; i < count; i++) {
+        auto                         frame = frameset->getFrame(i);
+        std::unique_lock<std::mutex> lk(frameMutex);
+        frameMap[frame->type()] = frame;
+    }
 });
+```
+
+The IMU frame rate is much faster than the video, so it is advisable to use a separate pipeline to obtain IMU data.
+```cpp
+auto                                              dev         = pipe.getDevice();
+auto                                              imuPipeline = std::make_shared<ob::Pipeline>(dev);
+std::mutex                                        imuFrameMutex;
+std::map<OBFrameType, std::shared_ptr<ob::Frame>> imuFrameMap;
+try {
+    auto                        accelProfiles = imuPipeline->getStreamProfileList(OB_SENSOR_ACCEL);
+    auto                        gyroProfiles  = imuPipeline->getStreamProfileList(OB_SENSOR_GYRO);
+    auto                        accelProfile  = accelProfiles->getProfile(OB_PROFILE_DEFAULT);
+    auto                        gyroProfile   = gyroProfiles->getProfile(OB_PROFILE_DEFAULT);
+    std::shared_ptr<ob::Config> imuConfig     = std::make_shared<ob::Config>();
+    imuConfig->enableStream(accelProfile);
+    imuConfig->enableStream(gyroProfile);
+    imuPipeline->start(imuConfig, [&](std::shared_ptr<ob::FrameSet> frameset) {
+        auto count = frameset->frameCount();
+        for(int i = 0; i < count; i++) {
+            auto                         frame = frameset->getFrame(i);
+            std::unique_lock<std::mutex> lk(imuFrameMutex);
+            imuFrameMap[frame->type()] = frame;
+        }
+    });
+}
+catch(...) {
+    std::cout << "IMU sensor not found!" << std::endl;
+    imuPipeline.reset();
+}
 ```
 
 关闭pipeline
@@ -1509,50 +1912,9 @@ pipe.start(config, [&](std::shared_ptr<ob::FrameSet> frameset) {
 pipe.stop();
 ```
 
-开启IMU流，陀螺仪和加速度计目前仅支持用sensor开流，不支持ob::Pipeline开流
-开流步骤如下：
-a. 从device中获取GyroSensor(陀螺仪)和AccelSensor(加速度计)，对象为ob::Sensor
-b. 分别从GyroSensor和AccelSensor获取对应的配置GyroStreamProfile和AccelStreamProfile
-c. 用ob::Sensor#start进行开流，参数为StreamProfile;
+关闭IMU pipeline
 ```cpp
-std::shared_ptr<ob::Sensor> accelSensor;
-std::shared_ptr<ob::Sensor> gyroSensor;
-try {
-    // 通过device构建IMU sensor对象
-    accelSensor = device->getSensor(OB_SENSOR_ACCEL);
-    gyroSensor  = device->getSensor(OB_SENSOR_GYRO);
-}
-catch(...) {
-    std::cout << "IMU sensor not found!" << std::endl;
-}
-
-if(accelSensor && gyroSensor) {
-    // 获取AccelStreamProfile
-    auto accelProfiles = accelSensor->getStreamProfileList();
-    auto accelProfile  = accelProfiles->getProfile(OB_PROFILE_DEFAULT);
-    // 用ob::Sensor#start函数开流，需要传入StreamProfile和FrameCallback
-    // 在FrameCallback帧回调函数中处理device返回的数据帧
-    accelSensor->start(accelProfile, [&](std::shared_ptr<ob::Frame> frame) {
-        std::unique_lock<std::mutex> lk(accelFrameMutex);
-        accelFrame = frame;
-    });
-
-    // 获取GyroStreamProfile
-    auto gyroProfiles = gyroSensor->getStreamProfileList();
-    auto gyroProfile  = gyroProfiles->getProfile(OB_PROFILE_DEFAULT);
-    // 用ob::Sensor#start函数开流，需要传入StreamProfile和FrameCallback
-    // 在FrameCallback帧回调函数中处理device返回的数据帧
-    gyroSensor->start(gyroProfile, [&](std::shared_ptr<ob::Frame> frame) {
-        std::unique_lock<std::mutex> lk(gyroFrameMutex);
-        gyroFrame = frame;
-    });
-}
-```
-
-关闭IMU sensor数据流
-```cpp
-accelSensor->stop();
-gyroSensor->stop();
+imuPipeline->stop();
 ```
 
 ## 多设备示例-MultiDevice
@@ -1582,48 +1944,45 @@ for (int i = 0; i < devCount; i++)
 ```
 打开多个设备的深度和彩色流
 ```cpp
-for(auto &&pipe: pipes) {
-    std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
-    //获取深度相机配置列表
-    auto depthProfileList = pipe->getStreamProfileList(OB_SENSOR_DEPTH);
-    std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
-    try{
-        //根据指定的格式查找对应的Profile,优先查找Y16格式
-        depthProfile = depthProfileList-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_Y16,30);
-    }catch(ob::Error &e){
-        //没找到Y16格式后不匹配格式查找对应的Profile进行开流
-        depthProfile = depthProfileList-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
+void StartStream(std::vector<std::shared_ptr<ob::Pipeline>> pipes) {
+    int i = 0;
+    for(auto &&pipe: pipes) {
+        std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
+        // Get the depth camera configuration list
+        auto                                    depthProfileList = pipe->getStreamProfileList(OB_SENSOR_DEPTH);
+        std::shared_ptr<ob::VideoStreamProfile> depthProfile     = nullptr;
+        if(depthProfileList) {
+            // Open the default profile of Depth Sensor, which can be configured through the configuration file
+            depthProfile = std::const_pointer_cast<ob::StreamProfile>(depthProfileList->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+        }
+        config->enableStream(depthProfile);
+
+        // Get the color camera configuration list
+        try {
+            auto                                    colorProfileList = pipe->getStreamProfileList(OB_SENSOR_COLOR);
+            std::shared_ptr<ob::VideoStreamProfile> colorProfile     = nullptr;
+            if(colorProfileList) {
+                // Open the default profile of Color Sensor, which can be configured through the configuration file
+                colorProfile = std::const_pointer_cast<ob::StreamProfile>(colorProfileList->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+            }
+            config->enableStream(colorProfile);
+        }
+        catch(ob::Error &e) {
+            std::cerr << "Current device is not support color sensor!" << std::endl;
+        }
+
+        // Start the pipeline and pass in the configuration
+        pipe->start(config, [i](std::shared_ptr<ob::FrameSet> frameSet) {
+            std::lock_guard<std::mutex> lock(frameMutex);
+            if(frameSet->colorFrame()) {
+                colorFrames[i] = frameSet->colorFrame();
+            }
+            if(frameSet->depthFrame()) {
+                depthFrames[i] = frameSet->depthFrame();
+            }
+        });
+        i++;
     }
-    config->enableStream(depthProfile);
-
-    //获取彩色相机配置列表
-    try{
-        auto colorProfileList = pipe->getStreamProfileList(OB_SENSOR_COLOR);
-        std::shared_ptr<ob::VideoStreamProfile> colorProfile = nullptr;
-
-        try{
-            //根据指定的格式查找对应的Profile,优先选择RGB888格式
-            colorProfile = colorProfileList-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_RGB,30);
-        }catch(ob::Error &e){
-            //没找到RGB888格式后不匹配格式查找对应的Profile进行开流
-            colorProfile = colorProfileList-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
-        }
-        config->enableStream(colorProfile);
-    }catch(ob::Error &e){
-        std::cerr<<"Current device is not support color sensor!"<<std::endl;
-    }
-
-    //启动pipeline，并传入配置
-    pipe->start(config, [i](std::shared_ptr<ob::FrameSet> frameSet) {
-        std::lock_guard<std::mutex> lock(frameMutex);
-        if(frameSet->colorFrame()){
-            colorFrames[i] = frameSet->colorFrame();
-        }
-        if(frameSet->depthFrame()) {
-            depthFrames[i] = frameSet->depthFrame();
-        }
-    });
-    i++;
 }
 ```
 停止所有设备已打开的流
@@ -1646,414 +2005,120 @@ void StopStream( std::vector< std::shared_ptr< ob::Pipeline > > pipes) {
 ```
 程序正常退出之后资源将会自动释放
 
-## 切换相机深度模式-DepthWorkMode
-功能描述：本示例在OrbbecSDK1.5.5开始支持，仅支持Gemini2的设备。本示例主要演示切换相机深度模式，先查询深度模式列表，然后选择对应的相机深度模式，调用接口切换
-
-首先获取设备
-```cpp
-//创建一个Context，与Pipeline不通，Context是底层API的入口，在开关流等常用操作上
-//使用低级会稍微复杂一些，但是底层API可以提供更多灵活的操作，如获取多个设备，读写
-//设备及相机的属性等
-ob::Context ctx;
-
-//查询已经接入设备的列表
-auto devList = ctx.queryDeviceList();
-
-//获取接入设备的数量
-if(devList->deviceCount() == 0) {
-    pressKeyExit("Device not found!");
-    return -1;
-}
-
-// 获取设备列表中的第一个设备
-auto device = devList->getDevice(0);
-```
-
-检查设备是否支持相机深度工作模式，当前只有Gemini2支持相机深度工作模式
-```cpp
-// 检查是否支持相机深度工作模式，目前（2022年12月5日）仅Gemini2双目摄像头支持深度工作模式
-if (!device->isPropertySupported(OB_STRUCT_CURRENT_DEPTH_ALG_MODE, OB_PERMISSION_READ_WRITE)) {
-    pressKeyExit("Current device not support depth work mode!");
-    return -1;
-}
-```
-
-查询设备的当前深度工作模式
-```cpp
-// 查询当前的相机深度模式
-auto curDepthMode = device->getCurrentDepthWorkMode();
-```
-
-查询设备支持的相机深度模式列表
-```cpp
-// 获取相机深度模式列表
-auto depthModeList = device->getDepthWorkModeList();
-std::cout << "depthModeList size: " << depthModeList->count() << std::endl;
-for(uint32_t i = 0; i < depthModeList->count(); i++) {
-    std::cout << "depthModeList[" << i << "]: " << (*depthModeList)[i];
-    if (strcmp(curDepthMode.name, (*depthModeList)[i].name) == 0) {
-        std::cout << "  (Current WorkMode)";
-    }
-
-    std::cout << std::endl;
-}
-```
-
-切换相机深度模式
-```cpp
-// 切换到新的相机深度模式
-OBDepthMode depthMode = (*depthModeList)[index];
-device->switchDepthWorkMode(depthMode.name);
-check_error(error);
-```
-
-到此切换相机深度模式结束，可以用pipeline进行打开相机取流
-注意：
-1. 如果需要切换相机深度模式，那么打开数据流必须在切换深度工作模式之后；每个相机深度模式下支持的有效分辨率不同
-2. 如果已经用pipeline打开数据流，那么切换相机深度工作模式前必须把原来申请的pipeline释放；
-   切换相机深度工作模式后重新创建pipeline，否则会造成野指针或者内存泄露；
-
 ## 热拔插示例-HotPlugin
 
-功能描述：本示例主要演示设备拔插回调的设置，以及拔插之后处理获取到的流。
+功能描述：本示例主要演示设备拔插回调的设置，以及拔插之后处理获取到的流，并通过ESC_KEY键退出程序
 > 本示例基于C++ High Level API进行演示
 
 首先需要创建一个Context，用于获取设备信息列表和创建设备
-```
+```cpp
 ob::Context ctx;
 ```
 注册设备回调，分别在设备拔插的时候执行相关函数
-```
+```cpp
 ctx.setDeviceChangedCallback( []( std::shared_ptr< ob::DeviceList > removedList, std::shared_ptr< ob::DeviceList > addedList ) {
         DeviceDisconnectCallback( removedList );
         DeviceConnectCallback( addedList );
     } );
 ```
-按照配置文件中配置的分辨率和格式进行开流
-```
-//按配置文件的流配置启动流，如果没有配置文件，将使用第0个流配置启动流
-try{
-  pipeline->start(nullptr);
-}catch(...){
-  std::cout<<"Pipeline start failed!"<<std::endl;
-}
-//获取深度相机的所有流配置，包括流的分辨率，帧率，以及帧的格式
-auto depthProfiles = pipeline->getStreamProfileList(OB_SENSOR_DEPTH);
-//获取对应流配置列表的第0个Profile，如果有配置文件，配置文件里面流配置是流配置列表的第0个
-auto depthProfile = depthProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
-//获取彩色相机的所有流配置，包括流的分辨率，帧率，以及帧的格式
-auto colorProfiles = pipeline->getStreamProfileList(OB_SENSOR_COLOR);
-//获取对应流配置列表的第0个Profile，如果有配置文件，配置文件里面流配置是流配置列表的第0个
-auto colorProfile = colorProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
-//获取帧率
-colorFps = colorProfile->fps();
-depthFps = depthProfile->fps();
-```
-以阻塞的方式等待一帧数据，该帧是一个复合帧，里面包含配置里启用的所有流的帧数据，并设置帧的等待超时时间
-```
-auto frameSet = pipe.waitForFrames(100);	//设置等待时间为100ms
-```
-停止Pipeline，将不再产生帧数据
-```
-pipe.stop();
-```
-程序正常退出之后资源将会自动释放
-## IMU示例-ImuReader
 
-功能描述：本示例主要演示了使用SDK获取IMU数据并输出显示，并通过ESC键退出。
-> 本示例基于C++ Low Level API进行演示
-
-打印SDK的版本号，SDK版本号分为主版本号，副版本号和修订版本号
+开流
 ```cpp
-//打印SDK的版本号，SDK版本号分为主版本号，副版本号和修订版本号
-std::cout << "SDK version: " << ob::Version::getMajor() << "." << ob::Version::getMinor() << "." << ob::Version::getPatch() << std::endl;
-```
-首先需要创建一个Context，用于获取设备信息列表和创建设备
-```cpp
-ob::Context ctx;
-```
-查询已经接入设备的列表
-```cpp
-auto devList = ctx.queryDeviceList();
-
-//获取接入设备的数量
-devList->deviceCount()
-```
-创建设备
-```cpp
-//创建设备，0表示第一个设备的索引
-auto dev = devList->getDevice(0);
-```
-获取陀螺仪传感器和加速度传感器
-```cpp
-auto gyroSensor = dev->getSensorList()->getSensor( OB_SENSOR_GYRO );
-
-auto accelSensor = dev->getSensorList()->getSensor( OB_SENSOR_ACCEL );
-```
-获取陀螺仪传感器的配置列表并选择第一个配置开流，在开流的回调里获取帧的数据，加速度传感器同理
-```cpp
-auto profiles = gyroSensor->getStreamProfileList();
-auto profile = profiles->getProfile( 0 );
-gyroSensor->start( profile, []( std::shared_ptr< ob::Frame > frame ) {
-		auto timeStamp = frame->timeStamp();
-    auto gyroFrame = frame->as< ob::GyroFrame >();
-    if ( gyroFrame != nullptr && ( timeStamp % 500 ) < 2 ) {  //  ( timeStamp % 500 ) < 2: 目的时减少打印频率
-    		std::cout << "Gyro Frame: \n{\n";
-        std::cout << "  tsp = " << timeStamp << std::endl;
-        std::cout << "  temperature = " << gyroFrame->temperature() << std::endl;
-        auto value = gyroFrame->value();
-        std::cout << "  gyro.x = " << value.x << " dps" << std::endl;
-        std::cout << "  gyro.y = " << value.y << " dps" << std::endl;
-        std::cout << "  gyro.z = " << value.z << " dps" << std::endl;
-        std::cout << "}" << std::endl << std::endl;
+void startStream(std::shared_ptr<PipelineHolder> holder) {
+std::shared_ptr<FramePrintInfo> printInfo(new FramePrintInfo{});
+std::string                     deviceSN = std::string(holder->deviceInfo->serialNumber());
+ob::FrameSetCallback            callback = [deviceSN, printInfo](std::shared_ptr<ob::FrameSet> frameSet) {
+    // Get the depth data frame
+    auto depthFrame = frameSet->depthFrame();
+    if(depthFrame) {
+        printInfo->depthCount++;
+        if(printInfo->depthCount == 15) {
+            std::cout << "=====Depth Frame Info====== SN: " << std::string(deviceSN) << ", " << depthFrame << std::endl;
+            printInfo->depthCount = 0;
+        }
     }
- } );
-```
-关流
-```cpp
-gyroSensor->stop();
-accelSensor->stop();
-```
-程序正常退出之后资源将会自动释放
 
-## 多机同步示例-MultiDeviceSync
-功能描述：演示配置多机同步参数，并开启多机同步
-
-多机同步sample的步骤：
-1. 读取配置文件，配置设备；
-2. 重启设备；
-3. 等待所有设备启动完毕，开始多机同步预览；
-
-构建OrbbecSDK的上下文
-```cpp
-OBContext context;
-```
-
-#### 读取配置文件，配置设备
-获取设备列表
-```cpp
-// 查询已经接入设备的列表
-auto devList = context.queryDeviceList();
-
-// 获取接入设备的数量
-int devCount = devList->deviceCount();
-for(int i = 0; i < devCount; i++) {
-    configDevList.push_back(devList->getDevice(i));
-}
-```
-
-下发多机同步配置
-```cpp
-for(auto config: deviceConfigList) {
-    auto findItr = std::find_if(configDevList.begin(), configDevList.end(), [config](std::shared_ptr<ob::Device> device) {
-        auto serialNumber = device->getDeviceInfo()->serialNumber();
-        auto cmpSize      = (std::min)(strlen(serialNumber), config->deviceSN.size());
-        return strncmp(serialNumber, config->deviceSN.c_str(), cmpSize) == 0;
-    });
-    if(findItr != configDevList.end()) {
-        auto curConfig = (*findItr)->getSyncConfig();
-
-        // 将配置文件的配置项更新，其他项保留原有配置
-        curConfig.syncMode                    = config->syncConfig.syncMode;
-        curConfig.irTriggerSignalInDelay      = config->syncConfig.irTriggerSignalInDelay;
-        curConfig.rgbTriggerSignalInDelay     = config->syncConfig.rgbTriggerSignalInDelay;
-        curConfig.deviceTriggerSignalOutDelay = config->syncConfig.deviceTriggerSignalOutDelay;
-        curConfig.deviceId                    = config->syncConfig.deviceId;
-
-        (*findItr)->setSyncConfig(curConfig);
+    // Get the ir data frame
+    auto irFrame = frameSet->irFrame();
+    if(irFrame) {
+        printInfo->irCount++;
+        if(printInfo->irCount == 15) {
+            std::cout << "=====IR Frame Info====== SN: " << std::string(deviceSN) << ", " << std::dynamic_pointer_cast<ob::VideoFrame>(irFrame)
+                        << std::endl;
+            printInfo->irCount = 0;
+        }
     }
-    else {
-        std::cerr << "Device sn[" << config->deviceSN << "] is not connected. Set sync config failed" << std::endl;
-        notMatchCount++;
+
+    // Get the ir left data frame
+    auto irLeftFrame = frameSet->getFrame(OB_FRAME_IR_LEFT);
+    if(irLeftFrame) {
+        printInfo->irLeftCount++;
+        if(printInfo->irLeftCount == 15) {
+            std::cout << "=====IR Left Frame Info====== SN: " << std::string(deviceSN) << ", " << std::dynamic_pointer_cast<ob::VideoFrame>(irLeftFrame)
+                        << std::endl;
+            printInfo->irLeftCount = 0;
+        }
     }
-}
-```
 
-重启设备
-```cpp
-// 重启设备
-for(auto device: configDevList) {
-    rebootingDevInfoList.push_back(device->getDeviceInfo());
-    device->reboot();
-}
-configDevList.clear();
-```
+    // Get the ir right data frame
+    auto irRightFrame = frameSet->getFrame(OB_FRAME_IR_RIGHT);
+    if(irRightFrame) {
+        printInfo->irRightCount++;
+        if(printInfo->irRightCount == 15) {
+            std::cout << "=====IR Right Frame Info====== SN: " << std::string(deviceSN) << ", " << std::dynamic_pointer_cast<ob::VideoFrame>(irRightFrame)
+                        << std::endl;
+            printInfo->irRightCount = 0;
+        }
+    }
 
-等待所有设备重启完毕，后进行多机同步开流
+    // Get the color data frame
+    auto colorFrame = frameSet->colorFrame();
+    if(colorFrame) {
+        printInfo->colorCount++;
+        if(printInfo->colorCount == 15) {
+            std::cout << "=====Color Frame Info====== SN: " << std::string(deviceSN) << ", " << std::dynamic_pointer_cast<ob::VideoFrame>(colorFrame)
+                        << std::endl;
+            printInfo->colorCount = 0;
+        }
+    }
+};
 
-
-#### 多机同步开流
-多机同步开流示例演示了多个设备通过信号连接器连接然后同步触发出图的功能。
-
-主要关键步骤：
-1. 设置多机同步配置
-2. 重启设备
-3. 等待设备重启完毕，枚举设备并打开color和depth相机，并处理数据
-备注：以下说明仅列关键代码，具体请参考Example\cpp\Sample-MultiDeviceSync\MultiDeviceSync.cpp
-
-
-设置多机同步配置信息
-```cpp
-auto curConfig = device->getMultiDeviceSyncConfig();
-
-// Update the configuration items of the configuration file, and keep the original configuration for other items
-curConfig.syncMode                   = config->syncConfig.syncMode;
-curConfig.depthDelayUs               = config->syncConfig.depthDelayUs;
-curConfig.colorDelayUs               = config->syncConfig.colorDelayUs;
-curConfig.trigger2ImageDelayUs       = config->syncConfig.trigger2ImageDelayUs;
-curConfig.triggerOutEnable  = config->syncConfig.triggerOutEnable;
-curConfig.triggerOutDelayUs = config->syncConfig.triggerOutDelayUs;
-
-device->setMultiDeviceSyncConfig(curConfig);
-```
-
-重启所有设备
-```cpp
-std::cout << "Device sn[" << std::string(device->getDeviceInfo()->serialNumber()) << "] is configured, rebooting..." << std::endl;
+// Start video stream according to the stream profile of the configuration file.If there is no configuration file, the first stream profile will be used.
 try {
-    device->reboot();
+    std::cout << "startStream " << holder->deviceInfo << std::endl;
+    holder->pipeline->start(nullptr, callback);
+    holder->isStarted = true;
 }
-catch(ob::Error &e) {
-    std::cout << "Device sn[" << std::string(device->getDeviceInfo()->serialNumber()) << "] is not configured, skipping...";
-    // The early firmware versions of some models of devices will restart immediately after receiving the restart command, causing the SDK to fail to
-    // receive a response to the command request and throw an exception
+catch(...) {
+    std::cout << "Pipeline start failed!" << std::endl;
+    holder->isStarted = false;
 }
-```
-
-等待设备重启完毕，不同产品等待的时间不同
+}
 
 
-获取设备列表
+停流
 ```cpp
-// Query the list of connected devices
-auto devList = context.queryDeviceList();
-
-// Get the number of connected devices
-int devCount = devList->deviceCount();
-for(int i = 0; i < devCount; i++) {
-    streamDevList.push_back(devList->getDevice(i));
-}
-
-if(streamDevList.empty()) {
-    std::cerr << "Device list is empty. please check device connection state" << std::endl;
-    return -1;
-}
-```
-
-从设备读取多机同步配置，区分主机、从机
-```cpp
-// traverse the device list and create the device
-std::vector<std::shared_ptr<ob::Device>> primary_devices;
-std::vector<std::shared_ptr<ob::Device>> secondary_devices;
-for(auto dev: streamDevList) {
-    auto config = dev->getMultiDeviceSyncConfig();
-    if(config.syncMode == OB_MULTI_DEVICE_SYNC_MODE_PRIMARY) {
-        primary_devices.push_back(dev);
+void stopStream(std::shared_ptr<PipelineHolder> holder) {
+    if(!holder->isStarted) {
+        return;
     }
-    else {
-        secondary_devices.push_back(dev);
+
+    try {
+        std::cout << "stopStream " << holder->deviceInfo << std::endl;
+        holder->isStarted = false;
+        holder->pipeline->stop();
+    }
+    catch(ob::Error &e) {
+        std::cerr << "stopStream failed., function:" << e.getName() << "\nargs:" << e.getArgs() << "\nmessage:" << e.getMessage()
+                  << "\ntype:" << e.getExceptionType() << std::endl;
     }
 }
-
-if(primary_devices.empty()) {
-    std::cerr << "WARNING primary_devices is empty!!!" << std::endl;
-}
 ```
-
-设置时间同步频率
-```cpp
-// 启动多设备时间同步功能
-context.enableDeviceClockSync(3600000);  // 每一小时更新同步一次
-```
-
-pipeline类PipelineHolder
-因为一个pipeline关联一个sensorType，所以用PipelineHolder关联device和sensor信息，方便处理frame数据。
-```cpp
-typedef struct PipelineHolder_t {
-    std::shared_ptr<ob::Pipeline> pipeline;
-    OBSensorType                  sensorType;
-    int                           deviceIndex;
-    std::string                   deviceSN;
-} PipelineHolder;
-
-std::shared_ptr<PipelineHolder> createPipelineHolder(std::shared_ptr<ob::Device> device, OBSensorType sensorType, int deviceIndex) {
-    PipelineHolder *pHolder = new PipelineHolder();
-    pHolder->pipeline       = std::shared_ptr<ob::Pipeline>(new ob::Pipeline(device));
-    pHolder->sensorType     = sensorType;
-    pHolder->deviceIndex    = deviceIndex;
-    pHolder->deviceSN       = std::string(device->getDeviceInfo()->serialNumber());
-
-    return std::shared_ptr<PipelineHolder>(pHolder);
-}
-```
-
-打开设备数据流
-```cpp
-std::cout << "Secondary devices start..." << std::endl;
-int deviceIndex = 0;  // Sencondary device display first
-for(auto itr = secondary_devices.begin(); itr != secondary_devices.end(); itr++) {
-    auto depthHolder = createPipelineHolder(*itr, OB_SENSOR_DEPTH, deviceIndex);
-    pipelineHolderList.push_back(depthHolder);
-    startStream(depthHolder);
-
-    auto colorHolder = createPipelineHolder(*itr, OB_SENSOR_COLOR, deviceIndex);
-    pipelineHolderList.push_back(colorHolder);
-    startStream(colorHolder);
-
-    deviceIndex++;
-}
-
-// Delay and wait for 5s to ensure that the initialization of the slave device is completed
-std::this_thread::sleep_for(std::chrono::milliseconds(5000));
-
-std::cout << "Primary device start..." << std::endl;
-deviceIndex = secondary_devices.size();  // Primary device display after primary devices.
-for(auto itr = primary_devices.begin(); itr != primary_devices.end(); itr++) {
-    auto depthHolder = createPipelineHolder(*itr, OB_SENSOR_DEPTH, deviceIndex);
-    startStream(depthHolder);
-    pipelineHolderList.push_back(depthHolder);
-
-    auto colorHolder = createPipelineHolder(*itr, OB_SENSOR_COLOR, deviceIndex);
-    startStream(colorHolder);
-    pipelineHolderList.push_back(colorHolder);
-
-    deviceIndex++;
-}
-```
-
-处理开关流的函数实现
-```cpp
-void handleColorStream(int devIndex, std::shared_ptr<ob::Frame> frame) {
-    std::cout << "Device#" << devIndex << ", color frame index=" << frame->index() << ", timestamp=" << frame->timeStamp()
-              << ", system timestamp=" << frame->systemTimeStamp() << std::endl;
-
-    std::lock_guard<std::mutex> lock(frameMutex);
-    colorFrames[devIndex] = frame;
-}
-
-void handleDepthStream(int devIndex, std::shared_ptr<ob::Frame> frame) {
-    std::cout << "Device#" << devIndex << ", depth frame index=" << frame->index() << ", timestamp=" << frame->timeStamp()
-              << ", system timestamp=" << frame->systemTimeStamp() << std::endl;
-
-    std::lock_guard<std::mutex> lock(frameMutex);
-    depthFrames[devIndex] = frame;
-}
-```
-在这里我们就可以根据colorFrames和depthFrames处理多台设备输出的数据。
-
-关闭设备数据流
-```cpp
-// close data stream
-for(auto itr = pipelineHolderList.begin(); itr != pipelineHolderList.end(); itr++) {
-    stopStream(*itr);
-}
-pipelineHolderList.clear();
-```
-
+程序正常退出之后资源将会自动释放
 
 ## 点云示例-PointCloud
 
-功能描述：连接设备开流 ,生成深度点云或RGBD点云并保存成ply格式文件。
+功能描述：连接设备开流 ,生成深度点云或RGBD点云并保存成ply格式文件，并通过ESC_KEY键退出程序
 > 本示例基于C++ High Level API进行演示
 
 创建点云保存成ply格式文件函数，ply文件格式详细描述可在网络上查看<br />首先创建两个函数来保存从流里面获取到的点云数据，这是保存普通点云数据的函数
@@ -2115,46 +2180,69 @@ ob::Context::setLoggerSeverity(OB_LOG_SEVERITY_ERROR);
 ```cpp
 ob::Pipeline pipeline;
 ```
-然后可以通过Pipeline来获取彩色流和深度流的所有配置, 包括流的分辨率 ,帧率 ,以及流的格式，配置所需要彩色和深度流
+配置color流
 ```cpp
-//通过创建Config来配置Pipeline要启用或者禁用哪些流
-std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
-//获取深度相机的所有流配置，包括流的分辨率，帧率，以及帧的格式
-auto depthProfiles = pipeline.getStreamProfileList(OB_SENSOR_DEPTH);
-std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
-try{
-    //根据指定的格式查找对应的Profile,优先查找Y16格式
-    depthProfile = depthProfiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_Y16,30);
-}catch(ob::Error &e){
-    //没找到Y16格式后不匹配格式查找对应的Profile进行开流
-    depthProfile = depthProfiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
+auto colorProfiles = pipeline.getStreamProfileList(OB_SENSOR_COLOR);
+if(colorProfiles) {
+    auto profile = colorProfiles->getProfile(OB_PROFILE_DEFAULT);
+    colorProfile = profile->as<ob::VideoStreamProfile>();
 }
-config->enableStream(depthProfile);
+config->enableStream(colorProfile);
+```
 
-try{
-    //获取彩色相机的所有流配置，包括流的分辨率，帧率，以及帧的格式
-    auto colorProfiles = pipeline.getStreamProfileList(OB_SENSOR_COLOR);
-    std::shared_ptr<ob::VideoStreamProfile> colorProfile = nullptr;
-    try{
-        //根据指定的格式查找对应的Profile,优先选择RGB888格式
-        colorProfile = colorProfiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_RGB,30);
-    }catch(ob::Error &e){
-        //没找到RGB888格式后不匹配格式查找对应的Profile进行开流
-        colorProfile = colorProfiles-getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
+配置深度流
+```cpp
+std::shared_ptr<ob::StreamProfileList> depthProfileList;
+OBAlignMode                            alignMode = ALIGN_DISABLE;
+if(colorProfile) {
+    // Try find supported depth to color align hardware mode profile
+    depthProfileList = pipeline.getD2CDepthProfileList(colorProfile, ALIGN_D2C_HW_MODE);
+    if(depthProfileList->count() > 0) {
+        alignMode = ALIGN_D2C_HW_MODE;
     }
-    config->enableStream(colorProfile);
-}catch(ob::Error &e){
-    //如果不存在Color Sensor 点云转换分辨率配置为深度分辨率
-    config->setDepthScaleRequire(false);
-    config->setD2CTargetResolution(depthProfile->width(),depthProfile->height());
-    std::cerr<<"Current device is not support color sensor!"<<std::endl;
+    else {
+        // Try find supported depth to color align software mode profile
+        depthProfileList = pipeline.getD2CDepthProfileList(colorProfile, ALIGN_D2C_SW_MODE);
+        if(depthProfileList->count() > 0) {
+            alignMode = ALIGN_D2C_SW_MODE;
+        }
+    }
+}
+else {
+    depthProfileList = pipeline.getStreamProfileList(OB_SENSOR_DEPTH);
+}
+
+if(depthProfileList->count() > 0) {
+    std::shared_ptr<ob::StreamProfile> depthProfile;
+    try {
+        // Select the profile with the same frame rate as color.
+        if(colorProfile) {
+            depthProfile = depthProfileList->getVideoStreamProfile(OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_ANY, colorProfile->fps());
+        }
+    }
+    catch(...) {
+        depthProfile = nullptr;
+    }
+
+    if(!depthProfile) {
+        // If no matching profile is found, select the default profile.
+        depthProfile = depthProfileList->getProfile(OB_PROFILE_DEFAULT);
+    }
+    config->enableStream(depthProfile);
 }
 ```
+
 开启D2C对齐, 生成RGBD点云时需要开启
 ```cpp
 // 开启D2C对齐, 生成RGBD点云时需要开启
 config->setAlignMode(ALIGN_D2C_HW_MODE);
 ```
+
+启动Pipeline
+```cpp
+pipeline.start( config );
+```
+
 创建点云Filter对象，并且设置相机内参
 ```cpp
 // 创建点云Filter对象（点云Filter创建时会在Pipeline内部获取设备参数, 所以尽量在Filter创建前配置好设备）
@@ -2164,10 +2252,7 @@ ob::PointCloudFilter pointCloud;
 auto cameraParam = pipeline.getCameraParam();
 pointCloud.setCameraParam(cameraParam);
 ```
-启动Pipeline
-```cpp
-pipeline.start( config );
-```
+
 设置些操作提示
 ```cpp
  std::cout << "Press R to create rgbd pointCloud and save to ply file! " << std::endl;
@@ -2227,6 +2312,7 @@ else if(key == 'D' || key == 'd') {
  pipeline.stop();
 ```
 程序正常退出后会释放资源
+
 ## 存储示例-SaveToDisk
 
 功能描述：连接设备开流 , 获取彩色和深度图并存储为png格式。
@@ -2262,36 +2348,31 @@ void saveColor( std::shared_ptr< ob::ColorFrame > colorFrame ) {
 }
 ```
 创建一个Pipeline，通过Pipeline可以很容易的打开和关闭多种类型的流并获取一组帧数据
-```
+```cpp
 ob::Pipeline pipeline;
 ```
 然后可以通过Pipeline来获取彩色流和深度流的所有配置, 包括流的分辨率 ,帧率 ,以及流的格式，配置所需要彩色和深度流
 ```cpp
-try{
-    //获取彩色相机的所有流配置，包括流的分辨率，帧率，以及帧的格式
-    auto colorProfiles = pipeline.getStreamProfileList(OB_SENSOR_COLOR);
-    std::shared_ptr<ob::VideoStreamProfile> colorProfile = nullptr;
-    try{
-        //通过接口设置感兴趣项，返回对应Profile列表的首个Profile
-        colorProfile = colorProfiles->getVideoStreamProfile(640,OB_HEIGHT_ANY,OB_FORMAT_MJPG,30);
-    }catch(ob::Error &e){
-        colorProfile = colorProfiles->getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
+try {
+    // Get all stream profiles of the color camera, including stream resolution, frame rate, and frame format
+    auto                                    colorProfiles = pipeline.getStreamProfileList(OB_SENSOR_COLOR);
+    std::shared_ptr<ob::VideoStreamProfile> colorProfile  = nullptr;
+    if(colorProfiles) {
+        colorProfile = std::const_pointer_cast<ob::StreamProfile>(colorProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
     }
     config->enableStream(colorProfile);
-}catch(ob::Error &e) {
-    //没有Color Sensor
-    std::cerr<<"Current device is not support color sensor!"<<std::endl;
+}
+catch(ob::Error &e) {
+    // no Color Sensor
+    colorCount = -1;
+    std::cerr << "Current device is not support color sensor!" << std::endl;
 }
 
-//获取深度相机的所有流配置，包括流的分辨率，帧率，以及帧的格式
-auto depthProfiles = pipeline.getStreamProfileList(OB_SENSOR_DEPTH);
-std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
-try{
-    //根据指定的格式查找对应的Profile,优先查找Y16格式
-    depthProfile = depthProfiles->getVideoStreamProfile(640,OB_HEIGHT_ANY,OB_FORMAT_Y16,30);
-}catch(ob::Error &e){
-    //没找到Y16格式后不匹配格式查找对应的Profile进行开流
-    depthProfile = depthProfiles->getVideoStreamProfile(640, OB_HEIGHT_ANY,OB_FORMAT_ANY,30);
+// Get all stream profiles of the depth camera, including stream resolution, frame rate, and frame format
+auto                                    depthProfiles = pipeline.getStreamProfileList(OB_SENSOR_DEPTH);
+std::shared_ptr<ob::VideoStreamProfile> depthProfile  = nullptr;
+if(depthProfiles) {
+    depthProfile = std::const_pointer_cast<ob::StreamProfile>(depthProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
 }
 config->enableStream(depthProfile);
 ```
@@ -2315,7 +2396,7 @@ ob::FormatConvertFilter formatConverFilter;
 
 formatConverFilter.setFormatConvertType(FORMAT_MJPEG_TO_RGB888);
 colorFrame = formatConverFilter.process(colorFrame)->as<ob::ColorFrame>();
-formatConverFilter.setFormatConvertType(FORMAT_RGB888_TO_BGR);
+formatConverFilter.setFormatConvertType(FORMAT_RGB_TO_BGR);
 colorFrame = formatConverFilter.process(colorFrame)->as<ob::ColorFrame>();
 ```
 通过开头的编辑的存储函数来存储获得的数据
@@ -2328,28 +2409,19 @@ saveDepth( depthFrame );
 pipeline.stop();
 ```
 程序正常退出后会释放资源
+
 ## 录制示例-Recorder
 
-功能描述：连接设备开流 , 录制当前视频流到文件。
+功能描述：连接设备开流 , 录制当前视频流到文件，并通过ESC_KEY键退出程序
 > 本示例基于C++ High Level API进行演示
 
 首先需要创建一个Pipeline，通过Pipeline可以很容易的打开和关闭多种类型的流并获取一组帧数据
 ```cpp
 ob::Pipeline pipe;
 ```
-通过输入的分辨率，格式，帧率等感兴趣项来获取深度相机的流配置
+获取深度相机的流配置
 ```cpp
-//获取深度流配置
-auto profiles     = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
-std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
-try {
-    //根据指定的格式查找对应的Profile,优先查找Y16格式
-    depthProfile = profiles->getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30);
-}
-catch (ob::Error& e) {
-    //没找到Y16格式后不匹配格式查找对应的Profile进行开流
-    depthProfile = profiles->getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_ANY, 30);
-}
+depthProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
 ```
 通过创建Config来配置Pipeline要启用或者禁用哪些流，这里将启用深度流
 ```cpp
@@ -2363,7 +2435,7 @@ pipe.start(config);
 pipe.startRecord("./OrbbecPipeline.bag");
 ```
 以阻塞的方式等待一帧数据，该帧是一个复合帧，里面包含配置里启用的所有流的帧数据，并设置帧的等待超时时间
-```
+```cpp
 auto frameSet = pipe.waitForFrames(100);	//设置等待时间为100ms
 ```
 停止Pipeline，将不再产生帧数据
@@ -2373,7 +2445,7 @@ pipe.stop();
 程序正常退出后会释放资源
 ## 回放示例-Playback
 
-功能描述：连接设备开流 , 载入视频文件进行回放。
+功能描述：连接设备开流 , 载入视频文件进行回放，并通过ESC_KEY键退出程序
 > 本示例基于C++ High Level API进行演示
 
 首先需要创建一个用于回放文件的Pipeline
@@ -2420,3 +2492,706 @@ auto frameSet = pipe.waitForFrames(100);	//设置等待时间为100ms
 pipe.stop();
 ```
 程序正常退出后会释放资源
+
+## 深度精度示例-DepthUnitControl
+
+功能描述：演示获取深度精度操作，显示深度图像，输出深度精度，并通过ESC_KEY键退出程序
+
+>本示例基于C++ High Level API进行演示
+
+创建Pipeline及流配置,并通过Pipeline获取设备
+```cpp
+// Create a pipeline with default device
+ob::Pipeline pipe;
+
+// Get the device inside the pipeline
+auto device = pipe.getDevice();
+```
+
+检查获取深度精度的方式
+```cpp
+bool changeDepthUnitFlag = false;
+// check the way to adjust depth unit
+if(device->isPropertySupported(OB_PROP_DEPTH_PRECISION_LEVEL_INT, OB_PERMISSION_READ_WRITE)) {
+    // change depth unit by adjust the depth precision level
+    changeDepthUnitFlag = changeDepthUnit(device);
+}
+else if(device->isPropertySupported(OB_PROP_DEPTH_UNIT_FLEXIBLE_ADJUSTMENT_FLOAT, OB_PERMISSION_READ_WRITE)) {
+    // for some models (Such as G300 series), user can adjust the depth unit by adjusting the depth unit flexible adjustment property
+    changeDepthUnitFlag = changeDepthUnitFlexible(device);
+}
+else {
+    std::cout << "Current device not support adjust depth unit, use the default depth unit 1mm" << std::endl;
+    changeDepthUnitFlag = true;
+}
+```
+
+计算深度值
+```cpp
+// For Y16 format depth frame, print the distance of the center pixel every 30 frames
+if(depthFrame->index() % 30 == 0 && depthFrame->format() == OB_FORMAT_Y16) {
+    // Convert depth values to 1mm precision
+    auto rstImageData = convertDepthFrameUnitTo1mm(depthFrame);
+
+    uint32_t  width          = depthFrame->width();
+    uint32_t  height         = depthFrame->height();
+    uint16_t  centerDistance = rstImageData.data()[width * height / 2 + width / 2];
+
+    // Attention: if the distance is 0, it means that the depth camera cannot detect the object（may be out of detection range）
+    std::cout << "The depth frame center value is " << centerDistance << " mm. " << std::endl;
+}
+```
+
+释放资源，退出程序。
+```cpp
+    pipe.stop();
+```
+
+## HDR示例-HdrMerge
+
+支持设备： G3系列相机，例如：Gemini G335
+
+功能描述：演示使用HDR操作，显示HDR处理后的图像，并通过ESC_KEY键退出程序
+
+>本示例基于C++ High Level API进行演示
+
+创建Pipeline,进行流配置
+```cpp
+// Create a pipeline with default device
+ob::Pipeline pipe;
+
+// Configure which streams to enable or disable for the Pipeline by creating a Config
+std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
+
+std::shared_ptr<ob::VideoStreamProfile> irProfile = nullptr;
+try {
+    // Get all stream profiles of the ir camera, including stream resolution, frame rate, and frame format
+    auto irProfiles = pipe.getStreamProfileList(OB_SENSOR_IR_LEFT);
+    if(irProfiles) {
+        irProfile = std::const_pointer_cast<ob::StreamProfile>(irProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+    }
+    config->enableStream(irProfile);
+}
+catch(...) {
+    std::cerr << "Current device is not support ir sensor!" << std::endl;
+    exit(EXIT_FAILURE);
+}
+
+// Get all stream profiles of the depth camera, including stream resolution, frame rate, and frame format
+auto                                    depthProfiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
+std::shared_ptr<ob::VideoStreamProfile> depthProfile  = nullptr;
+if(depthProfiles) {
+    depthProfile = std::const_pointer_cast<ob::StreamProfile>(depthProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+}
+config->enableStream(depthProfile);
+```
+
+打开HDR处理
+```cpp
+// Create HdrMerage post processor
+ob::HdrMerge hdrMerge;
+
+// open hdr merage
+if(pipe.getDevice()->isPropertySupported(OB_STRUCT_DEPTH_HDR_CONFIG, OB_PERMISSION_READ_WRITE)) {
+    // Get depth exposure value range,the exposure_1 and exposure_2 in OBHdrConfig can be adjusted.
+    OBIntPropertyRange depthExpRange = pipe.getDevice()->getIntPropertyRange(OB_PROP_DEPTH_EXPOSURE_INT);
+    // Get depth gain value range,,the gain_1 and gain_1 in OBHdrConfig can be adjusted.
+    OBIntPropertyRange depthGainRange = pipe.getDevice()->getIntPropertyRange(OB_PROP_DEPTH_GAIN_INT);
+
+    OBHdrConfig obHdrConfig;
+    uint32_t    dataSize = sizeof(OBHdrConfig);
+    pipe.getDevice()->getStructuredData(OB_STRUCT_DEPTH_HDR_CONFIG, &obHdrConfig, &dataSize);
+    // open hdr
+    obHdrConfig.enable = true;
+
+    pipe.getDevice()->setStructuredData(OB_STRUCT_DEPTH_HDR_CONFIG, &obHdrConfig, sizeof(OBHdrConfig));
+}
+```
+
+开启pipeline
+```cpp
+pipe.start(config);
+```
+
+获取HDR处理后的图像
+```cpp
+auto leftIRFrame = frameSet->getFrame(OB_FRAME_IR_LEFT);
+if(leftIRFrame) {
+    framesForRender.push_back(leftIRFrame);
+}
+
+auto depthFrame = frameSet->depthFrame();
+if(depthFrame != nullptr) {
+    auto newFrame = hdrMerge.process(frameSet);
+    auto newFrameSet = newFrame->as<ob::FrameSet>();
+    if(newFrameSet) {
+        depthFrame = newFrameSet->depthFrame();
+        if(depthFrame) {
+            framesForRender.push_back(depthFrame);
+        }
+    }
+}
+```
+
+关闭pipeline
+```cpp
+pipe.stop();
+```
+
+关闭Hdr处理
+```cpp
+if(pipe.getDevice()->isPropertySupported(OB_STRUCT_DEPTH_HDR_CONFIG, OB_PERMISSION_READ_WRITE)) {
+    OBHdrConfig obHdrConfig;
+    uint32_t    dataSize = sizeof(OBHdrConfig);
+    pipe.getDevice()->getStructuredData(OB_STRUCT_DEPTH_HDR_CONFIG, &obHdrConfig, &dataSize);
+    obHdrConfig.enable = false;
+    pipe.getDevice()->setStructuredData(OB_STRUCT_DEPTH_HDR_CONFIG, &obHdrConfig, sizeof(OBHdrConfig));
+}
+```
+
+## 深度工作模式示例-DepthWorkMode
+
+支持的设备： G2系列，G3系列相机，Astra2系列相机
+
+功能描述：演示转换深度工作模式操作。
+
+>本示例基于C++ High Level API进行演示
+
+创建Pipeline, 获取设备
+```cpp
+// Create a pipeline with default device
+ob::Pipeline pipe;
+
+// Get the device inside the pipeline
+auto device = pipe.getDevice();
+```
+
+检查是否支持工作模式转换
+```cpp
+// Check whether the camera depth working mode is supported, currently (December 5, 2022) only the Gemini2 binocular camera supports the depth working mode
+if(!device->isPropertySupported(OB_STRUCT_CURRENT_DEPTH_ALG_MODE, OB_PERMISSION_READ_WRITE)) {
+    pressKeyExit("Current device not support depth work mode!");
+    return -1;
+}
+```
+
+获取深度工作模式列表
+```cpp
+// Query the current camera depth mode
+auto curDepthMode = device->getCurrentDepthWorkMode();
+// Get the list of camera depth modes
+auto depthModeList = device->getDepthWorkModeList();
+std::cout << "depthModeList size: " << depthModeList->count() << std::endl;
+for(uint32_t i = 0; i < depthModeList->count(); i++) {
+    std::cout << "depthModeList[" << i << "]: " << (*depthModeList)[i];
+    if(strcmp(curDepthMode.name, (*depthModeList)[i].name) == 0) {
+        std::cout << "  (Current WorkMode)";
+    }
+
+    std::cout << std::endl;
+}
+```
+
+设置深度工作模式
+```cpp
+// Let the user choose a mode, then switch
+if(depthModeList->count() > 0) {
+    uint32_t index = 0;
+    std::cout << "Please input the index from above depthModeList, newIndex = ";
+    std::cin >> index;
+    if(index >= 0 && index < depthModeList->count()) {  // legitimacy check
+        device->switchDepthWorkMode((*depthModeList)[index].name);
+
+        // Check whether the mode changes after the display is switched
+        curDepthMode = device->getCurrentDepthWorkMode();
+        if(strcmp(curDepthMode.name, (*depthModeList)[index].name) == 0) {
+            std::cout << "Switch depth work mode success! currentDepthMode: " << curDepthMode << std::endl;
+        }
+        else {
+            std::cout << "Switch depth work mode failed!" << std::endl;
+        }
+    }
+    else {
+        std::cout << "switchDepthMode faild. invalid index: " << index << std::endl;
+    }
+}
+```
+
+## 双红外示例-DoubleInfraredViewer
+
+支持设备：OpenNI协议相机例如Dabia系列，Astra/Astra2系列，Femto系列相机
+
+功能描述：演示获取双红外相机图像，显示左右红外图像，并通过ESC_KEY键退出程序
+
+>本示例基于C++ High Level API进行演示
+
+创建Pipeline, 获取设备
+```cpp
+    ob::Pipeline pipe;
+```
+
+配置左IR
+```cpp
+// Get the ir_left camera configuration list
+auto irLeftProfiles = pipe.getStreamProfileList(OB_SENSOR_IR_LEFT);
+
+if(irLeftProfiles == nullptr) {
+    std::cerr
+        << "The obtained IR(Left) resolution list is NULL. For monocular structured light devices, try opening the IR data stream using the IR example. "
+        << std::endl;
+    return 0;
+}
+
+// Open the default profile of IR_LEFT Sensor, which can be configured through the configuration file
+try {
+    auto irLeftProfile = irLeftProfiles->getProfile(OB_PROFILE_DEFAULT);
+    config->enableStream(irLeftProfile->as<ob::VideoStreamProfile>());
+}
+catch(...) {
+    std::cout << "IR(Left) stream not found!" << std::endl;
+}
+```
+
+配置右IR
+```cpp
+// Get the ir_right camera configuration list
+auto irRightProfiles = pipe.getStreamProfileList(OB_SENSOR_IR_RIGHT);
+
+// Open the default profile of IR_RIGHT Sensor, which can be configured through the configuration file
+try {
+    auto irRightProfile = irRightProfiles->getProfile(OB_PROFILE_DEFAULT);
+    config->enableStream(irRightProfile->as<ob::VideoStreamProfile>());
+}
+catch(...) {
+    std::cout << "IR(Right) stream not found!" << std::endl;
+}
+```
+
+开启pipeline
+```cpp
+pipe.start(config);
+```
+
+获取帧数据
+```cpp
+auto leftFrame  = frameSet->getFrame(OB_FRAME_IR_LEFT);
+auto rightFrame = frameSet->getFrame(OB_FRAME_IR_RIGHT);
+```
+
+停止pipeline
+```cpp
+pipe.stop();
+```
+
+## 红外示例-InfraredViewer
+功能描述：演示获取红外相机图像，显示红外图像，并通过ESC_KEY键退出程序
+
+>本示例基于C++ High Level API进行演示
+
+创建Pipeline, 配置流信息
+```cpp
+// Create a pipeline with default device
+ob::Pipeline pipe;
+
+// Get all stream profiles of the infrared camera, including stream resolution, frame rate, and frame format
+// Please adjust the sensor according to the actual product, some device types only have OB_SENSOR_IR_LEFT and OB_SENSOR_IR_RIGHT.
+auto profiles = pipe.getStreamProfileList(OB_SENSOR_IR);
+
+if(profiles == nullptr) {
+    std::cerr
+        << "The obtained IR resolution list is NULL. For binocular structured light devices, try using the doubleIr example to turn on the ir data stream. "
+        << std::endl;
+    return 0;
+}
+
+std::shared_ptr<ob::VideoStreamProfile> irProfile = nullptr;
+try {
+    // Find the corresponding profile according to the specified format, first look for the y16 format
+    irProfile = profiles->getVideoStreamProfile(640, 480, OB_FORMAT_Y8, 30);
+}
+catch(ob::Error &e) {
+    // If the specified format is not found, search for the default profile to open the stream
+    irProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+}
+
+// By creating config to configure which streams to enable or disable for the pipeline, here the infrared stream will be enabled
+std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
+config->enableStream(irProfile);
+```
+
+开启pipeline
+```cpp
+pipe.start(config);
+```
+
+获取帧数据
+```cpp
+auto frameSet = pipe.waitForFrames(100);
+```
+
+停止pipeline
+```cpp
+pipe.stop();
+```
+
+## imu读取示例-ImuReader
+功能描述：演示获取imu数据
+
+>本示例基于C++ low Level API进行演示，输出imu数据，并通过ESC_KEY键退出程序
+
+获取设备
+```cpp
+// Create a Context.
+ob::Context ctx;
+
+// Query the list of connected devices
+auto devList = ctx.queryDeviceList();
+
+if(devList->deviceCount() == 0) {
+    std::cerr << "Device not found!" << std::endl;
+    return -1;
+}
+
+// Create a device, 0 represents the index of the first device
+auto dev = devList->getDevice(0);
+```
+
+获取陀螺仪数据
+```cpp
+// Get Gyroscope Sensor
+gyroSensor = dev->getSensorList()->getSensor(OB_SENSOR_GYRO);
+if(gyroSensor) {
+    // Get configuration list
+    auto profiles = gyroSensor->getStreamProfileList();
+    // Select the first profile to open stream
+    auto profile = profiles->getProfile(OB_PROFILE_DEFAULT);
+    gyroSensor->start(profile, [](std::shared_ptr<ob::Frame> frame) {
+        std::unique_lock<std::mutex> lk(printerMutex);
+        auto                         timeStamp = frame->timeStamp();
+        auto                         index     = frame->index();
+        auto                         gyroFrame = frame->as<ob::GyroFrame>();
+        if(gyroFrame != nullptr && (index % 50) == 2) {  //( timeStamp % 500 ) < 2: Reduce printing frequency
+            auto value = gyroFrame->value();
+            std::cout << "Gyro Frame: \n\r{\n\r"
+                        << "  tsp = " << timeStamp << "\n\r"
+                        << "  temperature = " << gyroFrame->temperature() << "\n\r"
+                        << "  gyro.x = " << value.x << " rad/s"
+                        << "\n\r"
+                        << "  gyro.y = " << value.y << " rad/s"
+                        << "\n\r"
+                        << "  gyro.z = " << value.z << " rad/s"
+                        << "\n\r"
+                        << "}\n\r" << std::endl;
+        }
+    });
+}
+```
+
+获取加速度计
+```cpp
+accelSensor = dev->getSensorList()->getSensor(OB_SENSOR_ACCEL);
+if(accelSensor) {
+    // Get configuration list
+    auto profiles = accelSensor->getStreamProfileList();
+    // Select the first profile to open stream
+    auto profile = profiles->getProfile(OB_PROFILE_DEFAULT);
+    accelSensor->start(profile, [](std::shared_ptr<ob::Frame> frame) {
+        std::unique_lock<std::mutex> lk(printerMutex);
+        auto                         timeStamp  = frame->timeStamp();
+        auto                         index      = frame->index();
+        auto                         accelFrame = frame->as<ob::AccelFrame>();
+        if(accelFrame != nullptr && (index % 50) == 0) {
+            auto value = accelFrame->value();
+            std::cout << "Accel Frame: \n\r{\n\r"
+                        << "  tsp = " << timeStamp << "\n\r"
+                        << "  temperature = " << accelFrame->temperature() << "\n\r"
+                        << "  accel.x = " << value.x << " m/s^2"
+                        << "\n\r"
+                        << "  accel.y = " << value.y << " m/s^2"
+                        << "\n\r"
+                        << "  accel.z = " << value.z << " m/s^2"
+                        << "\n\r"
+                        << "}\n\r" << std::endl;
+        }
+    });
+}
+```
+
+```cpp
+// turn off the flow
+if(gyroSensor) {
+    gyroSensor->stop();
+}
+if(accelSensor) {
+    accelSensor->stop();
+}
+```
+
+## 多设备同步示例-MultiDeviceSync
+功能描述：演示多设备同步操作。
+
+>本示例基于C++ low Level API进行演示
+
+配置程序模式
+```cpp
+std::cout << "Please select options: " << std::endl;
+std::cout << " 0 --> config devices" << std::endl;
+std::cout << " 1 --> start stream" << std::endl;
+std::cout << "input: ";
+int index = -1;
+std::cin >> index;
+```
+
+配置多设备同步
+```cpp
+exitValue = configMultiDeviceSync();
+```
+
+区分主从设备
+```cpp
+streamDevList.clear();
+// Query the list of connected devices
+auto devList = context.queryDeviceList();
+
+// Get the number of connected devices
+int devCount = devList->deviceCount();
+for(int i = 0; i < devCount; i++) {
+    streamDevList.push_back(devList->getDevice(i));
+}
+
+if(streamDevList.empty()) {
+    std::cerr << "Device list is empty. please check device connection state" << std::endl;
+    return -1;
+}
+
+// traverse the device list and create the device
+std::vector<std::shared_ptr<ob::Device>> primary_devices;
+std::vector<std::shared_ptr<ob::Device>> secondary_devices;
+for(auto dev: streamDevList) {
+    auto config = dev->getMultiDeviceSyncConfig();
+    if(config.syncMode == OB_MULTI_DEVICE_SYNC_MODE_PRIMARY) {
+        primary_devices.push_back(dev);
+    }
+    else {
+        secondary_devices.push_back(dev);
+    }
+}
+```
+
+开启从设备
+```cpp
+std::cout << "Secondary devices start..." << std::endl;
+int deviceIndex = 0;  // Sencondary device display first
+for(auto itr = secondary_devices.begin(); itr != secondary_devices.end(); itr++) {
+    auto depthHolder = createPipelineHolder(*itr, OB_SENSOR_DEPTH, deviceIndex);
+    pipelineHolderList.push_back(depthHolder);
+    startStream(depthHolder);
+
+    auto colorHolder = createPipelineHolder(*itr, OB_SENSOR_COLOR, deviceIndex);
+    pipelineHolderList.push_back(colorHolder);
+    startStream(colorHolder);
+
+    deviceIndex++;
+}
+```
+
+开启主设备
+```cpp
+std::cout << "Primary device start..." << std::endl;
+deviceIndex = secondary_devices.size();  // Primary device display after primary devices.
+for(auto itr = primary_devices.begin(); itr != primary_devices.end(); itr++) {
+    auto depthHolder = createPipelineHolder(*itr, OB_SENSOR_DEPTH, deviceIndex);
+    startStream(depthHolder);
+    pipelineHolderList.push_back(depthHolder);
+
+    auto colorHolder = createPipelineHolder(*itr, OB_SENSOR_COLOR, deviceIndex);
+    startStream(colorHolder);
+    pipelineHolderList.push_back(colorHolder);
+
+    deviceIndex++;
+}
+```
+
+设置多设备同步间隔时间
+```cpp
+// Start the multi-device time synchronization function
+context.enableDeviceClockSync(3600000);  // update and sync every hour
+```
+
+进行多设备测试
+```cpp
+testMultiDeviceSync();
+```
+
+关闭数据流
+```cpp
+// close data stream
+for(auto itr = pipelineHolderList.begin(); itr != pipelineHolderList.end(); itr++) {
+    stopStream(*itr);
+}
+```
+
+## 后处理示例-PostProcessing
+
+支持设备： G3系列相机，例如：Gemini G335
+
+功能描述：演示进行后处理操作，显示经过后处理的图像，并通过ESC_KEY键退出程序
+
+>本示例基于C++ high Level API进行演示
+
+获取pipeline，进行流配置
+```cpp
+// Create a pipeline with default device
+ob::Pipeline pipe;
+
+// Get all stream profiles of the depth camera, including stream resolution, frame rate, and frame format
+auto profiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
+
+std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
+try {
+    // Find the corresponding profile according to the specified format, first look for the y16 format
+    depthProfile = profiles->getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30);
+}
+catch(ob::Error &e) {
+    // If the specified format is not found, search for the default profile to open the stream
+    depthProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+}
+
+// By creating config to configure which streams to enable or disable for the pipeline, here the depth stream will be enabled
+std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
+config->enableStream(depthProfile);
+```
+
+获取深度后处理过滤器列表
+```cpp
+auto obFilterList = pipe.getDevice()->getSensor(OB_SENSOR_DEPTH)->getRecommendedFilters();
+
+std::shared_ptr<ob::DecimationFilter> decFilter;
+for(int i = 0; i < obFilterList->count(); i++) {
+    auto postProcessorfilter =obFilterList->getFilter(i);
+    std::cout << "Depth recommended post processor filter type: " << postProcessorfilter->type() << std::endl;
+    if(postProcessorfilter->is<ob::DecimationFilter>()) {
+        decFilter = postProcessorfilter->as<ob::DecimationFilter>();
+    }
+}
+```
+
+开启pipeline
+```cpp
+pipe.start(config);
+```
+
+
+## 传感器控制示例-SensorControl
+
+功能描述：本示例演示了对device控制命令的操作、对Sensor控制命令的操作、对Sensor进行流操作。
+> 本示例基于C++ Low Level API进行演示
+
+首先需要创建一个Context，用于获取设备信息列表和创建设备
+```cpp
+ob::Context ctx;
+```
+查询设备信息列表
+```cpp
+auto devList = ctx.queryDeviceList();
+```
+选择一个设备进行操作，如果插入单个设备默认选择并打开，如果存在多个设备提供选择
+```cpp
+//选择一个设备进行操作
+std::shared_ptr<ob::Device> device = nullptr;
+if(deviceList->deviceCount() > 0) {
+    if(deviceList->deviceCount() <= 1) {
+    //如果插入单个设备，默认选择第一个
+        device = deviceList->getDevice(0);
+    }
+    else {
+        device = selectDevice(deviceList);
+    }
+}
+```
+控制命令控制，获取Property的范围，设置属性，获取属性
+```cpp
+//获取Property的范围
+OBBoolPropertyRange  bool_range = device->getBoolPropertyRange(property_item.id)
+OBIntPropertyRange   int_range = device->getIntPropertyRange(property_item.id)
+OBFloatPropertyRange float_range = device->getFloatPropertyRange(property_item.id)
+
+//设置属性
+device->setBoolProperty(propertyItem.id, bool_value);
+device->setIntProperty(propertyItem.id, int_value);
+device->setFloatProperty(propertyItem.id, float_value);
+
+//获取属性
+bool bool_ret = device->getBoolProperty(propertyItem.id);
+int int_ret = device->getIntProperty(propertyItem.id);
+float float_ret = device->getFloatProperty(propertyItem.id);
+```
+程序正常退出之后资源将会自动释放
+
+
+## 流对齐处理单元-AlignFilterViewer
+
+支持设备： G3系列相机，例如：Gemini G335
+
+功能描述：演示传感器数据流同步对齐的操作，显示对齐后的图像，并通过ESC_KEY键退出程序
+
+>本示例基于C++ hign Level API进行演示
+
+创建pipeline
+```cpp
+ob::Pipeline pipe;
+```
+
+开启color流
+```cpp
+auto colorProfiles = pipe.getStreamProfileList(OB_SENSOR_COLOR);
+if(colorProfiles) {
+    colorProfile = colorProfiles->getVideoStreamProfile(1280, OB_HEIGHT_ANY, OB_FORMAT_RGB, 30);
+}
+config->enableStream(colorProfile);
+```
+
+开启深度流
+```cpp
+auto                                    depthProfiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
+std::shared_ptr<ob::VideoStreamProfile> depthProfile  = nullptr;
+if(depthProfiles) {
+depthProfile = depthProfiles->getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30);
+//depthProfile = std::const_pointer_cast<ob::StreamProfile>(depthProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+}
+config->enableStream(depthProfile);
+```
+
+设置对齐模式
+```cpp
+/* Config depth align to color or color align to depth.
+OBStreamType align_to_stream = OB_STREAM_DEPTH; */
+OBStreamType align_to_stream = OB_STREAM_COLOR;
+ob::Align align(align_to_stream);
+```
+
+开启pipeline
+```cpp
+pipe.start(config);
+```
+
+获取帧数据
+```cpp
+auto colorFrame = frameSet->colorFrame();
+auto depthFrame = frameSet->depthFrame();
+```
+
+进行对齐处理
+```cpp
+aif(align_to_stream == OB_STREAM_COLOR) {
+    app.resize(colorFrame->width(), colorFrame->height());
+}
+else {
+    app.resize(depthFrame->width(), depthFrame->height());
+}
+```
+
+关闭pipeline
+```cpp
+pipe.stop();
+```

@@ -1,83 +1,90 @@
-All examples can be found in the project's Examples directory
+All examples can be found in the Examples directory of the project
 
-| Name            | Language | Description                                                                                                                                                                                                    |
-| --------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| HelloOrbbec     | C        | Demonstrate connect to device to get SDK version and device information                                                                                                                                        |
-| FirmwareUpgrade | C        | Demonstrate upgrade device firmware                                                                                                                                                                            |
-| SensorControl   | C        | Demonstrate the operation of device, sensor control commands                                                                                                                                                   |
-| DepthWorkMode   | C        | Demonstrate get current depth work mode, obtain supported depth work mode list, switch depth work mode.                                                                                                        |
-| Hotplugin       | C        | Demonstrate device hot-plug monitoring, automatically connect the device to open depth streaming when the device is online, and automatically disconnect the device when it detects that the device is offline |
-| PointCloud      | C        | Demonstrate the generation of depth point cloud or RGBD point cloud and save it as ply format file                                                                                                             |
-| HelloOrbbec     | C++      | Demonstrate connect to device to get SDK version and device info                                                                                                                                               |
-| DepthViewer     | C++      | Demonstrate using SDK to get depth data and draw display, get resolution and set, display depth image                                                                                                          |
-| ColorViewer     | C++      | Demonstrate using SDK to get color data and draw display, get resolution and set, display color image                                                                                                          |
-| InfraredViewer  | C++      | Demonstrate using SDK to obtain infrared data and draw display, obtain resolution and set, display infrared image                                                                                              |
-| SyncAlignViewer | C++      | Demonstrate operations on sensor data stream alignment                                                                                                                                                         |
-| FirmwareUpgrade | C++      | Demonstrate upgrade device firmware                                                                                                                                                                            |
-| SensorControl   | C++      | Demonstrate manipulation of device and sensor control commands                                                                                                                                                 |
-| MultiStream     | C++      | Demonstrate one device to start Color, Ir, Depth, Gyro, Accel Sensor stream.                                                                                                                                   |
-| MultiDevice     | C++      | Demonstrate operation on multiple devices                                                                                                                                                                      |
-| DepthWorkMode   | C++      | Demonstrate get current depth work mode, obtain supported depth work mode list, switch depth work mode.                                                                                                        |
-| HotPlugin       | C++      | Demonstrate the settings of the device plug and unplug callback, and get the stream processed after plugging and unplugging                                                                                    |
-| IMUReader       | C++      | Get IMU data and output display                                                                                                                                                                                |
-| MultiDeviceSync | C++      | Demostrate how to config multiple devices synchronize config and how to start stream with this config                                                                                                          |
-| PointCloud      | C++      | Demonstrate the generation of depth point cloud or RGBD point cloud and save it as ply format file                                                                                                             |
-| SaveToDisk      | C++      | Get color and depth maps and save as png format                                                                                                                                                                |
-| Recorder        | C++      | Record current video stream to file                                                                                                                                                                            |
-| Playback        | C++      | Load video files for playback                                                                                                                                                                                  |
+|Name| Language| Description|
+|--- | --- | ---|
+|HelloOrbbec | C | Demo connecting to a device to get SDK version and device information|
+|FirmwareUpgrade | C | Demonstration of Selecting Firmware Bin or img Files to Upgrade Firmware Version for Devices|
+|DepthViewer | C | Demo using SDK to get depth data, draw display, get resolution, set and display depth images|
+|ColorViewer | C | Demo Using SDK to Get Color Data and Draw Display, Get Resolution and Set, Display Color Images|
+|HotPlugin | C | Demo device hot plug monitoring, automatically connect to device upon detection of device online, open deep stream, automatically disconnect device upon detection of device disconnection|
+|PointCloud | C | Demonstration of generating deep point clouds or RGBD point clouds and saving them as ply format files|
+|AlignFilterViewer | C | Demonstrate the operation of aligning sensor data streams|
+|DoubleInfraredViewer | C | Demonstration of Obtaining Dual Infrared Camera Images|
+|InfraredViewer | C | Demonstration of Obtaining Infrared Camera Images|
+|Post-Processing | C | Demonstration of post-processing operations|
+|HdrMerge | C | Demonstration of Enabling HDR Operation|
+|ColorDepthViewer | C | Demo using SDK to get color and depth 0 data and draw display, get resolution and set, display color images|
+|HelloOrbbec | C++| Demo connecting to a device to get SDK version and device information|
+|DepthViewer | C++| Demo Using SDK to Get Depth Data and Draw Display, Get Resolution and Set, Display Depth Images|
+|ColorViewer | C++| Demo using SDK to get color data and draw display, get resolution and set, display color images, and output metadata|
+|SyncAlignViewer | C++| Demonstrate the operation of aligning sensor data streams|
+|FirmwareUpgrade | C++| Demonstration of selecting firmware bin or img files to upgrade firmware versions to devices|
+|MultiStream | C++| Demonstrate the operation of a device opening multiple streams simultaneously|
+|MultiDevice | C++| Demonstrate operating on multiple devices|
+|HotPlugin | C++| Demonstrate the setting of device plug callback and get the stream of post plug processing|
+|PointCloud | C++| Demonstration of generating deep point clouds or RGBD point clouds and saving them as ply format files|
+|SaveToDisk | C++| Get color and depth maps and store them in PNG format|
+|Recorder | C++| Record the current video stream to a file|
+|Playback | C++| Loading Video Files for Playback|
+|DepthUnitControl | C++| Demonstration of Obtaining Depth Precision Operations|
+|HdrMerge | C++| Demonstration of Enabling HDR Operations|
+|DepthWorkMode | C++| Demonstration of Converting Deep Work Mode Operations|
+|DoubleInfraredViewer | C++| Demo Obtaining Dual Infrared Camera Images|
+|InfraredViewer | C++| Demo Obtaining Infrared Camera Images|
+|ImuReader | C++| Demonstration of Obtaining IMU Data|
+|MultiDeviceSync | C++| Demonstration of multi device synchronization operation|
+|PostProcessing | C++| demonstrate performing post-processing operations|
+|SensorControl | C++| Demonstration of Sensor Control Operations|
+|AlignFilterViewer | C++| Demonstrate the operation of synchronous alignment of sensor data streams|
 
 # C
-
 ## HelloOrbbec
 
-Function description: Demonstrate SDK initialization, get SDK version, get device model, get device serial number, get firmware version, and SDK release resources.
+Function Description: Used to demonstrate SDK initialization, get SDK version, get device model, get device serial number, get firmware version number, SDK resource release, and exit the program through the ESC_KEY key
+> This example is based on the C Low Level API for demonstration
 
-> This sample is based on C Low Level API for demonstration.
-
-First get and print the current SDK version
-
+Firstly, get and print the current SDK version
 ```c
 printf("SDK version: %d.%d.%d\n", ob_get_major_version(), ob_get_minor_version(), ob_get_patch_version());
 ```
-
-Create a Context to obtain a list of device information and create a device
-
-```
+Create a Context for obtaining a list of device information and creating devices
+```c
 ob_error*   error = NULL;
 ob_context* ctx   = ob_create_context( &error );
 ```
-
-Query the list of connected devices to obtain the number of devices in the list, and create the first device in the list through index number 0.
-
-```
+Query the list of connected devices to get the number of devices in the list, and use index number 0 to create the first device in the list
+```c
 ob_device_list* dev_list = ob_query_device_list( ctx, &error );
-int count = ob_device_list_device_count(dev_list, &error);
+int dev_count = ob_device_list_device_count(dev_list, &error);
+if(dev_count == 0) {
+	printf("Device not found!\n");
+	return -1;
+}
 ob_device* dev = ob_device_list_get_device(dev_list, 0, &error);
 ```
-
-Next you can get information from this device.
-
-```
+Next, you can get information related to this device
+```c
 //Get device information
 ob_device_info* dev_info = ob_device_get_device_info(dev, &error);
 
-//Get the device name
+//Get device name
 const char* name = ob_device_info_name(dev_info, &error);
 
-//Get the pid, vid, uid of the device
+//Get pid, vid, uid of the device
 int pid = ob_device_info_pid(dev_info, &error);
 int vid = ob_device_info_vid(dev_info, &error);
 int uid = ob_device_info_uid(dev_info, &error);
 
-//Get the firmware version number of the device
+//By get the firmware version number of the device
 const char* fw_ver = ob_device_info_firmware_version(dev_info, &error);
 
-//Get the serial number of the device
+//By get the serial number of the device
 const char* sn = ob_device_info_serial_number(dev_info, &error);
 
-//Get the list of supported sensors
+//Get a list of supported sensors
 ob_sensor_list* sensor_list = ob_device_get_sensor_list(dev, &error);
 
+//Get the number of sensors
 int count = ob_sensor_list_get_sensor_count(sensor_list, &error);
 for(int i = 0; i < count; i++)
 {
@@ -93,27 +100,27 @@ for(int i = 0; i < count; i++)
     }
 }
 ```
-
 Release resources and exit the program.
-
 ```c
-ob_delete_sensor_list(sensor_list, &error); //Destroy sensor list
-ob_delete_device_info(dev_info, &error); //Destroy device info
-ob_delete_device(dev, &error); //Destroy device
-ob_delete_device_list(dev_list, &error); //Destroy device list
-ob_delete_context(ctx, &error); //Destroy context
+//Release sensor list
+ob_delete_sensor_list(sensor_list, &error);
+//Release device info
+ob_delete_device_info(dev_info, &error);
+//Release device
+ob_delete_device(dev, &error);
+//Release device list
+ob_delete_device_list(dev_list, &error);
+//Release context
+ob_delete_context(ctx, &error);
 ```
 
 ## FirmwareUpgrade
+Function Description: This example demonstrates how to upgrade a device using fir
+> This example is based on the C Low Level API for demonstration. The example is compiled in C++and the OrbbecSDK uses the C language API
 
-Function description: This example demonstrates how to use the firmware file to upgrade the device.
-
-> This example is based on the C Low Level API for demonstration, the sample compilation language is C++, and OrbbecSDK uses the C language API
-
-Obtain the firmware file through the command parameter in the main function interface
-
+Get firmware files through command parameters in the main function interface
 ```cpp
-// The check_firmware_file_path() function is used to check whether the file exists. In the actual code, it is better to check whether the extension is bin or img, and whether the firmware file matches the target device.
+// The check_firmware_file_path() function is used to check if a file exists. In actual code, it is best to check if the suffix is bin or img, and if the firmware file matches the target device
 const char *check_firmware_file_path(int argc, char **argv) {
     if(argc < 2) {
         printf("Please input firmware path.\n");
@@ -139,21 +146,20 @@ int main(int argc, char **argv) {
         return 0;
     }
 
-    // Process more business code
+    // The following business code
 
     return 0;
 }
 ```
 
-Create ob_context and obtain the device through ob_context. This example assumes that the host computer (Windows, Ubuntu, Android platform) has been plugged into the device before running firmware_upgrade[.exe]. device_changed_callback is used to monitor the device after the firmware upgrade and obtain the business processing of the upgraded device after restarting
-
+Create an ob_context and get the device through it. This example assumes that the upper computer (Windows, Ubuntu, Android platforms) has already inserted the device before running firmware_upgrade [. exe]. Device_changed_callback is used to listen for business processing of the upgraded device after firmware upgrade and device restart
 ```cpp
-// Create ob_context instance
+// Building an ob_context object
 ob_error   *error = NULL;
 ob_context *ctx   = ob_create_context(&error);
 check_error(error);
 
-// Set the device change listener, device_changed_callback is the key function to manage the device life cycle, developers must pay attention to this callback
+// Set up a device change listener, device_changed_callback is a key function for managing device declaration cycles, and developers must pay attention to this callback
 ob_set_device_changed_callback(ctx, device_changed_callback, &callback_user_data_, &error);
 check_error(error);
 
@@ -161,16 +167,16 @@ check_error(error);
 ob_device_list *dev_list = ob_query_device_list(ctx, &error);
 check_error(error);
 
-// Query the currently connected devices
+// Retrieve the current number of connected devices from ob_device_list
 int dev_count = ob_device_list_device_count(dev_list, &error);
 check_error(error);
 if(dev_count == 0) {
-    // The firmware upgrade example assumes that the device has been connected to the host computer (Windows, Ubuntu, Android platform)
+    // Firmware upgrade example assumes that the device has been connected to the upper computer (Windows, Ubuntu, Android platforms)
     printf("Device not found!\n");
     return -1;
 }
 
-// Obtain first device which index=0
+// Get the first device, index=0
 ob_device *dev = ob_device_list_get_device(dev_list, 0, &error);
 check_error(error);
 
@@ -179,22 +185,21 @@ dump_device_info(dev);
 ```
 
 Get the current firmware version information of the device
-
 ```cpp
-// Print device name, SN, VID, PID and firmware version
+// Print device name, SN, VID, PID, and firmware version
 void dump_device_info(ob_device *device) {
     ob_error *error = NULL;
 
-    // Obtain the ob_device_info object, and obtain the basic information of the target device through ob_device_info
+    // Get the ob_device_info object, through which the basic information of the target device can be obtained
     ob_device_info *dev_info = ob_device_get_device_info(device, &error);
     check_error(error);
 
-    // Device name
+    // Device Name
     const char *name = ob_device_info_name(dev_info, &error);
     check_error(error);
     printf("Device name: %s\n", name);
 
-    // Device VID，PID，UID
+    // VID，PID，UID of the device
     int pid = ob_device_info_pid(dev_info, &error);
     check_error(error);
     int vid = ob_device_info_vid(dev_info, &error);
@@ -203,28 +208,27 @@ void dump_device_info(ob_device *device) {
     check_error(error);
     printf("Device pid: %d vid: %d uid: %s\n", pid, vid, uid);
 
-    // Device firmware version
+    // The current firmware version number of the device
     const char *fw_ver = ob_device_info_firmware_version(dev_info, &error);
     check_error(error);
     printf("Firmware version: %s\n", fw_ver);
 
-    // Device serial number
+    // SN of the device
     const char *sn = ob_device_info_serial_number(dev_info, &error);
     check_error(error);
     printf("Serial number: %s\n", sn);
 
-    // Release resources, otherwise it will cause memory leaks
+    // Release resources, otherwise it will cause memory leakage
     ob_delete_device_info(dev_info, &error);
     check_error(error);
 }
 ```
 
-Upgrade the firmware of the target device
-a. Implementation the firmware upgrade callback interface of C API;
-b. Call the firmware upgrade interface to upgrade;
-
+Upgrade firmware for the target device
+a. Implement firmware upgrade callback interface for C API;
+b. Call the firmware upgrade interface for upgrading;
 ```cpp
-// Implementation the firmware upgrade callback interface of C API;
+// Implement firmware upgrade callback interface for C API;
 void device_upgrade_callback(ob_upgrade_state state, const char *message, uint8_t percent, void *user_data) {
     if(state == STAT_START) {
         printf("Upgrade Firmware start\n");
@@ -236,7 +240,7 @@ void device_upgrade_callback(ob_upgrade_state state, const char *message, uint8_
         printf("Upgrade Firmware in progress, percent: %u\n", (uint32_t)percent);
     }
     else if(state == STAT_DONE) {
-        // Upgrade success
+        // Firmware upgrade successful
         printf("Upgrade Firmware done, percent: %u\n", (uint32_t)percent);
         is_upgrade_success_ = true;
     }
@@ -244,24 +248,24 @@ void device_upgrade_callback(ob_upgrade_state state, const char *message, uint8_
         printf("Upgrade Firmware verify image\n");
     }
     else {
-        // Upgrade failed
+        // Firmware upgrade failed
         printf("Upgrade Firmware failed. state: %d, errMsg: %s, percent: %u \n", (int)state, message ? message : "", (uint32_t)percent);
     }
 }
 
-// Call the firmware upgrade interface to upgrade;
+// Perform firmware upgrades on the target device
 bool upgrade_firmware(ob_device *device, const char *firmwarePath) {
     const char *index     = strstr(firmwarePath, ".img");
     bool        isImgFile = (bool)index;
     index                 = strstr(firmwarePath, ".bin");
     bool isBinFile        = (bool)index;
     if(!(isImgFile || isBinFile)) {
-        // Firmware upgrade files are generally bin or img, and it is best to use the file name, file MD5 and other information for foolproofing in actual business
+        // Firmware upgrade files are usually bin or img. In actual business, it is best to use information such as file name and file MD5 to prevent errors
         printf("Upgrade Fimware failed. invalid firmware file: %s\n", firmwarePath);
         return false;
     }
 
-    // Call the firmware upgrade interface to upgrade;
+    // Call the firmware upgrade interface for upgrading;
     is_upgrade_success_ = false;
     ob_error *error     = NULL;
     ob_device_upgrade(device, firmwarePath, device_upgrade_callback, false, &callback_user_data_, &error);
@@ -270,12 +274,11 @@ bool upgrade_firmware(ob_device *device, const char *firmwarePath) {
 }
 ```
 
-After the firmware upgrade is successful, the device needs to be restarted. There are two ways to restart the device, one is to unplug the device (or restart the operating system), and the other is to call the reboot interface of OrbbecSDK. After the device is online, the current device firmware version information can be queried through the dump_device_info() function in this example
+After a successful firmware upgrade, the device needs to be restarted. There are two ways to restart a device: one is to unplug and unplug the device (or restart the operating system), and the other is to call the reboot interface of the OrbbecSDK. After the device goes online, the dump_device_info() function in this example can be used to query the current firmware version information of the device
 
-The following example demonstrates rebooting the device through the firmware reboot interface
-
+The following example demonstrates restarting a device through the firmware reboot interface
 ```cpp
-// Reboot device
+// reboot device
 printf("Reboot device\n");
 is_device_removed_       = false;
 is_wait_reboot_complete_ = true;
@@ -287,397 +290,266 @@ ob_delete_device(dev, &error);
 check_error(error);
 ```
 
-In ob_device_changed_callback, you can monitor the offline and online events when the device is restarted. For details, see the hot swap example
-
+On ob_device_changed_callback, you can listen for events related to device rebooting and going offline or online. For more details, please refer to the example of hot swapping
 ```cpp
-// Listen for device changes
+// Monitoring device changes
 void device_changed_callback(ob_device_list *removed, ob_device_list *added, void *user_data) {
     ob_error *error = NULL;
 
-    // Process online devices through added
+    // Processing online devices through added
 
-    // Process offline devices through removed
+    // Processing offline devices through removal
 
-    // Release resources to prevent memory leaks
+    // Release resources to avoid memory leaks
     ob_delete_device_list(removed, &error);
     check_error(error);
 
-    // Release resources to prevent memory leaks
+    // elease resources to avoid memory leaks
     ob_delete_device_list(added, &error);
     check_error(error);
 }
 ```
+## DepthViewer
 
-## SensorControl
+Function description: Demonstrate using SDK to get depth data and draw display, get resolution and set, display depth images, and exit the program through ESC_KEY key
 
-Function description: This example mainly demonstrates the operation of device control commands, the operation of sensor control commands, and stream from sensor.
+> This example is based on the C High Level API for demonstration
 
-> This example is based on C Low Level API for demonstration.
-
-Create a Context and query the list of connected devices
-
+Firstly, you need to create a Pipeline to connect the device and open color and depth streams
 ```c
-ob_error*   error = NULL;
-ob_context* ctx   = ob_create_context( &error );
-ob_device_list* dev_list = ob_query_device_list( ctx, &error );
+pipe = ob_create_pipeline( &error );
 ```
-
-Print device information in the list by index number
-
+Create a Configuration to configure the resolution, frame rate, and format of color and depth streams
 ```c
-const char *name = ob_device_list_get_device_name(device_list, i, &g_error);
-int pid = ob_device_list_get_device_pid(device_list, i, &g_error);
-int vid = ob_device_list_get_device_vid(device_list, i, &g_error);
-const char *uid = ob_device_list_get_device_uid(device_list, i, &g_error);
-const char *sn = ob_device_list_get_device_serial_number(device_list, i, &g_error);
-printf("%d. name: %s, pid: %d, vid: %d, uid: %s, sn: %s\n", i, name, pid, vid, uid, sn);
+ob_config* config = ob_create_config( &error );
 ```
-
-Create a device
-
+Configure stream
 ```c
-if(devCount <= 1) {
-    // If a single device is inserted, the first one is selected by default.
-     device = ob_device_list_get_device(dev_list, 0, &g_error);
+//Configure Depth stream
+ob_stream_profile *     depth_profile = NULL;
+ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_DEPTH, &error);
+//ind the corresponding Profile according to the specified format, with priority given to Y16 format
+depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30, &error);
+//If the Y16 format is not found and does not match the format, search for the corresponding profile to open the stream
+if(error){
+    depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_ANY, 30, &error);
+    error = nullptr;
 }
-else {
-    // If there are multiple devices, the user inputs the selection.
-    device = select_device(dev_list);  // select_device
-}
+ob_config_enable_stream(config, depth_profile, &error);  // Enable configuration
 ```
+Start Pipeline through Configuration
+```c
+ob_pipeline_start_with_config(pipe, config, &error);
+```
+Release resources and exit the program.
+```c
+//Release frameSet and reclaim memory
+ob_delete_frame(frameset, &error);
 
-Get and print the currently created device information
+//Release depth profile
+ob_delete_stream_profile(depth_profile, &error);
+
+//Release color list
+ob_delete_stream_profile_list(profiles, &error);
+
+//Release device
+ob_delete_device(device, &error);
+
+//Release pipeline
+ob_delete_pipeline(pipe, &error);
+```
+## ColorViewer
+
+Function description: Demonstrate using SDK to get color data and draw display, get resolution and set it, display color images, and exit the program through ESC_KEY key
+
+> This example is based on the C High Level API for demonstration
+
+Firstly, you need to create a Pipeline to connect the device and open color and depth streams
 
 ```c
- ob_device_info *deviceInfo = ob_device_get_device_info(device, &g_error);
- const char *name = ob_device_info_name(deviceInfo, &g_error);
- int pid = ob_device_info_pid(deviceInfo, &g_error);
- int vid = ob_device_info_vid(deviceInfo, &g_error);
- const char *uid = ob_device_info_uid(deviceInfo, &g_error);
- printf("Current Device: name: %s, pid: %d, vid: %d, uid: %s\n", name, pid, vid, uid);
-```
-
-Get supported control command properties
-
-```c
-// Get the number of attributes supporting control commands
-uint32_t propertySize = ob_device_get_supported_property_count(device, &g_error);
-// Get the control command attribute item through index number I
-ob_property_item property_item = ob_device_get_supported_property(device, i, &g_error);
-```
-
-read/write control commands
-
-```c
-// Read
-bool_ret = ob_device_get_bool_property(device, property_item.id, &g_error);// bool property
-int_ret = ob_device_get_int_property(device, property_item.id, &g_error);/ int property
-float_ret = ob_device_get_float_property(device, property_item.id, &g_error);// float property
-
-// Read the value range, default value, step value and other information of the command.
-ob_int_property_range   int_range;
-ob_float_property_range float_range;
-ob_bool_property_range  bool_range;
-sprintf(str, "Bool value(min:0, max:1, step:1)");
-int_range = ob_device_get_int_property_range(device, property_item.id, &g_error);
-float_range = ob_device_get_float_property_range(device, property_item.id, &g_error);
-
-// Write
-ob_device_set_bool_property(device, property_item.id, bool_value, &g_error); // bool property
-ob_device_set_int_property(device, property_item.id, int_value, &g_error); // int property
-ob_device_set_float_property(device, property_item.id, float_value, &g_error); // float property
-```
-
-Finally, when the program exits, the corresponding created resources need to be released.
-
-```c
-//Delete context
-ob_delete_context(ctx, &g_error);
-//Delete device list
-ob_delete_device_list(dev_list, &g_error);
-//Delete device
-ob_delete_device(device, &g_error);
-```
-
-## ColorDepthViewer
-
-Function description: This example mainly demonstrates the use of the pipeline advanced interface to operate the device, obtain the resolution list and set the resolution.
-
-> This example is based on C High Level API for demonstration.
-
-First, we need to create a PipeLine to open the Color and Depth streams after connecting the device.
-
-```
 pipe = ob_create_pipeline( &error );
 ```
 
-Create a Config to configure the resolution, frame rate and format of Color or Depth streams.
+Create a Configuration to configure the resolution, frame rate, and format of color and depth streams
 
-```
+```c
 ob_config* config = ob_create_config( &error );
 ```
 
-Configure stream
+Configure streaming
 
 ```c
-// 2.1 Configure depth stream
-ob_stream_profile *     depth_profile = NULL;
-ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_DEPTH, &error);
-//Find the corresponding Profile according to the specified format.
-depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 480, OB_FORMAT_Y16, 30, &error);
-if(!depth_profile) {  // If the specified format profile is not found, the first profile in the profile list is used.
-     depth_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
+//Configure Color streaming
+ob_stream_profile *     color_profile = NULL;
+ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_Color, &error);
+//Search for the corresponding Profile according to the specified format, and prioritize the RGB888 format
+color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_RGB, 30, &error);
+//If the RGB888 format is not found and does not match the format, search for the corresponding profile to open the stream
+if(error){
+	color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_ANY, 30, &error);
+	error = nullptr;
 }
-ob_config_enable_stream(config, depth_profile, &error);  // Enable stream
-
-// 2.2 Configure color stream
-ob_stream_profile *color_profile = NULL;
-profiles                         = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_COLOR, &error);
-//Find the corresponding Profile according to the specified format.
-color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 480, OB_FORMAT_MJPG, 30, &error);
-if(!color_profile) {  // If the specified format profile is not found, the first profile in the profile list is used.
-    color_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
-}
-ob_config_enable_stream(config, color_profile, &error);  // Enable stream
+ob_config_enable_stream(config, depth_profile, &error);  // Enable configuration
 ```
 
-Turn off sync
+Start Pipeline through Configuration
 
-```
-ob_pipeline_disable_frame_sync(pipe, &error);  // Turn off frame synchronization
-```
-
-Start the pipeline with config
-
-```
+```c
 ob_pipeline_start_with_config(pipe, config, &error);
 ```
 
-Stop and destroy
+Release resources and exit the program.
 
-```
-// Stop pipeline
-ob_pipeline_stop(pipe, &error);
+```c
+//Release frameSet
+ob_delete_frame(frameset, &error);
 
-// Destroy pipeline
+//Release profile
+ob_delete_stream_profile(color_profile, &error);
+
+//Release profile list
+ob_delete_stream_profile_list(profiles, &error);
+
+//Release device
+ob_delete_device(device, &error);
+
+//Release pipeline
 ob_delete_pipeline(pipe, &error);
 ```
 
-## DepthWorkMode
-
-Function Description: This example mainly demonstrates switching camera depth mode. First, the depth mode list is queried, and then the corresponding camera depth mode is selected to call interface switching
-
-First get device
-
-```C
-// Create Context. Unlike Pipeline, Context is the entry point to the low-level API, which is slightly more complicated to use for common operations such as switching streams,
-// but the low-level API can provide more flexible operations such as getting multiple devices, reading and writing device and camera properties, etc
-ob_error *  error = NULL;
-ob_context *ctx   = ob_create_context(&error);
-check_error(error);
-
-//Get the list of connected devices
-ob_device_list *dev_list = ob_query_device_list(ctx, &error);
-check_error(error);
-
-//Obtain the number of connected devices
-int dev_count = ob_device_list_device_count(dev_list, &error);
-check_error(error);
-if(dev_count == 0) {
-    printf("Device not found!\n");
-    return -1;
-}
-
-//Create a device. 0 indicates the index of the first device
-ob_device *dev = ob_device_list_get_device(dev_list, 0, &error);
-check_error(error);
-```
-
-Check whether the device supports camera depth mode. Currently, only Gemini2 supports camera depth mode
-
-```C
-// Check to see if depth mode is supported. Currently (5 December 2022), only Gemini2 binocular cameras support depth mode
-if(!ob_device_is_property_supported(dev, OB_STRUCT_CURRENT_DEPTH_ALG_MODE, OB_PERMISSION_READ_WRITE, &error)) {
-    printf("FAILED!!, Device not support depth work mode");
-    check_error(error);
-    return -1;
-}
-check_error(error);
-```
-
-Get the current depth work mode of the device
-
-```C
-// Get the current depth work mode of the device
-ob_depth_work_mode cur_work_mode = ob_device_get_current_depth_work_mode(dev, &error);
-check_error(error);
-printf("Current depth work mode: %s\n", cur_work_mode.name);
-```
-
-the list of camera depth work modes supported by the device
-
-```C
-// Get number contain in mode_list
-uint32_t mode_count = ob_depth_work_mode_list_count(mode_list, &error);
-printf("Support depth work mode list count: %u\n", mode_count);
-
-int cur_mode_index = -1;
-for(uint32_t i = 0; i < mode_count; i++) {
-    ob_depth_work_mode mode = ob_depth_work_mode_list_get_item(mode_list, i, &error);
-    check_error(error);
-    printf("depth work mode[%u], name: %s", i, mode.name);
-}
-```
-
-Switch depth work mode
-
-```C
-// Switch device to a new depth work mode
-ob_device_switch_depth_work_mode_by_name(dev, mode.name, &error);
-check_error(error);
-```
-
-At the end of switching camera depth mode, you can open the camera to stream using pipeline
-Cautions：
-
-1. If you want to switch camera depth mode, you must open the data stream after switching depth mode. Each camera depth mode supports different effective resolutions
-2. If the data stream has been opened with a pipeline, the original applied pipeline must be released before the switch depth work mode
-   Re-create pipeline after switching camera depth mode; otherwise, wild pointer or memory leak will be caused;
-
-Final release of resources
-
-```C
-// Release mode_list
-ob_delete_depth_work_mode_list(mode_list, &error);
-check_error(error);
-
-//Release device
-ob_delete_device(dev, &error);
-check_error(error);
-
-//Release device list
-ob_delete_device_list(dev_list, &error);
-check_error(error);
-
-//Release context
-ob_delete_context(ctx, &error);
-check_error(error);
-```
 
 ## HotPlugin
 
-Function description: Monitor device hot-plug, if the device is online, then automatically connects to the device to open the depth stream, or if the device is offline and then automatically disconnects the device.
+Function description: Device hot plug monitoring, automatically connects the device when it is online and opens deep stream, and automatically disconnects the device when it is disconnected., And exit the program through the ESC_KEY key
+> This example is based on the C Low Level API for device registration and offline callback, and the High Level API for open stream frame retrieval demonstration
 
-> This sample is based on C Low Level API for registering device up/down callback, and based on High Level API for open stream fetching demo.
-
-Create a device connection processing function, create a pipeline in the function and call create_and_start_with_config to start RGB and Depth streams.
-
-```
+Create a device connection processing function, create a pipeline within the function, and call createAnd_start_with configuration to enable color and depth streams.
+```c
 //Device connection processing
-void device_connect_callback( ob_device_list* connectList ) {
-    uint32_t count = ob_device_list_device_count( connectList, &error );
-    check_error( error );
-    printf( "Device connect: %d\n", count );
-    if ( count > 0 ) {
-        if ( pipeline == NULL ) {
-            pipeline = ob_create_pipeline( &error );
-            check_error( error );
-            create_and_start_with_config();
+void handle_device_connected(ob_device_list *connect_list) {
+    ob_error *error = NULL;
+
+    std::lock_guard<std::recursive_mutex> lk(pipeline_holder_mutex);
+    uint32_t                              count = ob_device_list_device_count(connect_list, &error);
+    check_error(error);
+    printf("Device connect: %d\n", count);
+    for(uint32_t i = 0; i < count; i++) {
+        const char *uid = ob_device_list_get_device_uid(connect_list, i, &error);
+        check_error(error);
+        std::string str_uid = std::string(uid);
+        auto        itr     = pipeline_holder_map.find(str_uid);
+        if(itr != pipeline_holder_map.end()) {
+            printf("Deveice connect, device already connection.");
+            print_device_info(itr->second->device_info);
+            printf("\n");
+        }
+        else {
+            ob_device *device = ob_device_list_get_device(connect_list, i, &error);
+            check_error(error);
+
+            ob_pipeline *pipeline = ob_create_pipeline_with_device(device, &error);
+            check_error(error);
+
+            ob_device_info *device_info = ob_device_get_device_info(device, &error);
+            check_error(error);
+
+            std::shared_ptr<pipeline_holder> holder(new pipeline_holder{ device, device_info, pipeline, false, 0, 0, 0, 0, 0 });
+            start_stream(holder);
+            pipeline_holder_map.insert({ str_uid, holder });
+
+            printf("Deveice connect, ");
+            print_device_info(device_info);
+            printf("\n");
         }
     }
 }
 ```
+Create a device disconnection handling function that stops the pipeline and sets the exit pipeline flag isExit to true
+```c
+void handle_device_disconnected(ob_device_list *disconnect_list) {
+    ob_error *error = NULL;
 
-Create a device disconnection processing function, stop the pipeline in the function, and set the exit pipeline flag isExit as true.
+    std::lock_guard<std::recursive_mutex> lk(pipeline_holder_mutex);
+    uint32_t                              count = ob_device_list_device_count(disconnect_list, &error);
+    check_error(error);
+    printf("Device disconnect: %d\n", count);
 
-```
-//Device disconnection processing
-void device_disconnect_callback( ob_device_list* disconnectList ) {
-    uint32_t count = ob_device_list_device_count( disconnectList, &error );
-    check_error( error );
-    printf( "Device disconnect: %d\n", count );
-    if ( count > 0 ) {
-        ob_pipeline_stop( pipeline, &error );
-        check_error( error );
-        isExit = true;
+    for(uint32_t i = 0; i < count; i++) {
+        const char *uid = ob_device_list_get_device_uid(disconnect_list, i, &error);
+        check_error(error);
+        std::string str_uid = std::string(uid);
+        auto        itr     = pipeline_holder_map.find(str_uid);
+        if(itr != pipeline_holder_map.end()) {
+            auto holder = itr->second;
+            stop_stream(holder);
+            pipeline_holder_map.erase(str_uid);
+
+            printf("Deveice discconnect, ");
+            print_device_info(holder->device_info);
+            printf("\n");
+
+            delete_holder(holder);
+        }
+        else {
+            const char *uid = ob_device_list_get_device_uid(disconnect_list, i, &error);
+            check_error(error);
+            printf("Device disconnect, Unsolve device, uid: %s\n", uid);
+        }
     }
 }
 ```
-
-The device connection and disconnection processing function will be called within the device up/down callback function.
-
-```
+The device connection and disconnection handling functions will be called within the device's online and offline callback functions
+```c
 //Device status change callback
-void on_device_changed_callback( ob_device_list* removed, ob_device_list* added, void* pCallback ) {
-    device_disconnect_callback( removed );
-    device_connect_callback( added );
+void on_device_changed_callback(ob_device_list *removed, ob_device_list *added, void *user_data) {
+    handle_device_disconnected(removed);
+    handle_device_connected(added);
+
+    ob_error *error = NULL;
+
+    // Need to manually destroy the device list
+    // destroy device list
+    ob_delete_device_list(removed, &error);
+    check_error(error);
+
+    // destroy device list
+    ob_delete_device_list(added, &error);
+    check_error(error);
 }
 ```
-
-In the main function, first we need to create a Context and set the device up/down callback
-
-```
-//Creat context
+Within the main function, create a Context and register device online and offline callbacks
+```c
+ //Create Context
 ob_context* ctx = ob_create_context( &error );
 
-//Set device callback
+//Register device callback
 ob_set_device_changed_callback( ctx, on_device_changed_callback, NULL, &error );
 ```
 
-The main task of the main loop is to obtain the data of frame from the pipeline when the pipeline is created and started after the device connected, and print out the Color and Depth information from the data frame.
-
-```
-
-//Waiting for one frame, the timeout period is 100ms
-ob_frame* frameset = ob_pipeline_wait_for_frames( pipeline, 100, &error );
-if ( frameset ) {
-    //Get the depth data frame
-    ob_frame* depth_frame = ob_frame_set_depth_frame( frameset, &error );
-    if ( depth_frame ) {
-        printf( "=====Depth Frame Info======Index: %lld TimeStamp: %lld\n", ob_frame_index( depth_frame, &error ), ob_frame_time_stamp( depth_frame, &error ) );
-        //Release the depth data frame
-        ob_delete_frame( depth_frame, &error );
-    }
-    //Get the Color data frame
-    ob_frame* color_frame = ob_frame_set_color_frame( frameset, &error );
-    if ( color_frame ) {
-        printf( "=====Color Frame Info======Index: %lld TimeStamp: %lld\n", ob_frame_index( color_frame, &error ), ob_frame_time_stamp( color_frame, &error ) );
-        //Release the Color data frame
-        ob_delete_frame( color_frame, &error );
-    }
-    //Release frameSet
-    ob_delete_frame( frameset, &error );
+After exiting the main loop, relevant resources need to be released
+```c
+if ( pipeline ) {
+    // Release pipeline
+    ob_pipeline_stop( pipeline, &error );
+    // Release pipeline
+    ob_delete_pipeline( pipeline, &error );
+}
+// Release dev_list
+if ( dev_list ) {
+    ob_delete_device_list( dev_list, &error );
+}
+// Release ctx
+if ( ctx ) {
+    ob_delete_context( ctx, &error );
 }
 ```
-
-After exiting the main loop, relevant resources need to be released.
-
-```
-    if ( pipeline ) {
-        //Stop pipeline
-        ob_pipeline_stop( pipeline, &error );
-        //Delete pipeline
-        ob_delete_pipeline( pipeline, &error );
-    }
-    // Delete dev_list
-    if ( dev_list ) {
-        ob_delete_device_list( dev_list, &error );
-    }
-    // Delete ctx
-    if ( ctx ) {
-        ob_delete_context( ctx, &error );
-    }
-```
-
 ## PointCloud
 
-Function description: Connect the device to open the stream, generate depth point cloud or RGBD point cloud and save it as ply format file.
+Function description: Connect the device to open the stream, generate a deep point cloud or RGBD point cloud and save it as a ply format file, and exit the program through the ESC_KEY key
+> This example is based on the C++High Level API for demonstration
 
-> This sample is based on C++ High Level API for demonstration.
-
-Create a point cloud and save it as a ply format file function. The detailed description of the ply file format can be viewed on the Internet.
-
-```
+Create a point cloud and save it as a ply file function. The detailed description of the ply file format can be viewed on the network
+```c
 //Save point cloud data to ply
 void save_points_to_ply( ob_frame* frame, const char* fileName ) {
     int pointsSize = ob_frame_data_size( frame, &error ) / sizeof( ob_point );
@@ -703,7 +575,7 @@ void save_points_to_ply( ob_frame* frame, const char* fileName ) {
     fclose( fp );
 }
 
-//Save color point cloud data to ply
+// Save color point cloud data to ply
 void save_rgb_points_to_ply( ob_frame* frame, const char* fileName ) {
     int pointsSize = ob_frame_data_size( frame, &error ) / sizeof( ob_color_point );
     check_error( error );
@@ -732,161 +604,792 @@ void save_rgb_points_to_ply( ob_frame* frame, const char* fileName ) {
     fclose( fp );
 }
 ```
+Create Pipeline and stream Configuration
+```c
+//Create a pipeline to open the Color and Depth streams after connecting devices
+pipeline = ob_create_pipeline( &error );
+//Create a config to configure the resolution, frame rate, and format of the Color and Depth streams
+ob_config* config = ob_create_config( &error );
 
-Create pipeline and stream profile
 
-```
-    //Create a pipeline to open the Color and Depth streams after connecting the device
-    pipeline = ob_create_pipeline( &error );
-    //Create Config to configure the resolution, frame rate and format of Color and Depth streams
-    ob_config* config = ob_create_config( &error );
+//Configure Color Stream
+ob_stream_profile_list *colorProfiles = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_COLOR, &error);
+if(error) {
+    printf("Current device is not support color sensor!\n");
+    ob_delete_error(error);
+    error = NULL;
+    // Turn on D2C alignment, which needs to be turned on when generating RGBD point clouds
+    ob_config_set_align_mode(config, ALIGN_DISABLE, &error);
+    check_error(error);
+}
+// Open the default profile of Color Sensor, which can be configured through the configuration file
+if(colorProfiles) {
+    color_profile = ob_stream_profile_list_get_profile(colorProfiles, OB_PROFILE_DEFAULT, &error);
+}
 
-    //Configure depth stream
-    ob_stream_profile*  depth_profile = NULL;
-    ob_stream_profile** profiles      = ob_pipeline_get_stream_profiles( pipeline, OB_SENSOR_DEPTH, &depth_profile_count, &error );
-    //Find the corresponding Profile according to the specified format
-    depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 480, OB_FORMAT_Y16, 30, &error);
-    ob_config_enable_stream(config, depth_profile, &error);  // Enable configuration
-
-    //Configure color stream
-    ob_stream_profile *color_profile = NULL;
-    profiles                         = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_COLOR, &error);
-    //Find the corresponding Profile according to the specified format
-    color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 480, OB_FORMAT_YUYV, OB_FPS_ANY, &error);
-    //If YUYV is not found, look for I420 format
-    if(!color_profile) {
-        color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 480, OB_FORMAT_I420, OB_FPS_ANY, &error);
+    //Configure Depth Stream
+if(color_profile) {
+    // Try find supported depth to color align hardware mode profile
+    depthProfiles = ob_get_d2c_depth_profile_list(pipeline, color_profile, ALIGN_D2C_HW_MODE, &error);
+    check_error(error);
+    int d2cCount = ob_stream_profile_list_count(depthProfiles, &error);
+    check_error(error);
+    if(d2cCount > 0) {
+        align_mode = ALIGN_D2C_HW_MODE;
+    }
+    else {
+        // Try find supported depth to color align software mode profile
+        depthProfiles = ob_get_d2c_depth_profile_list(pipeline, color_profile, ALIGN_D2C_SW_MODE, &error);
         check_error(error);
+        d2cCount = ob_stream_profile_list_count(depthProfiles, &error);
+        check_error(error);
+        if(d2cCount > 0) {
+            align_mode = ALIGN_D2C_SW_MODE;
+        }
     }
-    ob_config_enable_stream( config, color_profile, &error );  // Enable configuration
+}
+else {
+    depthProfiles = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_DEPTH, &error);
+    check_error(error);
+}
+```
+Turn on device D2C function
+```c
+// Turn on D2C alignment, which needs to be turned on when generating RGBD point clouds
+ob_config_set_align_mode(config, align_mode, &error);
 ```
 
-Get device information pipeline to enable the D2C function of the device.
-
+Enable Steaming
+```c
+ob_pipeline_start_with_config(pipeline, config, &error);
 ```
-   //Get device handle
-   ob_device* device = ob_pipeline_get_device( pipeline, &error );
-   // Enable D2C alignment, required for RGBD point cloud generation.
-    if ( device && ob_device_is_property_supported( device, OB_DEVICE_PROPERTY_DEPTH_ALIGN_HARDWARE_BOOL, &error ) ) {
-       // Turn on hardware D2c alignment
-       ob_device_set_bool_property( device, OB_DEVICE_PROPERTY_DEPTH_ALIGN_HARDWARE_BOOL, true, &error );
+
+Create a point cloud filter after opening the stream. Point cloud filters are used to convert depth and color frame data into point cloud data. The purpose of creating a point cloud filter after streaming is to enable the SDK to automatically set camera parameters based on the current streaming configuration. Of course, you can also set it up yourself.
+```c
+// Create a point cloud Filter object (device parameters will be obtained inside the Pipeline when the point cloud filter is created, so try to configure
+// the device before creating the filter)
+ob_filter *point_cloud = ob_create_pointcloud_filter(&error);
+check_error(error);
+
+// Get the current open-stream camera parameters from the pipeline and pass them to the point cloud filter
+ob_camera_param camera_param = ob_pipeline_get_camera_param(pipeline, &error);
+check_error(error);
+ob_pointcloud_filter_set_camera_param(point_cloud, camera_param, &error);
+check_error(error);
+```
+
+Start the main loop, which calls the point cloud filter based on user keys to generate deep point cloud or RGBD point cloud data, and save it as a ply file.
+```c
+// Waiting for one frame of data with a timeout of 100ms
+ob_frame *frameset = ob_pipeline_wait_for_frameset(pipeline, 100, &error);
+check_error(error);
+if(frameset != NULL) {
+    // get depth value scale
+    ob_frame *depth_frame = ob_frameset_depth_frame(frameset, &error);
+    check_error(error);
+    if(depth_frame == NULL) {
+        continue;
     }
-```
 
-Open the stream, and create a point cloud filter for converting the depth and color frame data into point cloud data. The point cloud filter is created after opening the stream to allow the SDK to automatically set the camera parameters according to the current stream configuration. You can also set it yourself.
+    // get depth value scale
+    float depth_value_scale = ob_depth_frame_get_value_scale(depth_frame, &error);
+    check_error(error);
 
-```
-// Create a point cloud filter object (when the point cloud filter is created, the device parameters will be obtained inside the Pipeline, so try to configure the device before the filter is created)
-     ob_filter* point_cloud = ob_pipeline_create_pointcloud_filter( pipeline, &error );
-// Set filter parameters by yourself
-     if (device && ob_device_is_property_supported( device, OB_DATA_TYPE_CAMERA_PARA, &error)) {
-         CAMERA_PARA cameraParam = {0};
-         uint32_t len;
-         ob_device_get_structured_data( device, OB_DATA_TYPE_CAMERA_PARA, &cameraParam,&len, &error );
-         ob_pointcloud_filter_set_camera_parameter(point_cloud,cameraParam,error);
-     }
-```
+    // delete depth frame
+    ob_delete_frame(depth_frame, &error);
+    check_error(error);
 
-Start the main loop, call the point cloud filter according to the user's key in the loop to generate depth point cloud or RGBD point cloud data, and save it as a ply file.
+    // point position value multiply depth value scale to convert uint to millimeter (for some devices, the default depth value uint is not
+    // millimeter)
+    ob_pointcloud_filter_set_position_data_scale(point_cloud, depth_value_scale, &error);
+    check_error(error);
 
-```
-//Waiting for one frame, the timeout period is 100ms.
-ob_frame* frameset = ob_pipeline_wait_for_frames( pipeline, 100, &error );
-if ( frameset != NULL )
-{
-    //Press R to save ply data
-    if ( ( key == 'R' || key == 'r' ) && frameset != NULL ) {
-        ob_pointcloud_filter_set_point_format( point_cloud, OB_FORMAT_RGB_POINT, &error );
-        ob_filter_process( point_cloud, frameset, &error );
-        ob_frame* pointsFrame = ob_frame_set_points_frame( frameset, &error );
-        save_rgb_points_to_ply( pointsFrame, "rgb_points.ply" );
-        ob_delete_frame( pointsFrame, &error );
+    ob_pointcloud_filter_set_point_format(point_cloud, OB_FORMAT_RGB_POINT, &error);
+    check_error(error);
+    ob_frame *pointsFrame = ob_filter_process(point_cloud, frameset, &error);
+    check_error(error);
+    if(pointsFrame != NULL) {
+        save_rgb_points_to_ply(pointsFrame, "rgb_points.ply");
+        printf("rgb_points.ply Saved\n");
+        ob_delete_frame(pointsFrame, &error);
+        check_error(error);
+        points_created = true;
     }
-    else if ( ( key == 'D' || key == 'd' ) && frameset != NULL ) {
-        //Generate and save pointcloud
-        ob_pointcloud_filter_set_point_format( point_cloud, OB_FORMAT_POINT, &error );
-        ob_filter_process( point_cloud, frameset, &error );
-        ob_frame* pointsFrame = ob_frame_set_points_frame( frameset, &error );
-        save_points_to_ply( pointsFrame, "points.ply" );
-        ob_delete_frame( pointsFrame, &error );
+    ob_delete_frame(frameset, &error);  // Destroy frameSet to reclaim memory
+    check_error(error);
+    if(points_created) {
+        break;
     }
-    ob_delete_frame( frameset, &error );  // Delete frameSet  Reclaim memory
+}
+```
+After the main loop exits, stop the stream and destroy the recycled resources
+```c
+// stop pipeline
+ob_pipeline_stop(pipeline, &error);
+check_error(error);
+
+// destroy pipeline
+ob_delete_pipeline(pipeline, &error);
+check_error(error);
+
+// destroy config
+ob_delete_config(config, &error);
+check_error(error);
+
+// destroy profile
+ob_delete_stream_profile(depth_profile, &error);
+check_error(error);
+
+// destroy profile
+ob_delete_stream_profile(color_profile, &error);
+check_error(error);
+
+// destroy profile list
+ob_delete_stream_profile_list(colorProfiles, &error);
+check_error(error);
+
+ob_delete_stream_profile_list(depthProfiles, &error);
+check_error(error);
+```
+
+## AlignFilterViewer
+
+Supported devices: G300 series cameras, such as Gemini G335
+
+Function description: Demonstrate using SDK for stream alignment demonstration, display aligned images, and exit the program with ESC_KEY key
+
+>This example is based on the C High Level API for demonstration
+
+Create Pipeline and stream Configuration
+```c
+// Create a pipeline to open the depth stream after connecting the device
+pipeline = ob_create_pipeline(&error);
+check_error(error);
+
+// Create config to configure the resolution, frame rate, and format of the depth stream
+ob_config *config = ob_create_config(&error);
+check_error(error);
+
+// Configure the depth stream
+ob_stream_profile      *depth_profile = NULL;
+ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_DEPTH, &error);
+check_error(error);
+
+// Find the corresponding profile according to the specified format, first look for the y16 format
+depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30, &error);
+// If the specified format is not found, search for the default profile to open the stream
+if(error) {
+    depth_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
+    ob_delete_error(error);
+    error = nullptr;
+}
+
+// enable stream
+ob_config_enable_stream(config, depth_profile, &error);
+check_error(error);
+
+// Configure the color stream
+ob_stream_profile *     color_profile = nullptr;
+ob_stream_profile_list *color_rofiles = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_COLOR, &error);
+if(error) {
+    printf("Current device is not support color sensor!\n");
+    exit(EXIT_FAILURE);
+}
+
+// Find the corresponding Profile according to the specified format, and choose the RGB888 format first
+color_profile = ob_stream_profile_list_get_video_stream_profile(color_rofiles, 1280, OB_HEIGHT_ANY, OB_FORMAT_RGB, 30, &error);
+// If the specified format is not found, search for the default Profile to open the stream
+if(error) {
+    color_profile = ob_stream_profile_list_get_profile(color_rofiles, OB_PROFILE_DEFAULT, &error);
+    ob_delete_error(error);
+    error = nullptr;
+}
+
+// enable stream
+ob_config_enable_stream(config, color_profile, &error);
+check_error(error);
+```
+
+Configure stream alignment
+```c
+/* Config depth align to color or color align to depth.
+ob_stream_type align_to_stream = OB_STREAM_DEPTH; */
+ob_stream_type align_to_stream = OB_STREAM_COLOR;
+ob_filter *    align_filter    = ob_create_align(&error, align_to_stream);
+```
+
+Start Pipeline through Configuration
+```c
+// Start the pipeline with config
+ob_pipeline_start_with_config(pipeline, config, &error);
+check_error(error);
+```
+
+Get aligned data
+```c
+ob_frame *new_frame_set = ob_filter_process(align_filter, frameset, &error);
+check_error(error);
+
+new_depth_frame = ob_frameset_depth_frame(new_frame_set, &error);
+check_error(error);
+
+new_color_frame = ob_frameset_color_frame(new_frame_set, &error);
+check_error(error);
+```
+
+Release resources and exit the program.
+
+```c
+ob_delete_filter(align_filter, &error);
+check_error(error);
+
+// stop the pipeline
+ob_pipeline_stop(pipeline, &error);
+check_error(error);
+
+// destroy the window
+delete win;
+
+// destroy profile
+ob_delete_stream_profile(depth_profile, &error);
+check_error(error);
+
+// destroy profile list
+ob_delete_stream_profile_list(profiles, &error);
+check_error(error);
+
+// destroy profile
+ob_delete_stream_profile(color_profile, &error);
+check_error(error);
+
+// destroy profile list
+ob_delete_stream_profile_list(color_rofiles, &error);
+check_error(error);
+
+// destroy the pipeline
+ob_delete_pipeline(pipeline, &error);
+check_error(error);
+```
+
+## DoubleInfraredViewer
+
+Function description: Demonstrate obtaining dual infrared camera images, displaying left and right infrared images, and exiting the program with the ESC_KEY key
+
+>This example is based on the C High Level API for demonstration
+
+Create pipeline and config
+```c
+// Create a pipeline to open the Infrared stream after connecting the device
+pipeline = ob_create_pipeline(&error);
+check_error(error);
+
+// Create config to configure the resolution, frame rate, and format of the Infrared stream
+ob_config *config = ob_create_config(&error);
+check_error(error);
+```
+
+Get Left IR Stream Configuration
+```c
+// Configure the infrared stream(IR_LEFT)
+ob_stream_profile      *ir_left_profile  = NULL;
+ob_stream_profile_list *ir_left_profiles = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_IR_LEFT, &error);
+check_error(error);
+
+if(ir_left_profiles == nullptr) {
+    printf("The obtained IR(Left) resolution list is NULL. For monocular structured light devices, try opening the IR data stream using the IR example. ");
+    return 0;
+}
+
+// Find the corresponding profile according to the specified format, first look for the y16 format
+ir_left_profile = ob_stream_profile_list_get_profile(ir_left_profiles, OB_PROFILE_DEFAULT, &error);
+check_error(error);
+
+// enable stream
+ob_config_enable_stream(config, ir_left_profile, &error);
+check_error(error);
+```
+
+Get Right IR Stream Configuration
+```c
+// Configure the infrared stream(IR_RIGHT)
+ob_stream_profile      *ir_right_profile  = NULL;
+ob_stream_profile_list *ir_right_profiles = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_IR_RIGHT, &error);
+check_error(error);
+
+// Find the corresponding profile according to the specified format, first look for the y16 format
+ir_right_profile = ob_stream_profile_list_get_profile(ir_right_profiles, OB_PROFILE_DEFAULT, &error);
+check_error(error);
+
+// enable stream
+ob_config_enable_stream(config, ir_right_profile, &error);
+check_error(error);
+```
+
+Enable pipeline through config
+```c
+ob_pipeline_start_with_config(pipeline, config, &error);
+check_error(error);
+```
+
+Get left and right IR frame data
+```c
+ob_frame *ir_left_frame = ob_frameset_get_frame(frameset, OB_FRAME_IR_LEFT, &error);
+check_error(error);
+
+ob_frame *ir_right_frame = ob_frameset_get_frame(frameset, OB_FRAME_IR_RIGHT, &error);
+check_error(error);
+```
+
+// stop pipeline
+```c
+ob_pipeline_stop(pipeline, &error);
+check_error(error);
+```
+
+Release relevant resources
+```c
+// destroy the window
+delete win;
+
+// destroy profile
+ob_delete_stream_profile(ir_left_profile, &error);
+check_error(error);
+
+// destroy profile list
+ob_delete_stream_profile_list(ir_left_profiles, &error);
+check_error(error);
+
+// destroy profile
+ob_delete_stream_profile(ir_right_profile, &error);
+check_error(error);
+
+// destroy profile list
+ob_delete_stream_profile_list(ir_right_profiles, &error);
+check_error(error);
+
+// destroy the pipeline
+ob_delete_pipeline(pipeline, &error);
+check_error(error);
+```
+
+## InfraredViewer
+
+Function description: Demonstrate obtaining infrared camera images, displaying infrared images, and exiting the program with the ESC_KEY key
+
+>This example is based on the C High Level API for demonstration
+
+Create a pipeline for stream configuration
+```c
+// Create a pipeline to open the Infrared stream after connecting the device
+pipeline = ob_create_pipeline(&error);
+check_error(error);
+
+// Create config to configure the resolution, frame rate, and format of the Infrared stream
+ob_config *config = ob_create_config(&error);
+check_error(error);
+
+// Configure the infrared stream
+// Please adjust the sensor according to the actual product, some device types only have OB_SENSOR_IR_LEFT and OB_SENSOR_IR_RIGHT.
+ob_stream_profile      *ir_profile = NULL;
+ob_stream_profile_list *profiles   = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_IR, &error);
+check_error(error);
+
+if(profiles == nullptr) {
+    printf(
+        "The obtained IR resolution list is NULL. For binocular structured light devices, try using the doubleIr example to turn on the ir data stream. ");
+    return 0;
+}
+
+// Find the corresponding profile according to the specified format, first look for the y16 format
+ir_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30, &error);
+// If the specified format is not found, search for the default profile to open the stream
+if(error) {
+    ir_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
+    ob_delete_error(error);
+    error = nullptr;
+}
+
+// enable stream
+ob_config_enable_stream(config, ir_profile, &error);
+check_error(error);
+```
+
+Enable pipeline through config
+```c
+// Start the pipeline with config
+ob_pipeline_start_with_config(pipeline, config, &error);
+check_error(error);
+```
+
+Release relevant resources
+```c
+// stop the pipeline
+ob_pipeline_stop(pipeline, &error);
+check_error(error);
+
+// destroy the window
+delete win;
+
+// destroy profile
+ob_delete_stream_profile(ir_profile, &error);
+check_error(error);
+
+// destroy profile list
+ob_delete_stream_profile_list(profiles, &error);
+check_error(error);
+
+// destroy the pipeline
+ob_delete_pipeline(pipeline, &error);
+check_error(error);
+```
+
+## Post-Processing
+
+Supported devices: G300 series cameras, such as Gemini G335
+
+Function description: Demonstrate the use of post-processing operations, display post-processing images, and exit the program using the ESC_KEY key
+
+>This example is based on the C High Level API for demonstration
+
+Create a pipeline for stream configuration
+```c
+// Create a pipeline to open the depth stream after connecting the device
+pipeline = ob_create_pipeline(&error);
+check_error(error);
+
+// Create config to configure the resolution, frame rate, and format of the depth stream
+ob_config *config = ob_create_config(&error);
+check_error(error);
+
+// Configure the depth stream
+ob_stream_profile      *depth_profile = NULL;
+ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_DEPTH, &error);
+check_error(error);
+
+// Find the corresponding profile according to the specified format, first look for the y16 format
+depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30, &error);
+// If the specified format is not found, search for the default profile to open the stream
+if(error) {
+    depth_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
+    ob_delete_error(error);
+    error = nullptr;
+}
+
+// enable stream
+ob_config_enable_stream(config, depth_profile, &error);
+check_error(error);
+```
+
+Get sensors
+```c
+// Get device
+ob_device *device = ob_pipeline_get_device(pipeline, &error);
+check_error(error);
+
+// Get depth sensor
+ob_sensor *depthSensor = ob_device_get_sensor(device, OB_SENSOR_DEPTH, &error);
+check_error(error);
+```
+
+Get post-processing list
+```c
+ob_filter_list *filterList = ob_sensor_get_recommended_filter_list(depthSensor, &error);
+check_error(error);
+```
+
+Post processing
+```c
+ob_frame *depth_frame = ob_frameset_depth_frame(frameset, &error);
+check_error(error);
+
+if(depth_frame != nullptr) {
+    for(uint32_t i = 0; i < count; i++) {
+        ob_frame * new_depth_frame = nullptr;
+        ob_filter *obFilter = filters[i];
+        bool enable = ob_filter_is_enable(obFilter, &error);
+        check_error(error);
+        if(enable) {
+            new_depth_frame = ob_filter_process(obFilter, depth_frame, &error);
+            check_error(error);
+
+            ob_delete_frame(depth_frame, &error);
+            check_error(error);
+
+            depth_frame = new_depth_frame;
+        }
+    }
 }
 ```
 
-After the main loop exits, stop the stream and release the resources.
+Release relevant resources
+```c
+for(uint32_t i = 0; i < count; i++) {
+    ob_filter *obFilter = filters[i];
+    ob_delete_filter(obFilter, &error);
+    check_error(error);
+}
 
+// destroy profile filterList
+ob_delete_filter_list(filterList, &error);
+check_error(error);
+
+// stop the pipeline
+ob_pipeline_stop(pipeline, &error);
+check_error(error);
+
+// destroy the window
+delete win;
+
+// destroy profile
+ob_delete_stream_profile(depth_profile, &error);
+check_error(error);
+
+// destroy profile list
+ob_delete_stream_profile_list(profiles, &error);
+check_error(error);
+
+// destroy the pipeline
+ob_delete_pipeline(pipeline, &error);
+check_error(error);
 ```
-    // Stop pipeline
-    ob_pipeline_stop( pipeline, &error );
 
-    // Delete pipeline
-    ob_delete_pipeline( pipeline, &error );
+## HdrMerge
 
-    ob_delete_context( ctx, &error );
+Supported devices: G300 series cameras, such as Gemini G335
+
+Function description: Demonstrate using HDR operation, display HDR processed images, and exit the program with ESC_KEY key
+
+>This example is based on the C High Level API for demonstration
+
+Create a pipeline, configure depth
+```c
+// Create a pipeline to open the depth stream after connecting the device
+pipeline = ob_create_pipeline(&error);
+check_error(error);
+
+// Create config to configure the resolution, frame rate, and format of the depth stream
+ob_config *config = ob_create_config(&error);
+check_error(error);
+
+// Configure the depth stream
+ob_stream_profile      *depth_profile = NULL;
+ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_DEPTH, &error);
+check_error(error);
+
+// Find the corresponding profile according to the specified format, first look for the y16 format
+depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30, &error);
+// If the specified format is not found, search for the default profile to open the stream
+if(error) {
+    depth_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
+    ob_delete_error(error);
+    error = nullptr;
+}
+
+// enable stream
+ob_config_enable_stream(config, depth_profile, &error);
+check_error(error);
+
+
+Get device
+```c
+// Get the device through the pipeline
+ob_device *dev = ob_pipeline_get_device(pipeline, &error);
+check_error(error);
+```
+
+Open HDR processing
+```c
+// Create HdrMerge post processor
+ob_filter *hdr_merge_filter = ob_create_hdr_merge(&error);
+check_error(error);
+
+bool is_supported = ob_device_is_property_supported(dev, OB_STRUCT_DEPTH_HDR_CONFIG, OB_PERMISSION_READ_WRITE, &error);
+check_error(error);
+// open hdr merge
+if(is_supported) {
+    // Get depth exposure value range,the exposure_1 and exposure_2 in OBHdrConfig can be adjusted.
+    ob_int_property_range depth_exp_range = ob_device_get_int_property_range(dev, OB_PROP_DEPTH_EXPOSURE_INT, &error);
+    check_error(error);
+
+    // Get depth gain value range,,the gain_1 and gain_1 in OBHdrConfig can be adjusted.
+    ob_int_property_range depth_gain_range = ob_device_get_int_property_range(dev, OB_PROP_DEPTH_GAIN_INT, &error);
+    check_error(error);
+
+    ob_hdr_config hdr_config;
+    uint32_t      dataSize = sizeof(ob_hdr_config);
+    ob_device_get_structured_data(dev, OB_STRUCT_DEPTH_HDR_CONFIG, &hdr_config, &dataSize, &error);
+    check_error(error);
+    // open hdr
+    hdr_config.enable = true;
+
+    ob_device_set_structured_data(dev, OB_STRUCT_DEPTH_HDR_CONFIG, &hdr_config, dataSize, & error);
+    check_error(error);
+}
+```
+
+Open pipeline
+```c
+ob_pipeline_start_with_config(pipeline, config, &error);
+```
+
+Get HDR processed images
+```c
+auto new_frame_set = ob_filter_process(hdr_merge_filter, frameset, &error);
+check_error(error);
+
+auto new_depth_frame = ob_frameset_depth_frame(new_frame_set, &error);
+check_error(error);
+if(new_depth_frame != nullptr) {
+    frames.push_back(new_depth_frame);
+}
+```
+
+Stop pipeline
+```c
+ob_pipeline_stop(pipeline, &error);
+```
+
+## ColorDepthViewer
+
+Function description: Demonstrate using SDK to get color and depth 0 data, draw and display, get resolution and set, display color images, and exit the program with ESC_KEY key
+
+>his example is based on the C High Level API for demonstration
+
+Create a pipeline and configure stream information
+```c
+// 1. Create a pipeline to open the Color and Depth streams after connecting the device
+pipe = ob_create_pipeline(&error);
+check_error(error);
+
+// 2. Create config to configure the resolution, frame rate, and format of Color and Depth streams
+ob_config *config = ob_create_config(&error);
+check_error(error);
+
+// 2.1 Configure Depth stream
+ob_stream_profile      *depth_profile = NULL;
+ob_stream_profile_list *profiles      = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_DEPTH, &error);
+check_error(error);
+// Find the corresponding Profile according to the specified format
+depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, OB_WIDTH_ANY, OB_HEIGHT_ANY, , OB_FORMAT_Y16, 30, &error);
+check_error(error);
+if(!depth_profile) {  // If the specified profile is not found, use the first profile in the profile list
+    depth_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
+    check_error(error);
+}
+ob_config_enable_stream(config, depth_profile, &error);  // enable stream
+check_error(error);
+
+// 2.2 Configure Color stream
+ob_stream_profile *color_profile = NULL;
+profiles                         = ob_pipeline_get_stream_profile_list(pipe, OB_SENSOR_COLOR, &error);
+check_error(error);
+// Find the corresponding Profile according to the specified format
+color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 480, OB_FORMAT_MJPG, 30, &error);
+check_error(error);
+if(!color_profile) {  // If the specified format profile is not found, use the first profile in the profile list
+    color_profile = ob_stream_profile_list_get_profile(profiles, OB_PROFILE_DEFAULT, &error);
+    check_error(error);
+}
+ob_config_enable_stream(config, color_profile, &error);  // enable stream
+check_error(error);
+```
+
+Turn off synchronization
+```c
+ob_pipeline_disable_frame_sync(pipe, &error);
+check_error(error);
+```
+
+Enable pipeline through configuration
+```c
+ob_pipeline_start_with_config(pipe, config, &error);
+check_error(error);
+```
+
+Get frame data
+```c
+ob_frame *color_frame = ob_frameset_color_frame(frameset, &error);
+ob_frame *depth_frame = ob_frameset_depth_frame(frameset, &error);
+```
+
+Stop pipeline
+```c
+ob_pipeline_stop(pipe, &error);
+```
+
+Release relevant resources
+```c
+ob_delete_stream_profile(depth_profile, &error);
+check_error(error);
+
+ob_delete_stream_profile(color_profile, &error);
+check_error(error);
+
+ob_delete_stream_profile_list(profiles, &error);
+check_error(error);
+
+ob_delete_pipeline(pipe, &error);
+check_error(error);
 ```
 
 # C++
-
 ## HelloOrbbec
 
-Function description: Demonstrate SDK initialization, get SDK version, get device model, get device serial number, get firmware version, and SDK release resources.
+Function Description: Used to demonstrate SDK initialization, get SDK version, get device model, get device serial number, get firmware version number, SDK resource release, and exit the program through the ESC_KEY key
+> This example is based on the C++ Low Level API for demonstration
 
-> This example is based on C++ Low Level API for demonstration.
-
-Get SDK version. The SDK version number is divided into major version number, minor version number and revision number.
-
-```
+Print the version number of the SDK, which is divided into main version number, minor version number, and revision version number
+```cpp
 std::cout << "SDK version: " << ob::Version::getMajor() << "." << ob::Version::getMinor() << "." << ob::Version::getPatch() << std::endl;
 ```
 
-First, we need to create a Context to obtain a list of device information and create a device.
-
-```
+Firstly, it is necessary to create a Context for obtaining a list of device information and creating a device
+```cpp
 ob::Context ctx;
 ```
 
-Get the list of connected devices
-
-```
+Query the list of connected devices
+```cpp
 auto devList = ctx.queryDeviceList();
 
-//Get the number of connected devices
-devList->deviceCount()
+// Get the number of connected devices
+if(devList->deviceCount() == 0) {
+    std::cerr << "Device not found!" << std::endl;
+    return -1;
+}
 ```
 
 Create device
-
-```
-//Create a device, 0 means the index of the first device
+```cpp
+//Create a device, where 0 represents the index of the first device
 auto dev = devList->getDevice(0);
 ```
 
-Next we can get the information of this device: device information, device name, get device pid, vid, uid, device firmware version, device serial number.
-
-```
+Next, you can get information related to this device: device information, device name, device PID, vid, uid, device firmware version number, and device serial number
+```cpp
 //Get device information
 auto devInfo = dev->getDeviceInfo();
 
-//Get the device name
+//Get the name of the device
 std::cout << "Device name: " << devInfo->name() << std::endl;
 
-//Get the pid, vid, uid of the device
+//Get the device's pid, vid, uid
 std::cout << "Device pid: " << devInfo->pid() << " vid: " << devInfo->vid() << " uid: " << devInfo->uid() << std::endl;
 
-//Get the fireware version number of the device
+//Get the firmware version number of the device
 auto fwVer = devInfo->firmwareVersion();
 std::cout << "Firmware version: " << fwVer << std::endl;
 
 //Get the serial number of the device
 auto sn = devInfo->serialNumber();
 std::cout << "Serial number: " << sn << std::endl;
+
+// By getting the connection type of the device
+auto connectType = devInfo->connectionType();
 ```
 
-Get the list of supported sensors
-
-```
-// Get a list of supported sensors
+Get a list of supported sensors
+```cpp
 std::cout << "Sensor types: " << std::endl;
 auto sensorList = dev->getSensorList();
 for(uint32_t i = 0; i < sensorList->count(); i++) {
@@ -901,6 +1404,12 @@ for(uint32_t i = 0; i < sensorList->count(); i++) {
     case OB_SENSOR_IR:
         std::cout << "\tIR sensor" << std::endl;
         break;
+    case OB_SENSOR_IR_LEFT:
+        std::cout << "\tIR Left sensor" << std::endl;
+        break;
+    case OB_SENSOR_IR_RIGHT:
+        std::cout << "\tIR Right sensor" << std::endl;
+        break;
     case OB_SENSOR_GYRO:
         std::cout << "\tGyro sensor" << std::endl;
         break;
@@ -912,290 +1421,192 @@ for(uint32_t i = 0; i < sensorList->count(); i++) {
     }
 }
 ```
+The console output is as follows：<br />
 
-The console result output is as follows:
-
-![1](https://developer-orbbec-oss.oss-cn-shenzhen.aliyuncs.com/images/technical_library/orbbec_sdkimage001.png)
+![image1](https://developer-orbbec-oss.oss-cn-shenzhen.aliyuncs.com/images/technical_library/orbbec_sdkimage001.png)
 
 ## DepthViewer
 
-Function description: This example mainly demonstrates the use of SDK to obtain depth data, set resolution and select to set, display depth image, and finally exit by ESC key.
+Function description: This example mainly demonstrates the use of SDK to get depth data and draw display, get resolution and select settings, display depth images, and exit the program through the ESC_KEY key
+> This example is based on the C++High Level API for demonstration
 
-> This example is based on C++ High Level API for demonstration.
-
-First, we need to create a Pipeline. Through Pipelie, you can easily open and close multiple types of streams and obtain a set of frame data.
-
-```
+Firstly, it is necessary to create a pipeline, through which multiple types of streams can be easily opened and closed, and a set of frame data can be obtained
+```cpp
 ob::Pipeline pipe;
 ```
-
-Get all stream profile list of the depth camera, including stream resolution, frame rate, and frame format.
-
-```
+Get all stream configurations of the depth camera, including stream resolution, frame rate, and frame format
+```cpp
 auto profiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
 
-// Get the frame format to be used by traversing the profile of the depth stream. The Y16 format will be used here to open the stream.
-std::shared_ptr<ob::StreamProfile> depthProfile;
-    for (int i = 0; i < profiles->count(); i++)
-    {
-        auto profile = profiles->getProfile(i);
-        if(profile->format() == OB_FORMAT_Y16){
-            depthProfile = profile;
-            break;
-        }
-    }
-
-// You can also set the item of interest to return the first Profile in the corresponding Profile list
-// auto depthProfile = profiles->getVideoStreamProfile(640, 480, OB_FORMAT_Y16);
-
-// If no suitable stream profile is found, open the first profile in the list
-if(!depthProfile) {
-    depthProfile = profiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
+std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
+try{
+	//Find the corresponding Profile according to the specified format, with priority given to Y16 format
+	depthProfile = profiles->getVideoStreamProfile(640, 480, OB_FORMAT_Y16, 30);
+}catch(ob::Error &e){
+	//If the Y16 format is not found and does not match the format, search for the corresponding profile to open the stream
+	depthProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
 }
 ```
 
-By creating Config to configure which streams to be enabled or disabled by Pipeline, depth stream will be enabled here.
-
-```
+Configure which streams to enable or disable in the Pipeline by creating a Configuration, where deep streams will be enabled
+```cpp
 std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
 config->enableStream(depthProfile);
 ```
 
-Start the stream profile in Config, if no parameters are set, the default configuration startup stream will be started.
-
+Select sequence ID
+```cpp
+    ob::SequenceIdFilter sequenceIdFilter;
+    sequenceIdFilter.selectSequenceId(0);
 ```
+
+Start the stream configured in Configuration. If no parameters are passed, the default configuration startup stream will be started
+```cpp
 pipe.start(config);
 ```
 
-To set the mirror mode, first determine whether the device has readable and writable permissions, and then set
-
+Wait for a frame of data in a blocking manner, which is a composite frame containing frame data for all streams enabled in the configuration, and set the waiting timeout time for the frame
 ```cpp
-// Gets whether the image attribute has writable permission
-if(pipe.getDevice()->isPropertySupported(OB_PROP_DEPTH_MIRROR_BOOL, OB_PERMISSION_WRITE)) {
-    //Set mirror
-    pipe.getDevice()->setBoolProperty(OB_PROP_DEPTH_MIRROR_BOOL, true);
-}
-```
-
-Waiting for one frame in a blocking manner. The frame is a composite frame, which contains the frame data of all streams enabled in the configuration. Set the frame timeout time.
-
-```
 auto frameSet = pipe.waitForFrames(100);	//Set the waiting time to 100ms
 ```
-
-Stop Pipeline, no more frame data will be generated.
-
-```
+Stop Pipeline, no more frame data will be generated
+```cpp
 pipe.stop();
 ```
-
-The final depth map is shown below.`<br />`![2](.\Orbbec SDK Sample Description (CC++)img\2.png)`<br />`Resources will be automatically released after the program exits normally.
+The final depth map is shown below<br />![image2](https://developer-orbbec-oss.oss-cn-shenzhen.aliyuncs.com/images/technical_library/orbbec_sdkimage002.png)<br />After the program exits normally, resources will be automatically released
 
 ## ColorViewer
 
-Function description: This example mainly demonstrates the use of SDK to obtain color data, set resolution, display color image, and exit by ESC key.
+Function description: This example mainly demonstrates the use of SDK to get color data and draw display, get resolution and select settings, display color images, and exit the program through the ESC_KEY key
+> This example is based on the C++High Level API for demonstration
 
-> This example is based on C++ High Level API for demonstration.
-
-First, we need to create a Pipeline. Through Pipelie, you can easily open and close multiple types of streams and obtain a set of frame data.
-
-```
+Firstly, it is necessary to create a pipeline, through which multiple types of streams can be easily opened and closed, and a set of frame data can be obtained
+```cpp
 ob::Pipeline pipe;
 ```
+Get all stream configurations of the color camera, including stream resolution, frame rate, and frame format
+```cpp
+// Create a pipeline with default device
+ob::Pipeline pipe;
 
-Get all stream profiles of the color camera, including stream resolution, frame rate, and frame format.
+// Configure which streams to enable or disable for the Pipeline by creating a Config
+std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
 
-```
-auto profiles = pipe.getStreamProfiles(OB_SENSOR_COLOR);
-
-//Get the frame format to be used by traversing the profile of the color stream. The MJPG format will be used here to open the stream.
-std::shared_ptr< ob::StreamProfile > colorProfile;
-for (int i = 0; i < profiles->count(); i++) {
-    auto profile = profiles->getProfile(i);
-    if (profile->format() == OB_FORMAT_MJPG) {
-        colorProfile = profile;
-        break;
+std::shared_ptr<ob::VideoStreamProfile> colorProfile = nullptr;
+try {
+    // Get all stream profiles of the color camera, including stream resolution, frame rate, and frame format
+    auto profiles = pipe.getStreamProfileList(OB_SENSOR_COLOR);
+    try {
+        // Find the corresponding Profile according to the specified format, and choose the RGB888 format first
+        colorProfile = profiles->getVideoStreamProfile(640, 480, OB_FORMAT_YUYV, 30);
     }
+    catch(ob::Error &e) {
+        // If the specified format is not found, select the first one (default stream profile)
+        colorProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+    }
+    config->enableStream(colorProfile);
 }
-
-// You can also set the item of interest through the interface to return the first Profile in the corresponding Profile list
-// auto colorProfile = profiles->getVideoStreamProfile(640, 480, OB_FORMAT_MJPG);
-
-//If no suitable stream profile is found, open the first profile in the list
-if(!colorProfile) {
-    colorProfile = profiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
+catch(ob::Error &e) {
+    std::cerr << "Current device is not support color sensor!" << std::endl;
+    exit(EXIT_FAILURE);
 }
 ```
-
-By creating Config to configure which streams to be enabled or disabled by Pipeline, color stream will be enabled here.
-
 ```
-std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
-config->enableStream(colorProfile);
-```
-
-Start the stream configured in Config.
-
-```
+Start the Stream configured in Configuration
+```cpp
 pipe.start(config);
 ```
 
-To set the mirror mode, first determine whether the device has readable and writable permissions, and then set
-
+Wait for a frame of data in a blocking manner, which is a composite frame containing frame data for all streams enabled in the configuration, and set the waiting timeout time for the frame
 ```cpp
-//Gets whether the image attribute has writable permission
-if(pipe.getDevice()->isPropertySupported(OB_PROP_COLOR_MIRROR_BOOL, OB_PERMISSION_WRITE)) {
-    //Set mirror
-    pipe.getDevice()->setBoolProperty(OB_PROP_COLOR_MIRROR_BOOL, true);
-}
-```
-
-Waiting for one frame in a blocking manner. The frame is a composite frame, which contains the frame data of all streams enabled in the configuration. Set the frame timeout time.
-
-```
 auto frameSet = pipe.waitForFrames(100);	//Set the waiting time to 100ms
 ```
-
-Stop Pipeline, no more frame data will be generated.
-
-```
-pipe.stop();
-```
-
-The final color map is shown below.`<br />`![3](.\Orbbec SDK Sample Description (CC++)img\3.png)`<br />`Resources will be automatically released after the program exits normally.
-
-## InfraredViewer
-
-Function description: This example mainly demonstrates the use of SDK to obtain infrared data, set the resolution, display the infrared image, and exit through the ESC key.
-
-> This example is based on C++ High Level API for demonstration.
-
-First, we need to create a Pipeline. Through Pipelie, you can easily open and close multiple types of streams and obtain a set of frame data.
-
-```
-ob::Pipeline pipe;
-```
-
-Get all stream profiles of the infrared camera, including stream resolution, frame rate, and frame format.
-
-```
-// Set the item of interest through the interface and return the first profile in the corresponding profile list
-auto irProfile = profiles->getVideoStreamProfile(640, 480, OB_FORMAT_Y16);
-if(!irProfile) {
-    irProfile = profiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
-}
-```
-
-By creating Config to configure which streams to be enabled or disabled by Pipeline, depth stream will be enabled here.
-
-```
-std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
-config->enableStream(irProfile);
-```
-
-Start the stream configured in Config, if no parameters are set, the default configuration stream will be started.
-
-```
-pipe.start(config);
-```
-
-To set the mirror mode, first determine whether the device has readable and writable permissions, and then set
-
+Print metadata every 30 frames
 ```cpp
-//Gets whether the image attribute has writable permission
-if(pipe.getDevice()->isPropertySupported(OB_PROP_COLOR_MIRROR_BOOL, OB_PERMISSION_WRITE)) {
-    //Set mirror
-    pipe.getDevice()->setBoolProperty(OB_PROP_COLOR_MIRROR_BOOL, true);
+// print metadata every 30 frames
+auto index = colorFrame->index();
+if(index % 30 == 0) {
+    std::cout << "*************************** Color Frame #" << index << " Metadata List ********************************" << std::endl;
+    for(int metaDataType = 0; metaDataType < OB_FRAME_METADATA_TYPE_COUNT; metaDataType++) {
+        // Check if it is supported metaDataType for current frame
+        if(colorFrame->hasMetadata((OBFrameMetadataType)metaDataType)) {
+            // Get the value of the metadata
+            std::cout << metaDataTypes[metaDataType] << ": " << colorFrame->getMetadataValue((OBFrameMetadataType)metaDataType) << std::endl;
+        }
+        else {
+            std::cout << metaDataTypes[metaDataType] << ": " << "unsupported" << std::endl;
+        }
+    }
+    std::cout << "********************************************************************************" << std::endl << std::endl;
 }
 ```
-
-Waiting for one frame in a blocking manner. The frame is a composite frame, which contains the frame data of all streams enabled in the configuration. Set the frame timeout time..
-
-```
-auto frameSet = pipe.waitForFrames(100);	//Set the waiting time to 100ms
-```
-
-Stop Pipeline, no more frame data will be generated.
-
-```
+Stop Pipeline, no more frame data will be generated
+```cpp
 pipe.stop();
 ```
-
-Resources will be automatically released after the program exits normally.
+The final color chart is shown below<br />![image3](https://developer-orbbec-oss.oss-cn-shenzhen.aliyuncs.com/images/technical_library/orbbec_sdkimage003.png)<br />After the program exits normally, resources will be automatically released
 
 ## SyncAlignViewer
 
-Function description: This example mainly demonstrates the operation of sensor data stream alignment.
+Function description: This example demonstrates the operation of aligning Sensor data stream control, displaying the aligned image, and exiting the program through the ESC_KEY key
+> This example is based on the C++High Level API for demonstration
 
-> This example is based on C++ High Level API for demonstration.
-
-First, we need to create a Pipeline. Through Pipelie, you can easily open and close multiple types of streams and obtain a set of frame data.
-
-```
+Firstly, it is necessary to create a pipeline, through which multiple types of streams can be easily opened and closed, and a set of frame data can be obtained
+```cpp
 ob::Pipeline pipe;
 ```
-
-Get all stream profiles of color camera and depth camera, including stream resolution, frame rate, and frame format.
-
-```
-//Get all stream profiles of the color camera, including stream resolution, frame rate, and frame format.
-auto colorProfiles = pipe.getStreamProfiles(OB_SENSOR_COLOR);
-
-//Set the item of interest through the interface and return the first profile in the corresponding profile list
-auto colorProfile = colorProfiles->getVideoStreamProfile(colorWidth, colorHeight, OB_FORMAT_MJPG, 30);
-if(!colorProfile) {
-    colorProfile = colorProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
+Get all stream configurations for color and depth cameras, including stream resolution, frame rate, and frame format
+```cpp
+std::shared_ptr<ob::VideoStreamProfile> colorProfile = nullptr;
+try {
+    // Get all stream profiles of the color camera, including stream resolution, frame rate, and frame format
+    auto colorProfiles = pipe.getStreamProfileList(OB_SENSOR_COLOR);
+    if(colorProfiles) {
+        colorProfile = std::const_pointer_cast<ob::StreamProfile>(colorProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+    }
+    config->enableStream(colorProfile);
+}
+catch(...) {
+    std::cerr << "Current device is not support color sensor!" << std::endl;
+    exit(EXIT_FAILURE);
 }
 
-//Get all stream profiles of the depth camera, including stream resolution, frame rate, and frame format.
-auto depthProfiles = pipe.getStreamProfiles(OB_SENSOR_DEPTH);
-
-//Set the item of interest through the interface and return the first profile in the corresponding profile list
-auto depthProfile = depthProfiles->getVideoStreamProfile(depthWidth, depthHeight, OB_FORMAT_Y16, 30);
-if(!depthProfile) {
-    depthProfile = depthProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
+// Get all stream profiles of the depth camera, including stream resolution, frame rate, and frame format
+auto                                    depthProfiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
+std::shared_ptr<ob::VideoStreamProfile> depthProfile  = nullptr;
+if(depthProfiles) {
+    depthProfile = std::const_pointer_cast<ob::StreamProfile>(depthProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
 }
+config->enableStream(depthProfile);
 ```
-
-By creating Config to configure which streams to enable or disable in Pipeline, color stream and depth stream will be enabled here.
-
-```
+Configure which streams to enable or disable in the Pipeline by creating a Configuration, where color and depth streams will be enabled
+```cpp
 std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
 config->enableStream(colorProfile);
 config->enableStream(depthProfile);
 ```
-
-Control stream alignment，software alignment is enabled here
-
-```
-// Configure the alignment mode to software D2c alignment
+Control stream alignment, turn on software alignment here
+```cpp
+// Configure alignment mode to software D2C alignment
 config->setAlignMode(ALIGN_D2C_SW_MODE);
 ```
-
-Start the stream configured in Config, if no parameters are set, the default configuration stream will be started.
-
-```
+Start the stream configured in Configuration. If no parameters are passed, the default configuration startup stream will be started
+```cpp
 pipe.start(config);
 ```
-
- Stop Pipeline, no more frame data will be generated.
-
-```
+Stop Pipeline, no more frame data will be generate
+```cpp
 pipe.stop();
 ```
-
-Resources will be automatically released after the program exits normally.
+After the program exits normally, resources will be automatically released
 
 ## FirmwareUpgrade
+Function Description: This example demonstrates how to upgrade a device using firmware
+> This example is based on the C++Low Level API for demonstration
 
-Function description: This example demonstrates how to use the firmware file to upgrade the device.
-
-> This example is based on C++ Low Level API for demonstration
-
-Obtain the firmware file through the command parameter in the main function interface
-
+Get firmware files through command parameters in the main function interface
 ```cpp
-// The checkFirmwareFilePath() function is used to check whether the file exists. In the actual code, it is better to check whether the suffix is bin or img, and whether the firmware file matches the target device
+// The checkFirmwareFilePath() function is used to check if a file exists. In actual code, it is best to check if the suffix is bin or img, and if the firmware file matches the target device
 std::string checkFirmwareFilePath(int argc, char **argv) {
     if(argc < 2) {
         std::cout << "Please input firmware path." << std::endl;
@@ -1220,23 +1631,22 @@ int main(int argc, char **argv) try {
         return 0;
     }
 
-    // More business code
+    // The following business code
 
     return 0;
 }
 catch(ob::Error &e) {
-    // Handle OrbbecSDK interface call exceptions. For the sake of simplicity, try-catch several interfaces together in the example. In actual business, a single interface and a try-catch are recommended.
+    // Handling OrbbecSDK interface call exceptions. For example, in order to simplify the process of trying to catch multiple interfaces together, it is recommended to use a separate interface and try to catch each other in practical business scenarios
     std::cerr << "function:" << e.getName() << "\nargs:" << e.getArgs() << "\nmessage:" << e.getMessage() << "\ntype:" << e.getExceptionType() << std::endl;
     exit(EXIT_FAILURE);
 }
 ```
 
-Create ob::Context and obtain the device through ob::Context. This example assumes that the host computer (Windows, Ubuntu, Android platform) has been plugged into the device before running FirmwareUpgrade[.exe]. ob::DeviceChangedCallback is used to monitor the device restart after the firmware upgrade and obtain the business processing of the upgraded device
-
+Create ob:: Context and get the device through ob:: Context. This example assumes that the upper computer (Windows, Ubuntu, Android platforms) has already inserted the device before running FirmwareUpgrade [. exe]. Ob:: DeviceChangedCallback is used to listen for business processing of the upgraded device after firmware upgrade and device restart
 ```cpp
-// Create ob::Context instance
+// Create ob:: Context object
 ob::Context ctx;
-// Set the device change listener, device_changed_callback is the key function to manage the device life cycle, developers must pay attention to this callback
+// Set up a device change listener, device_changed_callback is a key function for managing device declaration cycles, and developers must pay attention to this callback
 ctx.setDeviceChangedCallback([](std::shared_ptr<ob::DeviceList> removedList, std::shared_ptr<ob::DeviceList> addedList) {
     if(isWaitRebootComplete_) {
         if(addedList && addedList->deviceCount() > 0) {
@@ -1261,65 +1671,63 @@ ctx.setDeviceChangedCallback([](std::shared_ptr<ob::DeviceList> removedList, std
 // Query the currently connected devices
 auto devList = ctx.queryDeviceList();
 
-// Obtain the number of currently connected devices from ob::DeviceList
+// Retrieve the current number of connected devices from ob:: DeviceList
 if(devList->deviceCount() == 0) {
-    // Firmware upgrade example The default device has been connected to the host computer (Windows, Ubuntu, Android platform)
+     // Firmware upgrade example: The default device has been connected to the upper computer (Windows, Ubuntu, Android platforms)
     std::cerr << "Device not found!" << std::endl;
     return -1;
 }
 
-// Obtain first device which index=0
+// Get the first device, index=0
 auto dev = devList->getDevice(0);
 // Print device information
 dumpDeviceInfo(dev);
 ```
 
 Get the current firmware version information of the device
-
 ```cpp
-// Print device name, SN, VID, PID and firmware version
+// Print device name, SN, VID, PID, and firmware version
 void dumpDeviceInfo(std::shared_ptr<ob::Device> device) {
-    // Obtain the ob_device_info object, and obtain the basic information of the target device through ob_device_info
+    // Get the ob:: DeviceInfo object, through which the basic information of the target device can be obtained
     auto devInfo = device->getDeviceInfo();
 
-    // Device name
+    // Device Name
     std::cout << "Device name: " << devInfo->name() << std::endl;
 
-    // Device VID，PID，UID
+    // VID, PID, UID of the device
     std::cout << "Device pid: " << devInfo->pid() << " vid: " << devInfo->vid() << " uid: " << devInfo->uid() << std::endl;
 
-    // Device firmware version
+    // The current firmware version number of the device
     auto fwVer = devInfo->firmwareVersion();
     std::cout << "Firmware version: " << fwVer << std::endl;
 
-    // Device serial number
+    // SN of the device
     auto sn = devInfo->serialNumber();
     std::cout << "Serial number: " << sn << std::endl;
 
-    // devInfo would free resource automatically
+    // The devInfo resource will be automatically released
 }
 ```
 
-Upgrade the firmware of the target device
-a. Implementation the firmware upgrade callback interface of C API;
-b. Call the firmware upgrade interface to upgrade;
-
+Upgrade firmware for the target device
+a. Implement firmware upgrade callback interface for C API;
+b. Call the firmware upgrade interface for upgrading;
 ```cpp
-// Implementation the firmware upgrade callback interface of C API;
+// Perform firmware upgrades on the target device
 bool upgradeFirmware(std::shared_ptr<ob::Device> device, std::string firmwarePath) {
     auto index     = firmwarePath.find_last_of(".img");
     bool isImgFile = index != std::string::npos;
     index          = firmwarePath.find_last_of(".bin");
     bool isBinFile = index != std::string::npos;
     if(!(isImgFile || isBinFile)) {
-        // Firmware upgrade files are generally bin or img, and it is best to use the file name, file MD5 and other information for foolproofing in actual business
+        // Firmware upgrade files are usually bin or img. In actual business, it is best to use information such as file name and file MD5 to prevent errors
         std::cout << "Upgrade Fimware failed. invalid firmware file: " << firmwarePath << std::endl;
         return false;
     }
 
     bool isUpgradeSuccess = false;
     try {
-        // Call the firmware upgrade interface to upgrade;
+        // Call the firmware upgrade interface for upgrading;
         device->deviceUpgrade(
             firmwarePath.c_str(),
             [=, &isUpgradeSuccess](OBUpgradeState state, const char *message, uint8_t percent) {
@@ -1333,7 +1741,7 @@ bool upgradeFirmware(std::shared_ptr<ob::Device> device, std::string firmwarePat
                     std::cout << "Upgrade Firmware in progress, percent: " << (uint32_t)percent << std::endl;
                 }
                 else if(state == STAT_DONE) {
-                    // Upgrade success
+                    // Firmware upgrade successful
                     std::cout << "Upgrade Firmware done, percent: " << (uint32_t)percent << std::endl;
                     isUpgradeSuccess = true;
                 }
@@ -1341,7 +1749,7 @@ bool upgradeFirmware(std::shared_ptr<ob::Device> device, std::string firmwarePat
                     std::cout << "Upgrade Firmware verify image" << std::endl;
                 }
                 else {
-                    // Upgrade failed
+                    // Firmware upgrade failed
                     std::string errMsg = (nullptr != message ? std::string(message) : "");
                     std::cout << "Upgrade Firmware failed. state: " << std::to_string(state) << ", errMsg: " << errMsg << ", percent: " << (uint32_t)percent
                               << std::endl;
@@ -1363,292 +1771,170 @@ bool upgradeFirmware(std::shared_ptr<ob::Device> device, std::string firmwarePat
 }
 ```
 
-After the firmware upgrade is successful, the device needs to be restarted. There are two ways to restart the device, one is to unplug the device (or restart the operating system), and the other is to call the reboot interface of OrbbecSDK. After the device is online, the current device firmware version information can be queried through the dump_device_info() function in this example
+After a successful firmware upgrade, the device needs to be restarted. There are two ways to restart a device: one is to unplug and unplug the device (or restart the operating system), and the other is to call the reboot interface of the OrbbecSDK. After the device goes online, the dump_device_info() function in this example can be used to query the current firmware version information of the device
 
-The following example demonstrates rebooting the device through the firmware reboot interface
-
+The following example demonstrates restarting a device through the firmware reboot interface
 ```cpp
-// Reboot device
+// reboot device
 std::cout << "Reboot device" << std::endl;
 isDeviceRemoved_      = false;
 isWaitRebootComplete_ = true;
 dev->reboot();
-// Release resources, and the ob::Device object cannot be used after the device is restarted
+// Release resources. After the device restarts, the ob:: Device object becomes unusable
 dev     = nullptr;
 ```
 
-Resources will be released automatically after the program exits normally
-
-## SensorControl
-
-Function description: This example mainly demonstrates the operation of device control commands, Sensor control commands, and the stream of Sensor.
-
-> This example is based on C++ Low Level API for demonstration.
-
-First, we need to create a Context to obtain a list of device information and create a device.
-
-```
-ob::Context ctx;
-```
-
-Get device information list
-
-```
-auto devList = ctx.queryDeviceList();
-```
-
-Select a device to operate, if a single device is plugged in, it is selected and turned on by default.
-
-```
-//Select a device to operate
-std::shared_ptr<ob::Device> device = nullptr;
-if(deviceList->deviceCount() > 0) {
-    if(deviceList->deviceCount() <= 1) {
-    //If you insert a single device, the first one is selected by default
-        device = deviceList->getDevice(0);
-    }
-    else {
-        device = selectDevice(deviceList);
-    }
-}
-```
-
-Control command control, get the scope of the Property, set the property, get the property
-
-```
-//Gets the scope of the property
-OBBoolPropertyRange  bool_range = device->getBoolPropertyRange(property_item.id)
-OBIntPropertyRange   int_range = device->getIntPropertyRange(property_item.id)
-OBFloatPropertyRange float_range = device->getFloatPropertyRange(property_item.id)
-
-//set a property
-device->setBoolProperty(propertyItem.id, bool_value);
-device->setIntProperty(propertyItem.id, int_value);
-device->setFloatProperty(propertyItem.id, float_value);
-
-//get a property
-bool bool_ret = device->getBoolProperty(propertyItem.id);
-int int_ret = device->getIntProperty(propertyItem.id);
-float float_ret = device->getFloatProperty(propertyItem.id);
-```
-
-Resources will be automatically released after the program exits normally.
+After the program exits normally, resources will be automatically released
 
 ## MultiStream
+Function description: This example mainly demonstrates the operation of opening multiple sensor streams simultaneously using device, displaying multiple stream images, and exiting the program through the ESC_KEY key
+> This example is based on the C++High Level API for demonstration
 
-Function description: This example mainly demonstrates the operation of simultaneously opening multiple sensor streams with a device
-
-> This example is based on C++ Low Level API for demonstration
-
-First, you need to create a Context for obtaining a list of device information and creating devices
-
+Firstly, you need to create a pipeline
 ```cpp
-ob::Context ctx;
+ob::Pipeline pipe;
 ```
 
-Query the device information list
-
+Enumerate devices and perform stream configuratio
 ```cpp
-auto devList = ctx.queryDeviceList();
-```
-
-Select a device to operate. If a single device is inserted, it will be selected and opened by default. If there are multiple devices, provide options
-
-```cpp
-// Choose a device to operate
-std::shared_ptr<ob::Device> device = nullptr;
-if(deviceList->deviceCount() < 1) {
-    // The example assumes that the device has been plugged into the host computer
-    return 0;
+// enumerate and config all sensors
+auto device     = pipe.getDevice();
+auto sensorList = device->getSensorList();
+for(int i = 0; i < sensorList->count(); i++) {
+    auto sensorType = sensorList->type(i);
+    if(sensorType == OB_SENSOR_GYRO || sensorType == OB_SENSOR_ACCEL) {
+        continue;
+    }
+    auto profiles = pipe.getStreamProfileList(sensorType);
+    auto profile  = profiles->getProfile(OB_PROFILE_DEFAULT);
+    config->enableStream(profile);
 }
-// Get first device which index=0
-device = deviceList->getDevice(0);
 ```
 
-Use device to create ob::Pipeline object
-
+Enable pipeline through configuration
 ```cpp
-ob::Pipeline pipe(device);
-```
-
-Create ob::Config to configure the stream to be opened by the pipeline. Currently, the pipeline only supports UVC-type video streams such as Color, IR, and Depth, and does not support IMU-type Gyro and Accel streams.
-
-```cpp
-    // Construct the ob::Config configuration object, which is required for subsequent pipeline open flow
-    std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
-
-    // Try to configure Color stream
-    try {
-        auto colorProfiles = pipe.getStreamProfileList(OB_SENSOR_COLOR);
-        auto colorProfile  = colorProfiles->getProfile(OB_PROFILE_DEFAULT);
-        config->enableStream(colorProfile->as<ob::VideoStreamProfile>());
-    }
-    catch(...) {
-        std::cout << "color stream not found!" << std::endl;
-    }
-
-    // Try to configure Depth stream
-    try {
-        auto depthProfiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
-        auto depthProfile  = depthProfiles->getProfile(OB_PROFILE_DEFAULT);
-        config->enableStream(depthProfile->as<ob::VideoStreamProfile>());
-    }
-    catch(...) {
-        std::cout << "depth stream not found!" << std::endl;
-    }
-
-    // Try to configure IR stream
-    try {
-        auto irProfiles = pipe.getStreamProfileList(OB_SENSOR_IR);
-        auto irProfile  = irProfiles->getProfile(OB_PROFILE_DEFAULT);
-        config->enableStream(irProfile->as<ob::VideoStreamProfile>());
-    }
-    catch(...) {
-        std::cout << "ir stream not found!" << std::endl;
-    }
-
-    // Optional, not required. Turn on hardware D2C alignment
-    config->setAlignMode(ALIGN_D2C_HW_MODE);
-```
-
-Pass the configured ob::Config to ob::Pipeline#start and listen for the callback
-
-```cpp
-// Pipeline#start needs to pass in config configuration and FrameSetCallback frame callback object
+// Start the pipeline with config
+std::mutex                                        frameMutex;
+std::map<OBFrameType, std::shared_ptr<ob::Frame>> frameMap;
 pipe.start(config, [&](std::shared_ptr<ob::FrameSet> frameset) {
-    std::unique_lock<std::mutex> lk(videoFrameMutex);
-    // Get the corresponding frame data, note that colorFrame, depthFrame, irFrame may be null
-    colorFrame = frameset->colorFrame();
-    depthFrame = frameset->depthFrame();
-    irFrame    = frameset->irFrame();
+    auto count = frameset->frameCount();
+    for(int i = 0; i < count; i++) {
+        auto                         frame = frameset->getFrame(i);
+        std::unique_lock<std::mutex> lk(frameMutex);
+        frameMap[frame->type()] = frame;
+    }
 });
 ```
 
-Stop stream by pipeline
+The IMU frame rate is much faster than the video, so it is advisable to use a separate pipeline to get IMU data.
+```cpp
+auto                                              dev         = pipe.getDevice();
+auto                                              imuPipeline = std::make_shared<ob::Pipeline>(dev);
+std::mutex                                        imuFrameMutex;
+std::map<OBFrameType, std::shared_ptr<ob::Frame>> imuFrameMap;
+try {
+    auto                        accelProfiles = imuPipeline->getStreamProfileList(OB_SENSOR_ACCEL);
+    auto                        gyroProfiles  = imuPipeline->getStreamProfileList(OB_SENSOR_GYRO);
+    auto                        accelProfile  = accelProfiles->getProfile(OB_PROFILE_DEFAULT);
+    auto                        gyroProfile   = gyroProfiles->getProfile(OB_PROFILE_DEFAULT);
+    std::shared_ptr<ob::Config> imuConfig     = std::make_shared<ob::Config>();
+    imuConfig->enableStream(accelProfile);
+    imuConfig->enableStream(gyroProfile);
+    imuPipeline->start(imuConfig, [&](std::shared_ptr<ob::FrameSet> frameset) {
+        auto count = frameset->frameCount();
+        for(int i = 0; i < count; i++) {
+            auto                         frame = frameset->getFrame(i);
+            std::unique_lock<std::mutex> lk(imuFrameMutex);
+            imuFrameMap[frame->type()] = frame;
+        }
+    });
+}
+catch(...) {
+    std::cout << "IMU sensor not found!" << std::endl;
+    imuPipeline.reset();
+}
+```
 
+Close pipeline
 ```cpp
 pipe.stop();
 ```
 
-Open the IMU stream. The gyroscope and accelerometer currently only support sensor open stream, not ob::Pipeline open stream.
-Open flow steps are as follows:
-a. Obtain GyroSensor (gyroscope) and AccelSensor (accelerometer) from device, the object is ob::Sensor
-b. Obtain the corresponding configuration GyroStreamProfile and AccelStreamProfile from GyroSensor and AccelSensor respectively
-c. Use ob::Sensor#start to open the stream, the parameter is StreamProfile;
-
+Close IMU pipeline
 ```cpp
-std::shared_ptr<ob::Sensor> accelSensor;
-std::shared_ptr<ob::Sensor> gyroSensor;
-try {
-    // Construct IMU sensor object through device
-    accelSensor = device->getSensor(OB_SENSOR_ACCEL);
-    gyroSensor  = device->getSensor(OB_SENSOR_GYRO);
-}
-catch(...) {
-    std::cout << "IMU sensor not found!" << std::endl;
-}
-
-if(accelSensor && gyroSensor) {
-    // Get AccelStreamProfile
-    auto accelProfiles = accelSensor->getStreamProfileList();
-    auto accelProfile  = accelProfiles->getProfile(OB_PROFILE_DEFAULT);
-    // Open the stream with the ob::Sensor#start function, you need to pass in StreamProfile and FrameCallback
-    // Process the data frame returned by device in the FrameCallback frame callback function
-    accelSensor->start(accelProfile, [&](std::shared_ptr<ob::Frame> frame) {
-        std::unique_lock<std::mutex> lk(accelFrameMutex);
-        accelFrame = frame;
-    });
-
-    // Get GyroStreamProfile
-    auto gyroProfiles = gyroSensor->getStreamProfileList();
-    auto gyroProfile  = gyroProfiles->getProfile(OB_PROFILE_DEFAULT);
-    // Open the stream with the ob::Sensor#start function, you need to pass in StreamProfile and FrameCallback
-    // Process the data frame returned by device in the FrameCallback frame callback function
-    gyroSensor->start(gyroProfile, [&](std::shared_ptr<ob::Frame> frame) {
-        std::unique_lock<std::mutex> lk(gyroFrameMutex);
-        gyroFrame = frame;
-    });
-}
-```
-
-Stop IMU sensors stream
-
-```cpp
-accelSensor->stop();
-gyroSensor->stop();
+imuPipeline->stop();
 ```
 
 ## MultiDevice
 
 Function description: This example mainly demonstrates the operation of multiple devices.
+> This example is based on the C++High Level API for demonstration
 
-> This example is based on C++ Low Level API for demonstration.
-
-First, we need to create a Context to obtain a list of device information for creating devices and pipelines.
-
-```
+Firstly, it is necessary to create a Context to get a list of device information for creating devices and pipelines
+```cpp
 ob::Context ctx;
-//Query the list of connected devices
+// Query the list of connected devices
 auto devList = ctx.queryDeviceList();
-//Get the number of access devices
+// Get the number of connected devices
 int devCount = devList->deviceCount();
 ```
-
-Create a device, and create a pipeline through the device.
-
-```
-//Traverse the device list and create a device
+Create a device and create a pipeline through the device
+```cpp
+// Traverse device list and create devices
 std::vector<std::shared_ptr<ob::Device>> devices;
 for (int i = 0; i < devCount; i++)
 {
-    //Get device and create pipeline
-		auto dev  = devList->getDevice( i );
-		auto pipe = std::make_shared< ob::Pipeline >( dev );
-		pipes.push_back( pipe );
+    // Get the device and create a pipeline
+	auto dev  = devList->getDevice( i );
+	auto pipe = std::make_shared< ob::Pipeline >( dev );
+	pipes.push_back( pipe );
 }
 ```
-
-Start stream
-
-```
-for ( auto&& pipe : pipes ) {
-        //Get depth camera profile list
-        auto depthProfileList = pipe->getStreamProfileList( OB_SENSOR_DEPTH );
-
- //Set the item of interest through the interface and return the first profile in the corresponding profile list
-    auto depthProfile = depthProfileList->getVideoStreamProfile(640, 480,
-OB_FORMAT_Y16)->as<ob::VideoStreamProfile>();
-    if(!depthProfile) {
-        depthProfile = depthProfileList->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
-    }
-    config->enableStream(depthProfile);
-
- //Get color camera profile list
- auto colorProfileList = pipe->getStreamProfileList( OB_SENSOR_COLOR );
-
- //Set the item of interest through the interface and return the first profile in the corresponding profile list
-   auto colorProfile = colorProfileList->getVideoStreamProfile(640, 480,
-OB_FORMAT_MJPG)->as<ob::VideoStreamProfile>();
-    if(!colorProfile) {
-       colorProfile = colorProfileList->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
-    }
-    config->enableStream(colorProfile);
-
- //Start the pipeline and pass in the configuration
-   pipe->start(config, [i](std::shared_ptr<ob::FrameSet> frameSet) {
-        std::lock_guard<std::mutex> lock(frameMutex);
-        if(frameSet->colorFrame() && frameSet->depthFrame()) {
-            colorFrames[i] = frameSet->colorFrame();
-            depthFrames[i] = frameSet->depthFrame();
+Open depth and color streams for multiple devices
+```cpp
+void StartStream(std::vector<std::shared_ptr<ob::Pipeline>> pipes) {
+    int i = 0;
+    for(auto &&pipe: pipes) {
+        std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
+        // Get the depth camera configuration list
+        auto                                    depthProfileList = pipe->getStreamProfileList(OB_SENSOR_DEPTH);
+        std::shared_ptr<ob::VideoStreamProfile> depthProfile     = nullptr;
+        if(depthProfileList) {
+            // Open the default profile of Depth Sensor, which can be configured through the configuration file
+            depthProfile = std::const_pointer_cast<ob::StreamProfile>(depthProfileList->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
         }
-    });
-    i++;
+        config->enableStream(depthProfile);
+
+        // Get the color camera configuration list
+        try {
+            auto                                    colorProfileList = pipe->getStreamProfileList(OB_SENSOR_COLOR);
+            std::shared_ptr<ob::VideoStreamProfile> colorProfile     = nullptr;
+            if(colorProfileList) {
+                // Open the default profile of Color Sensor, which can be configured through the configuration file
+                colorProfile = std::const_pointer_cast<ob::StreamProfile>(colorProfileList->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+            }
+            config->enableStream(colorProfile);
+        }
+        catch(ob::Error &e) {
+            std::cerr << "Current device is not support color sensor!" << std::endl;
+        }
+
+        // Start the pipeline and pass in the configuration
+        pipe->start(config, [i](std::shared_ptr<ob::FrameSet> frameSet) {
+            std::lock_guard<std::mutex> lock(frameMutex);
+            if(frameSet->colorFrame()) {
+                colorFrames[i] = frameSet->colorFrame();
+            }
+            if(frameSet->depthFrame()) {
+                depthFrames[i] = frameSet->depthFrame();
+            }
+        });
+        i++;
+    }
 }
 ```
-
-Stop stream
-
-```
+Stop all open streams on devices
+```cpp
 
 void StopStream( std::vector< std::shared_ptr< ob::Pipeline > > pipes) {
     int i = 0;
@@ -1659,405 +1945,133 @@ void StopStream( std::vector< std::shared_ptr< ob::Pipeline > > pipes) {
             depthFrames->reset();
         if(irFrames[i])
             irFrames->reset();
-        //Stop pipeline
+        // stop pipeline
         pipe->stop();
         i++;
     }
 }
 ```
-
-Resources will be automatically released after the program exits normally.
-
-## DepthWorkMode
-
-Function Description: This example mainly demonstrates switching camera depth mode. First, the depth mode list is queried, and then the corresponding camera depth mode is selected to call interface switching
-
-First get device
-
-```C
-// Create Context. Unlike Pipeline, Context is the entry point to the low-level API, which is slightly more complicated to use for common operations such as switching streams,
-// but the low-level API can provide more flexible operations such as getting multiple devices, reading and writing device and camera properties, etc
-ob::Context ctx;
-
-//Get the list of connected devices
-auto devList = ctx.queryDeviceList();
-
-//Obtain the number of connected devices
-if(devList->deviceCount() == 0) {
-    pressKeyExit("Device not found!");
-    return -1;
-}
-
-//Create a device. 0 indicates the index of the first device
-auto device = devList->getDevice(0);
-```
-
-Check whether the device supports camera depth mode. Currently, only Gemini2 supports camera depth mode
-
-```C
-// Check to see if depth mode is supported. Currently (5 December 2022), only Gemini2 binocular cameras support depth mode
-if (!device->isPropertySupported(OB_STRUCT_CURRENT_DEPTH_ALG_MODE, OB_PERMISSION_READ_WRITE)) {
-    pressKeyExit("Current device not support depth work mode!");
-    return -1;
-}
-```
-
-Get current depth work mode
-
-```C
-// Get current depth work mode
-auto curDepthMode = device->getCurrentDepthWorkMode();
-```
-
-Get the list of depth work modes supported by the device
-
-```C
-// Gets a list of depth work modes
-auto depthModeList = device->getDepthWorkModeList();
-std::cout << "depthModeList size: " << depthModeList->count() << std::endl;
-for(uint32_t i = 0; i < depthModeList->count(); i++) {
-    std::cout << "depthModeList[" << i << "]: " << (*depthModeList)[i];
-    if (strcmp(curDepthMode.name, (*depthModeList)[i].name) == 0) {
-        std::cout << "  (Current WorkMode)";
-    }
-
-    std::cout << std::endl;
-}
-```
-
-Switch depth work mode
-
-```C
-// Switch device to a new depth work mode
-OBDepthMode depthMode = (*depthModeList)[index];
-device->switchDepthWorkMode(depthMode.name);
-check_error(error);
-```
-
-At the end of switching camera depth mode, you can open the camera to stream using pipeline
-Cautions：
-
-1. If you want to switch camera depth mode, you must open the data stream after switching depth mode. Each camera depth mode supports different effective resolutions
-2. If the data stream has been opened with a pipeline, the original applied pipeline must be released before the switch depth work mode
-   Re-create pipeline after switching camera depth mode; otherwise, wild pointer or memory leak will be caused;
+After the program exits normally, resources will be automatically released
 
 ## HotPlugin
 
-Function description: This example mainly demonstrates the settings of the device plug-in callback, and processes the obtained stream after replug-in.
+Function description: This example mainly demonstrates the setting of device unplugging callback, as well as the processing of the obtained stream after unplugging, and exiting the program through the ESC_KEY key
+> This example is based on the C++High Level API for demonstration
 
-> This example is based on C++ High Level API for demonstration.
-
-First, we need to create a Context to obtain a list of device information and create a device.
-
-```
+Firstly, it is necessary to create a Context for obtaining a list of device information and creating a device
+```cpp
 ob::Context ctx;
 ```
-
-Register the device callback, and execute related functions when the device is plugged and unplugged.
-
-```
+Register device callback and execute relevant functions during device unplugging and unplugging
+```cpp
 ctx.setDeviceChangedCallback( []( std::shared_ptr< ob::DeviceList > removedList, std::shared_ptr< ob::DeviceList > addedList ) {
         DeviceDisconnectCallback( removedList );
         DeviceConnectCallback( addedList );
     } );
 ```
 
-Open stream according to the resolution and format configured in the configuration file.
-
-```
-//Start the stream by the stream profile of the configuration file, if there is no configuration file, the stream will be started with the first stream configuration
-try{
-  pipeline->start(nullptr);
-}catch(...){
-  std::cout<<"Pipeline start failed!"<<std::endl;
-}
-//Get all stream profiles of the depth camera, including stream resolution, frame rate, and frame format
-auto depthProfiles = pipeline->getStreamProfileList(OB_SENSOR_DEPTH);
-//Get the first Profile in the corresponding stream profile list. If there is a configuration file, the stream profile in the configuration file is the first in the stream profile list.
-auto depthProfile = depthProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
-//Get all stream profiles for color cameras, including stream resolution, frame rate, and frame format
-auto colorProfiles = pipeline->getStreamProfileList(OB_SENSOR_COLOR);
-//Get the first Profile in the corresponding stream profile list. If there is a configuration file, the stream profile in the configuration file is the first in the stream profile list.
-auto colorProfile = colorProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
-//get frame rate
-colorFps = colorProfile->fps();
-depthFps = depthProfile->fps();
-```
-
-Waiting for one frame in a blocking manner. The frame is a composite frame, which contains the frame data of all streams enabled in the configuration. Set the frame timeout time.
-
-```
-auto frameSet = pipe.waitForFrames(100);	//Set the waiting time to 100ms
-```
-
-Stop Pipeline, will no longer generate frame data.
-
-```
-pipe.stop();
-```
-
-Resources will be automatically released after the program exits normally.
-
-## ImuReader
-
-Function description: This example mainly demonstrates the use of SDK to obtain IMU data, and exit by ESC key.
-
-> This example is based on C++ Low Level API for demonstration.
-
-Print the SDK version number. The SDK version number is divided into major version number, minor version number and revision number.
-
-```
-//Print the SDK version number. The SDK version number is divided into major version number, minor version number and revision number.
-std::cout << "SDK version: " << ob::Version::getMajor() << "." << ob::Version::getMinor() << "." << ob::Version::getPatch() << std::endl;
-```
-
-First, we need to create a Context to obtain a list of device information and create a device.
-
-```
-ob::Context ctx;
-```
-
-Get the list of connected devices
-
-```
-auto devList = ctx.queryDeviceList();
-
-//Get the number of connected devices.
-devList->deviceCount()
-```
-
-Create device
-
-```
-//Create a device, 0 means the index of the first device.
-auto dev = devList->getDevice(0);
-```
-
-Get the gyroscope sensor and acceleration sensor
-
-```
-auto gyroSensor = dev->getSensorList()->getSensor( OB_SENSOR_GYRO );
-
-auto accelSensor = dev->getSensorList()->getSensor( OB_SENSOR_ACCEL );
-```
-
-Get the profile list of the gyroscope sensor and select the first profile to open stream, get the frame data in the open stream callback, the same as the acceleration sensor.
-
-```
-auto profiles = gyroSensor->getStreamProfileList();
-auto profile = profiles->getProfile( 0 );
-gyroSensor->start( profile, []( std::shared_ptr< ob::Frame > frame ) {
-		auto timeStamp = frame->timeStamp();
-    auto gyroFrame = frame->as< ob::GyroFrame >();
-    if ( gyroFrame != nullptr && ( timeStamp % 500 ) < 2 ) {  //  ( timeStamp % 500 ) < 2: 目的时减少打印频率
-    		std::cout << "Gyro Frame: \n{\n";
-        std::cout << "  tsp = " << timeStamp << std::endl;
-        std::cout << "  temperature = " << gyroFrame->temperature() << std::endl;
-        auto value = gyroFrame->value();
-        std::cout << "  gyro.x = " << value.x << " dps" << std::endl;
-        std::cout << "  gyro.y = " << value.y << " dps" << std::endl;
-        std::cout << "  gyro.z = " << value.z << " dps" << std::endl;
-        std::cout << "}" << std::endl << std::endl;
+Enable streaming
+```cpp
+void startStream(std::shared_ptr<PipelineHolder> holder) {
+std::shared_ptr<FramePrintInfo> printInfo(new FramePrintInfo{});
+std::string                     deviceSN = std::string(holder->deviceInfo->serialNumber());
+ob::FrameSetCallback            callback = [deviceSN, printInfo](std::shared_ptr<ob::FrameSet> frameSet) {
+    // Get the depth data frame
+    auto depthFrame = frameSet->depthFrame();
+    if(depthFrame) {
+        printInfo->depthCount++;
+        if(printInfo->depthCount == 15) {
+            std::cout << "=====Depth Frame Info====== SN: " << std::string(deviceSN) << ", " << depthFrame << std::endl;
+            printInfo->depthCount = 0;
+        }
     }
- } );
-```
 
-Stop stream
+    // Get the ir data frame
+    auto irFrame = frameSet->irFrame();
+    if(irFrame) {
+        printInfo->irCount++;
+        if(printInfo->irCount == 15) {
+            std::cout << "=====IR Frame Info====== SN: " << std::string(deviceSN) << ", " << std::dynamic_pointer_cast<ob::VideoFrame>(irFrame)
+                        << std::endl;
+            printInfo->irCount = 0;
+        }
+    }
 
-```
-gyroSensor->stop();
-accelSensor->stop();
-```
+    // Get the ir left data frame
+    auto irLeftFrame = frameSet->getFrame(OB_FRAME_IR_LEFT);
+    if(irLeftFrame) {
+        printInfo->irLeftCount++;
+        if(printInfo->irLeftCount == 15) {
+            std::cout << "=====IR Left Frame Info====== SN: " << std::string(deviceSN) << ", " << std::dynamic_pointer_cast<ob::VideoFrame>(irLeftFrame)
+                        << std::endl;
+            printInfo->irLeftCount = 0;
+        }
+    }
 
-Resources will be automatically released after the program exits normally.
+    // Get the ir right data frame
+    auto irRightFrame = frameSet->getFrame(OB_FRAME_IR_RIGHT);
+    if(irRightFrame) {
+        printInfo->irRightCount++;
+        if(printInfo->irRightCount == 15) {
+            std::cout << "=====IR Right Frame Info====== SN: " << std::string(deviceSN) << ", " << std::dynamic_pointer_cast<ob::VideoFrame>(irRightFrame)
+                        << std::endl;
+            printInfo->irRightCount = 0;
+        }
+    }
 
-## MultiDeviceSync
+    // Get the color data frame
+    auto colorFrame = frameSet->colorFrame();
+    if(colorFrame) {
+        printInfo->colorCount++;
+        if(printInfo->colorCount == 15) {
+            std::cout << "=====Color Frame Info====== SN: " << std::string(deviceSN) << ", " << std::dynamic_pointer_cast<ob::VideoFrame>(colorFrame)
+                        << std::endl;
+            printInfo->colorCount = 0;
+        }
+    }
+};
 
-The multi-machine synchronization open flow example demonstrates the function of connecting multiple devices through signal connectors and then synchronously triggering the graph output.
-
-Steps for synchronizing multiple devices:
-
-1. Load the configuration file and configure the device;
-2. Reboot devices;
-3. Wait for all devices to reboot complete, start all devices's color and depth sensor to handle it frames;
-
-Set multi-device synchronization configuration information
-
-```cpp
-auto curConfig = device->getMultiDeviceSyncConfig();
-
-// Update the configuration items of the configuration file, and keep the original configuration for other items
-curConfig.syncMode                   = config->syncConfig.syncMode;
-curConfig.depthDelayUs               = config->syncConfig.depthDelayUs;
-curConfig.colorDelayUs               = config->syncConfig.colorDelayUs;
-curConfig.trigger2ImageDelayUs       = config->syncConfig.trigger2ImageDelayUs;
-curConfig.triggerOutEnable  = config->syncConfig.triggerOutEnable;
-curConfig.triggerOutDelayUs = config->syncConfig.triggerOutDelayUs;
-
-device->setMultiDeviceSyncConfig(curConfig);
-```
-
-Reboot all devices
-
-```cpp
-std::cout << "Device sn[" << std::string(device->getDeviceInfo()->serialNumber()) << "] is configured, rebooting..." << std::endl;
+// Start video stream according to the stream profile of the configuration file.If there is no configuration file, the first stream profile will be used.
 try {
-    device->reboot();
+    std::cout << "startStream " << holder->deviceInfo << std::endl;
+    holder->pipeline->start(nullptr, callback);
+    holder->isStarted = true;
 }
-catch(ob::Error &e) {
-    std::cout << "Device sn[" << std::string(device->getDeviceInfo()->serialNumber()) << "] is not configured, skipping...";
-    // The early firmware versions of some models of devices will restart immediately after receiving the restart command, causing the SDK to fail to
-    // receive a response to the command request and throw an exception
+catch(...) {
+    std::cout << "Pipeline start failed!" << std::endl;
+    holder->isStarted = false;
 }
-```
+}
 
-Wait for all devices to restart, and then start stream on multiple devices.
 
-Get device list
-
+Stop streaming
 ```cpp
-// Query the list of connected devices
-auto devList = context.queryDeviceList();
-
-// Get the number of connected devices
-int devCount = devList->deviceCount();
-for(int i = 0; i < devCount; i++) {
-    streamDevList.push_back(devList->getDevice(i));
-}
-
-if(streamDevList.empty()) {
-    std::cerr << "Device list is empty. please check device connection state" << std::endl;
-    return -1;
-}
-```
-
-Read the multi-device synchronization configuration from the device, Distinguish between Primary and Secondary
-
-```cpp
-// traverse the device list and create the device
-std::vector<std::shared_ptr<ob::Device>> primary_devices;
-std::vector<std::shared_ptr<ob::Device>> secondary_devices;
-for(auto dev: streamDevList) {
-    auto config = dev->getMultiDeviceSyncConfig();
-    if(config.syncMode == OB_MULTI_DEVICE_SYNC_MODE_PRIMARY) {
-        primary_devices.push_back(dev);
+void stopStream(std::shared_ptr<PipelineHolder> holder) {
+    if(!holder->isStarted) {
+        return;
     }
-    else {
-        secondary_devices.push_back(dev);
+
+    try {
+        std::cout << "stopStream " << holder->deviceInfo << std::endl;
+        holder->isStarted = false;
+        holder->pipeline->stop();
+    }
+    catch(ob::Error &e) {
+        std::cerr << "stopStream failed., function:" << e.getName() << "\nargs:" << e.getArgs() << "\nmessage:" << e.getMessage()
+                  << "\ntype:" << e.getExceptionType() << std::endl;
     }
 }
-
-if(primary_devices.empty()) {
-    std::cerr << "WARNING primary_devices is empty!!!" << std::endl;
-}
 ```
-
-Set the time synchronization frequency
-
-```C
-// Enable time synchronization among multiple devices
-context.enableDeviceClockSync(3600000);  // Updates are synchronized every hour
-```
-
-The PipelineHolder
-Because a pipeline is associated with a sensorType, PipelineHolder is used to associate device and sensor information to facilitate processing of frame data.
-
-```cpp
-typedef struct PipelineHolder_t {
-    std::shared_ptr<ob::Pipeline> pipeline;
-    OBSensorType                  sensorType;
-    int                           deviceIndex;
-    std::string                   deviceSN;
-} PipelineHolder;
-
-std::shared_ptr<PipelineHolder> createPipelineHolder(std::shared_ptr<ob::Device> device, OBSensorType sensorType, int deviceIndex) {
-    PipelineHolder *pHolder = new PipelineHolder();
-    pHolder->pipeline       = std::shared_ptr<ob::Pipeline>(new ob::Pipeline(device));
-    pHolder->sensorType     = sensorType;
-    pHolder->deviceIndex    = deviceIndex;
-    pHolder->deviceSN       = std::string(device->getDeviceInfo()->serialNumber());
-
-    return std::shared_ptr<PipelineHolder>(pHolder);
-}
-```
-
-Open the device data stream of color sensor and depth sensor
-
-```cpp
-std::cout << "Secondary devices start..." << std::endl;
-int deviceIndex = 0;  // Sencondary device display first
-for(auto itr = secondary_devices.begin(); itr != secondary_devices.end(); itr++) {
-    auto depthHolder = createPipelineHolder(*itr, OB_SENSOR_DEPTH, deviceIndex);
-    pipelineHolderList.push_back(depthHolder);
-    startStream(depthHolder);
-
-    auto colorHolder = createPipelineHolder(*itr, OB_SENSOR_COLOR, deviceIndex);
-    pipelineHolderList.push_back(colorHolder);
-    startStream(colorHolder);
-
-    deviceIndex++;
-}
-
-// Delay and wait for 5s to ensure that the initialization of the slave device is completed
-std::this_thread::sleep_for(std::chrono::milliseconds(5000));
-
-std::cout << "Primary device start..." << std::endl;
-deviceIndex = secondary_devices.size();  // Primary device display after primary devices.
-for(auto itr = primary_devices.begin(); itr != primary_devices.end(); itr++) {
-    auto depthHolder = createPipelineHolder(*itr, OB_SENSOR_DEPTH, deviceIndex);
-    startStream(depthHolder);
-    pipelineHolderList.push_back(depthHolder);
-
-    auto colorHolder = createPipelineHolder(*itr, OB_SENSOR_COLOR, deviceIndex);
-    startStream(colorHolder);
-    pipelineHolderList.push_back(colorHolder);
-
-    deviceIndex++;
-}
-```
-
-Process sensor frame data
-
-```cpp
-void handleColorStream(int devIndex, std::shared_ptr<ob::Frame> frame) {
-    std::cout << "Device#" << devIndex << ", color frame index=" << frame->index() << ", timestamp=" << frame->timeStamp()
-              << ", system timestamp=" << frame->systemTimeStamp() << std::endl;
-
-    std::lock_guard<std::mutex> lock(frameMutex);
-    colorFrames[devIndex] = frame;
-}
-
-void handleDepthStream(int devIndex, std::shared_ptr<ob::Frame> frame) {
-    std::cout << "Device#" << devIndex << ", depth frame index=" << frame->index() << ", timestamp=" << frame->timeStamp()
-              << ", system timestamp=" << frame->systemTimeStamp() << std::endl;
-
-    std::lock_guard<std::mutex> lock(frameMutex);
-    depthFrames[devIndex] = frame;
-}
-```
-
-Here we can process the data output by multiple devices based on colorFrames and depthFrames.
-
-// stop stream
-
-```cpp
-// close data stream
-for(auto itr = pipelineHolderList.begin(); itr != pipelineHolderList.end(); itr++) {
-    stopStream(*itr);
-}
-pipelineHolderList.clear();
-```
+After the program exits normally, resources will be automatically released
 
 ## PointCloud
 
-Function description: Connect the device to open the stream, generate a depth point cloud or RGBD point cloud and save it as a ply format file.
+Function description: Connect the device to open the stream, generate a deep point cloud or RGBD point cloud and save it as a ply format file, and exit the program through the ESC_KEY key
+> This example is based on the C++High Level API for demonstration
 
-> This example is based on C++ High Level API for demonstration.
-
-Create a point cloud and save it as a ply format file function. The detailed description of the ply file format can be viewed on the Internet.`<br />`First, create two functions to save the point cloud data obtained from the stream. This is a function to save point cloud data.
-
-```
-//Save point cloud data to ply
+Create a point cloud and save it as a ply file function. The detailed description of the ply file format can be viewed on the network<br />Firstly, create two functions to save the point cloud data obtained from the stream, which are functions for saving regular point cloud data
+```cpp
+// Save point cloud data to ply
 void savePointsToPly(std::shared_ptr<ob::Frame> frame, std::string fileName) {
     int   pointsSize = frame->dataSize() / sizeof(OBPoint);
     FILE *fp         = fopen(fileName.c_str(), "wb+");
@@ -2079,10 +2093,8 @@ void savePointsToPly(std::shared_ptr<ob::Frame> frame, std::string fileName) {
     fclose(fp);
 }
 ```
-
-Create another function to save the color point cloud data.
-
-```
+Create another function to save color point cloud data for storing color point cloud data
+```cpp
 //Save color point cloud data to ply
 void saveRGBPointsToPly(std::shared_ptr<ob::Frame> frame, std::string fileName) {
     int   pointsSize = frame->dataSize() / sizeof(OBColorPoint);
@@ -2108,101 +2120,103 @@ void saveRGBPointsToPly(std::shared_ptr<ob::Frame> frame, std::string fileName) 
     fclose(fp);
 }
 ```
-
-Set the Log level to avoid too many Logs of Info level affecting the output of the point cloud
-
+Set the Log level to avoid excessive Info level logs affecting the output results of point clouds
 ```cpp
 ob::Context::setLoggerSeverity(OB_LOG_SEVERITY_ERROR);
 ```
-
-Create a Pipeline, through pipeline, you can easily open and close multiple types of streams and obtain a set of frame data.
-
+Create a pipeline that makes it easy to open and close multiple types of streams and get a set of frame data
+```cpp
+ob::Pipeline pipeline;
 ```
- ob::Pipeline pipeline;
+Configure color stream
+```cpp
+auto colorProfiles = pipeline.getStreamProfileList(OB_SENSOR_COLOR);
+if(colorProfiles) {
+    auto profile = colorProfiles->getProfile(OB_PROFILE_DEFAULT);
+    colorProfile = profile->as<ob::VideoStreamProfile>();
+}
+config->enableStream(colorProfile);
 ```
 
-Then we can get all the profile of the color stream through the Pipeline, including the resolution of the stream, the frame rate, and the format of the stream.
+Configure deep stream
+```cpp
+std::shared_ptr<ob::StreamProfileList> depthProfileList;
+OBAlignMode                            alignMode = ALIGN_DISABLE;
+if(colorProfile) {
+    // Try find supported depth to color align hardware mode profile
+    depthProfileList = pipeline.getD2CDepthProfileList(colorProfile, ALIGN_D2C_HW_MODE);
+    if(depthProfileList->count() > 0) {
+        alignMode = ALIGN_D2C_HW_MODE;
+    }
+    else {
+        // Try find supported depth to color align software mode profile
+        depthProfileList = pipeline.getD2CDepthProfileList(colorProfile, ALIGN_D2C_SW_MODE);
+        if(depthProfileList->count() > 0) {
+            alignMode = ALIGN_D2C_SW_MODE;
+        }
+    }
+}
+else {
+    depthProfileList = pipeline.getStreamProfileList(OB_SENSOR_DEPTH);
+}
 
-```
-auto colorProfiles = pipeline.getStreamProfileList( OB_SENSOR_COLOR );
-```
+if(depthProfileList->count() > 0) {
+    std::shared_ptr<ob::StreamProfile> depthProfile;
+    try {
+        // Select the profile with the same frame rate as color.
+        if(colorProfile) {
+            depthProfile = depthProfileList->getVideoStreamProfile(OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_ANY, colorProfile->fps());
+        }
+    }
+    catch(...) {
+        depthProfile = nullptr;
+    }
 
-Then select the profile of the stream we need through the profile list of the color stream obtained above.
-
-```
-//Set the item of interest through the interface, and return the first Profile corresponding to the Profile list
-auto colorProfile = colorProfiles->getVideoStreamProfile(640, 480, OB_FORMAT_YUYV);
-if(!colorProfile) {
-  colorProfile = colorProfiles->getVideoStreamProfile(640, 480, OB_FORMAT_I420);
-  if(!colorProfile)
-      colorProfile = colorProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
+    if(!depthProfile) {
+        // If no matching profile is found, select the default profile.
+        depthProfile = depthProfileList->getProfile(OB_PROFILE_DEFAULT);
+    }
+    config->enableStream(depthProfile);
 }
 ```
 
-According to the method of setting the profile of the color stream above, set the profile of the depth stream in the same way.
-
-```
-//Get all stream profiles of the depth camera, including stream resolution, frame rate, and frame format
-auto depthProfiles = pipeline.getStreamProfileList(OB_SENSOR_DEPTH);
-//Set the item of interest through the interface, and return the first Profile corresponding to the Profile list
-auto depthProfile = depthProfiles->getVideoStreamProfile(640, 480, OB_FORMAT_Y16);
-if(!depthProfile) {
-    depthProfile = depthProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
-}
-```
-
-By creating Config to configure which streams to be enabled or disabled in Pipeline, color stream and depth stream will be enabled here.
-
-```
-  std::shared_ptr< ob::Config > config = std::make_shared< ob::Config >();
-  config->enableStream( colorProfile );
-  config->enableStream( depthProfile );
-```
-
-D2C alignment need to be turned on when generating RGBD point cloud
-
-```
-//Enable D2C alignment, which needs to be enabled when generating RGBD point clouds
+Enable D2C alignment to generate RGBD point clouds
+```cpp
 config->setAlignMode(ALIGN_D2C_HW_MODE);
 ```
 
-Create a point cloud Filter object and set camera internal parameters
-
+Start Pipeline
+```cpp
+pipeline.start( config );
 ```
-// Create a point cloud Filter object (when the point cloud Filter is created, the device parameters will be obtained inside the Pipeline, so try to configure the device before the Filter is created)
+
+Create a point cloud Filter object and set camera intrinsic parameters
+```cpp
+// Create a point cloud filter object (when creating a point cloud filter, device parameters are obtained within the Pipeline, so it is recommended to configure the device as much as possible before creating the filter)
 ob::PointCloudFilter pointCloud;
 
-//Get the camera internal parameters and pass them into the point cloud Filter
+// Get camera internal parameters and input them into the point cloud filter
 auto cameraParam = pipeline.getCameraParam();
 pointCloud.setCameraParam(cameraParam);
 ```
 
-Start Pipeline
-
-```
-pipeline.start( config );
-```
-
-Set up some operation tips
-
-```
+Set some operation prompts
+```cpp
  std::cout << "Press R to create rgbd pointCloud and save to ply file! " << std::endl;
  std::cout << "Press d to create depth pointCloud and save to ply file! " << std::endl;
  std::cout << "Press ESC to exit! " << std::endl;
 ```
-
-Set the main process to obtain and save point cloud data through the point cloud Filter object created above.
-
-```
+Set the main process to get and save point cloud data through the point cloud Filter object created above
+```cpp
 if(key == 'R' || key == 'r') {
   count = 0;
-  //Limit up to 10 repetitions
+  // Limit up to 10 repetitions
   while(count++ < 10) {
-    //Waiting for one frame, the timeout is 100ms
+    // Waiting for one frame of data with a timeout of 100ms
     auto frameset = pipeline.waitForFrames(100);
     if(frameset != nullptr && frameset->depthFrame() != nullptr && frameset->colorFrame() != nullptr) {
       try {
-        //Generate color point cloud and save
+        // Generate colored point clouds and save them
         std::cout << "Save RGBD PointCloud ply file..." << std::endl;
         pointCloud.setCreatePointFormat(OB_FORMAT_RGB_POINT);
         std::shared_ptr<ob::Frame> frame = pointCloud.process(frameset);
@@ -2218,13 +2232,13 @@ if(key == 'R' || key == 'r') {
 }
 else if(key == 'D' || key == 'd') {
   count = 0;
-  //Limit up to 10 repetitions
+  // Limit up to 10 repetitions
   while(count++ < 10) {
-    //Waiting for one frame, the timeout is 100ms
+    // Waiting for one frame of data with a timeout of 100ms
     auto frameset = pipeline.waitForFrames(100);
     if(frameset != nullptr && frameset->depthFrame() != nullptr) {
       try {
-        //Generate point cloud and save
+        // Generate point cloud and save
         std::cout << "Save Depth PointCloud to ply file..." << std::endl;
         pointCloud.setCreatePointFormat(OB_FORMAT_POINT);
         std::shared_ptr<ob::Frame> frame = pointCloud.process(frameset);
@@ -2238,26 +2252,22 @@ else if(key == 'D' || key == 'd') {
     }
   }
 }
-```
-
-Finally, stop the stream through the Pipeline.
 
 ```
-pipeline.stop();
+Finally, stop the stream through the Pipeline
+```cpp
+ pipeline.stop();
 ```
-
-Resources will be released after the program exits normally.
+After the program exits normally, resources will be released
 
 ## SaveToDisk
 
-Function description: Connect the device to open the stream, get the color and depth map and save as png format.
+Function description: Connect the device to open the stream, get color and depth maps, and store them in PNG format
+> This example is based on the C++High Level API for demonstration
 
-> This example is based on C++ high Level API for demonstration.
-
-Create two functions to save the acquired picture to a file.
-
-```
-//Save the depth image in png format.
+Create two functions to save the obtained image to a file
+```cpp
+// Save depth map in PNG format
 void saveDepth( std::shared_ptr< ob::DepthFrame > depthFrame ) {
     std::vector< int > compression_params;
     compression_params.push_back( cv::IMWRITE_PNG_COMPRESSION );
@@ -2270,7 +2280,7 @@ void saveDepth( std::shared_ptr< ob::DepthFrame > depthFrame ) {
     std::cout << "Depth saved:" << depthName << std::endl;
 }
 
-//Save the color image in png format.
+// Save color images in PNG format
 void saveColor( std::shared_ptr< ob::ColorFrame > colorFrame ) {
     std::vector< int > compression_params;
     compression_params.push_back( cv::IMWRITE_PNG_COMPRESSION );
@@ -2284,160 +2294,115 @@ void saveColor( std::shared_ptr< ob::ColorFrame > colorFrame ) {
     std::cout << "Color saved:" << colorName << std::endl;
 }
 ```
-
-Create a Pipeline, through Pipelie, you can easily open and close multiple types of streams and obtain a set of frame data.
-
-```
+Create a pipeline that makes it easy to open and close multiple types of streams and get a set of frame data
+```cpp
 ob::Pipeline pipeline;
 ```
-
-Then we can get all the profile of the color stream through the Pipeline, including the resolution of the stream, the frame rate, and the format of the stream.
-
-```
-auto colorProfiles = pipeline.getStreamProfileList( OB_SENSOR_COLOR );
-```
-
-Then select the profile of the stream, we need to get the profile list of the color stream obtained above.
-
-```
-//Set the item of interest through the interface, and return the first Profile corresponding to the Profile list
-auto colorProfile = colorProfiles->getVideoStreamProfile(640, 480, OB_FORMAT_MJPG, 30);
-if(!colorProfile){
-  colorProfile = colorProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
-}
-```
-
-Configure the depth stream in the same way as getting the color stream configuration
-
+Then, all configurations of color and depth streams can be obtained through the Pipeline, including the resolution, frame rate, and format of the stream, as well as the required color and depth stream configurations
 ```cpp
-//Get all stream profiles of the depth camera, including stream resolution, frame rate, and frame format
-auto depthProfiles = pipeline.getStreamProfileList(OB_SENSOR_DEPTH);
-
-//Set the item of interest through the interface, and return the first Profile corresponding to the Profile list
-auto depthProfile = depthProfiles->getVideoStreamProfile(640, 480, OB_FORMAT_Y16, 30);
-if(!depthProfile){
-    depthProfile = depthProfiles->getProfile(OB_PROFILE_DEFAULT)->as<ob::VideoStreamProfile>();
+try {
+    // Get all stream profiles of the color camera, including stream resolution, frame rate, and frame format
+    auto                                    colorProfiles = pipeline.getStreamProfileList(OB_SENSOR_COLOR);
+    std::shared_ptr<ob::VideoStreamProfile> colorProfile  = nullptr;
+    if(colorProfiles) {
+        colorProfile = std::const_pointer_cast<ob::StreamProfile>(colorProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+    }
+    config->enableStream(colorProfile);
 }
-```
+catch(ob::Error &e) {
+    // no Color Sensor
+    colorCount = -1;
+    std::cerr << "Current device is not support color sensor!" << std::endl;
+}
 
-Configure the stream we want to open by creating Config.
-
+// Get all stream profiles of the depth camera, including stream resolution, frame rate, and frame format
+auto                                    depthProfiles = pipeline.getStreamProfileList(OB_SENSOR_DEPTH);
+std::shared_ptr<ob::VideoStreamProfile> depthProfile  = nullptr;
+if(depthProfiles) {
+    depthProfile = std::const_pointer_cast<ob::StreamProfile>(depthProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+}
+config->enableStream(depthProfile);
 ```
-std::shared_ptr< ob::Config > config = std::make_shared< ob::Config >();
-    config->enableStream( colorProfile );
-    config->enableStream( depthProfile )
-```
-
-Start stream
-
-```
+Enable Stream
+```cpp
 pipeline.start( config );
 ```
-
-Obtain frame data by waiting
-
+Get frame data through waiting
+```cpp
+auto frameset = pipeline.waitForFrames( 100 );
 ```
- auto frameset = pipeline.waitForFrames( 100 );
-```
-
-Get the data of a single type of frame
-
-```
+Get data for a single type of frame
+```cpp
 auto colorFrame = frameset->colorFrame();
 auto depthFrame = frameset->depthFrame();
 ```
-
-Create a format conversion Filter to convert the color image to RGB format and save it
-
+Create a format conversion filter to convert color images to RGB format and save them
 ```cpp
-//Create Format Conversion Filter
+// Create Format Conversion Filter
 ob::FormatConvertFilter formatConverFilter;
 
 formatConverFilter.setFormatConvertType(FORMAT_MJPEG_TO_RGB888);
 colorFrame = formatConverFilter.process(colorFrame)->as<ob::ColorFrame>();
-formatConverFilter.setFormatConvertType(FORMAT_RGB888_TO_BGR);
+formatConverFilter.setFormatConvertType(FORMAT_RGB_TO_BGR);
 colorFrame = formatConverFilter.process(colorFrame)->as<ob::ColorFrame>();
 ```
-
-Store the data through the edited storage function above
-
-```
+Store the obtained data through the storage function edited at the beginning
+```cpp
 saveColor( colorFrame );
 saveDepth( depthFrame );
 ```
-
 Stop Pipeline
-
-```
+```cpp
 pipeline.stop();
 ```
-
-Resources will be released after the program exits normally.
+After the program exits normally, resources will be released
 
 ## Recorder
 
-Function description: Connect the device to open the stream, and record the current video stream to a file.
+Function description: Connect the device to start streaming, record the current video stream to a file, and exit the program with the ESC_KEY key
+> This example is based on the C++High Level API for demonstration
 
-> This example is based on C++ high Level API for demonstration.
-
-First, you need to create a Pipeline, through which you can easily open and close multiple types of streams and obtain a set of frame data.
-
+Firstly, it is necessary to create a pipeline, through which multiple types of streams can be easily opened and closed, and a set of frame data can be obtained
 ```cpp
 ob::Pipeline pipe;
 ```
-
-Obtain the stream profile of the depth camera through the input resolution, format, frame rate and other interesting items.
-
+Get the stream configuration of the depth camera
 ```cpp
-//Get depth stream configuration
-auto profiles     = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
-auto depthProfile = profiles->getVideoStreamProfile(640, 480, OB_FORMAT_Y16);
+depthProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
 ```
-
-Configure which streams the Pipeline wants to enable or disable by creating a Config, where the depth stream will be enabled
-
+Configure which streams to enable or disable in the Pipeline by creating a Configuration, where deep streams will be enabled
 ```cpp
-//Configure the type of stream opened by Pipeline
+// Configure the stream types opened by Pipeline
 std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
 config->enableStream(depthProfile);
 ```
-
-Start the stream configured in Config. If no parameters are passed, the default configuration startup stream will be started, and the recording switch will be enabled.
-
+Start the stream configured in Configuration. If no parameters are passed, the default configuration start stream will be activated, and the recording switch will be activated
 ```cpp
 pipe.start(config);
 pipe.startRecord("./OrbbecPipeline.bag");
 ```
-
-Wait for a frame of data in a blocking manner, which is a composite frame, which contains frame data of all streams enabled in the configuration, and sets the frame's waiting timeout time.
-
+Wait for a frame of data in a blocking manner, which is a composite frame containing frame data for all streams enabled in the configuration, and set the waiting timeout time for the frame
+```cpp
+auto frameSet = pipe.waitForFrames(100);	// Set the waiting time to 100ms
 ```
-auto frameSet = pipe.waitForFrames(100);	//Set the wait time to 100ms
-```
-
-Stop Pipeline
-
+Stop Pipeline, no more frame data will be generated
 ```cpp
 pipe.stop();
 ```
-
-Resources will be released after the program exits normally.
-
+After the program exits normally, resources will be released
 ## Playback
 
-Function description: Connect the device to open the stream, and load the video file for playback.
+Function description: Connect the device to start streaming, load video files for playback, and exit the program with the ESC_KEY key
+> This example is based on the C++High Level API for demonstration
 
-> This example is based on C++ high Level API for demonstration.
-
+Firstly, you need to create a Pipeline for playing back files
 ```cpp
-//Create a pipeline object for playback
+// Create a pipeline object for playback
 ob::Pipeline pipe("./OrbbecPipeline.bag");
 ```
-
-Get the playback status callback of the playback object
-
+Retrieve the playback status callback of the playback object
 ```cpp
-//Get playback object set playback status callback
+// Get playback object, set playback status callback
 auto playback = pipe.getPlayback();
 playback->setPlaybackStateCallback([&](OBMediaState state) {
     if(state == OB_MEDIA_BEGIN) {
@@ -2448,38 +2413,740 @@ playback->setPlaybackStateCallback([&](OBMediaState state) {
     }
 });
 ```
-
-Read device information and internal parameter information from playback files
-
+Reading device information and internal parameter information from playback files
 ```cpp
-//Read device information from playback file
+// Reading device information from playback files
 auto deviceInfo = playback->getDeviceInfo();
 std::cout << "======================DeviceInfo: name : " << deviceInfo->name() << " sn: " << deviceInfo->serialNumber()
   << " firmware: " << deviceInfo->firmwareVersion() << " vid: " << deviceInfo->vid() << " pid: " << deviceInfo->pid() << std::endl;
 
-//Read internal parameter information from playback file
+// Reading internal parameter information from playback files
 auto cameraParam = pipe.getCameraParam();
 std::cout << "======================Camera params : rgb width:" << cameraParam.rgbIntrinsic.width << " rgb height: " << cameraParam.rgbIntrinsic.height
               << " depth width: " << cameraParam.depthIntrinsic.width << " depth height: " << cameraParam.rgbIntrinsic.height << std::endl;
 ```
-
-Start playback
-
+Enable playback
 ```cpp
-//Start playback
+//Enable playback
 pipe.start(NULL);
 ```
-
-Wait for a frame of data in a blocking manner, which is a composite frame, which contains frame data of all streams enabled in the configuration, and sets the frame's waiting timeout time.
-
+Wait for a frame of data in a blocking manner, which is a composite frame containing frame data for all streams enabled in the configuration, and set the waiting timeout time for the frame
+```cpp
+auto frameSet = pipe.waitForFrames(100);	// Set the waiting time to 100ms
 ```
-auto frameSet = pipe.waitForFrames(100);	//Set the wait time to 100ms
+Stop Pipeline, no more frame data will be generated
+```cpp
+pipe.stop();
+```
+After the program exits normally, resources will be released
+
+## DepthUnitControl
+
+Function description: Demonstrate the operation of obtaining depth accuracy, display depth images, output depth accuracy, and exit the program through the ESC_KEY key
+
+>This example is based on the C++High Level API for demonstration
+
+Create a pipeline and stream configuration, and get devices through the pipeline
+```cpp
+// Create a pipeline with default device
+ob::Pipeline pipe;
+
+// Get the device inside the pipeline
+auto device = pipe.getDevice();
 ```
 
-Stop Pipeline
+Check the way to get depth accuracy
+```cpp
+bool changeDepthUnitFlag = false;
+// check the way to adjust depth unit
+if(device->isPropertySupported(OB_PROP_DEPTH_PRECISION_LEVEL_INT, OB_PERMISSION_READ_WRITE)) {
+    // change depth unit by adjust the depth precision level
+    changeDepthUnitFlag = changeDepthUnit(device);
+}
+else if(device->isPropertySupported(OB_PROP_DEPTH_UNIT_FLEXIBLE_ADJUSTMENT_FLOAT, OB_PERMISSION_READ_WRITE)) {
+    // for some models (Such as G300 series), user can adjust the depth unit by adjusting the depth unit flexible adjustment property
+    changeDepthUnitFlag = changeDepthUnitFlexible(device);
+}
+else {
+    std::cout << "Current device not support adjust depth unit, use the default depth unit 1mm" << std::endl;
+    changeDepthUnitFlag = true;
+}
+```
 
+Calculate depth value
+```cpp
+// For Y16 format depth frame, print the distance of the center pixel every 30 frames
+if(depthFrame->index() % 30 == 0 && depthFrame->format() == OB_FORMAT_Y16) {
+    // Convert depth values to 1mm precision
+    auto rstImageData = convertDepthFrameUnitTo1mm(depthFrame);
+
+    uint32_t  width          = depthFrame->width();
+    uint32_t  height         = depthFrame->height();
+    uint16_t  centerDistance = rstImageData.data()[width * height / 2 + width / 2];
+
+    // Attention: if the distance is 0, it means that the depth camera cannot detect the object（may be out of detection range）
+    std::cout << "The depth frame center value is " << centerDistance << " mm. " << std::endl;
+}
+```
+
+Release resources and exit the program
+```cpp
+    pipe.stop();
+```
+
+## HdrMerge
+
+Supported devices: G300 series cameras, such as Gemini G335
+
+Function description: Demonstrate using HDR operation, display HDR processed images, and exit the program with ESC_KEY key
+
+>This example is based on the C++High Level API for demonstration
+
+Create a pipeline and configure the stream
+```cpp
+// Create a pipeline with default device
+ob::Pipeline pipe;
+
+// Configure which streams to enable or disable for the Pipeline by creating a Config
+std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
+
+std::shared_ptr<ob::VideoStreamProfile> irProfile = nullptr;
+try {
+    // Get all stream profiles of the ir camera, including stream resolution, frame rate, and frame format
+    auto irProfiles = pipe.getStreamProfileList(OB_SENSOR_IR_LEFT);
+    if(irProfiles) {
+        irProfile = std::const_pointer_cast<ob::StreamProfile>(irProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+    }
+    config->enableStream(irProfile);
+}
+catch(...) {
+    std::cerr << "Current device is not support ir sensor!" << std::endl;
+    exit(EXIT_FAILURE);
+}
+
+// Get all stream profiles of the depth camera, including stream resolution, frame rate, and frame format
+auto                                    depthProfiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
+std::shared_ptr<ob::VideoStreamProfile> depthProfile  = nullptr;
+if(depthProfiles) {
+    depthProfile = std::const_pointer_cast<ob::StreamProfile>(depthProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+}
+config->enableStream(depthProfile);
+```
+
+Open HDR processing
+```cpp
+// Create Hdrmerge post processor
+ob::HdrMerge hdrMerge;
+
+// Open hdr merge
+if(pipe.getDevice()->isPropertySupported(OB_STRUCT_DEPTH_HDR_CONFIG, OB_PERMISSION_READ_WRITE)) {
+    // Get depth exposure value range,the exposure_1 and exposure_2 in OBHdrConfig can be adjusted.
+    OBIntPropertyRange depthExpRange = pipe.getDevice()->getIntPropertyRange(OB_PROP_DEPTH_EXPOSURE_INT);
+    // Get depth gain value range,,the gain_1 and gain_1 in OBHdrConfig can be adjusted.
+    OBIntPropertyRange depthGainRange = pipe.getDevice()->getIntPropertyRange(OB_PROP_DEPTH_GAIN_INT);
+
+    OBHdrConfig obHdrConfig;
+    uint32_t    dataSize = sizeof(OBHdrConfig);
+    pipe.getDevice()->getStructuredData(OB_STRUCT_DEPTH_HDR_CONFIG, &obHdrConfig, &dataSize);
+    // open hdr
+    obHdrConfig.enable = true;
+
+    pipe.getDevice()->setStructuredData(OB_STRUCT_DEPTH_HDR_CONFIG, &obHdrConfig, sizeof(OBHdrConfig));
+}
+```
+
+Open pipeline
+```cpp
+pipe.start(config);
+```
+
+Get HDR processed images
+```cpp
+auto leftIRFrame = frameSet->getFrame(OB_FRAME_IR_LEFT);
+if(leftIRFrame) {
+    framesForRender.push_back(leftIRFrame);
+}
+
+auto depthFrame = frameSet->depthFrame();
+if(depthFrame != nullptr) {
+    auto newFrame = hdrMerge.process(frameSet);
+    auto newFrameSet = newFrame->as<ob::FrameSet>();
+    if(newFrameSet) {
+        depthFrame = newFrameSet->depthFrame();
+        if(depthFrame) {
+            framesForRender.push_back(depthFrame);
+        }
+    }
+}
+```
+
+Close pipeline
 ```cpp
 pipe.stop();
 ```
 
-Resources will be released after the program exits normally.
+Turn off HDR processing
+```cpp
+if(pipe.getDevice()->isPropertySupported(OB_STRUCT_DEPTH_HDR_CONFIG, OB_PERMISSION_READ_WRITE)) {
+    OBHdrConfig obHdrConfig;
+    uint32_t    dataSize = sizeof(OBHdrConfig);
+    pipe.getDevice()->getStructuredData(OB_STRUCT_DEPTH_HDR_CONFIG, &obHdrConfig, &dataSize);
+    obHdrConfig.enable = false;
+    pipe.getDevice()->setStructuredData(OB_STRUCT_DEPTH_HDR_CONFIG, &obHdrConfig, sizeof(OBHdrConfig));
+}
+```
+
+## DepthWorkMode
+
+Supported devices: G2 series, G300 series cameras, Astra 2 series cameras
+
+Function description: Demonstrate the operation of converting deep working mode
+
+>This example is based on the C++High Level API for demonstration
+
+Create a pipeline to get devic
+```cpp
+// Create a pipeline with default device
+ob::Pipeline pipe;
+
+// Get the device inside the pipeline
+auto device = pipe.getDevice();
+```
+
+Check if work mode conversion is supported
+```cpp
+// Check whether the camera depth working mode is supported, currently (December 5, 2022) only the Gemini2 binocular camera supports the depth working mode
+if(!device->isPropertySupported(OB_STRUCT_CURRENT_DEPTH_ALG_MODE, OB_PERMISSION_READ_WRITE)) {
+    pressKeyExit("Current device not support depth work mode!");
+    return -1;
+}
+```
+
+Get a list of deep work modes
+```cpp
+// Query the current camera depth mode
+auto curDepthMode = device->getCurrentDepthWorkMode();
+// Get the list of camera depth modes
+auto depthModeList = device->getDepthWorkModeList();
+std::cout << "depthModeList size: " << depthModeList->count() << std::endl;
+for(uint32_t i = 0; i < depthModeList->count(); i++) {
+    std::cout << "depthModeList[" << i << "]: " << (*depthModeList)[i];
+    if(strcmp(curDepthMode.name, (*depthModeList)[i].name) == 0) {
+        std::cout << "  (Current WorkMode)";
+    }
+
+    std::cout << std::endl;
+}
+```
+
+Set deep working mode
+```cpp
+// Let the user choose a mode, then switch
+if(depthModeList->count() > 0) {
+    uint32_t index = 0;
+    std::cout << "Please input the index from above depthModeList, newIndex = ";
+    std::cin >> index;
+    if(index >= 0 && index < depthModeList->count()) {  // legitimacy check
+        device->switchDepthWorkMode((*depthModeList)[index].name);
+
+        // Check whether the mode changes after the display is switched
+        curDepthMode = device->getCurrentDepthWorkMode();
+        if(strcmp(curDepthMode.name, (*depthModeList)[index].name) == 0) {
+            std::cout << "Switch depth work mode success! currentDepthMode: " << curDepthMode << std::endl;
+        }
+        else {
+            std::cout << "Switch depth work mode failed!" << std::endl;
+        }
+    }
+    else {
+        std::cout << "switchDepthMode faild. invalid index: " << index << std::endl;
+    }
+}
+```
+
+## DoubleInfraredViewer
+
+Supported devices: OpenNI protocol cameras such as Dabia series, Astra/Astra 2 series, Femto series cameras
+
+Function description: Demonstrate obtaining dual infrared camera images, displaying left and right infrared images, and exiting the program with the ESC_KEY key
+
+>This example is based on the C++High Level API for demonstration
+
+Create a pipeline to get devices
+```cpp
+    ob::Pipeline pipe;
+```
+
+Configure Left IR
+```cpp
+// Get the ir_left camera configuration list
+auto irLeftProfiles = pipe.getStreamProfileList(OB_SENSOR_IR_LEFT);
+
+if(irLeftProfiles == nullptr) {
+    std::cerr
+        << "The obtained IR(Left) resolution list is NULL. For monocular structured light devices, try opening the IR data stream using the IR example. "
+        << std::endl;
+    return 0;
+}
+
+// Open the default profile of IR_LEFT Sensor, which can be configured through the configuration file
+try {
+    auto irLeftProfile = irLeftProfiles->getProfile(OB_PROFILE_DEFAULT);
+    config->enableStream(irLeftProfile->as<ob::VideoStreamProfile>());
+}
+catch(...) {
+    std::cout << "IR(Left) stream not found!" << std::endl;
+}
+```
+
+Configure Right IR
+```cpp
+// Get the ir_right camera configuration list
+auto irRightProfiles = pipe.getStreamProfileList(OB_SENSOR_IR_RIGHT);
+
+// Open the default profile of IR_RIGHT Sensor, which can be configured through the configuration file
+try {
+    auto irRightProfile = irRightProfiles->getProfile(OB_PROFILE_DEFAULT);
+    config->enableStream(irRightProfile->as<ob::VideoStreamProfile>());
+}
+catch(...) {
+    std::cout << "IR(Right) stream not found!" << std::endl;
+}
+```
+
+Open pipeline
+```cpp
+pipe.start(config);
+```
+
+Get frame data
+```cpp
+auto leftFrame  = frameSet->getFrame(OB_FRAME_IR_LEFT);
+auto rightFrame = frameSet->getFrame(OB_FRAME_IR_RIGHT);
+```
+
+Stop pipeline
+```cpp
+pipe.stop();
+```
+
+## InfraredViewer
+Function description: Demonstrate obtaining infrared camera images, displaying infrared images, and exiting the program with the ESC_KEY key
+
+>This example is based on the C++High Level API for demonstration
+
+Create a pipeline and configure stream information
+```cpp
+// Create a pipeline with default device
+ob::Pipeline pipe;
+
+// Get all stream profiles of the infrared camera, including stream resolution, frame rate, and frame format
+// Please adjust the sensor according to the actual product, some device types only have OB_SENSOR_IR_LEFT and OB_SENSOR_IR_RIGHT.
+auto profiles = pipe.getStreamProfileList(OB_SENSOR_IR);
+
+if(profiles == nullptr) {
+    std::cerr
+        << "The obtained IR resolution list is NULL. For binocular structured light devices, try using the doubleIr example to turn on the ir data stream. "
+        << std::endl;
+    return 0;
+}
+
+std::shared_ptr<ob::VideoStreamProfile> irProfile = nullptr;
+try {
+    // Find the corresponding profile according to the specified format, first look for the y16 format
+    irProfile = profiles->getVideoStreamProfile(640, 480, OB_FORMAT_Y8, 30);
+}
+catch(ob::Error &e) {
+    // If the specified format is not found, search for the default profile to open the stream
+    irProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+}
+
+// By creating config to configure which streams to enable or disable for the pipeline, here the infrared stream will be enabled
+std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
+config->enableStream(irProfile);
+```
+
+Enable pipeline
+```cpp
+pipe.start(config);
+```
+
+Get frame data
+```cpp
+auto frameSet = pipe.waitForFrames(100);
+```
+
+Stop pipeline
+```cpp
+pipe.stop();
+```
+
+## ImuReader
+Function description: Demonstration of obtaining IMU data
+
+>This example is based on the C++low level API for demonstration, outputting imu data and exiting the program using the ESC_KEY key
+
+Get device
+```cpp
+// Create a Context.
+ob::Context ctx;
+
+// Query the list of connected devices
+auto devList = ctx.queryDeviceList();
+
+if(devList->deviceCount() == 0) {
+    std::cerr << "Device not found!" << std::endl;
+    return -1;
+}
+
+// Create a device, 0 represents the index of the first device
+auto dev = devList->getDevice(0);
+```
+
+Get gyroscope data
+```cpp
+// Get Gyroscope Sensor
+gyroSensor = dev->getSensorList()->getSensor(OB_SENSOR_GYRO);
+if(gyroSensor) {
+    // Get configuration list
+    auto profiles = gyroSensor->getStreamProfileList();
+    // Select the first profile to open stream
+    auto profile = profiles->getProfile(OB_PROFILE_DEFAULT);
+    gyroSensor->start(profile, [](std::shared_ptr<ob::Frame> frame) {
+        std::unique_lock<std::mutex> lk(printerMutex);
+        auto                         timeStamp = frame->timeStamp();
+        auto                         index     = frame->index();
+        auto                         gyroFrame = frame->as<ob::GyroFrame>();
+        if(gyroFrame != nullptr && (index % 50) == 2) {  //( timeStamp % 500 ) < 2: Reduce printing frequency
+            auto value = gyroFrame->value();
+            std::cout << "Gyro Frame: \n\r{\n\r"
+                        << "  tsp = " << timeStamp << "\n\r"
+                        << "  temperature = " << gyroFrame->temperature() << "\n\r"
+                        << "  gyro.x = " << value.x << " rad/s"
+                        << "\n\r"
+                        << "  gyro.y = " << value.y << " rad/s"
+                        << "\n\r"
+                        << "  gyro.z = " << value.z << " rad/s"
+                        << "\n\r"
+                        << "}\n\r" << std::endl;
+        }
+    });
+}
+```
+
+Get accelerometer
+```cpp
+accelSensor = dev->getSensorList()->getSensor(OB_SENSOR_ACCEL);
+if(accelSensor) {
+    // Get configuration list
+    auto profiles = accelSensor->getStreamProfileList();
+    // Select the first profile to open stream
+    auto profile = profiles->getProfile(OB_PROFILE_DEFAULT);
+    accelSensor->start(profile, [](std::shared_ptr<ob::Frame> frame) {
+        std::unique_lock<std::mutex> lk(printerMutex);
+        auto                         timeStamp  = frame->timeStamp();
+        auto                         index      = frame->index();
+        auto                         accelFrame = frame->as<ob::AccelFrame>();
+        if(accelFrame != nullptr && (index % 50) == 0) {
+            auto value = accelFrame->value();
+            std::cout << "Accel Frame: \n\r{\n\r"
+                        << "  tsp = " << timeStamp << "\n\r"
+                        << "  temperature = " << accelFrame->temperature() << "\n\r"
+                        << "  accel.x = " << value.x << " m/s^2"
+                        << "\n\r"
+                        << "  accel.y = " << value.y << " m/s^2"
+                        << "\n\r"
+                        << "  accel.z = " << value.z << " m/s^2"
+                        << "\n\r"
+                        << "}\n\r" << std::endl;
+        }
+    });
+}
+```
+
+```cpp
+// turn off the stream
+if(gyroSensor) {
+    gyroSensor->stop();
+}
+if(accelSensor) {
+    accelSensor->stop();
+}
+```
+
+## MultiDeviceSync
+Function description: Demonstrate multi device synchronization operation
+
+>This example is based on the C++low level API for demonstration
+
+Configure program
+```cpp
+std::cout << "Please select options: " << std::endl;
+std::cout << " 0 --> config devices" << std::endl;
+std::cout << " 1 --> start stream" << std::endl;
+std::cout << "input: ";
+int index = -1;
+std::cin >> index;
+```
+
+Configure multi device synchronization
+```cpp
+exitValue = configMultiDeviceSync();
+```
+
+Distinguishing master-slave devices
+```cpp
+streamDevList.clear();
+// Query the list of connected devices
+auto devList = context.queryDeviceList();
+
+// Get the number of connected devices
+int devCount = devList->deviceCount();
+for(int i = 0; i < devCount; i++) {
+    streamDevList.push_back(devList->getDevice(i));
+}
+
+if(streamDevList.empty()) {
+    std::cerr << "Device list is empty. please check device connection state" << std::endl;
+    return -1;
+}
+
+// traverse the device list and create the device
+std::vector<std::shared_ptr<ob::Device>> primary_devices;
+std::vector<std::shared_ptr<ob::Device>> secondary_devices;
+for(auto dev: streamDevList) {
+    auto config = dev->getMultiDeviceSyncConfig();
+    if(config.syncMode == OB_MULTI_DEVICE_SYNC_MODE_PRIMARY) {
+        primary_devices.push_back(dev);
+    }
+    else {
+        secondary_devices.push_back(dev);
+    }
+}
+```
+
+Enable slave devices
+```cpp
+std::cout << "Secondary devices start..." << std::endl;
+int deviceIndex = 0;  // Sencondary device display first
+for(auto itr = secondary_devices.begin(); itr != secondary_devices.end(); itr++) {
+    auto depthHolder = createPipelineHolder(*itr, OB_SENSOR_DEPTH, deviceIndex);
+    pipelineHolderList.push_back(depthHolder);
+    startStream(depthHolder);
+
+    auto colorHolder = createPipelineHolder(*itr, OB_SENSOR_COLOR, deviceIndex);
+    pipelineHolderList.push_back(colorHolder);
+    startStream(colorHolder);
+
+    deviceIndex++;
+}
+```
+
+Turn on the main device
+```cpp
+std::cout << "Primary device start..." << std::endl;
+deviceIndex = secondary_devices.size();  // Primary device display after primary devices.
+for(auto itr = primary_devices.begin(); itr != primary_devices.end(); itr++) {
+    auto depthHolder = createPipelineHolder(*itr, OB_SENSOR_DEPTH, deviceIndex);
+    startStream(depthHolder);
+    pipelineHolderList.push_back(depthHolder);
+
+    auto colorHolder = createPipelineHolder(*itr, OB_SENSOR_COLOR, deviceIndex);
+    startStream(colorHolder);
+    pipelineHolderList.push_back(colorHolder);
+
+    deviceIndex++;
+}
+```
+
+Set the synchronization interval time for multiple device
+```cpp
+// Start the multi-device time synchronization function
+context.enableDeviceClockSync(3600000);  // update and sync every hour
+```
+
+Conduct multi device testing
+```cpp
+testMultiDeviceSync();
+```
+
+Close data stream
+```cpp
+// close data stream
+for(auto itr = pipelineHolderList.begin(); itr != pipelineHolderList.end(); itr++) {
+    stopStream(*itr);
+}
+```
+
+## PostProcessing
+
+Supported devices: G300 series cameras, such as Gemini G335
+
+Function description: Demonstrate post-processing operations, display post-processed images, and exit the program using the ESC_KEY key
+
+>This example is based on the C++High Level API for demonstration
+
+Get the pipeline and configure the stream
+```cpp
+// Create a pipeline with default device
+ob::Pipeline pipe;
+
+// Get all stream profiles of the depth camera, including stream resolution, frame rate, and frame format
+auto profiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
+
+std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
+try {
+    // Find the corresponding profile according to the specified format, first look for the y16 format
+    depthProfile = profiles->getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30);
+}
+catch(ob::Error &e) {
+    // If the specified format is not found, search for the default profile to open the stream
+    depthProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+}
+
+// By creating config to configure which streams to enable or disable for the pipeline, here the depth stream will be enabled
+std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
+config->enableStream(depthProfile);
+```
+
+Get a list of deep post-processing filters
+```cpp
+auto obFilterList = pipe.getDevice()->getSensor(OB_SENSOR_DEPTH)->getRecommendedFilters();
+
+std::shared_ptr<ob::DecimationFilter> decFilter;
+for(int i = 0; i < obFilterList->count(); i++) {
+    auto postProcessorfilter =obFilterList->getFilter(i);
+    std::cout << "Depth recommended post processor filter type: " << postProcessorfilter->type() << std::endl;
+    if(postProcessorfilter->is<ob::DecimationFilter>()) {
+        decFilter = postProcessorfilter->as<ob::DecimationFilter>();
+    }
+}
+```
+
+Open pipeline
+```cpp
+pipe.start(config);
+```
+
+
+## SensorControl
+
+Function description: Demonstrate sensor control operations
+
+>This example is based on the C++low level API for demonstration
+
+Get device list
+```cpp
+// Create a Context.
+ob::Context context;
+
+// Query the list of connected devices
+auto deviceList = context.queryDeviceList();
+```
+
+Get device and output device information
+```cpp
+if(deviceList->deviceCount() > 0) {
+    if(deviceList->deviceCount() <= 1) {
+        // If a single device is plugged in, the first one is selected by default
+        device = deviceList->getDevice(0);
+    }
+    else {
+        device = selectDevice(deviceList);
+    }
+    auto deviceInfo = device->getDeviceInfo();
+    std::cout << "\n------------------------------------------------------------------------\n";
+    std::cout << "Current Device: "
+                << " name: " << deviceInfo->name() << ", vid: 0x" << std::hex << deviceInfo->vid() << ", pid: 0x" << std::setw(4) << std::setfill('0')
+                << deviceInfo->pid() << ", uid: 0x" << deviceInfo->uid() << std::dec << std::endl;
+}
+```
+
+Follow the prompts to get all properties
+```cpp
+std::cout << "Input \"?\" to get all properties." << std::endl;
+std::getline(std::cin, choice);
+```
+
+Input parameter prompt
+```cpp
+std::cout << "Property control usage: [property index] [set] [property value] or [property index] [get]" << std::endl;
+```
+
+Get property
+```cpp
+getPropertyValue(device, propertyItem);
+```
+
+Set property
+```cpp
+setPropertyValue(device, propertyItem, controlVec.at(2));
+```
+
+
+## AlignFilterViewer
+
+Supported devices: G300 series cameras, such as Gemini G335
+
+Function description: Demonstrate the synchronization and alignment of sensor data streams, display the aligned image, and exit the program using the ESC_KEY key
+
+>This example is based on the C++high level API for demonstration
+
+Create pipeline
+```cpp
+ob::Pipeline pipe;
+```
+
+Enable color stream
+```cpp
+auto colorProfiles = pipe.getStreamProfileList(OB_SENSOR_COLOR);
+if(colorProfiles) {
+    colorProfile = colorProfiles->getVideoStreamProfile(1280, OB_HEIGHT_ANY, OB_FORMAT_RGB, 30);
+}
+config->enableStream(colorProfile);
+```
+
+Enable deep stream
+```cpp
+auto                                    depthProfiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
+std::shared_ptr<ob::VideoStreamProfile> depthProfile  = nullptr;
+if(depthProfiles) {
+depthProfile = depthProfiles->getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30);
+//depthProfile = std::const_pointer_cast<ob::StreamProfile>(depthProfiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
+}
+config->enableStream(depthProfile);
+```
+
+Set alignment mode
+```cpp
+/* Config depth align to color or color align to depth.
+OBStreamType align_to_stream = OB_STREAM_DEPTH; */
+OBStreamType align_to_stream = OB_STREAM_COLOR;
+ob::Align align(align_to_stream);
+```
+
+Open pipeline
+```cpp
+pipe.start(config);
+```
+
+Get frame data
+```cpp
+auto colorFrame = frameSet->colorFrame();
+auto depthFrame = frameSet->depthFrame();
+```
+
+Perform alignment processing
+```cpp
+aif(align_to_stream == OB_STREAM_COLOR) {
+    app.resize(colorFrame->width(), colorFrame->height());
+}
+else {
+    app.resize(depthFrame->width(), depthFrame->height());
+}
+```
+
+Close pipeline
+```cpp
+pipe.stop();
+```
