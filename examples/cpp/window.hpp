@@ -7,24 +7,9 @@
 #include <thread>
 #include <mutex>
 #include <condition_variable>
+#include <cmath>
 
 #define ESC_KEY 27
-
-// Quickly take the reciprocal of the square root
-float Q_rsqrt(float number) {
-    long        i;
-    float       x2, y;
-    const float threehalfs = 1.5F;
-
-    x2 = number * 0.5F;
-    y  = number;
-    i  = *(long *)&y;
-    i  = 0x5f3759df - (i >> 1);
-    y  = *(float *)&i;
-    y  = y * (threehalfs - (x2 * y * y));
-
-    return y;
-}
 
 typedef enum {
     RENDER_SINGLE,      // only render the first frame in the array
@@ -196,9 +181,20 @@ private:
                         cv::Mat rawMat(videoFrame->height(), videoFrame->width(), CV_8UC3, videoFrame->data());
                         cv::cvtColor(rawMat, rstMat, cv::COLOR_RGB2BGR);
                     } break;
+                    case OB_FORMAT_RGBA: {
+                        cv::Mat rawMat(videoFrame->height(), videoFrame->width(), CV_8UC4, videoFrame->data());
+                        cv::cvtColor(rawMat, rstMat, cv::COLOR_RGBA2BGRA);
+                    } break;
+                    case OB_FORMAT_BGRA: {
+                        rstMat = cv::Mat(videoFrame->height(), videoFrame->width(), CV_8UC4, videoFrame->data());
+                    } break;
                     case OB_FORMAT_UYVY: {
                         cv::Mat rawMat(videoFrame->height(), videoFrame->width(), CV_8UC2, videoFrame->data());
                         cv::cvtColor(rawMat, rstMat, cv::COLOR_YUV2BGR_UYVY);
+                    } break;
+                    case OB_FORMAT_I420: {
+                        cv::Mat rawMat(videoFrame->height() * 3 / 2, videoFrame->width(), CV_8UC1, videoFrame->data());
+                        cv::cvtColor(rawMat, rstMat, cv::COLOR_YUV2BGR_I420);
                     } break;
                     default:
                         break;
@@ -209,7 +205,7 @@ private:
                 }
                 else if(frame->type() == OB_FRAME_DEPTH) {
                     auto videoFrame = frame->as<ob::VideoFrame>();
-                    if(videoFrame->format() == OB_FORMAT_Y16) {
+                    if(videoFrame->format() == OB_FORMAT_Y16 || videoFrame->format() == OB_FORMAT_Z16) {
                         cv::Mat cvtMat;
                         cv::Mat rawMat = cv::Mat(videoFrame->height(), videoFrame->width(), CV_16UC1, videoFrame->data());
                         // depth frame pixel value multiply scale to get distance in millimeter
@@ -253,12 +249,14 @@ private:
                     auto        value      = accelFrame->value();
                     std::string str        = "Accel:";
                     cv::putText(imuMat, str.c_str(), cv::Point(8, 60), cv::FONT_HERSHEY_DUPLEX, 0.6, cv::Scalar(255, 255, 255), 0.5, cv::LINE_AA);
-                    str = std::string(" x=") + std::to_string(value.x) + "m/s^2";
+                    str = std::string(" timestamp=") + std::to_string(accelFrame->timeStampUs()) + "us";
                     cv::putText(imuMat, str.c_str(), cv::Point(8, 120), cv::FONT_HERSHEY_DUPLEX, 0.6, cv::Scalar(255, 255, 255), 0.5, cv::LINE_AA);
-                    str = std::string(" y=") + std::to_string(value.y) + "m/s^2";
+                    str = std::string(" x=") + std::to_string(value.x) + "m/s^2";
                     cv::putText(imuMat, str.c_str(), cv::Point(8, 180), cv::FONT_HERSHEY_DUPLEX, 0.6, cv::Scalar(255, 255, 255), 0.5, cv::LINE_AA);
-                    str = std::string(" z=") + std::to_string(value.z) + "m/s^2";
+                    str = std::string(" y=") + std::to_string(value.y) + "m/s^2";
                     cv::putText(imuMat, str.c_str(), cv::Point(8, 240), cv::FONT_HERSHEY_DUPLEX, 0.6, cv::Scalar(255, 255, 255), 0.5, cv::LINE_AA);
+                    str = std::string(" z=") + std::to_string(value.z) + "m/s^2";
+                    cv::putText(imuMat, str.c_str(), cv::Point(8, 300), cv::FONT_HERSHEY_DUPLEX, 0.6, cv::Scalar(255, 255, 255), 0.5, cv::LINE_AA);
                     continue;
                 }
                 else if(frame->type() == OB_FRAME_GYRO) {
@@ -268,13 +266,15 @@ private:
                     auto        gyroFrame = frame->as<ob::GyroFrame>();
                     auto        value     = gyroFrame->value();
                     std::string str       = "Gyro:";
-                    cv::putText(imuMat, str.c_str(), cv::Point(8, 300), cv::FONT_HERSHEY_DUPLEX, 0.6, cv::Scalar(255, 255, 255), 0.5, cv::LINE_AA);
-                    str = std::string(" x=") + std::to_string(value.x) + "rad/s";
                     cv::putText(imuMat, str.c_str(), cv::Point(8, 360), cv::FONT_HERSHEY_DUPLEX, 0.6, cv::Scalar(255, 255, 255), 0.5, cv::LINE_AA);
-                    str = std::string(" y=") + std::to_string(value.y) + "rad/s";
+                    str = std::string(" timestamp=") + std::to_string(gyroFrame->timeStampUs()) + "us";
                     cv::putText(imuMat, str.c_str(), cv::Point(8, 420), cv::FONT_HERSHEY_DUPLEX, 0.6, cv::Scalar(255, 255, 255), 0.5, cv::LINE_AA);
-                    str = std::string(" z=") + std::to_string(value.z) + "rad/s";
+                    str = std::string(" x=") + std::to_string(value.x) + "rad/s";
                     cv::putText(imuMat, str.c_str(), cv::Point(8, 480), cv::FONT_HERSHEY_DUPLEX, 0.6, cv::Scalar(255, 255, 255), 0.5, cv::LINE_AA);
+                    str = std::string(" y=") + std::to_string(value.y) + "rad/s";
+                    cv::putText(imuMat, str.c_str(), cv::Point(8, 540), cv::FONT_HERSHEY_DUPLEX, 0.6, cv::Scalar(255, 255, 255), 0.5, cv::LINE_AA);
+                    str = std::string(" z=") + std::to_string(value.z) + "rad/s";
+                    cv::putText(imuMat, str.c_str(), cv::Point(8, 600), cv::FONT_HERSHEY_DUPLEX, 0.6, cv::Scalar(255, 255, 255), 0.5, cv::LINE_AA);
                     continue;
                 }
                 if(!rstMat.empty()) {
@@ -377,42 +377,43 @@ private:
                     cv::imshow(name_, renderMat_);
                 }
                 else if(renderType_ == RENDER_GRID) {
-                    int   count = mats.size();
-                    float sq    = 1.0f / Q_rsqrt(count);
-                    int   isq   = (int)sq;
-                    int   cols  = (sq - isq < 0.01f) ? isq : isq + 1;
-                    float div   = (float)count / (float)cols;
-                    int   idiv  = (int)div;
-                    int   rows  = (div - idiv < 0.01f) ? idiv : idiv + 1;
-                    for(int i = 0; i < rows; i++) {
-                        cv::Mat lineMat;
-                        for(int j = 0; j < cols; j++) {
-                            cv::Mat mat;
-                            cv::Mat resizeMat;
-                            int     index = i * cols + j;
-                            if(index < count) {
-                                mat = mats[index];
-                            }
-                            else {
-                                mat = cv::Mat::zeros(width_ / cols, height_ / rows, CV_8UC3);
-                            }
+                    int count = mats.size();
+                    if(count == 0) {
+                        std::cerr << "Error: No input images." << std::endl;
+                        return;  // No input images
+                    }
 
-                            cv::resize(mat, resizeMat, cv::Size(width_ / cols, height_ / rows));
-                            if(lineMat.dims > 0 && lineMat.cols > 0 && lineMat.rows > 0) {
-                                cv::hconcat(lineMat, resizeMat, lineMat);
-                            }
-                            else {
-                                lineMat = resizeMat;
-                            }
-                        }
-
-                        if(renderMat_.dims > 0 && renderMat_.rows > 0 && renderMat_.cols > 0) {
-                            cv::vconcat(renderMat_, lineMat, renderMat_);
-                        }
-                        else {
-                            renderMat_ = lineMat;
+                    int idealSide = std::sqrt(count);
+                    int rows      = idealSide;
+                    int cols      = idealSide;
+                    while(rows * cols < count) {  // find the best row and column count
+                        cols++;
+                        if(rows * cols < count) {
+                            rows++;
                         }
                     }
+
+                    std::vector<cv::Mat> gridImages;  // store all images in grid
+
+                    for(int i = 0; i < rows; i++) {
+                        std::vector<cv::Mat> rowImages;  // store images in the same row
+                        for(int j = 0; j < cols; j++) {
+                            int     index = i * cols + j;
+                            cv::Mat resizeMat;
+                            if(index < count) {
+                                cv::resize(mats[index], resizeMat, cv::Size(width_ / cols, height_ / rows));
+                            }
+                            else {
+                                resizeMat = cv::Mat::zeros(height_ / rows, width_ / cols, CV_8UC3);  // fill with black
+                            }
+                            rowImages.push_back(resizeMat);
+                        }
+                        cv::Mat lineMat;
+                        cv::hconcat(rowImages, lineMat);  // horizontal concat all images in the same row
+                        gridImages.push_back(lineMat);
+                    }
+
+                    cv::vconcat(gridImages, renderMat_);  // vertical concat all images in the grid
                 }
                 else if(renderType_ == RENDER_OVERLAY && mats.size() >= 2) {
                     cv::Mat overlayMat;

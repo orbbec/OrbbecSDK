@@ -6,6 +6,7 @@
 #include <thread>
 #include <mutex>
 #include <condition_variable>
+#include <cmath>
 
 #ifdef __cpluscplus
 extern "C" {
@@ -16,22 +17,6 @@ extern "C" {
 #endif
 
 #define ESC_KEY 27
-
-// Quickly take the reciprocal of the square root
-float Q_rsqrt(float number) {
-    long        i;
-    float       x2, y;
-    const float threehalfs = 1.5F;
-
-    x2 = number * 0.5F;
-    y  = number;
-    i  = *(long *)&y;
-    i  = 0x5f3759df - (i >> 1);
-    y  = *(float *)&i;
-    y  = y * (threehalfs - (x2 * y * y));
-
-    return y;
-}
 
 void releaseFrames(std::vector<ob_frame *> &frames) {
     ob_error *error = nullptr;
@@ -430,13 +415,17 @@ private:
                     cv::imshow(name_, renderMat_);
                 }
                 else if(renderType_ == RENDER_GRID) {
-                    int   count = mats.size();
-                    float sq    = 1.0f / Q_rsqrt(count);
-                    int   isq   = (int)sq;
-                    int   cols  = (sq - isq < 0.01f) ? isq : isq + 1;
-                    float div   = (float)count / (float)cols;
-                    int   idiv  = (int)div;
-                    int   rows  = (div - idiv < 0.01f) ? idiv : idiv + 1;
+                    int count     = mats.size();
+                    int idealSide = std::sqrt(count);
+                    int rows      = idealSide;
+                    int cols      = idealSide;
+                    while(rows * cols < count) {  // find the best row and column count
+                        cols++;
+                        if(rows * cols < count) {
+                            rows++;
+                        }
+                    }
+
                     for(int i = 0; i < rows; i++) {
                         cv::Mat lineMat;
                         for(int j = 0; j < cols; j++) {
