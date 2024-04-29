@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['sensor_0',['Sensor',['../classob_1_1Sensor.html',1,'ob']]],
-  ['sensorlist_1',['SensorList',['../classob_1_1SensorList.html',1,'ob']]],
-  ['streamprofile_2',['StreamProfile',['../classob_1_1StreamProfile.html',1,'ob']]],
-  ['streamprofilelist_3',['StreamProfileList',['../classob_1_1StreamProfileList.html',1,'ob']]]
+  ['pipeline_0',['Pipeline',['../classob_1_1Pipeline.html',1,'ob']]],
+  ['playback_1',['Playback',['../classob_1_1Playback.html',1,'ob']]],
+  ['pointcloudfilter_2',['PointCloudFilter',['../classob_1_1PointCloudFilter.html',1,'ob']]],
+  ['pointsframe_3',['PointsFrame',['../classob_1_1PointsFrame.html',1,'ob']]]
 ];

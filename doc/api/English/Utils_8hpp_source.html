@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.9.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.10.2</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -114,7 +114,7 @@ $(function() {
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classob_1_1CoordinateTransformHelper.html#ad4965c07369c943d30d378e19e7f6cb2">  136</a></span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classob_1_1CoordinateTransformHelper.html#ad4965c07369c943d30d378e19e7f6cb2">transformationDepthToRGBDPointCloud</a>(<a class="code hl_struct" href="structOBXYTables.html">OBXYTables</a> *xyTables, <span class="keyword">const</span> <span class="keywordtype">void</span> *depthImageData, <span class="keyword">const</span> <span class="keywordtype">void</span> *colorImageData, <span class="keywordtype">void</span> *pointCloudData);</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>};</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>}  <span class="comment">// namespace ob</span></div>
-<div class="ttc" id="aObTypes_8h_html_a0bf6f74f3eaabbf4a71720b9363b2aa8"><div class="ttname"><a href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a></div><div class="ttdeci">OBSensorType</div><div class="ttdoc">Enumeration value describing the sensor type.</div><div class="ttdef"><b>Definition</b> <a href="ObTypes_8h_source.html#l00154">ObTypes.h:154</a></div></div>
+<div class="ttc" id="aObTypes_8h_html_a0bf6f74f3eaabbf4a71720b9363b2aa8"><div class="ttname"><a href="ObTypes_8h.html#a0bf6f74f3eaabbf4a71720b9363b2aa8">OBSensorType</a></div><div class="ttdeci">OBSensorType</div><div class="ttdoc">Enumeration value describing the sensor type.</div><div class="ttdef"><b>Definition</b> <a href="ObTypes_8h_source.html#l00157">ObTypes.h:157</a></div></div>
 <div class="ttc" id="aObTypes_8h_html_aa0add2ff45ff52cc75dc92d44f883fbf"><div class="ttname"><a href="ObTypes_8h.html#aa0add2ff45ff52cc75dc92d44f883fbf">OB_EXTENSION_API</a></div><div class="ttdeci">#define OB_EXTENSION_API</div><div class="ttdef"><b>Definition</b> <a href="ObTypes_8h_source.html#l00028">ObTypes.h:28</a></div></div>
 <div class="ttc" id="aTypes_8hpp_html"><div class="ttname"><a href="Types_8hpp.html">Types.hpp</a></div><div class="ttdoc">Provides SDK structure and enumeration constant definitions (depending on libobsensor/h/ObTypes....</div></div>
 <div class="ttc" id="aclassob_1_1CoordinateTransformHelper_html"><div class="ttname"><a href="classob_1_1CoordinateTransformHelper.html">ob::CoordinateTransformHelper</a></div><div class="ttdef"><b>Definition</b> <a href="Utils_8hpp_source.html#l00013">Utils.hpp:13</a></div></div>
@@ -128,14 +128,14 @@ $(function() {
 <div class="ttc" id="aclassob_1_1CoordinateTransformHelper_html_ad4965c07369c943d30d378e19e7f6cb2"><div class="ttname"><a href="classob_1_1CoordinateTransformHelper.html#ad4965c07369c943d30d378e19e7f6cb2">ob::CoordinateTransformHelper::transformationDepthToRGBDPointCloud</a></div><div class="ttdeci">static void transformationDepthToRGBDPointCloud(OBXYTables *xyTables, const void *depthImageData, const void *colorImageData, void *pointCloudData)</div><div class="ttdoc">Transform depth image to RGBD point cloud data.</div></div>
 <div class="ttc" id="aclassob_1_1CoordinateTransformHelper_html_afee8f7ca1a4dda1d64e18f6ae9c7c7da"><div class="ttname"><a href="classob_1_1CoordinateTransformHelper.html#afee8f7ca1a4dda1d64e18f6ae9c7c7da">ob::CoordinateTransformHelper::calibration2dTo3d</a></div><div class="ttdeci">static bool calibration2dTo3d(const OBCalibrationParam calibrationParam, const OBPoint2f sourcePoint2f, const float sourceDepthPixelValue, const OBSensorType sourceSensorType, const OBSensorType targetSensorType, OBPoint3f *targetPoint3f)</div><div class="ttdoc">Transform a 2d pixel coordinate with an associated depth value of the source camera into a 3d point o...</div></div>
 <div class="ttc" id="anamespaceob_html"><div class="ttname"><a href="namespaceob.html">ob</a></div><div class="ttdef"><b>Definition</b> <a href="Context_8hpp_source.html#l00016">Context.hpp:16</a></div></div>
-<div class="ttc" id="astructOBCalibrationParam_html"><div class="ttname"><a href="structOBCalibrationParam.html">OBCalibrationParam</a></div><div class="ttdoc">calibration parameters</div><div class="ttdef"><b>Definition</b> <a href="ObTypes_8h_source.html#l00400">ObTypes.h:400</a></div></div>
-<div class="ttc" id="astructOBPoint2f_html"><div class="ttname"><a href="structOBPoint2f.html">OBPoint2f</a></div><div class="ttdoc">2D point structure in the SDK</div><div class="ttdef"><b>Definition</b> <a href="ObTypes_8h_source.html#l00653">ObTypes.h:653</a></div></div>
-<div class="ttc" id="astructOBPoint_html"><div class="ttname"><a href="structOBPoint.html">OBPoint</a></div><div class="ttdoc">3D point structure in the SDK</div><div class="ttdef"><b>Definition</b> <a href="ObTypes_8h_source.html#l00644">ObTypes.h:644</a></div></div>
-<div class="ttc" id="astructOBXYTables_html"><div class="ttname"><a href="structOBXYTables.html">OBXYTables</a></div><div class="ttdef"><b>Definition</b> <a href="ObTypes_8h_source.html#l00658">ObTypes.h:658</a></div></div>
+<div class="ttc" id="astructOBCalibrationParam_html"><div class="ttname"><a href="structOBCalibrationParam.html">OBCalibrationParam</a></div><div class="ttdoc">calibration parameters</div><div class="ttdef"><b>Definition</b> <a href="ObTypes_8h_source.html#l00480">ObTypes.h:480</a></div></div>
+<div class="ttc" id="astructOBPoint2f_html"><div class="ttname"><a href="structOBPoint2f.html">OBPoint2f</a></div><div class="ttdoc">2D point structure in the SDK</div><div class="ttdef"><b>Definition</b> <a href="ObTypes_8h_source.html#l00745">ObTypes.h:745</a></div></div>
+<div class="ttc" id="astructOBPoint_html"><div class="ttname"><a href="structOBPoint.html">OBPoint</a></div><div class="ttdoc">3D point structure in the SDK</div><div class="ttdef"><b>Definition</b> <a href="ObTypes_8h_source.html#l00736">ObTypes.h:736</a></div></div>
+<div class="ttc" id="astructOBXYTables_html"><div class="ttname"><a href="structOBXYTables.html">OBXYTables</a></div><div class="ttdef"><b>Definition</b> <a href="ObTypes_8h_source.html#l00750">ObTypes.h:750</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 5 2024 18:30:20 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Mon Apr 29 2024 18:30:23 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

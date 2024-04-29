@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.9.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.10.2</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -76,7 +76,10 @@ $(function() {
 <h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
 <li>tecTemp&#160;:&#160;<a class="el" href="structOBDeviceTemperature.html#a096a17cdbee24f9e44a5e6ef5f8054cc">OBDeviceTemperature</a></li>
 <li>temperature()&#160;:&#160;<a class="el" href="classob_1_1AccelFrame.html#a47650419552351542eb417f3ddc6bc9e">ob::AccelFrame</a>, <a class="el" href="classob_1_1GyroFrame.html#aced01359f9f9d17fd8077dcebfe8a107">ob::GyroFrame</a></li>
+<li>TemporalFilter()&#160;:&#160;<a class="el" href="classob_1_1TemporalFilter.html#a2feb15c80f72913e2d84597791f50aad">ob::TemporalFilter</a></li>
+<li>tempSlope&#160;:&#160;<a class="el" href="structOBAccelIntrinsic.html#ae6700d0c57bd017999904ae08a3f4d35">OBAccelIntrinsic</a>, <a class="el" href="structOBGyroIntrinsic.html#adc9ef4485f1b5f6b1f4f510a976a15ca">OBGyroIntrinsic</a></li>
 <li>threshold&#160;:&#160;<a class="el" href="structOBCompressionParams.html#ab2562995d78e3c1b77cf7f530e84b2d2">OBCompressionParams</a></li>
+<li>ThresholdFilter()&#160;:&#160;<a class="el" href="classob_1_1ThresholdFilter.html#a2c81de50256a2113b0b0072e38879a67">ob::ThresholdFilter</a></li>
 <li>timerSyncWithHost()&#160;:&#160;<a class="el" href="classob_1_1Device.html#a22d32711d5d2c88f78da10b4af8af844">ob::Device</a></li>
 <li>timeStamp()&#160;:&#160;<a class="el" href="classob_1_1Frame.html#ae7df5f8bfe70a3a3e8543e24a04f85bc">ob::Frame</a></li>
 <li>timestamp_reset_delay_us&#160;:&#160;<a class="el" href="structob__device__timestamp__reset__config.html#a3021ee3e51e2a50b5d8c256e3f718df9">ob_device_timestamp_reset_config</a></li>
@@ -93,12 +96,13 @@ $(function() {
 <li>triggerCapture()&#160;:&#160;<a class="el" href="classob_1_1Device.html#aa9d3807dae6d8a1fab5ffde4c51b30bf">ob::Device</a></li>
 <li>triggerOutDelayUs&#160;:&#160;<a class="el" href="structob__multi__device__sync__config.html#a795f1464f91aa518eda82ca7a2b5536d">ob_multi_device_sync_config</a></li>
 <li>triggerOutEnable&#160;:&#160;<a class="el" href="structob__multi__device__sync__config.html#acf58447721d8b16d6b16d726c98a38ec">ob_multi_device_sync_config</a></li>
-<li>type()&#160;:&#160;<a class="el" href="classob_1_1Frame.html#a34fba5e4839efa8fd8a6acec47df9637">ob::Frame</a>, <a class="el" href="classob_1_1Sensor.html#aa62d80b41dd6674b3a85ad6c458c5a57">ob::Sensor</a>, <a class="el" href="classob_1_1SensorList.html#aef695bb71aa59160bc6d31e0c56a345d">ob::SensorList</a>, <a class="el" href="classob_1_1StreamProfile.html#a4ea3045b40043e7fb16f9a28215e502a">ob::StreamProfile</a>, <a class="el" href="structOBPropertyItem.html#ab776230cd4b8de227ccc2a4b1191bf90">OBPropertyItem</a></li>
+<li>type()&#160;:&#160;<a class="el" href="classob_1_1Filter.html#ace60e52e0b0ca7c794eefcfc10cd8c34">ob::Filter</a>, <a class="el" href="classob_1_1Frame.html#a34fba5e4839efa8fd8a6acec47df9637">ob::Frame</a>, <a class="el" href="classob_1_1Sensor.html#aa62d80b41dd6674b3a85ad6c458c5a57">ob::Sensor</a>, <a class="el" href="classob_1_1SensorList.html#aef695bb71aa59160bc6d31e0c56a345d">ob::SensorList</a>, <a class="el" href="classob_1_1StreamProfile.html#a4ea3045b40043e7fb16f9a28215e502a">ob::StreamProfile</a>, <a class="el" href="structOBEdgeNoiseRemovalFilterParams.html#a0a04a1aa376686eb3550d4e489515bb7">OBEdgeNoiseRemovalFilterParams</a>, <a class="el" href="structOBNoiseRemovalFilterParams.html#ad8d0bb9c8116b22c440fa36d206f8cae">OBNoiseRemovalFilterParams</a>, <a class="el" href="structOBPropertyItem.html#ab776230cd4b8de227ccc2a4b1191bf90">OBPropertyItem</a></li>
+<li>type_&#160;:&#160;<a class="el" href="classob_1_1Filter.html#a71b3206ef0c24376bc2abb5aa247a08f">ob::Filter</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 5 2024 18:30:21 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Mon Apr 29 2024 18:30:23 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

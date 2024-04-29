@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.9.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.10.2</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -144,7 +144,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a0d90685efdd4b7fb7c6f6259c48769b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current camera parameters.  <br /></td></tr>
 <tr class="separator:a0d90685efdd4b7fb7c6f6259c48769b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca122ca3b7ec82dc11b282f03d38546b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a7106176de78deff50c48f0bc9e985175">ob_calibration_param</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Pipeline_8h.html#aca122ca3b7ec82dc11b282f03d38546b">ob_pipeline_get_calibration_param</a> (<a class="el" href="ObTypes_8h.html#a10c4aa61e784c84629c2fc9934dabb02">ob_pipeline</a> *pipeline, <a class="el" href="ObTypes_8h.html#a58e217beaf8c5e9a0da42b84902cb6b5">ob_config</a> *config, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
-<tr class="memdesc:aca122ca3b7ec82dc11b282f03d38546b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device calibration parameters.  <br /></td></tr>
+<tr class="memdesc:aca122ca3b7ec82dc11b282f03d38546b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device calibration parameters with the specified configuration.  <br /></td></tr>
 <tr class="separator:aca122ca3b7ec82dc11b282f03d38546b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5b1de06498d60975032126053b715d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Pipeline_8h.html#ae5b1de06498d60975032126053b715d7">ob_get_d2c_depth_profile_list</a> (<a class="el" href="ObTypes_8h.html#a10c4aa61e784c84629c2fc9934dabb02">ob_pipeline</a> *pipeline, <a class="el" href="ObTypes_8h.html#aa7bf7c140d08fad46a2fd2aad2eeb441">ob_stream_profile</a> *color_profile, <a class="el" href="ObTypes_8h.html#a6970c003091e5434ae82e3df57bf6f51">ob_align_mode</a> align_mode, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:ae5b1de06498d60975032126053b715d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a list of D2C-enabled depth sensor resolutions corresponding to the input color sensor resolution.  <br /></td></tr>
@@ -173,6 +173,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a189f09ce18fe9f22b2973973f10299e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Pipeline_8h.html#a189f09ce18fe9f22b2973973f10299e8">ob_config_enable_all_stream</a> (<a class="el" href="ObTypes_8h.html#a58e217beaf8c5e9a0da42b84902cb6b5">ob_config</a> *config, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a189f09ce18fe9f22b2973973f10299e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable all streams in the pipeline configuration.  <br /></td></tr>
 <tr class="separator:a189f09ce18fe9f22b2973973f10299e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a632bfb4cb4c8fcbda930837421768a66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Pipeline_8h.html#a632bfb4cb4c8fcbda930837421768a66">ob_config_get_enabled_stream_profile_list</a> (<a class="el" href="ObTypes_8h.html#a58e217beaf8c5e9a0da42b84902cb6b5">ob_config</a> *config, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
+<tr class="memdesc:a632bfb4cb4c8fcbda930837421768a66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the enabled stream profile list in the pipeline configuration.  <br /></td></tr>
+<tr class="separator:a632bfb4cb4c8fcbda930837421768a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6690894b043ba3dbab3895cd7bb79c2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Pipeline_8h.html#a6690894b043ba3dbab3895cd7bb79c2f">ob_config_disable_stream</a> (<a class="el" href="ObTypes_8h.html#a58e217beaf8c5e9a0da42b84902cb6b5">ob_config</a> *config, <a class="el" href="ObTypes_8h.html#a849f89cf0aae370ceb08ed7bc77bf0f6">ob_stream_type</a> type, <a class="el" href="structob__error.html">ob_error</a> **error)</td></tr>
 <tr class="memdesc:a6690894b043ba3dbab3895cd7bb79c2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable a specific stream in the pipeline configuration.  <br /></td></tr>
 <tr class="separator:a6690894b043ba3dbab3895cd7bb79c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -540,6 +543,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the configuration object associated with the pipeline. </p>
+<p>Returns default configuration if the user has not configured</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pipeline</td><td>The pipeline object </td></tr>
@@ -972,10 +976,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get device calibration parameters. </p>
+<p>Get device calibration parameters with the specified configuration. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pipeline</td><td>pipeline object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>The pipeline configuration </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">error</td><td>Log error messages </td></tr>
   </table>
   </dd>
@@ -1349,6 +1354,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Enable all streams in the pipeline configuration. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd>Use <a class="el" href="Pipeline_8h.html#afda334fdc68a0cdc200ca5c4f27b1480">ob_config_enable_stream</a> instead </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>The pipeline configuration </td></tr>
@@ -1356,6 +1362,44 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a632bfb4cb4c8fcbda930837421768a66" name="a632bfb4cb4c8fcbda930837421768a66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a632bfb4cb4c8fcbda930837421768a66">&#9670;&#160;</a></span>ob_config_get_enabled_stream_profile_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ObTypes_8h.html#a563dd4686a4630bca388a41919cdb369">ob_stream_profile_list</a> * ob_config_get_enabled_stream_profile_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ObTypes_8h.html#a58e217beaf8c5e9a0da42b84902cb6b5">ob_config</a> *&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structob__error.html">ob_error</a> **&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the enabled stream profile list in the pipeline configuration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>The pipeline configuration </td></tr>
+    <tr><td class="paramname">error</td><td>Log error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ob_stream_profile_list* The enabled stream profile list, should be released by <a class="el" href="StreamProfile_8h.html#ad55c8b82f1eff26cfc7b59f5a8dca24f">ob_delete_stream_profile_list</a> after use </dd></dl>
 
 </div>
 </div>
@@ -1627,7 +1671,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 5 2024 18:30:21 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Mon Apr 29 2024 18:30:23 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

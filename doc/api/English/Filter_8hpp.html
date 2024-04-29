@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.9.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.10.2</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -88,6 +88,9 @@ $(function() {
 <div class="textblock"><code>#include &quot;<a class="el" href="Types_8hpp_source.html">Types.hpp</a>&quot;</code><br />
 <code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 </div>
 <p><a href="Filter_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -108,6 +111,39 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DecompressionFilter.html">ob::DecompressionFilter</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classob_1_1DecompressionFilter.html" title="The DecompressionFilter class is a subclass of Filter that performs decompression.">DecompressionFilter</a> class is a subclass of <a class="el" href="classob_1_1Filter.html" title="The Filter class is the base class for all filters in the SDK.">Filter</a> that performs decompression.  <a href="classob_1_1DecompressionFilter.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1HoleFillingFilter.html">ob::HoleFillingFilter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hole filling filter,the processing performed depends on the selected hole filling mode.  <a href="classob_1_1HoleFillingFilter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1TemporalFilter.html">ob::TemporalFilter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temporal filter.  <a href="classob_1_1TemporalFilter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1SpatialAdvancedFilter.html">ob::SpatialAdvancedFilter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spatial advanced filte smooths the image by calculating frame with alpha and delta settings alpha defines the weight of the current pixel for smoothing, delta defines the depth gradient below which the smoothing will occur as number of depth levels.  <a href="classob_1_1SpatialAdvancedFilter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DisparityTransform.html">ob::DisparityTransform</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Depth to disparity or disparity to depth.  <a href="classob_1_1DisparityTransform.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1HdrMerge.html">ob::HdrMerge</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classob_1_1HdrMerge.html" title="HdrMerge processing block, the processing merges between depth frames with different sub-preset seque...">HdrMerge</a> processing block, the processing merges between depth frames with different sub-preset sequence ids.  <a href="classob_1_1HdrMerge.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1Align.html">ob::Align</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classob_1_1Align.html" title="Align for depth to other or other to depth.">Align</a> for depth to other or other to depth.  <a href="classob_1_1Align.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1ThresholdFilter.html">ob::ThresholdFilter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates depth Thresholding filter By controlling min and max options on the block.  <a href="classob_1_1ThresholdFilter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1SequenceIdFilter.html">ob::SequenceIdFilter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="classob_1_1SequenceIdFilter.html" title="Create SequenceIdFilter processing block.">SequenceIdFilter</a> processing block.  <a href="classob_1_1SequenceIdFilter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1NoiseRemovalFilter.html">ob::NoiseRemovalFilter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The noise removal filter,removing scattering depth pixels.  <a href="classob_1_1NoiseRemovalFilter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1DecimationFilter.html">ob::DecimationFilter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decimation filter,reducing complexity by subsampling depth maps and losing depth details.  <a href="classob_1_1DecimationFilter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1EdgeNoiseRemovalFilter.html">ob::EdgeNoiseRemovalFilter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The edge noise removal filter,removing scattering depth pixels.  <a href="classob_1_1EdgeNoiseRemovalFilter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -127,7 +163,7 @@ Typedefs</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 5 2024 18:30:21 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Mon Apr 29 2024 18:30:23 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

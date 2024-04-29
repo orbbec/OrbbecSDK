@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.9.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.10.2</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -112,6 +112,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9d0ada286af10a49877b98ca6987de82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a314cdb6e5a6da080536ad34be1bd97c9">OBAccelSampleRate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1AccelStreamProfile.html#a9d0ada286af10a49877b98ca6987de82">sampleRate</a> () const</td></tr>
 <tr class="memdesc:a9d0ada286af10a49877b98ca6987de82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the sampling frequency.  <br /></td></tr>
 <tr class="separator:a9d0ada286af10a49877b98ca6987de82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcdde68ee4e2a3bffd63ce812c4d5de8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structOBAccelIntrinsic.html">OBAccelIntrinsic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1AccelStreamProfile.html#afcdde68ee4e2a3bffd63ce812c4d5de8">getIntrinsic</a> ()</td></tr>
+<tr class="memdesc:afcdde68ee4e2a3bffd63ce812c4d5de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the intrinsic parameters of the stream.  <br /></td></tr>
+<tr class="separator:afcdde68ee4e2a3bffd63ce812c4d5de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classob_1_1StreamProfile"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classob_1_1StreamProfile')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classob_1_1StreamProfile.html">ob::StreamProfile</a></td></tr>
 <tr class="memitem:ad84c91294e1689458a3e7589d9ac8fba inherit pub_methods_classob_1_1StreamProfile"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1StreamProfile.html#ad84c91294e1689458a3e7589d9ac8fba">StreamProfile</a> (std::unique_ptr&lt; StreamProfileImpl &gt; impl)</td></tr>
 <tr class="separator:ad84c91294e1689458a3e7589d9ac8fba inherit pub_methods_classob_1_1StreamProfile"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,6 +128,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4ea3045b40043e7fb16f9a28215e502a inherit pub_methods_classob_1_1StreamProfile"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a4372502297ded5d6e6ee8db1d71d69d2">OBStreamType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1StreamProfile.html#a4ea3045b40043e7fb16f9a28215e502a">type</a> () const</td></tr>
 <tr class="memdesc:a4ea3045b40043e7fb16f9a28215e502a inherit pub_methods_classob_1_1StreamProfile"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type of stream.  <br /></td></tr>
 <tr class="separator:a4ea3045b40043e7fb16f9a28215e502a inherit pub_methods_classob_1_1StreamProfile"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd4105b44c399f16d3fcf8b9040f45cb inherit pub_methods_classob_1_1StreamProfile"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ObTypes_8h.html#a9af5fb461884fb9ee0ec2c1977048018">OBExtrinsic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classob_1_1StreamProfile.html#acd4105b44c399f16d3fcf8b9040f45cb">getExtrinsicTo</a> (std::shared_ptr&lt; <a class="el" href="classob_1_1StreamProfile.html">StreamProfile</a> &gt; target)</td></tr>
+<tr class="memdesc:acd4105b44c399f16d3fcf8b9040f45cb inherit pub_methods_classob_1_1StreamProfile"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the extrinsic parameters from current stream profile to the given target stream profile.  <br /></td></tr>
+<tr class="separator:acd4105b44c399f16d3fcf8b9040f45cb inherit pub_methods_classob_1_1StreamProfile"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7db61937ccf512a635e08a3aba3cc422 inherit pub_methods_classob_1_1StreamProfile"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a7db61937ccf512a635e08a3aba3cc422 inherit pub_methods_classob_1_1StreamProfile"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classob_1_1StreamProfile.html#a7db61937ccf512a635e08a3aba3cc422">is</a> ()</td></tr>
 <tr class="memdesc:a7db61937ccf512a635e08a3aba3cc422 inherit pub_methods_classob_1_1StreamProfile"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if frame object is compatible with the given type.  <br /></td></tr>
@@ -143,7 +149,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class representing an accelerometer stream profile. </p>
 
-<p class="definition">Definition at line <a class="el" href="StreamProfile_8hpp_source.html#l00108">108</a> of file <a class="el" href="StreamProfile_8hpp_source.html">StreamProfile.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamProfile_8hpp_source.html#l00130">130</a> of file <a class="el" href="StreamProfile_8hpp_source.html">StreamProfile.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad1037c14505bce1a90145cdd9579889b" name="ad1037c14505bce1a90145cdd9579889b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1037c14505bce1a90145cdd9579889b">&#9670;&#160;</a></span>AccelStreamProfile() <span class="overload">[1/2]</span></h2>
@@ -263,13 +269,33 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="afcdde68ee4e2a3bffd63ce812c4d5de8" name="afcdde68ee4e2a3bffd63ce812c4d5de8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcdde68ee4e2a3bffd63ce812c4d5de8">&#9670;&#160;</a></span>getIntrinsic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structOBAccelIntrinsic.html">OBAccelIntrinsic</a> ob::AccelStreamProfile::getIntrinsic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get the intrinsic parameters of the stream. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structOBAccelIntrinsic.html" title="Structure for accelerometer intrinsic parameters.">OBAccelIntrinsic</a> Return the intrinsic parameters. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>E:/Projects/Jenkins/workspace/OrbbecSDK/libobsensor/include/libobsensor/hpp/<a class="el" href="StreamProfile_8hpp_source.html">StreamProfile.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 5 2024 18:30:21 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Mon Apr 29 2024 18:30:23 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

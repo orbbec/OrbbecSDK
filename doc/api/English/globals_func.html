@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="orbbec_icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.9.5</span>
+   <div id="projectname">OrbbecSDK<span id="projectnumber">&#160;1.10.2</span>
    </div>
    <div id="projectbrief">OrbbecSDK: Software-Development-Kit for Orbbec 3D Cameras</div>
   </td>
@@ -77,7 +77,9 @@ $(function() {
 <li>ob_accel_frame_temperature()&#160;:&#160;<a class="el" href="Frame_8h.html#aaed95a72b4e138b7f25f1abc90f762c4">Frame.h</a></li>
 <li>ob_accel_frame_value()&#160;:&#160;<a class="el" href="Frame_8h.html#abebc05a57d9906ff7b05e5e3edbe0537">Frame.h</a></li>
 <li>ob_accel_stream_profile_full_scale_range()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#a7618c934918abea2d9966a7406cef159">StreamProfile.h</a></li>
+<li>ob_accel_stream_profile_get_intrinsic()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#a42a427e1232704f7703d75218923dfc7">StreamProfile.h</a></li>
 <li>ob_accel_stream_profile_sample_rate()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#a73ddbe7d616a73dc2fb59feaa8697960">StreamProfile.h</a></li>
+<li>ob_align_get_to_stream_type()&#160;:&#160;<a class="el" href="Filter_8h.html#a0b4f77a8c1cabbcd2982b905872d4020">Filter.h</a></li>
 <li>ob_calibration_2d_to_2d()&#160;:&#160;<a class="el" href="Utils_8h.html#a3e95d2de0d19dd745f58837ea17b7d41">Utils.h</a></li>
 <li>ob_calibration_2d_to_3d()&#160;:&#160;<a class="el" href="Utils_8h.html#a685e9d9afb5a0eb1efc4716772b6b398">Utils.h</a></li>
 <li>ob_calibration_2d_to_3d_undistortion()&#160;:&#160;<a class="el" href="Utils_8h.html#ac38fb189c2c0b3511f71f3361dc1cba9">Utils.h</a></li>
@@ -90,20 +92,28 @@ $(function() {
 <li>ob_config_disable_stream()&#160;:&#160;<a class="el" href="Pipeline_8h.html#a6690894b043ba3dbab3895cd7bb79c2f">Pipeline.h</a></li>
 <li>ob_config_enable_all_stream()&#160;:&#160;<a class="el" href="Pipeline_8h.html#a189f09ce18fe9f22b2973973f10299e8">Pipeline.h</a></li>
 <li>ob_config_enable_stream()&#160;:&#160;<a class="el" href="Pipeline_8h.html#afda334fdc68a0cdc200ca5c4f27b1480">Pipeline.h</a></li>
+<li>ob_config_get_enabled_stream_profile_list()&#160;:&#160;<a class="el" href="Pipeline_8h.html#a632bfb4cb4c8fcbda930837421768a66">Pipeline.h</a></li>
 <li>ob_config_set_align_mode()&#160;:&#160;<a class="el" href="Pipeline_8h.html#a44daf12e84a8e7e5701267e6effa143b">Pipeline.h</a></li>
 <li>ob_config_set_d2c_target_resolution()&#160;:&#160;<a class="el" href="Pipeline_8h.html#ae31f4027e768848c4a5bf26628d8c5f2">Pipeline.h</a></li>
 <li>ob_config_set_depth_scale_require()&#160;:&#160;<a class="el" href="Pipeline_8h.html#ae9ae4f165cf84cb0f6c06988e525a2d5">Pipeline.h</a></li>
 <li>ob_config_set_frame_aggregate_output_mode()&#160;:&#160;<a class="el" href="Pipeline_8h.html#ad5744eccdd9a2b16a0dea489b83ae9b3">Pipeline.h</a></li>
+<li>ob_create_align()&#160;:&#160;<a class="el" href="Filter_8h.html#abd49371f1d5f2792eb6fb412a6a1b14f">Filter.h</a></li>
 <li>ob_create_compression_filter()&#160;:&#160;<a class="el" href="Filter_8h.html#ab5e73a7c9908a9e6ebdbae063f2660dc">Filter.h</a></li>
 <li>ob_create_config()&#160;:&#160;<a class="el" href="Pipeline_8h.html#a1541607f8a38381b76c4b5f8080252ff">Pipeline.h</a></li>
 <li>ob_create_context()&#160;:&#160;<a class="el" href="Context_8h.html#aa97c96f4d58c7e1e7d435a95c7bd796c">Context.h</a></li>
 <li>ob_create_context_with_config()&#160;:&#160;<a class="el" href="Context_8h.html#a3ee31c1bf23308ddba1ab1db04e7b63e">Context.h</a></li>
+<li>ob_create_decimation_filter()&#160;:&#160;<a class="el" href="Filter_8h.html#af3cc7eb89094c7ddfa55d23883316beb">Filter.h</a></li>
 <li>ob_create_decompression_filter()&#160;:&#160;<a class="el" href="Filter_8h.html#a4ad87b0f4851f01fbe3c8c369fc4cc02">Filter.h</a></li>
+<li>ob_create_disparity_transform()&#160;:&#160;<a class="el" href="Filter_8h.html#a63af58e05a3131bede3eecb441f5b8de">Filter.h</a></li>
+<li>ob_create_edge_noise_removal_filter()&#160;:&#160;<a class="el" href="Filter_8h.html#aa8effb71be527b3f8e16153853837051">Filter.h</a></li>
 <li>ob_create_format_convert_filter()&#160;:&#160;<a class="el" href="Filter_8h.html#a803d980f2a05756c0eef5e2d1ab155c9">Filter.h</a></li>
 <li>ob_create_frame()&#160;:&#160;<a class="el" href="Frame_8h.html#a2fb71c8a1afbaacb3948c27612bccac3">Frame.h</a></li>
 <li>ob_create_frame_from_buffer()&#160;:&#160;<a class="el" href="Frame_8h.html#ae93d32ab066009f6c44f9035b5d254a9">Frame.h</a></li>
 <li>ob_create_frameset()&#160;:&#160;<a class="el" href="Frame_8h.html#aa605ced9dd928aa2c214b7f2a221a6a6">Frame.h</a></li>
+<li>ob_create_hdr_merge()&#160;:&#160;<a class="el" href="Filter_8h.html#adb321fc8fe9645d7a88c93e02a08c7b2">Filter.h</a></li>
+<li>ob_create_holefilling_filter()&#160;:&#160;<a class="el" href="Filter_8h.html#aacec21877c2f8893789f5cb00c2ce0c1">Filter.h</a></li>
 <li>ob_create_net_device()&#160;:&#160;<a class="el" href="Context_8h.html#a38d5903eb11b099cf035bcaaced831bb">Context.h</a></li>
+<li>ob_create_noise_removal_filter()&#160;:&#160;<a class="el" href="Filter_8h.html#a136f6ee91d4eb061b7cb4d1d25e4f326">Filter.h</a></li>
 <li>ob_create_pipeline()&#160;:&#160;<a class="el" href="Pipeline_8h.html#a9183adfea88e1887d8da5738d0a45ef4">Pipeline.h</a></li>
 <li>ob_create_pipeline_with_device()&#160;:&#160;<a class="el" href="Pipeline_8h.html#aa0e28c360d4c30089b179ad55218303c">Pipeline.h</a></li>
 <li>ob_create_pipeline_with_playback_file()&#160;:&#160;<a class="el" href="Pipeline_8h.html#a6c6bbef5f39bb799670f5cfef8353da0">Pipeline.h</a></li>
@@ -111,6 +121,13 @@ $(function() {
 <li>ob_create_pointcloud_filter()&#160;:&#160;<a class="el" href="Filter_8h.html#a9e33ee834c862288ab2de6656fe77843">Filter.h</a></li>
 <li>ob_create_recorder()&#160;:&#160;<a class="el" href="RecordPlayback_8h.html#accebe1ad2288202ab54bc56f3cf5774c">RecordPlayback.h</a></li>
 <li>ob_create_recorder_with_device()&#160;:&#160;<a class="el" href="RecordPlayback_8h.html#ac4798d8bd857a0d5d3b60f1af916e323">RecordPlayback.h</a></li>
+<li>ob_create_sequenceId_filter()&#160;:&#160;<a class="el" href="Filter_8h.html#a8b9978612eed21e3558ba4bd72ba47c9">Filter.h</a></li>
+<li>ob_create_spatial_advanced_filter()&#160;:&#160;<a class="el" href="Filter_8h.html#ae6e2d410b6928e7f5950a2671f3a912c">Filter.h</a></li>
+<li>ob_create_temporal_filter()&#160;:&#160;<a class="el" href="Filter_8h.html#a4541f44de5c7bf87252440821f2e2e62">Filter.h</a></li>
+<li>ob_create_threshold_filter()&#160;:&#160;<a class="el" href="Filter_8h.html#a1eeefce8fb345827a6d799824acf4f6b">Filter.h</a></li>
+<li>ob_decimation_filter_get_scale_range()&#160;:&#160;<a class="el" href="Filter_8h.html#a8f2d205f173b0dd1e60d337b9880bead">Filter.h</a></li>
+<li>ob_decimation_filter_get_scale_value()&#160;:&#160;<a class="el" href="Filter_8h.html#abc4727fa84c77b9fe7f3a9029e2f1849">Filter.h</a></li>
+<li>ob_decimation_filter_set_scale_value()&#160;:&#160;<a class="el" href="Filter_8h.html#a98a9b614181dbf80dffb5529b349ff8c">Filter.h</a></li>
 <li>ob_delete_camera_param_list()&#160;:&#160;<a class="el" href="Device_8h.html#a4b59f401d6f3cf6f88f123fe49b606e7">Device.h</a></li>
 <li>ob_delete_config()&#160;:&#160;<a class="el" href="Pipeline_8h.html#a7b91dedee498b8fd19848aee87608e7a">Pipeline.h</a></li>
 <li>ob_delete_context()&#160;:&#160;<a class="el" href="Context_8h.html#ad87bc8cd42069673a471392ec140a95d">Context.h</a></li>
@@ -121,9 +138,11 @@ $(function() {
 <li>ob_delete_device_list()&#160;:&#160;<a class="el" href="Device_8h.html#ad2f5e8dd1c400e79804f68ff14f9390d">Device.h</a></li>
 <li>ob_delete_error()&#160;:&#160;<a class="el" href="Error_8h.html#afc7c11095b7700c93427cd63747e15f8">Error.h</a></li>
 <li>ob_delete_filter()&#160;:&#160;<a class="el" href="Filter_8h.html#a77a1ac123ecb1e3b8a0e280fbb2d2d06">Filter.h</a></li>
+<li>ob_delete_filter_list()&#160;:&#160;<a class="el" href="Sensor_8h.html#ac796ba851c287dc971c52ac51be05d54">Sensor.h</a></li>
 <li>ob_delete_frame()&#160;:&#160;<a class="el" href="Frame_8h.html#a572bd900dfe085bd8618e53b2670f069">Frame.h</a></li>
 <li>ob_delete_pipeline()&#160;:&#160;<a class="el" href="Pipeline_8h.html#a51e15a9cdfaa81fc13d182fbd3f8f5da">Pipeline.h</a></li>
 <li>ob_delete_playback()&#160;:&#160;<a class="el" href="RecordPlayback_8h.html#a29190427d09445093390a9c5b3bc415f">RecordPlayback.h</a></li>
+<li>ob_delete_preset_list()&#160;:&#160;<a class="el" href="Device_8h.html#a94b811049d2e5bf2a314fd498d532b12">Device.h</a></li>
 <li>ob_delete_recorder()&#160;:&#160;<a class="el" href="RecordPlayback_8h.html#ada8198e5864c0e04f4ae0af7c8271aae">RecordPlayback.h</a></li>
 <li>ob_delete_sensor()&#160;:&#160;<a class="el" href="Sensor_8h.html#a396811d4fa7a910cb1384d37c6820646">Sensor.h</a></li>
 <li>ob_delete_sensor_list()&#160;:&#160;<a class="el" href="Sensor_8h.html#aae775e0dc51ae6f08a9834b53a48cee2">Sensor.h</a></li>
@@ -133,11 +152,14 @@ $(function() {
 <li>ob_depth_work_mode_list_count()&#160;:&#160;<a class="el" href="Device_8h.html#a26839a59770c23ac7c9f29ba9f0f75f9">Device.h</a></li>
 <li>ob_depth_work_mode_list_get_item()&#160;:&#160;<a class="el" href="Device_8h.html#afc9a35d06c361f156587e591b44428d0">Device.h</a></li>
 <li>ob_device_activate_authorization()&#160;:&#160;<a class="el" href="Device_8h.html#a5ecb245e2d7236c32c03b1d96be8c778">Device.h</a></li>
+<li>ob_device_export_current_settings_as_preset_json_file()&#160;:&#160;<a class="el" href="Device_8h.html#a35d5ac4636ee1fe6fda2e079cf2b6a54">Device.h</a></li>
+<li>ob_device_get_available_preset_list()&#160;:&#160;<a class="el" href="Device_8h.html#a6e495e9a75d0c38d38d815effd1e6a16">Device.h</a></li>
 <li>ob_device_get_bool_property()&#160;:&#160;<a class="el" href="Device_8h.html#a5d5b14b3b67efcd64823feca01e1bd60">Device.h</a></li>
 <li>ob_device_get_bool_property_range()&#160;:&#160;<a class="el" href="Device_8h.html#a0d74c28dac2b0b341c17ddb02354723c">Device.h</a></li>
 <li>ob_device_get_calibration_camera_param_list()&#160;:&#160;<a class="el" href="Device_8h.html#abb9ee900832e411b66a98e5e7041b3b5">Device.h</a></li>
 <li>ob_device_get_cmd_version()&#160;:&#160;<a class="el" href="Device_8h.html#ad04ce24d516dff79ecf7a759634ad7fb">Device.h</a></li>
 <li>ob_device_get_current_depth_work_mode()&#160;:&#160;<a class="el" href="Device_8h.html#acec4c4a48b3599c9861f896442c2e307">Device.h</a></li>
+<li>ob_device_get_current_preset_name()&#160;:&#160;<a class="el" href="Device_8h.html#a598b17ef49321f7d67ffafdb14ca6d68">Device.h</a></li>
 <li>ob_device_get_depth_work_mode_list()&#160;:&#160;<a class="el" href="Device_8h.html#aa57c5ef6efd420b7b83a039cb9f9caf7">Device.h</a></li>
 <li>ob_device_get_device_info()&#160;:&#160;<a class="el" href="Device_8h.html#a71a47f6591a135cb12ae37bdbbcf06ab">Device.h</a></li>
 <li>ob_device_get_device_state()&#160;:&#160;<a class="el" href="Device_8h.html#a57f2fc41aedeac216230a3bad371825d">Device.h</a></li>
@@ -186,6 +208,11 @@ $(function() {
 <li>ob_device_list_get_device_vid()&#160;:&#160;<a class="el" href="Device_8h.html#ae4e05e57a445e52e40da2e09a1248bf3">Device.h</a></li>
 <li>ob_device_list_get_extension_info()&#160;:&#160;<a class="el" href="Device_8h.html#a7ce72127a50da1d9f0f14e2763a53229">Device.h</a></li>
 <li>ob_device_load_depth_filter_config()&#160;:&#160;<a class="el" href="Device_8h.html#ae2a7fa577086d3d295e6a989e57b1c5c">Device.h</a></li>
+<li>ob_device_load_preset()&#160;:&#160;<a class="el" href="Device_8h.html#a95d3a28b49f81b0502237005b04a5237">Device.h</a></li>
+<li>ob_device_load_preset_from_json_file()&#160;:&#160;<a class="el" href="Device_8h.html#a670f3f6fc1d39327ec6aec206088700b">Device.h</a></li>
+<li>ob_device_preset_list_count()&#160;:&#160;<a class="el" href="Device_8h.html#a865fad1cd6c513a2de6ead4abb8bde23">Device.h</a></li>
+<li>ob_device_preset_list_get_name()&#160;:&#160;<a class="el" href="Device_8h.html#ac4ecbd336f0c73d2de25bd09860db983">Device.h</a></li>
+<li>ob_device_preset_list_has_preset()&#160;:&#160;<a class="el" href="Device_8h.html#abd43f78adb82b2f49e06bb5c6686d347">Device.h</a></li>
 <li>ob_device_read_ahb()&#160;:&#160;<a class="el" href="Device_8h.html#a29ff095e0bed66c38f425a37223a7b8b">Device.h</a></li>
 <li>ob_device_read_customer_data()&#160;:&#160;<a class="el" href="Device_8h.html#aa2c75e15e49f11d6f876b6d8604b07cf">Device.h</a></li>
 <li>ob_device_read_flash()&#160;:&#160;<a class="el" href="Device_8h.html#a461c2740631658bcabdde53ef8d9c87e">Device.h</a></li>
@@ -215,6 +242,12 @@ $(function() {
 <li>ob_device_write_customer_data()&#160;:&#160;<a class="el" href="Device_8h.html#ac1c82ff2fcc0358f50793993ebd64eb1">Device.h</a></li>
 <li>ob_device_write_flash()&#160;:&#160;<a class="el" href="Device_8h.html#ae4b67238ed7b9a0951139090e8a787f2">Device.h</a></li>
 <li>ob_device_write_i2c()&#160;:&#160;<a class="el" href="Device_8h.html#abd26b89ff80b6677f89b55067a43f4fa">Device.h</a></li>
+<li>ob_edge_noise_removal_filter_get_filter_params()&#160;:&#160;<a class="el" href="Filter_8h.html#a20f95ec41cde16927c31decf3f73829c">Filter.h</a></li>
+<li>ob_edge_noise_removal_filter_get_margin_bottom_th_range()&#160;:&#160;<a class="el" href="Filter_8h.html#a0f983fe1a14a1f1fc7ed97b72c6fd53d">Filter.h</a></li>
+<li>ob_edge_noise_removal_filter_get_margin_left_th_range()&#160;:&#160;<a class="el" href="Filter_8h.html#ac19f8cc3c30afafe94ff083897448194">Filter.h</a></li>
+<li>ob_edge_noise_removal_filter_get_margin_right_th_range()&#160;:&#160;<a class="el" href="Filter_8h.html#af5a6638d889c61dabc69f0a4d37141e2">Filter.h</a></li>
+<li>ob_edge_noise_removal_filter_get_margin_top_th_range()&#160;:&#160;<a class="el" href="Filter_8h.html#ac7560d4607483146d12270c8872305f7">Filter.h</a></li>
+<li>ob_edge_noise_removal_filter_set_filter_params()&#160;:&#160;<a class="el" href="Filter_8h.html#afb3931c06721700853e9a5a7be4173d1">Filter.h</a></li>
 <li>ob_enable_device_clock_sync()&#160;:&#160;<a class="el" href="Context_8h.html#ae014e8e9574ae539e59e1318e656020a">Context.h</a></li>
 <li>ob_enable_net_device_enumeration()&#160;:&#160;<a class="el" href="Context_8h.html#ae762ccb84e9cd16617cb97e335f33972">Context.h</a></li>
 <li>ob_error_args()&#160;:&#160;<a class="el" href="Error_8h.html#a59e8211eca506e15451bd256979bf970">Error.h</a></li>
@@ -222,6 +255,9 @@ $(function() {
 <li>ob_error_function()&#160;:&#160;<a class="el" href="Error_8h.html#a0df6f1a17a7e99cb6a4169e4837b3c91">Error.h</a></li>
 <li>ob_error_message()&#160;:&#160;<a class="el" href="Error_8h.html#ab972f7bd2f7554cbfc06e5e44d7aad38">Error.h</a></li>
 <li>ob_error_status()&#160;:&#160;<a class="el" href="Error_8h.html#a52a52f63a64672df1716167876bd492c">Error.h</a></li>
+<li>ob_filter_enable()&#160;:&#160;<a class="el" href="Filter_8h.html#a6321a2b52b12d4fd70193eabd4cde623">Filter.h</a></li>
+<li>ob_filter_is_enable()&#160;:&#160;<a class="el" href="Filter_8h.html#a8373adb482d24ee2856903bde25cd1e4">Filter.h</a></li>
+<li>ob_filter_list_get_count()&#160;:&#160;<a class="el" href="Sensor_8h.html#a8832668d271e9d17510034e04b384ad7">Sensor.h</a></li>
 <li>ob_filter_process()&#160;:&#160;<a class="el" href="Filter_8h.html#aed38c25c657a575b2e0beaef0169dec1">Filter.h</a></li>
 <li>ob_filter_push_frame()&#160;:&#160;<a class="el" href="Filter_8h.html#aac115614db4f0d3c25f8db91ee549169">Filter.h</a></li>
 <li>ob_filter_reset()&#160;:&#160;<a class="el" href="Filter_8h.html#a84c21cee66655eeab849ccfbc6bf5aef">Filter.h</a></li>
@@ -231,19 +267,28 @@ $(function() {
 <li>ob_frame_data()&#160;:&#160;<a class="el" href="Frame_8h.html#a4d0de931cd1744fb141676c93c9dd8bc">Frame.h</a></li>
 <li>ob_frame_data_size()&#160;:&#160;<a class="el" href="Frame_8h.html#ab9350186e6d286d74466d07287871ce9">Frame.h</a></li>
 <li>ob_frame_format()&#160;:&#160;<a class="el" href="Frame_8h.html#ac46511e8d0e4d5b962d2b9710d313bdc">Frame.h</a></li>
+<li>ob_frame_get_device()&#160;:&#160;<a class="el" href="Frame_8h.html#a3c84e9592a37fd4e518315964f63da0b">Frame.h</a></li>
+<li>ob_frame_get_metadata_value()&#160;:&#160;<a class="el" href="Frame_8h.html#addd8d0e89e5c4d0e2a1f970ef881dfc7">Frame.h</a></li>
+<li>ob_frame_get_sensor()&#160;:&#160;<a class="el" href="Frame_8h.html#aa082888f11bbb34d797c3ee5a8b19d2d">Frame.h</a></li>
+<li>ob_frame_get_stream_profile()&#160;:&#160;<a class="el" href="Frame_8h.html#af6b136164cacea2bd5d4fdd7f5b33e6a">Frame.h</a></li>
 <li>ob_frame_get_type()&#160;:&#160;<a class="el" href="Frame_8h.html#adfa38aa0cc594622f1d00540cf108b5a">Frame.h</a></li>
 <li>ob_frame_global_time_stamp_us()&#160;:&#160;<a class="el" href="Frame_8h.html#a3823a34cf10836c2e46904416dd4f7ae">Frame.h</a></li>
+<li>ob_frame_has_metadata()&#160;:&#160;<a class="el" href="Frame_8h.html#a4797a8f850c1608999981997297cb22b">Frame.h</a></li>
 <li>ob_frame_index()&#160;:&#160;<a class="el" href="Frame_8h.html#a5009d0e21fffddc2bb891357ccd611f7">Frame.h</a></li>
+<li>ob_frame_metadata()&#160;:&#160;<a class="el" href="Frame_8h.html#ad63df2c5ef15893b3283f5a499c42b35">Frame.h</a></li>
+<li>ob_frame_metadata_size()&#160;:&#160;<a class="el" href="Frame_8h.html#a505189d1ff40dcbfdecea05b7c42f394">Frame.h</a></li>
 <li>ob_frame_set_device_time_stamp()&#160;:&#160;<a class="el" href="Frame_8h.html#a9f4b11364d2a74f80e9c6252b94e97bd">Frame.h</a></li>
 <li>ob_frame_set_device_time_stamp_us()&#160;:&#160;<a class="el" href="Frame_8h.html#a5ce57b8b10a7dddf118ccd9663f7dd06">Frame.h</a></li>
 <li>ob_frame_set_system_time_stamp()&#160;:&#160;<a class="el" href="Frame_8h.html#a35186cca3c0a561acb281b03c8ea6013">Frame.h</a></li>
 <li>ob_frame_system_time_stamp()&#160;:&#160;<a class="el" href="Frame_8h.html#adce8d3f7031629a3e3d7b25911b33886">Frame.h</a></li>
+<li>ob_frame_system_time_stamp_us()&#160;:&#160;<a class="el" href="Frame_8h.html#ad19056f301daa6d4e7b18447dafcb732">Frame.h</a></li>
 <li>ob_frame_time_stamp()&#160;:&#160;<a class="el" href="Frame_8h.html#a95b2242495cad6f1d1d7db82cc516a2e">Frame.h</a></li>
 <li>ob_frame_time_stamp_us()&#160;:&#160;<a class="el" href="Frame_8h.html#aacf461e938d508f05b7b1ba8324cfcf5">Frame.h</a></li>
 <li>ob_frameset_color_frame()&#160;:&#160;<a class="el" href="Frame_8h.html#a7d902e6efab126596147c7437c98e8f6">Frame.h</a></li>
 <li>ob_frameset_depth_frame()&#160;:&#160;<a class="el" href="Frame_8h.html#a0dae884c0d1187261548faeff4720003">Frame.h</a></li>
 <li>ob_frameset_frame_count()&#160;:&#160;<a class="el" href="Frame_8h.html#a48ab6c2f559f3af05f4147a5f2abb324">Frame.h</a></li>
 <li>ob_frameset_get_frame()&#160;:&#160;<a class="el" href="Frame_8h.html#af05a787de121f4c63ea41f7077609604">Frame.h</a></li>
+<li>ob_frameset_get_frame_by_index()&#160;:&#160;<a class="el" href="Frame_8h.html#a8f1e990ff0a7eafa88eadf512d17297f">Frame.h</a></li>
 <li>ob_frameset_ir_frame()&#160;:&#160;<a class="el" href="Frame_8h.html#a3d5f563302930ef23fc21fe344d2c91c">Frame.h</a></li>
 <li>ob_frameset_points_frame()&#160;:&#160;<a class="el" href="Frame_8h.html#aad7240dea3d3338837d7cdf9459eb8ab">Frame.h</a></li>
 <li>ob_frameset_push_frame()&#160;:&#160;<a class="el" href="Frame_8h.html#a379ea3f58725a133c0d98efa99cfece2">Frame.h</a></li>
@@ -251,6 +296,8 @@ $(function() {
 <li>ob_get_d2c_depth_profile_list()&#160;:&#160;<a class="el" href="Pipeline_8h.html#ae5b1de06498d60975032126053b715d7">Pipeline.h</a></li>
 <li>ob_get_d2c_range_valid_area()&#160;:&#160;<a class="el" href="Pipeline_8h.html#a48a4640a53c2fb44cb93be53e5bbb6a8">Pipeline.h</a></li>
 <li>ob_get_d2c_valid_area()&#160;:&#160;<a class="el" href="Pipeline_8h.html#ad95856ed676c3bb347dfe837a7b59cf1">Pipeline.h</a></li>
+<li>ob_get_filter()&#160;:&#160;<a class="el" href="Sensor_8h.html#ad36f56640f9bd38ec04c68f83d07bc1a">Sensor.h</a></li>
+<li>ob_get_filter_name()&#160;:&#160;<a class="el" href="Sensor_8h.html#a439e708c428c006018fa63a91b8ed9d8">Sensor.h</a></li>
 <li>ob_get_major_version()&#160;:&#160;<a class="el" href="Version_8h.html#a473bc21a19115f86a7f0a75b7b754b54">Version.h</a></li>
 <li>ob_get_minor_version()&#160;:&#160;<a class="el" href="Version_8h.html#a4930486c12ca038d40d96a2063bf75dd">Version.h</a></li>
 <li>ob_get_patch_version()&#160;:&#160;<a class="el" href="Version_8h.html#a11ffc949fd85d9dc48e13e9534647c6b">Version.h</a></li>
@@ -258,11 +305,18 @@ $(function() {
 <li>ob_get_version()&#160;:&#160;<a class="el" href="Version_8h.html#a5f9f0ba02ac9092d075ee76ac5a7678b">Version.h</a></li>
 <li>ob_gyro_frame_temperature()&#160;:&#160;<a class="el" href="Frame_8h.html#a46144bd2d6c7d57b85f8b1f95d1be336">Frame.h</a></li>
 <li>ob_gyro_frame_value()&#160;:&#160;<a class="el" href="Frame_8h.html#a491583ded6975af8cb3948a6ec372529">Frame.h</a></li>
+<li>ob_gyro_stream_get_intrinsic()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#a4450f5be3693f3e004288e7880db3835">StreamProfile.h</a></li>
 <li>ob_gyro_stream_profile_full_scale_range()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#a4c820b7e521534b400f831f9648ab248">StreamProfile.h</a></li>
 <li>ob_gyro_stream_profile_sample_rate()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#aa740ac4cda4a92eb8a2ac61b411b93f1">StreamProfile.h</a></li>
+<li>ob_holefilling_filter_get_mode()&#160;:&#160;<a class="el" href="Filter_8h.html#a40de2b7b669d72ada0c20a922eef7b2e">Filter.h</a></li>
+<li>ob_holefilling_filter_set_mode()&#160;:&#160;<a class="el" href="Filter_8h.html#a5670323476fc4c22da87dbfd17fe15da">Filter.h</a></li>
 <li>ob_ir_frame_get_source_sensor_type()&#160;:&#160;<a class="el" href="Frame_8h.html#ac69985299cbe7ca46cdddab955d26a33">Frame.h</a></li>
 <li>ob_load_license()&#160;:&#160;<a class="el" href="Context_8h.html#a75ca999bcd3dea0808ed9ccff28bf00b">Context.h</a></li>
 <li>ob_load_license_from_data()&#160;:&#160;<a class="el" href="Context_8h.html#abf0f9777acf870a662b04ec73f57bab5">Context.h</a></li>
+<li>ob_noise_removal_filter_get_disp_diff_range()&#160;:&#160;<a class="el" href="Filter_8h.html#ac8d6193e61138f2f58d8a1c13d116f42">Filter.h</a></li>
+<li>ob_noise_removal_filter_get_filter_params()&#160;:&#160;<a class="el" href="Filter_8h.html#ad06c7a5522388082875ceb39a9d54ee9">Filter.h</a></li>
+<li>ob_noise_removal_filter_get_max_size_range()&#160;:&#160;<a class="el" href="Filter_8h.html#afd9a8c11677057fc91ed78ff1b35be1a">Filter.h</a></li>
+<li>ob_noise_removal_filter_set_filter_params()&#160;:&#160;<a class="el" href="Filter_8h.html#ab32f83d8a7224768eac8ad2dded20065">Filter.h</a></li>
 <li>ob_pipeline_disable_frame_sync()&#160;:&#160;<a class="el" href="Pipeline_8h.html#ad7692c870709931dc00c043802600164">Pipeline.h</a></li>
 <li>ob_pipeline_enable_frame_sync()&#160;:&#160;<a class="el" href="Pipeline_8h.html#a66619af96fc52f4a3ce183018e5542cd">Pipeline.h</a></li>
 <li>ob_pipeline_get_calibration_param()&#160;:&#160;<a class="el" href="Pipeline_8h.html#aca122ca3b7ec82dc11b282f03d38546b">Pipeline.h</a></li>
@@ -295,6 +349,7 @@ $(function() {
 <li>ob_recorder_start()&#160;:&#160;<a class="el" href="RecordPlayback_8h.html#a66007cf428a258c2de217e9379984d34">RecordPlayback.h</a></li>
 <li>ob_recorder_stop()&#160;:&#160;<a class="el" href="RecordPlayback_8h.html#a541028e725b8e68a47a5f54f350d3343">RecordPlayback.h</a></li>
 <li>ob_recorder_write_frame()&#160;:&#160;<a class="el" href="RecordPlayback_8h.html#a5fd02c1a5488a0398126450998de621c">RecordPlayback.h</a></li>
+<li>ob_sensor_get_recommended_filter_list()&#160;:&#160;<a class="el" href="Sensor_8h.html#a2be088a7618270fd75a8508725fe3cc7">Sensor.h</a></li>
 <li>ob_sensor_get_stream_profile_list()&#160;:&#160;<a class="el" href="Sensor_8h.html#a4f240f7a55a99101d72967728093edc5">Sensor.h</a></li>
 <li>ob_sensor_get_type()&#160;:&#160;<a class="el" href="Sensor_8h.html#aa8e63b875425a80e40613262813a517e">Sensor.h</a></li>
 <li>ob_sensor_list_get_sensor()&#160;:&#160;<a class="el" href="Sensor_8h.html#aa62e0011ecc2afad794595a5468bb5bc">Sensor.h</a></li>
@@ -304,24 +359,42 @@ $(function() {
 <li>ob_sensor_start()&#160;:&#160;<a class="el" href="Sensor_8h.html#aa8756a59db4382c257c42e590ee49d8f">Sensor.h</a></li>
 <li>ob_sensor_stop()&#160;:&#160;<a class="el" href="Sensor_8h.html#ac97657e063e0023a1fadfa6a78de63cd">Sensor.h</a></li>
 <li>ob_sensor_switch_profile()&#160;:&#160;<a class="el" href="Sensor_8h.html#a67a73fb66b231bd944d8f5818df48ae5">Sensor.h</a></li>
+<li>ob_sequence_id_filter_get_sequence_id()&#160;:&#160;<a class="el" href="Filter_8h.html#abc766d3e4efd0c0559f77191c5b6b45e">Filter.h</a></li>
+<li>ob_sequence_id_filter_get_sequence_id_list()&#160;:&#160;<a class="el" href="Filter_8h.html#abe85c917a0a2738219c047abaa51644e">Filter.h</a></li>
+<li>ob_sequence_id_filter_get_sequence_id_list_size()&#160;:&#160;<a class="el" href="Filter_8h.html#a2d688fe87a90c34774772ff65b35317e">Filter.h</a></li>
+<li>ob_sequence_id_filter_select_sequence_id()&#160;:&#160;<a class="el" href="Filter_8h.html#a9c7e71f4b633e80120ac764a00528c6e">Filter.h</a></li>
 <li>ob_set_device_changed_callback()&#160;:&#160;<a class="el" href="Context_8h.html#acebdeed40dc2dc6abd78ec007fde9d4d">Context.h</a></li>
 <li>ob_set_logger_callback()&#160;:&#160;<a class="el" href="Context_8h.html#a350986fb46826aa5a45e0042b21b6a1f">Context.h</a></li>
 <li>ob_set_logger_severity()&#160;:&#160;<a class="el" href="Context_8h.html#a79a802866392f4bdfe720f96d207467a">Context.h</a></li>
 <li>ob_set_logger_to_console()&#160;:&#160;<a class="el" href="Context_8h.html#a3fa8b36789dc4795a62e12921d43465d">Context.h</a></li>
 <li>ob_set_logger_to_file()&#160;:&#160;<a class="el" href="Context_8h.html#ab79a13113a7e2bf0d793ffba5b93be03">Context.h</a></li>
 <li>ob_set_playback_state_callback()&#160;:&#160;<a class="el" href="RecordPlayback_8h.html#a30e23b32950de33d7ae2333abbeb3126">RecordPlayback.h</a></li>
+<li>ob_spatial_advanced_filter_get_alpha_range()&#160;:&#160;<a class="el" href="Filter_8h.html#a12b638d863dcd28be34ea97680b6c00c">Filter.h</a></li>
+<li>ob_spatial_advanced_filter_get_disp_diff_range()&#160;:&#160;<a class="el" href="Filter_8h.html#a544e7f8a4264686fc68a2cd660794ecb">Filter.h</a></li>
+<li>ob_spatial_advanced_filter_get_filter_params()&#160;:&#160;<a class="el" href="Filter_8h.html#a7f19aab3403e40d12d439e8a6a6fc335">Filter.h</a></li>
+<li>ob_spatial_advanced_filter_get_magnitude_range()&#160;:&#160;<a class="el" href="Filter_8h.html#a3677843dfde09a3074eaaab99737924b">Filter.h</a></li>
+<li>ob_spatial_advanced_filter_get_radius_range()&#160;:&#160;<a class="el" href="Filter_8h.html#addbfdb3fdca36c4ce4e53f434184fb7f">Filter.h</a></li>
+<li>ob_spatial_advanced_filter_set_filter_params()&#160;:&#160;<a class="el" href="Filter_8h.html#a5c13a8890fa26bca9f6c4112e152db45">Filter.h</a></li>
 <li>ob_stream_profile_format()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#ae8159fd10f2d3472825293e5523268f5">StreamProfile.h</a></li>
+<li>ob_stream_profile_get_extrinsic_to()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#a6bf5d3830120ca2ceb0f3535eb88a4d5">StreamProfile.h</a></li>
 <li>ob_stream_profile_list_count()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#a3a8b94176ddbdb03df8af9006a028189">StreamProfile.h</a></li>
 <li>ob_stream_profile_list_get_accel_stream_profile()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#a03275af4c34f5d907a494eb9535f3b4a">StreamProfile.h</a></li>
 <li>ob_stream_profile_list_get_gyro_stream_profile()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#a05e8e2a1f788052e69a49142a9087567">StreamProfile.h</a></li>
 <li>ob_stream_profile_list_get_profile()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#ad98ba6acded2481e7b68f88a657e8a6b">StreamProfile.h</a></li>
 <li>ob_stream_profile_list_get_video_stream_profile()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#a222892ac972361b80119497c6d5cffa6">StreamProfile.h</a></li>
 <li>ob_stream_profile_type()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#a35b867041d3758ba158d9fc4af8546cd">StreamProfile.h</a></li>
+<li>ob_temporal_filter_get_diffscale_range()&#160;:&#160;<a class="el" href="Filter_8h.html#abdfe31e257cd6bb038c5b0c083ec402b">Filter.h</a></li>
+<li>ob_temporal_filter_get_weight_range()&#160;:&#160;<a class="el" href="Filter_8h.html#a12cc85a71e9ad9030af88ee1210c5df4">Filter.h</a></li>
+<li>ob_temporal_filter_set_diffscale_value()&#160;:&#160;<a class="el" href="Filter_8h.html#a52cba880569aa0820240a216eff666aa">Filter.h</a></li>
+<li>ob_temporal_filter_set_weight_value()&#160;:&#160;<a class="el" href="Filter_8h.html#ac7d4271ffccb6b8f0ba903b2d635a2d9">Filter.h</a></li>
+<li>ob_threshold_filter_get_max_range()&#160;:&#160;<a class="el" href="Filter_8h.html#a0375ef21774406a75f26c0354d3651e0">Filter.h</a></li>
+<li>ob_threshold_filter_get_min_range()&#160;:&#160;<a class="el" href="Filter_8h.html#a362afb63d3a0fb1e951f3c6baaab5238">Filter.h</a></li>
+<li>ob_threshold_filter_set_scale_value()&#160;:&#160;<a class="el" href="Filter_8h.html#a0b73fbf63c6c115b7d34795bf0453082">Filter.h</a></li>
 <li>ob_video_frame_height()&#160;:&#160;<a class="el" href="Frame_8h.html#a4c31d615158ad377dab30a5886788a11">Frame.h</a></li>
-<li>ob_video_frame_metadata()&#160;:&#160;<a class="el" href="Frame_8h.html#acb038c68f498a145ce7774c606c3d9ff">Frame.h</a></li>
-<li>ob_video_frame_metadata_size()&#160;:&#160;<a class="el" href="Frame_8h.html#ac9096648e25cfa045fb0ab6b3b3c93c0">Frame.h</a></li>
 <li>ob_video_frame_pixel_available_bit_size()&#160;:&#160;<a class="el" href="Frame_8h.html#a4a7f7edea6d5963c2bbd2360edc3a489">Frame.h</a></li>
 <li>ob_video_frame_width()&#160;:&#160;<a class="el" href="Frame_8h.html#a0105450d37ecd43b0e27c90e396231eb">Frame.h</a></li>
+<li>ob_video_stream_get_distortion()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#a38534e22596ab2878db3dc267342d747">StreamProfile.h</a></li>
+<li>ob_video_stream_get_intrinsic()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#a7e5d06df428ae0289c593560fca9e3e6">StreamProfile.h</a></li>
 <li>ob_video_stream_profile_fps()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#ae4c0669d1629d462182d19e6199ac69c">StreamProfile.h</a></li>
 <li>ob_video_stream_profile_height()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#a6c76dc19ab6f6f34391a16518041b459">StreamProfile.h</a></li>
 <li>ob_video_stream_profile_width()&#160;:&#160;<a class="el" href="StreamProfile_8h.html#ab2ab197d64a33161689d3fbde443fbc9">StreamProfile.h</a></li>
@@ -329,7 +402,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 5 2024 18:30:21 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Generated on Mon Apr 29 2024 18:30:23 for OrbbecSDK by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>
