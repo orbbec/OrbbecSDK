@@ -1,6 +1,6 @@
 # Orbbec SDK
 
-![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.9.5-green)
+![stability](https://img.shields.io/badge/stability-unstable-yellow) ![version](https://img.shields.io/badge/version-1.10.2-green)
 
 The Orbbec 3D camera product software development kit fully supports UVC, enabling driver-free plug-and-play. It provides both low-level and high-level APIs that are simple and easy to use, allowing developers to use it flexibly in different scenarios.
 
@@ -40,6 +40,8 @@ The current software license structure is as follows
 
 | **Products List** | **Firmware Version**        |
 |-------------------|-----------------------------|
+| Gemini 335        | 1.2.20                      |
+| Gemini 335L        | 1.2.20                     |
 | Femto Bolt        | 1.0.6/1.0.9                 |
 | Femto Mega        | 1.1.7/1.2.7                 |
 | Gemini 2 XL       | Obox: V1.2.5  VL:1.4.54     |
