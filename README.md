@@ -1,6 +1,6 @@
 # Orbbec SDK
 
-![stability](https://img.shields.io/badge/stability-unstable-yellow) ![version](https://img.shields.io/badge/version-1.10.2-green)
+![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.10.2-green)
 
 The Orbbec 3D camera product software development kit fully supports UVC, enabling driver-free plug-and-play. It provides both low-level and high-level APIs that are simple and easy to use, allowing developers to use it flexibly in different scenarios.
 
@@ -31,7 +31,7 @@ The current software license structure is as follows
 | Linux            | - Linux Ubuntu 16.04/18.04/20.04 (x64)                                                       | Support GCC 7.5                                                                                                                         |
 | Arm32            | - Linux Ubuntu 16.04/18.04/20.04                                                             | Support GCC 7.5                                                                                                                         |
 | Arm64            | - Linux Ubuntu 18.04/20.04                                                                   | Support GCC 7.5                                                                                                                         |
-| MacOS            | - M series chip, 11.0 and above、intel x86 chip, 10.15 and above.                             | supported hardware products: Gemini 2, Gemini 2 L, Astra 2,Gemini 2 XL, Femto Mega                                                      |
+| MacOS            | - M series chip, 11.0 and above; Intel x86 chip, 10.15 and above.                            | supported hardware products: Gemini 2, Gemini 2 L, Astra 2, Gemini 2 XL, Femto Mega, G300 series                                                   |
 
 * Note: supported Arm platforms: jestson nano (arm64)、 AGX Orin(arm64)、Orin NX (arm64)、Orin Nano(arm64)、A311D (arm64), Raspberry Pi 4 (arm64), Raspberry Pi 3 (arm32), rk3399 (arm64), other Arm systems, may need to Cross-compile.
 * Windows 11, Ubuntu 22.04 and other Linux platforms may also be supported, but have not been fully tested.
@@ -62,10 +62,10 @@ The current software license structure is as follows
 
 ## OrbbecViewer
 
-OrbbecViewer is a useful tool based on Orbbec SDK，that can be used to view the data stream from the Orbbec camera and control the camera.
+OrbbecViewer is a useful tool based on Orbbec SDK, that can be used to view the data stream from the Orbbec camera and control the camera.
 ![OrbbecViewer](doc/resources/OrbbecViewer.png)
 
-**Supported platforms**: Windows x64, Linux x64 & ARM64
+**Supported platforms**: Windows x64, Linux x64 & ARM64, MacOS M series chip & Intel x86 chip
 
 **Download link**: [Releases](https://github.com/orbbec/OrbbecSDK/releases)
 
