@@ -11,16 +11,16 @@
 | ColorViewer       | C        | 演示使用SDK获取彩色数据并绘制显示、获取分辨率并进行设置、显示彩色图像 |
 | Hotplugin | C | 演示设备热拔插监控，检测到设备上线自动连接设备打开深度流，检测到设备掉线自动断开设备连接 |
 | PointCloud | C | 演示生成深度点云或RGBD点云并保存成ply格式文件 |注意：该示例同时开Depth和Color流，如相机不支持Color流 (Gemini E Lite 或 DaBai DW) 或 用户不需要开Color流，那么需要将开Color流的代码及设置D2C的代码去掉   |
-| AlignFilterViewer | C | 演示传感器数据流对齐操作，支持D2C和C2D对齐 （Gemini 335/335L 支持）  |
-| DoubleInfraredViewer | C | 演示同时获取双目相机的左右IR数据 | 目前只有Gemini 2 XL、Gemini 335/335L 支持  |
-| InfraredViewer       | C        | 演示使用SDK获取红外数据并绘制显示、获取分辨率并进行设置、显示红外图像 | 默认配置IR Sensor获取数据，Gemini 2 XL、Gemini 335/335L  通过左IR或右IR 获取数据，该Sample不支持，请参考DoubleInfraredViewer示例  |
-| Post-Processing       | C        | 演示Gemini 335 和 Gemini 335L 处理功能  |
-| HdrMerge      | C        | 演示Gemini 335 和 Gemini 335L HDR 功能 |
+| AlignFilterViewer | C | 演示传感器数据流对齐操作，支持D2C和C2D对齐  | Gemini 330系列 支持|
+| DoubleInfraredViewer | C | 演示同时获取双目相机的左右IR数据 | 目前只有Gemini 2 XL、Gemini 330系列 支持  |
+| InfraredViewer       | C        | 演示使用SDK获取红外数据并绘制显示、获取分辨率并进行设置、显示红外图像 | 默认配置IR Sensor获取数据，Gemini 2 XL、Gemini 330系列  通过左IR或右IR 获取数据，该Sample不支持，请参考DoubleInfraredViewer示例  |
+| Post-Processing       | C        | 演示Gemini 330系列 处理功能  | Gemini 330系列 支持 |
+| HdrMerge      | C        | 演示Gemini 330系列 HDR 功能 | Gemini 330系列 支持   |
 | HelloOrbbec | C++ | 演示连接到设备获取SDK版本和设备信息 |
 | DepthViewer | C++ | 演示使用SDK获取深度数据并绘制显示、获取分辨率并进行设置、显示深度图像 |
 | ColorViewer | C++ | 演示使用SDK获取彩色数据并绘制显示、获取分辨率并进行设置、显示彩色图像 |
-| InfraredViewer | C++ | 演示使用SDK获取红外数据并绘制显示、获取分辨率并进行设置、显示红外图像 | 默认配置IR Sensor获取数据，Gemini 2 XL、Gemini 335/335L 通过左IR或右IR 获取数据，该Sample不支持，请参考DoubleInfraredViewer示例  |
-| DoubleInfraredViewer | C++ | 演示同时获取双目相机的左右IR数据 | 目前只有Gemini 2 XL、Gemini 335/335L 支持  |
+| InfraredViewer | C++ | 演示使用SDK获取红外数据并绘制显示、获取分辨率并进行设置、显示红外图像 | 默认配置IR Sensor获取数据，Gemini 2 XL、Gemini 330系列通过左IR或右IR 获取数据，该Sample不支持，请参考DoubleInfraredViewer示例  |
+| DoubleInfraredViewer | C++ | 演示同时获取双目相机的左右IR数据 | 目前只有Gemini 2 XL、Gemini 330系列 支持  |
 | IMUReader | C++ | 获取IMU数据并输出显示 | 仅支持Imu的相机支持    |
 | Hotplugin | C++ | 演示设备拔插回调的设置，并获取到插拔后处理的流 |
 | SensorControl | C++ | 演示对设备和传感器控制命令的操作 |
@@ -36,7 +36,7 @@
 | MultiDeviceSync | C++ | 演示多机同步功能 |   |
 | FirmwareUpgrade | C++ | 演示选择固件bin或者img文件给设备升级固件版本 |
 | Transformation | C++ |  演示CoordinateTransformHelper类的函数调用，该类用来做不同坐标系下点的转换及生成无畸变的depth点云和RGBD点云|
-| HdrMerge      | C++        | 演示Gemini 335 和 Gemini 335L HDR 功能 |
-| Post-Processing       | C++        | 演示Gemini 335 和 Gemini 335L 处理功能  |
-| AlignFilterViewer | C++ | 演示传感器数据流对齐操作，支持D2C和C2D对齐 （Gemini 335/335L 支持）  |
+| HdrMerge      | C++        | 演示Gemini 330系列 HDR 功能 | Gemini 330系列 支持|
+| Post-Processing       | C++        | 演示Gemini 330系列 处理功能  | Gemini 330系列 支持|
+| AlignFilterViewer | C++ | 演示传感器数据流对齐操作，支持D2C和C2D对齐   |Gemini 330系列 支持|
 
