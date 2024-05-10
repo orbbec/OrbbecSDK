@@ -31,7 +31,7 @@ Orbbec 3D 相机产品软件开发套件，全面支持 UVC，实现免驱动即
 | Linux            | - Linux Ubuntu 16.04/18.04/20.04 (x64)                                                       | Support GCC 7.5                                                                                                                         |
 | Arm32            | - Linux Ubuntu 16.04/18.04/20.04                                                             | Support GCC 7.5                                                                                                                         |
 | Arm64            | - Linux Ubuntu 18.04/20.04                                                                   | Support GCC 7.5                                                                                                                         |
-| MacOS            | - M series chip, 11.0 and above、intel x86 chip, 10.15 and above.                             | supported hardware products: Gemini 2, Gemini 2 L, Astra 2,Gemini 2 XL, Femto Mega, G300系列                                                      |
+| MacOS            | - M series chip, 11.0 and above、intel x86 chip, 10.15 and above.                             | supported hardware products: Gemini 2, Gemini 2 L, Astra 2,Gemini 2 XL, Femto Mega, Gemini 300系列                                                      |
 
 * 注: 当前版本支持的Arm平台：jestson nano(arm64)、AGX Orin(arm64)、Orin NX (arm64)、Orin Nano(arm64)、A311D(arm64)、树莓派4(arm64)、树莓派3（arm32)、rk3399(arm64), 其它Arm系统，可能需要重新交叉编译。
 * Windows 11, Ubuntu 22.04 和其他一些 Linux 平台理论上也支持，但是未经过完整测试”
