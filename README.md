@@ -78,12 +78,13 @@ OrbbecViewer is a useful tool based on Orbbec SDK, that can be used to view the 
 ```bash
 git clone https://github.com/orbbec/OrbbecSDK.git
 ```
+Alternatively, you can install via binary packages, please refer to [installation guidance](doc/tutorial/English/Installation_guidance.md) for more information.
 
 ### Environment setup
 
 * Linux:
 
-  Install udev rules file
+ If you installed via a debian package, you can skip the installation of the udev rules file. If not, please install it using the following commands:
 
   ```bash
   cd OrbbecSDK/misc/scripts

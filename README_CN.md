@@ -76,13 +76,17 @@ OrbbecViewer是一个基于Orbbec SDK的实用工具，用于查看来自Orbbec�
 
 ### 获取源码
 
-    ``bash     git clone https://github.com/Orbbec/OrbbecSDK.git     ``
+```bash     
+git clone https://github.com/Orbbec/OrbbecSDK.git     
+```
+
+您也可以通过二进制包进行安装，请参考[安装指南](doc/tutorial/Chinese/Installation_guidance.md)获取更多信息。
 
 ### 环境配置
 
 * Linux：
 
-  安装 udev rules 文件
+如果您通过 Debian 包进行安装，则可以跳过 udev 规则文件的安装。如果没有，请使用以下命令进行安装：
 
   ```bash
   cd OrbbecSDK/misc/scripts
