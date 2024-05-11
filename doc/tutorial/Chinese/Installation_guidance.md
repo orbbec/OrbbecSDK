@@ -50,15 +50,15 @@
 sudo dpkg -i OrbbecSDK_v1.x.x_amd64.deb
 ```
 
-![image0](Image/Linux_install_1.png)
+![image0](Image/Linux_Install_1.png)
 
 2) 使用`dpkg -L orbbecsdk`检查Orbbec SDK的整个包路径，而Orbbec SDK的头文件和库文件将被安装在`/usr/local`路径中。
 
-![image0](Image/Linux_install_2.png)
+![image0](Image/Linux_Install_2.png)
 
 3) 输入`OrbbecViewer`来运行Orbbec Viewer。
 
-![image0](Image/Linux_install_3.png)
+![image0](Image/Linux_Install_3.png)
 
 ### 通过Debian Apt仓库安装
 
@@ -74,7 +74,7 @@ wget -O - http://s3.amazonaws.com/orbbec-debian-repos-aws/repos/orbbec_sdk/pub_k
 apt-key list
 ```
 
-![image0](Image/Linux_install_4.png)
+![image0](Image/Linux_Install_4.png)
 
 如果出现域名无法解析的问题，尝试以下命令重启系统DNS解析服务并重试第一个命令：
 
@@ -95,6 +95,6 @@ sudo apt update
 sudo apt search orbbecsdk
 ```
 
-![image0](Image/Linux_install_5.png)
+![image0](Image/Linux_Install_5.png)
 
 4) 通过`dpkg -L orbbecsdk`检查Orbbec SDK的安装目录，通过输入`OrbbecViewer`命令，您可以运行Orbbec Viewer。

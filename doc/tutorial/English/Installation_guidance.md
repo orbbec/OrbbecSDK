@@ -48,15 +48,15 @@ OrbbecSDK_v1.x.x_amd64.deb is the installation package for Linux x64, and Orbbec
 sudo dpkg -i OrbbecSDK_v1.x.x_amd64.deb
 ```
 
-![image0](Image/Linux_install_1.png)
+![image0](Image/Linux_Install_1.png)
 
 2) Check the entire package path of the Orbbec SDK using `dpkg -L orbbecsdk`, while the header files and library files of the Orbbec SDK will be installed in the `/usr/local` path.
 
-![image0](Image/Linux_install_2.png)
+![image0](Image/Linux_Install_2.png)
 
 3) Enter `OrbbecViewer` to run the Orbbec Viewer.
 
-![image0](Image/Linux_install_3.png)
+![image0](Image/Linux_Install_3.png)
 
 ### Install via Debian Apt Repository
 
@@ -72,7 +72,7 @@ wget -O - http://s3.amazonaws.com/orbbec-debian-repos-aws/repos/orbbec_sdk/pub_k
 apt-key list
 ```
 
-![image0](Image/Linux_install_4.png)
+![image0](Image/Linux_Install_4.png)
 
 If there is a problem with the host not resolving, try the following command to restart the system DNS resolution service and retry the first command:
 
@@ -93,6 +93,6 @@ sudo apt update
 sudo apt search orbbecsdk
 ```
 
-![image0](Image/Linux_install_5.png)
+![image0](Image/Linux_Install_5.png)
 
 4) Check the installation directory of the Orbbec SDK through `dpkg -L orbbecsdk`, and by entering the `OrbbecViewer` command, you can run the Orbbec Viewer .
