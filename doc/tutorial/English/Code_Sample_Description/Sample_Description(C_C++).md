@@ -754,11 +754,11 @@ check_error(error);
 
 ## AlignFilterViewer
 
-Supported devices: G300 series cameras, such as Gemini G335
+Supported devices: Gemini 330 series cameras.
 
-Function description: Demonstrate using SDK for stream alignment demonstration, display aligned images, and exit the program with ESC_KEY key
+Function description: Demonstrate using SDK for stream alignment demonstration, display aligned images, and exit the program with ESC_KEY key.
 
->This example is based on the C High Level API for demonstration
+>This example is based on the C High Level API for demonstration.
 
 Create Pipeline and stream Configuration
 ```c
@@ -1045,7 +1045,7 @@ check_error(error);
 
 ## Post-Processing
 
-Supported devices: G300 series cameras, such as Gemini G335
+Supported devices: Gemini 330 series cameras.
 
 Function description: Demonstrate the use of post-processing operations, display post-processing images, and exit the program using the ESC_KEY key
 
@@ -1155,7 +1155,7 @@ check_error(error);
 
 ## HdrMerge
 
-Supported devices: G300 series cameras, such as Gemini G335
+Supported devices: Gemini 330 series cameras.
 
 Function description: Demonstrate using HDR operation, display HDR processed images, and exit the program with ESC_KEY key
 
@@ -2464,7 +2464,7 @@ if(device->isPropertySupported(OB_PROP_DEPTH_PRECISION_LEVEL_INT, OB_PERMISSION_
     changeDepthUnitFlag = changeDepthUnit(device);
 }
 else if(device->isPropertySupported(OB_PROP_DEPTH_UNIT_FLEXIBLE_ADJUSTMENT_FLOAT, OB_PERMISSION_READ_WRITE)) {
-    // for some models (Such as G300 series), user can adjust the depth unit by adjusting the depth unit flexible adjustment property
+    // for some models (Such as Gemini 330 series), user can adjust the depth unit by adjusting the depth unit flexible adjustment property
     changeDepthUnitFlag = changeDepthUnitFlexible(device);
 }
 else {
@@ -2496,7 +2496,7 @@ Release resources and exit the program
 
 ## HdrMerge
 
-Supported devices: G300 series cameras, such as Gemini G335
+Supported devices: Gemini 330 series cameras.
 
 Function description: Demonstrate using HDR operation, display HDR processed images, and exit the program with ESC_KEY key
 
@@ -2598,7 +2598,7 @@ if(pipe.getDevice()->isPropertySupported(OB_STRUCT_DEPTH_HDR_CONFIG, OB_PERMISSI
 
 ## DepthWorkMode
 
-Supported devices: G2 series, G300 series cameras, Astra 2 series cameras
+Supported devices: Gemini 2 series, Gemini 330 series cameras, Astra 2 series cameras
 
 Function description: Demonstrate the operation of converting deep working mode
 
@@ -2980,7 +2980,7 @@ for(auto itr = pipelineHolderList.begin(); itr != pipelineHolderList.end(); itr+
 
 ## PostProcessing
 
-Supported devices: G300 series cameras, such as Gemini G335
+Supported devices: Gemini 330 series cameras.
 
 Function description: Demonstrate post-processing operations, display post-processed images, and exit the program using the ESC_KEY key
 
@@ -3086,7 +3086,7 @@ setPropertyValue(device, propertyItem, controlVec.at(2));
 
 ## AlignFilterViewer
 
-Supported devices: G300 series cameras, such as Gemini G335
+Supported devices: Gemini 330 series cameras.
 
 Function description: Demonstrate the synchronization and alignment of sensor data streams, display the aligned image, and exit the program using the ESC_KEY key
 
