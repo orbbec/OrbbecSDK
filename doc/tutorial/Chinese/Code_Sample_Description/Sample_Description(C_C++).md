@@ -2517,7 +2517,7 @@ if(device->isPropertySupported(OB_PROP_DEPTH_PRECISION_LEVEL_INT, OB_PERMISSION_
     changeDepthUnitFlag = changeDepthUnit(device);
 }
 else if(device->isPropertySupported(OB_PROP_DEPTH_UNIT_FLEXIBLE_ADJUSTMENT_FLOAT, OB_PERMISSION_READ_WRITE)) {
-    // for some models (Such as G300 series), user can adjust the depth unit by adjusting the depth unit flexible adjustment property
+    // for some models (Such as Gemini 330 series), user can adjust the depth unit by adjusting the depth unit flexible adjustment property
     changeDepthUnitFlag = changeDepthUnitFlexible(device);
 }
 else {

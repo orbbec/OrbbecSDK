@@ -105,7 +105,7 @@ bool changeDepthUnit(std::shared_ptr<ob::Device> &device) {
     return true;
 }
 
-// For some models (G300 series), user can adjust the depth unit by adjusting the depth unit flexible adjustment property
+// For some models (Gemini 330 series), user can adjust the depth unit by adjusting the depth unit flexible adjustment property
 bool changeDepthUnitFlexible(std::shared_ptr<ob::Device> &device) {
     auto currentValue = device->getFloatProperty(OB_PROP_DEPTH_UNIT_FLEXIBLE_ADJUSTMENT_FLOAT);
     auto valueRange   = device->getFloatPropertyRange(OB_PROP_DEPTH_UNIT_FLEXIBLE_ADJUSTMENT_FLOAT);
@@ -142,7 +142,7 @@ int main(int argc, char **argv) try {
         changeDepthUnitFlag = changeDepthUnit(device);
     }
     else if(device->isPropertySupported(OB_PROP_DEPTH_UNIT_FLEXIBLE_ADJUSTMENT_FLOAT, OB_PERMISSION_READ_WRITE)) {
-        // for some models (Such as G300 series), user can adjust the depth unit by adjusting the depth unit flexible adjustment property
+        // for some models (Such as Gemini 330 series), user can adjust the depth unit by adjusting the depth unit flexible adjustment property
         changeDepthUnitFlag = changeDepthUnitFlexible(device);
     }
     else {
