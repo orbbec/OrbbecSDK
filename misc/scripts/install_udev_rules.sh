@@ -1,19 +1,23 @@
-#!/bin/bash
+#!/bin/sh
 
 # Check if user is root/running with sudo
-if [ "$(id -u)" != "0" ]; then
-    echo "Please run this script with sudo"
-    exit 1
+if [ `whoami` != root ]; then
+    echo Please run this script with sudo
+    exit
 fi
 
-# Determine the script directory
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ORIG_PATH=`pwd`
+cd `dirname $0`
+SCRIPT_PATH=`pwd`
+cd $ORIG_PATH
 
-if [ "$(uname -s)" != "Darwin" ]; then
-    # Install UDEV rules for USB device
-    UDEV_RULES_FILE="/etc/udev/rules.d/99-obsensor-libusb.rules"
-    cp "${SCRIPT_DIR}/99-obsensor-libusb.rules" "${UDEV_RULES_FILE}"
-    echo "USB rules file installed at ${UDEV_RULES_FILE}"
+if [ "`uname -s`" != "Darwin" ]; then
+    # Install udev rules for USB device
+    cp ${SCRIPT_PATH}/99-obsensor-libusb.rules /etc/udev/rules.d/99-obsensor-libusb.rules
+
+    # resload udev rules
+    udevadm control --reload && udevadm trigger
+
+    echo "usb rules file install at /etc/udev/rules.d/99-obsensor-libusb.rules"
 fi
-
-echo "Script execution complete"
+echo "exit"
