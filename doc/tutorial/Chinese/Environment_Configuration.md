@@ -4,7 +4,7 @@
 
 # 安装说明
 
-Orbbec SDK 兼容标准 UVC 协议，支持的硬件设备符合标准 UVC 规格，Gemini2、Femto 、Femto W、Femto Mega、Astra+、Astra2、Gemini2 L 这些模组使用的标准的 UVC 协议，因此不需要安装额外的驱动程序。
+Orbbec SDK 兼容标准 UVC 协议，支持的硬件设备符合标准 UVC 规格，Gemini2、Femto 、Femto W、Femto Mega、Astra+、Astra2、Gemini2 L 、Gemini 330系列 这些模组使用的标准的 UVC 协议，因此不需要安装额外的驱动程序。
 
 # windows 环境配置
 

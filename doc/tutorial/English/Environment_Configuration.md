@@ -6,7 +6,7 @@ This document introduces the installation of OrbbecSDK dependencies and the comp
 
 # install dependency
 
-The Orbbec SDK is compatible with the standard UVC protocol, and the standard UVC used by Gemini2、Femto 、Femto W、Femto Mega、Astra+、Astra2、Gemini2 L device, so no additional drivers are required.
+The Orbbec SDK is compatible with the standard UVC protocol, and the standard UVC used by Gemini2、Femto 、Femto W、Femto Mega、Astra+、Astra2、Gemini2 L 、Gemini 330 Series device, so no additional drivers are required.
 
 # windows
 
