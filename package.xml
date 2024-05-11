@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="3">
     <name>OrbbecSDK</name>
-    <version>1.9.5</version>
+    <version>1.10.5</version>
     <description>
         OrbbecSDK is a comprehensive library that provides developers with intuitive interfaces to control and
         manipulate Orbbec cameras seamlessly.
