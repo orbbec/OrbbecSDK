@@ -233,7 +233,7 @@ var searchData=
   ['ob_5fprop_5fdevice_5fdevelopment_5fmode_5fint_230',['OB_PROP_DEVICE_DEVELOPMENT_MODE_INT',['../Property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba0675d3da180e2748e85417b80ef1dd82',1,'Property.h']]],
   ['ob_5fprop_5fdevice_5fin_5frecovery_5fmode_5fbool_231',['OB_PROP_DEVICE_IN_RECOVERY_MODE_BOOL',['../Property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba1a88f605b025ceb6a9d67308fbc17e49',1,'Property.h']]],
   ['ob_5fprop_5fdevice_5freboot_5fdelay_5fint_232',['OB_PROP_DEVICE_REBOOT_DELAY_INT',['../Property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba5274f0b4c7df6a2dac11cb640982f86c',1,'Property.h']]],
-  ['ob_5fprop_5fdevice_5fusb3_5frepeat_5fidentify_5fbool_233',['OB_PROP_DEVICE_USB3_REPEAT_IDENTIFY_BOOL',['../Property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabaff36ebe6d8e40f832309f4dedc9611bd',1,'Property.h']]],
+  ['ob_5fprop_5fdevice_5fusb2_5frepeat_5fidentify_5fbool_233',['OB_PROP_DEVICE_USB2_REPEAT_IDENTIFY_BOOL',['../Property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba15101cfa51c47d6eb0bd932158c678c2',1,'Property.h']]],
   ['ob_5fprop_5fdevice_5fwork_5fmode_5fint_234',['OB_PROP_DEVICE_WORK_MODE_INT',['../Property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbabad094243a0bace007287fab39c33eee6e',1,'Property.h']]],
   ['ob_5fprop_5fdisparity_5fto_5fdepth_5fbool_235',['OB_PROP_DISPARITY_TO_DEPTH_BOOL',['../Property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba8972951b9cc07d4bcf135e8c03472df3',1,'Property.h']]],
   ['ob_5fprop_5fexternal_5fsignal_5freset_5fbool_236',['OB_PROP_EXTERNAL_SIGNAL_RESET_BOOL',['../Property_8h.html#a9e7aac1ea041c8958ea8c6e3aa53bbaba3d2b5b3559be680adb664bdf23971b06',1,'Property.h']]],
