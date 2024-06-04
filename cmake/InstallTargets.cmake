@@ -13,6 +13,8 @@ if (UNIX)
         DESTINATION lib
         FILES_MATCHING PATTERN "libOrbbecSDK.so"
         PATTERN "libOrbbecSDK.so.*"
+        PATTERN "libdepthengine.so"
+        PATTERN "libdepthengine.so.*"
         PATTERN "libOrbbecSDK.dylib"
         PATTERN "libOrbbecSDK.*.dylib"
     )
@@ -34,12 +36,15 @@ elseif (WIN32)
     install(DIRECTORY
         ${OrbbecSDK_LIBS_DIR}/
         DESTINATION bin
-        FILES_MATCHING PATTERN "OrbbecSDK.dll"
+        FILES_MATCHING PATTERN "*.dll"
+        PATTERN ".lib"
     )
     install(DIRECTORY
         ${OrbbecSDK_LIBS_DIR}/
         DESTINATION lib
-        FILES_MATCHING PATTERN "OrbbecSDK*"
+        FILES_MATCHING
+        PATTERN "*.dll"
+        PATTERN ".lib"
     )
 endif ()
 

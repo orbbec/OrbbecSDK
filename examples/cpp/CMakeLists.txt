@@ -10,6 +10,7 @@ add_subdirectory(Sample-HotPlugin)
 add_subdirectory(Sample-ImuReader)
 add_subdirectory(Sample-SensorControl)
 add_subdirectory(Sample-Transformation)
+add_subdirectory(Sample-QuickStart)
 
 # opencv required
 if(${OpenCV_FOUND})

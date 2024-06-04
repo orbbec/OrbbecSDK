@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ob_0',['ob',['../namespaceob.html',1,'']]]
+  ['ob',['ob',['../namespaceob.html',1,'']]]
 ];

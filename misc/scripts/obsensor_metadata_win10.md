@@ -1,6 +1,7 @@
 # obsensor_metadata_win10
+This document introduces two different methods for setting Metadata, explaining their advantages, disadvantages, and precautions.
 
-## English
+## Registering Metadata Using a Script
 
 To get device timestamps through UVC protocol, users need to modify the registry and complete registration first, because Windows system has default limitations.
 
@@ -9,11 +10,26 @@ To get device timestamps through UVC protocol, users need to modify the registry
 3. Execute the `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser` command, and enter `Y` as prompted to confirm;
 4. Execute `.\obsensor_metadata_win10.ps1 -op install_all` to complete the registration.
 
-## Chinese
+**Notes**
 
-要通过UVC协议获取设备时间戳，用户需要先修改注册表并完成注册，因为Windows系统有默认的限制。
+Users need to run this script every time a new device is connected. This process can be cumbersome and easy to forget, leading to an inability to obtain the device's Metadata.
 
-连接设备并确认设备在线；
-以管理员权限打开powershell，然后使用cd命令进入scripts目录；
-执行`Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`命令，并按提示输入Y确认；
-执行`.\obsensor_metadata_win10.ps1 -op install_all`来完成注册。
+
+## Registering Metadata Using Code
+
+The purpose of the WindowsMetaDataHelper code(Script\WindowsMetaDataHelper) is to demonstrate how to programmatically register Metadata on the Windows platform.
+
+**Notes**
+
+1. The code must be run with administrator privileges, and the PID and VID passed into the code must be in decimal format.
+2. If multiple different types of device(different PID) are used, the registration code must be called for the PID of each device.
+
+
+**Advantages**
+
+Devices of the same type (same PID) only need to be registered once, and new devices can be recognized for Metadata without additional registration.
+
+
+
+
+

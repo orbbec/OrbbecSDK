@@ -1,6 +1,6 @@
 # Orbbec SDK
 
-![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.10.5-green)
+![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.10.8-green)
 
 The Orbbec 3D camera product software development kit fully supports UVC, enabling driver-free plug-and-play. It provides both low-level and high-level APIs that are simple and easy to use, allowing developers to use it flexibly in different scenarios.
 
@@ -157,7 +157,6 @@ target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 * OrbbecSDK C++ API user guide：[doc/tutorial/English/OrbbecSDK_C++_API_user_guide-v1.0.pdf](https://orbbec.github.io/OrbbecSDK/doc/tutorial/English/OrbbecSDK_C++_API_user_guide-v1.0.pdf)
 * Environment Configuration：[doc/tutorial/English/Environment_Configuration.md](doc/tutorial/English/Environment_Configuration.md)
 * examples: [examples/README.md](examples/README.md)
-* example description: [doc/tutorial/English/Code_Sample_Description/Sample_Description(C_C++).md](doc/tutorial/English/Code_Sample_Description/Sample_Description(C_C++).md)
 
 ## Related links
 
