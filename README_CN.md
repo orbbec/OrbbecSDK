@@ -1,6 +1,6 @@
 # OrbbecSDK
 
-![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.10.5-green)
+![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.10.8-green)
 
 Orbbec 3D 相机产品软件开发套件，全面支持 UVC，实现免驱动即插即用，提供低层和高层简单易用的 API，帮助开发者在不同场景下灵活使用。
 
@@ -142,7 +142,7 @@ target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 * OrbbecSDK C++ API user guide：[doc/tutorial/Chinese/OrbbecSDK_C++_API_user_guide-v1.0.pdf](https://orbbec.github.io/OrbbecSDK/doc/tutorial/Chinese/OrbbecSDK_C++_API_user_guide-v1.0.pdf)
 * Environment Configuration：[doc/tutorial/Chinese/Environment_Configuration.md](doc/tutorial/Chinese/Environment_Configuration.md)
 * 示例说明: [examples/README.md](examples/README_CN.md)
-* 示例描述: [doc/tutorial/Chinese/Code_Sample_Description/Sample_Description(C_C++).md](doc/tutorial/Chinese/Code_Sample_Description/Sample_Description(C_C++).md)
+
 
 ## 相关链接
 
