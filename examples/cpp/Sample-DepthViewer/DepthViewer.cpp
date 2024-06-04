@@ -6,29 +6,15 @@
 int main(int argc, char **argv) try {
     // Create a pipeline with default device
     ob::Pipeline pipe;
-
-    // Get all stream profiles of the depth camera, including stream resolution, frame rate, and frame format
-    auto profiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
-
-    std::shared_ptr<ob::VideoStreamProfile> depthProfile = nullptr;
-    try {
-        // Find the corresponding profile according to the specified format, first look for the y16 format
-        depthProfile = profiles->getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_Y16, 30);
-    }
-    catch(ob::Error &e) {
-        // If the specified format is not found, search for the default profile to open the stream
-        depthProfile = std::const_pointer_cast<ob::StreamProfile>(profiles->getProfile(OB_PROFILE_DEFAULT))->as<ob::VideoStreamProfile>();
-    }
-
     // By creating config to configure which streams to enable or disable for the pipeline, here the depth stream will be enabled
     std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
-    config->enableStream(depthProfile);
+    config->enableVideoStream(OB_STREAM_DEPTH);
 
     // Start the pipeline with config
     pipe.start(config);
-
+    auto currentProfile = pipe.getEnabledStreamProfileList()->getProfile(0)->as<ob::VideoStreamProfile>();
     // Create a window for rendering, and set the resolution of the window
-   Window app("DepthViewer", depthProfile->width(), depthProfile->height());
+    Window app("DepthViewer", currentProfile->width(), currentProfile->height());
 
     while(app) {
         // Wait for up to 100ms for a frameset in blocking mode.
@@ -54,7 +40,7 @@ int main(int argc, char **argv) try {
         }
 
         // Render frame in the window
-       app.addToRender(depthFrame);
+        app.addToRender(depthFrame);
     }
 
     // Stop the pipeline

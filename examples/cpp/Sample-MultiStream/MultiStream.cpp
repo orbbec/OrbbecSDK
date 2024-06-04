@@ -1,7 +1,3 @@
-/*
-Notes:
-on the Arm platform/Linux ,this sample requires users to compile with Opencv4.2 or above,otherwise, it cannot be rendered.
-*/
 #include "window.hpp"
 
 #include "libobsensor/hpp/Pipeline.hpp"
@@ -9,129 +5,95 @@ on the Arm platform/Linux ,this sample requires users to compile with Opencv4.2 
 #include <mutex>
 #include <thread>
 
+OBStreamType SensorTypeToStreamType(OBSensorType sensorType) {
+    switch(sensorType) {
+    case OB_SENSOR_COLOR:
+        return OB_STREAM_COLOR;
+    case OB_SENSOR_DEPTH:
+        return OB_STREAM_DEPTH;
+    case OB_SENSOR_IR:
+        return OB_STREAM_IR;
+    case OB_SENSOR_IR_LEFT:
+        return OB_STREAM_IR_LEFT;
+    case OB_SENSOR_IR_RIGHT:
+        return OB_STREAM_IR_RIGHT;
+    case OB_SENSOR_GYRO:
+        return OB_STREAM_GYRO;
+    case OB_SENSOR_ACCEL:
+        return OB_STREAM_ACCEL;
+    default:
+        return OB_STREAM_UNKNOWN;
+    }
+}
+
 int main(int argc, char **argv) try {
-
-    // create frame resource
-    std::mutex                 videoFrameMutex;
-    std::shared_ptr<ob::Frame> colorFrame;
-    std::shared_ptr<ob::Frame> depthFrame;
-    std::shared_ptr<ob::Frame> irFrame;
-
-    std::mutex                 accelFrameMutex;
-    std::shared_ptr<ob::Frame> accelFrame;
-
-    std::mutex                 gyroFrameMutex;
-    std::shared_ptr<ob::Frame> gyroFrame;
-
-    std::vector<std::shared_ptr<ob::Frame>> frames;
-
     // Create a pipeline with default device
     ob::Pipeline pipe;
 
     // Configure which streams to enable or disable for the Pipeline by creating a Config
     std::shared_ptr<ob::Config> config = std::make_shared<ob::Config>();
 
-    try {
-        auto colorProfiles = pipe.getStreamProfileList(OB_SENSOR_COLOR);
-        auto colorProfile  = colorProfiles->getProfile(OB_PROFILE_DEFAULT);
-        config->enableStream(colorProfile->as<ob::VideoStreamProfile>());
+    // enumerate and config all sensors
+    auto device     = pipe.getDevice();
+    auto sensorList = device->getSensorList();
+    for(int i = 0; i < sensorList->count(); i++) {
+        auto sensorType = sensorList->type(i);
+        if(sensorType == OB_SENSOR_GYRO || sensorType == OB_SENSOR_ACCEL) {
+            continue;
+        }
+        auto streamType = SensorTypeToStreamType(sensorType);
+        config->enableVideoStream(streamType);
     }
-    catch(...) {
-        std::cout << "color stream not found!" << std::endl;
-    }
-
-    try {
-        auto depthProfiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
-        auto depthProfile  = depthProfiles->getProfile(OB_PROFILE_DEFAULT);
-        config->enableStream(depthProfile->as<ob::VideoStreamProfile>());
-    }
-    catch(...) {
-        std::cout << "depth stream not found!" << std::endl;
-    }
-
-    try {
-        auto irProfiles = pipe.getStreamProfileList(OB_SENSOR_IR);
-        auto irProfile  = irProfiles->getProfile(OB_PROFILE_DEFAULT);
-        config->enableStream(irProfile->as<ob::VideoStreamProfile>());
-    }
-    catch(...) {
-        std::cout << "ir stream not found!" << std::endl;
-    }
-
-    // Configure the alignment mode as hardware D2C alignment
-    config->setAlignMode(ALIGN_D2C_HW_MODE);
 
     // Start the pipeline with config
-
+    std::mutex                                        frameMutex;
+    std::map<OBFrameType, std::shared_ptr<ob::Frame>> frameMap;
     pipe.start(config, [&](std::shared_ptr<ob::FrameSet> frameset) {
-        std::unique_lock<std::mutex> lk(videoFrameMutex);
-        colorFrame = frameset->colorFrame();
-        depthFrame = frameset->depthFrame();
-        irFrame    = frameset->irFrame();
+        auto count = frameset->frameCount();
+        for(int i = 0; i < count; i++) {
+            auto                         frame = frameset->getFrame(i);
+            std::unique_lock<std::mutex> lk(frameMutex);
+            frameMap[frame->type()] = frame;
+        }
     });
 
-    auto dev         = pipe.getDevice();
-    auto imuPipeline = std::make_shared<ob::Pipeline>(dev);
+    // The IMU frame rate is much faster than the video, so it is advisable to use a separate pipeline to obtain IMU data.
+    auto                                              dev         = pipe.getDevice();
+    auto                                              imuPipeline = std::make_shared<ob::Pipeline>(dev);
+    std::mutex                                        imuFrameMutex;
+    std::map<OBFrameType, std::shared_ptr<ob::Frame>> imuFrameMap;
     try {
-        auto                        accelProfiles = imuPipeline->getStreamProfileList(OB_SENSOR_ACCEL);
-        auto                        gyroProfiles  = imuPipeline->getStreamProfileList(OB_SENSOR_GYRO);
-        auto                        accelProfile  = accelProfiles->getProfile(OB_PROFILE_DEFAULT);
-        auto                        gyroProfile   = gyroProfiles->getProfile(OB_PROFILE_DEFAULT);
-        std::shared_ptr<ob::Config> imuConfig     = std::make_shared<ob::Config>();
-        imuConfig->enableStream(accelProfile);
-        imuConfig->enableStream(gyroProfile);
-        imuPipeline->start(imuConfig, [&](std::shared_ptr<ob::Frame> frame) {
-            auto frameSet = frame->as<ob::FrameSet>();
-            auto aFrame   = frameSet->getFrame(OB_FRAME_ACCEL);
-            auto gFrame   = frameSet->getFrame(OB_FRAME_GYRO);
-
-            {
-                std::unique_lock<std::mutex> lk(accelFrameMutex);
-                accelFrame = aFrame;
-            }
-
-            {
-                std::unique_lock<std::mutex> lk(gyroFrameMutex);
-                gyroFrame = gFrame;
+        std::shared_ptr<ob::Config> imuConfig = std::make_shared<ob::Config>();
+        imuConfig->enableGyroStream();
+        imuConfig->enableAccelStream();
+        imuPipeline->start(imuConfig, [&](std::shared_ptr<ob::FrameSet> frameset) {
+            auto count = frameset->frameCount();
+            for(int i = 0; i < count; i++) {
+                auto                         frame = frameset->getFrame(i);
+                std::unique_lock<std::mutex> lk(imuFrameMutex);
+                imuFrameMap[frame->type()] = frame;
             }
         });
     }
     catch(...) {
         std::cout << "IMU sensor not found!" << std::endl;
+        imuPipeline.reset();
     }
 
     // Create a window for rendering and set the resolution of the window
     Window app("MultiStream", 1280, 720, RENDER_GRID);
-    frames.resize(5);
     while(app) {
-        {
-            std::unique_lock<std::mutex> lock(videoFrameMutex);
-            if(colorFrame) {
-                frames.at(0) = colorFrame;
-            }
-            if(depthFrame) {
-                frames.at(1) = depthFrame;
-            }
-            if(irFrame) {
-                frames.at(2) = irFrame;
-            }
-        }
-        {
-            std::unique_lock<std::mutex> lk(accelFrameMutex);
-            if(accelFrame) {
-                frames.at(3) = accelFrame;
-            }
-        }
-        {
-            std::unique_lock<std::mutex> lk(gyroFrameMutex);
-            if(gyroFrame) {
-                frames.at(4) = gyroFrame;
-            }
-        }
         std::vector<std::shared_ptr<ob::Frame>> framesForRender;
-        for(auto &frame: frames) {
-            if(frame) {
-                framesForRender.push_back(frame);
+        {
+            std::unique_lock<std::mutex> lock(frameMutex);
+            for(auto &frame: frameMap) {
+                framesForRender.push_back(frame.second);
+            }
+        }
+        {
+            std::unique_lock<std::mutex> lock(imuFrameMutex);
+            for(auto &frame: imuFrameMap) {
+                framesForRender.push_back(frame.second);
             }
         }
         app.addToRender(framesForRender);
