@@ -17,6 +17,7 @@
 | Post-Processing       | C        | 演示Gemini 330系列 处理功能  | Gemini 330系列 支持 |
 | HdrMerge      | C        | 演示Gemini 330系列 HDR 功能 | Gemini 330系列 支持   |
 | HelloOrbbec | C++ | 演示连接到设备获取SDK版本和设备信息 |
+| QuickStart  | C++ | 这个快速入门示例演示了使用最少的API来获取数据流|
 | DepthViewer | C++ | 演示使用SDK获取深度数据并绘制显示、获取分辨率并进行设置、显示深度图像 |
 | ColorViewer | C++ | 演示使用SDK获取彩色数据并绘制显示、获取分辨率并进行设置、显示彩色图像 |
 | InfraredViewer | C++ | 演示使用SDK获取红外数据并绘制显示、获取分辨率并进行设置、显示红外图像 | 默认配置IR Sensor获取数据，Gemini 2 XL、Gemini 330系列通过左IR或右IR 获取数据，该Sample不支持，请参考DoubleInfraredViewer示例  |

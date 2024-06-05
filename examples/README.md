@@ -22,6 +22,7 @@ For a detailed explanations and API documentation see our (../doc) section.
 | AlignFilterViewer | C | Demonstrate the alignment operation of the sensor data stream, supporting D2C and C2D alignment   | Gemini 330 Series  support |
 | FirmwareUpgrade | C | Demonstrate upgrade device firmware |  |
 | HelloOrbbec | C++ | Demonstrate connect to device to get SDK version and device info |
+| QuickStart  | C++ | This Quick Start Sample demonstrates using the minimum API to obtain data streams|
 | DepthViewer | C++ | Demonstrate using SDK to get depth data and draw display, get resolution and set, display depth image |
 | ColorViewer | C++ | Demonstrate using SDK to get color data and draw display, get resolution and set, display color image |
 | InfraredViewer | C++ | Demonstrate using SDK to obtain infrared data and draw display, obtain resolution and set, display infrared image | Gemini 2 XL、Gemini 330 Series  obtains data through left IR or right IR, this Sample does not support, please refer to DoubleInfraredViewer example   |
