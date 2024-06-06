@@ -1,4 +1,4 @@
-# HelloOrbbec
+# HelloOrbbec
 
 功能描述：用于演示SDK初始化、获取SDK版本、获取设备型号、获取设备序列号、获取固件版本号、SDK释放资源，并通过ESC_KEY键退出程序
 
