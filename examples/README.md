@@ -1,5 +1,3 @@
-明白了，下面是更新后的代码文档，其中示例列表的每个示例都包含了对应的链接：
-
 # Sample Code for Orbbec cameras
 
 These simple examples demonstrate how to easily use the SDK to access the camera into your applications.
