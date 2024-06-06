@@ -2,7 +2,7 @@
 
 These simple examples demonstrate how to easily use the SDK to access the camera into your applications.
 
-For detailed explanations and API documentation see our [../doc](../doc) section.
+For detailed explanations and API documentation see our [doc](../doc) section.
 
 ## List of Examples:
 
