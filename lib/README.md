@@ -1,3 +1,5 @@
-# Orbbec SDK lib
+# Orbbec SDK library
 
-OrbbecSDK Because the library files, depth engine and driver files, are dedicated code, do not belong to the mit protocol.  lib license reference lib/license
+This Directory contains the Orbbec SDK library, depth engine and drivers files. Those files are close source now and will be open source in the near future.
+
+The license for those files can be found in the LICENSE file in the root directory of the Orbbec SDK repository.

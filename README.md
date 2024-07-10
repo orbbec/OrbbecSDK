@@ -22,6 +22,7 @@ The current software license structure is as follows
 
 ![SdkLicenseDiagram](doc/resources/sdk_licensediagram.png)
 
+More information about the license of each module can be found in the [license file](LICENSE.txt).
 
 ## Platform support
 
@@ -151,12 +152,17 @@ target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 
 ## Documents
 
+### Overview
 * Github Pages：[https://orbbec.github.io/OrbbecSDK/](https://orbbec.github.io/OrbbecSDK/)
 * Overview Document：[doc/tutorial/English/OverviewDocument.md](doc/tutorial/English/OverviewDocument.md)
+
+### Tutorials
+* Quick Start：[doc/tutorial/English/Environment_Configuration.md](doc/tutorial/English/Environment_Configuration.md)
+* Examples: [examples/README.md](examples/README.md)
+
+### API Reference
 * API Reference: [doc/api/English/index.html](https://orbbec.github.io/OrbbecSDK/doc/api/English/index.html)
 * OrbbecSDK C++ API user guide：[doc/tutorial/English/OrbbecSDK_C++_API_user_guide-v1.0.pdf](https://orbbec.github.io/OrbbecSDK/doc/tutorial/English/OrbbecSDK_C++_API_user_guide-v1.0.pdf)
-* Environment Configuration：[doc/tutorial/English/Environment_Configuration.md](doc/tutorial/English/Environment_Configuration.md)
-* examples: [examples/README.md](examples/README.md)
 
 ## Related links
 
