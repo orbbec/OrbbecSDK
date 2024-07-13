@@ -34,7 +34,7 @@ More information about the license of each module can be found in the [license f
 | Arm64            | - Linux Ubuntu 18.04/20.04                                                                   | Support GCC 7.5                                                                                                                         |
 | MacOS            | - M series chip, 11.0 and above; Intel x86 chip, 10.15 and above.                            | supported hardware products: Gemini 2, Gemini 2 L, Astra 2, Gemini 2 XL, Femto Mega, Gemini 330 series                                                   |
 
-* Note: supported Arm platforms: jestson nano (arm64)、 AGX Orin(arm64)、Orin NX (arm64)、Orin Nano(arm64)、A311D (arm64), Raspberry Pi 4 (arm64), Raspberry Pi 3 (arm32), rk3399 (arm64), other Arm systems, may need to Cross-compile.
+* Note: supported Arm platforms: jestson nano (arm64)、 AGX Orin(arm64)、Orin NX (arm64)、Orin Nano(arm64)、AGX Xavier、Xavier NX、A311D (arm64), Raspberry Pi 4 (arm64), Raspberry Pi 3 (arm32), rk3399 (arm64), other Arm systems, may need to Cross-compile.
 * Windows 11, Ubuntu 22.04 and other Linux platforms may also be supported, but have not been fully tested.
 
 ## Product support
