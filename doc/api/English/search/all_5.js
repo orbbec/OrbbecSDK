@@ -2,7 +2,7 @@ var searchData=
 [
   ['edgenoiseremovalfilter',['EdgeNoiseRemovalFilter',['../classob_1_1EdgeNoiseRemovalFilter.html',1,'ob']]],
   ['edgenoiseremovalfilter',['EdgeNoiseRemovalFilter',['../classob_1_1EdgeNoiseRemovalFilter.html#a7de0135594c3de6dc9514217560772bf',1,'ob::EdgeNoiseRemovalFilter']]],
-  ['enable',['enable',['../structob__device__timestamp__reset__config.html#a728f2b17c18b988080ad03cc401d7ea4',1,'ob_device_timestamp_reset_config::enable()'],['../structHDR__CONFIG.html#abdf0a9de04d07cb25e3a30c907fba87a',1,'HDR_CONFIG::enable()'],['../classob_1_1Filter.html#a6e5ed6b91b670548ab54a435e9f263e2',1,'ob::Filter::enable()']]],
+  ['enable',['enable',['../structob__device__timestamp__reset__config.html#a728f2b17c18b988080ad03cc401d7ea4',1,'ob_device_timestamp_reset_config::enable()'],['../structHDR__CONFIG.html#abdf0a9de04d07cb25e3a30c907fba87a',1,'HDR_CONFIG::enable()'],['../structDISP__OFFSET__CONFIG.html#a0ec9688c5cc257df90fa73f3dd78d77b',1,'DISP_OFFSET_CONFIG::enable()'],['../classob_1_1Filter.html#a6e5ed6b91b670548ab54a435e9f263e2',1,'ob::Filter::enable()']]],
   ['enable_5fdirection',['enable_direction',['../structob__margin__filter__config.html#a150c379be11c6cee4415c05e53f8af95',1,'ob_margin_filter_config']]],
   ['enableaccelstream',['enableAccelStream',['../classob_1_1Config.html#a4bc03d3b6c4ac579c90dcda70ad9ea55',1,'ob::Config']]],
   ['enableallstream',['enableAllStream',['../classob_1_1Config.html#afd567dae35d849607594adb8ce143638',1,'ob::Config']]],

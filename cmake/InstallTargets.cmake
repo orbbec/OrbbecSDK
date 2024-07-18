@@ -11,12 +11,10 @@ if (UNIX)
     install(DIRECTORY
         ${OrbbecSDK_LIBS_DIR}/
         DESTINATION lib
-        FILES_MATCHING PATTERN "libOrbbecSDK.so"
-        PATTERN "libOrbbecSDK.so.*"
-        PATTERN "libdepthengine.so"
-        PATTERN "libdepthengine.so.*"
-        PATTERN "libOrbbecSDK.dylib"
-        PATTERN "libOrbbecSDK.*.dylib"
+        FILES_MATCHING PATTERN "*.so"
+        PATTERN "*.so.*"
+        PATTERN "*.dylib"
+        PATTERN "*.*.dylib"
     )
 
     if (INSTALL_LIBUDEV)

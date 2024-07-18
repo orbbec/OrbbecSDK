@@ -38,10 +38,10 @@ var searchData=
   ['deviceid',['deviceId',['../structOBDeviceSyncConfig.html#a793d1603876f061fc3ab0c26131e73ff',1,'OBDeviceSyncConfig']]],
   ['deviceinfo',['DeviceInfo',['../classob_1_1DeviceInfo.html#a378453e2eaa8d140ef51125f9856b63e',1,'ob::DeviceInfo']]],
   ['deviceinfo',['DeviceInfo',['../classob_1_1DeviceInfo.html',1,'ob']]],
-  ['devicelist',['DeviceList',['../classob_1_1DeviceList.html',1,'ob']]],
   ['devicelist',['DeviceList',['../classob_1_1DeviceInfo.html#a9917364f8c1918d159a456cca5fc304b',1,'ob::DeviceInfo::DeviceList()'],['../classob_1_1DeviceList.html#a78325a6d57af6744915cb4dd75e295ab',1,'ob::DeviceList::DeviceList()']]],
-  ['devicepresetlist',['DevicePresetList',['../classob_1_1DevicePresetList.html#a88f8f6c5bf2a717ec78a6a10fc312c14',1,'ob::DevicePresetList']]],
+  ['devicelist',['DeviceList',['../classob_1_1DeviceList.html',1,'ob']]],
   ['devicepresetlist',['DevicePresetList',['../classob_1_1DevicePresetList.html',1,'ob']]],
+  ['devicepresetlist',['DevicePresetList',['../classob_1_1DevicePresetList.html#a88f8f6c5bf2a717ec78a6a10fc312c14',1,'ob::DevicePresetList']]],
   ['devicestatechangedcallback',['DeviceStateChangedCallback',['../Types_8hpp.html#a13d2e28ccdab82c8e22163d4b71f48aa',1,'Types.hpp']]],
   ['devicetriggersignaloutdelay',['deviceTriggerSignalOutDelay',['../structOBDeviceSyncConfig.html#acd2b333bb455fc6c6a716e16ae6e8bba',1,'OBDeviceSyncConfig']]],
   ['devicetriggersignaloutpolarity',['deviceTriggerSignalOutPolarity',['../structOBDeviceSyncConfig.html#a5e36a59f45da629155068a69dc8d7959',1,'OBDeviceSyncConfig']]],
@@ -54,7 +54,8 @@ var searchData=
   ['disableframesync',['disableFrameSync',['../classob_1_1Pipeline.html#ad46ea763b174c240b15279208b9e3d4c',1,'ob::Pipeline']]],
   ['disablestream',['disableStream',['../classob_1_1Config.html#a5e3fcf7f5a0efc7b928409c19dd03dc9',1,'ob::Config']]],
   ['disp_5fdiff',['disp_diff',['../structOBSpatialAdvancedFilterParams.html#a62db60d63fa61beed9c930c61b6b17e3',1,'OBSpatialAdvancedFilterParams::disp_diff()'],['../structOBNoiseRemovalFilterParams.html#a72f5863e10769e3e4332277206893db3',1,'OBNoiseRemovalFilterParams::disp_diff()']]],
-  ['disparitytransform',['DisparityTransform',['../classob_1_1DisparityTransform.html',1,'ob']]],
+  ['disp_5foffset_5fconfig',['DISP_OFFSET_CONFIG',['../structDISP__OFFSET__CONFIG.html',1,'']]],
   ['disparitytransform',['DisparityTransform',['../classob_1_1DisparityTransform.html#ab9dccbc48518e6873662ce0e170adce4',1,'ob::DisparityTransform']]],
+  ['disparitytransform',['DisparityTransform',['../classob_1_1DisparityTransform.html',1,'ob']]],
   ['distortion',['distortion',['../structOBCalibrationParam.html#ab7bf5f50e9aa26ba9cd2710685bd5628',1,'OBCalibrationParam']]]
 ];

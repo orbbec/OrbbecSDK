@@ -7,5 +7,6 @@ var searchData=
   ['deviceinfo',['DeviceInfo',['../classob_1_1DeviceInfo.html',1,'ob']]],
   ['devicelist',['DeviceList',['../classob_1_1DeviceList.html',1,'ob']]],
   ['devicepresetlist',['DevicePresetList',['../classob_1_1DevicePresetList.html',1,'ob']]],
+  ['disp_5foffset_5fconfig',['DISP_OFFSET_CONFIG',['../structDISP__OFFSET__CONFIG.html',1,'']]],
   ['disparitytransform',['DisparityTransform',['../classob_1_1DisparityTransform.html',1,'ob']]]
 ];

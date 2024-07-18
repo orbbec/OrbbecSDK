@@ -28,12 +28,10 @@ add_subdirectory(cpp)
 install(DIRECTORY
   ${OrbbecSDK_LIBS_DIR}/ DESTINATION
   bin
-  FILES_MATCHING PATTERN "libOrbbecSDK.so"
-  PATTERN "libOrbbecSDK.so.*"
-  PATTERN "libdepthengine.so"
-  PATTERN "libdepthengine.so.*"
-  PATTERN "libOrbbecSDK.dylib"
-  PATTERN "libOrbbecSDK.*.dylib"
+  FILES_MATCHING PATTERN "*.so"
+  PATTERN "*.so.*"
+  PATTERN "*.dylib"
+  PATTERN "*.*.dylib"
   PATTERN "*.dll"
   PATTERN ".lib"
   )
