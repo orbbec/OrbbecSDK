@@ -1,16 +1,23 @@
 <!-- 本文档面向开发者 -->
+
 # introduction
 
 This document introduces the installation of OrbbecSDK dependencies and the compilation instructions of OrbbecSDK Sample.
 
 # install dependency
 
-The Orbbec SDK is compatible with the standard UVC protocol, and the standard UVC used by Gemini2、Femto 、Femto W、Femto Mega、Astra2、Gemini2 L、Gemini 330 Series device, so no additional drivers are required.
+The Orbbec SDK is compatible with the standard UVC protocol, and the standard UVC used by Gemini2、Femto 、Femto W、Femto Mega、Astra+、Astra2、Gemini2 L 、Gemini 330 Series device, so no additional drivers are required.
 
 # windows
 
+## 1. install driver
 
-## 1. Configure OpenCV (Examples dependency)
+Dabai, Dabai DCW, Dabai DW, Astra mini Pro, Astra Pro Plus, A1 Pro, Gemini E, Gemini E Lite, Gemini These use the private protocol of openni and need to install private drivers.
+The directory of the openni driver is as follows: double-click the following .exe image directory to install the driver.
+
+![image0](Image/orbbec_driver_000.png)
+
+## 2. Configure OpenCV (Examples dependency)
 
 Data rendering relies on the third-party library OpenCV. Here we take OpenCV 4.3.0 as an example to demonstrate the installation configuration.
 
@@ -24,20 +31,18 @@ Data rendering relies on the third-party library OpenCV. Here we take OpenCV 4.3
 
 ![4](Image/orbbec_opencv_003.png)
 
-## 2. metadata(timestamp) registration
+## 3. metadata(timestamp) registration
 
 Now due to the Windows system mechanism, for UVC protocol devices, if you need to obtain metadata information such as timestamps, you need to first register in the registry. Using obsensor_metadata_win10.md document guide to complete the registry registration.
 
 ![5](Image/orbbec_metadata.png)
 
-## 3. Generate your first application
+## 4. Generate your first application
 
 Software dependency: VisualStudio2019, cmake 3.10 and above.
 
 * Download OrbbecSDK software package. Take version 1.5.7 as an example to explain how Windows compiles.
-
 * Open Cmake and set the "Examples" folder as the code path, and the "build" folder under "Examples" as the path to generate the binary file, as shown in the figure below. If there is no build under Examples, you need to create a new folder.
-
 
 ![6](Image/orbbec_sample_005.png)
 
@@ -64,32 +69,41 @@ Method 2: In the folder, directly start the Visual Studio project in Examples/bu
 ![11](Image/orbbec_sample_010.png)
 
 * Select the project you want to run, right click and "set as startup project", select release and 64-bit version at the run option.
-
-
 * Connect the device to the host
-
 * Copy the dll files from the bin directory of the Examples folder to the build folder where the generated executables located at.
-![13](Image/orbbec_sample_013.png)
-
-*  run the HelloOrbbec project
+  ![13](Image/orbbec_sample_013.png)
+* run the OBHelloOrbbec project
 
 ![14](Image/orbbec_sample_014.png)
 
 # Linux
 
-## 1. USB access rights configuration
+## 1. System environment configuration
+
+* Install libudev library:
+
+  ```bash
+  sudo apt install libudev-dev
+  ```
+* Install libusb library:
+
+  ```bash
+  sudo apt install libusb-dev
+  ```
+
+## 2. USB access rights configuration
 
 By default, direct access to USB devices in Linux systems requires root privileges, which can be resolved through the rules configuration file. After the files released by OrbbecSDK are decompressed, there will be a "99-obsensor-libusb.rules" configuration file and "install_udev_rules.sh" installation script in the Script directory.
 
 ![20](Image/orbbec_sample_linux_001.png)
 Run the "install_udev_rules.sh" script through the sudo command to complete the rules Installation of configuration files.
 
-``` bash
+```bash
 sudo chmod +x ./install_udev_rules.sh
 sudo ./install_udev_rules.sh
- ```
+```
 
-## 2. Increasing the USBFS buffer size (Optional)
+## 3. Increasing the USBFS buffer size (Optional)
 
 By default, the USBFS buffer size is 16 MB. This value is insufficient for high-resolution images or multiple streams and multiple devices usage. User can increase the buffer size to 128 MB.
 
@@ -101,7 +115,7 @@ cat /sys/module/usbcore/parameters/usbfs_memory_mb
 
 ### Increase the USBFS buffer size until the next reboot (here: example value 128)
 
-``` bash
+```bash
 sudo sh -c 'echo 128 > /sys/module/usbcore/parameters/usbfs_memory_mb'
 ```
 
@@ -111,24 +125,20 @@ To increase the buffer size permanently, add the kernel parameter usbcore.usbfs_
 
 For GRUB2 (most common):
 
-  1. Open /etc/default/grub. Replace: `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"` (or other contents within the quotation marks depending on your system) with: `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash usbcore.usbfs_memory_mb=128"`
+1. Open /etc/default/grub. Replace: `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"` (or other contents within the quotation marks depending on your system) with: `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash usbcore.usbfs_memory_mb=128"`
+2. Update grub
 
-  2. Update grub
-
-     ``` bash
-      sudo update-grub
-     ```
-
-  3. reboot your system
+   ```bash
+    sudo update-grub
+   ```
+3. reboot your system
 
 Other bootloaders: configure additional kernel parameters of other bootloaders, please see the manual of your bootloader.
 
-## 3. Verify device status
+## 4. Verify device status
 
 * Environment preparation: ubuntu18.04 x64 desktop
-
 * Take Astra+ as an example, use USB 3.0 Type-C data cable to connect with PC.
-
 * Use the lsusb command to check if the PC system correctly recognizes the camera.
 
 ![21](Image/orbbec_sample_linux_002.png)
@@ -140,14 +150,53 @@ VID: 2bc5 PID: 0536 (color camera)
 VID: 2bc5 PID: 0636 (depth camera)
 ```
 
-## 4. Linux Sample compile
+## 5. Linux Sample compile
 
-Create a build directory in the Examples directory, as follows:
+Create a build directory in the OrbbecSDK directory, as follows:
 ![image17](Image/orbbec_sample_linux_003.png)
 
-``` bash
+```bash
+cd OrbbecSDK
+mkdir build
 cd build
 cmake ..
 make
 ```
 
+# MacOS
+
+### Install Xcode and Homebrew
+
+1. **Install Xcode**:
+
+   - Xcode is the official development tool provided by Apple, which includes the C++ compiler.
+   - You can download it for free from the Mac App Store.
+   - Installing Xcode will also install the Command Line Tools, which include the GCC compiler and other development tools.
+2. **Install Homebrew**:
+
+   - Homebrew is a package manager for macOS, useful for installing various development tools and libraries.
+   - To install Homebrew, execute the following command in the terminal:
+     ```bash
+     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+     ```
+   - With Homebrew, you can easily install other development tools, like Git.
+
+These steps will set up the fundamental tools needed for C++ development on macOS.
+
+### Install Dependency
+
+```bash
+brew install cmake opencv
+```
+
+### Compile and run the sample
+
+```bash
+cd OrbbecSDK
+mkdir build
+cd build
+cmake .. && make -j8
+make install
+cd install/bin
+sudo ./OBHelloOrbbec
+```
