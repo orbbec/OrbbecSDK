@@ -48,7 +48,10 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})  # project is used 
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fPIC -g")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -O3")
     set(CMAKE_BUILD_TYPE "Release")
-    set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install")
+
+    if(NOT DEFINED CMAKE_INSTALL_PREFIX)
+        set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install")
+    endif()
 
     set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
     set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
@@ -76,24 +79,28 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})  # project is used 
     # Package configuration
     include(CMakePackageConfigHelpers)
 
+    # Configure the package config file
     configure_package_config_file(
         "${CMAKE_CURRENT_SOURCE_DIR}/cmake/OrbbecSDKConfig.cmake.in"
         "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDKConfig.cmake"
-        INSTALL_DESTINATION lib/
+        INSTALL_DESTINATION lib/cmake/OrbbecSDK
         PATH_VARS OrbbecSDK_INCLUDE_DIRS OrbbecSDK_LIBS_DIR
     )
 
+    # Write the version file for the package
     write_basic_package_version_file(
         "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDKConfigVersion.cmake"
         VERSION ${PROJECT_VERSION}
         COMPATIBILITY AnyNewerVersion
     )
 
+    # Install the CMake configuration files to the appropriate directory
     install(FILES
         "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDKConfig.cmake"
         "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDKConfigVersion.cmake"
-        DESTINATION lib/
+        DESTINATION lib/cmake/OrbbecSDK
     )
+
     # OrbbecSDK.pc.in
     if((UNIX))
     configure_file(
@@ -110,3 +117,4 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})  # project is used 
     # Uninstall target
     include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/UninstallTarget.cmake)
 endif()
+
