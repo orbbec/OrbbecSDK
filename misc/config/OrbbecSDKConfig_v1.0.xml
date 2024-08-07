@@ -2596,11 +2596,6 @@
                 <!--The frame rate of the resolution enabled by default, int type-->
                 <FPS>15</FPS>
                 <Format>Y16</Format>
-                <ProfileFilter>
-				<profile>
-				<Format>Y8</Format>
-				</profile>
-				</ProfileFilter>
             </Depth>
             <Color>
                 <!--The resolution width is enabled by default, int type-->
@@ -2637,11 +2632,6 @@
                 <!--The frame rate of the resolution enabled by default, int type-->
                 <FPS>15</FPS>
                 <Format>Y16</Format>
-                <ProfileFilter>
-				<profile>
-				<Format>Y8</Format>
-				</profile>
-				</ProfileFilter>
             </IR_RIGHT>
         </OrbbecGemini215>
         <!--Gemini 210 config-->
@@ -2658,11 +2648,6 @@
                 <!--The frame rate of the resolution enabled by default, int type-->
                 <FPS>15</FPS>
                 <Format>Y16</Format>
-                <ProfileFilter>
-				<profile>
-				<Format>Y8</Format>
-				</profile>
-				</ProfileFilter>
             </Depth>
             <Color>
                 <!--The resolution width is enabled by default, int type-->
@@ -2699,11 +2684,6 @@
                 <!--The frame rate of the resolution enabled by default, int type-->
                 <FPS>15</FPS>
                 <Format>Y16</Format>
-                <ProfileFilter>
-				<profile>
-				<Format>Y8</Format>
-				</profile>
-				</ProfileFilter>
             </IR_RIGHT>
         </OrbbecGemini210>
     </Device>
