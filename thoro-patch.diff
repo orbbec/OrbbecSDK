@@ -1,0 +1,382 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index eddef8b..bc7d259 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -18,14 +18,15 @@ elseif(UNIX)
+     set(ORBBEC_DLL_SUFFIX ".so")
+ endif()
+ 
++message(STATUS "Configuring OrbbecSDK with target arch: ${ARK_TARGET_ARCHITECTURE}")
+ # OrbbecSDK library
+-set(OrbbecSDK_LIBS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib/${HOST_PLATFORM})
++set(OrbbecSDK_LIBS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib/${ARK_TARGET_ARCHITECTURE})
+ set(OrbbecSDK_LIBRARY  ${OrbbecSDK_LIBS_DIR}/${ORBBEC_LIB_PREFIX}OrbbecSDK${ORBBEC_LIB_SUFFIX})
+ set(OrbbecSDK_DLL ${OrbbecSDK_LIBS_DIR}/${ORBBEC_LIB_PREFIX}OrbbecSDK${ORBBEC_DLL_SUFFIX})
+ set(OrbbecSDK_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include/)
+ set(OrbbecSDK_LIBS ${OrbbecSDK_LIBRARY})
+ set(OrbbecSDK_FOUND TRUE)
+-
++message(STATUS "OrbbecSDK_LIBS_DIR: ${OrbbecSDK_LIBS_DIR}")
+ add_library(OrbbecSDK::OrbbecSDK SHARED IMPORTED GLOBAL)
+ set_target_properties(OrbbecSDK::OrbbecSDK PROPERTIES
+     IMPORTED_LOCATION ${OrbbecSDK_DLL}
+@@ -34,79 +35,79 @@ set_target_properties(OrbbecSDK::OrbbecSDK PROPERTIES
+ )
+ 
+ # check if the project is being used directly or via add_subdirectory
+-if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})  # project is used directly
+-    # Set the C++ standard to C++ 11 and C standard to C11
+-    set(CMAKE_CXX_STANDARD 11)
+-    set(CMAKE_C_STANDARD 11)
+-
+-    # Options
+-    option(BUILD_EXAMPLES "Build examples" ON)
+-    option(INSTALL_LIBUDEV "Install libudev" OFF)
+-
+-    # Compiler and Linker options
+-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC -O3")
+-    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fPIC -g")
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -O3")
+-    set(CMAKE_BUILD_TYPE "Release")
+-    set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install")
+-
+-    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+-    set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+-
+-    if (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+-        add_compile_options(-Wall -Wextra -Wpedantic)
+-    endif ()
+-
+-    # paths
+-    set(ORBBEC_EXAMPLES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/examples/)
+-    set(ORBBEC_DOCS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/doc/)
+-    set(ORBBEC_MISC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/misc/)
+-    set(ORBBEC_CONFIG_DIR ${ORBBEC_MISC_DIR}/config/)
+-    set(ORBBEC_SCRIPT_DIR ${ORBBEC_MISC_DIR}/scripts/)
+-
+-    # Subdirectories
+-    if (BUILD_EXAMPLES)
+-        add_subdirectory(examples)
+-    endif ()
+-
+-    # Installation of headers, configs, libs
+-    include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/InstallTargets.cmake)
+-
+-    # Package configuration
+-    include(CMakePackageConfigHelpers)
+-
+-    configure_package_config_file(
+-        "${CMAKE_CURRENT_SOURCE_DIR}/cmake/OrbbecSDKConfig.cmake.in"
+-        "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDKConfig.cmake"
+-        INSTALL_DESTINATION lib/
+-        PATH_VARS OrbbecSDK_INCLUDE_DIRS OrbbecSDK_LIBS_DIR
+-    )
+-
+-    write_basic_package_version_file(
+-        "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDKConfigVersion.cmake"
+-        VERSION ${PROJECT_VERSION}
+-        COMPATIBILITY AnyNewerVersion
+-    )
+-
+-    install(FILES
+-        "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDKConfig.cmake"
+-        "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDKConfigVersion.cmake"
+-        DESTINATION lib/
+-    )
+-    # OrbbecSDK.pc.in
+-    if((UNIX))
+-    configure_file(
+-        "${CMAKE_CURRENT_SOURCE_DIR}/OrbbecSDK.pc.in"
+-        "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDK.pc"
+-        @ONLY
+-    )
+-    install(FILES
+-        "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDK.pc"
+-        DESTINATION lib/pkgconfig/
+-    )
+-    endif()
+-
+-    # Uninstall target
+-    include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/UninstallTarget.cmake)
+-endif()
++# if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})  # project is used directly
++#     # Set the C++ standard to C++ 11 and C standard to C11
++#     set(CMAKE_CXX_STANDARD 11)
++#     set(CMAKE_C_STANDARD 11)
++
++#     # Options
++#     option(BUILD_EXAMPLES "Build examples" ON)
++#     option(INSTALL_LIBUDEV "Install libudev" OFF)
++
++#     # Compiler and Linker options
++#     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC -O3")
++#     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fPIC -g")
++#     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -O3")
++#     set(CMAKE_BUILD_TYPE "Release")
++#     set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install")
++
++#     set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
++#     set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
++#     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
++
++#     if (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
++#         add_compile_options(-Wall -Wextra -Wpedantic)
++#     endif ()
++
++#     # paths
++#     set(ORBBEC_EXAMPLES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/examples/)
++#     set(ORBBEC_DOCS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/doc/)
++#     set(ORBBEC_MISC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/misc/)
++#     set(ORBBEC_CONFIG_DIR ${ORBBEC_MISC_DIR}/config/)
++#     set(ORBBEC_SCRIPT_DIR ${ORBBEC_MISC_DIR}/scripts/)
++
++#     # Subdirectories
++#     if (BUILD_EXAMPLES)
++#         add_subdirectory(examples)
++#     endif ()
++
++#     # Installation of headers, configs, libs
++#     include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/InstallTargets.cmake)
++
++#     # Package configuration
++#     include(CMakePackageConfigHelpers)
++
++#     configure_package_config_file(
++#         "${CMAKE_CURRENT_SOURCE_DIR}/cmake/OrbbecSDKConfig.cmake.in"
++#         "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDKConfig.cmake"
++#         INSTALL_DESTINATION lib/
++#         PATH_VARS OrbbecSDK_INCLUDE_DIRS OrbbecSDK_LIBS_DIR
++#     )
++
++#     write_basic_package_version_file(
++#         "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDKConfigVersion.cmake"
++#         VERSION ${PROJECT_VERSION}
++#         COMPATIBILITY AnyNewerVersion
++#     )
++
++#     install(FILES
++#         "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDKConfig.cmake"
++#         "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDKConfigVersion.cmake"
++#         DESTINATION lib/
++#     )
++#     # OrbbecSDK.pc.in
++#     if((UNIX))
++#     configure_file(
++#         "${CMAKE_CURRENT_SOURCE_DIR}/OrbbecSDK.pc.in"
++#         "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDK.pc"
++#         @ONLY
++#     )
++#     install(FILES
++#         "${CMAKE_CURRENT_BINARY_DIR}/OrbbecSDK.pc"
++#         DESTINATION lib/pkgconfig/
++#     )
++#     endif()
++
++#     # Uninstall target
++#     include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/UninstallTarget.cmake)
++# endif()
+diff --git a/OrbbecSDKConfig.cmake b/OrbbecSDKConfig.cmake
+index 4931cc3..ece8be8 100644
+--- a/OrbbecSDKConfig.cmake
++++ b/OrbbecSDKConfig.cmake
+@@ -1,47 +1,47 @@
+ # Determine host platform
+-include(${CMAKE_CURRENT_LIST_DIR}/cmake/DetermineHostPlatform.cmake)
+-
+-if(WIN32)
+-    set(ORBBEC_LIB_PREFIX "")
+-    set(ORBBEC_LIB_SUFFIX ".lib")
+-    set(ORBBEC_DLL_SUFFIX ".dll")
+-elseif(APPLE)
+-    set(ORBBEC_LIB_PREFIX "lib")
+-    set(ORBBEC_LIB_SUFFIX ".dylib")
+-    set(ORBBEC_DLL_SUFFIX ".dylib")
+-elseif(UNIX)
+-    set(ORBBEC_LIB_PREFIX "lib")
+-    set(ORBBEC_LIB_SUFFIX ".so")
+-    set(ORBBEC_DLL_SUFFIX ".so")
+-endif()
+-
+-# OrbbecSDK library
+-set(OrbbecSDK_INCLUDE_DIRS ${CMAKE_CURRENT_LIST_DIR}/include/)
+-set(OrbbecSDK_LIBS_DIR ${CMAKE_CURRENT_LIST_DIR}/lib/${HOST_PLATFORM})
+-set(OrbbecSDK_LIBRARY  ${OrbbecSDK_LIBS_DIR}/${ORBBEC_LIB_PREFIX}OrbbecSDK${ORBBEC_LIB_SUFFIX})
+-set(OrbbecSDK_DLL ${OrbbecSDK_LIBS_DIR}/${ORBBEC_LIB_PREFIX}OrbbecSDK${ORBBEC_DLL_SUFFIX})
+-
+-add_library(OrbbecSDK::OrbbecSDK SHARED IMPORTED GLOBAL)
+-set_target_properties(OrbbecSDK::OrbbecSDK PROPERTIES
+-    IMPORTED_LOCATION ${OrbbecSDK_DLL}
+-    IMPORTED_IMPLIB ${OrbbecSDK_LIBRARY}
+-    INTERFACE_INCLUDE_DIRECTORIES ${OrbbecSDK_INCLUDE_DIRS}
+-)
+-
+-set(OrbbecSDK_LIBS ${OrbbecSDK_LIBRARY})
+-file(GLOB OrbbecSDK_DLL_FILES ${OrbbecSDK_LIBS_DIR}/*${ORBBEC_DLL_SUFFIX}*)
+-
+-# runtime resource file should copy to cwd.
+-file(GLOB OrbbecSDK_RUNTIME_RESOURCE_FILES  ${OrbbecSDK_LIBS_DIR}/*depthengine*)
+-
+-# config file
+-file(GLOB OrbbecSDK_CONFIG_FILES  ${CMAKE_CURRENT_LIST_DIR}/misc/config/*)
+-
+-# script
+-if(WIN32)
+-    file(GLOB OrbbecSDK_SCRIPT_FILES  ${CMAKE_CURRENT_LIST_DIR}/misc/scripts/obsensor_metadata_win10*)
+-else()
+-    file(GLOB OrbbecSDK_SCRIPT_FILES  ${CMAKE_CURRENT_LIST_DIR}/misc/scripts/*rules*)
+-endif()
+-
+-set(OrbbecSDK_FOUND TRUE)
+\ No newline at end of file
++# include(${CMAKE_CURRENT_LIST_DIR}/cmake/DetermineHostPlatform.cmake)
++
++# if(WIN32)
++#     set(ORBBEC_LIB_PREFIX "")
++#     set(ORBBEC_LIB_SUFFIX ".lib")
++#     set(ORBBEC_DLL_SUFFIX ".dll")
++# elseif(APPLE)
++#     set(ORBBEC_LIB_PREFIX "lib")
++#     set(ORBBEC_LIB_SUFFIX ".dylib")
++#     set(ORBBEC_DLL_SUFFIX ".dylib")
++# elseif(UNIX)
++#     set(ORBBEC_LIB_PREFIX "lib")
++#     set(ORBBEC_LIB_SUFFIX ".so")
++#     set(ORBBEC_DLL_SUFFIX ".so")
++# endif()
++
++# # OrbbecSDK library
++# set(OrbbecSDK_INCLUDE_DIRS ${CMAKE_CURRENT_LIST_DIR}/include/)
++# set(OrbbecSDK_LIBS_DIR ${CMAKE_CURRENT_LIST_DIR}/lib/${HOST_PLATFORM})
++# set(OrbbecSDK_LIBRARY  ${OrbbecSDK_LIBS_DIR}/${ORBBEC_LIB_PREFIX}OrbbecSDK${ORBBEC_LIB_SUFFIX})
++# set(OrbbecSDK_DLL ${OrbbecSDK_LIBS_DIR}/${ORBBEC_LIB_PREFIX}OrbbecSDK${ORBBEC_DLL_SUFFIX})
++
++# add_library(OrbbecSDK::OrbbecSDK SHARED IMPORTED GLOBAL)
++# set_target_properties(OrbbecSDK::OrbbecSDK PROPERTIES
++#     IMPORTED_LOCATION ${OrbbecSDK_DLL}
++#     IMPORTED_IMPLIB ${OrbbecSDK_LIBRARY}
++#     INTERFACE_INCLUDE_DIRECTORIES ${OrbbecSDK_INCLUDE_DIRS}
++# )
++
++# set(OrbbecSDK_LIBS ${OrbbecSDK_LIBRARY})
++# file(GLOB OrbbecSDK_DLL_FILES ${OrbbecSDK_LIBS_DIR}/*${ORBBEC_DLL_SUFFIX}*)
++
++# # runtime resource file should copy to cwd.
++# file(GLOB OrbbecSDK_RUNTIME_RESOURCE_FILES  ${OrbbecSDK_LIBS_DIR}/*depthengine*)
++
++# # config file
++# file(GLOB OrbbecSDK_CONFIG_FILES  ${CMAKE_CURRENT_LIST_DIR}/misc/config/*)
++
++# # script
++# if(WIN32)
++#     file(GLOB OrbbecSDK_SCRIPT_FILES  ${CMAKE_CURRENT_LIST_DIR}/misc/scripts/obsensor_metadata_win10*)
++# else()
++#     file(GLOB OrbbecSDK_SCRIPT_FILES  ${CMAKE_CURRENT_LIST_DIR}/misc/scripts/*rules*)
++# endif()
++
++# set(OrbbecSDK_FOUND TRUE)
+\ No newline at end of file
+diff --git a/lib/arm32/libOrbbecSDK.so b/lib/aarch64/libOrbbecSDK.so
+similarity index 100%
+rename from lib/arm32/libOrbbecSDK.so
+rename to lib/aarch64/libOrbbecSDK.so
+diff --git a/lib/arm32/libOrbbecSDK.so.1.10 b/lib/aarch64/libOrbbecSDK.so.1.10
+similarity index 100%
+rename from lib/arm32/libOrbbecSDK.so.1.10
+rename to lib/aarch64/libOrbbecSDK.so.1.10
+diff --git a/lib/arm64/libOrbbecSDK.so.1.10.8 b/lib/aarch64/libOrbbecSDK.so.1.10.8
+similarity index 100%
+rename from lib/arm64/libOrbbecSDK.so.1.10.8
+rename to lib/aarch64/libOrbbecSDK.so.1.10.8
+diff --git a/lib/arm64/libdepthengine.so b/lib/aarch64/libdepthengine.so
+similarity index 100%
+rename from lib/arm64/libdepthengine.so
+rename to lib/aarch64/libdepthengine.so
+diff --git a/lib/arm64/libdepthengine.so.2.0 b/lib/aarch64/libdepthengine.so.2.0
+similarity index 100%
+rename from lib/arm64/libdepthengine.so.2.0
+rename to lib/aarch64/libdepthengine.so.2.0
+diff --git a/lib/arm32/libOrbbecSDK.so.1.10.8 b/lib/arm32/libOrbbecSDK.so.1.10.8
+deleted file mode 100644
+index f361e8c..0000000
+Binary files a/lib/arm32/libOrbbecSDK.so.1.10.8 and /dev/null differ
+diff --git a/lib/linux_x64/libOrbbecSDK.so b/lib/linux_x64/libOrbbecSDK.so
+deleted file mode 120000
+index 1ae2c0e..0000000
+--- a/lib/linux_x64/libOrbbecSDK.so
++++ /dev/null
+@@ -1 +0,0 @@
+-libOrbbecSDK.so.1.10
+\ No newline at end of file
+diff --git a/lib/linux_x64/libOrbbecSDK.so.1.10 b/lib/linux_x64/libOrbbecSDK.so.1.10
+deleted file mode 120000
+index 0afd92f..0000000
+--- a/lib/linux_x64/libOrbbecSDK.so.1.10
++++ /dev/null
+@@ -1 +0,0 @@
+-libOrbbecSDK.so.1.10.8
+\ No newline at end of file
+diff --git a/lib/macOS/libOrbbecSDK.1.10.8.dylib b/lib/macOS/libOrbbecSDK.1.10.8.dylib
+deleted file mode 100755
+index bf1eeab..0000000
+Binary files a/lib/macOS/libOrbbecSDK.1.10.8.dylib and /dev/null differ
+diff --git a/lib/macOS/libOrbbecSDK.1.10.dylib b/lib/macOS/libOrbbecSDK.1.10.dylib
+deleted file mode 120000
+index e9091f4..0000000
+--- a/lib/macOS/libOrbbecSDK.1.10.dylib
++++ /dev/null
+@@ -1 +0,0 @@
+-./libOrbbecSDK.1.10.8.dylib
+\ No newline at end of file
+diff --git a/lib/macOS/libOrbbecSDK.dylib b/lib/macOS/libOrbbecSDK.dylib
+deleted file mode 120000
+index e9091f4..0000000
+--- a/lib/macOS/libOrbbecSDK.dylib
++++ /dev/null
+@@ -1 +0,0 @@
+-./libOrbbecSDK.1.10.8.dylib
+\ No newline at end of file
+diff --git a/lib/win_x64/OrbbecSDK.dll b/lib/win_x64/OrbbecSDK.dll
+deleted file mode 100644
+index 70155a4..0000000
+Binary files a/lib/win_x64/OrbbecSDK.dll and /dev/null differ
+diff --git a/lib/win_x64/OrbbecSDK.lib b/lib/win_x64/OrbbecSDK.lib
+deleted file mode 100644
+index aa0eac3..0000000
+Binary files a/lib/win_x64/OrbbecSDK.lib and /dev/null differ
+diff --git a/lib/win_x64/depthengine_2_0.dll b/lib/win_x64/depthengine_2_0.dll
+deleted file mode 100644
+index 223672f..0000000
+Binary files a/lib/win_x64/depthengine_2_0.dll and /dev/null differ
+diff --git a/lib/win_x86/OrbbecSDK.dll b/lib/win_x86/OrbbecSDK.dll
+deleted file mode 100644
+index 97ed4f6..0000000
+Binary files a/lib/win_x86/OrbbecSDK.dll and /dev/null differ
+diff --git a/lib/win_x86/OrbbecSDK.lib b/lib/win_x86/OrbbecSDK.lib
+deleted file mode 100644
+index 8f57de0..0000000
+Binary files a/lib/win_x86/OrbbecSDK.lib and /dev/null differ
+diff --git a/lib/win_x86/depthengine_2_0.dll b/lib/win_x86/depthengine_2_0.dll
+deleted file mode 100644
+index 076eb4f..0000000
+Binary files a/lib/win_x86/depthengine_2_0.dll and /dev/null differ
+diff --git a/lib/arm64/libOrbbecSDK.so b/lib/x86_64/libOrbbecSDK.so
+similarity index 100%
+rename from lib/arm64/libOrbbecSDK.so
+rename to lib/x86_64/libOrbbecSDK.so
+diff --git a/lib/arm64/libOrbbecSDK.so.1.10 b/lib/x86_64/libOrbbecSDK.so.1.10
+similarity index 100%
+rename from lib/arm64/libOrbbecSDK.so.1.10
+rename to lib/x86_64/libOrbbecSDK.so.1.10
+diff --git a/lib/linux_x64/libOrbbecSDK.so.1.10.8 b/lib/x86_64/libOrbbecSDK.so.1.10.8
+similarity index 100%
+rename from lib/linux_x64/libOrbbecSDK.so.1.10.8
+rename to lib/x86_64/libOrbbecSDK.so.1.10.8
+diff --git a/lib/linux_x64/libdepthengine.so b/lib/x86_64/libdepthengine.so
+similarity index 100%
+rename from lib/linux_x64/libdepthengine.so
+rename to lib/x86_64/libdepthengine.so
+diff --git a/lib/linux_x64/libdepthengine.so.2.0 b/lib/x86_64/libdepthengine.so.2.0
+similarity index 100%
+rename from lib/linux_x64/libdepthengine.so.2.0
+rename to lib/x86_64/libdepthengine.so.2.0
