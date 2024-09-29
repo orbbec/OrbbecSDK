@@ -2,6 +2,8 @@
 
 This sample demonstrates how to complete the configuration and use of multi-device synchronization.
 
+* Multi Camera Sync Document: https://www.orbbec.com/docs/set-up-cameras-for-external-synchronization_v1-2/
+
 ## Operating instructions
 
 First, you need to refer to the product manual to connect the device, and then follow the steps below to complete the device configuration and enable device data flow.

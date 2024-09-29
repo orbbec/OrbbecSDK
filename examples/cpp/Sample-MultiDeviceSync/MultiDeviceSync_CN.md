@@ -1,6 +1,7 @@
 # MultiDeviceSync
 
 本示例用于演示如何完成多设备同步的配置和使用。
+* 多机同步文档: https://www.orbbec.com/docs/set-up-cameras-for-external-synchronization_v1-2/
 
 ## 操作说明
 
