@@ -43,8 +43,9 @@ More information about the license of each module can be found in the [license f
 |-------------------|-----------------------------|
 | Gemini 335        | 1.2.20                      |
 | Gemini 335L        | 1.2.20                     |
-| Femto Bolt        | 1.0.6/1.0.9                 |
-| Femto Mega        | 1.1.7/1.2.7                 |
+| Femto Bolt        | 1.0.6/1.0.9/1.1.2                 |
+| Femto Mega        | 1.1.7/1.2.7/1.2.9                 |
+| Femto Mega I      | 2.0.2                       |
 | Gemini 2 XL       | Obox: V1.2.5  VL:1.4.54     |
 | Astra 2           | 2.8.20                      |
 | Gemini 2 L        | 1.4.32                      |
