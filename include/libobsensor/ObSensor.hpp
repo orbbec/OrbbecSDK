@@ -1,5 +1,5 @@
-﻿/* License: Apache 2.0. See LICENSE file in root directory.
-    Copyright(c) 2020  Orbbec Corporation. All Rights Reserved. */
+// Copyright (c) Orbbec Inc. All Rights Reserved.
+// Licensed under the MIT License.
 
 /**
  * \file ObSensor.hpp
@@ -14,8 +14,9 @@
 #include <libobsensor/hpp/Filter.hpp>
 #include <libobsensor/hpp/Frame.hpp>
 #include <libobsensor/hpp/Pipeline.hpp>
-#include <libobsensor/hpp/RecordPlayback.hpp>
+// #include <libobsensor/hpp/RecordPlayback.hpp>
 #include <libobsensor/hpp/Sensor.hpp>
 #include <libobsensor/hpp/StreamProfile.hpp>
-#include <libobsensor/hpp/Types.hpp>
 #include <libobsensor/hpp/Version.hpp>
+#include <libobsensor/hpp/TypeHelper.hpp>
+
