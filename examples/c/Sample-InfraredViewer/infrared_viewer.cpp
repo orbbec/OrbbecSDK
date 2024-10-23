@@ -60,7 +60,7 @@ int main(int argc, char **args) {
     }
 
     // enable stream
-    ob_config_enable_stream(config, ir_profile, &error);
+    ob_config_enable_stream_with_stream_profile(config, ir_profile, &error);
     check_error(error);
 
     // Start the pipeline with config

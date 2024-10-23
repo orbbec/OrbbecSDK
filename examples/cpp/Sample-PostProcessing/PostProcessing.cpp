@@ -28,8 +28,8 @@ int main(int argc, char **argv) try {
     auto obFilterList = pipe.getDevice()->getSensor(OB_SENSOR_DEPTH)->getRecommendedFilters();
 
     std::shared_ptr<ob::DecimationFilter> decFilter;
-    for(int i = 0; i < obFilterList->count(); i++) {
-        auto filter =obFilterList->getFilter(i);
+    for(int i = 0; i < obFilterList.size(); i++) {
+        auto filter =obFilterList[i];
         std::cout << "Depth recommended post processor filter type: " << filter->type() << std::endl;
         if(filter->is<ob::DecimationFilter>()) {
             decFilter = filter->as<ob::DecimationFilter>();
@@ -55,8 +55,8 @@ int main(int argc, char **argv) try {
 
         auto depthFrame = frameSet->depthFrame();
         if(depthFrame) {
-            for(int i = 0; i < obFilterList->count(); i++) {
-                auto filter = obFilterList->getFilter(i);
+            for(int i = 0; i < obFilterList.size(); i++) {
+                auto filter = obFilterList[i];
                 if(filter->isEnabled()) {
                     auto newFrame = filter->process(depthFrame);
                     depthFrame    = newFrame->as<ob::DepthFrame>();

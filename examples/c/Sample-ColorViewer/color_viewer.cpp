@@ -59,7 +59,7 @@ int main(int argc, char **args) {
     }
 
     // enable stream
-    ob_config_enable_stream(config, color_profile, &error);
+    ob_config_enable_stream_with_stream_profile(config, color_profile, &error);
     check_error(error);
 
     // Get Device through Pipeline

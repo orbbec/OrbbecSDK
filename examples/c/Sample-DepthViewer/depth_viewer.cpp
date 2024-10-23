@@ -53,7 +53,8 @@ int main(int argc, char **args) {
     }
 
     // enable stream
-    ob_config_enable_stream(config, depth_profile, &error);
+    ob_config_enable_stream_with_stream_profile(config, depth_profile, &error);
+    
     check_error(error);
 
     // Start the pipeline with config

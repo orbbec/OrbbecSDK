@@ -1,4 +1,5 @@
 // #include "./RecorderPlaybackWindow.hpp"
+#if 0
 #include "window.hpp"
 
 #include "libobsensor/hpp/Pipeline.hpp"
@@ -159,4 +160,8 @@ int main(int argc, char **argv) try {
 catch(ob::Error &e) {
     std::cerr << "function:" << e.getName() << "\nargs:" << e.getArgs() << "\nmessage:" << e.getMessage() << "\ntype:" << e.getExceptionType() << std::endl;
     exit(EXIT_FAILURE);
+}
+#endif
+int main() {
+    return 0;
 }

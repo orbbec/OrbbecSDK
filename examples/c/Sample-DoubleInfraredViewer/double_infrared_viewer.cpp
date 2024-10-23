@@ -53,7 +53,7 @@ int main(int argc, char **args) {
     check_error(error);
 
     // enable stream
-    ob_config_enable_stream(config, ir_left_profile, &error);
+    ob_config_enable_stream_with_stream_profile(config, ir_left_profile, &error);
     check_error(error);
 
     // Configure the infrared stream(IR_RIGHT)
@@ -66,7 +66,7 @@ int main(int argc, char **args) {
     check_error(error);
 
     // enable stream
-    ob_config_enable_stream(config, ir_right_profile, &error);
+    ob_config_enable_stream_with_stream_profile(config, ir_right_profile, &error);
     check_error(error);
 
     // Start the pipeline with config

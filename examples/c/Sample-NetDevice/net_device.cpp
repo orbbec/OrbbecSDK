@@ -87,7 +87,7 @@ int main(int argc, char **args) {
     color_profile = ob_stream_profile_list_get_profile(color_profiles, OB_PROFILE_DEFAULT, &error);
     check_error(error);
     // enable stream
-    ob_config_enable_stream(config, color_profile, &error);
+    ob_config_enable_stream_with_stream_profile(config, color_profile, &error);
     check_error(error);
 
     ob_stream_profile *depth_profile = nullptr;
@@ -98,7 +98,7 @@ int main(int argc, char **args) {
     depth_profile = ob_stream_profile_list_get_profile(depth_profiles, OB_PROFILE_DEFAULT, &error);
     check_error(error);
     // enable stream
-    ob_config_enable_stream(config, depth_profile, &error);
+    ob_config_enable_stream_with_stream_profile(config, depth_profile, &error);
     check_error(error);
 
     // Start the pipeline with config

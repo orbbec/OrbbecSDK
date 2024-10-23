@@ -53,7 +53,7 @@ int main(int argc, char **args) {
     }
 
     // enable stream
-    ob_config_enable_stream(config, depth_profile, &error);
+    ob_config_enable_stream_with_stream_profile(config, depth_profile, &error);
     check_error(error);
 
     // Get device
@@ -101,7 +101,7 @@ int main(int argc, char **args) {
     win = new Window("DepthViewer", width, height);
     check_error(error);
 
-    bool resize_win = ob_filter_is_enable(dec_filter, &error);
+    bool resize_win = ob_filter_is_enabled(dec_filter, &error);
     check_error(error);
 
     // Wait in a loop, exit after the window receives the "esc" key
@@ -121,7 +121,7 @@ int main(int argc, char **args) {
             for(uint32_t i = 0; i < count; i++) {
                 ob_frame * new_depth_frame = nullptr;
                 ob_filter *obFilter = filters[i];
-                bool enable = ob_filter_is_enable(obFilter, &error);
+                bool enable = ob_filter_is_enabled(obFilter, &error);
                 check_error(error);
                 if(enable) {
                     new_depth_frame = ob_filter_process(obFilter, depth_frame, &error);

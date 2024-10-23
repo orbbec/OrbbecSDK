@@ -40,7 +40,7 @@ int main(int argc, char **argv) try {
     obHdrConfig.gain_1     = 24;
     obHdrConfig.exposure_2 = 100;
     obHdrConfig.gain_2     = 16;
-    device->setStructuredData(OB_STRUCT_DEPTH_HDR_CONFIG, &obHdrConfig, sizeof(OBHdrConfig));
+    device->setStructuredData(OB_STRUCT_DEPTH_HDR_CONFIG, reinterpret_cast<const uint8_t*>(&obHdrConfig), sizeof(OBHdrConfig));
 
     // Start the pipeline with config
     pipe.start(config);
@@ -94,7 +94,7 @@ int main(int argc, char **argv) try {
 
     // close hdr merge
     obHdrConfig.enable = false;
-    device->setStructuredData(OB_STRUCT_DEPTH_HDR_CONFIG, &obHdrConfig, sizeof(OBHdrConfig));
+    device->setStructuredData(OB_STRUCT_DEPTH_HDR_CONFIG, reinterpret_cast<const uint8_t*>(&obHdrConfig), sizeof(OBHdrConfig));
 
     return 0;
 }

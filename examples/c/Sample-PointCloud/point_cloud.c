@@ -115,7 +115,7 @@ int main(int argc, char **argv) {
 
     // enable stream
     if(color_profile) {
-        ob_config_enable_stream(config, color_profile, &error);
+        ob_config_enable_stream_with_stream_profile(config, color_profile, &error);
         check_error(error);
     }
 
@@ -165,7 +165,7 @@ int main(int argc, char **argv) {
             check_error(error);
         }
 
-        ob_config_enable_stream(config, depth_profile, &error);  // enable stream
+        ob_config_enable_stream_with_stream_profile(config, depth_profile, &error);  // enable stream
         check_error(error);
 
         // Turn on D2C alignment, which needs to be turned on when generating RGBD point clouds
@@ -183,14 +183,15 @@ int main(int argc, char **argv) {
 
     // Create a point cloud Filter object (device parameters will be obtained inside the Pipeline when the point cloud filter is created, so try to configure
     // the device before creating the filter)
-    ob_filter *point_cloud = ob_create_pointcloud_filter(&error);
+    ob_filter *point_cloud = ob_create_filter("PointCloudFilter", &error);
     check_error(error);
 
     // Obtain the current open-stream camera parameters from the pipeline and pass them to the point cloud filter
-    ob_camera_param camera_param = ob_pipeline_get_camera_param(pipeline, &error);
-    check_error(error);
-    ob_pointcloud_filter_set_camera_param(point_cloud, camera_param, &error);
-    check_error(error);
+    // ob_camera_param camera_param = ob_pipeline_get_camera_param(pipeline, &error);
+    // check_error(error);
+    // // ob_pointcloud_filter_set_camera_param(point_cloud, camera_param, &error);
+    // ob_filter_set_config_value(point_cloud, "depth_scale", ob_camera_param_depth_scale(camera_param), &error);
+    // check_error(error);
 
     // Operating Tips
     printf("Press R to create rgbd pointCloud and save to ply file!\n");
@@ -234,10 +235,11 @@ int main(int argc, char **argv) {
 
                         // point position value multiply depth value scale to convert uint to millimeter (for some devices, the default depth value uint is not
                         // millimeter)
-                        ob_pointcloud_filter_set_position_data_scale(point_cloud, depth_value_scale, &error);
-                        check_error(error);
+                        // ob_pointcloud_filter_set_position_data_scale(point_cloud, depth_value_scale, &error);
+                        // check_error(error);
 
-                        ob_pointcloud_filter_set_point_format(point_cloud, OB_FORMAT_RGB_POINT, &error);
+                        // ob_pointcloud_filter_set_point_format(point_cloud, OB_FORMAT_RGB_POINT, &error);
+                        ob_filter_set_config_value(point_cloud, "pointFormat", OB_FORMAT_RGB_POINT, &error);
                         check_error(error);
                         ob_frame *pointsFrame = ob_filter_process(point_cloud, frameset, &error);
                         check_error(error);
@@ -284,10 +286,10 @@ int main(int argc, char **argv) {
 
                         // point position value multiply depth value scale to convert uint to millimeter (for some devices, the default depth value uint is not
                         // millimeter)
-                        ob_pointcloud_filter_set_position_data_scale(point_cloud, depth_value_scale, &error);
-                        check_error(error);
+                        // ob_pointcloud_filter_set_position_data_scale(point_cloud, depth_value_scale, &error);
+                        // check_error(error);
 
-                        ob_pointcloud_filter_set_point_format(point_cloud, OB_FORMAT_POINT, &error);
+                        ob_filter_set_config_value(point_cloud, "pointFormat", OB_FORMAT_RGB_POINT, &error);
                         check_error(error);
                         ob_frame *pointsFrame = ob_filter_process(point_cloud, frameset, &error);
                         check_error(error);

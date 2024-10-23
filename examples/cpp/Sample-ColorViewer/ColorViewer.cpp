@@ -46,7 +46,7 @@ int main(int argc, char **argv) try {
 
     // Start the pipeline with config
     pipe.start(config);
-    auto currentProfile = pipe.getEnabledStreamProfileList()->getProfile(0)->as<ob::VideoStreamProfile>();
+    auto currentProfile = pipe.getConfig()->getEnabledStreamProfileList()->getProfile(0)->as<ob::VideoStreamProfile>();
     // Create a window for rendering, and set the resolution of the window
     Window app("ColorViewer", currentProfile->width(), currentProfile->height());
     while(app) {

@@ -73,13 +73,13 @@ bool changeDepthUnit(std::shared_ptr<ob::Device> &device) {
             return false;
         }
 
-        auto depthPrecision = device->getStructuredDataExt(OB_STRUCT_DEPTH_PRECISION_SUPPORT_LIST);
-        supportedPrecisionList.clear();
-        for(int i = 0; i < depthPrecision->dataSize; i += 2) {
-            auto precision = *((uint16_t *)((uint8_t *)depthPrecision->data + i));
-            supportedPrecisionList.push_back((OBDepthPrecisionLevel)precision);
-            std::cout << "precisionList[" << i << "]: " << depthUnitMap.find((OBDepthPrecisionLevel)precision)->second << std::endl;
-        }
+        // auto depthPrecision = device->getStructuredDataExt(OB_STRUCT_DEPTH_PRECISION_SUPPORT_LIST);
+        // supportedPrecisionList.clear();
+        // for(int i = 0; i < depthPrecision->dataSize; i += 2) {
+        //     auto precision = *((uint16_t *)((uint8_t *)depthPrecision->data + i));
+        //     supportedPrecisionList.push_back((OBDepthPrecisionLevel)precision);
+        //     std::cout << "precisionList[" << i << "]: " << depthUnitMap.find((OBDepthPrecisionLevel)precision)->second << std::endl;
+        // }
     }
     else { // if is software-d2D mode, support all depth precision level
         std::cout << "Current Disparity to depth is software-d2D" << std::endl;

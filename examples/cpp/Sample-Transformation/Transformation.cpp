@@ -5,7 +5,7 @@
 using namespace std;
 #include <libobsensor/hpp/Utils.hpp>
 using namespace ob;
-
+#if 0
 void savePointsDataToPly(uint8_t *pointcloudData, uint32_t pointcloudSize, std::string fileName) {
     int   pointsSize = pointcloudSize / sizeof(OBPoint);
     FILE *fp         = fopen(fileName.c_str(), "wb+");
@@ -410,7 +410,7 @@ int depth2DToColor2DTransformation(std::shared_ptr<ob::Device> device) {
         auto depthFrame = frameset->depthFrame();
         if(depthFrame != nullptr && colorFrame != nullptr) {
 
-            auto      transformColorFrame = ob::FrameHelper::createFrame(OB_FRAME_DEPTH, depthFrame->format(), colorFrame->width(), colorFrame->height(), 0);
+            auto      transformColorFrame = ob::FrameHelper::createFrame(OB_FRAME_DEPTH, depthFrame->format(), depthFrame->dataSize());
             uint16_t *transData           = (uint16_t *)transformColorFrame->data();
             memset(transData, 0, colorFrame->width() * colorFrame->height() * 2);
             // The purpose of converting each point of Depth into the coordinate system of Color is to demonstrate how Depth coordinate points are transformed
@@ -578,4 +578,9 @@ int main(int argc, char **argv) try {
 catch(ob::Error &e) {
     std::cerr << "function:" << e.getName() << "\nargs:" << e.getArgs() << "\nmessage:" << e.getMessage() << "\ntype:" << e.getExceptionType() << std::endl;
     exit(EXIT_FAILURE);
+}
+#endif
+
+int main(){
+    return 0;
 }

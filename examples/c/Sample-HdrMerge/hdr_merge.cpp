@@ -50,11 +50,11 @@ int main(int argc, char **args) {
     hdr_config.gain_1     = 16;
     hdr_config.exposure_2 = 100;
     hdr_config.gain_2     = 1;
-    ob_device_set_structured_data(dev, OB_STRUCT_DEPTH_HDR_CONFIG, &hdr_config, sizeof(ob_hdr_config), &error);
+    ob_device_set_structured_data(dev, OB_STRUCT_DEPTH_HDR_CONFIG, reinterpret_cast<uint8_t*>(&hdr_config), sizeof(ob_hdr_config), &error);
     check_error(error);
 
     // Create HdrMerge post processor
-    ob_filter *hdr_merge_filter = ob_create_hdr_merge(&error);
+    ob_filter *hdr_merge_filter = ob_create_filter("HdrMerge", &error);
     check_error(error);
 
     // Create config to configure the resolution, frame rate, and format of the depth stream
@@ -69,7 +69,7 @@ int main(int argc, char **args) {
     check_error(error);
 
     // enable stream
-    ob_config_enable_stream(config, depth_profile, &error);
+    ob_config_enable_stream_with_stream_profile(config, depth_profile, &error);
     check_error(error);
 
     // Start the pipeline with config
@@ -143,7 +143,7 @@ int main(int argc, char **args) {
 
     // close hdr
     hdr_config.enable = false;
-    ob_device_set_structured_data(dev, OB_STRUCT_DEPTH_HDR_CONFIG, &hdr_config, sizeof(ob_hdr_config), &error);
+    ob_device_set_structured_data(dev, OB_STRUCT_DEPTH_HDR_CONFIG, reinterpret_cast<uint8_t*>(&hdr_config), sizeof(ob_hdr_config), &error);
     check_error(error);
 
     ob_delete_filter(hdr_merge_filter, &error);

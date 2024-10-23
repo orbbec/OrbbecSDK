@@ -99,7 +99,7 @@ int main(int argc, char **args) {
     }
 
     // enable stream
-    ob_config_enable_stream(config, depth_profile, &error);
+    ob_config_enable_stream_with_stream_profile(config, depth_profile, &error);
     check_error(error);
 
     // Configure the color stream
@@ -120,13 +120,17 @@ int main(int argc, char **args) {
     }
 
     // enable stream
-    ob_config_enable_stream(config, color_profile, &error);
+    ob_config_enable_stream_with_stream_profile(config, color_profile, &error);
     check_error(error);
 
     /* Config depth align to color or color align to depth.
     ob_stream_type align_to_stream = OB_STREAM_DEPTH; */
     ob_stream_type align_to_stream = OB_STREAM_COLOR;
-    ob_filter     *align_filter    = ob_create_align(&error, align_to_stream);
+    ob_filter     *align_filter    = ob_create_filter("Align", &error);
+    check_error(error);
+
+    ob_filter_set_config_value(align_filter, "AlignType", align_to_stream, &error);
+    check_error(error);
 
     // Start the pipeline with config
     ob_pipeline_start_with_config(pipeline, config, &error);

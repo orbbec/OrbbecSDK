@@ -1,37 +1,56 @@
-cmake_minimum_required(VERSION 3.1.15)
-project(OrbbecSDK-Samples LANGUAGES CXX C)
+# Copyright (c) Orbbec Inc. All Rights Reserved.
+# Licensed under the MIT License.
 
-if(UNIX)
-  set(CMAKE_CXX_FLAGS "-std=c++11 -pthread ${CMAKE_CXX_FLAGS}")
-endif()
+cmake_minimum_required(VERSION 3.5)
 
-if(NOT DEFINED OrbbecSDK_FOUND)
-    # set(OrbbecSDK_DIR "path/to/OrbbecSDK/lib" )
-    message(STATUS "OrbbecSDK_DIR: ${OrbbecSDK_DIR}")
-    find_package(OrbbecSDK REQUIRED)
-endif()
+file(GLOB subdirectories RELATIVE ${CMAKE_CURRENT_LIST_DIR} "*")
 
-# find opencv
-# set(OpenCV_DIR "your/path/to/opencv/lib")
+include_directories(${CMAKE_CURRENT_LIST_DIR}/../include)
+add_library(ob::OrbbecSDK ALIAS OrbbecSDK::OrbbecSDK)
+
+# dependecies
+# set(OpenCV_DIR /Users/lesley/Downloads/opencv-4.7.0/build)
 find_package(OpenCV QUIET)
-
-if(UNIX)
-    set(CMAKE_SKIP_BUILD_RPATH FALSE)
-    set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
-    set(CMAKE_INSTALL_RPATH "$ORIGIN:$ORIGIN/../lib")
-    set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+if(NOT ${OpenCV_FOUND})
+    message(WARNING "OpenCV not found, some examples may not be built. Please install OpenCV or set OpenCV_DIR to the directory of your OpenCV installation.")
 endif()
 
-add_subdirectory(c)
-add_subdirectory(cpp)
+# utils
+add_subdirectory(utils)
 
-install(DIRECTORY
-  ${OrbbecSDK_LIBS_DIR}/ DESTINATION
-  bin
-  FILES_MATCHING PATTERN "*.so"
-  PATTERN "*.so.*"
-  PATTERN "*.dylib"
-  PATTERN "*.*.dylib"
-  PATTERN "*.dll"
-  PATTERN ".lib"
-  )
+# c examples
+add_subdirectory(c_examples)
+
+# cpp examples
+add_subdirectory(0.basic.enumerate)
+add_subdirectory(1.stream.imu)
+add_subdirectory(2.device.control)
+add_subdirectory(3.advanced.point_cloud)
+add_subdirectory(3.advanced.preset)
+
+# cpp examples with OpenCV Requirements
+if(${OpenCV_FOUND})
+    add_subdirectory(0.basic.quick_start)
+    add_subdirectory(1.stream.depth)
+    add_subdirectory(1.stream.color)
+    add_subdirectory(1.stream.infrared)
+    add_subdirectory(1.stream.callback)
+    add_subdirectory(1.stream.multi_streams)
+    add_subdirectory(2.device.hot_plugin)
+    add_subdirectory(3.advanced.common_usages)
+    add_subdirectory(3.advanced.sync_align)
+    add_subdirectory(3.advanced.hw_d2c_align)
+    add_subdirectory(3.advanced.post_processing)
+    add_subdirectory(3.advanced.coordinate_transform)
+    add_subdirectory(3.advanced.hdr)
+    add_subdirectory(3.advanced.multi_devices)
+
+    if(OB_BUILD_LINUX)
+        add_subdirectory(3.advanced.multi_devices_sync_gmsl)
+        add_subdirectory(3.advanced.multi_devices_sync_gmsltrigger)
+    endif()
+
+endif()
+
+# InstallRequiredSystemLibraries
+include(InstallRequiredSystemLibraries)

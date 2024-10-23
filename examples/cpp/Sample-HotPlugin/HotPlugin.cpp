@@ -152,7 +152,7 @@ void rebootDevices() {
 void startStream(std::shared_ptr<PipelineHolder> holder) {
     std::shared_ptr<FramePrintInfo> printInfo(new FramePrintInfo{});
     std::string                     deviceSN = std::string(holder->deviceInfo->serialNumber());
-    ob::FrameSetCallback            callback = [deviceSN, printInfo](std::shared_ptr<ob::FrameSet> frameSet) {
+    ob::Pipeline::FrameSetCallback  callback = [deviceSN, printInfo](std::shared_ptr<ob::FrameSet> frameSet) {
         // Get the depth data frame
         auto depthFrame = frameSet->depthFrame();
         if(depthFrame) {
