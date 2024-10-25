@@ -4,7 +4,7 @@
 
 ⚠️ **Important Notice**
 
-This repository contains the Pre-Compiled library for Orbbec SDK v2 for compatibility purposes.
+This branch contains the Pre-Compiled library for Orbbec SDK v2 for compatibility purposes.
 
 🎉 **Orbbec SDK v2 is now open-source!** The source code has been pushed to the open-source repository. For more information and tutorials, please visit the open-source repo [OrbbecSDK-dev](https://github.com/orbbec/OrbbecSDK-dev).
 
