@@ -2,9 +2,14 @@
 
 ![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.10.12-green)
 
+
+
+## Introduction
 The Orbbec 3D camera product software development kit fully supports UVC, enabling driver-free plug-and-play. It provides both low-level and high-level APIs that are simple and easy to use, allowing developers to use it flexibly in different scenarios.
 
-Additionally, this SDK is compatible with Orbbec's original OpenNI protocol devices through built-in code, enabling developers to migrate to Orbbec SDK to support both new and old products with one set of code.
+This main branch is based on branch v1.x and it is compatible with Orbbec's original OpenNI protocol devices through built-in code, enabling developers to migrate to Orbbec SDK to support both new and old products with one set of code.
+
+With the major update in a new branch v2.x in 2024 October, Orbbec SDK becomes open-source with enhanced flexibility and scalability. This update in v2.x ensures compatibility with all new Orbbec USB products that adhere to the UVC standard. However, [OrbbecSDK v2.x](https://github.com/orbbec/OrbbecSDK-dev) no longer supports Orbbec's legacy OpenNI protocol devices, which will continue to receive bug fixes support in the v1.x branch. We encourage you to check out whether your devices is supported by OrbbecSDK v2.x and use the new release if it is supported there.
 
 If you are a user in China, it is recommended to use Gitee([gitee Repo](https://gitee.com/orbbecdeveloper/OrbbecSDK)).
 
@@ -176,7 +181,7 @@ target_link_libraries(${PROJECT_NAME} OrbbecSDK::OrbbecSDK)
 **Insufficient Power Supply**:
   - Ensure that all cameras are not connected to the same hub.
   - Use a powered hub to provide sufficient power to each camera.
-  
+
 **High Resolution**:
   - Try lowering the resolution to resolve data stream issues.
 
