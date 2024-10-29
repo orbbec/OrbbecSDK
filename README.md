@@ -6,6 +6,12 @@ The pre-compiled library is located in the `./lib` directory and the examples co
 
 The pre-compiled library can only be used on Femto Mega development Mode, aarch64 architecture, and communicates with the camera server via Inter-Processor Communication (IPC) interface.
 
+Typical hardware connection methods of Femto Mega：
+
+<p align="center">
+  <img src="misc/mega_connection_methods.png" alt="mega_connection_methods" width="500">
+</p>
+
 
 ## 1. Building the examples
 
