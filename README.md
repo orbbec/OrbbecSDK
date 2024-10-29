@@ -7,7 +7,7 @@
 ## Introduction
 The Orbbec 3D camera product software development kit fully supports UVC, enabling driver-free plug-and-play. It provides both low-level and high-level APIs that are simple and easy to use, allowing developers to use it flexibly in different scenarios.
 
-This main branch is based on branch v1.x and it is compatible with Orbbec's original OpenNI protocol devices through built-in code, enabling developers to migrate to Orbbec SDK to support both new and old products with one set of code.
+This main branch is based on Orbbec SDK v1.x and it is compatible with Orbbec's original OpenNI protocol devices through built-in code, enabling developers to migrate to Orbbec SDK to support both new and old products with one set of code.
 
 With the major update in a new branch v2.x in 2024 October, Orbbec SDK becomes open-source with enhanced flexibility and scalability. This update in v2.x ensures compatibility with all new Orbbec USB products that adhere to the UVC standard. However, [OrbbecSDK v2.x](https://github.com/orbbec/OrbbecSDK-dev) no longer supports Orbbec's legacy OpenNI protocol devices, which will continue to receive bug fixes support in the v1.x branch. We encourage you to check out whether your devices is supported by OrbbecSDK v2.x and use the new release if it is supported there.
 
