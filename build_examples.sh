@@ -50,22 +50,6 @@ then
     else
         echo "cmake is installed."
     fi
-
-    # install libopencv-dev
-    if ! dpkg -l | grep libopencv-dev &> /dev/null ||  ! dpkg -l | grep libopencv &> /dev/null
-    then
-        echo "libopencv-dev or libopencv could not be found. Without opencv, part of the examples may not be built successfully."
-        echo "Do you want to install libopencv-dev and libopencv? (y/n)"
-        read answer
-        if [ "$answer" == "y" ]
-        then
-            sudo apt-get update
-            sudo apt-get install -y libopencv
-            sudo apt-get install -y libopencv-dev
-        fi
-    else
-        echo "libopencv-dev is installed."
-    fi
 else
     echo "apt-get is not workable, network connection may be down or the system may not have internet access. Build examples may not be successful."
 fi

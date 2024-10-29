@@ -31,6 +31,7 @@ add_subdirectory(1.stream.imu)
 add_subdirectory(2.device.control)
 add_subdirectory(3.advanced.point_cloud)
 add_subdirectory(3.advanced.sync_align_pure)
+add_subdirectory(3.advanced.hw_d2c_align_pure)
 
 # cpp examples with OpenCV Requirements
 if(${OpenCV_FOUND})

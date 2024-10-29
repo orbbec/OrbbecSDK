@@ -93,9 +93,9 @@
         <FemtoMega>
             <Depth>
                 <!-- The width of the default resolution, int type -->
-                <Width>640</Width>
+                <Width>512</Width>
                 <!-- The height of the default resolution, int type -->
-                <Height>576</Height>
+                <Height>512</Height>
                 <!-- Default frame rate, int type -->
                 <FPS>30</FPS>
                 <!-- Default frame format -->
@@ -123,7 +123,7 @@
                 <!-- Default frame rate, int type -->
                 <FPS>30</FPS>
                 <!-- Default frame format -->
-                <Format>RGB</Format>
+                <Format>YUYV</Format>
                 <!-- Whether to retry after open stream failure, 0 means no retry, >=1 retry and how
                 many times to retry -->
                 <StreamFailedRetry>0</StreamFailedRetry>
@@ -141,9 +141,9 @@
 
             <IR>
                 <!-- The width of the default resolution, int type -->
-                <Width>640</Width>
+                <Width>512</Width>
                 <!-- The height of the default resolution, int type -->
-                <Height>576</Height>
+                <Height>512</Height>
                 <!-- Default frame rate, int type -->
                 <FPS>30</FPS>
                 <!-- Default frame format -->
