@@ -206,6 +206,7 @@ typedef enum {
     OB_FRAME_IR_LEFT   = 8,  /**< Left IR frame */
     OB_FRAME_IR_RIGHT  = 9,  /**< Right IR frame */
     OB_FRAME_RAW_PHASE = 10, /**< Rawphase frame*/
+    OB_FRAME_TYPE_COUNT,     /**< The total number of frame types, is not a valid frame type */
 } OBFrameType,
     ob_frame_type;
 
@@ -973,6 +974,18 @@ typedef struct {
     uint16_t radius;     // hole_fill
 } OBSpatialAdvancedFilterParams, ob_spatial_advanced_filter_params;
 
+
+typedef struct {
+    uint8_t  size;  //median filter window size
+} OBSpatialFastFilterParams, ob_spatial_fast_filter_params;
+
+
+typedef struct  {
+    uint8_t  size ;
+    uint8_t  magnitude ; // magnitude
+    uint16_t disp_diff ;
+} OBSpatialModerateFilterParams, ob_spatial_moderate_filter_params;
+
 typedef enum OB_EDGE_NOISE_REMOVAL_TYPE {
     OB_MG_FILTER  = 0,
     OB_MGH_FILTER = 1,  // horizontal MG
@@ -1440,13 +1453,19 @@ typedef struct {
     int16_t y1_bottom;
 } AE_ROI, ob_region_of_interest, OBRegionOfInterest;
 
+typedef struct {
+    uint8_t enable;
+    uint8_t offset0;
+    uint8_t offset1;
+    uint8_t reserved;
+} DISP_OFFSET_CONFIG, ob_disp_offset_config, OBDispOffsetConfig;
 
-typedef struct{
-  uint8_t enable;
-  uint8_t offset0;
-  uint8_t offset1;
-  uint8_t reserved;
-}DISP_OFFSET_CONFIG,ob_disp_offset_config,OBDispOffsetConfig;
+typedef enum {
+    UVC_BACKEND_AUTO   = 0,
+    UVC_BACKEND_LIBUVC = 1,
+    UVC_BACKEND_V4L2   = 2,
+} UVC_BACKEND,
+    ob_uvc_backend, OBUvcBackend;
 
 /**
  * @brief Frame metadata types
