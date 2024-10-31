@@ -62,6 +62,7 @@ Orbbec 3D 相机产品软件开发套件，全面支持 UVC，实现免驱动即
 | Gemini E Lite     | 3606                        |
 | Gemini            | 3.0.18                      |
 | Astra Mini S Pro  | 1.0.05                      |
+| Gemini 215        | 1.0.9                       |
 
 ## OrbbecViewer
 
