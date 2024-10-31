@@ -66,6 +66,8 @@ More information about the license of each module can be found in the [license f
 | Gemini E Lite     | 3606                        |
 | Gemini            | 3.0.18                      |
 | Astra Mini S Pro  | 1.0.05                      |
+| Gemini 215        | 1.0.9                       |
+
 
 ## OrbbecViewer
 
