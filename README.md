@@ -46,8 +46,10 @@ More information about the license of each module can be found in the [license f
 
 | **Products List** | **Firmware Version**        |
 |-------------------|-----------------------------|
-| Gemini 335        | 1.2.20                      |
-| Gemini 335L        | 1.2.20                     |
+| Gemini 335        | 1.3.25/1.3.70                   |
+| Gemini 335L        | 1.3.25/1.3.70                     |
+| Gemini 336        | 1.3.25/1.3.70                      |
+| Gemini 336L        | 1.3.25/1.3.70                     |
 | Femto Bolt        | 1.0.6/1.0.9/1.1.2                 |
 | Femto Mega        | 1.1.7/1.2.7/1.2.9                 |
 | Femto Mega I      | 2.0.2                       |
