@@ -46,6 +46,10 @@ More information about the license of each module can be found in the [license f
 
 | **Products List** | **Firmware Version**        |
 |-------------------|-----------------------------|
+| Gemini 330        | 1.2.20                   |
+| Gemini 330L        | 1.2.20                    |
+| Gemini 336        | 1.2.20                      |
+| Gemini 336L        | 1.2.20                    |
 | Gemini 335        | 1.2.20                   |
 | Gemini 335L        | 1.2.20                    |
 | Gemini 336        | 1.2.20                      |
