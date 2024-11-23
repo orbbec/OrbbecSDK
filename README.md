@@ -46,10 +46,6 @@ More information about the license of each module can be found in the [license f
 
 | **Products List** | **Firmware Version**        |
 |-------------------|-----------------------------|
-| Gemini 330        | 1.2.20                   |
-| Gemini 330L        | 1.2.20                    |
-| Gemini 336        | 1.2.20                      |
-| Gemini 336L        | 1.2.20                    |
 | Gemini 335        | 1.2.20                   |
 | Gemini 335L        | 1.2.20                    |
 | Gemini 336        | 1.2.20                      |
@@ -72,7 +68,6 @@ More information about the license of each module can be found in the [license f
 | Gemini E Lite     | 3606                        |
 | Gemini            | 3.0.18                      |
 | Astra Mini S Pro  | 1.0.05                      |
-| Gemini 215        | 1.0.9                       |
 
 
 ## OrbbecViewer
