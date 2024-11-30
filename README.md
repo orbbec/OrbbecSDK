@@ -2,9 +2,11 @@
 
 ![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-1.10.16-green)
 
+> [!IMPORTANT]
+>
+> Welcome to the Orbbec SDK. Before you begin using this version of Orbbec SDK, it's crucial to check the following device support list to verify the compatibility.
+>
 
-
-## Introduction
 The Orbbec 3D camera product software development kit fully supports UVC, enabling driver-free plug-and-play. It provides both low-level and high-level APIs that are simple and easy to use, allowing developers to use it flexibly in different scenarios.
 
 This main branch is based on Orbbec SDK v1 and it is compatible with Orbbec's original OpenNI protocol devices through built-in code, enabling developers to migrate to Orbbec SDK to support both new and old products with one set of code.
@@ -12,6 +14,122 @@ This main branch is based on Orbbec SDK v1 and it is compatible with Orbbec's or
 With the major update in a new branch v2-main in 2024 October, Orbbec SDK becomes open-source with enhanced flexibility and scalability. This update in v2-main ensures compatibility with all new Orbbec USB products that adhere to the UVC standard. However, [Orbbec SDK v2](https://github.com/orbbec/OrbbecSDK_v2) no longer supports Orbbec's legacy OpenNI protocol devices, which will continue to receive bug fixes support in the Orbbec SDK v1 branch. We encourage you to check out whether your devices is supported by Orbbec SDK v2 and use the new release if it is supported there.
 
 If you are a user in China, it is recommended to use Gitee([gitee Repo](https://gitee.com/orbbecdeveloper/OrbbecSDK)).
+
+Here is the device support list of main branch (v1.x) and v2-main branch (v2.x):
+
+<table border="1" style="border-collapse: collapse; text-align: left; width: 100%;">
+  <thead>
+    <tr style="background-color: #1f4e78; color: white; text-align: center;">
+      <th>Product Series</th>
+      <th>Product</th>
+      <th><a href="https://github.com/orbbec/OrbbecSDK_ROS2/tree/main" style="color: black; text-decoration: none;">Branch main</a></th>
+      <th><a href="https://github.com/orbbec/OrbbecSDK_ROS2/tree/v2-main" style="color: black; text-decoration: none;">Branch v2-main</a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="7" style="text-align: center; font-weight: bold;">Gemini 330</td>
+      <td>Gemini 335</td>
+      <td>full maintenance</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
+      <td>Gemini 336</td>
+      <td>full maintenance</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
+      <td>Gemini 330</td>
+      <td>full maintenance</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
+      <td>Gemini 335L</td>
+      <td>full maintenance</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
+      <td>Gemini 336L</td>
+      <td>full maintenance</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
+      <td>Gemini 330L</td>
+      <td>full maintenance</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
+      <td>Gemini 335Lg</td>
+      <td>not supported</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
+      <td rowspan="3" style="text-align: center; font-weight: bold;">Gemini 2</td>
+      <td>Gemini 2</td>
+      <td>full maintenance</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
+      <td>Gemini 2 L</td>
+      <td>full maintenance</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
+      <td>Gemini 2 XL</td>
+      <td>recommended for new designs</td>
+      <td>to be supported</td>
+    </tr>
+    <tr>
+      <td rowspan="3" style="text-align: center; font-weight: bold;">Femto</td>
+      <td>Femto Bolt</td>
+      <td>full maintenance</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
+      <td>Femto Mega</td>
+      <td>full maintenance</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
+      <td>Femto Mega I</td>
+      <td>full maintenance</td>
+      <td>to be supported</td>
+    </tr>
+    <tr>
+      <td rowspan="3" style="text-align: center; font-weight: bold;">Astra</td>
+      <td>Astra 2</td>
+      <td>full maintenance</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
+      <td>Astra+</td>
+      <td>limited maintenance</td>
+      <td>not supported</td>
+    </tr>
+    <tr>
+      <td>Astra Pro Plus</td>
+      <td>limited maintenance</td>
+      <td>not supported</td>
+    </tr>
+    <tr>
+      <td style="text-align: center; font-weight: bold;">Astra Mini</td>
+      <td>Astra Mini Pro</td>
+      <td>full maintenance</td>
+      <td>not supported</td>
+    </tr>
+  </tbody>
+</table>
+
+**Note**: If you do not find your device, please contact our FAE or sales representative for help.
+
+**Definition**:
+
+1. recommended for new designs: we will provide full supports with new features,  bug fix and performance optimization;
+2. full maintenance: we will provide bug fix support;
+3. limited maintenance: we will provide critical bug fix support;
+4. not supported: we will not support specific device in this version;
+5. to be supported: we will add support in the near future.
+
 
 ## What is included in the repository
 
@@ -41,33 +159,6 @@ More information about the license of each module can be found in the [license f
 
 * Note: supported Arm platforms: NVIDIA Jetson AGX Orin (arm64), NVIDIA Jetson Orin NX (arm64), NVIDIA Jetson Orin Nano (arm64), NVIDIA Jetson AGX Xavier (arm64), NVIDIA Jetson Xavier NX (arm64), NVIDIA Jetson Nano (arm64), A311D (arm64), Raspberry Pi 4 (arm64), Raspberry Pi 3 (arm32), RK3399 (arm64), other Arm platforms, may need to Cross-compile.
 
-
-## Product support
-
-| **Products List** | **Firmware Version**        |
-|-------------------|-----------------------------|
-| Gemini 335        | 1.2.20                   |
-| Gemini 335L        | 1.2.20                    |
-| Gemini 336        | 1.2.20                      |
-| Gemini 336L        | 1.2.20                    |
-| Femto Bolt        | 1.0.6/1.0.9/1.1.2                 |
-| Femto Mega        | 1.1.7/1.2.7/1.2.9                 |
-| Femto Mega I      | 2.0.2                       |
-| Gemini 2 XL       | Obox: V1.2.5  VL:1.4.54     |
-| Astra 2           | 2.8.20                      |
-| Gemini 2 L        | 1.4.32                      |
-| Gemini 2          | 1.4.60 /1.4.76              |
-| Astra+            | 1.0.22/1.0.21/1.0.20/1.0.19 |
-| Femto             | 1.6.7                       |
-| Femto W           | 1.1.8                       |
-| DaBai             | 2436                        |
-| DaBai DCW         | 2460                        |
-| DaBai DW          | 2606                        |
-| Astra Mini Pro    | 1007                        |
-| Gemini E          | 3460                        |
-| Gemini E Lite     | 3606                        |
-| Gemini            | 3.0.18                      |
-| Astra Mini S Pro  | 1.0.05                      |
 
 
 ## OrbbecViewer
