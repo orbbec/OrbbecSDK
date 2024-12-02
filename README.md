@@ -158,7 +158,6 @@ Here is the device support list of main branch (v1.x) and v2-main branch (v2.x):
 | Gemini E Lite     | 3606                        |
 | Gemini            | 3.0.18                      |
 | Astra Mini S Pro  | 1.0.05                      |
-| Gemini 215        | 1.0.9                       |
 
 ## What is included in the repository
 
