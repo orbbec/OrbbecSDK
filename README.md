@@ -7,8 +7,6 @@
 > Welcome to the Orbbec SDK. Before you begin using this version of Orbbec SDK, it's crucial to check the following device support list to verify the compatibility.
 >
 
-The Orbbec 3D camera product software development kit fully supports UVC, enabling driver-free plug-and-play. It provides both low-level and high-level APIs that are simple and easy to use, allowing developers to use it flexibly in different scenarios.
-
 This main branch is based on Orbbec SDK v1 and it is compatible with Orbbec's original OpenNI protocol devices through built-in code, enabling developers to migrate to Orbbec SDK to support both new and old products with one set of code.
 
 With the major update in a new branch v2-main in 2024 October, Orbbec SDK becomes open-source with enhanced flexibility and scalability. This update in v2-main ensures compatibility with all new Orbbec USB products that adhere to the UVC standard. However, [Orbbec SDK v2](https://github.com/orbbec/OrbbecSDK_v2) no longer supports Orbbec's legacy OpenNI protocol devices, which will continue to receive bug fixes support in the Orbbec SDK v1 branch. We encourage you to check out whether your devices is supported by Orbbec SDK v2 and use the new release if it is supported there.
@@ -130,6 +128,37 @@ Here is the device support list of main branch (v1.x) and v2-main branch (v2.x):
 4. not supported: we will not support specific device in this version;
 5. to be supported: we will add support in the near future.
 
+## Product support
+
+| **Products List** | **Firmware Version**        |
+|-------------------|-----------------------------|
+| Gemini 330        | 1.2.20                   |
+| Gemini 330L        | 1.2.20                    |
+| Gemini 336        | 1.2.20                      |
+| Gemini 336L        | 1.2.20                    |
+| Gemini 335        | 1.2.20                   |
+| Gemini 335L        | 1.2.20                    |
+| Gemini 336        | 1.2.20                      |
+| Gemini 336L        | 1.2.20                    |
+| Femto Bolt        | 1.0.6/1.0.9/1.1.2                 |
+| Femto Mega        | 1.1.7/1.2.7/1.2.9                 |
+| Femto Mega I      | 2.0.2                       |
+| Gemini 2 XL       | Obox: V1.2.5  VL:1.4.54     |
+| Astra 2           | 2.8.20                      |
+| Gemini 2 L        | 1.4.32                      |
+| Gemini 2          | 1.4.60 /1.4.76              |
+| Astra+            | 1.0.22/1.0.21/1.0.20/1.0.19 |
+| Femto             | 1.6.7                       |
+| Femto W           | 1.1.8                       |
+| DaBai             | 2436                        |
+| DaBai DCW         | 2460                        |
+| DaBai DW          | 2606                        |
+| Astra Mini Pro    | 1007                        |
+| Gemini E          | 3460                        |
+| Gemini E Lite     | 3606                        |
+| Gemini            | 3.0.18                      |
+| Astra Mini S Pro  | 1.0.05                      |
+| Gemini 215        | 1.0.9                       |
 
 ## What is included in the repository
 
