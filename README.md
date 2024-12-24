@@ -134,8 +134,6 @@ Here is the device support list of main branch (v1.x) and v2-main branch (v2.x):
 |-------------------|-----------------------------|
 | Gemini 330        | 1.2.20                   |
 | Gemini 330L        | 1.2.20                    |
-| Gemini 336        | 1.2.20                      |
-| Gemini 336L        | 1.2.20                    |
 | Gemini 335        | 1.2.20                   |
 | Gemini 335L        | 1.2.20                    |
 | Gemini 336        | 1.2.20                      |
