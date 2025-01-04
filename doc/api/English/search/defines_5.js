@@ -21,13 +21,14 @@ var searchData=
   ['ob_5flog_5fseverity_5fnone_18',['OB_LOG_SEVERITY_NONE',['../ObTypes_8h.html#ae605ac5abec97a0cc2e216fb155e84f9',1,'ObTypes.h']]],
   ['ob_5fplayback_5fcallback_19',['ob_playback_callback',['../ObTypes_8h.html#a1470dbad9f19b34bd74a55d1e7ecdacc',1,'ObTypes.h']]],
   ['ob_5fprofile_5fdefault_20',['OB_PROFILE_DEFAULT',['../ObTypes_8h.html#adbc4f9652c6b55ce9a45fb2c9ddea37e',1,'ObTypes.h']]],
-  ['ob_5fprop_5fdevice_5fusb3_5frepeat_5fidentify_5fbool_21',['OB_PROP_DEVICE_USB3_REPEAT_IDENTIFY_BOOL',['../Property_8h.html#a3452971be299bedbd1e0e772ff25113d',1,'Property.h']]],
-  ['ob_5fprop_5flaser_5fenergy_5flevel_5fint_22',['OB_PROP_LASER_ENERGY_LEVEL_INT',['../Property_8h.html#a3da58955ac8e7002849a6e00a6138b42',1,'Property.h']]],
-  ['ob_5fprop_5flaser_5fhw_5fenergy_5flevel_5fint_23',['OB_PROP_LASER_HW_ENERGY_LEVEL_INT',['../Property_8h.html#a7a5a9d1ef529caf18df735625bf29fbb',1,'Property.h']]],
-  ['ob_5fprop_5flaser_5fon_5foff_5fmode_5fint_24',['OB_PROP_LASER_ON_OFF_MODE_INT',['../Property_8h.html#a8586d4024fe661edf683ce786b2c5e83',1,'Property.h']]],
-  ['ob_5fprop_5ftimer_5freset_5ftriggle_5fout_5fenable_5fbool_25',['OB_PROP_TIMER_RESET_TRIGGLE_OUT_ENABLE_BOOL',['../Property_8h.html#a091a01a818343975cc00e148a724eab1',1,'Property.h']]],
-  ['ob_5fvideo_5fframe_5fmetadata_26',['ob_video_frame_metadata',['../Frame_8h.html#a8e7ec8be03a6df7fcfdf34bdebd4e932',1,'Frame.h']]],
-  ['ob_5fvideo_5fframe_5fmetadata_5fsize_27',['ob_video_frame_metadata_size',['../Frame_8h.html#abe2eada651497ac1d75121726199f75a',1,'Frame.h']]],
-  ['ob_5fwidth_5fany_28',['OB_WIDTH_ANY',['../ObTypes_8h.html#a9b361dc99aceea67424ab913937a5f68',1,'ObTypes.h']]],
-  ['obdeviceipaddrconfig_29',['OBDeviceIpAddrConfig',['../ObTypes_8h.html#a098613a4e606ad5988fe3d81a9e4799e',1,'ObTypes.h']]]
+  ['ob_5fprop_5fdepth_5fnoise_5fremoval_5ffilter_5fbool_21',['OB_PROP_DEPTH_NOISE_REMOVAL_FILTER_BOOL',['../Property_8h.html#aac7bc7cb25ab9b64750b630451849472',1,'Property.h']]],
+  ['ob_5fprop_5fdevice_5fusb3_5frepeat_5fidentify_5fbool_22',['OB_PROP_DEVICE_USB3_REPEAT_IDENTIFY_BOOL',['../Property_8h.html#a3452971be299bedbd1e0e772ff25113d',1,'Property.h']]],
+  ['ob_5fprop_5flaser_5fenergy_5flevel_5fint_23',['OB_PROP_LASER_ENERGY_LEVEL_INT',['../Property_8h.html#a3da58955ac8e7002849a6e00a6138b42',1,'Property.h']]],
+  ['ob_5fprop_5flaser_5fhw_5fenergy_5flevel_5fint_24',['OB_PROP_LASER_HW_ENERGY_LEVEL_INT',['../Property_8h.html#a7a5a9d1ef529caf18df735625bf29fbb',1,'Property.h']]],
+  ['ob_5fprop_5flaser_5fon_5foff_5fmode_5fint_25',['OB_PROP_LASER_ON_OFF_MODE_INT',['../Property_8h.html#a8586d4024fe661edf683ce786b2c5e83',1,'Property.h']]],
+  ['ob_5fprop_5ftimer_5freset_5ftriggle_5fout_5fenable_5fbool_26',['OB_PROP_TIMER_RESET_TRIGGLE_OUT_ENABLE_BOOL',['../Property_8h.html#a091a01a818343975cc00e148a724eab1',1,'Property.h']]],
+  ['ob_5fvideo_5fframe_5fmetadata_27',['ob_video_frame_metadata',['../Frame_8h.html#a8e7ec8be03a6df7fcfdf34bdebd4e932',1,'Frame.h']]],
+  ['ob_5fvideo_5fframe_5fmetadata_5fsize_28',['ob_video_frame_metadata_size',['../Frame_8h.html#abe2eada651497ac1d75121726199f75a',1,'Frame.h']]],
+  ['ob_5fwidth_5fany_29',['OB_WIDTH_ANY',['../ObTypes_8h.html#a9b361dc99aceea67424ab913937a5f68',1,'ObTypes.h']]],
+  ['obdeviceipaddrconfig_30',['OBDeviceIpAddrConfig',['../ObTypes_8h.html#a098613a4e606ad5988fe3d81a9e4799e',1,'ObTypes.h']]]
 ];
