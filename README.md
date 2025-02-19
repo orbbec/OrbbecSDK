@@ -148,12 +148,12 @@ Here is the device support list of main branch (v1.x) and v2-main branch (v2.x):
 | Astra+            | 1.0.19 |
 | Femto             | 1.6.7                       |
 | Femto W           | 1.1.8                       |
-| DaBai             | 2436                        |
-| DaBai DCW         | 2460                        |
-| DaBai DW          | 2606                        |
-| Astra Mini Pro    | 1007                        |
-| Gemini E          | 3460                        |
-| Gemini E Lite     | 3606                        |
+| DaBai             | 2.4.36                        |
+| DaBai DCW         | 2.4.60                        |
+| DaBai DW          | 2.6.06                        |
+| Astra Mini Pro    | 1.0.07                        |
+| Gemini E          | 3.4.60                        |
+| Gemini E Lite     | 3.6.06                        |
 | Gemini            | 3.0.18                      |
 | Astra Mini S Pro  | 1.0.05                      |
 
