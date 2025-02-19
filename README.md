@@ -144,7 +144,7 @@ Here is the device support list of main branch (v1.x) and v2-main branch (v2.x):
 | Gemini 2 XL       | Obox: V1.2.5  VL:1.4.54     |
 | Astra 2           | 2.8.20                      |
 | Gemini 2 L        | 1.4.32                      |
-| Gemini 2          | 1.4.60 /1.4.76              |
+| Gemini 2          | 1.4.60               |
 | Astra+            | 1.0.19 |
 | Femto             | 1.6.7                       |
 | Femto W           | 1.1.8                       |
