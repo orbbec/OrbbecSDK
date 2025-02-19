@@ -130,7 +130,7 @@ Here is the device support list of main branch (v1.x) and v2-main branch (v2.x):
 
 ## Product support
 
-| **Products List** | **Firmware Version**        |
+| **Products List** | **Minimal Firmware Version**        |
 |-------------------|-----------------------------|
 | Gemini 330        | 1.2.20                   |
 | Gemini 330L        | 1.2.20                    |
