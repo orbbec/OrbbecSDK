@@ -77,6 +77,7 @@ OB_EXPORT ob_device *ob_create_net_device(ob_context *context, const char *addre
 /**
  * @brief Set a device plug-in callback function
  * @attention The added and removed device lists returned through the callback interface need to be released manually
+ * @attention This function supports multiple callbacks. Each call to this function adds a new callback to an internal list.
  *
  * @param[in] context Pointer to the context object
  * @param[in] callback Pointer to the callback function triggered when a device is plugged or unplugged
@@ -101,6 +102,18 @@ OB_EXPORT void ob_enable_device_clock_sync(ob_context *context, uint64_t repeat_
  * @param[out] error Pointer to an error object that will be populated if an error occurs during memory freeing
  */
 OB_EXPORT void ob_free_idle_memory(ob_context *context, ob_error **error);
+
+/**
+ * @brief For linux, there are two ways to enable the UVC backend: libuvc and libusb. This function is used to set the backend type.
+ * @brief It is effective when the new device is created.
+ *
+ * @attention This interface is only available for Linux.
+ *
+ * @param[in] context Pointer to the context object
+ * @param[in] backend_type The backend type to be used.
+ * @param[out] error Pointer to an error object that will be populated if an error occurs during backend type setting
+ */
+OB_EXPORT void ob_set_uvc_backend_type(ob_context *context, ob_uvc_backend_type backend_type, ob_error **error);
 
 /**
  * @brief Set the global log level

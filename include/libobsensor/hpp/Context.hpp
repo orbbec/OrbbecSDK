@@ -44,7 +44,7 @@ public:
 private:
     ob_context           *impl_ = nullptr;
     DeviceChangedCallback deviceChangedCallback_;
-    static LogCallback    logCallback_;
+    // static LogCallback    logCallback_;
 
 public:
     /**
@@ -101,7 +101,7 @@ public:
      * @brief Creates a network device with the specified IP address and port.
      *
      * @param[in] address The IP address, ipv4 only. such as "192.168.1.10"
-     * @param[in] port The port number.
+     * @param[in] port The port number， currently only support 8090
      * @return std::shared_ptr<Device> The created device object.
      */
     std::shared_ptr<Device> createNetDevice(const char *address, uint16_t port) const {
@@ -113,6 +113,7 @@ public:
 
     /**
      * @brief Set the device plug-in callback function.
+     * @attention This function supports multiple callbacks. Each call to this function adds a new callback to an internal list.
      *
      * @param callback The function triggered when the device is plugged and unplugged.
      */
@@ -145,7 +146,22 @@ public:
     }
 
     /**
-     * @brief Set the level of the global log, which affects both the log level output to the console, output to the file and output the user defined callback.
+     * @brief For linux, there are two ways to enable the UVC backend: libuvc and libusb. This function is used to set the backend type.
+     * @brief It is effective when the new device is created.
+     *
+     * @attention This interface is only available for Linux.
+     *
+     * @param[in] backend_type The backend type to be used.
+     */
+    void setUvcBackendType(OBUvcBackendType type) const {
+        ob_error *error = nullptr;
+        ob_set_uvc_backend_type(impl_, type, &error);
+        Error::handle(&error);
+    }
+
+    /**
+     * @brief Set the level of the global log, which affects both the log level output to the console, output to the file and output the user defined
+     * callback.
      *
      * @param severity The log output level.
      */
@@ -187,8 +203,8 @@ public:
      */
     static void setLoggerToCallback(OBLogSeverity severity, LogCallback callback) {
         ob_error *error       = nullptr;
-        Context::logCallback_ = callback;
-        ob_set_logger_to_callback(severity, &Context::logCallback, &Context::logCallback_, &error);
+        Context::getLogCallback() = callback;
+        ob_set_logger_to_callback(severity, &Context::logCallback, &Context::getLogCallback(), &error);
         Error::handle(&error);
     }
 
@@ -221,6 +237,12 @@ private:
         if(cb) {
             (*cb)(severity, logMsg);
         }
+    }
+
+    // Lazy initialization of the logcallback_. The purpose is to initialize logcallback_ in .hpp
+    static LogCallback& getLogCallback() {
+        static LogCallback logCallback_ = nullptr;
+        return logCallback_;
     }
 
 // for backward compatibility

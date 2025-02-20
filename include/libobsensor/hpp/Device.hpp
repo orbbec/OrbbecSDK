@@ -29,6 +29,7 @@ class SensorList;
 class DevicePresetList;
 class OBDepthWorkModeList;
 class CameraParamList;
+class DeviceFrameInterleaveList;
 
 class Device {
 public:
@@ -379,6 +380,20 @@ public:
         ob_error *error   = nullptr;
         fwUpdateCallback_ = callback;
         ob_device_update_firmware_from_data(impl_, firmwareData, firmwareDataSize, &Device::firmwareUpdateCallback, async, this, &error);
+        Error::handle(&error);
+    }
+
+    /**
+     * @brief Update the device optional depth presets
+     *
+     * @param filePathList A list(2D array) of preset file paths, each up to OB_PATH_MAX characters.
+     * @param pathCount The number of the preset file paths.
+     * @param callback Preset update progress and status callback
+     */
+    void updateOptionalDepthPresets(const char filePathList[][OB_PATH_MAX], uint8_t pathCount, DeviceFwUpdateCallback callback) {
+        ob_error *error   = nullptr;
+        fwUpdateCallback_ = callback;
+        ob_device_update_optional_depth_presets(impl_, filePathList, pathCount, &Device::firmwareUpdateCallback, this, &error);
         Error::handle(&error);
     }
 
@@ -746,6 +761,41 @@ public:
         ob_error *error = nullptr;
         ob_device_send_and_receive_data(impl_, sendData, sendDataSize, receiveData, receiveDataSize, &error);
         Error::handle(&error);
+    }
+
+    /**
+     * @brief Check if the device supports the frame interleave feature.
+     *
+     * @return bool Returns true if the device supports the frame interleave feature.
+     */
+    bool isFrameInterleaveSupported() const {
+        ob_error *error = nullptr;
+        bool      ret   = ob_device_is_frame_interleave_supported(impl_, &error);
+        Error::handle(&error);
+        return ret;
+    }
+
+    /**
+     * @brief load the frame interleave according to frame interleave name.
+     * @param frameInterleaveName The frame interleave name to set. The name should be one of the frame interleave names returned by @ref
+     * getAvailableFrameInterleaveList.
+     */
+    void loadFrameInterleave(const char *frameInterleaveName) const {
+        ob_error *error = nullptr;
+        ob_device_load_frame_interleave(impl_, frameInterleaveName, &error);
+        Error::handle(&error);
+    }
+
+    /**
+     * @brief Get available frame interleave list
+     *
+     * @return DeviceFrameInterleaveList return the available frame interleave list.
+     */
+    std::shared_ptr<DeviceFrameInterleaveList> getAvailableFrameInterleaveList() const {
+        ob_error *error = nullptr;
+        auto      list  = ob_device_get_available_frame_interleave_list(impl_, &error);
+        Error::handle(&error);
+        return std::make_shared<DeviceFrameInterleaveList>(list);
     }
 
 private:
@@ -1360,5 +1410,57 @@ public:
     }
 };
 
-}  // namespace ob
+/**
+ * @brief Class representing a list of device Frame Interleave
+ */
+class DeviceFrameInterleaveList {
+private:
+    ob_device_frame_interleave_list_t *impl_ = nullptr;
 
+public:
+    explicit DeviceFrameInterleaveList(ob_device_frame_interleave_list_t *impl) : impl_(impl) {}
+    ~DeviceFrameInterleaveList() noexcept {
+        ob_error *error = nullptr;
+        ob_delete_frame_interleave_list(impl_, &error);
+        Error::handle(&error, false);
+    }
+
+    /**
+     * @brief Get the number of device frame interleave in the list
+     *
+     * @return uint32_t the number of device frame interleave  in the list
+     */
+    uint32_t getCount() {
+        ob_error *error = nullptr;
+        auto      count = ob_device_frame_interleave_list_get_count(impl_, &error);
+        Error::handle(&error);
+        return count;
+    }
+
+    /**
+     * @brief Get the name of the device frame interleave at the specified index
+     *
+     * @param index the index of the device frame interleave
+     * @return const char* the name of the device frame interleave
+     */
+    const char *getName(uint32_t index) {
+        ob_error   *error = nullptr;
+        const char *name  = ob_device_frame_interleave_list_get_name(impl_, index, &error);
+        Error::handle(&error);
+        return name;
+    }
+
+    /**
+     * @brief check if the frame interleave list contains the special name frame interleave.
+     * @param name The name of the frame interleave
+     * @return bool Returns true if the special name is found in the frame interleave list, otherwise returns false.
+     */
+    bool hasFrameInterleave(const char *name) {
+        ob_error *error  = nullptr;
+        auto      result = ob_device_frame_interleave_list_has_frame_interleave(impl_, name, &error);
+        Error::handle(&error);
+        return result;
+    }
+};
+
+}  // namespace ob

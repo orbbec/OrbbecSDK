@@ -97,7 +97,7 @@ typedef enum {
     /**
      * @brief Software filter switch
      */
-    OB_PROP_DEPTH_SOFT_FILTER_BOOL = 24,
+    OB_PROP_DEPTH_NOISE_REMOVAL_FILTER_BOOL = 24,
 
     /**
      * @brief LDP status
@@ -105,14 +105,14 @@ typedef enum {
     OB_PROP_LDP_STATUS_BOOL = 32,
 
     /**
-     * @brief soft filter maxdiff param
+     * @brief maxdiff for depth noise removal filter
      */
-    OB_PROP_DEPTH_MAX_DIFF_INT = 40,
+    OB_PROP_DEPTH_NOISE_REMOVAL_FILTER_MAX_DIFF_INT = 40,
 
     /**
-     * @brief soft filter maxSpeckleSize
+     * @brief maxSpeckleSize for depth noise removal filter
      */
-    OB_PROP_DEPTH_MAX_SPECKLE_SIZE_INT = 41,
+    OB_PROP_DEPTH_NOISE_REMOVAL_FILTER_MAX_SPECKLE_SIZE_INT = 41,
 
     /**
      * @brief Hardware d2c is on
@@ -441,12 +441,66 @@ typedef enum {
     OB_PROP_DISP_SEARCH_RANGE_MODE_INT = 191,
 
     /**
+     * @brief Laser high temperature protection
+     */
+    OB_PROP_LASER_HIGH_TEMPERATURE_PROTECT_BOOL = 193,
+
+    /**
+     * @brief low exposure laser control
+     *
+     * @brief Currently using for DabaiA device,if the exposure value is lower than a certain threshold, the laser is turned off;
+     * if it exceeds another threshold, the laser is turned on again.
+     */
+    OB_PROP_LOW_EXPOSURE_LASER_CONTROL_BOOL = 194,
+
+    /**
+     * @brief check pps sync in signal
+     */
+    OB_PROP_CHECK_PPS_SYNC_IN_SIGNAL_BOOL = 195,
+
+    /**
+     * @brief Disparity search range offset, range: [0, 127]
+     */
+    OB_PROP_DISP_SEARCH_OFFSET_INT = 196,
+
+    /**
      * @brief Repower device (cut off power and power on again)
      *
      * @brief Currently using for GMSL device, cut off power and power on again by GMSL host driver.
      */
     OB_PROP_DEVICE_REPOWER_BOOL = 202,
 
+    /**
+     * @brief frame interleave config index
+     */
+    OB_PROP_FRAME_INTERLEAVE_CONFIG_INDEX_INT = 204,
+
+    /**
+     * @brief frame interleave enable (true:enable,false:disable)
+     */
+    OB_PROP_FRAME_INTERLEAVE_ENABLE_BOOL = 205,
+    /**
+     * @brief laser pattern sync with delay(us)
+     */
+    OB_PROP_FRAME_INTERLEAVE_LASER_PATTERN_SYNC_DELAY_INT = 206,
+    /**
+     * @brief Get the health check result from device,range is [0.0f,1.5f]
+     */
+    OB_PROP_ON_CHIP_CALIBRATION_HEALTH_CHECK_FLOAT = 209,
+
+    /**
+     * @brief Enable or disable on-chip calibration
+     */
+    OB_PROP_ON_CHIP_CALIBRATION_ENABLE_BOOL = 210,
+
+    /**
+     * @brief hardware noise remove filter switch
+     */
+    OB_PROP_HW_NOISE_REMOVE_FILTER_ENABLE_BOOL = 211,
+    /**
+     * @brief hardware noise remove filter threshold ,range [0.0 - 1.0]
+     */
+    OB_PROP_HW_NOISE_REMOVE_FILTER_THRESHOLD_FLOAT = 212,
     /**
      * @brief Baseline calibration parameters
      */
@@ -530,6 +584,11 @@ typedef enum {
      * @brief ASIC serial number
      */
     OB_STRUCT_ASIC_SERIAL_NUMBER = 1063,
+
+    /**
+     * @brief Disparity offset interleaving
+     */
+    OB_STRUCT_DISP_OFFSET_CONFIG = 1064,
 
     /**
      * @brief Color camera auto exposure
@@ -690,6 +749,10 @@ typedef enum {
      * @brief Color camera FOCUS
      */
     OB_PROP_COLOR_FOCUS_INT = 2038,
+    /**
+     * @brief ir rectify status,true: ir rectify, false: no rectify
+     */
+    OB_PROP_IR_RECTIFY_BOOL = 2040,
 
     /**
      * @brief Depth camera priority
@@ -733,6 +796,11 @@ typedef enum {
     OB_PROP_SDK_IR_RIGHT_FRAME_UNPACK_BOOL = 3012,
 
     /**
+     * @brief Read the current network bandwidth type of the network device, whether it is Gigabit Ethernet or Fast Ethernet, such as G335LE.
+     */
+    OB_PROP_NETWORK_BANDWIDTH_TYPE_INT = 3027,
+
+    /**
      * @brief Calibration JSON file read from device (Femto Mega, read only)
      */
     OB_RAW_DATA_CAMERA_CALIB_JSON_FILE = 4029,
@@ -745,7 +813,9 @@ typedef enum {
 #define OB_PROP_LASER_ENERGY_LEVEL_INT OB_PROP_LASER_POWER_LEVEL_CONTROL_INT
 #define OB_PROP_LASER_HW_ENERGY_LEVEL_INT OB_PROP_LASER_POWER_ACTUAL_LEVEL_INT
 #define OB_PROP_DEVICE_USB3_REPEAT_IDENTIFY_BOOL OB_PROP_DEVICE_USB2_REPEAT_IDENTIFY_BOOL
-#define OB_PROP_DEPTH_NOISE_REMOVAL_FILTER_BOOL OB_PROP_DEPTH_SOFT_FILTER_BOOL
+#define OB_PROP_DEPTH_SOFT_FILTER_BOOL OB_PROP_DEPTH_NOISE_REMOVAL_FILTER_BOOL
+#define OB_PROP_DEPTH_MAX_DIFF_INT OB_PROP_DEPTH_NOISE_REMOVAL_FILTER_MAX_DIFF_INT
+#define OB_PROP_DEPTH_MAX_SPECKLE_SIZE_INT OB_PROP_DEPTH_NOISE_REMOVAL_FILTER_MAX_SPECKLE_SIZE_INT
 
 /**
  * @brief The data type used to describe all property settings
@@ -771,4 +841,3 @@ typedef struct OBPropertyItem {
 #ifdef __cplusplus
 }
 #endif
-

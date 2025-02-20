@@ -426,6 +426,32 @@ public:
     OBStreamType getAlignToStreamType() {
         return static_cast<OBStreamType>(static_cast<int>(getConfigValue("AlignType")));
     }
+
+    /**
+     * @brief Sets whether the output frame resolution should match the target resolution.
+     *        When enabled, the output frame resolution will be adjusted to match (same as) the target resolution.
+     *        When disabled, the output frame resolution will match the original resolution while maintaining
+     *        the aspect ratio of the target resolution.
+     *
+     *
+     * @param state If true, output frame resolution will match the target resolution; otherwise, it will
+     *              maintain the original resolution with the target's aspect ratio.
+     */
+    void setMatchTargetResolution(bool state) {
+        setConfigValue("MatchTargetRes", state);
+    }
+
+    /**
+     * @brief Set the Align To Stream Profile
+     * @brief  It is useful when the align target stream dose not started (without any frame to get intrinsics and extrinsics).
+     *
+     * @param profile The Align To Stream Profile.
+     */
+    void setAlignToStreamProfile(std::shared_ptr<const StreamProfile> profile) {
+        ob_error *error = nullptr;
+        ob_align_filter_set_align_to_stream_profile(impl_, profile->getImpl(), &error);
+        Error::handle(&error);
+    }
 };
 
 /**
@@ -477,7 +503,7 @@ private:
     std::map<float, std::string> sequenceIdList_{ { 0.f, "all" }, { 1.f, "1" } };
     OBSequenceIdItem            *outputSequenceIdList_ = nullptr;
 
-    void initSeqenceIdList() {
+    void initSequenceIdList() {
         outputSequenceIdList_ = new OBSequenceIdItem[sequenceIdList_.size()];
 
         int i = 0;
@@ -495,7 +521,7 @@ public:
         auto      impl  = ob_create_filter("SequenceIdFilter", &error);
         Error::handle(&error);
         init(impl);
-        initSeqenceIdList();
+        initSequenceIdList();
     }
 
     virtual ~SequenceIdFilter() noexcept {
@@ -942,7 +968,7 @@ public:
 
 class OBFilterList {
 private:
-    ob_filter_list_t* impl_;
+    ob_filter_list_t *impl_;
 
 public:
     explicit OBFilterList(ob_filter_list_t *impl) : impl_(impl) {}
@@ -1010,4 +1036,3 @@ template <typename T> bool Filter::is() {
 }
 
 }  // namespace ob
-
