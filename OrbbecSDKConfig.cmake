@@ -32,7 +32,7 @@ set(OrbbecSDK_LIBS ${OrbbecSDK_LIBRARY})
 file(GLOB OrbbecSDK_DLL_FILES ${OrbbecSDK_LIBS_DIR}/*${ORBBEC_DLL_SUFFIX}*)
 
 # runtime resource file should copy to cwd.
-file(GLOB OrbbecSDK_RUNTIME_RESOURCE_FILES  ${OrbbecSDK_LIBS_DIR}/*depthengine*)
+file(GLOB OrbbecSDK_RUNTIME_RESOURCE_FILES  ${OrbbecSDK_LIBS_DIR}/extensions)
 
 # config file
 file(GLOB OrbbecSDK_CONFIG_FILES  ${CMAKE_CURRENT_LIST_DIR}/misc/config/*)
