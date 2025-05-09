@@ -9,11 +9,11 @@
 
 This main branch is based on Orbbec SDK v1 and it is compatible with Orbbec's original OpenNI protocol devices through built-in code, enabling developers to migrate to Orbbec SDK to support both new and old products with one set of code.
 
-With the major update in a new branch v2-main in 2024 October, Orbbec SDK becomes open-source with enhanced flexibility and scalability. This update in v2-main ensures compatibility with all new Orbbec USB products that adhere to the UVC standard. However, [Orbbec SDK v2](https://github.com/orbbec/OrbbecSDK_v2) no longer supports Orbbec's legacy OpenNI protocol devices, which will continue to receive bug fixes support in the Orbbec SDK v1 branch. We encourage you to check out whether your devices is supported by Orbbec SDK v2 and use the new release if it is supported there.
+With the major update in 2024 October, Orbbec SDK becomes open-source with enhanced flexibility and scalability. This update ensures compatibility with all new Orbbec USB products that adhere to the UVC standard. However, [Orbbec SDK v2](https://github.com/orbbec/OrbbecSDK_v2) no longer supports Orbbec's legacy OpenNI protocol devices, which will continue to receive bug fixes support in the Orbbec SDK v1 branch. We encourage you to check out whether your devices is supported by Orbbec SDK v2 and use the new release if it is supported there.
 
 If you are a user in China, it is recommended to use Gitee([gitee Repo](https://gitee.com/orbbecdeveloper/OrbbecSDK)).
 
-Here is the device support list of main branch (v1.x) and v2-main branch (v2.x):
+Here is the device support list of main branch (v1.x) and Orbbec SDK v2 (v2.x):
 
 <table border="1" style="border-collapse: collapse; text-align: left; width: 100%;">
   <thead>
@@ -21,7 +21,7 @@ Here is the device support list of main branch (v1.x) and v2-main branch (v2.x):
       <th>Product Series</th>
       <th>Product</th>
       <th><a href="https://github.com/orbbec/OrbbecSDK/tree/main" style="color: black; text-decoration: none;">Branch main</a></th>
-      <th><a href="https://github.com/orbbec/OrbbecSDK/tree/v2-main" style="color: black; text-decoration: none;">Branch v2-main</a></th>
+      <th><a href="https://github.com/orbbec/OrbbecSDK_v2" style="color: black; text-decoration: none;">Orbbec SDK v2</a></th>
     </tr>
   </thead>
   <tbody>
