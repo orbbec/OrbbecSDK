@@ -554,6 +554,28 @@ public:
 };
 
 /**
+ * @brief Define the ConfidenceFrame class, which inherits from the VideoFrame class
+ *
+ */
+class ConfidenceFrame : public VideoFrame {
+
+public:
+    /**
+     * @brief Construct a new ConfidenceFrame object with a given pointer to the internal frame object.
+     *
+     * @attention After calling this constructor, the frame object will own the internal frame object, and the internal frame object will be deleted when the
+     * frame object is destroyed.
+     * @attention The internal frame object should not be deleted by the caller.
+     * @attention Please use the FrameFactory to create a Frame object.
+     *
+     * @param impl The pointer to the internal frame object.
+     */
+    explicit ConfidenceFrame(const ob_frame *impl) : VideoFrame(impl){};
+
+    ~ConfidenceFrame() noexcept override = default;
+};
+
+/**
  * @brief Define the PointsFrame class, which inherits from the Frame class
  * @brief The PointsFrame class is used to obtain pointcloud data and point cloud information.
  *
@@ -929,11 +951,11 @@ public:
      * @attention The buffer is owned by the caller, and will not be destroyed by the frame object. The user should ensure that the buffer is valid and not
      * modified.
      *
-     * @param[in] frame_type Frame object type.
+     * @param[in] frameType Frame object type.
      * @param[in] format Frame object format.
      * @param[in] buffer Frame object buffer.
-     * @param[in] buffer_size Frame object buffer size.
      * @param[in] destroyCallback Destroy callback, will be called when the frame object is destroyed.
+     * @param[in] bufferSize Frame object buffer size.
      *
      * @return std::shared_ptr<Frame> The created frame object.
      */
@@ -1036,6 +1058,8 @@ template <typename T> bool Frame::is() const {
         return (typeid(T) == typeid(DepthFrame) || typeid(T) == typeid(VideoFrame));
     case OB_FRAME_COLOR:
         return (typeid(T) == typeid(ColorFrame) || typeid(T) == typeid(VideoFrame));
+    case OB_FRAME_CONFIDENCE:
+        return (typeid(T) == typeid(ConfidenceFrame) || typeid(T) == typeid(VideoFrame));
     case OB_FRAME_GYRO:
         return (typeid(T) == typeid(GyroFrame));
     case OB_FRAME_ACCEL:

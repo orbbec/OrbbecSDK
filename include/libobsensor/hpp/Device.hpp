@@ -30,6 +30,7 @@ class DevicePresetList;
 class OBDepthWorkModeList;
 class CameraParamList;
 class DeviceFrameInterleaveList;
+class PresetResolutionConfigeList;
 
 class Device {
 public:
@@ -289,6 +290,30 @@ public:
     void getStructuredData(OBPropertyID propertyId, uint8_t *data, uint32_t *dataSize) const {
         ob_error *error = nullptr;
         ob_device_get_structured_data(impl_, propertyId, data, dataSize, &error);
+        Error::handle(&error);
+    }
+
+    /**
+     * @brief Set the customer data type of a device property
+     *
+     * @param data The data to set
+     * @param dataSize The size of the data to set,the maximum length cannot exceed 65532 bytes.
+     */
+    void writeCustomerData(const void *data, uint32_t dataSize) {
+        ob_error *error = nullptr;
+        ob_device_write_customer_data(impl_, data, dataSize, &error);
+        Error::handle(&error);
+    }
+
+    /**
+     * @brief Get the customer data type of a device property
+     *
+     * @param data The property data obtained
+     * @param dataSize The size of the data obtained
+     */
+    void readCustomerData(void *data, uint32_t *dataSize) {
+        ob_error *error = nullptr;
+        ob_device_read_customer_data(impl_, data, dataSize, &error);
         Error::handle(&error);
     }
 
@@ -755,7 +780,7 @@ public:
      * @param[in] sendData The data to be sent to the device.
      * @param[in] sendDataSize The size of the data to be sent to the device.
      * @param[out] receiveData The data received from the device.
-     * @param[in out] receiveDataSize The requeseted size of the data received from the device, and the actual size of the data received from the device.
+     * @param[in,out] receiveDataSize The requeseted size of the data received from the device, and the actual size of the data received from the device.
      */
     void sendAndReceiveData(const uint8_t *sendData, uint32_t sendDataSize, uint8_t *receiveData, uint32_t *receiveDataSize) const {
         ob_error *error = nullptr;
@@ -796,6 +821,18 @@ public:
         auto      list  = ob_device_get_available_frame_interleave_list(impl_, &error);
         Error::handle(&error);
         return std::make_shared<DeviceFrameInterleaveList>(list);
+    }
+
+    /**
+     * @brief Get available frame interleave list
+     *
+     * @return DeviceFrameInterleaveList return the available frame interleave list.
+     */
+    std::shared_ptr<PresetResolutionConfigeList> getAvailablePresetResolutionConfigeList() const {
+        ob_error *error = nullptr;
+        auto      list  = ob_device_get_available_preset_resolution_config_list(impl_, &error);
+        Error::handle(&error);
+        return std::make_shared<PresetResolutionConfigeList>(list);
     }
 
 private:
@@ -1394,9 +1431,9 @@ public:
     }
 
     /**
-     * @brief Get the number of device presets in the list
+     * @brief Get the number of camera parameters in the list.
      *
-     * @return uint32_t the number of device presets in the list
+     * @return uint32_t the number of camera parameters in the list.
      */
     uint32_t getCount() {
         ob_error *error = nullptr;
@@ -1475,6 +1512,44 @@ public:
         auto      result = ob_device_frame_interleave_list_has_frame_interleave(impl_, name, &error);
         Error::handle(&error);
         return result;
+    }
+};
+
+/**
+ * @brief Class representing a list of device Frame Interleave
+ */
+class PresetResolutionConfigeList {
+private:
+    ob_preset_resolution_config_list_t *impl_ = nullptr;
+
+public:
+    explicit PresetResolutionConfigeList(ob_preset_resolution_config_list_t *impl) : impl_(impl) {}
+    ~PresetResolutionConfigeList() noexcept {
+        ob_error *error = nullptr;
+        ob_delete_preset_resolution_config_list(impl_, &error);
+        Error::handle(&error, false);
+    }
+
+    /**
+     * @brief Get the number of device preset resolution ratio in the list
+     */
+    uint32_t getCount() {
+        ob_error *error = nullptr;
+        auto      count = ob_device_preset_resolution_config_get_count(impl_, &error);
+        Error::handle(&error);
+        return count;
+    }
+
+    /*
+     *  @brief Get the device preset resolution ratio at the specified index
+     *  @param index the index of the device preset resolution ratio
+     *  @return OBPresetResolutionConfig the corresponding device preset resolution ratio
+     */
+    OBPresetResolutionConfig getPresetResolutionRatioConfig(uint32_t index) {
+        ob_error *error  = nullptr;
+        auto      config = ob_device_preset_resolution_config_list_get_item(impl_, index, &error);
+        Error::handle(&error);
+        return config;
     }
 };
 

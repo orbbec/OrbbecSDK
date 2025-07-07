@@ -311,7 +311,7 @@ public:
      * @brief Some private filters require an activation key to be activated, its depends on the vendor of the filter.
      *
      * @param name The name of the filter.
-     * @param activation_key The activation key of the filter.
+     * @param activationKey The activation key of the filter.
      */
     static std::shared_ptr<Filter> createPrivateFilter(const std::string &name, const std::string &activationKey) {
         ob_error *error = nullptr;
@@ -347,12 +347,12 @@ public:
         init(impl);
     }
 
-    virtual ~PointCloudFilter() noexcept = default;
+    virtual ~PointCloudFilter() noexcept override = default;
 
     /**
      * @brief Set the output pointcloud frame format.
      *
-     * @param type The point cloud frame format: OB_FORMAT_POINT or OB_FORMAT_RGB_POINT
+     * @param format The point cloud frame format: OB_FORMAT_POINT or OB_FORMAT_RGB_POINT
      */
     void setCreatePointFormat(OBFormat format) {
         setConfigValue("pointFormat", static_cast<double>(format));
@@ -421,7 +421,7 @@ public:
         setConfigValue("AlignType", static_cast<double>(alignToStreamType));
     }
 
-    virtual ~Align() noexcept = default;
+    virtual ~Align() noexcept override = default;
 
     OBStreamType getAlignToStreamType() {
         return static_cast<OBStreamType>(static_cast<int>(getConfigValue("AlignType")));
@@ -466,7 +466,7 @@ public:
         init(impl);
     }
 
-    virtual ~FormatConvertFilter() noexcept = default;
+    virtual ~FormatConvertFilter() noexcept override = default;
 
     /**
      * @brief Set the format conversion type.
@@ -492,7 +492,7 @@ public:
         init(impl);
     }
 
-    virtual ~HdrMerge() noexcept = default;
+    virtual ~HdrMerge() noexcept override = default;
 };
 
 /**
@@ -524,7 +524,7 @@ public:
         initSequenceIdList();
     }
 
-    virtual ~SequenceIdFilter() noexcept {
+    virtual ~SequenceIdFilter() noexcept override {
         if(outputSequenceIdList_) {
             delete[] outputSequenceIdList_;
             outputSequenceIdList_ = nullptr;
@@ -534,7 +534,7 @@ public:
     /**
      * @brief Set the sequenceId filter params.
      *
-     * @param sequence id to pass the filter.
+     * @param sequence_id id to pass the filter.
      */
     void selectSequenceId(int sequence_id) {
         setConfigValue("sequenceid", static_cast<double>(sequence_id));
@@ -575,12 +575,12 @@ public:
         init(impl);
     }
 
-    virtual ~DecimationFilter() noexcept = default;
+    virtual ~DecimationFilter() noexcept override = default;
 
     /**
      * @brief Set the decimation filter scale value.
      *
-     * @param type The decimation filter scale value.
+     * @param value The decimation filter scale value.
      */
     void setScaleValue(uint8_t value) {
         setConfigValue("decimate", static_cast<double>(value));
@@ -619,7 +619,7 @@ public:
         init(impl);
     }
 
-    virtual ~ThresholdFilter() noexcept = default;
+    virtual ~ThresholdFilter() noexcept override = default;
 
     /**
      * @brief Get the threshold filter min range.
@@ -682,7 +682,7 @@ public:
         init(impl);
     }
 
-    virtual ~SpatialAdvancedFilter() noexcept = default;
+    virtual ~SpatialAdvancedFilter() noexcept override = default;
 
     /**
      * @brief Get the spatial advanced filter alpha range.
@@ -791,12 +791,11 @@ public:
         init(impl);
     }
 
-    ~HoleFillingFilter() noexcept = default;
+    ~HoleFillingFilter() noexcept override = default;
 
     /**
      * @brief Set the HoleFillingFilter mode.
      *
-     * @param[in] filter A holefilling_filter object.
      * @param mode OBHoleFillingMode, OB_HOLE_FILL_TOP,OB_HOLE_FILL_NEAREST or OB_HOLE_FILL_FAREST.
      */
     void setFilterMode(OBHoleFillingMode mode) {
@@ -825,12 +824,12 @@ public:
         init(impl);
     }
 
-    ~NoiseRemovalFilter() noexcept = default;
+    ~NoiseRemovalFilter() noexcept override = default;
 
     /**
      * @brief Set the noise removal filter params.
      *
-     * @param[in] params ob_noise_removal_filter_params.
+     * @param[in] filterParams ob_noise_removal_filter_params.
      */
     void setFilterParams(OBNoiseRemovalFilterParams filterParams) {
         setConfigValue("max_size", static_cast<double>(filterParams.max_size));
@@ -896,7 +895,7 @@ public:
         init(impl);
     }
 
-    ~TemporalFilter() noexcept = default;
+    ~TemporalFilter() noexcept override = default;
 
     /**
      * @brief Get the TemporalFilter diffscale range.
@@ -963,7 +962,7 @@ public:
         init(impl);
     }
 
-    ~DisparityTransform() noexcept = default;
+    ~DisparityTransform() noexcept override = default;
 };
 
 class OBFilterList {

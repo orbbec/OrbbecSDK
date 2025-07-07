@@ -509,6 +509,42 @@ typedef enum {
      * @brief soft trigger auto capture interval time, use in OB_MULTI_DEVICE_SYNC_MODE_SOFTWARE_TRIGGERING mode
      */
     OB_DEVICE_AUTO_CAPTURE_INTERVAL_TIME_INT = 217,
+
+    /**
+     * @brief PTP time synchronization enable
+     */
+    OB_DEVICE_PTP_CLOCK_SYNC_ENABLE_BOOL = 223,
+
+    /**
+     * @brief Depth with confidence stream enable
+     */
+    OB_PROP_DEPTH_WITH_CONFIDENCE_STREAM_ENABLE_BOOL = 224,
+
+    /**
+     * @brief Enable or disable confidence stream filter
+     */
+    OB_PROP_CONFIDENCE_STREAM_FILTER_BOOL = 226,
+
+    /**
+     * @brief Confidence stream filter threshold, range [0, 255]
+     */
+    OB_PROP_CONFIDENCE_STREAM_FILTER_THRESHOLD_INT = 227,
+
+    /**
+     * @brief Confidence stream mirror enable
+     */
+    OB_PROP_CONFIDENCE_MIRROR_BOOL = 229,
+
+    /**
+     * @brief Confidence stream flip enable
+     */
+    OB_PROP_CONFIDENCE_FLIP_BOOL   = 230,
+
+    /**
+     * @brief Confidence stream rotate angle{0, 90, 180, 270}
+     */
+    OB_PROP_CONFIDENCE_ROTATE_INT  = 231,
+
     /**
      * @brief Baseline calibration parameters
      */
@@ -597,6 +633,11 @@ typedef enum {
      * @brief Disparity offset interleaving
      */
     OB_STRUCT_DISP_OFFSET_CONFIG = 1064,
+
+    /**
+     * @brief Preset resolution ratio configuration
+     */
+    OB_STRUCT_PRESET_RESOLUTION_CONFIG = 1069,
 
     /**
      * @brief Color camera auto exposure
@@ -817,6 +858,11 @@ typedef enum {
      * @brief Calibration JSON file read from device (Femto Mega, read only)
      */
     OB_RAW_DATA_CAMERA_CALIB_JSON_FILE = 4029,
+
+    /**
+     * @brief Confidence degree
+     */
+    OB_PROP_DEBUG_ESGM_CONFIDENCE_FLOAT = 5013,
 } OBPropertyID,
     ob_property_id;
 
