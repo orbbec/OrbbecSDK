@@ -780,6 +780,152 @@ public:
 };
 
 /**
+ * @brief The Spatial Fast Filter utilizes an enhanced median smoothing algorithm,
+ * designed to significantly reduce CPU usage and optimize processing efficiency.
+ */
+class SpatialFastFilter : public Filter {
+public:
+    SpatialFastFilter(const std::string &activationKey = "") {
+        ob_error *error = nullptr;
+        auto      impl  = ob_create_private_filter("SpatialFastFilter", activationKey.c_str(), &error);
+        Error::handle(&error);
+        init(impl);
+    }
+
+    virtual ~SpatialFastFilter() noexcept override = default;
+
+    /**
+     * @brief Get the spatial fast filter radius range.
+     *
+     * @return OBIntPropertyRange the radius value of property range.
+     */
+    OBIntPropertyRange getRadiusRange() {
+        OBIntPropertyRange range{};
+        const auto        &schemaVec = getConfigSchemaVec();
+        for(const auto &item: schemaVec) {
+            if(strcmp(item.name, "radius") == 0) {
+                range = getPropertyRange<OBIntPropertyRange>(item, getConfigValue("radius"));
+                break;
+            }
+        }
+        return range;
+    }
+
+    /**
+     * @brief Get the spatial fast filter params.
+     *
+     * @return OBSpatialFastFilterParams
+     */
+    OBSpatialFastFilterParams getFilterParams() {
+        OBSpatialFastFilterParams params{};
+        params.radius    = static_cast<uint8_t>(getConfigValue("radius"));
+        return params;
+    }
+
+    /**
+     * @brief Set the spatial fast filter params.
+     *
+     * @param params OBSpatialFastFilterParams.
+     */
+    void setFilterParams(OBSpatialFastFilterParams params) {
+        setConfigValue("radius", params.radius);
+    }
+};
+
+
+/**
+ * @brief The Spatial Moderate Filter utilizes an optimized average smoothing algorithm,
+ * to achieve a balance between processing speed and the quality of smoothing achieved.
+ */
+class SpatialModerateFilter : public Filter {
+public:
+    SpatialModerateFilter(const std::string &activationKey = "") {
+        ob_error *error = nullptr;
+        auto      impl  = ob_create_private_filter("SpatialModerateFilter", activationKey.c_str(), &error);
+        Error::handle(&error);
+        init(impl);
+    }
+
+    virtual ~SpatialModerateFilter() noexcept override = default;
+
+    /**
+     * @brief Get the spatial moderate filter magnitude range.
+     *
+     * @return OBIntPropertyRange the magnitude value of property range.
+     */
+    OBIntPropertyRange getMagnitudeRange() {
+        OBIntPropertyRange range{};
+        const auto        &schemaVec = getConfigSchemaVec();
+        for(const auto &item: schemaVec) {
+            if(strcmp(item.name, "magnitude") == 0) {
+                range = getPropertyRange<OBIntPropertyRange>(item, getConfigValue("magnitude"));
+                break;
+            }
+        }
+        return range;
+    }
+
+    /**
+     * @brief Get the spatial moderate filter radius range.
+     *
+     * @return OBIntPropertyRange the radius value of property range.
+     */
+    OBIntPropertyRange getRadiusRange() {
+        OBIntPropertyRange range{};
+        const auto &       schemaVec = getConfigSchemaVec();
+        for(const auto &item: schemaVec) {
+            if(strcmp(item.name, "radius") == 0) {
+                range = getPropertyRange<OBIntPropertyRange>(item, getConfigValue("radius"));
+                break;
+            }
+        }
+        return range;
+    }
+
+    /**
+     * @brief Get the spatial moderate filter disp diff range.
+     *
+     * @return OBIntPropertyRange the disp diff value of property range.
+     */
+    OBIntPropertyRange getDispDiffRange() {
+        OBIntPropertyRange range{};
+        const auto        &schemaVec = getConfigSchemaVec();
+        for(const auto &item: schemaVec) {
+            if(strcmp(item.name, "disp_diff") == 0) {
+                range = getPropertyRange<OBIntPropertyRange>(item, getConfigValue("disp_diff"));
+                break;
+            }
+        }
+        return range;
+    }
+
+    /**
+     * @brief Get the spatial moderate filter params.
+     *
+     * @return OBSpatialModerateFilterParams
+     */
+    OBSpatialModerateFilterParams getFilterParams() {
+        OBSpatialModerateFilterParams params{};
+        params.magnitude = static_cast<uint8_t>(getConfigValue("magnitude"));
+        params.radius    = static_cast<uint8_t>(getConfigValue("radius"));
+        params.disp_diff = static_cast<uint16_t>(getConfigValue("disp_diff"));
+        return params;
+    }
+
+    /**
+     * @brief Set the spatial moderate filter params.
+     *
+     * @param params OBSpatialModerateFilterParams.
+     */
+    void setFilterParams(OBSpatialModerateFilterParams params) {
+        setConfigValue("magnitude", params.magnitude);
+        setConfigValue("radius", params.radius);
+        setConfigValue("disp_diff", params.disp_diff);
+    }
+};
+
+
+/**
  * @brief Hole filling filter,the processing performed depends on the selected hole filling mode.
  */
 class HoleFillingFilter : public Filter {
