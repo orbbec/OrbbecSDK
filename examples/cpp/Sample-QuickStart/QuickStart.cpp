@@ -1,8 +1,7 @@
-#include "window.hpp"
-#include "libobsensor/hpp/Pipeline.hpp"
-#include "libobsensor/hpp/Error.hpp"
+#include "libobsensor/ObSensor.hpp"
 #include "utils.hpp"
 #include <chrono>
+#include <iostream>
 #define ESC 27
 
 int main(int argc, char **argv) try {
