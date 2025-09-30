@@ -44,7 +44,7 @@ int main(int argc, char **args) {
     check_error(error);
 
     if(ir_left_profiles == nullptr) {
-        printf("The obtained IR_Left resolution list is NULL. For monocular structured light devices, try opening the IR data stream using the IR example. ");
+        printf("The obtained IR(Left) resolution list is NULL. For monocular structured light devices, try opening the IR data stream using the IR example. ");
         return 0;
     }
 
@@ -67,6 +67,10 @@ int main(int argc, char **args) {
 
     // enable stream
     ob_config_enable_stream(config, ir_right_profile, &error);
+    check_error(error);
+
+    // enable frame sync
+    ob_pipeline_enable_frame_sync(pipeline, &error);
     check_error(error);
 
     // Start the pipeline with config
@@ -94,6 +98,17 @@ int main(int argc, char **args) {
         check_error(error);
 
         if(ir_left_frame == nullptr || ir_right_frame == nullptr) {
+            if (ir_left_frame)
+            {
+                ob_delete_frame(ir_left_frame, &error);
+            }
+            
+            if (ir_right_frame)
+            {
+                ob_delete_frame(ir_right_frame, &error);
+            }
+            
+            ob_delete_frame(frameset, &error);
             std::cout << "left ir frame or right ir frame is null. leftFrame: " << ir_left_frame << ", rightFrame: " << ir_right_frame << std::endl;
             continue;
         }
@@ -126,6 +141,10 @@ int main(int argc, char **args) {
 
     // destroy profile list
     ob_delete_stream_profile_list(ir_right_profiles, &error);
+    check_error(error);
+
+    // destroy the config
+    ob_delete_config(config, &error);
     check_error(error);
 
     // destroy the pipeline

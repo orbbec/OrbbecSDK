@@ -1,10 +1,12 @@
-#include "libobsensor/ObSensor.hpp"
+#include "window.hpp"
+#include "libobsensor/hpp/Pipeline.hpp"
+#include "libobsensor/hpp/Error.hpp"
 #include "utils.hpp"
 #include <chrono>
-#include <iostream>
 #define ESC 27
 
-int main() try {
+int main(int argc, char **argv) try {
+
     // Create a pipeline with default device
     ob::Pipeline pipe;
     // Start the pipeline with default config, more info please refer to the `misc/config/OrbbecSDKConfig_v1.0.xml`

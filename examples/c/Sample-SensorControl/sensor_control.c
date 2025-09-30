@@ -70,6 +70,8 @@ int main(int argc, char **argv) {
             check_error(g_error);
             const char *uid = ob_device_info_uid(deviceInfo, &g_error);
             check_error(g_error);
+            ob_delete_device_info(deviceInfo, &g_error);
+            check_error(g_error);
             printf("\n------------------------------------------------------------------------\n");
             printf("Current Device: name: %s, pid: %d, vid: %d, uid: %s\n", name, pid, vid, uid);
         }
@@ -95,6 +97,8 @@ int main(int argc, char **argv) {
                 if(strcmp(str, "exit") == 0) {
                     isSelectProperty = false;
                     isSelectDevice   = false;
+                    free(property_list);
+                    property_list = NULL;
                     break;
                 }
 
@@ -294,7 +298,7 @@ void set_property_value(ob_device *device, ob_property_item property_item, const
         printf("property name:%s,set int value:%d\n", property_item.name, int_value);
         break;
     case OB_FLOAT_PROPERTY:
-        float_value = atoi(value);
+        float_value = atof(value);
         ob_device_set_float_property(device, property_item.id, float_value, &g_error);
         check_control_property_error(g_error);
         printf("property name:%s,set float value:%f\n", property_item.name, float_value);

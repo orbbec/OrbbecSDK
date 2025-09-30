@@ -134,6 +134,8 @@ int main(int argc, char **argv) {
         }
         else {
             // Try find supported depth to color align software mode profile
+            ob_delete_stream_profile_list(depthProfiles, &error);
+            check_error(error);
             depthProfiles = ob_get_d2c_depth_profile_list(pipeline, color_profile, ALIGN_D2C_SW_MODE, &error);
             check_error(error);
             d2cCount = ob_stream_profile_list_count(depthProfiles, &error);
@@ -142,6 +144,9 @@ int main(int argc, char **argv) {
                 align_mode = ALIGN_D2C_SW_MODE;
             }
         }
+
+        // Enable frame synchronization
+        //ob_pipeline_enable_frame_sync(pipeline, &error);
     }
     else {
         depthProfiles = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_DEPTH, &error);
@@ -221,6 +226,7 @@ int main(int argc, char **argv) {
                         ob_frame *depth_frame = ob_frameset_depth_frame(frameset, &error);
                         check_error(error);
                         if(depth_frame == NULL) {
+                            ob_delete_frame(frameset, &error);
                             continue;
                         }
 
@@ -271,6 +277,7 @@ int main(int argc, char **argv) {
                         ob_frame *depth_frame = ob_frameset_depth_frame(frameset, &error);
                         check_error(error);
                         if(depth_frame == NULL) {
+                            ob_delete_frame(frameset, &error);
                             continue;
                         }
 
@@ -348,5 +355,7 @@ int main(int argc, char **argv) {
     ob_delete_stream_profile_list(depthProfiles, &error);
     check_error(error);
 
+    ob_delete_device(device,&error);
+    check_error(error);
     return 0;
 }

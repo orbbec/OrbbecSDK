@@ -200,10 +200,17 @@ int main(int argc, char **args) {
                 win->resize(w, h);
                 resizeWindows = false;
             }
-
             win->addToRender({ color_frame, depth_frame });
 
             ob_delete_frame(new_frame_set, &error);
+            check_error(error);
+        }
+        else if(depth_frame != nullptr) {
+            ob_delete_frame(depth_frame, &error);
+            check_error(error);
+        }
+        else if(color_frame != nullptr) {
+            ob_delete_frame(color_frame, &error);
             check_error(error);
         }
         ob_delete_frame(frameset, &error);
@@ -211,6 +218,9 @@ int main(int argc, char **args) {
     };
 
     ob_delete_filter(align_filter, &error);
+    check_error(error);
+
+    ob_delete_config(config, &error);
     check_error(error);
 
     // stop the pipeline

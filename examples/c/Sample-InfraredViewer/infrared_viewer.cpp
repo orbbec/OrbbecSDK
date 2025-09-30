@@ -111,6 +111,9 @@ int main(int argc, char **args) {
     ob_delete_stream_profile_list(profiles, &error);
     check_error(error);
 
+    ob_delete_config(config, &error);
+    check_error(error);
+
     // destroy the pipeline
     ob_delete_pipeline(pipeline, &error);
     check_error(error);

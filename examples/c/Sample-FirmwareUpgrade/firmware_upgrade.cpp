@@ -74,6 +74,12 @@ int main(int argc, char **argv) {
     check_error(error);
     if(dev_count == 0) {
         printf("Device not found!\n");
+
+        ob_delete_device_list(dev_list, &error);
+        check_error(error);
+
+        ob_delete_context(ctx, &error);
+        check_error(error);
         return -1;
     }
 
@@ -110,10 +116,28 @@ int main(int argc, char **argv) {
             int confirm_char = getch();
             if(ESC_KEY == confirm_char) {
                 printf("\nCancel upgrade firmware\n");
+
+                ob_delete_device(dev, &error);
+                check_error(error);
+
+                ob_delete_device_list(dev_list, &error);
+                check_error(error);
+
+                ob_delete_context(ctx, &error);
+                check_error(error);
                 return 0;
             }
             else if('N' == confirm_char || 'n' == confirm_char) {
                 printf("\nAbort upgrade firmware\n");
+
+                ob_delete_device(dev, &error);
+                check_error(error);
+
+                ob_delete_device_list(dev_list, &error);
+                check_error(error);
+
+                ob_delete_context(ctx, &error);
+                check_error(error);
                 return 0;
             }
             else if('Y' == confirm_char || 'y' == confirm_char) {
@@ -130,6 +154,15 @@ int main(int argc, char **argv) {
     // Upgrade firmware file Path
     if(!upgrade_firmware(dev, firmware_file_path)) {
         printf("Upgrade firmware failed\n");
+
+        ob_delete_device(dev, &error);
+        check_error(error);
+
+        ob_delete_device_list(dev_list, &error);
+        check_error(error);
+
+        ob_delete_context(ctx, &error);
+        check_error(error);
         return -1;
     }
     printf("Upgrade firmware complete\n");
@@ -180,6 +213,10 @@ int main(int argc, char **argv) {
             std::this_thread::sleep_for(std::chrono::milliseconds(500));
         }
     }
+
+    ob_delete_context(ctx, &error);
+    check_error(error);
+
     return 0;
 }
 
@@ -264,24 +301,9 @@ bool upgrade_firmware(ob_device *device, const char *firmwarePath) {
 
 // Process firmware callback event
 void device_upgrade_callback(ob_upgrade_state state, const char *message, uint8_t percent, void *user_data) {
-    if(state == STAT_START) {
-        printf("Upgrade Firmware start\n");
-    }
-    else if(state == STAT_FILE_TRANSFER) {
-        printf("Upgrade Firmware file transfer, percent: %u\n", (uint32_t)percent);
-    }
-    else if(state == STAT_IN_PROGRESS) {
-        printf("Upgrade Firmware in progress, percent: %u\n", (uint32_t)percent);
-    }
-    else if(state == STAT_DONE) {
-        printf("Upgrade Firmware done, percent: %u\n", (uint32_t)percent);
+    printf("%s (state: %d, percent: %u)\n", message ? message : "", (int)state, (uint32_t)percent);
+    if(state == STAT_DONE) {
         is_upgrade_success_ = true;
-    }
-    else if(state == STAT_VERIFY_IMAGE) {
-        printf("Upgrade Firmware verify image\n");
-    }
-    else {
-        printf("Upgrade Firmware failed. state: %d, errMsg: %s, percent: %u \n", (int)state, message ? message : "", (uint32_t)percent);
     }
 }
 

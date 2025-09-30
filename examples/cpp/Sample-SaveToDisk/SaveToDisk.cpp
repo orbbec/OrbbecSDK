@@ -93,13 +93,13 @@ int main(int argc, char **argv) try {
             // save the colormap
             if(colorFrame->format() != OB_FORMAT_RGB) {
                 if(colorFrame->format() == OB_FORMAT_MJPG) {
-                    formatConvertFilter.setFormatConvertType(FORMAT_MJPG_TO_RGB888);
+                    formatConvertFilter.setFormatConvertType(FORMAT_MJPG_TO_RGB);
                 }
                 else if(colorFrame->format() == OB_FORMAT_UYVY) {
-                    formatConvertFilter.setFormatConvertType(FORMAT_UYVY_TO_RGB888);
+                    formatConvertFilter.setFormatConvertType(FORMAT_UYVY_TO_RGB);
                 }
                 else if(colorFrame->format() == OB_FORMAT_YUYV) {
-                    formatConvertFilter.setFormatConvertType(FORMAT_YUYV_TO_RGB888);
+                    formatConvertFilter.setFormatConvertType(FORMAT_YUYV_TO_RGB);
                 }
                 else {
                     std::cout << "Color format is not support!" << std::endl;
@@ -107,8 +107,16 @@ int main(int argc, char **argv) try {
                 }
                 colorFrame = formatConvertFilter.process(colorFrame)->as<ob::ColorFrame>();
             }
-            formatConvertFilter.setFormatConvertType(FORMAT_RGB888_TO_BGR);
+
+            if (colorFrame == nullptr) {
+                continue;
+            }
+            
+            formatConvertFilter.setFormatConvertType(FORMAT_RGB_TO_BGR);
             colorFrame = formatConvertFilter.process(colorFrame)->as<ob::ColorFrame>();
+            if (colorFrame == nullptr) {
+                continue;
+            }
             saveColor(colorFrame, colorCount);
             colorCount++;
         }

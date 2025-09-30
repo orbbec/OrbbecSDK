@@ -13,9 +13,40 @@ extern "C" {
 }
 
 /*
- * This example is written in C++, based on the C language version API of OrbbecSDK,
- * to demonstrate how to open color stream and get frames.
+ * Notes: Currently, only Gemini 330 series devices support Metadata.
  */
+const char *metaDataTypes[] = { "TIMESTAMP",
+                                "SENSOR_TIMESTAMP",
+                                "FRAME_NUMBER",
+                                "AUTO_EXPOSURE",
+                                "EXPOSURE",
+                                "GAIN",
+                                "AUTO_WHITE_BALANCE",
+                                "WHITE_BALANCE",
+                                "BRIGHTNESS",
+                                "CONTRAST",
+                                "SATURATION",
+                                "SHARPNESS",
+                                "BACKLIGHT_COMPENSATION",
+                                "HUE",
+                                "GAMMA",
+                                "POWER_LINE_FREQUENCY",
+                                "LOW_LIGHT_COMPENSATION",
+                                "MANUAL_WHITE_BALANCE",
+                                "ACTUAL_FRAME_RATE",
+                                "FRAME_RATE",
+                                "AE_ROI_LEFT",
+                                "AE_ROI_TOP",
+                                "AE_ROI_RIGHT",
+                                "AE_ROI_BOTTOM",
+                                "EXPOSURE_PRIORITY",
+                                "HDR_SEQUENCE_NAME",
+                                "HDR_SEQUENCE_SIZE",
+                                "HDR_SEQUENCE_INDEX",
+                                "LASER_POWER",
+                                "LASER_POWER_LEVEL",
+                                "LASER_STATUS",
+                                "GPIO_INPUT_DATA" };
 
 void check_error(ob_error *error) {
     if(error) {
@@ -88,12 +119,39 @@ int main(int argc, char **args) {
             continue;
         }
 
+        // Get the color frame from the frameset
         ob_frame *color_frame = ob_frameset_color_frame(frameset, &error);
         check_error(error);
-        if(color_frame != nullptr) {
-            // add frame to render, will auto delete frame when render finished
-            win->addToRender(color_frame);
+        if(color_frame == nullptr) {
+            ob_delete_frame(frameset, &error);
+            check_error(error);
+            continue;
         }
+
+        // Get the index of the frame
+        auto index = ob_frame_index(color_frame, &error);
+        check_error(error);
+
+        // print meta data every 30 frames
+        if(index % 30 == 0) {
+            std::cout << "*************************** Color Frame #" << index << " Metadata List ********************************" << std::endl;
+            for(int metaDataType = 0; metaDataType < OB_FRAME_METADATA_TYPE_COUNT; metaDataType++) {
+                // Check if it is supported metaDataType
+                if(ob_frame_has_metadata(color_frame, (OBFrameMetadataType)metaDataType, &error)) {
+                    // get metaData value
+                    std::cout << metaDataTypes[metaDataType] << ": " << ob_frame_get_metadata_value(color_frame, (OBFrameMetadataType)metaDataType, &error)
+                              << std::endl;
+                }
+                else {
+                    std::cout << metaDataTypes[metaDataType] << ": "
+                              << "unsupported" << std::endl;
+                }
+            }
+            std::cout << "********************************************************************************" << std::endl << std::endl;
+        }
+
+        // add frame to render, will auto delete frame when render finished
+        win->addToRender(color_frame);
 
         ob_delete_frame(frameset, &error);
         check_error(error);
@@ -116,6 +174,10 @@ int main(int argc, char **args) {
 
     // destroy the device
     ob_delete_device(device, &error);
+    check_error(error);
+
+    // destroy the config
+    ob_delete_config(config, &error);
     check_error(error);
 
     // destroy the pipeline

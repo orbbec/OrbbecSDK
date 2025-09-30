@@ -78,11 +78,11 @@ int main(int argc, char **args) {
         ob_filter *obFilter = ob_get_filter(filterList, i, &error);
         check_error(error);
 
-        const char *flterName = ob_get_filter_name(obFilter, &error);
+        const char *filterName = ob_get_filter_name(obFilter, &error);
         check_error(error);
-        printf(" Depth recommended post processor filter name: %s\n", flterName);
+        printf(" Depth recommended post processor filter name: %s\n", filterName);
 
-        if(std::string(flterName) == "DecimationFilter") {
+        if(std::string(filterName) == "DecimationFilter") {
             dec_filter = obFilter;
         }
 
@@ -101,7 +101,11 @@ int main(int argc, char **args) {
     win = new Window("DepthViewer", width, height);
     check_error(error);
 
-    bool resize_win = ob_filter_is_enable(dec_filter, &error);
+    bool resize_win = false;
+    if(dec_filter != nullptr) {
+        resize_win = ob_filter_is_enable(dec_filter, &error);
+    }
+
     check_error(error);
 
     // Wait in a loop, exit after the window receives the "esc" key
@@ -186,6 +190,13 @@ int main(int argc, char **args) {
     ob_delete_filter_list(filterList, &error);
     check_error(error);
 
+    ob_delete_sensor(depthSensor, &error);
+    check_error(error);
+
+    // destroy the config
+    ob_delete_config(config, &error);
+    check_error(error);
+
     // stop the pipeline
     ob_pipeline_stop(pipeline, &error);
     check_error(error);
@@ -199,6 +210,9 @@ int main(int argc, char **args) {
 
     // destroy profile list
     ob_delete_stream_profile_list(profiles, &error);
+    check_error(error);
+
+    ob_delete_device(device, &error);
     check_error(error);
 
     // destroy the pipeline

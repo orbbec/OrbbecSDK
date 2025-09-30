@@ -168,6 +168,16 @@ int main(int argc, char **args) {
                     win->addToRender({ color_frame, depth_frame });
                 }
             }
+            else {
+                if (color_frame != nullptr) {
+                    ob_delete_frame(color_frame, &error);
+                    check_error(error);
+                }
+                if (depth_frame != nullptr) {
+                    ob_delete_frame(depth_frame, &error);
+                    check_error(error);
+                }
+            }
             // destroy frameset
             ob_delete_frame(frameset_for_render, &error);
             check_error(error);
@@ -209,6 +219,10 @@ int main(int argc, char **args) {
 
     // destroy device
     ob_delete_device(device, &error);
+    check_error(error);
+
+    // destroy the config
+    ob_delete_config(config, &error);
     check_error(error);
 
     // destroy the pipeline

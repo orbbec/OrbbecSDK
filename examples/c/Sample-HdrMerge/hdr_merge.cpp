@@ -48,8 +48,8 @@ int main(int argc, char **args) {
     hdr_config.enable     = true;  // enable Hdr
     hdr_config.exposure_1 = 7500;
     hdr_config.gain_1     = 16;
-    hdr_config.exposure_2 = 100;
-    hdr_config.gain_2     = 1;
+    hdr_config.exposure_2 = 1;
+    hdr_config.gain_2     = 16;
     ob_device_set_structured_data(dev, OB_STRUCT_DEPTH_HDR_CONFIG, &hdr_config, sizeof(ob_hdr_config), &error);
     check_error(error);
 
@@ -130,7 +130,7 @@ int main(int argc, char **args) {
             ob_delete_frame(depth_frame, &error);
             check_error(error);
         }
-        else{
+        else {
             // add the original depth frame to the render queue
             win->addToRender(depth_frame);  // will auto release merged_depth_frame inside the function
         }
@@ -138,7 +138,6 @@ int main(int argc, char **args) {
         // release the frameset
         ob_delete_frame(frameset, &error);
         check_error(error);
-
     }
 
     // close hdr
@@ -162,6 +161,13 @@ int main(int argc, char **args) {
 
     // destroy profile list
     ob_delete_stream_profile_list(profiles, &error);
+    check_error(error);
+
+    // destroy the config
+    ob_delete_config(config, &error);
+    check_error(error);
+
+    ob_delete_device(dev, &error);
     check_error(error);
 
     // destroy the pipeline
