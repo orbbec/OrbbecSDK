@@ -26,6 +26,12 @@ Here is the device support list of main branch (v1.x) and Orbbec SDK v2 (v2.x):
   </thead>
   <tbody>
     <tr>
+      <td style="text-align: center; font-weight: bold;">Gemini 435Le</td>
+      <td>Gemini 435Le</td>
+      <td>not supported</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
       <td rowspan="8" style="text-align: center; font-weight: bold;">Gemini 330</td>
       <td>Gemini 335Le</td>
       <td>not supported</td>
