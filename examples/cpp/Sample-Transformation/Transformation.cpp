@@ -81,7 +81,7 @@ int depthPointCloudTransformation(std::shared_ptr<ob::Device> device, int case_n
     OBAlignMode                            alignMode = ALIGN_DISABLE;
 
     depthProfileList  = pipeline->getStreamProfileList(OB_SENSOR_DEPTH);
-    auto depthProfile = depthProfileList->getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_Y16, OB_FPS_ANY);
+    auto depthProfile = depthProfileList->getVideoStreamProfile(OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_Y16, OB_FPS_ANY);
     if(depthProfile) {
         config->enableStream(depthProfile);
     }
@@ -236,7 +236,7 @@ int RGBPointCloudTransformation(std::shared_ptr<ob::Device> device) {
         // Get all stream profiles of the color camera, including stream resolution,
         // frame rate, and frame format
         auto colorProfiles = pipeline->getStreamProfileList(OB_SENSOR_COLOR);
-        colorProfile       = colorProfiles->getVideoStreamProfile(1280, OB_HEIGHT_ANY, OB_FORMAT_RGB, OB_FPS_ANY);
+        colorProfile       = colorProfiles->getVideoStreamProfile(OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_RGB, OB_FPS_ANY);
         if(colorProfile) {
             config->enableStream(colorProfile);
         }
@@ -274,7 +274,7 @@ int RGBPointCloudTransformation(std::shared_ptr<ob::Device> device) {
         try {
             // Select the profile with the same frame rate as color.
             if(colorProfile) {
-                depthProfile = depthProfileList->getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_ANY, colorProfile->fps());
+                depthProfile = depthProfileList->getVideoStreamProfile(OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_ANY, colorProfile->fps());
             }
         }
         catch(...) {
@@ -371,7 +371,7 @@ int depth2DToColor2DTransformation(std::shared_ptr<ob::Device> device) {
     try {
         // Get all stream profiles of the color camera, including stream resolution,frame rate, and frame format
         auto colorProfiles = pipeline->getStreamProfileList(OB_SENSOR_COLOR);
-        colorProfile       = colorProfiles->getVideoStreamProfile(1280, OB_HEIGHT_ANY, OB_FORMAT_RGB, OB_FPS_ANY);
+        colorProfile       = colorProfiles->getVideoStreamProfile(OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_RGB, OB_FPS_ANY);
         if(colorProfile) {
             config->enableStream(colorProfile);
         }
@@ -391,7 +391,7 @@ int depth2DToColor2DTransformation(std::shared_ptr<ob::Device> device) {
         try {
             // Select the profile with the same frame rate as color.
             if(colorProfile) {
-                depthProfile = depthProfileList->getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_ANY, colorProfile->fps());
+                depthProfile = depthProfileList->getVideoStreamProfile(OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_ANY, colorProfile->fps());
             }
         }
         catch(...) {
@@ -475,7 +475,7 @@ int color2DToDepth2DTransformation(std::shared_ptr<ob::Device> device) {
     try {
         // Get all stream profiles of the color camera, including stream resolution,frame rate, and frame format
         auto colorProfiles = pipeline->getStreamProfileList(OB_SENSOR_COLOR);
-        colorProfile       = colorProfiles->getVideoStreamProfile(1280, OB_HEIGHT_ANY, OB_FORMAT_RGB, OB_FPS_ANY);
+        colorProfile       = colorProfiles->getVideoStreamProfile(OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_RGB, OB_FPS_ANY);
         if(colorProfile) {
             config->enableStream(colorProfile);
         }
@@ -495,7 +495,7 @@ int color2DToDepth2DTransformation(std::shared_ptr<ob::Device> device) {
         try {
             // Select the profile with the same frame rate as color.
             if(colorProfile) {
-                depthProfile = depthProfileList->getVideoStreamProfile(640, OB_HEIGHT_ANY, OB_FORMAT_ANY, colorProfile->fps());
+                depthProfile = depthProfileList->getVideoStreamProfile(OB_WIDTH_ANY, OB_HEIGHT_ANY, OB_FORMAT_ANY, colorProfile->fps());
             }
         }
         catch(...) {

@@ -2334,9 +2334,11 @@
 			    <!--Number of retries for open stream failures, 0 means no retries-->
 				<StreamFailedRetry>0</StreamFailedRetry>
 				<!--Open flow waits for the timeout period of the first frame of data, after which the open flow will fail-->
-				<MaxStartStreamDelayMs>5000</MaxStartStreamDelayMs>
+				<MaxStartStreamDelayMs>2000</MaxStartStreamDelayMs>
 				<!--The number of data stream restarts due to abnormal interruption, 0 means no restart-->
 				<StreamInterruptedRestart>0</StreamInterruptedRestart>
+				<!--Stream restart scope:0 = restart only if no frames are received within the maximum frame interval after stream start, 1 = restart throughout the entire streaming process-->
+				<StreamRestartScope>1</StreamRestartScope>
 				<!--The maximum frame interval time, if this value is exceeded, it will be judged that the stream is interrupted-->
 				<MaxFrameIntervalMs>2000</MaxFrameIntervalMs>
                 <!--The resolution width is enabled by default, int type-->
@@ -2348,6 +2350,16 @@
                 <Format>Y16</Format>
             </Depth>
             <Color>
+			    <!--Number of retries for open stream failures, 0 means no retries-->
+				<StreamFailedRetry>0</StreamFailedRetry>
+				<!--Open flow waits for the timeout period of the first frame of data, after which the open flow will fail-->
+				<MaxStartStreamDelayMs>2000</MaxStartStreamDelayMs>
+				<!--The number of data stream restarts due to abnormal interruption, 0 means no restart-->
+				<StreamInterruptedRestart>0</StreamInterruptedRestart>
+				<!--Stream restart scope:0 = restart only if no frames are received within the maximum frame interval after stream start, 1 = restart throughout the entire streaming process-->
+				<StreamRestartScope>1</StreamRestartScope>
+				<!--The maximum frame interval time, if this value is exceeded, it will be judged that the stream is interrupted-->
+				<MaxFrameIntervalMs>2000</MaxFrameIntervalMs>
                 <!--The resolution width is enabled by default, int type-->
                 <Width>1280</Width>
                 <!--High resolution is enabled by default, int type-->
@@ -2356,15 +2368,6 @@
                 <FPS>30</FPS>
                 <Format>MJPG</Format>
             </Color>
-            <IR>
-                <!--The resolution width is enabled by default, int type-->
-                <Width>848</Width>
-                <!--High resolution is enabled by default, int type-->
-                <Height>480</Height>
-                <!--The frame rate of the resolution enabled by default, int type-->
-                <FPS>30</FPS>
-                <Format>Y8</Format>
-            </IR>
 			<IR_LEFT>
                 <!--The resolution width is enabled by default, int type-->
                 <Width>848</Width>
@@ -2385,6 +2388,75 @@
             </IR_RIGHT>
         </OrbbecGemini335>
 		
+		<!--Gemini330 config-->
+        <OrbbecGemini330>
+	        <!--Whether to enable heartbeat by default-->
+	        <DefaultHeartBeat>0</DefaultHeartBeat>
+			<!--Whether to enable firmware upgrade foolproof by default, only internal version supports-->
+			<FirmwareUpgradeFoolproof>1</FirmwareUpgradeFoolproof>
+
+            <!-- Depth Filter Params -->
+            <!--
+            <DepthFilterDDOConfig>./Gemini2_v1.0.json</DepthFilterDDOConfig>
+			-->
+			<Depth>
+			    <!--Number of retries for open stream failures, 0 means no retries-->
+				<StreamFailedRetry>0</StreamFailedRetry>
+				<!--Open flow waits for the timeout period of the first frame of data, after which the open flow will fail-->
+				<MaxStartStreamDelayMs>2000</MaxStartStreamDelayMs>
+				<!--The number of data stream restarts due to abnormal interruption, 0 means no restart-->
+				<StreamInterruptedRestart>0</StreamInterruptedRestart>
+				<!--Stream restart scope:0 = restart only if no frames are received within the maximum frame interval after stream start, 1 = restart throughout the entire streaming process-->
+				<StreamRestartScope>1</StreamRestartScope>
+				<!--The maximum frame interval time, if this value is exceeded, it will be judged that the stream is interrupted-->
+				<MaxFrameIntervalMs>2000</MaxFrameIntervalMs>
+                <!--The resolution width is enabled by default, int type-->
+                <Width>848</Width>
+                <!--High resolution is enabled by default, int type-->
+                <Height>480</Height>
+                <!--The frame rate of the resolution enabled by default, int type-->
+                <FPS>30</FPS>
+                <Format>Y16</Format>
+            </Depth>
+            <Color>
+			    <!--Number of retries for open stream failures, 0 means no retries-->
+				<StreamFailedRetry>0</StreamFailedRetry>
+				<!--Open flow waits for the timeout period of the first frame of data, after which the open flow will fail-->
+				<MaxStartStreamDelayMs>2000</MaxStartStreamDelayMs>
+				<!--The number of data stream restarts due to abnormal interruption, 0 means no restart-->
+				<StreamInterruptedRestart>0</StreamInterruptedRestart>
+				<!--Stream restart scope:0 = restart only if no frames are received within the maximum frame interval after stream start, 1 = restart throughout the entire streaming process-->
+				<StreamRestartScope>1</StreamRestartScope>
+				<!--The maximum frame interval time, if this value is exceeded, it will be judged that the stream is interrupted-->
+				<MaxFrameIntervalMs>2000</MaxFrameIntervalMs>
+                <!--The resolution width is enabled by default, int type-->
+                <Width>1280</Width>
+                <!--High resolution is enabled by default, int type-->
+                <Height>720</Height>
+                <!--The frame rate of the resolution enabled by default, int type-->
+                <FPS>30</FPS>
+                <Format>MJPG</Format>
+            </Color>
+			<IR_LEFT>
+                <!--The resolution width is enabled by default, int type-->
+                <Width>848</Width>
+                <!--High resolution is enabled by default, int type-->
+                <Height>480</Height>
+                <!--The frame rate of the resolution enabled by default, int type-->
+                <FPS>30</FPS>
+                <Format>Y8</Format>
+            </IR_LEFT>
+			<IR_RIGHT>
+                <!--The resolution width is enabled by default, int type-->
+                <Width>848</Width>
+                <!--High resolution is enabled by default, int type-->
+                <Height>480</Height>
+                <!--The frame rate of the resolution enabled by default, int type-->
+                <FPS>30</FPS>
+                <Format>Y8</Format>
+            </IR_RIGHT>
+        </OrbbecGemini330>
+
 		   <!--Gemini2RL config-->
         <OrbbecGemini335L>
 	        <!--Whether to enable heartbeat by default-->
@@ -2400,9 +2472,11 @@
 			    <!--Number of retries for open stream failures, 0 means no retries-->
 				<StreamFailedRetry>0</StreamFailedRetry>
 				<!--Open flow waits for the timeout period of the first frame of data, after which the open flow will fail-->
-				<MaxStartStreamDelayMs>5000</MaxStartStreamDelayMs>
+				<MaxStartStreamDelayMs>2000</MaxStartStreamDelayMs>
 				<!--The number of data stream restarts due to abnormal interruption, 0 means no restart-->
 				<StreamInterruptedRestart>0</StreamInterruptedRestart>
+				<!--Stream restart scope:0 = restart only if no frames are received within the maximum frame interval after stream start, 1 = restart throughout the entire streaming process-->
+				<StreamRestartScope>1</StreamRestartScope>
 				<!--The maximum frame interval time, if this value is exceeded, it will be judged that the stream is interrupted-->
 				<MaxFrameIntervalMs>2000</MaxFrameIntervalMs>
                 <!--The resolution width is enabled by default, int type-->
@@ -2414,6 +2488,16 @@
                 <Format>Y16</Format>
             </Depth>
             <Color>
+			    <!--Number of retries for open stream failures, 0 means no retries-->
+				<StreamFailedRetry>0</StreamFailedRetry>
+				<!--Open flow waits for the timeout period of the first frame of data, after which the open flow will fail-->
+				<MaxStartStreamDelayMs>2000</MaxStartStreamDelayMs>
+				<!--The number of data stream restarts due to abnormal interruption, 0 means no restart-->
+				<StreamInterruptedRestart>0</StreamInterruptedRestart>
+				<!--Stream restart scope:0 = restart only if no frames are received within the maximum frame interval after stream start, 1 = restart throughout the entire streaming process-->
+				<StreamRestartScope>1</StreamRestartScope>
+				<!--The maximum frame interval time, if this value is exceeded, it will be judged that the stream is interrupted-->
+				<MaxFrameIntervalMs>2000</MaxFrameIntervalMs>
                 <!--The resolution width is enabled by default, int type-->
                 <Width>1280</Width>
                 <!--High resolution is enabled by default, int type-->
@@ -2422,15 +2506,6 @@
                 <FPS>30</FPS>
                 <Format>MJPG</Format>
             </Color>
-            <IR>
-                <!--The resolution width is enabled by default, int type-->
-                <Width>848</Width>
-                <!--High resolution is enabled by default, int type-->
-                <Height>480</Height>
-                <!--The frame rate of the resolution enabled by default, int type-->
-                <FPS>30</FPS>
-                <Format>Y8</Format>
-            </IR>
 			<IR_LEFT>
                 <!--The resolution width is enabled by default, int type-->
                 <Width>848</Width>
@@ -2466,9 +2541,11 @@
 			    <!--Number of retries for open stream failures, 0 means no retries-->
 				<StreamFailedRetry>0</StreamFailedRetry>
 				<!--Open flow waits for the timeout period of the first frame of data, after which the open flow will fail-->
-				<MaxStartStreamDelayMs>5000</MaxStartStreamDelayMs>
+				<MaxStartStreamDelayMs>2000</MaxStartStreamDelayMs>
 				<!--The number of data stream restarts due to abnormal interruption, 0 means no restart-->
 				<StreamInterruptedRestart>0</StreamInterruptedRestart>
+				<!--Stream restart scope:0 = restart only if no frames are received within the maximum frame interval after stream start, 1 = restart throughout the entire streaming process-->
+				<StreamRestartScope>1</StreamRestartScope>
 				<!--The maximum frame interval time, if this value is exceeded, it will be judged that the stream is interrupted-->
 				<MaxFrameIntervalMs>2000</MaxFrameIntervalMs>
                 <!--The resolution width is enabled by default, int type-->
@@ -2480,6 +2557,16 @@
                 <Format>Y16</Format>
             </Depth>
             <Color>
+			    <!--Number of retries for open stream failures, 0 means no retries-->
+				<StreamFailedRetry>0</StreamFailedRetry>
+				<!--Open flow waits for the timeout period of the first frame of data, after which the open flow will fail-->
+				<MaxStartStreamDelayMs>2000</MaxStartStreamDelayMs>
+				<!--The number of data stream restarts due to abnormal interruption, 0 means no restart-->
+				<StreamInterruptedRestart>0</StreamInterruptedRestart>
+				<!--Stream restart scope:0 = restart only if no frames are received within the maximum frame interval after stream start, 1 = restart throughout the entire streaming process-->
+				<StreamRestartScope>1</StreamRestartScope>
+				<!--The maximum frame interval time, if this value is exceeded, it will be judged that the stream is interrupted-->
+				<MaxFrameIntervalMs>2000</MaxFrameIntervalMs>
                 <!--The resolution width is enabled by default, int type-->
                 <Width>1280</Width>
                 <!--High resolution is enabled by default, int type-->
@@ -2488,15 +2575,6 @@
                 <FPS>30</FPS>
                 <Format>MJPG</Format>
             </Color>
-            <IR>
-                <!--The resolution width is enabled by default, int type-->
-                <Width>848</Width>
-                <!--High resolution is enabled by default, int type-->
-                <Height>480</Height>
-                <!--The frame rate of the resolution enabled by default, int type-->
-                <FPS>30</FPS>
-                <Format>Y8</Format>
-            </IR>
 			<IR_LEFT>
                 <!--The resolution width is enabled by default, int type-->
                 <Width>848</Width>
@@ -2532,9 +2610,11 @@
 			    <!--Number of retries for open stream failures, 0 means no retries-->
 				<StreamFailedRetry>0</StreamFailedRetry>
 				<!--Open flow waits for the timeout period of the first frame of data, after which the open flow will fail-->
-				<MaxStartStreamDelayMs>5000</MaxStartStreamDelayMs>
+				<MaxStartStreamDelayMs>2000</MaxStartStreamDelayMs>
 				<!--The number of data stream restarts due to abnormal interruption, 0 means no restart-->
 				<StreamInterruptedRestart>0</StreamInterruptedRestart>
+				<!--Stream restart scope:0 = restart only if no frames are received within the maximum frame interval after stream start, 1 = restart throughout the entire streaming process-->
+				<StreamRestartScope>1</StreamRestartScope>
 				<!--The maximum frame interval time, if this value is exceeded, it will be judged that the stream is interrupted-->
 				<MaxFrameIntervalMs>2000</MaxFrameIntervalMs>
                 <!--The resolution width is enabled by default, int type-->
@@ -2546,6 +2626,16 @@
                 <Format>Y16</Format>
             </Depth>
             <Color>
+			    <!--Number of retries for open stream failures, 0 means no retries-->
+				<StreamFailedRetry>0</StreamFailedRetry>
+				<!--Open flow waits for the timeout period of the first frame of data, after which the open flow will fail-->
+				<MaxStartStreamDelayMs>2000</MaxStartStreamDelayMs>
+				<!--The number of data stream restarts due to abnormal interruption, 0 means no restart-->
+				<StreamInterruptedRestart>0</StreamInterruptedRestart>
+				<!--Stream restart scope:0 = restart only if no frames are received within the maximum frame interval after stream start, 1 = restart throughout the entire streaming process-->
+				<StreamRestartScope>1</StreamRestartScope>
+				<!--The maximum frame interval time, if this value is exceeded, it will be judged that the stream is interrupted-->
+				<MaxFrameIntervalMs>2000</MaxFrameIntervalMs>
                 <!--The resolution width is enabled by default, int type-->
                 <Width>1280</Width>
                 <!--High resolution is enabled by default, int type-->
@@ -2554,15 +2644,6 @@
                 <FPS>30</FPS>
                 <Format>MJPG</Format>
             </Color>
-            <IR>
-                <!--The resolution width is enabled by default, int type-->
-                <Width>848</Width>
-                <!--High resolution is enabled by default, int type-->
-                <Height>480</Height>
-                <!--The frame rate of the resolution enabled by default, int type-->
-                <FPS>30</FPS>
-                <Format>Y8</Format>
-            </IR>
 			<IR_LEFT>
                 <!--The resolution width is enabled by default, int type-->
                 <Width>848</Width>
