@@ -1,6 +1,6 @@
 # OrbbecSDK v2.0
 
-![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-2.4.11-green)
+![stability](https://img.shields.io/badge/stability-stable-green) ![version](https://img.shields.io/badge/version-2.5.5-green)
 
 ⚠️ **Important Notice**
 

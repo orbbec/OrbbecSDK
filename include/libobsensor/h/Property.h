@@ -538,12 +538,18 @@ typedef enum {
     /**
      * @brief Confidence stream flip enable
      */
-    OB_PROP_CONFIDENCE_FLIP_BOOL   = 230,
+    OB_PROP_CONFIDENCE_FLIP_BOOL = 230,
 
     /**
      * @brief Confidence stream rotate angle{0, 90, 180, 270}
      */
-    OB_PROP_CONFIDENCE_ROTATE_INT  = 231,
+    OB_PROP_CONFIDENCE_ROTATE_INT = 231,
+
+    /**
+     * @brief Intra-camera Sync Reference based on the exposure start time, the exposure middle time, or the exposure end time. the definition in @ref
+     * OBIntraCameraSyncReference
+     */
+    OB_PROP_INTRA_CAMERA_SYNC_REFERENCE_INT = 236,
 
     /**
      * @brief Baseline calibration parameters
@@ -845,6 +851,11 @@ typedef enum {
     OB_PROP_SDK_IR_RIGHT_FRAME_UNPACK_BOOL = 3012,
 
     /**
+     * @brief Depth Stream Industry Working Mode Settings, currently only supported by DCW2.
+     */
+    OB_PROP_DEPTH_INDUSTRY_MODE_INT = 3024,
+
+    /**
      * @brief Read the current network bandwidth type of the network device, whether it is Gigabit Ethernet or Fast Ethernet, such as G335LE.
      */
     OB_PROP_NETWORK_BANDWIDTH_TYPE_INT = 3027,
@@ -863,6 +874,12 @@ typedef enum {
      * @brief Confidence degree
      */
     OB_PROP_DEBUG_ESGM_CONFIDENCE_FLOAT = 5013,
+
+    /**
+     * @brief Color camera CCI denoising level. 0: Auto; 1-8: higher values indicate stronger denoising.
+     * @note This setting has no effect when AE (Auto Exposure) is disabled.
+     */
+    OB_PROP_COLOR_DENOISING_LEVEL_INT = 5525,
 } OBPropertyID,
     ob_property_id;
 

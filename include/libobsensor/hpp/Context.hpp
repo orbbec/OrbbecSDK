@@ -98,6 +98,24 @@ public:
     }
 
     /**
+     * @brief "Force" a static IP address configuration in a device identified by its MAC Address.
+     *
+     * @param[in] macAddress MAC address of the network device.
+     *                       You can obtain it from @ref DeviceList::uid(), or specify it manually
+     *                       in the format xx:xx:xx:xx:xx:xx, where each xx is a two-digit hexadecimal value.
+     * @param[in] config The new IP configuration.
+     * @return bool true if the configuration command was processed successfully, false otherwise.
+     *
+     * @note This applies to all Orbbec GigE Vision devices
+     */
+    bool forceIp(const char *macAddress, const OBNetIpConfig &config) {
+        ob_error *error = nullptr;
+        auto      res   = ob_force_ip_config(macAddress, config, &error);
+        Error::handle(&error);
+        return res;
+    }
+
+    /**
      * @brief Creates a network device with the specified IP address and port.
      *
      * @param[in] address The IP address, ipv4 only. such as "192.168.1.10"
