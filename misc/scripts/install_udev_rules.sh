@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Copyright (c) Orbbec Inc. All Rights Reserved.
+# Licensed under the MIT License.
+
 # Check if user is root/running with sudo
 if [ `whoami` != root ]; then
     echo Please run this script with sudo

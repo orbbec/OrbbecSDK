@@ -109,10 +109,6 @@ Based on the device's timestamp and considering data transmission delays, the ti
             </Color>
             <!--If you need to open other streams, you can refer to the above format to add configuration-->
         </Stream>
-        <!--Image alignment, int type, optional values: 0 disable, 1 hardware d2c alignment, 2 software d2c alignment-->
-        <AlignMode>0</AlignMode>
-        <!--Frame synchronization output between different data streams, bool type, true-enable frame synchronization, false-disable frame synchronization-->
-        <FrameSync>false</FrameSync>
     </Pipeline>
 ```
 
@@ -129,21 +125,13 @@ Based on the device's timestamp and considering data transmission delays, the ti
                 <UseDefaultStreamProfile>true</UseDefaultStreamProfile>
             </RightIR>
 ```
-2. Pipeline can set D2C, such as hardware D2C and software D2C. Some devices do not support hardware D2C, such as Femto Bolt. If you need to use various different types of devices, it is recommended to set this in the user code based on the device type.
-```cpp
-  <AlignMode>0</AlignMode>
-```
-3. Pipeline can set frame synchronization. Enabling frame synchronization will match Depth, Color, and other video frames based on the timestamp and output them as FrameSet within the Pipeline.
-```cpp
-        <FrameSync>false</FrameSync>
-```
 
 ## Device Configuration
 
 ```cpp
     <!--Default configuration of data streams for different types of devices-->
     <Device>
-        <EnumerateNetDevice>false</EnumerateNetDevice>
+        <EnumerateNetDevice>true</EnumerateNetDevice>
         <!--UVC Backend select on Linux; optional values: Auto, V4L2, LibUVC; Auto is the default value-->
         <LinuxUVCBackend>LibUVC</LinuxUVCBackend>
 
@@ -157,8 +145,6 @@ Based on the device's timestamp and considering data transmission delays, the ti
 				<StreamFailedRetry>0</StreamFailedRetry>
 				<!--Open flow waits for the timeout period of the first frame of data, after which the open flow will fail-->
 				<MaxStartStreamDelayMs>5000</MaxStartStreamDelayMs>
-				<!--The number of data stream restarts due to abnormal interruption, 0 means no restart-->
-				<StreamInterruptedRestart>0</StreamInterruptedRestart>
 				<!--The maximum frame interval time, if this value is exceeded, it will be judged that the stream is interrupted-->
 				<MaxFrameIntervalMs>2000</MaxFrameIntervalMs>
                 <!--The resolution width is enabled by default, int type-->
@@ -211,7 +197,7 @@ Based on the device's timestamp and considering data transmission delays, the ti
 
 1. Set whether to enumerate network devices. Femto Mega and Gemini 2 XL support network functions. If you need to use the network functions of these two devices, you can set this to true.
 ```cpp
-        <EnumerateNetDevice>false</EnumerateNetDevice>
+        <EnumerateNetDevice>true</EnumerateNetDevice>
 ```
 
 2. Set whether to use LibUVC or V4L2 to receive data on Linux or ARM. V4L2 is not supported by all devices, and we recommend using LibUVC. The Gemini 330 series devices support V4L2, but kernel patches are needed to obtain Metadata data.

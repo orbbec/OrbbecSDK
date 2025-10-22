@@ -1,3 +1,6 @@
+# Copyright (c) Orbbec Inc. All Rights Reserved.
+# Licensed under the MIT License.
+
 # Usage:
 #Launch Windows PowerShell, and navigate to the script directory
 #PS> .\obsensor_metadata_win10.ps1                    - Add metadata reg. keys for the connected Orbbec devices
@@ -31,8 +34,19 @@ $SearchTrees = "$DevConfigRegBase\$guid1", "$DevConfigRegBase\$guid2"
 
 # Multipin devices that need additional key MetadataBufferSizeInKB1 & MetadataBufferSizeInKB2 & etc...
 $MultiPinDevices = "USB\VID_2BC5&PID_06D0&MI_00", #  Gemini 2 R  // 3 pin for depth uvc
-                 "USB\VID_2BC5&PID_06D1&MI_00" #  Gemini 2 RL  // 3 pin for depth uvc
-
+                 "USB\VID_2BC5&PID_06D1&MI_00", #  Gemini 2 RL  // 3 pin for depth uvc
+                 "USB\VID_2BC5&PID_0800&MI_00",
+                 "USB\VID_2BC5&PID_0801&MI_00",
+                 "USB\VID_2BC5&PID_0803&MI_00",
+                 "USB\VID_2BC5&PID_0804&MI_00",
+                 "USB\VID_2BC5&PID_0805&MI_00",
+                 "USB\VID_2BC5&PID_0807&MI_00",
+                 "USB\VID_2BC5&PID_080B&MI_00",
+                 "USB\VID_2BC5&PID_0A12&MI_00",
+                 "USB\VID_2BC5&PID_0A13&MI_00",
+                 "USB\VID_2BC5&PID_0812&MI_00",
+                 "USB\VID_2BC5&PID_0813&MI_00",
+                 "USB\VID_2BC5&PID_0818&MI_00"
 #Inhibit system warnings and erros, such as permissions or missing values
 $ErrorActionPreference = "silentlycontinue"
 
@@ -124,3 +138,4 @@ foreach ($subtree in $SearchTrees)
 
 "`nTask Completed"
 sleep 1
+
