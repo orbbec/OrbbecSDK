@@ -20,12 +20,23 @@ Here is the device support list of main branch (v1.x) and Orbbec SDK v2 (v2.x):
     <tr style="background-color: #1f4e78; color: white; text-align: center;">
       <th>Product Series</th>
       <th>Product</th>
-      <th><a href="https://github.com/orbbec/OrbbecSDK/tree/main" style="color: black; text-decoration: none;">Orbbec SDK V1</a></th>
+      <th><a href="https://github.com/orbbec/OrbbecSDK/tree/main" style="color: black; text-decoration: none;">Orbbec SDK v1</a></th>
       <th><a href="https://github.com/orbbec/OrbbecSDK_v2" style="color: black; text-decoration: none;">Orbbec SDK v2</a></th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td rowspan="2" style="text-align: center; font-weight: bold;">Gemini 340</td>
+      <td>Gemini 345</td>
+      <td>not supported</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
+      <td>Gemini 345Lg</td>
+      <td>not supported</td>
+      <td>recommended for new designs</td>
+    </tr>
+      <tr>
       <td style="text-align: center; font-weight: bold;">Gemini 435Le</td>
       <td>Gemini 435Le</td>
       <td>not supported</td>
@@ -131,15 +142,36 @@ Here is the device support list of main branch (v1.x) and Orbbec SDK v2 (v2.x):
       <td>not supported</td>
     </tr>
     <tr>
-      <td style="text-align: center; font-weight: bold;">Astra Mini</td>
+      <td rowspan="2" style="text-align: center; font-weight: bold;">Astra Mini</td>
       <td>Astra Mini Pro</td>
       <td>full maintenance</td>
+      <td>recommended for new designs</td>
+    <tr>
+      <td>Astra Mini S Pro</td>
+      <td>full maintenance</td>
+      <td>recommended for new designs</td>
+    </tr>
+    </tr>
+        <tr>
+      <td rowspan="2" style="text-align: center; font-weight: bold;">LiDAR</td>
+      <td>Pulsar ME450</td>
       <td>not supported</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
+      <td>Pulsar SL450</td>
+      <td>not supported</td>
+      <td>recommended for new designs</td>
     </tr>
   </tbody>
 </table>
 
-**Note**: If you do not find your device, please contact our FAE or sales representative for help.
+**Note**: 
+1. If you do not find your device, please contact our FAE or sales representative for help.
+2. If a device is supported by both Orbbec SDK v1 and Orbbec SDK v2, **the minimum supported firmware version may differ between the two SDKs.** Please refer to **Supported Devices** list for detailed information.
+In particular, note that the Astra Mini Pro and Astra Mini S Pro use different communication protocols in firmware v1.x.x and v2.x.x, Orbbec SDK v1 supports only v1.x.x firmware, while Orbbec SDK v2 supports only v2.x.x firmware. Upgrading from v1.x.x to v2.x.x, please refer to [Upgrading from OpenNI Protocol to UVC Protocol](https://github.com/orbbec/OrbbecSDK_v2?tab=readme-ov-file#12-upgrading-from-openni-protocol-to-uvc-protocol).
+
+
 
 **Definition**:
 
@@ -149,34 +181,35 @@ Here is the device support list of main branch (v1.x) and Orbbec SDK v2 (v2.x):
 4. not supported: we will not support specific device in this version;
 5. to be supported: we will add support in the near future.
 
-## Product support
 
-| **Products List** | **Minimal Firmware Version**        |
+## Supported Devices
+
+| **Products List** | **Minimal Firmware Version** |
 |-------------------|-----------------------------|
-| Gemini 330        | 1.2.20                   |
-| Gemini 330L        | 1.2.20                    |
-| Gemini 335        | 1.2.20                   |
-| Gemini 335L        | 1.2.20                    |
+| Gemini 330        | 1.2.20                      |    
+| Gemini 330L        | 1.2.20                     |  
+| Gemini 335        | 1.2.20                      | 
+| Gemini 335L        | 1.2.20                     | 
 | Gemini 336        | 1.2.20                      |
-| Gemini 336L        | 1.2.20                    |
-| Femto Bolt        | 1.0.6                |
-| Femto Mega        | 1.1.7                 |
-| Femto Mega I      | 2.0.2                       |
+| Gemini 336L        | 1.2.20                     |    
+| Femto Bolt        | 1.0.6                       |         
+| Femto Mega        | 1.1.7                       |        
+| Femto Mega I      | 2.0.2                       |  
 | Gemini 2 XL       | Obox: V1.2.5  VL:1.4.54     |
 | Astra 2           | 2.8.20                      |
 | Gemini 2 L        | 1.4.32                      |
-| Gemini 2          | 1.4.60               |
-| Astra+            | 1.0.19 |
+| Gemini 2          | 1.4.60                      |       
+| Astra+            | 1.0.19                      |                      
 | Femto             | 1.6.7                       |
-| Femto W           | 1.1.8                       |
-| DaBai             | 2436                        |
-| DaBai DCW         | 2460                        |
-| DaBai DW          | 2606                        |
-| Astra Mini Pro    | 1007                        |
+| Femto W           | 1.1.8                       | 
+| DaBai             | 2436                        | 
+| DaBai DCW         | 2460                        | 
+| DaBai DW          | 2606                        | 
 | Gemini E          | 3460                        |
-| Gemini E Lite     | 3606                        |
-| Gemini            | 3018                      |
-| Astra Mini S Pro  | 1005                      |
+| Gemini E Lite     | 3606                        | 
+| Gemini            | 3018                        |
+| Astra Mini Pro    | 1007                        | 
+| Astra Mini S Pro  | 1005                        |
 
 ## What is included in the repository
 

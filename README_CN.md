@@ -18,12 +18,23 @@ main分支基于 Orbbec SDK v1,兼容 Orbbec 原有的 OpenNI 协议设备,使�
     <tr style="background-color: #1f4e78; color: white; text-align: center;">
       <th>Product Series</th>
       <th>Product</th>
-      <th><a href="https://gitee.com/orbbecdeveloper/OrbbecSDK/tree/main/" style="color: black; text-decoration: none;">Orbbec SDK V1</a></th>
+      <th><a href="https://gitee.com/orbbecdeveloper/OrbbecSDK/tree/main/" style="color: black; text-decoration: none;">Orbbec SDK v1</a></th>
       <th><a href="https://gitee.com/orbbecdeveloper/OrbbecSDK_v2/tree/main/" style="color: black; text-decoration: none;">Orbbec SDK v2</a></th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td rowspan="2" style="text-align: center; font-weight: bold;">Gemini 340</td>
+      <td>Gemini 345</td>
+      <td>not supported</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
+      <td>Gemini 345Lg</td>
+      <td>not supported</td>
+      <td>recommended for new designs</td>
+    </tr>
+      <tr>
       <td style="text-align: center; font-weight: bold;">Gemini 435Le</td>
       <td>Gemini 435Le</td>
       <td>not supported</td>
@@ -129,15 +140,33 @@ main分支基于 Orbbec SDK v1,兼容 Orbbec 原有的 OpenNI 协议设备,使�
       <td>not supported</td>
     </tr>
     <tr>
-      <td style="text-align: center; font-weight: bold;">Astra Mini</td>
+      <td rowspan="2" style="text-align: center; font-weight: bold;">Astra Mini</td>
       <td>Astra Mini Pro</td>
       <td>full maintenance</td>
+      <td>recommended for new designs</td>
+    <tr>
+      <td>Astra Mini S Pro</td>
+      <td>full maintenance</td>
+      <td>recommended for new designs</td>
+    </tr>
+    </tr>
+        <tr>
+      <td rowspan="2" style="text-align: center; font-weight: bold;">LiDAR</td>
+      <td>Pulsar ME450</td>
       <td>not supported</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
+      <td>Pulsar SL450</td>
+      <td>not supported</td>
+      <td>recommended for new designs</td>
     </tr>
   </tbody>
 </table>
 
-**注意**: 如果未找到您的设备,请联系我们的 FAE 或销售代表寻求帮助。
+**注意**: 
+1. 如果未找到您的设备,请联系我们的 FAE 或销售代表寻求帮助。
+2. 如果设备同时支持 Orbbec SDK v1 与 Orbbec SDK v2，两个SDK所支持的最低固件版本可能不同。支持的最低固件版本请查看支持的设备列表。特别需要注意的是，Astra Mini Pro 与 Astra Mini S Pro 在 v1.x.x 与 v2.x.x 固件中采用了不同的通信协议：Orbbec SDK v1 仅支持 v1.x.x 固件，而 Orbbec SDK v2 仅支持 v2.x.x 固件。若需从 v1.x.x 升级至 v2.x.x，请参考[链接](https://github.com/orbbec/OrbbecSDK_v2?tab=readme-ov-file#12-upgrading-from-openni-protocol-to-uvc-protocol)。
 
 **定义**:
 
@@ -148,34 +177,34 @@ main分支基于 Orbbec SDK v1,兼容 Orbbec 原有的 OpenNI 协议设备,使�
 5. to be supported: 我们在未来增加对该设备的支持。
 
 
-## 支持产品
+## 支持的设备
 
-| **Products List** | **Minimal Firmware Version**        |
+| **Products List** | **Minimal Firmware Version** |
 |-------------------|-----------------------------|
-| Gemini 330        | 1.2.20                   |
-| Gemini 330L        | 1.2.20                    |
-| Gemini 335        | 1.2.20                   |
-| Gemini 335L        | 1.2.20                    |
+| Gemini 330        | 1.2.20                      |    
+| Gemini 330L        | 1.2.20                     |  
+| Gemini 335        | 1.2.20                      | 
+| Gemini 335L        | 1.2.20                     | 
 | Gemini 336        | 1.2.20                      |
-| Gemini 336L        | 1.2.20                    |
-| Femto Bolt        | 1.0.6                |
-| Femto Mega        | 1.1.7                 |
-| Femto Mega I      | 2.0.2                       |
+| Gemini 336L        | 1.2.20                     |    
+| Femto Bolt        | 1.0.6                       |         
+| Femto Mega        | 1.1.7                       |        
+| Femto Mega I      | 2.0.2                       |  
 | Gemini 2 XL       | Obox: V1.2.5  VL:1.4.54     |
 | Astra 2           | 2.8.20                      |
 | Gemini 2 L        | 1.4.32                      |
-| Gemini 2          | 1.4.60               |
-| Astra+            | 1.0.19 |
+| Gemini 2          | 1.4.60                      |       
+| Astra+            | 1.0.19                      |                      
 | Femto             | 1.6.7                       |
-| Femto W           | 1.1.8                       |
-| DaBai             | 2436                        |
-| DaBai DCW         | 2460                        |
-| DaBai DW          | 2606                        |
-| Astra Mini Pro    | 1007                        |
+| Femto W           | 1.1.8                       | 
+| DaBai             | 2436                        | 
+| DaBai DCW         | 2460                        | 
+| DaBai DW          | 2606                        | 
 | Gemini E          | 3460                        |
-| Gemini E Lite     | 3606                        |
-| Gemini            | 3018                      |
-| Astra Mini S Pro  | 1005                      |
+| Gemini E Lite     | 3606                        | 
+| Gemini            | 3018                        |
+| Astra Mini Pro    | 1007                        | 
+| Astra Mini S Pro  | 1005                        |
 
 ## 本仓库包含内容
 
