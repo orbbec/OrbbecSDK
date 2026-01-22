@@ -24,6 +24,12 @@ main分支基于 Orbbec SDK v1,兼容 Orbbec 原有的 OpenNI 协议设备,使�
   </thead>
   <tbody>
     <tr>
+      <td style="text-align: center; font-weight: bold;">Gemini 305</td>
+      <td>Gemini 305</td>
+      <td>not supported</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
       <td rowspan="2" style="text-align: center; font-weight: bold;">Gemini 340</td>
       <td>Gemini 345</td>
       <td>not supported</td>
@@ -166,7 +172,7 @@ main分支基于 Orbbec SDK v1,兼容 Orbbec 原有的 OpenNI 协议设备,使�
 
 **注意**: 
 1. 如果未找到您的设备,请联系我们的 FAE 或销售代表寻求帮助。
-2. 如果设备同时支持 Orbbec SDK v1 与 Orbbec SDK v2，两个SDK所支持的最低固件版本可能不同。支持的最低固件版本请查看支持的设备列表。特别需要注意的是，Astra Mini Pro 与 Astra Mini S Pro 在 v1.x.x 与 v2.x.x 固件中采用了不同的通信协议：Orbbec SDK v1 仅支持 v1.x.x 固件，而 Orbbec SDK v2 仅支持 v2.x.x 固件。若需从 v1.x.x 升级至 v2.x.x，请参考[链接](https://github.com/orbbec/OrbbecSDK_v2?tab=readme-ov-file#12-upgrading-from-openni-protocol-to-uvc-protocol)。
+2. 如果设备同时支持 Orbbec SDK v1 与 Orbbec SDK v2，两个SDK所支持的最低固件版本可能不同。支持的最低固件版本请查看支持的设备列表。特别需要注意的是，Astra Mini Pro 与 Astra Mini S Pro 在 v1.x.x 与 v2.x.x 固件中采用了不同的通信协议：Orbbec SDK v1 仅支持 v1.x.x 固件，而 Orbbec SDK v2 仅支持 v2.x.x 固件。若需从 v1.x.x 升级至 v2.x.x，请参考[链接](https://gitee.com/orbbecdeveloper/OrbbecSDK_v2#12-upgrading-from-openni-protocol-to-uvc-protocol)。
 
 **定义**:
 

@@ -26,6 +26,12 @@ Here is the device support list of main branch (v1.x) and Orbbec SDK v2 (v2.x):
   </thead>
   <tbody>
     <tr>
+      <td style="text-align: center; font-weight: bold;">Gemini 305</td>
+      <td>Gemini 305</td>
+      <td>not supported</td>
+      <td>recommended for new designs</td>
+    </tr>
+    <tr>
       <td rowspan="2" style="text-align: center; font-weight: bold;">Gemini 340</td>
       <td>Gemini 345</td>
       <td>not supported</td>
@@ -169,7 +175,7 @@ Here is the device support list of main branch (v1.x) and Orbbec SDK v2 (v2.x):
 **Note**: 
 1. If you do not find your device, please contact our FAE or sales representative for help.
 2. If a device is supported by both Orbbec SDK v1 and Orbbec SDK v2, **the minimum supported firmware version may differ between the two SDKs.** Please refer to **Supported Devices** list for detailed information.
-In particular, note that the Astra Mini Pro and Astra Mini S Pro use different communication protocols in firmware v1.x.x and v2.x.x, Orbbec SDK v1 supports only v1.x.x firmware, while Orbbec SDK v2 supports only v2.x.x firmware. Upgrading from v1.x.x to v2.x.x, please refer to [Upgrading from OpenNI Protocol to UVC Protocol](https://github.com/orbbec/OrbbecSDK_v2?tab=readme-ov-file#12-upgrading-from-openni-protocol-to-uvc-protocol).
+In particular, note that the Astra Mini Pro and Astra Mini S Pro use different communication protocols in firmware v1.x.x and v2.x.x, Orbbec SDK v1 supports only v1.x.x firmware, while Orbbec SDK v2 supports only v2.x.x firmware. Upgrading from v1.x.x to v2.x.x, please refer to [Upgrading from OpenNI Protocol to UVC Protocol](https://gitee.com/orbbecdeveloper/OrbbecSDK_v2#12-upgrading-from-openni-protocol-to-uvc-protocol).
 
 
 
