@@ -1,3 +1,6 @@
+# Copyright (c) Orbbec Inc. All Rights Reserved.
+# Licensed under the MIT License.
+
 # Usage:
 #Launch Windows PowerShell, and navigate to the script directory
 #PS> .\obsensor_metadata_win10.ps1                    - Add metadata reg. keys for the connected Orbbec devices
@@ -30,9 +33,23 @@ $guid2 = "{65E8773D-8F56-11D0-A3B9-00A0C9223196}";
 $SearchTrees = "$DevConfigRegBase\$guid1", "$DevConfigRegBase\$guid2"
 
 # Multipin devices that need additional key MetadataBufferSizeInKB1 & MetadataBufferSizeInKB2 & etc...
-$MultiPinDevices = "USB\VID_2BC5&PID_06D0&MI_00", #  Gemini 2 R  // 3 pin for depth uvc
-                 "USB\VID_2BC5&PID_06D1&MI_00" #  Gemini 2 RL  // 3 pin for depth uvc
-
+$MultiPinDevices = @("USB\VID_2BC5&PID_06D0&MI_00", #  Gemini 2 R  // 3 pin for depth uvc
+                 "USB\VID_2BC5&PID_06D1&MI_00", #  Gemini 2 RL  // 3 pin for depth uvc
+                 "USB\VID_2BC5&PID_0800&MI_00",
+                 "USB\VID_2BC5&PID_0801&MI_00",
+                 "USB\VID_2BC5&PID_0803&MI_00",
+                 "USB\VID_2BC5&PID_0804&MI_00",
+                 "USB\VID_2BC5&PID_0805&MI_00",
+                 "USB\VID_2BC5&PID_0807&MI_00",
+                 "USB\VID_2BC5&PID_080B&MI_00",
+                 "USB\VID_2BC5&PID_0A12&MI_00",
+                 "USB\VID_2BC5&PID_0A13&MI_00",
+                 "USB\VID_2BC5&PID_0812&MI_00",
+                 "USB\VID_2BC5&PID_0813&MI_00",
+                 "USB\VID_2BC5&PID_0816&MI_00",
+                 "USB\VID_2BC5&PID_0817&MI_00",
+                 "USB\VID_2BC5&PID_0818&MI_00"
+				 )
 #Inhibit system warnings and erros, such as permissions or missing values
 $ErrorActionPreference = "silentlycontinue"
 
@@ -44,8 +61,7 @@ $DevInReg = Get-ChildItem hklm:\SYSTEM\CurrentControlSet\Services\usbvideo | For
 for ($i=0; $i -lt $DevInReg[0].Count; $i++) { $ConnectedDev +=$DevInReg[0].$i}
 
 #Filter Orbbec devices
-#$ConnectedDev = $ConnectedDev -like "*VID_8086*"
-$ConnectedDev = $ConnectedDev -like "*VID_2BC5*"
+$ConnectedDev = $ConnectedDev | Where { ($_ -like "*VID_2BC5*") }
 
 #Progress notification
 $rs_count = $ConnectedDev.Count
@@ -60,9 +76,9 @@ foreach ($subtree in $SearchTrees)
 
     #Filter Orbbec devices
     "There are " + $Items.Count +" total devices listed"
-   # $Items = $Items | Where { $_.DeviceInstance -like "*VID_8086*" }
-   $Items = $Items | Where { $_.DeviceInstance -like "*VID_2BC5*" }
-    "" + $Items.Count + " of them are Orbbec devices"
+   $Items = $Items | Where {
+    ($_.DeviceInstance -like "*VID_2BC5*")
+    }
 
     $remove_keys = 0
     switch ($op)
@@ -124,3 +140,4 @@ foreach ($subtree in $SearchTrees)
 
 "`nTask Completed"
 sleep 1
+
