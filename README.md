@@ -25,6 +25,12 @@ Here is the device support list of main branch (v1.x) and Orbbec SDK v2 (v2.x):
     </tr>
   </thead>
   <tbody>
+      <tr>
+      <td style="text-align: center; font-weight: bold;">Gemini 305g</td>
+      <td>Gemini 305g</td>
+      <td>not supported</td>
+      <td>recommended for new designs</td>
+    </tr>
     <tr>
       <td style="text-align: center; font-weight: bold;">Gemini 305</td>
       <td>Gemini 305</td>
